@@ -1,3 +1,6 @@
+body{
+    @apply text-black;
+}
 section {
     @apply py-8 md:py-12
 }
