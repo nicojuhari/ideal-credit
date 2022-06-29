@@ -4,6 +4,6 @@
     <main class="flex-auto">
       <NuxtPage />
     </main>
-    <IncludesFooter/>
+    <IncludesFooter class="mt-auto"/>
   </div>
 </template>
