@@ -1,0 +1,6 @@
+section {
+    @apply py-8 md:py-12
+}
+.container {
+    @apply w-full mx-auto max-w-6xl p-4;
+}
