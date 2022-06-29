@@ -1,6 +1,6 @@
 export default defineNuxtPlugin(() => {
     
-    if(process.NODE_ENV != 'production') return
+    if(process.dev) return
 
     let script = document.createElement('script')
     script.setAttribute('async', '')
