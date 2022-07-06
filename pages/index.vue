@@ -4,5 +4,6 @@
 <template>
     <div>
         <HomeHeroComp />
+        <CalculatorCredit />
     </div>
 </template>
