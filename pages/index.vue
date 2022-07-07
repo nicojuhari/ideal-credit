@@ -5,5 +5,6 @@
     <div>
         <HomeHeroComp />
         <CalculatorCredit />
+        <RegulamenteList/>
     </div>
 </template>
