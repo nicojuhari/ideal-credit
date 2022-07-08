@@ -64,8 +64,8 @@ import { ref, watchEffect, computed } from 'vue'
                     <div>0 MDL</div>
                 </div>
                 <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>Penalitate*</div>
-                    <div>{{creditPenalitate}} MDL/zi</div>
+                    <div>Penalitate</div>
+                    <div>0.04 %/zi</div>
                 </div>
                 <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
                     <div>Dobinda lunara</div>
@@ -87,22 +87,8 @@ import { ref, watchEffect, computed } from 'vue'
                 </div>
                 <div
                     class="flex flex-col gap-4 p-4 items-center justify-center border rounded col-span-2 md:col-span-1">
-                    <div>Costul total al creditului**</div>
+                    <div>Costul total al creditului</div>
                     <div>{{ dobindaTotal + creditComision }} MDL</div>
-                </div>
-            </div>
-            <div>
-                <div class="mt-6"><strong>*</strong> În cazul neachitării ratei lunare sau alte plăți în termenul
-                    specificat
-                    în Contract, Organizația percepe o penalitate în mărime de 0,1 % din valoarea totală a creditului
-                    pentru fiecare zi de întîrziere. <span class="font-bold">Exemplu: Suma creditului 10000 lei x 0,1% = 10
-                        lei/zi</span>
-                </div>
-                <div class="mt-6"><strong>**</strong> Organizația ține cont de faptul că dobînda de credit anuală
-                    specificată în
-                    contractul de credit să nu depășească 50 % anual, iar toate celelalte plăți aferente (comisioane,
-                    taxe, penalități, dobînzi de întîrziere și orice alt tip de plată), cu excepția dobînzii, să nu
-                    depășească 0,04 % din valoarea totală a creditului pentru o zi de credit.
                 </div>
             </div>
             <div>
