@@ -3,12 +3,12 @@
         {
             title: 'Sediul',
             address: 'or. Căușeni, str. M.Eminescu, nr. 17, etajul 4, of. 47',
-            mobile: '078805060',
+            mobile: '078 80 50 60,  (0243) 93 222',
         },
         {
             title: 'Sucursala Nr.1',
             address: 'm. Chișinău, str. Miron Costin, nr. 25, of. 115',
-            mobile: '079066566',
+            mobile: '0790 66 5 66',
         }
     ]
 </script>
@@ -24,7 +24,7 @@
                         <div class="">Adresa:</div>
                         <div class="font-light">{{ oficiu.address}}</div>
                     </div>
-                    <div> Mobil: {{ oficiu.mobile}}</div>
+                    <div> Tel: {{ oficiu.mobile}}</div>
                 </div>
             </div>
             <div class="flex justify-center border-t border-brand border-opacity-50 pt-4">
