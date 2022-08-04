@@ -11,6 +11,29 @@ body.menu-open {
     width: calc(100% - 2rem)
 }
 
+.hero-title {
+    @apply font-extrabold text-5xl md:text-8xl
+}
+
+.title {
+    @apply font-semibold text-3xl md:text-6xl
+}
+
+.subtitle {
+    @apply font-medium text-2xl md:text-4xl
+} 
+
 section {
     @apply py-8 md:py-12
+}
+
+.btn {
+    @apply h-12 px-8 rounded-full flex gap-3 items-center text-xl max-w-max;
+}
+.btn-primary {
+    @apply bg-brand-color text-brand-gray
+}
+
+.btn-outline {
+    @apply border-2 border-brand-black text-brand-black bg-transparent
 }

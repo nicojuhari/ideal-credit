@@ -28,9 +28,6 @@
                         <NuxtLink to="/despre-noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte">Contacte</NuxtLink>
                     </nav>
-                    <div class="md:hidden">
-
-                    </div>
                     <div class="flex md:hidden">
                         <div @click="toggleMenu" class="p-2 bg-brand-gray cursor-pointer rounded-full">
                             <IconsBurgerMenu />

@@ -1,12 +1,20 @@
 <script setup>
+import BaseButton from './ui/BaseButton.vue';
 
 </script>
 <template>
     <section>
-        <div class="container mt-10 md:mt-16">
-            <h1 class="text-center font-bold text-4xl md:text-6xl">Credite nebancare
-                <span class="text-xl md:text-2xl flex justify-center font-light">pentru consum și afaceri</span>
+        <div class="container mt-16 md:mt-32">
+            <h1 class="text-center hero-title">Credite nebancare
+                <span class="title flex justify-center mt-2">pentru consum și business</span>
             </h1>
+            <div class="flex flex-col md:flex-row gap-6 mt-12 justify-center items-center md:items-end">
+                <BaseButton class="btn-primary" href="tel:+37378805060">
+                    <IconsPhone class="w-6" />
+                    <span>078 80 50 60</span>
+                </BaseButton>
+                <BaseButton class="btn-outline">Calculator de credit</BaseButton>
+            </div>
         </div>
     </section>
 </template>
