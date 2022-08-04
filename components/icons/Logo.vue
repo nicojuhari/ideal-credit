@@ -1,0 +1,8 @@
+<template>
+    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+        <circle cx="300" cy="300" r="300" style="fill:#222" />
+        <circle cx="326.5" cy="96.5" r="43" style="fill:#fff;stroke:#000;stroke-miterlimit:10" />
+        <path d="M391.5,93.5c3,181-375,158-204,440C102.5,313.5,421.5,356.5,391.5,93.5Z" style="fill:#ff9a00" />
+        <path d="M450.5,274.5c26,250-239,101-253,259C178.5,310.5,427.5,449.5,450.5,274.5Z" style="fill:#ff9a00" />
+    </svg>
+</template>

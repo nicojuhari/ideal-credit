@@ -1,9 +1,16 @@
 body{
-    @apply text-black;
+    @apply bg-brand-gray text-brand-black;
 }
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.container {
+    @apply mx-auto max-w-5xl;
+    width: calc(100% - 2rem)
+}
+
 section {
     @apply py-8 md:py-12
-}
-.container {
-    @apply w-full mx-auto max-w-6xl p-4;
 }

@@ -27,7 +27,7 @@
                     <div> Tel: {{ oficiu.mobile}}</div>
                 </div>
             </div>
-            <div class="flex justify-center border-t border-brand border-opacity-50 pt-4">
+            <div class="flex justify-center border-t border-brand-color border-opacity-50 pt-4">
                 &copy; {{ new Date().getFullYear() }} - Ideal Credit SRL
             </div>
         </div>

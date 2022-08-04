@@ -48,13 +48,13 @@ import { ref, watchEffect, computed } from 'vue'
                     <div class="mb-1">Suma</div>
                     <input type="number" v-model="creditSuma" class="border rounded p-2 border-gray-800 w-full"
                         step="100" min="1000" />
-                    <div class="text-sm text-center text-brand font-semibold">1 000 - 300 000 MDL</div>
+                    <div class="text-sm text-center text-brand-color font-semibold">1 000 - 300 000 MDL</div>
                 </div>
                 <div class="flex-grow">
                     <div class="mb-1">Perioada</div>
                     <input type="number" v-model="creditTermen" class="border rounded p-2 border-gray-800 w-full"
                         step="1" min="6" />
-                    <div class="text-sm text-center text-brand font-semibold">6 - 48 luni</div>
+                    <div class="text-sm text-center text-brand-color font-semibold">6 - 48 luni</div>
                 </div>
             </div>
             <div class="text-center my-5 text-lg">Costurile creditului</div>
