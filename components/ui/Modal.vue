@@ -1,0 +1,82 @@
+<template>
+    <teleport to="#modal">
+        <div class="modal fixed z-20 flex items-end justify-center top-0 left-0 w-full h-screen">
+            <div class="modal-backdrop fixed min-h-screen w-full top-0 left-0 bg-black opacity-30"></div>
+            <div class="modal-container bg-white p-4 rounded-lg z-10 m-auto max-w-sm w-full"
+                :class="{ 'to-close': toClose == true }">
+                <div class="modal-header flex justify-between items-center mb-4">
+                    <div class="text-lg font-medium ">{{ modalTitle }}</div>
+                    <div class="modal-close cursor-pointer hover:bg-gray-100 transition-all p-1 rounded-full"
+                        @click="closeModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700  " fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="py-2 text-bold italic" v-if="$slots.modalMessage">
+                    <slot name="modalMessage"></slot>
+                </div>
+                <div class="modal-content">
+                    <slot></slot>
+                </div>
+                <slot name="modal-footer"></slot>
+            </div>
+        </div>
+    </teleport>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const emit = defineEmits(['close']);
+
+defineProps({
+    modalTitle: {
+        default: '',
+        type: String
+    }
+})
+
+const toClose = ref(false)
+const closeModal = () => {
+    toClose.value = true
+    setTimeout(() => {
+        emit('close');
+    }, 500);
+}
+</script>
+
+<style>
+.modal-container {
+    animation: modalAnimation .4s forwards;
+}
+
+.to-close {
+    animation: modalCloseAnimation .4s forwards;
+}
+
+@keyframes modalAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.75);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes modalCloseAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(20px) scale(.75);
+    }
+}
+</style>

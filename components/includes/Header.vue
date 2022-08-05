@@ -21,7 +21,7 @@
             <div class="flex justify-between items-center gap-4">
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
                     <IconsLogo class="w-10" />
-                    <span class="hidden md:block text-2xl">Ideal Credit</span>
+                    <span class="hidden md:block text-2xl font-extralight">Ideal Credit</span>
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">

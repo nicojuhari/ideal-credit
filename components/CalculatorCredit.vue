@@ -33,6 +33,17 @@ import { ref, watchEffect, computed } from 'vue'
         return tarife.comision * +creditSuma.value / 100;
     })
 
+const changeCreditSuma = (e) => {
+    console.log(e.target.value)
+    if (e.target.value < 1000) {
+        creditSuma.value = 1000
+        e.target.value = 1000
+    }
+    
+    if (e.target.value > 300000) return creditSuma.value = 300000
+    creditSuma.value = e.target.value
+}
+
     const creditPenalitate = computed(() => {
         return (tarife.penalitate * +creditSuma.value / 100).toFixed(2)
     })
@@ -40,61 +51,83 @@ import { ref, watchEffect, computed } from 'vue'
 
 </script>
 <template>
-    <section>
-        <div class="container">
-            <h2 class="text-center my-8 text-2xl">Calculator de Credit</h2>
-            <div class="flex flex-col md:flex-row gap-6 justify-center my-10 max-w-xl w-full mx-auto">
-                <div class="flex-grow">
-                    <div class="mb-1">Suma</div>
-                    <input type="number" v-model="creditSuma" class="border rounded p-2 border-gray-800 w-full"
-                        step="100" min="1000" />
-                    <div class="text-sm text-center text-brand-color font-semibold">1 000 - 300 000 MDL</div>
+    <h2 class="subtitle text-center mb-8">Calculator de Credit</h2>
+    <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
+        <div>
+            <div class="mt-6">
+                <div class="flex gap-4 justify-between items-center mb-2">
+                    <div>Suma</div>
+                    <div class=""><span class="font-semibold text-3xl">{{creditSuma}}</span> <span
+                            class="text-white text-opacity-60">MDL</span>
+                    </div>
                 </div>
-                <div class="flex-grow">
-                    <div class="mb-1">Perioada</div>
-                    <input type="number" v-model="creditTermen" class="border rounded p-2 border-gray-800 w-full"
-                        step="1" min="6" />
-                    <div class="text-sm text-center text-brand-color font-semibold">6 - 48 luni</div>
-                </div>
-            </div>
-            <div class="text-center my-5 text-lg">Costurile creditului</div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 my-6 justify-center flex-wrap text-center">
-                <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>Comision de acordare</div>
-                    <div>0 MDL</div>
-                </div>
-                <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>Penalitate</div>
-                    <div>0.04 %/zi</div>
-                </div>
-                <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>Dobinda lunara</div>
-                    <div>{{ tarife.dobinda[0] }} %</div>
-                </div>
-                <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>Dobinda anuala medie</div>
-                    <div>{{ tarife.dobinda[0] * 12 }} %</div>
+                <input id="medium-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
+                    class="mb-2 w-full h-2 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                <div class="flex gap-6 justify-between text-white text-opacity-60">
+                    <div>min 1000</div>
+                    <div>max 300 000 </div>
                 </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 my-6 justify-center flex-wrap text-center">
-                <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>Dobinda totala</div>
-                    <div>{{ dobindaTotal }} MDL</div>
+            <div class="mt-6">
+                <div class="flex gap-4 justify-between items-center mb-2">
+                    <div>Termen</div>
+                    <div class=""><span class="font-semibold text-3xl">{{ creditTermen }}</span> <span
+                            class="text-white text-opacity-60">luni</span>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-4 p-4 items-center justify-center border rounded">
-                    <div>DAE</div>
-                    <div>{{ dae }} %</div>
+                <input id="medium-range" type="range" v-model="creditTermen" min="6" max="48" step="1"
+                    class="mb-2 w-full h-2 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                <div class="flex gap-6 justify-between text-white text-opacity-60">
+                    <div>min 6</div>
+                    <div>max 48 </div>
                 </div>
+            </div>
+
+        </div>
+        <div class="flex flex-col">
+            <div class="grid place-content-center mt-6">
                 <div
-                    class="flex flex-col gap-4 p-4 items-center justify-center border rounded col-span-2 md:col-span-1">
-                    <div>Costul total al creditului</div>
-                    <div>{{ dobindaTotal + creditComision }} MDL</div>
+                    class="w-44 h-44 grid place-content-center gap-4 border-4 rounded-full text-center border-white border-opacity-30">
+                    <div class="text-white text-opacity-60">Prima rată</div>
+                    <div class="text-brand-color subtitle">{{ graficCalculat[0].credit_rata +
+                        graficCalculat[0].dobinda_rata}}</div>
+                    <div><span class="text-white text-opacity-60">MDL</span></div>
                 </div>
             </div>
-            <div>
-                <div class="text-center my-5 text-lg">Graficul de rambursare</div>
-                <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
+            <div class="flex justify-center mt-6">
+                <div class="btn btn-primary">Vezi toate ratele</div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="text-center my-5 text-2xl mt-12">Costurile creditului</div>
+    <div class="grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-2">
+        <div>
+            <div class="flex gap-6 justify-between">
+                <div>Comision de acordare</div>
+                <div>0 MDL</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-4">
+                <div>Penalitate pe zi</div>
+                <div>0.04 %</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-4">
+                <div>Dobinda lunară</div>
+                <div>{{ tarife.dobinda[0] }} %</div>
+            </div>
+        </div>
+        <div>
+            <div class="flex gap-6 justify-between">
+                <div>Dobinda anuală medie</div>
+                <div>{{ tarife.dobinda[0] * 12 }} %</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-4">
+                <div>DAE<span class="text-sm"> (Dobinda anuală efectivă)</span></div>
+                <div>{{ dae }} %</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-4">
+                <div>Costul total al creditului</div>
+                <div>{{ dobindaTotal + creditComision }} MDL</div>
+            </div>
+        </div>
+    </div>
 </template>
