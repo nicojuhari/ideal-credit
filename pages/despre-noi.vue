@@ -3,6 +3,11 @@
 </script>
 <template>
     <div>
+
+        <Head>
+            <Title>Despre compania de creditare Ideal Credit</Title>
+            <Meta name="description" content="Despre compania de creditare Ideal Credit ce oferă credite rapide de consum și pentru business" />
+        </Head>
         <div class="container">
             <h1 class="title text-center my-10 md:my-20"> Despre noi</h1>
             <p>Organizația de Creditare Nebancară Ideal Credit SRL

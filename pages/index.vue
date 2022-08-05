@@ -2,13 +2,16 @@
 
 </script>
 <template>
-    <div>
+    <div class="mb-6">
         <HomeHeroComp />
-        <div class="container mb-6">
+        <div class="container">
             <div class="card dark">
                 <CalculatorCredit />
             </div>
-            <CreditConditions class="mt-6"/>
+        </div>
+        <div class="container">
+            <div class="subtitle text-center mt-24 md:mt-36">OCN Ideal Credit SRL<br>oferă credite rapide de consum și business</div>
+            <CreditConditions class="mt-12 md:mt-24" />
         </div>
     </div>
 </template>
