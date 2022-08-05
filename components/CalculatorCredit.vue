@@ -3,12 +3,14 @@ import { ref, watchEffect, computed } from 'vue'
     import { createGrafic } from '../utils/grafic';
     import { calcDAE } from '../utils/dae'
 
-    const creditSuma = ref(5000)
+    const creditSuma = ref(10000)
     const creditTermen = ref(12)
 
     const graficCalculat = ref(null)
     const dae = ref(0)
     const dobindaTotal = ref(0)
+
+    const showModal= ref(false)
 
 
     const tarife = {
@@ -62,7 +64,7 @@ const changeCreditSuma = (e) => {
                     </div>
                 </div>
                 <input id="medium-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
-                    class="mb-2 w-full h-2 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                    class="mb-2 w-full h-1 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
                 <div class="flex gap-6 justify-between text-white text-opacity-60">
                     <div>min 1000</div>
                     <div>max 300 000 </div>
@@ -76,13 +78,12 @@ const changeCreditSuma = (e) => {
                     </div>
                 </div>
                 <input id="medium-range" type="range" v-model="creditTermen" min="6" max="48" step="1"
-                    class="mb-2 w-full h-2 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                    class="mb-2 w-full h-1 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
                 <div class="flex gap-6 justify-between text-white text-opacity-60">
                     <div>min 6</div>
                     <div>max 48 </div>
                 </div>
             </div>
-
         </div>
         <div class="flex flex-col">
             <div class="grid place-content-center mt-6">
@@ -95,11 +96,11 @@ const changeCreditSuma = (e) => {
                 </div>
             </div>
             <div class="flex justify-center mt-6">
-                <div class="btn btn-primary">Vezi toate ratele</div>
+                <div class="btn btn-primary" @click="showModal = true">Vezi toate ratele</div>
             </div>
         </div>
     </div>
-    <div class="text-center my-5 text-2xl mt-12">Costurile creditului</div>
+    <div class="text-center text-2xl mt-12 mb-6">Costurile creditului</div>
     <div class="grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-2">
         <div>
             <div class="flex gap-6 justify-between">
@@ -130,4 +131,7 @@ const changeCreditSuma = (e) => {
             </div>
         </div>
     </div>
+    <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Graficul de rambursare" class="text-brand-black">
+        <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
+    </uiModal>
 </template>

@@ -24,10 +24,9 @@
             <ul class="pl-6">
                 <li v-for="item in docs" class="text-lg my-2 list-disc">{{ item }}.</li>
             </ul>
-            <div class="bg-brand-color mt-14 rounded py-4 px-4 bg-opacity-40 border-l-4 border-brand-color flex gap-2">
+            <div class="bg-brand-color mt-10 rounded py-4 px-4 bg-opacity-40 border-l-4 border-brand-color flex gap-2">
                 <IconsInfo class="w-5 flex-shrink-0" />
                 <div>Aceleași condiții se aplică și pentru FIDEJUSOR</div>
-
             </div>
         </div>
     </div>

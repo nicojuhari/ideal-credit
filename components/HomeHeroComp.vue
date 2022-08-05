@@ -17,6 +17,7 @@ import BaseButton from './ui/BaseButton.vue';
                 <!-- <BaseButton class="btn-outline w-60 md:w-auto">Calculator de credit</BaseButton> -->
             </div>
         </div>
-        <div class="text-center text-xl md:text-4xl my-10 md:my-20 text-brand-black text-opacity-60">Garantăm dobînzi avantajoase <br>și fară comisioane ascunse</div>
+        <div class="text-center text-xl md:text-3xl my-10 md:my-20 text-brand-black text-opacity-60">Garantăm dobînzi
+            avantajoase <br>și <span class="underline">fară comisioane ascunse</span></div>
     </div>
 </template>
