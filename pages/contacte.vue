@@ -11,6 +11,12 @@
         </Head>
         <div class="container">
             <h1 class="title text-center my-10 md:my-20">Contacte</h1>
+            <div>
+                <FormKit type="form" method="post" :actions="false">
+                    <FormKit type="text" name="nume" label="Nume"></FormKit>
+                    <FormKit type="textarea" name="message" label="Mesaj"></FormKit>
+                </FormKit>
+            </div>
 
         </div>
     </div>

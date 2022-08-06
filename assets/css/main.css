@@ -1,5 +1,5 @@
 body{
-    @apply bg-brand-gray text-brand-black;
+    @apply bg-brand-bg text-white;
 }
 
 body.menu-open, body.modal-open {
@@ -47,7 +47,7 @@ input {
 }
 
 .card {
-    @apply rounded-3xl p-6 md:p-10 shadow-md bg-white;
+    @apply rounded-3xl p-6 md:p-10 shadow-md bg-brand-black text-white;
 }
 
 .card.dark {

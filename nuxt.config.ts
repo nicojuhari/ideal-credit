@@ -18,7 +18,7 @@ export default defineNuxtConfig({
                 ],
             },
     },
-    modules: ['@nuxtjs/tailwindcss'],
+    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt'],
     css: ['@/assets/css/main.css'],
     nitro: {
         prerender: {

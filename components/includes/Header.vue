@@ -16,12 +16,12 @@
     })
 </script>
 <template>
-    <header class="border-b bg-white bg-opacity-70 sticky top-0 backdrop-blur-lg">
+    <header class="border-b border-brand-color border-opacity-20 bg-brand-bg bg-opacity-70 sticky top-0 backdrop-blur-lg">
         <div class="container py-4">
             <div class="flex justify-between items-center gap-4">
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
                     <IconsLogo class="w-10" />
-                    <span class="hidden md:block text-2xl font-extralight">Ideal Credit</span>
+                    <span class="hidden md:block text-xl font-extralight uppercase">Ideal Credit</span>
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">

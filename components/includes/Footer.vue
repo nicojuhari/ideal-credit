@@ -13,7 +13,7 @@
     ]
 </script>
 <template>
-    <footer class="bg-brand-black text-white">
+    <footer class="bg-brand-black text-white border-t border-brand-color border-opacity-20">
         <div class="container">
             <div class="grid md:grid-cols-2 gap-4 gap-y-8 items-center py-8">
                 <div v-for="oficiu in oficii">
@@ -27,7 +27,7 @@
                     <div> Tel: {{ oficiu.mobile}}</div>
                 </div>
             </div>
-            <div class="flex justify-center border-t border-brand-color border-opacity-50 p-4">
+            <div class="flex justify-center p-4">
                 &copy; {{ new Date().getFullYear() }} - Ideal Credit SRL
             </div>
         </div>
