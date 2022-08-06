@@ -53,7 +53,7 @@ const changeCreditSuma = (e) => {
 
 </script>
 <template>
-    <h2 class="subtitle text-center mb-8">Calculator de Credit</h2>
+    <h3 class="subtitle text-center mb-8">Calculator de Credit</h3>
     <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
         <div>
             <div class="mt-6">

@@ -6,6 +6,10 @@ body.menu-open, body.modal-open {
     overflow: hidden;
 }
 
+body main {
+    @apply pb-12;
+}
+
 .container {
     @apply mx-auto max-w-5xl;
     width: calc(100% - 2rem)
@@ -21,7 +25,11 @@ body.menu-open, body.modal-open {
 
 .subtitle {
     @apply font-medium text-2xl md:text-4xl;
-} 
+}
+
+h2.subtitle {
+    @apply mt-24 md:mt-40 mb-12 md:mb-20 max-w-3xl mx-auto;
+}
 
 section {
     @apply py-8 md:py-12
@@ -46,8 +54,25 @@ input {
     @apply rounded-full border py-2 px-4 w-full border-brand-black;
 }
 
+textarea {
+    @apply rounded py-2 px-4 w-full h-24 max-h-36;
+    min-height: 6rem;
+}
+
+.formkit-outer {
+    @apply mt-6;
+}
+
+.formkit-messages {
+    @apply text-red-600;
+}
+
 .card {
-    @apply rounded-3xl p-6 md:p-10 shadow-md bg-brand-black text-white;
+    @apply rounded-3xl p-6 md:p-10 shadow-md bg-brand-black;
+}
+
+.card.light {
+    @apply bg-brand-gray text-brand-black;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -74,5 +99,5 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .cs-notice {
-    @apply bg-white mt-10 rounded py-4 px-4 bg-opacity-5 border-l-4 border-brand-color flex gap-2
+    @apply bg-brand-color mt-10 rounded py-4 px-4 bg-opacity-10 border-l-4 border-brand-color flex gap-2 text-brand-color
 }
