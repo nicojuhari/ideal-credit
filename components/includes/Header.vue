@@ -34,7 +34,7 @@
                             <IconsBurgerMenu />
                         </div>
                         <div v-if="showMenu" @click="toggleMenu"
-                            class="fixed left-0 top-0 bg-white bg-opacity-20 w-full h-screen z-50"></div>
+                            class="fixed left-0 top-0 bg-white bg-opacity-10 w-full h-screen z-50"></div>
                         <transition name="menu-slide">
                             <div v-if="showMenu"
                                 class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col">
