@@ -57,7 +57,7 @@ const changeCreditSuma = (e) => {
     <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
         <div>
             <div class="mt-6">
-                <div class="flex gap-4 justify-between items-center mb-2">
+                <div class="flex gap-4 justify-between items-center mb-1">
                     <div>Suma</div>
                     <div class=""><span class="font-semibold text-3xl">{{creditSuma}}</span> <span
                             class="text-white text-opacity-60">MDL</span>
@@ -65,13 +65,13 @@ const changeCreditSuma = (e) => {
                 </div>
                 <input id="medium-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
                     class="mb-2 w-full h-1 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
-                <div class="flex gap-6 justify-between text-white text-opacity-60">
-                    <div>min 1000</div>
-                    <div>max 300 000 </div>
+                <div class="flex gap-6 justify-between text-white text-opacity-60 text-sm">
+                    <div>1000</div>
+                    <div>300 000</div>
                 </div>
             </div>
             <div class="mt-6">
-                <div class="flex gap-4 justify-between items-center mb-2">
+                <div class="flex gap-4 justify-between items-center mb-1">
                     <div>Termen</div>
                     <div class=""><span class="font-semibold text-3xl">{{ creditTermen }}</span> <span
                             class="text-white text-opacity-60">luni</span>
@@ -79,9 +79,9 @@ const changeCreditSuma = (e) => {
                 </div>
                 <input id="medium-range" type="range" v-model="creditTermen" min="6" max="48" step="1"
                     class="mb-2 w-full h-1 bg-white bg-opacity-80 rounded-lg appearance-none cursor-pointer border-0 p-0">
-                <div class="flex gap-6 justify-between text-white text-opacity-60">
-                    <div>min 6</div>
-                    <div>max 48 </div>
+                <div class="flex gap-6 justify-between text-white text-opacity-60 text-sm">
+                    <div>6</div>
+                    <div>48</div>
                 </div>
             </div>
         </div>
@@ -96,22 +96,24 @@ const changeCreditSuma = (e) => {
                 </div>
             </div>
             <div class="flex justify-center mt-6">
-                <div class="btn btn-primary" @click="showModal = true">Vezi toate ratele</div>
+                <div class="bg-brand-color text-brand-color bg-opacity-5 cursor-pointer py-2 px-4 rounded-full text-opacity-70"
+                    @click="showModal = true">Vezi
+                    toate ratele</div>
             </div>
         </div>
     </div>
     <div class="text-center text-2xl mt-12 mb-6">Costurile creditului</div>
-    <div class="grid gap-4 md:gap-10 grid-cols-1 md:grid-cols-2">
+    <div class="grid gap-3 md:gap-10 grid-cols-1 md:grid-cols-2">
         <div>
             <div class="flex gap-6 justify-between">
                 <div>Comision de acordare</div>
                 <div>0 MDL</div>
             </div>
-            <div class="flex gap-6 justify-between mt-4">
+            <div class="flex gap-6 justify-between mt-3">
                 <div>Penalitate pe zi</div>
                 <div>0.04 %</div>
             </div>
-            <div class="flex gap-6 justify-between mt-4">
+            <div class="flex gap-6 justify-between mt-3">
                 <div>Dobinda lunară</div>
                 <div>{{ tarife.dobinda[0] }} %</div>
             </div>
@@ -121,17 +123,18 @@ const changeCreditSuma = (e) => {
                 <div>Dobinda anuală medie</div>
                 <div>{{ tarife.dobinda[0] * 12 }} %</div>
             </div>
-            <div class="flex gap-6 justify-between mt-4">
+            <div class="flex gap-6 justify-between mt-3">
                 <div>DAE<span class="text-sm"> (Dobinda anuală efectivă)</span></div>
                 <div>{{ dae }} %</div>
             </div>
-            <div class="flex gap-6 justify-between mt-4">
+            <div class="flex gap-6 justify-between mt-3">
                 <div>Costul total al creditului</div>
                 <div>{{ dobindaTotal + creditComision }} MDL</div>
             </div>
         </div>
     </div>
-    <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Graficul de rambursare" class="text-brand-black">
+    <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Graficul de rambursare*">
         <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
+        <div class="mt-6 text-brand-color">* Graficul de rambursare este doar un exemplu</div>
     </uiModal>
 </template>

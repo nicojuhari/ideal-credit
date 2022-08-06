@@ -16,7 +16,8 @@
     })
 </script>
 <template>
-    <header class="border-b border-brand-color border-opacity-20 bg-brand-bg bg-opacity-70 sticky top-0 backdrop-blur-lg">
+    <header
+        class="border-b border-brand-color border-opacity-20 bg-brand-bg bg-opacity-70 sticky top-0 backdrop-blur-lg z-10">
         <div class="container py-4">
             <div class="flex justify-between items-center gap-4">
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
@@ -29,22 +30,22 @@
                         <NuxtLink to="/contacte">Contacte</NuxtLink>
                     </nav>
                     <div class="flex md:hidden">
-                        <div @click="toggleMenu" class="p-2 bg-brand-gray cursor-pointer rounded-full">
+                        <div @click="toggleMenu" class="p-2 bg-brand-black cursor-pointer rounded-full">
                             <IconsBurgerMenu />
                         </div>
                         <div v-if="showMenu" @click="toggleMenu"
-                            class="fixed left-0 top-0 bg-brand-black bg-opacity-10 w-full h-screen z-50"></div>
+                            class="fixed left-0 top-0 bg-white bg-opacity-20 w-full h-screen z-50"></div>
                         <transition name="menu-slide">
                             <div v-if="showMenu"
-                                class="absolute top-0 left-0 bg-white mobile-dropdown shadow-md w-full flex flex-col">
+                                class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col">
                                 <div class="p-4 flex justify-end">
-                                    <div class="p-2 bg-brand-gray cursor-pointer rounded-full">
+                                    <div class="p-2 bg-brand-black cursor-pointer rounded-full">
                                         <IconsClose class="cursor-pointer m-auto" @click="toggleMenu" />
                                     </div>
                                 </div>
                                 <NuxtLink to="/"
                                     class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
-                                   Pagina Principală
+                                    Pagina Principală
                                 </NuxtLink>
                                 <NuxtLink to="/despre-noi"
                                     class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
@@ -56,7 +57,7 @@
                                 </NuxtLink>
                                 <div class="p-4 mt-auto mb-5 flex flex-col items-center text-center">
                                     <a href="tel:+37378805060" title="+373 78 80 50 60"
-                                        class="py-2 px-4 bg-brand-color bg-opacity-20 rounded-full flex gap-4 items-center justify-center max-w-max">
+                                        class="py-2.5 px-4 bg-brand-color bg-opacity-20 rounded-full flex gap-4 items-center justify-center max-w-max">
                                         <IconsPhone class="w-6 h-6 text-brand-color phone" />
                                         <div class="text-brand-color tracking-widest">078 80 50 60</div>
                                     </a>

@@ -50,10 +50,6 @@ input {
     @apply rounded-3xl p-6 md:p-10 shadow-md bg-brand-black text-white;
 }
 
-.card.dark {
-    @apply bg-brand-black text-white
-}
-
 input[type="range"]::-webkit-slider-thumb {
     width: 20px;
     -webkit-appearance: none;
@@ -62,4 +58,21 @@ input[type="range"]::-webkit-slider-thumb {
     cursor: ew-resize;
     border-radius: 50%;
     @apply bg-brand-color;
+}
+
+.cs-blur::after {
+    content: "";
+    position: absolute;
+    right: 20%;
+    top: 20%;
+    height: 16rem;
+    width: 16rem;
+    opacity: .25;
+    filter: blur(100px);
+    z-index: -1;
+    @apply bg-brand-color;
+}
+
+.cs-notice {
+    @apply bg-white mt-10 rounded py-4 px-4 bg-opacity-5 border-l-4 border-brand-color flex gap-2
 }

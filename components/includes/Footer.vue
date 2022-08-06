@@ -17,7 +17,7 @@
         <div class="container">
             <div class="grid md:grid-cols-2 gap-4 gap-y-8 items-center py-8">
                 <div v-for="oficiu in oficii">
-                    <div class="text-xl mb-4 opacity-60">
+                    <div class="text-xl mb-4 subtitle">
                         {{ oficiu.title }}
                     </div>
                     <div class="flex gap-2 mb-2">
