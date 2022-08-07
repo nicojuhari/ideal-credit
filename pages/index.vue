@@ -19,9 +19,8 @@ const howToPay = [
             <CreditConditions />
         </div>
         <div class="container cs-blur relative">
-            <h2 class="subtitle text-center mt-24 md:mt-36">Reduceri la dobîndă pîna la 25% pentru
-                clienții care achită în termen
-                creditul. </h2>
+            <h2 class="subtitle text-center mt-24 md:mt-36">Reduceri la dobîndă pentru
+                clienții cu istorie creditară pozitivă </h2>
             <div class="card mt-16 md:mt-24">
                 <h3 class="subtitle text-center mb-8">Metode de achitare</h3>
                 <ul class="pl-6">
