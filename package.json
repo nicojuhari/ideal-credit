@@ -8,10 +8,10 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.1.3",
-    "nuxt": "3.0.0-rc.6"
+    "nuxt": "^3.0.0-rc.10"
   },
   "dependencies": {
-    "@formkit/nuxt": "^1.0.0-beta.10",
+    "@formkit/nuxt": "^1.0.0-beta.11-c95e605",
     "@formkit/vue": "^1.0.0-beta.10",
     "@vueuse/core": "^9.1.0"
   }

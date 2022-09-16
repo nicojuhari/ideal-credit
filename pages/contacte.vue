@@ -52,16 +52,31 @@
         </Head>
         <div class="container">
             <h1 class="title text-center my-10 md:my-20">Contacte</h1>
-            <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
-                <div class="card light grid place-content-center grid-cols-1">
-                    <div class="flex flex-col gap-8 font-medium">
-                        <div class="text-2xl">Tel: (+373) 243 93 222</div>
-                        <div class="text-2xl">Mob: (+373) 78 80 50 60</div>
-                        <div class="text-2xl">Email: info@idealcredit.md</div>
+            <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-1 max-w-md mx-auto">
+                <div class="grid grid-cols-1">
+                    <div class="flex flex-col gap-8 font-light text-3xl">
+                        <div class="flex gap-4 items-center justify-around">
+                            <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
+                                <IconsPhone class="w-6 text-brand-color"/>
+                            </div>
+                            <a href="tel:+37324393222"><span class="opacity-50">(+373)</span> 243 93 222</a>
+                        </div>
+                        <div class="flex gap-4 items-center justify-around">
+                            <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
+                                <IconsMobile class="w-6 text-brand-color"/>
+                            </div>
+                            <a href="tel:+37378805060"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
+                        </div>
+                        <div class="flex gap-4 items-center justify-around">
+                            <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
+                                <IconsMail class="w-6 text-brand-color"/>
+                            </div>
+                            <a href="mailto:info@idealcredit.md">info@idealcredit.md</a>
+                        </div>
                     </div>
                 </div>
-                <div class="card relative">
-                    <div class="subtitle text-center">Scrie-ne</div>
+                <div class="card relative mt-20">
+                    <div class="subtitle text-center">Scrie-ne un mesaj</div>
                     <div v-if="loading"
                         class="h-full w-full grid place-content-center absolute z-10 top-0 left-0 bg-white bg-opacity-10 rounded-3xl">
                         <UiLoading class="mx-auto" />
