@@ -13,6 +13,7 @@
   "dependencies": {
     "@formkit/nuxt": "^1.0.0-beta.11-c95e605",
     "@formkit/vue": "^1.0.0-beta.10",
-    "@vueuse/core": "^9.1.0"
+    "@vueuse/core": "^9.1.0",
+    "ideal-credit": "^0.1.0"
   }
 }

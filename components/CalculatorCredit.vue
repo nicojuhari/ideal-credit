@@ -1,7 +1,8 @@
 <script setup>
-import { ref, watchEffect, computed } from 'vue'
-    import { createGrafic } from '../utils/grafic';
-    import { calcDAE } from '../utils/dae'
+    import { ref, watchEffect, computed } from 'vue'
+    import { createGrafic, calcDAE } from 'ideal-credit'
+    // import { createGrafic } from '../utils/grafic';
+    // import { calcDAE } from '../utils/dae'
 
     const creditSuma = ref(10000)
     const creditTermen = ref(12)
@@ -26,7 +27,7 @@ import { ref, watchEffect, computed } from 'vue'
         
         if(creditSuma.value < 1000) creditSuma.value = 1000
         if(creditSuma.value > 300000) creditSuma.value = 300000
-        graficCalculat.value = createGrafic(creditSuma.value, creditTermen.value, 4, new Date())
+        graficCalculat.value = createGrafic(creditSuma.value, creditTermen.value, 4)
         dae.value = calcDAE(graficCalculat.value, creditSuma.value)
         dobindaTotal.value = graficCalculat.value.reduce((acc, rata) => rata.dobinda_rata + acc, 0)
     })
@@ -34,22 +35,6 @@ import { ref, watchEffect, computed } from 'vue'
     const creditComision = computed(() => {
         return tarife.comision * +creditSuma.value / 100;
     })
-
-const changeCreditSuma = (e) => {
-    console.log(e.target.value)
-    if (e.target.value < 1000) {
-        creditSuma.value = 1000
-        e.target.value = 1000
-    }
-    
-    if (e.target.value > 300000) return creditSuma.value = 300000
-    creditSuma.value = e.target.value
-}
-
-    const creditPenalitate = computed(() => {
-        return (tarife.penalitate * +creditSuma.value / 100).toFixed(2)
-    })
-
 
 </script>
 <template>
