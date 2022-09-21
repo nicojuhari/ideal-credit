@@ -55,19 +55,19 @@
             <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-1 max-w-md mx-auto">
                 <div class="grid grid-cols-1">
                     <div class="flex flex-col gap-8 font-light text-3xl">
-                        <div class="flex gap-4 items-center justify-around">
+                        <div class="flex gap-4 items-center justify-between">
                             <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
                                 <IconsPhone class="w-6 text-brand-color"/>
                             </div>
                             <a href="tel:+37324393222"><span class="opacity-50">(+373)</span> 243 93 222</a>
                         </div>
-                        <div class="flex gap-4 items-center justify-around">
+                        <div class="flex gap-4 items-center justify-between">
                             <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
                                 <IconsMobile class="w-6 text-brand-color"/>
                             </div>
                             <a href="tel:+37378805060"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
                         </div>
-                        <div class="flex gap-4 items-center justify-around">
+                        <div class="flex gap-4 items-center justify-between">
                             <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
                                 <IconsMail class="w-6 text-brand-color"/>
                             </div>
