@@ -13,7 +13,7 @@
     ]
 </script>
 <template>
-    <footer class="bg-brand-black text-white border-t border-brand-color border-opacity-20">
+    <footer class="bg-brand-black text-white border-t border-brand-color border-opacity-10">
         <div class="container">
             <div class="grid md:grid-cols-2 gap-4 gap-y-8 items-center py-8">
                 <div v-for="oficiu in oficii">

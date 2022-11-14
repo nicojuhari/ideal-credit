@@ -17,7 +17,7 @@
 </script>
 <template>
     <header
-        class="border-b border-brand-color border-opacity-20 bg-brand-bg bg-opacity-70 sticky top-0 backdrop-blur-lg z-10">
+        class="border-b border-brand-color border-opacity-10 bg-brand-bg bg-opacity-70 sticky top-0 backdrop-blur-lg z-10">
         <div class="container py-4">
             <div class="flex justify-between items-center gap-4">
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
@@ -26,6 +26,7 @@
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">
+                        <NuxtLink to="/refinantare-credite">Refinanțare</NuxtLink>
                         <NuxtLink to="/despre-noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte">Contacte</NuxtLink>
                     </nav>
@@ -46,6 +47,10 @@
                                 <NuxtLink to="/"
                                     class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
                                     Pagina Principală
+                                </NuxtLink>
+                                <NuxtLink to="/refinantare-credite"
+                                    class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
+                                    Refinanțare
                                 </NuxtLink>
                                 <NuxtLink to="/despre-noi"
                                     class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">

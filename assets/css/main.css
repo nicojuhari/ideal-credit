@@ -16,7 +16,7 @@ body main {
 }
 
 .hero-title {
-    @apply font-bold text-5xl md:text-8xl
+    @apply font-bold text-5xl md:text-8xl leading-tight  
 }
 
 .title {
@@ -92,10 +92,16 @@ input[type="range"]::-webkit-slider-thumb {
     top: 20%;
     height: 16rem;
     width: 16rem;
-    opacity: .25;
+    opacity: .2;
     filter: blur(100px);
     z-index: -1;
     @apply bg-brand-color;
+}
+
+.cs-blur.cs-blur--center::after {
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
 }
 
 .cs-notice {
