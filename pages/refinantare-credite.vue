@@ -13,7 +13,7 @@ useHead({
             <h1 class="text-center hero-title">Refinanțare Credite</h1>
             <div class="text-2xl md:text-4xl text-center mt-20">cu <span class="text-[90px] md:text-[120px] font-bold">0%</span> comision</div>
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center md:items-end mt-12 md:mt-16">
-                <UiPhoneButton/>
+                <UiPhoneButton id="main-phone"/>
             </div>
         </div>
         <div class="container">

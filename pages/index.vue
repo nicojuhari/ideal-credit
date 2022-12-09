@@ -5,6 +5,12 @@ const howToPay = [
     'La orice oficiu poștal din Republica Moldova',
 
 ]
+useHead({
+    
+    meta: [
+        { name: 'description', content: 'Credite rapide de consum și pentru business, Chișinău, Republica Moldova. Oferim credite fără comisioane ascunse. Pachet minim de documente, posibil și doar cu buletinul.' },
+    ],
+})
 </script>
 <template>
     <div>
