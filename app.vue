@@ -5,6 +5,7 @@
       <NuxtPage />
     </main>
     <IncludesFooter class="mt-auto"/>
+    <LazySnowFlakes></LazySnowFlakes>
   </div>
 </template>
 <script setup>
