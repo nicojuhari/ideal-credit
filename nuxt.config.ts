@@ -21,8 +21,15 @@ export default defineNuxtConfig({
                 ],
             },
     },
-    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt'],
+    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap'],
     css: ['@/assets/css/main.css'],
+    runtimeConfig: {
+        siteUrl: 'https://idealcredit.md',
+    },
+    sitemap: {
+        hostname: "https://idealcredit.md",
+        trailingSlash: false
+    }
     // nitro: {
     //     prerender: {
     //     routes: ['/', '/despre-noi', '/contacte']
