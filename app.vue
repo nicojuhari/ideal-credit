@@ -5,16 +5,15 @@
       <NuxtPage />
     </main>
     <IncludesFooter class="mt-auto"/>
-    <LazySnowFlakes></LazySnowFlakes>
   </div>
 </template>
 <script setup>
 
-const nuxtApp = useNuxtApp()
+// const nuxtApp = useNuxtApp()
 
-nuxtApp.hook("page:finish", () => {
-  window.scrollTo(0, 0)
-})
+// nuxtApp.hook("page:finish", () => {
+//   window.scrollTo(0, 0)
+// })
 
   //or create a plugin
   //https://github.com/nuxt/framework/discussions/1661
