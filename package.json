@@ -7,13 +7,13 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "nuxt": "^3.0.0",
-    "nuxt-simple-sitemap": "^0.5.8"
+    "@nuxtjs/tailwindcss": "^6.6.6",
+    "nuxt": "^3.4.1",
+    "nuxt-simple-sitemap": "^2.4.11"
   },
   "dependencies": {
-    "@formkit/nuxt": "^1.0.0-beta.11",
-    "@formkit/vue": "^1.0.0-beta.10",
+    "@formkit/nuxt": "^0.16.4",
+    "@formkit/vue": "^0.16.4",
     "ideal-credit": "^0.2.3"
   }
 }
