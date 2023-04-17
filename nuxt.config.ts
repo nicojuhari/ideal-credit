@@ -1,13 +1,10 @@
-// import { defineNuxtConfig } from 'nuxt'
-
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     app: {
         head: { 
                 htmlAttrs: {
                     lang: 'ro'
                 },
-                title: 'Credite rapide de consum și pentru business - Ideal Credit',
+                title: 'Credite rapide pentru nevoi personale și afaceri - Ideal Credit',
                 link: [
                     { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                     { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
@@ -15,8 +12,8 @@ export default defineNuxtConfig({
                     { rel: 'apple-touch-icon', sizes:"180x180", href:"/apple-touch-icon.png" }
                 ],
                 meta: [
-                    { name: 'description', content: 'Credite rapide de consum și pentru business, Chișinău, Republica Moldova' },
-                    { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite Chișinău, credite md, credite pentru business' },
+                    { name: 'description', content: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova cu dobânzi avantajoase și fără comisioane ascunse' },
+                    { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
                     { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"}
                 ],
             },
@@ -30,9 +27,4 @@ export default defineNuxtConfig({
         hostname: "https://idealcredit.md",
         trailingSlash: false
     }
-    // nitro: {
-    //     prerender: {
-    //     routes: ['/', '/despre-noi', '/contacte']
-    //     }
-    // }
 })

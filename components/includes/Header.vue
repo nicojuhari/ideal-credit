@@ -22,13 +22,14 @@
             <div class="flex justify-between items-center gap-4">
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
                     <IconsLogo class="w-10" />
-                    <span class="hidden md:block text-xl font-extralight uppercase">Ideal Credit</span>
+                    <h2 class="text-lg">Ideal Credit</h2>
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">
-                        <NuxtLink to="/refinantare-credite">Refinanțare</NuxtLink>
+                        <NuxtLink to="/refinantare-credite" title="Refinanțare Credite">Refinanțare</NuxtLink>
                         <NuxtLink to="/despre-noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte">Contacte</NuxtLink>
+                        <UiPhoneButton/>
                     </nav>
                     <div class="flex md:hidden">
                         <div @click="toggleMenu" class="p-2 bg-brand-black cursor-pointer rounded-full">

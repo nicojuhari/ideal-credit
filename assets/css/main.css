@@ -1,5 +1,5 @@
 body{
-    @apply bg-brand-bg text-white;
+    @apply bg-brand-bg text-brand-white-smoke font-light;
 }
 
 body.menu-open, body.modal-open {
@@ -7,7 +7,7 @@ body.menu-open, body.modal-open {
 }
 
 body main {
-    @apply pb-12;
+    /* @apply pb-12; */
 }
 
 .container {
@@ -16,23 +16,21 @@ body main {
 }
 
 .hero-title {
-    @apply font-bold text-5xl md:text-8xl leading-tight  
+    @apply font-bold text-5xl md:text-8xl leading-tight text-white; 
 }
 
 .title {
-    @apply font-semibold text-3xl md:text-6xl
+    @apply font-semibold text-3xl md:text-5xl
 }
 
 .subtitle {
     @apply font-medium text-2xl md:text-4xl;
 }
 
-h2.subtitle {
-    @apply mt-24 md:mt-40 mb-12 md:mb-20 max-w-3xl mx-auto;
-}
+
 
 section {
-    @apply py-8 md:py-12
+    @apply py-12 md:py-16 
 }
 
 p {
@@ -40,14 +38,17 @@ p {
 }
 
 .btn {
-    @apply h-12 px-8 rounded-full flex gap-3 items-center text-xl max-w-max;
+    @apply h-10 px-8 rounded-full inline-flex gap-3 items-center text-lg;
 }
 .btn-primary {
-    @apply bg-brand-color text-brand-gray
+    @apply bg-brand-white-smoke text-brand-black;
+}
+.btn-primary.btn-light {
+    @apply bg-opacity-10 text-brand-white-smoke ;
 }
 
-.btn-outline {
-    @apply border-2 border-brand-black text-brand-black bg-transparent
+.btn-secondary {
+    @apply bg-brand-color text-brand-color bg-opacity-20
 }
 
 input {
@@ -72,7 +73,11 @@ textarea {
 }
 
 .card.light {
-    @apply bg-brand-gray text-brand-black;
+    @apply bg-[#FBF5F3] text-brand-black;
+}
+
+.card-title {
+    @apply font-medium text-2xl md:text-4xl mb-6 md:mb-8;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -85,25 +90,72 @@ input[type="range"]::-webkit-slider-thumb {
     @apply bg-brand-color;
 }
 
+.input-calculator {
+    @apply bg-transparent px-2 text-white focus:bg-gray-100  hover:bg-gray-100 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 border-0 outline-none font-semibold text-3xl w-[8.5rem] text-right;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input-calculator::-webkit-outer-spin-button,
+.input-calculator::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.cs-blur {
+    z-index: 1;
+    position: relative;
+    --cs-blur-top: auto;
+    --cs-blur-right: auto;
+    --cs-blur-bottom: auto;
+    --cs-blur-left: auto;
+}
 .cs-blur::after {
     content: "";
     position: absolute;
-    right: 20%;
-    top: 20%;
-    height: 16rem;
-    width: 16rem;
-    opacity: .2;
-    filter: blur(100px);
+    top: var(--cs-blur-top);
+    right: var(--cs-blur-right);
+    bottom: var(--cs-blur-bottom);
+    left: var(--cs-blur-left);
+    height: 20rem;
+    width: 20rem;
+    opacity: .1;
     z-index: -1;
+    filter: blur(100px);
     @apply bg-brand-color;
+    transform: translate(0, -50%);
+}
+.cs-blur.cs-blur--right::after {
+    --cs-blur-right: 0;
+}
+
+.cs-blur.cs-blur--top::after {
+    --cs-blur-top: 0;
 }
 
 .cs-blur.cs-blur--center::after {
-    right: 50%;
-    top: 50%;
+    --cs-blur-right: 50%;
+    --cs-blur-top: 50%;
     transform: translate(50%, -50%);
 }
 
 .cs-notice {
     @apply bg-brand-color mt-10 rounded py-4 px-4 bg-opacity-10 border-l-4 border-brand-color flex gap-2 text-brand-color
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    max-width: 1200px;
+    background-image: linear-gradient(90deg, rgba(71, 71, 65, 0), #474741 50%, rgba(71, 71, 65, 0));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-in-squares {
+    background-color: #242424;
+    background-image: url('/tiles.svg');
 }

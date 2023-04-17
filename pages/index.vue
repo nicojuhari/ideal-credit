@@ -3,23 +3,30 @@ const howToPay = [
     'În unul din oficiile companiei Ideal Credit',
     'Prin intermediul băncii "VictoriaBank"',
     'La orice oficiu poștal din Republica Moldova',
-
 ]
-useHead({
-    
-    meta: [
-        { name: 'description', content: 'Credite rapide de consum și pentru business, Chișinău, Republica Moldova. Oferim credite fără comisioane ascunse. Pachet minim de documente, posibil și doar cu buletinul.' },
-    ],
-})
+
 </script>
 <template>
     <div>
         <HomeHeroComp />
+        <div class="divider"></div>
         <div class="container">
-            <div class="card dark">
-                <CalculatorCredit />
-            </div>
+            <TipuriCredite/>
         </div>
+        <div class="divider"></div>
+        <div class="container mt-4">
+                    <Beneficii/>
+                    <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                        <Beneficii/>
+                        <TipuriCredite/>
+                    </div> -->
+                    <div class="card mt-4 md:mt-6">
+                        <CalculatorCredit />
+                    </div>
+                </div>
+        <section>
+            
+        </section>
         <div class="container">
             <h2 class="subtitle text-center">Credite de consum persoanelor fizice<br>și pentru business</h2>
             <CreditConditions />
