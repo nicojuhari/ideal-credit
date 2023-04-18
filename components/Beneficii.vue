@@ -2,7 +2,7 @@
     let list = [
         'Dobînzi avantajoase',
         'Fără comisioane ascunse',
-        'Rapid și simplu',
+        'Reduceri pentru clienții cu istorie creditară pozitivă',
     ]
 </script>
 <template>

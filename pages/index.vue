@@ -24,11 +24,8 @@ const howToPay = [
                         <CalculatorCredit />
                     </div>
                 </div>
-        <section>
-            
-        </section>
-        <div class="container">
-            <h2 class="subtitle text-center">Credite de consum persoanelor fizice<br>și pentru business</h2>
+        <div class="container mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-6">
+            <CreditConditions />
             <CreditConditions />
         </div>
         <div class="container cs-blur relative">

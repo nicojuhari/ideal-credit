@@ -56,12 +56,13 @@
         if(isNaN(val)) {
             e.target.value = ''
         }
+        e.target.value = Math.round(val)
     }
 
 </script>
 <template>
     <div id="calculator-de-credit">
-        <h3 class="subtitle text-center mb-8">Calculator de Credit</h3>
+        <h3 class="card-title text-center">Calculator de Credit</h3>
         <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
             <div>
                 <div class="mt-6">
