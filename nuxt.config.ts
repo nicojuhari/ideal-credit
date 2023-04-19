@@ -18,7 +18,7 @@ export default defineNuxtConfig({
                 ],
             },
     },
-    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap'],
+    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-icon'],
     css: ['@/assets/css/main.css'],
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',

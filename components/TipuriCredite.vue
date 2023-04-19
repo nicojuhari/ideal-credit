@@ -1,24 +1,18 @@
 <script setup>
 let credits = [
-    { name: 'Credite de consum', link: 'credite-de-consum'},
-    { name: 'Credite auto', link: 'credite-auto' },
-    { name: 'Credite ipotecare', link: 'credite-ipotecare' },
-    { name: 'Credite pentru afaceri', link: 'credite-pentru-afaceri' },
-    { name: 'Credite pentru agricultori', link: 'credite-pentru-agricultori' },
+    { name: 'Credite de consum', link: 'credite-de-consum', icon: 'ph:shopping-cart-simple-light' },
+    { name: 'Credite auto', link: 'credite-auto', icon: 'ph:car-profile-light' },
+    { name: 'Credite ipotecare', link: 'credite-ipotecare', icon: 'ph:house-line-light' },
+    { name: 'Credite pentru afaceri', link: 'credite-pentru-afaceri', icon: 'ph:chart-bar-light' }
 ]
 
-// let classes = 'px-4 py-2 rounded-full bg-white bg-opacity-10 text-lg font-light'
-let classes = 'p-4 text-lg font-light duration-300 hover:bg-white hover:bg-opacity-10 flex-grow text-center'
+let classes = 'bg-brand-raisin-black px-4 py-8 text-lg rounded-lg duration-300 hover:bg-opacity-80 flex flex-col justify-center items-center gap-6 flex-grow text-center'
 </script>
 <template>
-    <!-- <div class="card">
-        <div class="card-title text-center">Tipuri de credite</div>
-        <div class="flex gap-4 flex-wrap">
-            <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes">{{ item.name }}</nuxt-link>
-        </div>
-    </div> -->
-
-    <div class="flex  flex-wrap justify-between items-center">
-        <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes">{{ item.name }}</nuxt-link>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes" class="group">
+            <Icon :name="item.icon" class="text-brand-color w-10 h-10 group-hover:scale-110 duration-300" />
+            <span>{{ item.name }}</span>
+        </nuxt-link>
     </div>
 </template>
