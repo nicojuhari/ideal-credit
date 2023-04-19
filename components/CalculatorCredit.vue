@@ -61,23 +61,23 @@
 
 </script>
 <template>
-    <div id="calculator-de-credit">
+    <div id="calculator-de-credit" class="card">
         <h3 class="card-title text-center">Calculator de Credit</h3>
         <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
             <div>
                 <div class="mt-6">
                     <div class="flex gap-4 justify-between items-center mb-1">
                         <div>Suma</div>
-                        <div class="">
+                        <div>
                             <input type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
-                            <span class="text-white text-opacity-80 ml-2">MDL</span>
+                            <!-- <span class="text-white text-opacity-80 ml-2">MDL</span> -->
                         </div>
                     </div>
                     <input id="medium-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
-                        class="mb-2 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                        class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
-                        <div>1000</div>
-                        <div>300 000</div>
+                        <div>1000 lei</div>
+                        <div>300 000 lei</div>
                     </div>
                 </div>
                 <div class="mt-6">
@@ -85,14 +85,14 @@
                         <div>Termen</div>
                         <div class="">
                             <input type="number" :value="creditTermen" @input="validateInput" @change="validateChange($event.target.value, 'termen')" class="input-calculator" />
-                            <span class="text-white text-opacity-80 ml-2">luni</span>
+                            <!-- <span class="text-white text-opacity-80 ml-2">luni</span> -->
                         </div>
                     </div>
                     <input id="medium-range" type="range" v-model="creditTermen" min="6" max="48" step="1"
-                        class="mb-2 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                        class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
-                        <div>6</div>
-                        <div>48</div>
+                        <div>6 luni</div>
+                        <div>48 luni</div>
                     </div>
                 </div>
             </div>

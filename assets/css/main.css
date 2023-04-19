@@ -52,11 +52,11 @@ p {
 }
 
 input {
-    @apply rounded-full border py-2 px-4 w-full border-brand-black;
+    @apply rounded-lg border py-2 px-4 w-full border-brand-black outline-none;
 }
 
 textarea {
-    @apply rounded py-2 px-4 w-full h-24 max-h-36;
+    @apply rounded py-2 px-4 w-full h-24 max-h-36 outline-none;
     min-height: 6rem;
 }
 
@@ -69,7 +69,7 @@ textarea {
 }
 
 .card {
-    @apply rounded-lg px-6 py-8 md:px-10 md:py-14 shadow-md bg-brand-raisin-black;
+    @apply rounded-lg px-4 py-8 md:px-8 md:py-16 shadow-md bg-brand-raisin-black;
 }
 
 .card.light {
@@ -81,17 +81,18 @@ textarea {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    width: 20px;
+    width: 24px;
     -webkit-appearance: none;
     appearance: none;
-    height: 20px;
+    height: 24px;
     cursor: ew-resize;
     border-radius: 50%;
-    @apply bg-brand-color;
+    border: 5px solid;
+    @apply bg-brand-raisin-black border-brand-color;
 }
 
 .input-calculator {
-    @apply bg-transparent px-2 text-white focus:bg-gray-100  hover:bg-gray-100 hover:bg-opacity-10 focus:bg-opacity-10 duration-300 border-0 outline-none font-semibold text-3xl w-[8.5rem] text-right;
+    @apply rounded-lg bg-transparent px-2 text-white bg-gray-100 bg-opacity-10 border-0 outline-none font-semibold text-2xl w-[8.5rem] text-right;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -143,7 +144,7 @@ input[type=number] {
 }
 
 .cs-notice {
-    @apply bg-brand-color rounded py-2 px-4 bg-opacity-20 flex gap-4 text-brand-color items-center;
+    @apply bg-brand-color rounded py-2 px-4 bg-opacity-20 flex gap-4 text-brand-black items-center;
 }
 
 .divider {
