@@ -5,16 +5,16 @@
             <TipuriCredite/>
         </div>
         <div class="container mt-8 md:mt-14">
-            <Beneficii/>
+            <Beneficii class="md:min-h-[440px]"/>
         </div>
         <div class="container mt-8 md:mt-14">
             <CalculatorCredit />
         </div>
         <div class="container mt-8 md:mt-14">
-            <CreditConditions />
+            <CreditConditions class="md:min-h-[440px]" />
         </div>
         <div class="container mt-8 md:mt-14 mb-6">
-            <PaymentMethods />
+            <PaymentMethods class="md:min-h-[440px]" />
         </div>
     </div>
 </template>

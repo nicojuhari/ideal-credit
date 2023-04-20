@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.6",
-    "nuxt": "^3.4.1",
+    "nuxt": "^3.4.2",
     "nuxt-icon": "^0.3.3",
     "nuxt-simple-sitemap": "^2.4.11"
   },

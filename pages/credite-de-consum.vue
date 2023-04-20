@@ -15,5 +15,13 @@ useHead({
                 </h1>
             </div>
         </div>
+        <div class="container">
+            <div class="text-lg">
+                        Dacă ai planificat achiziționarea unor bunuri, o vacantă sau au intervenit cheltuieli neprevăzute, 
+                        cum ar fi facturi medicale sau reparații de locuințe, 
+                        iar resursele financiare de care dispui la moment nu sunt suficiente, 
+                        <strong>creditul de consum</strong> poate fi o soluție bună pentru a acoperi cheltuielile curente sau pentru a finanța un proiect important.
+                    </div>
+        </div>
     </div>
 </template>
