@@ -33,14 +33,14 @@
                             {{ oficiu.title }}
                         </div>
                         <div class="flex gap-4 mb-4 items-center">
-                            <div class="p-2 rounded-full bg-brand-color bg-opacity-10">
-                                <Icon name="ph:map-pin-light" class="w-6 h-6 flex-shrink-0 text-brand-color" />
+                            <div class="p-2 rounded-full bg-brand-raisin-black">
+                                <Icon name="ph:map-pin-light" class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
                             </div>
                             <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
                         </div>
                         <div class="flex gap-4 items-center">
-                            <div class="p-2 rounded-full bg-brand-color bg-opacity-10">
-                                <Icon name="ph:phone-light" class="w-6 h-6 flex-shrink-0 text-brand-color" />
+                            <div class="p-2 rounded-full bg-brand-raisin-black">
+                                <Icon name="ph:phone-light" class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
                             </div>
                             <div>{{ oficiu.mobile }}</div>
                         </div>

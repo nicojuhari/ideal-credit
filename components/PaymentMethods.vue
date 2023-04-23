@@ -18,7 +18,10 @@ const list = [
             </div>
         </div>
         <div class="-order-1 md:order-1 flex w-full">
-            <img src="/wallet.png" class="h-44 md:h-64 m-auto"/>
+            <div class="h-24 md:h-40 mb-8 m-auto">
+                <img src="/wallet.png" class="h-full m-auto"/>
+            </div>
+            <!-- <img src="/wallet.png" class="h-44 md:h-64 m-auto"/> -->
         </div>
     </div>
 </template>

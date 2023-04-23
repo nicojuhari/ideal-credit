@@ -47,6 +47,10 @@ p {
     @apply bg-opacity-10 text-brand-white-smoke ;
 }
 
+.btn-outline {
+    @apply bg-opacity-0 border-2 border-inherit text-inherit;
+}
+
 .btn-secondary {
     @apply bg-brand-color text-brand-color bg-opacity-20
 }
