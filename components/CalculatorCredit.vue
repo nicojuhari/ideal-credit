@@ -61,7 +61,8 @@
 
 </script>
 <template>
-    <div id="calculator-de-credit" class="card">
+    <div class="card relative">
+        <div id="calculator-de-credit" class="invisible absolute -z-10 -top-20 md:-top-24"></div>
         <h3 class="card-title text-center">Calculator de Credit</h3>
         <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
             <div>

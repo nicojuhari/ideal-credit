@@ -14,8 +14,8 @@
         <div class="">
              <h2 class="card-title text-center">Avantaje</h2>
              <div class="flex gap-4 flex-col">
-                <div v-for="item in list" class="flex items-center text-xl">
-                    <Icon name="ph:dot-outline-light" class="w-8 h-8 flex-shrink-0 text-brand-color"/>
+                <div v-for="item in list" class="flex text-xl">
+                    <Icon name="ph:dot-outline-light" class="w-8 h-8 flex-shrink-0 text-brand-color text-opacity-50"/>
                     {{ item }}
                 </div>
             </div>

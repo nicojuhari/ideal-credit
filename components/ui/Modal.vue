@@ -1,9 +1,9 @@
 <template>
     <div class="modal fixed z-20 flex items-end justify-center top-0 left-0 w-full h-screen p-4">
-        <div class="modal-backdrop fixed min-h-screen w-full top-0 left-0 bg-white bg-opacity-10"></div>
+        <div class="modal-backdrop fixed min-h-screen w-full top-0 left-0 bg-black bg-opacity-70"></div>
         <div class="modal-container bg-brand-black rounded-lg z-10 m-auto w-full flex flex-col flex-1 max-h-full pb-4"
             :class="[{ 'to-close': toClose == true }, { 'max-w-sm': !large }, { 'max-w-xl': large }]">
-            <div class="modal-header flex justify-between items-center p-4 mb-4">
+            <div class="modal-header flex justify-between items-center p-4">
                 <div class="text-lg font-medium text-white">{{ modalTitle }}</div>
                 <div class="modal-close cursor-pointer hover:bg-white hover:bg-opacity-10 transition-all p-1 rounded-full"
                     @click="closeModal">
@@ -22,7 +22,7 @@
                     <slot></slot>
                 </div>
             </div>
-            <slot name="modal-footer"></slot>
+            <slot name="modalFooter"></slot>
         </div>
     </div>
 </template>

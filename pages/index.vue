@@ -14,8 +14,12 @@
         <div class="container mt-4 md:mt-6">
             <CallToAction class="card light"/>
         </div>
-        <div class="container mt-4 md:mt-6 mb-6">
+        <div class="container mt-4 md:mt-6">
             <PaymentMethods class="md:min-h-[440px]" />
         </div>
+        <div class="container mt-4 md:mt-6 mb-6">
+                <h3 class="title text-center pt-12 md:pt-16 pb-6">Întrebări frecvente  </h3>
+                <FAQ />
+            </div>
     </div>
 </template>

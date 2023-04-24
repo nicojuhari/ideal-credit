@@ -2,15 +2,14 @@
 
 </script>
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
         <div>
-            <h3 class="text-3xl font-bold mb-4 text-center">Solicită un credit acum!</h3>
+            <h3 class="title font-semibold text-center mt-8 mb-4 md:my-4">Solicită un credit acum!</h3>
         </div>
-        <div class="flex gap-6 items-center justify-center flex-col md:flex-row">
-            <NuxtLink to="/cerere-online" class="btn btn-primary btn-outline">Cerere Online</NuxtLink>
+        <div class="flex gap-8 items-center justify-center flex-col md:flex-row">
+            <NuxtLink to="/cerere-de-credit-online" class="btn btn-primary btn-outline w-48">Cerere Online</NuxtLink>
             <!-- <button class="btn btn-secondary">Button</button> -->
-            <UiPhoneButton />
+            <UiPhoneButton class="w-48" />
         </div>
-
     </div>
 </template>

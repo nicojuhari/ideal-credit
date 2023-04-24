@@ -75,12 +75,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="card relative mt-20">
+                <div class="card relative mt-20 overflow-hidden">
                     <div class="subtitle text-center">Scrie-ne un mesaj</div>
-                    <div v-if="loading"
-                        class="h-full w-full grid place-content-center absolute z-10 top-0 left-0 bg-white bg-opacity-10 rounded-3xl">
-                        <UiLoading class="mx-auto" />
-                    </div>
+                    <UiLoading v-if="true" local/>
                     <div v-if="formSend" class="grid place-content-center my-16 duration-700">
                         <IconsCheck class="text-brand-color h-32 mx-auto" />
                         <div class="text-2xl">Vă mulțumim pentru mesaj!</div>

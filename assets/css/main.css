@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     @apply bg-brand-bg text-brand-white-smoke font-light;
 }
@@ -38,21 +42,24 @@ p {
 }
 
 .btn {
-    @apply h-10 px-8 rounded-full inline-flex gap-3 items-center text-lg;
+    @apply h-10 px-8 rounded-full inline-flex gap-3 items-center justify-center text-lg;
 }
 .btn-primary {
-    @apply bg-brand-white-smoke text-brand-black;
+    @apply bg-brand-white-smoke text-brand-black border-brand-white-smoke border;
 }
 .btn-primary.btn-light {
-    @apply bg-opacity-10 text-brand-white-smoke ;
-}
-
-.btn-outline {
-    @apply bg-opacity-0 border-2 border-inherit text-inherit;
+    @apply bg-opacity-10 border-opacity-0 text-brand-white-smoke ;
 }
 
 .btn-secondary {
-    @apply bg-brand-color text-brand-color bg-opacity-20
+    @apply bg-brand-color text-brand-color bg-opacity-20 border border-brand-color border-opacity-0
+}
+.btn-outline {
+    @apply bg-opacity-0 border-opacity-100;
+}
+
+.btn-primary.btn-outline {
+    @apply border-brand-black;
 }
 
 input {
@@ -64,16 +71,33 @@ textarea {
     min-height: 6rem;
 }
 
-.formkit-outer {
+/* .formkit-outer {
     @apply mt-6;
-}
+} */
 
 .formkit-messages {
-    @apply text-red-600;
+    @apply text-[#c62828];
+}
+.formkit-messages .formkit-message {
+    @apply mt-1 text-xs;
+}
+
+.formkit-help {
+    @apply text-xs opacity-70 mt-1;
+}
+.formkit-options {
+    @apply p-4 border border-brand-black rounded
+}
+.formkit-option .formkit-wrapper, .formkit-cerere-terms .formkit-wrapper {
+    @apply flex items-center gap-4;
+}
+
+.formkit-cerere-terms .formkit-wrapper {
+    @apply cursor-pointer;
 }
 
 .card {
-    @apply rounded-lg px-4 py-8 md:px-8 md:py-16 shadow-md bg-brand-raisin-black;
+    @apply rounded-lg px-4 py-8 md:px-8 md:py-16 shadow-md bg-brand-raisin-black overflow-hidden;
 }
 
 .card.light {
@@ -91,8 +115,9 @@ input[type="range"]::-webkit-slider-thumb {
     height: 24px;
     cursor: ew-resize;
     border-radius: 50%;
-    border: 5px solid;
-    @apply bg-brand-raisin-black border-brand-color;
+    box-shadow: rgba(255, 154, 0, .5) 1px 0px 8px;
+    /* border: 5px solid; */
+    @apply border-brand-white-smoke bg-brand-color;
 }
 
 .input-calculator {
