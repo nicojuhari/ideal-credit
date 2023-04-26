@@ -1,0 +1,6 @@
+<template>
+    <div class="flex flex-col md:flex-row gap-6 justify-center items-center md:items-end mt-12 md:mt-12 pt-1">
+                <a href="#calculator-de-credit" class="btn btn-primary w-56">Calculator de Credit</a>
+                <NuxtLink to="/cerere-de-credit-online" class="btn btn-secondary btn-outline w-56" title="Cerere de credit online">Cerere Online</NuxtLink>
+            </div>
+</template>

@@ -1,36 +1,25 @@
 <script setup>
     const list = [
-        'Vîrsta minimă 23 de ani',
-        'Sursă de venit stabilă',
-        'Capacitate deplină pentru deservirea creditului',
-        'Pentru Clienții noi, prezența FIDEJUSORLUI este obligatorie'
+        'Cetățean al Republicii Moldova cu buletin de identitate valid',
+        'Sursă de venit stabilă, confirmată și neconfirmată',
+        'Posibilitatea deplină pentru deservirea creditului',
+        'Gaj sau garant, în funcție de capacitatea de creditare',
     ]
-
-    const docs = [
-        'Buletinul de identitate',
-        'Cererea de credit și declarații (se depun în oficiu)'
-    ]
-
-    
 </script>
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="card light">
-            <h3 class="subtitle text-center mb-8">Condițiile de creditare</h3>
-            <ul class="pl-6">
-                <li v-for="item in list" class="text-lg my-2 list-disc">{{ item }}.</li>
-            </ul>
-        </div>
-        <div class="card light">
-            <h3 class="subtitle text-center mb-8">Documente</h3>
-            <ul class="pl-6">
-                <li v-for="item in docs" class="text-lg my-2 list-disc">{{ item }}.</li>
-            </ul>
-            <div
-                class="cs-notice">
-                <IconsInfo class="w-5 flex-shrink-0" />
-                <div>Aceleași condiții se aplică și pentru fidejusor</div>
+    <div class="card light">
+        <div class="h-24 md:h-40 mb-8">
+                <img src="/conditiile-de-creditare.png" class="h-full m-auto" alt="Conditiile de creditare"/>
+            </div>
+        <div class="">
+            <h2 class="card-title text-center">Condițiile de creditare</h2>
+            <div class="flex gap-4 flex-col">
+                <div v-for="item in list" class="flex text-xl">
+                    <Icon name="ph:dot-outline-light" class="w-8 h-8 flex-shrink-0 text-brand-color text-opacity-50"/>
+                    {{ item }}
+                </div>
             </div>
         </div>
+        
     </div>
 </template>
