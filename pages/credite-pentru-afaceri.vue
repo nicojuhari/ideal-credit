@@ -2,7 +2,7 @@
 useHead({
     title: 'Credite pentru Afaceri',
     meta: [
-        { name: 'description', content: 'Ideal Credit oferă credite imobiliare (ipotecare) pentru procurarea unei locuințe sau a unui imobil pentru afaceri' },
+        { name: 'description', content: 'Investește în afacerea ta cu ajutorul creditelor noastre pentru afaceri. Descoperă acum oferta noastră variată de soluții de finanțare și aplică online în doar câteva minute!' },
         { name: 'keywords', content: 'credite imobiliare, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
     ],
 })
