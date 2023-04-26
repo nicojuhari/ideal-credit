@@ -43,7 +43,7 @@
 
 </script>
 <template>
-    <div>
+    <div class="mb-6">
 
         <Head>
             <Title>Contactele companii de creditare Ideal Credit SRL</Title>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="card relative mt-20 overflow-hidden">
                     <div class="subtitle text-center">Scrie-ne un mesaj</div>
-                    <UiLoading v-if="true" local/>
+                    <UiLoading v-if="loading" local/>
                     <div v-if="formSend" class="grid place-content-center my-16 duration-700">
                         <IconsCheck class="text-brand-color h-32 mx-auto" />
                         <div class="text-2xl">Vă mulțumim pentru mesaj!</div>

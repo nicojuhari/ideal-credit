@@ -13,9 +13,32 @@
             mobile: '0790 66 5 66',
         }
     ]
+
+    const links = [
+        {
+            title: 'Credite de consum',
+            link: '/credite-de-consum',
+        },
+        {
+            title: 'Credite auto',
+            link: '/credite-auto',
+        },
+        {
+            title: 'Credite imobiliare',
+            link: '/credite-imobiliare',
+        },
+        {
+            title: 'Credite pentru afaceri',
+            link: '/credite-pentru-afaceri',
+        },
+        {
+            title: 'Credite pentru refinanțare',
+            link: '/refinantare-credite',
+        },
+    ]
 </script>
 <template>
-    <footer class="bg-brand-bg border-t border-brand-color border-opacity-10">
+    <footer class="bg-brand-bg border-t border-brand-color border-opacity-10 relative">
         <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-x-6 p-6 md:p-8">
             <div>
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
@@ -23,11 +46,20 @@
                     <h2 class="text-lg">Ideal Credit</h2>
                 </NuxtLink>
                
-                <div class="mt-4 text-sm md:pr-4">Credite rapide pentru nevoi personale și afaceri, cu dobînzi fixe și avantajoase, fără comisioane ascunse.</div>
+                <div class="mt-4 md:pr-4">Credite rapide pentru nevoi personale și afaceri.<br>Cu dobînzi fixe și avantajoase, fără comisioane ascunse.</div>
             </div>
-            <div class="col-span-2 ">
+            <div>
+                <div class="h-10 text-lg flex items-center">Linkuri</div>
+                <ul class="mt-4">
+                    <li class="mb-2" v-for="item in links" :key="item.link">
+                        <NuxtLink :to="item.link" class="text-">{{ item.title}}</NuxtLink>
+                    </li>
+                </ul>
+            </div>
+            <div>
                 <!-- <div class="mb-8 text-2xl">Adresa oficiilor</div> -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="h-10 text-lg flex items-center">Adresa oficiilor</div>
+                <div class="grid grid-cols-1 gap-6 items-center mt-4">
                     <div v-for="(oficiu, idx) in oficii" class="border-brand-white-smoke border-opacity-10">
                         <div class="text-lg mb-2">
                             {{ oficiu.title }}

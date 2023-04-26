@@ -2,7 +2,7 @@
 let credits = [
     { name: 'Credite de consum', link: 'credite-de-consum', icon: 'ph:shopping-cart-simple-light' },
     { name: 'Credite auto', link: 'credite-auto', icon: 'ph:car-profile-light' },
-    { name: 'Credite ipotecare', link: 'credite-ipotecare', icon: 'ph:house-line-light' },
+    { name: 'Credite imobiliare', link: 'credite-imobiliare', icon: 'ph:house-line-light' },
     { name: 'Credite pentru afaceri', link: 'credite-pentru-afaceri', icon: 'ph:chart-bar-light' }
 ]
 

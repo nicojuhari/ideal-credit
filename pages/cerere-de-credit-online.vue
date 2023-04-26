@@ -2,7 +2,7 @@
     import { ref } from 'vue'
 
     const formData = ref({})
-    const formSuccess = ref(true)
+    const formSuccess = ref(false)
 
     useHead({
         title: 'Cerere de credit online | Ideal Credit',
@@ -79,7 +79,7 @@ const submitForm = async () => {
                             type="number" 
                             name="termen" 
                             placeholder="12"
-                            label="Termenu de credit (luni)" 
+                            label="Termen (luni)" 
                             validation="required|length:1,2"
                             input-class="bg-white bg-opacity-10" 
                             :validation-messages="{
