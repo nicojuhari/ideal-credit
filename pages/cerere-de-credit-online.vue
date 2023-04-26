@@ -63,26 +63,32 @@ const submitForm = async () => {
                         }">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormKit 
-                        type="number" 
+                        type="number"
+                        step="100"
+                        max="300000"
+                        min="1000"
                         name="suma"
                         placeholder="5000"
                         label="Suma creditului (MDL)" 
                         validation="required|number"
                         input-class="bg-white bg-opacity-10" 
                         :validation-messages="{
-                                required: 'Prenumele este obligatoriu',
+                                required: 'Suma este obligatorie',
                                 length: 'Cel puțin 3 caractere, maximum 25',
                             }"/>
                     <FormKit 
-                            type="number" 
+                            type="number"
+                            step="1"
+                            min="6"
+                            max="48"
                             name="termen" 
                             placeholder="12"
                             label="Termen (luni)" 
-                            validation="required|length:1,2"
+                            validation="required|number"
                             input-class="bg-white bg-opacity-10" 
                             :validation-messages="{
-                                    required: 'Numele este obligatoriu',
-                                    length: false,
+                                    required: 'Termenul este obligatoriu',
+                                    length: 'Maximum 48 luni, minim 6 luni',
                                 }"/>
                 </div>
                 <FormKit 
@@ -133,26 +139,26 @@ const submitForm = async () => {
                     validation="required|length:6,25"
                     input-class="bg-white bg-opacity-10"
                     :validation-messages="{
-                            required: 'Adresa este obligatoriu',
+                            required: 'Adresa este obligatorie',
                             length: 'Cel puțin 6 caractere, maximum 25',
                         }
                         "/>
-                        <FormKit 
-                            type="tel" 
-                            name="telefon"
-                            placeholder="012345678"
-                            label="Telefon/Mobil" 
-                            validation="required"
-                            input-class="bg-white bg-opacity-10" 
-                            :validation-messages="{
-                                required: 'Telefonul este obligatoriu'
-                            }">
-                        </FormKit>
+                <FormKit 
+                    type="tel" 
+                    name="telefon"
+                    placeholder="012345678"
+                    label="Telefon/Mobil" 
+                    validation="required"
+                    input-class="bg-white bg-opacity-10" 
+                    :validation-messages="{
+                        required: 'Telefonul este obligatoriu'
+                    }">
+                </FormKit>
             </div>
             <h2 class="font-semibold text-2xl mt-12 mb-2">Date Financiare</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormKit 
-                        type="text" 
+                        type="number" 
                         name="venituri"
                         placeholder="9000"
                         label="Venituri oficiale (MDL)"
@@ -160,15 +166,16 @@ const submitForm = async () => {
                         validation="required"
                         input-class="bg-white bg-opacity-10" 
                         :validation-messages="{
-                                required: 'Veniturile lunare este obligatoriu',
+                                required: 'Veniturile lunare sunt obligatorii',
                             }"/>
                     <FormKit 
-                            type="text" 
+                            type="number"
+                            min="0"
                             name="datorii" 
                             placeholder="1200"
-                            label="Datorii achitate lunar (MDL)" 
+                            label="Datorii achitate lunare (MDL)" 
                             validation="required"
-                            help="0 dacă nu aveți datorii"
+                            help="Dacă sunt alte credite, pune 0 dacă nu ai datorii"
                             input-class="bg-white bg-opacity-10" 
                             :validation-messages="{
                                     required: 'Cîmpul datorii este obligatoriu',
@@ -194,6 +201,9 @@ const submitForm = async () => {
                         outer-class="mt-6"
                         :options="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Alte', 'Nu am nimic']"
                         validation="required|min:1"
+                        :validation-messages="{
+                                required: 'Bunuri în proprietate este obligatoriu',
+                            }"
                         />
                 </div>
                 <div class="mt-6">
@@ -213,7 +223,7 @@ const submitForm = async () => {
                         validation="accepted"
                         validation-visibility="dirty"
                         :validation-messages="{
-                                accepted: 'Vă rugăm să confirmați că sunteți de acord cu termenii și condițiile',
+                                accepted: 'Vă rugăm să confirmați că sunteți de acord cu termenii de mai sus',
                             }"
                     />
                     </div>
