@@ -54,8 +54,8 @@ const submitForm = async () => {
 }
 </script>
 <template>
-    <div class="container relative my-8">
-        <div class="card light max-w-2xl m-auto relative">
+    <div class="container sm-container relative my-4 md:my-6">
+        <div class="card light">
             <div class="mb-20">
                 <h1 class="text-center text-5xl font-bold">Cerere de credit online</h1>
             </div>

@@ -71,7 +71,6 @@
                         <div>Suma</div>
                         <div>
                             <input type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
-                            <!-- <span class="text-white text-opacity-80 ml-2">MDL</span> -->
                         </div>
                     </div>
                     <input id="medium-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
@@ -86,7 +85,6 @@
                         <div>Termen</div>
                         <div class="">
                             <input type="number" :value="creditTermen" @input="validateInput" @change="validateChange($event.target.value, 'termen')" class="input-calculator" />
-                            <!-- <span class="text-white text-opacity-80 ml-2">luni</span> -->
                         </div>
                     </div>
                     <input id="medium-range" type="range" v-model="creditTermen" min="6" max="48" step="1"
@@ -146,7 +144,7 @@
         </div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Graficul de rambursare*">
             <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
-            <div class="mt-6 text-brand-color">* Graficul de rambursare este doar un exemplu</div>
+            <div class="mt-6 text-brand-color">* Exemplu Reprezentativ</div>
         </uiModal>
     </div>
     

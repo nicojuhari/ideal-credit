@@ -1,6 +1,6 @@
 <script setup>
 const list = [
-    'În unul din oficiile companiei Ideal Credit',
+    'În oficiile companiei Ideal Credit',
     'Prin intermediul băncii "VictoriaBank"',
     'La orice oficiu poștal din Republica Moldova',
     'Online Banking',
