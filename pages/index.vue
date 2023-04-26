@@ -1,3 +1,12 @@
+<script setup>
+    useHead({
+    title: 'Credite rapide pentru nevoi personale și afaceri',
+    meta: [
+        { name: 'description', content: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Organizația de Creditare Nebancară Ideal Credit SRL oferă credite cu dobânzi avantajoase și fără comisioane ascunse' },
+        { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
+    ],
+})
+</script>
 <template>
     <div>
         <HomeHeroComp />
