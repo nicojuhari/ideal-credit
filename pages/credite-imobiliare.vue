@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: 'Credite Imobiliare | Ideal Credit',
+    title: 'Credite Imobiliare',
     meta: [
         { name: 'description', content: 'Ideal Credit oferă credite imobiliare (ipotecare) pentru procurarea unei locuințe sau a unui imobil pentru afaceri' },
         { name: 'keywords', content: 'credite imobiliare, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }

@@ -19,9 +19,18 @@ export default defineNuxtConfig({
             },
     },
     modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-icon'],
+    extends: [
+        'nuxt-seo-kit'
+    ],
     css: ['@/assets/css/main.css'],
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',
+        public: {
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://idealcredit.md',
+            siteName: 'Ideal Credit',
+            siteDescription: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova cu dobânzi avantajoase și fără comisioane ascunse',
+            language: 'ro', // prefer more explicit language codes like `en-AU` over `en`
+        }
     },
     sitemap: {
         hostname: "https://idealcredit.md",

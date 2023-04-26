@@ -2,7 +2,7 @@
     import { ref } from 'vue'
 
     useHead({
-        title: 'Contactele companiei de creditare Ideal Credit SRL',
+        title: 'Contacte',
         meta: [
             { name: 'description', content: 'Contactele companiei Ideal Credit SRL - ce oferă credite rapide pentru nevoi peersonale și afaceri' },
             { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }

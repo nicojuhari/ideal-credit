@@ -1,6 +1,6 @@
 <script setup>
     useHead({
-        title: 'Despre compania de creditare Ideal Credit SRL',
+        title: 'Despre noi',
         meta: [
             { name: 'description', content: 'OCN Ideal Credit oferă credite rapide pentru nevoi personale și afaceri pe piața financiară al Republica Moldova din 2010' },
             { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }

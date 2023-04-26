@@ -10,7 +10,7 @@
 <template>
     <div class="card light">
         <div class="h-24 md:h-40 mb-8">
-            <img src="/light.png" class="h-full m-auto"/>
+            <img src="/avantaje-credite.png" class="h-full m-auto" alt="avantaje-credite"/>
         </div>
         <div class="">
              <h2 class="card-title text-center">Avantaje</h2>
@@ -21,7 +21,5 @@
                 </div>
             </div>
         </div>
-        
-       
     </div>
 </template>

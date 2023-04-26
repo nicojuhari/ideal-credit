@@ -1,5 +1,4 @@
 <script setup inherit-attrs="false">
-    import { defineProps } from 'vue'
     // get the props from the parent component
     
     //get passed classes

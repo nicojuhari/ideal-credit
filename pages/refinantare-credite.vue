@@ -1,7 +1,7 @@
 <script setup>
 
 useHead({
-    title: 'Refinanțare Credite | Ideal Credit',
+    title: 'Refinanțare Credite',
     meta: [
         { name: 'description', content: 'Oferim credite pentru refinanțarea altor credite mai scumpe, cu dobînzi avantajoase și fără comisioane ascunse' },
         { name: 'keywords', content: 'refinanțare credite, credite Moldova, credite rapide, credite online, împrumuturi' }

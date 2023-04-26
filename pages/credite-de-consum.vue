@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: 'Credite de Consum | Ideal Credit',
+    title: 'Credite de Consum',
     meta: [
         { name: 'description', content: 'Ideal Credit oferă credite de consum persoanelor fizice pentru nevoi personale, cu dobînzi avantajoase și fără comisioane ascunse' },
         { name: 'keywords', content: 'credite de consum, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }

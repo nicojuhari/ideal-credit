@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: 'Credite Auto | Ideal Credit',
+    title: 'Credite Auto',
     meta: [
         { name: 'description', content: 'Ideal Credit oferă credite auto pentru a-ți cumpăra mașina dorită chiar dacă nu ai suficienți bani acum' },
         { name: 'keywords', content: 'credite auto, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }

@@ -19,7 +19,7 @@ const list = [
         </div>
         <div class="-order-1 md:order-1">
             <div class="h-32 md:h-64 mb-8 md:mb-0">
-                <img src="/how-to-pay.png" class="h-full m-auto"/>
+                <img src="/metode-de-achitare-credite.png" class="h-full m-auto" alt="Metode de achitare credite"/>
             </div>
         </div>
     </div>
