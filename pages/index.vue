@@ -2,7 +2,7 @@
     useHead({
     title: 'Credite rapide pentru nevoi personale și afaceri',
     meta: [
-        { name: 'description', content: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Organizația de Creditare Nebancară Ideal Credit SRL oferă credite cu dobânzi avantajoase și fără comisioane ascunse' },
+        { name: 'description', content: 'Organizația de Creditare Nebancară "Ideal Credit" SRL oferă credite rapide, cu dobânzi avantajoase și fără comisioane ascunse. Soluții rapide și ușoare pentru nevoile tale financiare în Chișinău, Republica Moldova.' },
         { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
     ],
 })
