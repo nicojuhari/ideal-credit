@@ -72,7 +72,7 @@
                             <input type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
                         </div>
                     </div>
-                    <input id="medium-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
+                    <input type="range" v-model="creditSuma" min="1000" max="300000" step="100"
                         class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
                         <div>1000 lei</div>
@@ -86,7 +86,7 @@
                             <input type="number" :value="creditTermen" @input="validateInput" @change="validateChange($event.target.value, 'termen')" class="input-calculator" />
                         </div>
                     </div>
-                    <input id="medium-range" type="range" v-model="creditTermen" min="6" max="60" step="1"
+                    <input type="range" v-model="creditTermen" min="6" max="60" step="1"
                         class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
                         <div>6 luni</div>
@@ -99,7 +99,7 @@
                     <div
                         class="w-44 h-44 grid place-content-center gap-4 border-4 rounded-full text-center border-white border-opacity-30">
                         <div class="text-white text-opacity-60">Prima rată</div>
-                        <div class="text-brand-color subtitle">{{ graficCalculat[0].credit_rata +
+                        <div class="text-brand-color title !my-0">{{ graficCalculat[0].credit_rata +
                             graficCalculat[0].dobinda_rata }}</div>
                         <div><span class="text-white text-opacity-60">MDL</span></div>
                     </div>
