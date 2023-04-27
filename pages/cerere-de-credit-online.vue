@@ -20,7 +20,7 @@ const submitForm = async () => {
     loading.value = true
     try {
         formData.value.access_key = web3FormAccessKey;
-        formData.value.subject = formData.value.suma + ' ' +  formData.value.termen + ' de la' + formData.value.nume;
+        formData.value.subject = formData.value.suma + 'MDL, ' +  formData.value.termen + ' luni, ' + formData.value.nume;
         formData.value.from_name = 'Cerere de Credit Online';
 
         let response = await fetch('https://api.web3forms.com/submit', {
@@ -54,9 +54,7 @@ const submitForm = async () => {
 <template>
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card light">
-            <div class="mb-20">
-                <h1 class="text-center text-5xl font-bold">Cerere de credit online</h1>
-            </div>
+            <h1 class="page-title">Cerere de credit online</h1>
             <FormKit type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
                     :validation-messages="{
                             incomplete: 'Ne pare rău, careva cîmpuri sunt greșite sau lipsesc',
@@ -70,31 +68,34 @@ const submitForm = async () => {
                         name="suma"
                         placeholder="5000"
                         label="Suma creditului (MDL)" 
-                        validation="required|number"
+                        validation="required|number|max:300000|min:1000"
                         input-class="bg-white bg-opacity-10" 
                         :validation-messages="{
                                 required: 'Suma este obligatorie',
                                 length: 'Cel puțin 3 caractere, maximum 25',
+                                max: 'Maximum 300000 MDL',
+                                min: 'Minim 1000 MDL',
                             }"/>
                     <FormKit 
                             type="number"
                             step="1"
                             min="6"
-                            max="48"
+                            max="60"
                             name="termen" 
                             placeholder="12"
                             label="Termen (luni)" 
-                            validation="required|number"
+                            validation="required|number|max:60|min:6"
                             input-class="bg-white bg-opacity-10" 
                             :validation-messages="{
                                     required: 'Termenul este obligatoriu',
-                                    length: 'Maximum 48 luni, minim 6 luni',
+                                    max: 'Maximum 60 luni',
+                                    min: 'Minim 6 luni',
                                 }"/>
                 </div>
                 <FormKit 
                                 type="text" 
                                 name="scopul_creditului" 
-                                placeholder="Achizitionarea unui apartament, refinanțare, investiții în afaceri, etc."
+                                placeholder="Achiziționarea unui apartament, refinanțare, investiții în afaceri, etc."
                                 label="Scopul creditului" 
                                 validation="required|length:5,25"
                                 input-class="bg-white bg-opacity-10"
@@ -103,7 +104,7 @@ const submitForm = async () => {
                                         required: 'Scopul este obligatoriu',
                                         length: 'Cel puțin 5 caractere, maximum 25',
                                     }"/>
-            <h2 class="font-semibold text-2xl mt-12 mb-2">Date personale</h2>
+            <h2 class="subtitle mt-12 mb-2">Date personale</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <FormKit 
                     type="text" 
@@ -155,7 +156,7 @@ const submitForm = async () => {
                     }">
                 </FormKit>
             </div>
-            <h2 class="font-semibold text-2xl mt-12 mb-2">Date Financiare</h2>
+            <h2 class="subtitle mt-12 mb-2">Date Financiare</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormKit 
                         type="number" 

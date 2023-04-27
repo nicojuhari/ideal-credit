@@ -16,14 +16,13 @@
 
     const tarife = {
         comision: 0,
-        dobinda: [4, 3.5, 3],
-        penalitate: 0.1
+        dobinda: [4, 3.5, 3]
     }
 
 
     watchEffect(() => {
         if(creditTermen.value < 6) creditTermen.value = 6
-        if(creditTermen.value > 48) creditTermen.value = 48
+        if(creditTermen.value > 60) creditTermen.value = 60
         
         if(creditSuma.value < 1000) creditSuma.value = 1000
         if(creditSuma.value > 300000) creditSuma.value = 300000
@@ -47,7 +46,7 @@
         if(type === 'termen') {
             creditTermen.value = val
             if(val < 6) creditTermen.value = 6
-            if(val > 48) creditTermen.value = 48
+            if(val > 60) creditTermen.value = 60
         }
     }
 
@@ -87,11 +86,11 @@
                             <input type="number" :value="creditTermen" @input="validateInput" @change="validateChange($event.target.value, 'termen')" class="input-calculator" />
                         </div>
                     </div>
-                    <input id="medium-range" type="range" v-model="creditTermen" min="6" max="48" step="1"
+                    <input id="medium-range" type="range" v-model="creditTermen" min="6" max="60" step="1"
                         class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
                         <div>6 luni</div>
-                        <div>48 luni</div>
+                        <div>60 luni</div>
                     </div>
                 </div>
             </div>
@@ -111,7 +110,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center text-2xl mt-12 mb-6">Costurile creditului</div>
+        <div class="text-center subtitle mt-12 mb-6">Costurile creditului</div>
         <div class="grid gap-3 md:gap-10 grid-cols-1 md:grid-cols-2">
             <div>
                 <div class="flex gap-6 justify-between">
@@ -123,17 +122,17 @@
                     <div>0.04 %</div>
                 </div>
                 <div class="flex gap-6 justify-between mt-3">
-                    <div>Dobinda lunară</div>
+                    <div>Dobînda lunară</div>
                     <div>{{ tarife.dobinda[0] }} %</div>
                 </div>
             </div>
             <div>
                 <div class="flex gap-6 justify-between">
-                    <div>Dobinda anuală medie</div>
+                    <div>Dobînda anuală medie</div>
                     <div>{{ tarife.dobinda[0] * 12 }} %</div>
                 </div>
                 <div class="flex gap-6 justify-between mt-3">
-                    <div>DAE<span class="text-sm"> (Dobinda anuală efectivă)</span></div>
+                    <div>DAE<span class="text-sm"> (Dobînda anuală efectivă)</span></div>
                     <div>{{ dae }} %</div>
                 </div>
                 <div class="flex gap-6 justify-between mt-3">

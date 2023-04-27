@@ -18,9 +18,8 @@ useHead({
         </div>
         <div class="container relative card light text-lg">
             <div class="card-title text-center">Despre credit</div>
-            <p>Ai decis să cumperi o locuință pentru familia ta sau poate să investești într-un imobil pentru afaceri?</p>
-            <p>Cu sigurantă cumpărarea unui imobil poate fi o experiență entuziasmantă, dar și stresantă, deoarece implică multe decizii importante in special partea financiară.</p>
-            <p class="mb-0">Un credit ipotecar este o opțiune populară pentru finanțarea cumpărării unui imobil, iar noi iți oferim opțiunea de creditare care se potrivește cu nevoile și situația ta financiară.</p>
+            <p>Creditul imobiliar poate fi o opțiune excelentă pentru cumpărarea sau construcția unei locuințe pentru familia ta sau pentru o investiție într-un imobil pentru afaceri.</p>
+            <p class="mb-0">Noi îți oferim rata dobînzii fixă și opțiunea de creditare care se potrivește cu nevoile și situația ta financiară.</p>
         </div>
         <div class="container mt-4 md:mt-6">
             <CalculatorCredit />

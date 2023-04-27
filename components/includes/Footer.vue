@@ -5,13 +5,13 @@
             address: 'or. Căușeni, str. M.Eminescu',
             addressNumbers: 'nr. 17,  of. 47',
             phone: ['+37324393222', '(0243) 93 222'],
-            mobile: ['+37378805060', '078 80 50 60'],
+            mobile: ['+37379066566', '0790 66 5 66'],
         },
         {
             title: 'Sucursala Nr. 1',
             address: 'm. Chișinău, str. Miron Costin',
             addressNumbers: 'nr. 25,  of. 115',
-            mobile: ['+37379066566', '0790 66 5 66'],
+            mobile: ['+37378805060', '078 80 50 60'],
         }
     ]
 
@@ -40,7 +40,7 @@
 </script>
 <template>
     <footer class="bg-brand-bg border-t border-brand-color border-opacity-10 relative">
-        <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-6 md:gap-x-6 p-6 md:p-8">
+        <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-6 py-8 px-2 md:px-0">
             <div class="md:col-span-2">
                 <div class="h-10 text-xl flex items-center font-medium">Adresa oficiilor</div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">

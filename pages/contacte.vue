@@ -52,9 +52,7 @@
 <template>
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card light">
-            <div class="mb-20"> 
-                <h1 class="text-center text-5xl font-bold">Contacte</h1>
-            </div>
+            <h1 class="page-title">Contacte</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-light text-2xl">
                 <div class="flex gap-4 items-center">
                     <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-10">
@@ -79,7 +77,7 @@
             </div>
         </div>    
         <div class="card mt-4 md:mt-6 relative overflow-hidden">
-                        <div class="subtitle text-center">Scrie-ne un mesaj</div>
+                        <div class="card-title text-center">Scrie-ne un mesaj</div>
                         <UiLoading v-if="loading" local/>
                         <div v-if="formSend" class="grid place-content-center my-16 duration-700">
                             <IconsCheck class="text-brand-color h-32 mx-auto" />

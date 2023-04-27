@@ -3,7 +3,7 @@
         '0% comision de acordare',
         'Dobînzi fixe',
         'Fără comisioane ascunse',
-        'Rambursare anticipată fără penalități',
+        'Rambursare anticipată fără comision',
         'Reduceri pentru clienții cu istorie creditară pozitivă',
     ]
 </script>

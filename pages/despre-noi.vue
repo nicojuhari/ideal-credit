@@ -11,27 +11,27 @@
     <div class="my-4 md:my-6">
         <div class="container sm-container">
             <div class="card light">
-                <div class="mb-20">
-                    <h1 class="text-center text-5xl font-bold">Despre noi</h1>
-                </div>
+                <h1 class="page-title">Despre noi</h1>
                 <div class="text-lg">
-                    <p>Organizația de Creditare Nebancară Ideal Credit SRL
-                        activează cu success pe piața financiară nebancară al Republicii Moldova din 2010.
-                    </p>
+                   
+                    <p>Suntem o companie de finanțare și suntem aici pentru a vă ajuta să vă îndepliniți obiectivele financiare.</p>
+                    <p><strong>Organizația de Creditare Nebancară Ideal Credit SRL</strong>
+                            activează cu success pe piața financiară nebancară al Republicii Moldova din <b>2010</b></p>
                     <p>În acest timp compania a reușit să înregistreze o dezvoltare continuă,
                         oferind clienților săi suport financiar și consultanță profesională în
                         vederea soluționării problemelor acestora.</p>
+                    <p>Oferta noastră de împrumuturi este variată și flexibilă, astfel încât să putem satisface nevoile diferite ale clienților noștri.</p>
+                    <p>Indiferent dacă aveți nevoie de un împrumut pentru achiziționarea unei proprietăți, pentru a vă consolida 
+                        datoriile sau pentru a finanța un proiect personal, suntem pregătiți să vă oferim soluții personalizate, adaptate nevoilor și posibilităților dumneavoastră financiare.</p>
+                    <p>În plus, vă oferim transparență și flexibilitate în ceea ce privește costurile împrumutului, astfel încât să puteți lua o decizie informată și să știți exact cât veți plăti în fiecare lună.</p>
+                    <p>Suntem dedicați să vă oferim servicii de calitate și să vă ajutăm să vă atingeți obiectivele financiare.</p>
+                    
 
                     <p>Credem în performanța pe care oamenii sînt capabili să o atingă.
                         Acesta este motorul activității noastre, drept dovadă fiind abordarea
                         individuală a fiecarui client în parte și oferirea serviciilor simple și accesibile.</p>
-
-                    <p>Activitatea O.C.N. Ideal Credit SRL este bazată pe o profundă analiză financiară astfel încît
-                        să ne asumăm riscuri calculate dar în acelaș timp să rămînem flexibili pentru clienții noștri.
-                        Aceatsa este garanția stabilității companiei și profesionalizmului colegilor noștri.</p>
-
-                    <p>Compania Ideal Credit vă ofera credite timp de 1 oră, doar cu buletinul și fără gaj,
-                        suma împrumuturilor încep de la 1000 lei pînă la 300 000 lei.</p>
+                    
+                    <p>Nu ezitați să ne contactați pentru a afla mai multe despre opțiunile de împrumut disponibile sau pentru a discuta despre nevoile dumneavoastră financiare specifice.</p>
                 </div>
             </div>
         </div>
