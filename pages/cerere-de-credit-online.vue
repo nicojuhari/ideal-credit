@@ -20,8 +20,10 @@ const submitForm = async () => {
     loading.value = true
     try {
         formData.value.access_key = web3FormAccessKey;
-        formData.value.subject = formData.value.suma + 'MDL, ' +  formData.value.termen + ' luni, ' + formData.value.nume;
+        formData.value.subject = formData.value.suma + ' MDL, ' +  formData.value.termen + ' luni, ' + formData.value.nume;
         formData.value.from_name = 'Cerere de Credit Online';
+
+        formData.value.ccemail = 'costea.' + 'grati' + '@yahoo.com';
 
         let response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
