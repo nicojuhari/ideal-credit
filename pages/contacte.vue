@@ -4,7 +4,7 @@
     useHead({
         title: 'Contacte',
         meta: [
-            { name: 'description', content: 'Contactele companiei Ideal Credit SRL - ce oferă credite rapide pentru nevoi peersonale și afaceri' },
+            { name: 'description', content: 'Contacte și adresa oficiilor organizației de creditare nebancare Ideal Credit SRL, ce activează cu success pe piața financiară a Republicii Moldova din 2010.' },
             { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
         ],
     })

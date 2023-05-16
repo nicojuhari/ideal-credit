@@ -2,7 +2,7 @@
     useHead({
         title: 'Despre noi',
         meta: [
-            { name: 'description', content: 'OCN Ideal Credit oferă credite rapide pentru nevoi personale și afaceri pe piața financiară al Republica Moldova din 2010' },
+            { name: 'description', content: 'Ideal Credit este o organizație de creditare nebancară ce oferă credite cu dobînzi avantajoase și fără comisioane ascunse pentru nevoi personale și afaceri.' },
             { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
         ],
     })
