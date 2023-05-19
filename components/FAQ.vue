@@ -7,6 +7,14 @@
     {
         question: 'Dobînda este flotantă sau fixă ?',
         answer: 'Dobînda este fixă, și nu se modifică în timpul perioadei de creditare.'
+    },
+    {
+        question: 'Ce se întâmplă în cazul întârzierii sau neplății ratelor?',
+        answer: `În acest caz, se va aplica o penalizare zilnică în conformitate cu termenii și condițiile contractului de credit. Este important să ne contactați, pentru a putea găsi împreună soluții de evitare a penalizărilor.`
+    },
+    {
+        question: 'Care este suma maximă pe care o pot obține?',
+        answer: `Suma maximă, poate fi influențată de nivelul veniturilor și datoriilor existente, capacitatea dumneavoastră de a rambursa împrumutul, valorile bunurilor pe care le dețineți, istoricul dvs. creditar și politicile interne ale companiei noastre.`
     }
  ]
  let classes = 'bg-brand-white-smoke p-4 py-6 rounded-lg duration-300 flex flex-col gap-4'
