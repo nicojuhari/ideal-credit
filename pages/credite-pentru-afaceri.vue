@@ -17,9 +17,10 @@ useHead({
             </div>
         </div>
         <div class="container relative card light text-lg">
-            <div class="card-title text-center">Despre credit</div>
-            <p>Creditul pentru afaceri este o modalitate prin care compania ta poate accesa o finanțare rapidă și ușoară pentru a-și îndeplini obiectivele financiare.</p>
-            <p>Fie că ai nevoie de capital de lucru pentru a-ți susține afacerea, sau de finanțare pentru a investi în echipamente sau alte active, noi îți oferim soluțiile potrivite.</p>
+            <h2 class="card-title text-center">Ce este un credit pentru afaceri?</h2>
+            <p>Creditul pentru afaceri este o modalitate prin care companiile pot accesa o finanțare rapidă și ușoară.</p>
+            <p>Prin intermediul acestui credit, afacerile pot accesa fondurile necesare pentru extindere, achiziționarea de echipamente, finanțarea stocului sau pentru alte nevoi de capital de lucru.</p>
+            <p>Creditul pentru afaceri oferă flexibilitate financiară și sprijin în dezvoltarea și creșterea întreprinderilor.</p>
             <p>În plus, oferim rate dobânzi avantajoase și perioade de rambursare flexibile, astfel încât să nu pui presiune pe fluxul de numerar al companiei tale.</p>
             <p>Contactează-ne acum pentru a afla mai multe despre cum te putem ajuta să îți duci afacerea la nivelul următor.</p>
         </div>

@@ -19,7 +19,7 @@ useHead({
         </div>
         <div class="container text-lg relative">
             <div class="card light">
-                <div class="card-title text-center">Despre credit</div>
+                <h2 class="card-title text-center">Ce este un credit pentru refinanțare?</h2>
                 <p>Dacă aveți mai multe datorii cu rate și dobânzi diferite, iar colaborarea cu mai mulți parteneri financiari vă consumă prea mult timp și resurse,
                 creditul pentru refinanțare este o soluție financiară prin care îți poți consolida datoriile actuale într-un singur împrumut. 
                 </p>

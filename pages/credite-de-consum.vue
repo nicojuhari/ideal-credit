@@ -16,15 +16,12 @@ useHead({
                 <UiHeroSectionCTA/>
             </div>
         </div>
-        <div class="container relative card light text-lg">
-            <div class="card-title text-center">Despre credit</div>
-            <p>Dacă ai planificat achiziționarea unor bunuri, o vacantă sau au intervenit cheltuieli neprevăzute, 
-                        cum ar fi facturi medicale sau reparații de locuințe, 
-                        iar resursele financiare de care dispui la moment nu sunt suficiente.</p>
-            <p class="mb-0">Atunci, <strong>creditul de consum</strong> poate fi o soluție bună pentru a acoperi cheltuielile curente sau pentru a finanța un proiect important.
-                    </p>
-            
-        </div>
+        <div class="container relative card light text-lg mt-4 md:mt-6">
+                <h2 class="card-title text-center">Ce este un credit de consum ?</h2>
+                <p>Un credit de consum este un produs financiar destinat persoanelor fizice, care le oferă posibilitatea de a obține fonduri într-un timp scurt și flexibil.</p>
+                <p>Acest tip de credit este destinat satisfacerii nevoilor personale diverse, cum ar fi achiziționarea de electrocasnice, mobilă, reparații casnice, călătorii sau chiar <NuxtLink to="/refinantare-credite"><strong>refinanțarea datoriilor existente.</strong></NuxtLink></p>
+                <p>Avantajele unui credit de consum constau în accesul rapid la fonduri, formalități minime și posibilitatea de a rambursa împrumutul în rate lunare convenabile, adaptate capacității financiare a beneficiarului.</p>
+            </div>
         <div class="container mt-4 md:mt-6">
             <CalculatorCredit />
         </div>
