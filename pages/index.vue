@@ -27,7 +27,8 @@
             <PaymentMethods class="md:min-h-[440px]" />
         </div>
         <div class="container mt-4 md:mt-6 mb-6">
-                <h3 class="title text-center pt-12 md:pt-16">Întrebări frecvente  </h3>
+                <h3 class="title text-center pt-12 md:pt-16">FAQ</h3>
+                <p class="max-w-[600px] mx-auto text-center pb-4">Iată câteva întrebări frecvente și răspunsurile asociate, care vă pot ajuta să înțelegeți mai bine opțiunile de creditare oferite de compania noastră</p>
                 <FAQ />
             </div>
     </div>

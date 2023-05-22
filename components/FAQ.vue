@@ -14,7 +14,15 @@
     },
     {
         question: 'Care este suma maximă pe care o pot obține?',
-        answer: `Suma maximă, poate fi influențată de nivelul veniturilor și datoriilor existente, capacitatea dumneavoastră de a rambursa împrumutul, valorile bunurilor pe care le dețineți, istoricul dvs. creditar și politicile interne ale companiei noastre.`
+        answer: `Suma maximă, poate fi influențată de nivelul veniturilor și datoriilor existente, capacitatea dumneavoastră de a rambursa împrumutul, valorile bunurilor pe care le dețineți, istoricul Dvs. creditar și politicile interne ale companiei noastre.`
+    },
+    {
+        question: 'Dacă am deja un credit mai pot beneficia de unul?',
+        answer: `Da, dacă veniturile Dvs. sunt suficiente pentru a achita mai multe credite paralele, iar creditele active sunt achitate fără întârzieri.`
+    },
+    {
+        question: 'Am credite la alte organizații/bănci, le pot refinanța la Ideal Credit?',
+        answer: `Da, Ideal Credit refinanțează credite de la alte organizații sau bănci în urma analizei detaliate a situației Dvs. financiare.`
     }
  ]
  let classes = 'bg-brand-white-smoke p-4 py-6 rounded-lg duration-300 flex flex-col gap-4'
