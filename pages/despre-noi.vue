@@ -39,6 +39,14 @@
             <RegulamenteList/>
         </div>
         <div class="container sm-container mt-4 md:mt-6">
+            <div class="card">
+                <h3 class="text-center title mb-8">Rapoarte</h3>
+                <div class="flex flex-col gap-6">
+                    <a href="/raport_autid_2022.pdf">1. Raport de Audit 2022</a>
+                </div>
+            </div>
+        </div>
+        <div class="container sm-container mt-4 md:mt-6">
             <CallToAction class="card light"/>
         </div>
     </div>
