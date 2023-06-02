@@ -26,7 +26,15 @@
         
         if(creditSuma.value < 1000) creditSuma.value = 1000
         if(creditSuma.value > 300000) creditSuma.value = 300000
-        graficCalculat.value = createGrafic(creditSuma.value, creditTermen.value, 4)
+        
+        graficCalculat.value = createGrafic({
+            sum: creditSuma.value, 
+            period: creditTermen.value, 
+            iterest: 4
+        })
+
+        if(graficCalculat.value.length == 0) return
+
         dae.value = calcDAE(graficCalculat.value, creditSuma.value)
         dobindaTotal.value = graficCalculat.value.reduce((acc, rata) => rata.dobinda_rata + acc, 0)
     })
@@ -99,8 +107,8 @@
                     <div
                         class="w-44 h-44 grid place-content-center gap-4 border-4 rounded-full text-center border-white border-opacity-30">
                         <div class="text-white text-opacity-60">Prima rată</div>
-                        <div class="text-brand-color title !my-0">{{ graficCalculat[0].credit_rata +
-                            graficCalculat[0].dobinda_rata }}</div>
+                        <div class="text-brand-color title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
+                            graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
                         <div><span class="text-white text-opacity-60">MDL</span></div>
                     </div>
                 </div>

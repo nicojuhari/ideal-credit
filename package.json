@@ -15,7 +15,7 @@
   "dependencies": {
     "@formkit/nuxt": "^0.17.2",
     "@formkit/vue": "^0.17.2",
-    "ideal-credit": "^0.2.3",
+    "ideal-credit": "^0.2.5",
     "nuxt-seo-kit": "^1.3.8"
   }
 }
