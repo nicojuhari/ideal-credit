@@ -30,7 +30,7 @@
         graficCalculat.value = createGrafic({
             sum: creditSuma.value, 
             period: creditTermen.value, 
-            iterest: 4
+            interest: 4,
         })
 
         if(graficCalculat.value.length == 0) return
