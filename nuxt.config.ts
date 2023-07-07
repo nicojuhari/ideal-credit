@@ -16,9 +16,17 @@ export default defineNuxtConfig({
                     { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
                     { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"}
                 ],
+                script: [
+                    // Insert your Google Tag Manager Script here
+                    { src: 'https://www.googletagmanager.com/gtag/js?id=G-YXDZGPPXPH', async: true, type: 'text/partytown' },
+                    { children: "window.dataLayer = window.dataLayer || []; function gtag(){ dataLayer.push(arguments); } gtag('js', new Date());gtag('config', 'G-YXDZGPPXPH');" },
+                ],
             },
     },
-    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-icon'],
+    partytown: {
+        forward: ['dataLayer.push'],
+    },
+    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-icon', '@nuxtjs/partytown'],
     extends: [
         'nuxt-seo-kit'
     ],
