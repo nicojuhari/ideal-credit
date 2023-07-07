@@ -7,15 +7,15 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.7.0",
-    "nuxt": "^3.5.0",
-    "nuxt-icon": "^0.4.1",
-    "nuxt-simple-sitemap": "^2.5.0"
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "nuxt": "^3.6.2",
+    "nuxt-icon": "^0.4.2",
+    "nuxt-simple-sitemap": "^3.0.5"
   },
   "dependencies": {
-    "@formkit/nuxt": "^0.17.2",
-    "@formkit/vue": "^0.17.2",
+    "@formkit/nuxt": "^0.17.4",
+    "@formkit/vue": "^0.17.4",
     "ideal-credit": "^0.2.5",
-    "nuxt-seo-kit": "^1.3.8"
+    "nuxt-seo-kit": "^1.3.9"
   }
 }

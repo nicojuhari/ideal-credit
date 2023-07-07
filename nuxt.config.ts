@@ -33,7 +33,7 @@ export default defineNuxtConfig({
         }
     },
     sitemap: {
-        hostname: "https://idealcredit.md",
+        siteUrl: "https://idealcredit.md",
         trailingSlash: false
     }
 })
