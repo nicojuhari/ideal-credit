@@ -4,7 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite rapide pentru nevoi personale și afaceri - Ideal Credit',
+            title: 'Credite rapide pentru nevoi personale și afaceri',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },

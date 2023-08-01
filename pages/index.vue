@@ -2,7 +2,7 @@
     useHead({
     title: 'Credite rapide pentru nevoi personale și afaceri',
     meta: [
-        { name: 'description', content: 'OCN Ideal Credit oferă credite rapide de consum, auto, imobiliare și pentru afaceri cu dobânzi fixe și avantajoase, în Chișinău, Republica Moldova.' },
+        { name: 'description', content: 'Ideal Credit oferă credite rapide de consum, auto, imobiliare și pentru afaceri, cu dobânzi avantajoase. Credite pentru refinanțare fără comisioane ascunse, în Chișinău, și toată Republica Moldova.' },
         { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
     ],
 })
