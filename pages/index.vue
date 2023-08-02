@@ -2,7 +2,7 @@
     useHead({
     title: 'Credite rapide pentru nevoi personale și afaceri',
     meta: [
-        { name: 'description', content: 'Ideal Credit oferă credite rapide de consum, auto, imobiliare și pentru afaceri, cu dobânzi avantajoase. Credite pentru refinanțare fără comisioane ascunse, în Chișinău, și toată Republica Moldova.' },
+        { name: 'description', content: 'Ideal Credit oferă credite rapide de consum, auto, imobiliare și pentru afaceri. Activăm în Chișinău, Republica Moldova din 2010. Acordăm credite fără comisioane ascunse și cu dobînzi avantajoase.' },
         { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
     ],
 })
