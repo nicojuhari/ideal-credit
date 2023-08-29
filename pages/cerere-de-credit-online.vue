@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    import { reset } from '@formkit/core'
 
     const formData = ref({})
     const formSuccess = ref(false)
@@ -38,6 +39,7 @@ const submitForm = async () => {
             
             setTimeout(() => {
                 // formSend.value = false;
+                reset('cerere-online-form', {})
                 formSuccess.value = true
             }, 1200)
         }
@@ -55,7 +57,7 @@ const submitForm = async () => {
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card light">
             <h1 class="page-title">Cerere de credit online</h1>
-            <FormKit type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
+            <FormKit id="cerere-online-form" type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
                     :validation-messages="{
                             incomplete: 'Ne pare rău, careva cîmpuri sunt greșite sau lipsesc',
                         }">
