@@ -57,10 +57,11 @@ const submitForm = async () => {
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card light">
             <h1 class="page-title">Cerere de credit online</h1>
-            <FormKit id="cerere-online-form" type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
-                    :validation-messages="{
-                            incomplete: 'Ne pare rău, careva cîmpuri sunt greșite sau lipsesc',
-                        }">
+            <FormKit id="cerere-online-form" type="form" method="POST" :actions="false" 
+                    @submit="submitForm" 
+                    v-model="formData"                
+                    incomplete-message="Ne pare rău, careva cîmpuri sunt greșite sau lipsesc"
+            >
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormKit 
                         type="number"
