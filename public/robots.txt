@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /*.pdf$
+Disallow: https://idealcredit.md/cdn-cgi/*
 
 Sitemap: https://idealcredit.md/sitemap.xml
