@@ -36,7 +36,7 @@ const submitForm = async () => {
 
         let res = await axios.post('/api/cerere-online', formData.value)
        
-        
+        console.log(res.data)
         if (res?.data?.success) {
             
             setTimeout(() => {
