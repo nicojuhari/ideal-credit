@@ -25,8 +25,9 @@ export default defineNuxtConfig({
     css: ['@/assets/css/main.css'],
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',
+        icm_api_url: process.env.NUXT_ICM_API_URL,
         public: {
-            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://idealcredit.md',
+            siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
             siteDescription: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova cu dobânzi avantajoase și fără comisioane ascunse',
             language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`

@@ -14,17 +14,17 @@
     })
 
     const loading = ref(false)
-    const web3FormAccessKey = 'c8f3c3c1-46ab-46bf-a139-4c4bb6265d95'
+    // const web3FormAccessKey = 'c8f3c3c1-46ab-46bf-a139-4c4bb6265d95'
 
 
 const submitForm = async () => {
     loading.value = true
     try {
-        formData.value.access_key = web3FormAccessKey;
-        formData.value.subject = formData.value.suma + ' MDL, ' +  formData.value.termen + ' luni, ' + formData.value.nume;
-        formData.value.from_name = 'Cerere de Credit Online';
+        // formData.value.access_key = web3FormAccessKey;
+        // formData.value.subject = formData.value.suma + ' MDL, ' +  formData.value.termen + ' luni, ' + formData.value.nume;
+        // formData.value.from_name = 'Cerere de Credit Online';
 
-        let response = await fetch('https://api.web3forms.com/submit', {
+        let response = await fetch('/api/cerere-online', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -34,7 +34,7 @@ const submitForm = async () => {
         })
 
         let data = await response.json()
-
+        
         if (data.success) {
             
             setTimeout(() => {
@@ -42,6 +42,8 @@ const submitForm = async () => {
                 reset('cerere-online-form', {})
                 formSuccess.value = true
             }, 1200)
+        } else  {
+            alert('Din careva motive cererea nu poate fi transmisă')
         }
     } catch (e) {
         console.error(e)
