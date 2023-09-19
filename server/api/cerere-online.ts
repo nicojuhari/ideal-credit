@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
     let apiURL = config.icm_api_url
     
-    console.log(body, apiURL, 'server/api')
+    console.log(apiURL + '/cerere_online?secret_key=' + config.secret_key, 'server/api')
     try {
         if(apiURL && body) {
             let response = await axios.post(apiURL + '/cerere_online?secret_key=' + config.secret_key , body,  {
