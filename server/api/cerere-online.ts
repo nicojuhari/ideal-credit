@@ -1,4 +1,4 @@
-
+import axios from 'axios'
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const config = useRuntimeConfig()
@@ -8,15 +8,14 @@ export default defineEventHandler(async (event) => {
     console.log(body, apiURL, 'server/api')
     try {
         if(apiURL && body) {
-            let response = await fetch(apiURL + '/cerere_online', {
-                    method: 'POST',
+            let response = await axios.post(apiURL + '/cerere_online', body,  {
                     headers: {
                         "Content-Type": "application/json",
                         Accept: "application/json"
-                    },
-                    body: JSON.stringify(body)
+                    }
                 })
-            let data = await response.json()
+
+            console.log(response)
             return { success: 'Cererea a fost transmisă cu success!'}
         }
         return false

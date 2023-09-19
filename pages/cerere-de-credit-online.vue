@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    import axios from 'axios'
     import { reset } from '@formkit/core'
 
     const formData = ref({})
@@ -24,20 +25,19 @@ const submitForm = async () => {
         // formData.value.subject = formData.value.suma + ' MDL, ' +  formData.value.termen + ' luni, ' + formData.value.nume;
         // formData.value.from_name = 'Cerere de Credit Online';
 
-        let response = await fetch('/api/cerere-online', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: JSON.stringify(formData.value)
-        })
+        // let response = await fetch('/api/cerere-online', {
+        //     method: 'POST',
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         Accept: "application/json"
+        //     },
+        //     body: JSON.stringify(formData.value)
+        // })
 
-        let data = await response.json()
-
-        console.log(data)
+        let res = await axios.post('/api/cerere-online', formData.value)
+       
         
-        if (data.success) {
+        if (res?.data?.success) {
             
             setTimeout(() => {
                 // formSend.value = false;
