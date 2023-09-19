@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     console.log(body, apiURL, 'server/api')
     try {
         if(apiURL && body) {
-            let response = await axios.post(apiURL + '/cerere_online', body,  {
+            let response = await axios.post(apiURL + '/cerere_online?secret_key=' + config.secret_key , body,  {
                     headers: {
                         "Content-Type": "application/json",
                         Accept: "application/json"

@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',
         icm_api_url: process.env.NUXT_ICM_API_URL,
+        secret_key: process.env.NUXT_SECRET_KEY,
         public: {
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
