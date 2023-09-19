@@ -8,14 +8,9 @@ export default defineEventHandler(async (event) => {
     console.log(apiURL + '/cerere_online?secret_key=' + config.secret_key, 'server/api')
     try {
         if(apiURL && body) {
-            let response = await axios.post(apiURL + '/cerere_online?secret_key=' + config.secret_key , body,  {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Accept: "application/json"
-                    }
-                })
+            let response = await axios.post(apiURL + '/cerere_online?secret_key=' + config.secret_key, body)
 
-            console.log(response)
+            console.log(response.data)
             return { success: 'Cererea a fost transmisă cu success!'}
         }
         return false
