@@ -34,6 +34,8 @@ const submitForm = async () => {
         })
 
         let data = await response.json()
+
+        console.log(data)
         
         if (data.success) {
             

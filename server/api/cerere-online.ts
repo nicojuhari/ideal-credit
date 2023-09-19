@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
 
     let apiURL = config.icm_api_url
     
+    console.log(body, apiURL, 'server/api')
     try {
         if(apiURL && body) {
             let response = await fetch(apiURL + '/cerere_online', {
