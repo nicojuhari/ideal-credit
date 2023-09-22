@@ -29,7 +29,7 @@
                         <NuxtLink to="/refinantare-credite" title="Refinanțare Credite">Refinanțare</NuxtLink>
                         <NuxtLink to="/despre-noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte">Contacte</NuxtLink>
-                        <UiPhoneButton/>
+                        <UiPhoneButton light/>
                     </nav>
                     <div class="flex md:hidden">
                         <div @click="toggleMenu" class="p-2 bg-brand-black cursor-pointer rounded-full">
@@ -46,27 +46,25 @@
                                     </div>
                                 </div>
                                 <NuxtLink to="/"
-                                    class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Pagina Principală
                                 </NuxtLink>
                                 <NuxtLink to="/refinantare-credite"
-                                    class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Refinanțare
                                 </NuxtLink>
                                 <NuxtLink to="/despre-noi"
-                                    class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Despre noi
                                 </NuxtLink>
                                 <NuxtLink to="/contacte"
-                                    class="flex w-full font-semibold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Contacte
                                 </NuxtLink>
-                                <div class="p-4 mt-auto mb-5 flex flex-col items-center text-center">
-                                    <a href="tel:+37378805060" title="+373 78 80 50 60"
-                                        class="py-2.5 px-4 bg-brand-color bg-opacity-20 rounded-full flex gap-4 items-center justify-center max-w-max">
-                                        <IconsPhone class="w-6 h-6 text-brand-color phone" />
-                                        <div class="text-brand-color tracking-widest">078 80 50 60</div>
-                                    </a>
+                                
+                                <div class="p-4 mt-auto mb-5 flex gap-6 flex-col items-center text-center">
+                                   <div class="text-xl">Solicită un credit acum!</div> 
+                                    <UiPhoneButton light/>
                                 </div>
                             </div>
                         </transition>
@@ -79,7 +77,7 @@
 <style>
 .mobile-dropdown {
     max-width: 320px;
-    min-height: 100vh;
+    min-height: 100dvh;
     z-index: 100;
 }
 .menu-slide-leave-to,

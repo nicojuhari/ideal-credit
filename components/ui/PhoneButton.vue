@@ -1,10 +1,17 @@
 <script setup>
-
+    defineProps({
+            light: {
+                default: false,
+                type: Boolean,
+            }
+        }
+    )
 </script>
 <template>
     <a href="tel:+37378805060" title="+373 78 80 50 60"
-        class="h-10 px-4 bg-brand-color bg-opacity-20 rounded-full inline-flex gap-4 items-center justify-center">
-        <IconsPhone class="w-6 h-6 text-brand-color phone" />
-        <div class="text-brand-color tracking-widest">078 80 50 60</div>
+        class="h-10 px-4 border bg-opacity-20 rounded-full inline-flex gap-4 items-center justify-center" 
+        :class="light ? 'border-brand-color text-brand-color' : 'border-brand-black text-brand-black'">
+        <IconsPhone class="w-6 h-6 phone" />
+        <div class="tracking-widest">078 80 50 60</div>
     </a>
 </template>

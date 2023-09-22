@@ -88,11 +88,13 @@ textarea {
 }
 
 .card {
-    @apply rounded-lg px-4 py-8 md:px-8 md:py-16 shadow-md bg-brand-raisin-black overflow-hidden;
+    @apply rounded-lg px-4 py-8 md:px-8 md:py-16 shadow-md bg-brand-black overflow-hidden;
 }
 
 .card.light {
-    @apply bg-[#FBF5F3] text-brand-raisin-black;
+    @apply text-brand-black;
+    background: rgb(255, 247, 234);
+    /* background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 247, 234, 1) 100%); */
 }
 .card-title {
     font-weight: 400;

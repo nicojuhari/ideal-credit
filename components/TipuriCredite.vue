@@ -6,7 +6,7 @@ let credits = [
     { name: 'Credite pentru afaceri', link: 'credite-pentru-afaceri', icon: 'ph:chart-bar-light' }
 ]
 
-let classes = 'bg-brand-raisin-black px-4 py-8 text-lg rounded-lg duration-300 hover:bg-opacity-80 flex flex-col justify-between items-center gap-6 flex-grow text-center'
+let classes = 'bg-brand-black px-4 py-8 text-lg rounded-lg duration-300 hover:bg-opacity-80 flex flex-col justify-between items-center gap-6 flex-grow text-center'
 </script>
 <template>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">

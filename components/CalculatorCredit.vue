@@ -76,12 +76,14 @@
                 <div class="mt-6">
                     <div class="flex gap-4 justify-between items-center mb-1">
                         <div>Suma</div>
-                        <div>
+                        <label>
                             <input type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
-                        </div>
+                        </label>
                     </div>
+                    <label>
                     <input type="range" v-model="creditSuma" min="1000" max="300000" step="100"
                         class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                        </label>
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
                         <div>1000 lei</div>
                         <div>300 000 lei</div>
@@ -90,12 +92,14 @@
                 <div class="mt-6">
                     <div class="flex gap-4 justify-between items-center mb-1">
                         <div>Termen</div>
-                        <div class="">
+                        <label>
                             <input type="number" :value="creditTermen" @input="validateInput" @change="validateChange($event.target.value, 'termen')" class="input-calculator" />
-                        </div>
+                        </label>
                     </div>
-                    <input type="range" v-model="creditTermen" min="6" max="60" step="1"
+                    <label>
+                        <input type="range" v-model="creditTermen" min="6" max="60" step="1"
                         class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                    </label>
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
                         <div>6 luni</div>
                         <div>60 luni</div>
