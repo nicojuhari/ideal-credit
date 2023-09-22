@@ -9,7 +9,7 @@
 <template>
     <div class="card light">
         <div class="h-24 md:h-40 mb-8">
-                <img src="/conditiile-de-creditare.png" class="h-full m-auto" alt="Condițiile de creditare" title="Condițiile de creditare"/>
+                <img src="/conditiile-de-creditare.webp" class="h-full m-auto" alt="Condițiile de creditare" title="Condițiile de creditare"/>
             </div>
         <div class="">
             <h2 class="card-title text-center">Condițiile de creditare</h2>
