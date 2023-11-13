@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /*.pdf$
-Disallow: https://idealcredit.md/cdn-cgi/*
+Disallow: /cdn-cgi/*
+Disallow: /autoritatea-de-supraveghere
 
 Sitemap: https://idealcredit.md/sitemap.xml

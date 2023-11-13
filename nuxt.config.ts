@@ -21,7 +21,7 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-icon'],
+    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-simple-robots', 'nuxt-icon'],
     extends: [
         'nuxt-seo-kit'
     ],
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
         }
     },
     sitemap: {
-        siteUrl: "https://idealcredit.md",
-        trailingSlash: false
+    // exclude all URLs that start with /secret
+        exclude: ['/autoritatea-de-supraveghere'],
     }
 })
