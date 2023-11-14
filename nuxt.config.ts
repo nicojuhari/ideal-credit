@@ -21,7 +21,14 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: ['@nuxtjs/tailwindcss','@formkit/nuxt', 'nuxt-simple-sitemap', 'nuxt-simple-robots', 'nuxt-icon'],
+    modules: [ 
+            '@nuxtjs/tailwindcss', 
+            '@formkit/nuxt', 
+            'nuxt-simple-sitemap', 
+            'nuxt-simple-robots', 
+            'nuxt-icon', 
+            [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }]
+        ],
     extends: [
         'nuxt-seo-kit'
     ],
@@ -30,6 +37,7 @@ export default defineNuxtConfig({
         siteUrl: 'https://idealcredit.md',
         icm_api_url: process.env.NUXT_ICM_API_URL,
         secret_key: process.env.NUXT_SECRET_KEY,
+        storyblok_mode: process.env.storyblok_mode as 'draft' | 'published',
         public: {
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',

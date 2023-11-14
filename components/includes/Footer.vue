@@ -36,6 +36,10 @@
             title: 'Credite pentru refinanțare',
             link: '/refinantare-credite',
         },
+        {
+            title: 'Blog Financiar',
+            link: '/blog',
+        },
     ]
 </script>
 <template>
@@ -78,8 +82,8 @@
                 </ul>
             </div>
         </div>
-        <div class="text-center my-4 text-brand-color">
-            <NuxtLink to="/autoritatea-de-supraveghere">Autoritatea de Supraveghere și metodele de reclamații</NuxtLink>
+        <div class="container text-center my-4 text-brand-color">
+            <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow">Autoritatea de Supraveghere și metodele de reclamații</NuxtLink>
         </div>
         <div class="container mt-6">
             <div class="divider"></div>
