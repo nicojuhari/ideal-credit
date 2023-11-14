@@ -230,6 +230,6 @@ input[type=number] {
     margin: auto;
 }
 
-.richtext h3, h2 {
+.richtext h3, .richtext h2 {
    @apply text-xl font-semibold mb-6 mt-14;
 }
