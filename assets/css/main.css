@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); */
 html {
     scroll-behavior: smooth;
     font-family: Helvetica, Arial, sans-serif;
@@ -93,12 +94,18 @@ textarea {
 
 .card.light {
     @apply text-brand-black;
-    background: rgb(255, 247, 234);
+    background: rgb(236, 236, 236);
     /* background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 247, 234, 1) 100%); */
 }
+
 .card-title {
     font-weight: 400;
 }
+
+.blog-page .card {
+    @apply py-4 md:py-8
+}
+
 .title {
     font-weight: 600;
 }
@@ -231,5 +238,17 @@ input[type=number] {
 }
 
 .richtext h3, .richtext h2 {
-   @apply text-xl font-semibold mb-6 mt-14;
+   @apply text-xl font-semibold mb-6 mt-16;
+}
+
+.richtext h2 {
+    @apply text-2xl;
+}
+
+.richtext b {
+    @apply font-semibold;
+}
+
+.richtext h2 + h3, .richtext>h3:first-of-type {
+    @apply mt-0;
 }
