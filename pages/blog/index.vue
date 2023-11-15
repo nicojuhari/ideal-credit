@@ -11,7 +11,7 @@ const { data } = await storyblokApi.get("cdn/stories", {
 stories.value = data.stories;
 
 useHead({
-    title: 'Blog financiar | Ideal Credit SRL',
+    title: 'Blog financiar',
     meta: [
         { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },
         { name: 'description', content: 'Articole financiare' }
