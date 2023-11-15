@@ -11,10 +11,10 @@ const { data } = await storyblokApi.get("cdn/stories", {
 stories.value = data.stories;
 
 useHead({
-    title: 'Blog - Create a Restaurant Menu Online | 1FoodMenu',
+    title: 'Blog financiar | Ideal Credit SRL',
     meta: [
-        { name: 'keywords', content: 'create restaurant menu online, digital food menu, menu design, restaurant website, create food menu' },
-        { name: 'description', content: 'Articles on how to use our web tool to create a restaurant menu online for free. In 4 easy steps you can create a great digital food menu for your restaurant, bar or cafe.' }
+        { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },
+        { name: 'description', content: 'Articole financiare' }
     ],
 })
 
