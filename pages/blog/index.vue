@@ -14,7 +14,7 @@ useHead({
     title: 'Blog financiar',
     meta: [
         { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },
-        { name: 'description', content: 'Articole financiare' }
+        { name: 'description', content: 'Descoperă lumea creditelor cu Ideal Credit! Explorăm totul în mod clar și educativ. Ia decizii financiare înțelepte pentru un viitor mai sigur!' }
     ],
 })
 

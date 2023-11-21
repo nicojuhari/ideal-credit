@@ -21,6 +21,7 @@ function truncateString(str, num) {
 
 useHead({
     title: story?.value.content.title,
+    titleTemplate: '%pageTitle',
     meta: [
         { name: 'keywords', content: 'credite rapide, împrumuturi, articole financiare, credite pentru afaceri' },
         { name: 'description', content: truncateString(htmlText.value, 150) },
