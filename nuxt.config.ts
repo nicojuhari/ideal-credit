@@ -22,15 +22,11 @@ export default defineNuxtConfig({
         },
     },
     modules: [ 
-            '@nuxtjs/tailwindcss', 
-            '@formkit/nuxt', 
-            'nuxt-simple-sitemap', 
-            'nuxt-simple-robots', 
-            'nuxt-icon', 
-            [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }]
-        ],
-    extends: [
-        'nuxt-seo-kit'
+        '@nuxtjs/tailwindcss', 
+        '@formkit/nuxt', 
+        '@nuxtjs/seo',
+        'nuxt-icon', 
+        [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }]
     ],
     css: ['@/assets/css/main.css'],
     runtimeConfig: {
@@ -44,6 +40,9 @@ export default defineNuxtConfig({
             siteDescription: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova cu dobânzi avantajoase și fără comisioane ascunse',
             language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
         }
+    },
+    site: {
+        url: process.env.NUXT_BASE_URL || 'https://idealcredit.md'
     },
     sitemap: {
     // exclude all URLs that start with /secret
