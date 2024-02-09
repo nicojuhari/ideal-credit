@@ -4,7 +4,6 @@
             title: 'Sediul',
             address: 'or. Căușeni, str. M.Eminescu',
             addressNumbers: 'nr. 17,  of. 47',
-            phone: ['+37324393222', '(0243) 93 222'],
             mobile: ['+37379066566', '0790 66 5 66'],
         },
         {
@@ -49,7 +48,7 @@
                 <div class="h-10 text-xl flex items-center font-medium">Adresa oficiilor</div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                     <div v-for="oficiu in oficii" :key="oficiu.address">
-                        <div class="text-lg mb-2">
+                        <div class="font-bold mb-2">
                             {{ oficiu.title }}
                         </div>
                         <div class="flex gap-4 mb-4 items-center">
@@ -58,15 +57,9 @@
                             </div>
                             <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
                         </div>
-                        <a :href="'tel:'+ oficiu.phone[0]" class="flex gap-4 mb-4 items-center" v-if="oficiu.phone">
-                            <div class="p-2 rounded-full bg-brand-raisin-black">
-                                <Icon name="ph:phone-light" class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
-                            </div>
-                            <div>{{ oficiu.phone[1] }}</div>
-                        </a>
                         <a :href="'tel:' + oficiu.mobile[0]" class="flex gap-4 items-center">
                             <div class="p-2 rounded-full bg-brand-raisin-black">
-                                <Icon name="ph:device-mobile-camera-light"  class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
+                                <Icon name="ph:phone-light"  class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
                             </div>
                             <div>{{ oficiu.mobile[1] }}</div>
                         </a>
