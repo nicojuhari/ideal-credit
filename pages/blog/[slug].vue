@@ -50,7 +50,7 @@ useSchemaOrg([
 <template>
     <section class="py-5 md:py-10 blog-page">
         <div class="container sm-container card light" v-if="story">
-            <h1 class="text-3xl mb-6 font-medium">{{ story?.content?.title }}</h1>
+            <h1 class="text-3xl mb-6 font-extrabold">{{ story?.content?.title }}</h1>
             <div>
                 <img :src="story.content?.image?.filename" :alt="story.content.title"
                     class="w-full bg-slate-100 object-center object-cover border-0 rounded aspect-video" />

@@ -42,7 +42,8 @@ export default defineNuxtConfig({
         }
     },
     site: {
-        url: process.env.NUXT_BASE_URL || 'https://idealcredit.md'
+        url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',
+        name: 'Ideal Credit',
     },
     sitemap: {
     // exclude all URLs that start with /secret
