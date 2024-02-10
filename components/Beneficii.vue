@@ -1,7 +1,7 @@
 <script setup>
     let list = [
         '0% comision de acordare',
-        'Dobînzi fixe',
+        'Dobânzi fixe',
         'Fără comisioane ascunse',
         'Rambursare anticipată fără comision',
         'Reduceri pentru clienții cu istorie creditară pozitivă',

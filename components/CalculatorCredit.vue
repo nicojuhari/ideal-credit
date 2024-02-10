@@ -134,17 +134,17 @@
                     <div>0.04 %</div>
                 </div>
                 <div class="flex gap-6 justify-between mt-3">
-                    <div>Dobînda lunară</div>
+                    <div>Dobânda lunară</div>
                     <div>{{ tarife.dobinda[0] }} %</div>
                 </div>
             </div>
             <div>
                 <div class="flex gap-6 justify-between">
-                    <div>Dobînda anuală medie</div>
+                    <div>Dobânda anuală medie</div>
                     <div>{{ tarife.dobinda[0] * 12 }} %</div>
                 </div>
                 <div class="flex gap-6 justify-between mt-3">
-                    <div>DAE<span class="text-sm"> (Dobînda anuală efectivă)</span></div>
+                    <div>DAE<span class="text-sm"> (Dobânda anuală efectivă)</span></div>
                     <div>{{ dae }} %</div>
                 </div>
                 <div class="flex gap-6 justify-between mt-3">

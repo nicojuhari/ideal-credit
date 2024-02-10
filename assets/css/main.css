@@ -111,7 +111,7 @@ textarea {
 }
 .subtitle {
     @apply text-xl md:text-2xl;
-    font-weight: 600;
+    font-weight: 400;
 }
 .card-title, .title {
     @apply text-2xl md:text-4xl mb-6 md:mb-8;

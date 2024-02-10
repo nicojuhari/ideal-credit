@@ -2,7 +2,7 @@
     useHead({
         title: 'Despre noi',
         meta: [
-            { name: 'description', content: 'Ideal Credit este o organizație de creditare nebancară ce oferă credite cu dobînzi avantajoase și fără comisioane ascunse pentru nevoi personale și afaceri.' },
+            { name: 'description', content: 'Ideal Credit este o organizație de creditare nebancară ce oferă credite cu dobânzi avantajoase și fără comisioane ascunse pentru nevoi personale și afaceri.' },
             { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
         ],
     })

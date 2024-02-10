@@ -4,7 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite rapide pentru nevoi personale și afaceri',
+            title: 'Credite rapide cu dobânzi mici și fără comisioane ascunse',
             script: [
                 { src: 'https://cdn.splitbee.io/sb.js', async: true}
             ],
@@ -15,8 +15,8 @@ export default defineNuxtConfig({
                 { rel: 'apple-touch-icon', sizes:"180x180", href:"/apple-touch-icon.png" }
             ],
             meta: [
-                { name: 'description', content: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova cu dobânzi avantajoase și fără comisioane ascunse' },
-                { name: 'keywords', content: 'Credite rapide, credite nebancare, împrumut, credite nevoi personale, credite Chișinău, credite Moldova, credite pentru afaceri' },
+                { name: 'description', content: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Aplică online, pentru un credit bun de la Ideal Credit!' },
+                { name: 'keywords', content: 'credit rapid, credit online, împrumut, credit nevoi personale, credit Chișinău Moldova, credit online md, credit avantajos' },
                 { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"}
             ],
         },
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         public: {
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
-            siteDescription: 'Credite rapide pentru nevoi personale și afaceri în Chișinău, Republica Moldova cu dobânzi avantajoase și fără comisioane ascunse',
+            siteDescription: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Aplică online, pentru un credit bun de la Ideal Credit!',
             language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
         }
     },

@@ -2,11 +2,11 @@
  const list = [
     { 
         question: 'Pot achita creditul înainte de termen?',
-        answer: 'Da, puteți achita creditul înainte de termen, și dobînda se va calcula doar pentru perioada de utilizare a creditului.'
+        answer: 'Da, puteți achita creditul înainte de termen, și dobânda se va calcula doar pentru perioada de utilizare a creditului.'
     },
     {
-        question: 'Dobînda este flotantă sau fixă ?',
-        answer: 'Dobînda este fixă, și nu se modifică în timpul perioadei de creditare.'
+        question: 'Dobânda este flotantă sau fixă ?',
+        answer: 'Dobânda este fixă, și nu se modifică în timpul perioadei de creditare.'
     },
     {
         question: 'Ce se întâmplă în cazul întârzierii sau neplății ratelor?',
@@ -23,13 +23,17 @@
     {
         question: 'Am credite la alte organizații/bănci, le pot refinanța la Ideal Credit?',
         answer: `Da, Ideal Credit refinanțează credite de la alte organizații sau bănci în urma analizei detaliate a situației Dvs. financiare.`
+    },
+    {
+        question: 'Ce înseamnă DAE la credit?',
+        answer: `DAE, sau Dobânda Anuală Efectivă, este un indicator crucial în domeniul creditelor, reprezentând costul total al unui credit pentru consumatori, incluzând atât dobânda aferentă împrumutului cât și alte costuri asociate. Este important să luați în considerare DAE atunci când comparați diferite oferte de credite.`
     }
  ]
  let classes = 'bg-brand-white-smoke p-4 py-6 rounded-lg duration-300 flex flex-col gap-4'
 
 </script>
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+    <div class="grid grid-cols-1 gap-4 md:gap-6">
             <div v-for="item in list" :class="classes" class="group">
                 <div class="text-brand-raisin-black font-normal text-xl">{{ item.question }}</div>
                 <div class="text-brand-raisin-black text-opacity-90">{{ item.answer }}</div>

@@ -2,7 +2,7 @@
 useHead({
     title: 'Credite pentru Afaceri',
     meta: [
-        { name: 'description', content: 'Investește în afacerea ta, cu ajutorul creditelor noastre pentru afaceri. Acordăm credite cu dobînzi avantajoase și fără comisioane ascunse! Aplică online.' },
+        { name: 'description', content: 'Investește în afacerea ta, cu ajutorul creditelor noastre pentru afaceri. Acordăm credite cu dobânzi avantajoase și fără comisioane ascunse! Aplică online.' },
         { name: 'keywords', content: 'credite imobiliare, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
     ],
 })
