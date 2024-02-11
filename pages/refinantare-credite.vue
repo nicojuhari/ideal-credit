@@ -37,7 +37,6 @@ const list = [
         <div class="container my-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div v-for="item in list" :key="item.name" class="bg-brand-black px-4 py-8 rounded-lg flex-grow" :title="item.name">
-                    <!-- <Icon :name="item.icon" class="text-brand-color text-opacity-50 w-10 h-10 group-hover:scale-110 group-hover:text-opacity-100 duration-500" /> -->
                     <div class="mb-6 font-medium text-brand-color text-lg">{{ item.name }}</div>
                     <div> {{ item.description }}</div>
                 </div>

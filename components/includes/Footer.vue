@@ -20,8 +20,8 @@
             link: '/credite-de-consum',
         },
         {
-            title: 'Credite auto',
-            link: '/credite-auto',
+            title: 'Credit auto',
+            link: '/credit-auto',
         },
         {
             title: 'Credite imobiliare',
