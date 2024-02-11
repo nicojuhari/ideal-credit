@@ -47,7 +47,7 @@
             <div>
                 <div class="flex items-center gap-3">
                     <IconsLogo class="h-10 " />
-                    <p class="text-xl">Ideal Credit</p>
+                    <div class="text-xl">Ideal Credit</div>
                 </div>
                 <p class="mt-4">oferă credite rapide nebancare cu dobânzi mici și fără comisioane ascunse, pentru persoane fizice și juridice din Republica Moldova.</p>
                 <ul class="mt-4">
