@@ -55,7 +55,7 @@ const list = [
                 <li><strong>Accesibilitate:</strong> Poți achiziționa o mașină mai performantă, mai sigură sau mai spațioasă decât ți-ai permite din economii. Acest lucru îți poate îmbunătăți calitatea vieții, oferind siguranță sporită familiei, acces la locuri de muncă mai îndepărtate sau facilitând transportul pentru afacerea ta.</li>
                 <li><strong>Plăți lunare predictibile:</strong> Spre deosebire de costurile fluctuante de combustibil și mentenanță, ratele lunare fixe ale creditului oferă predictibilitate și ușurează gestionarea bugetului.</li>
                 <li><strong>Construirea istoricului de credit:</strong> Rambursarea corectă a creditului poate contribui la îmbunătățirea scorului de credit, ajutându-te să obții condiții mai avantajoase pentru viitoarele finanțări.</li>
-                <li><strong>Credit auto cu gaj</strong> Mașina devine garanția creditului, ceea ce poate duce la dobânzi mai mici.</li>
+                <li><strong>Credit auto cu gaj:</strong> Mașina devine garanția creditului, ceea ce poate duce la dobânzi mai mici.</li>
             </ul>
             <p class="mt-6 mb-0 font-medium">Contactează-ne pentru mai multe informații și îți vom oferi toate detaliile necesare pentru a te bucura de mașina dorită cât mai curînd.</p>
         </div>
