@@ -34,7 +34,7 @@ const list = [
                 <UiHeroSectionCTA/>
             </div>
         </div>
-        <div class="container my-6">
+        <div class="container my-6 relative">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div v-for="item in list" :key="item.name" class="bg-brand-black px-4 py-8 rounded-lg flex-grow" :title="item.name">
                     <div class="mb-6 font-medium text-brand-color text-lg">{{ item.name }}</div>
@@ -42,7 +42,6 @@ const list = [
                 </div>
             </div>
         </div>
-        
         <div class="container text-lg relative">
             <div class="card light">
                 <h2 class="card-title text-center">Ce este un credit pentru refinanțare?</h2>
