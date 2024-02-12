@@ -1,25 +1,54 @@
 <script setup>
 const list = [
-    'În oficiile companiei Ideal Credit',
-    'Prin intermediul băncii "VictoriaBank"',
+    'În unul din oficiile companiei Ideal Credit',
+    'În caseria Prin intermediul băncii "VictoriaBank"',
     'La orice oficiu poștal din Republica Moldova',
     'Online Banking',
 ]
+
+const list2 = [
+    {
+        title: 'Ideal Credit',
+        description: 'Rambursarea împrumutului în unul din oficiile companiei',
+        comision: 0,
+    },
+    {
+        title: 'Victoriabank',
+        description: 'Rambursarea creditului în numerar la orice sucursală or filială a băncii Victoriabank',
+        comision: '7 lei',
+        comision_desc: 'pentru fiecare plată'
+    },
+    {
+        title: 'VB24 Web',
+        description: 'Achitarea creditului online prin aplicația mobilă sau web a băncii Victoriabank',
+        comision: '3 lei',
+        comision_desc: 'pentru fiecare plată'
+    },
+    {
+        title: 'Online Banking',
+        description: 'Transfer bancar sau de pe card pe contul IBAN al companiei Ideal Credit',
+        comision: '3.5 lei',
+        comision_desc: 'pentru fiecare plată'
+    },
+     {
+        title: 'Poșta Moldovei',
+        description: 'Achitarea creditului la orice oficiu poștal din Republica Moldova',
+        comision: '6 lei',
+        comision_desc: 'pentru fiecare plată'
+    }
+]
 </script>
 <template>
-    <div class="card grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:gap-6">
-        <div>
-            <h2 class="card-title text-center">Metode de achitare</h2>
-            <div class="flex gap-4 flex-col">
-                <div v-for="item in list" class="flex text-xl">
-                    <Icon name="ph:dot-outline-light" class="w-8 h-8 flex-shrink-0 text-brand-color text-opacity-50"/>
-                    {{ item }}
-                </div>
+    <div class="grid grid-cols-2 gap-4 md:gap-6">
+        <div v-for="(item,idx) in list2" :key="item.title" class="bg-brand-black px-4 py-6 rounded-lg flex flex-col flex-grow" :class="{'col-span-2': list2.length == idx + 1 }">
+            <div class="mb-3 flex items-center flex-wrap gap-2 justify-between">
+                <span class="text-brand-color text-lg md:text-2xl">{{ item.title }}</span>
+                <span class="text-xs md:text-sm opacity-80">
+                    comision {{ item.comision }} <span v-if="item.comision">/ plată</span>
+                </span>
             </div>
-        </div>
-        <div class="-order-1 md:order-1">
-            <div class="h-32 md:h-64 mb-8 md:mb-0">
-                <img src="/metode-de-achitare-credite.webp" class="h-full m-auto" alt="Metode de achitare credite" title="Metode de achitare credite"/>
+            <div class="text-sm md:text-base">
+                {{ item.description }}
             </div>
         </div>
     </div>

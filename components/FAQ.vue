@@ -29,7 +29,7 @@
         answer: `DAE, sau Dobânda Anuală Efectivă, este un indicator crucial în domeniul creditelor, reprezentând costul total al unui credit pentru consumatori, incluzând atât dobânda aferentă împrumutului cât și alte costuri asociate. Este important să luați în considerare DAE atunci când comparați diferite oferte de credite.`
     }
  ]
- let classes = 'bg-brand-white-smoke p-4 py-6 rounded-lg duration-300 flex flex-col gap-4'
+ let classes = 'bg-white p-4 py-6 rounded-lg duration-300 flex flex-col gap-4'
 
 </script>
 <template>

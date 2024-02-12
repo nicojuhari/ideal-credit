@@ -37,10 +37,10 @@ p {
     @apply h-10 px-8 rounded-full inline-flex gap-3 items-center justify-center text-lg;
 }
 .btn-primary {
-    @apply bg-brand-white-smoke text-brand-black border-brand-white-smoke border;
+    @apply bg-white text-brand-black border-white border;
 }
 .btn-primary.btn-light {
-    @apply bg-opacity-10 border-opacity-0 text-brand-white-smoke ;
+    @apply bg-opacity-10 border-opacity-0 text-white ;
 }
 
 .btn-secondary {
