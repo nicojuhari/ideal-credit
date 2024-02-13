@@ -95,7 +95,7 @@
             </div>
         <div class="container mt-6">
             <div class="divider"></div>
-            <div class="flex justify-center py-6 gap-1">
+            <div class="text-center py-6 gap-1 flex-wrap">
                 &copy; {{ new Date().getFullYear() }} - Organizația de Creditare Nebancară <strong>"Ideal Credit"</strong> SRL
             </div>
         </div>
