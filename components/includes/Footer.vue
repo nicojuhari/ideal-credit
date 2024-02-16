@@ -1,7 +1,7 @@
 <script setup>
     const oficii = [
         {
-            title: 'Sediul',
+            title: 'Sediul principal',
             address: 'or. Căușeni, str. M.Eminescu',
             addressNumbers: 'nr. 17,  of. 47',
             mobile: ['+37379066566', '0790 66 5 66'],
