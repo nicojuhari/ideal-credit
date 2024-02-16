@@ -15,26 +15,6 @@
     ]
 
     const links = [
-        // {
-        //     title: 'Credite de consum',
-        //     link: '/credite-de-consum',
-        // },
-        // {
-        //     title: 'Credit auto',
-        //     link: '/credit-auto',
-        // },
-        // {
-        //     title: 'Credite imobiliare',
-        //     link: '/credite-imobiliare',
-        // },
-        // {
-        //     title: 'Credite pentru afaceri',
-        //     link: '/credite-pentru-afaceri',
-        // },
-        // {
-        //     title: 'Credite pentru refinanțare',
-        //     link: '/refinantare-credite',
-        // },
         {
             title: 'Blog financiar >>',
             link: '/blog',
@@ -88,6 +68,20 @@
                     <li>Costului total al creditului (care include dobânzi, comisioane, taxe, penalități, dobânzi de întârziere și orice alt tip de plată) să nu fie mai mare decât valoarea debursată conform contractului (cu excepția contractelor ipotecare).</li>
                 </ul>
         </div>
+        <div class="container pb-6 mt-10">
+            <p class="mb-0">Dicționar financiar:</p>
+            <ul class="list-outside list-disc ml-6">
+                <li><span class="font-medium">Credit - </span> este o operațiune financiară prin care o persoană fizică sau juridică primește o sumă de bani de la o altă entitate, cu obligația de a o rambursa, de obicei cu dobândă, într-o perioadă determinată.</li>
+                <li><span class="font-medium">Dobânda - </span> este prețul plătit pentru folosirea banilor împrumutați, calculată ca un procentaj din suma principală.</li>
+                <li><span class="font-medium">Contract de Credit - </span> reprezintă un acord legal între un creditor (instituție financiară) și un debitor (persoana care împrumută) prin care creditorul pune la dispoziția debitorului o sumă de bani, iar debitorul se obligă să o ramburseze în rate, împreună cu dobânda și alte costuri stabilite, într-o anumită perioadă de timp.</li>
+                <li><span class="font-medium">Creditor - </span>este o persoană fizică sau juridică care oferă o sumă de bani sau bunuri unei alte persoane (debitor), cu obligația rambursării acestora.</li>
+                <li><span class="font-medium">Debitor - </span> este o persoana fizică sau juridică care are o obligație financiară către o altă parte(creditor), și care trebuie să ramburseze o sumă de bani, o creanță sau o prestație.</li>
+                <li><span class="font-medium">Costul total al creditului - </span> reprezintă suma totală platită de debitor pentru a împrumuta o sumă de bani, incluzând dobanda, comisioanele și alte taxe asociate.</li>
+                <li><span class="font-medium">Penalitate - </span> este o sancțiune financiară aplicată debitorului care întârzie la plata ratelor lunare sau nerespectă alte clauze din contractul de credit.</li>
+                <li><span class="font-medium">Cesiune - </span>reprezintă transferul drepturilor și obligațiilor de împrumut către o altă entitate (cesionar).</li>
+            </ul>
+        </div>
+
         <div class="container my-6">
                         <!-- <div class="h-10 text-xl flex items-center font-medium">Linkuri</div> -->
                         
