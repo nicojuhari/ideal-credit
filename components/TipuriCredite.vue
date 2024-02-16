@@ -3,7 +3,7 @@ let credits = [
     { name: 'Credit de consum', link: 'credit-de-consum', icon: 'ph:shopping-cart-simple-light' },
     { name: 'Credit auto', link: 'credit-auto', icon: 'ph:car-profile-light' },
     { name: 'Credit ipotecar', link: 'credit-ipotecar', icon: 'ph:house-line-light' },
-    { name: 'Credite pentru afaceri', link: 'credite-pentru-afaceri', icon: 'ph:chart-bar-light' }
+    { name: 'Credit pentru afaceri', link: 'credit-pentru-afaceri', icon: 'ph:chart-bar-light' }
 ]
 
 let classes = 'bg-brand-black px-4 py-8 text-lg rounded-lg duration-300 hover:bg-opacity-80 flex flex-col justify-between items-center gap-6 flex-grow text-center'

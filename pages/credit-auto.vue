@@ -11,7 +11,7 @@ useHead({
 const list = [
     {
         name: 'Destinația',
-        description: 'pentru cumpărarea unui automobil nou sau folosit'
+        description: 'cumpărarea unui automobil nou sau folosit'
     },
     {
         name: 'Termen',

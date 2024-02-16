@@ -11,7 +11,7 @@ useHead({
 const list = [
     {
         name: 'Destinația',
-        description: 'pentru necesități curente și urgente'
+        description: 'necesități personale curente și urgente'
     },
     {
         name: 'Termen',
