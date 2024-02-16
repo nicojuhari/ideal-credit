@@ -2,10 +2,11 @@
     import { ref } from 'vue'
 
     useHead({
-        title: 'Contacte',
+        title: 'Contactele companiei de creditare Ideal Credit din R. Moldova',
+        titleTemplate: '%pageTitle',
         meta: [
             { name: 'description', content: 'Contacte și adresa oficiilor organizației de creditare nebancare Ideal Credit SRL, ce activează cu success pe piața financiară a Republicii Moldova din 2010.' },
-            { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
+            { name: 'keywords', content: 'ideal credit, credit rapid, credite Moldova, credite Chișinău, credit online, împrumuturi' }
         ],
     })
 
@@ -125,5 +126,10 @@
             </FormKit>
         </div>
         <CallToAction class="card light mt-4 md:mt-6"/>
+        <div id="adresa-oficiilor" class="-translate-y-14"></div>
+        <div class="card mt-4 md:mt-6">
+            <div class="card-title text-center">Adresa oficiilor</div>
+            <LazyListaOficiilor/>
+        </div>
     </div>
 </template>

@@ -9,7 +9,7 @@ const list = [
 const list2 = [
     {
         title: 'Ideal Credit',
-        description: 'Rambursarea împrumutului în unul din oficiile companiei',
+        description: 'Rambursarea împrumutului în unul din <a href="/contacte#adresa-oficiilor" class="underline">oficiile companiei</a>',
         comision: 0,
     },
     {
@@ -47,9 +47,7 @@ const list2 = [
                     comision {{ item.comision }} <span v-if="item.comision">/ plată</span>
                 </span>
             </div>
-            <div class="text-sm md:text-base">
-                {{ item.description }}
-            </div>
+            <div class="text-sm md:text-base" v-html="item.description"></div>
         </div>
     </div>
 </template>
