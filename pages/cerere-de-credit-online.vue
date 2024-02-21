@@ -156,8 +156,17 @@ const submitForm = async () => {
                     </div>
 
                 </div>
-                <div class="flex justify-end">
-                    <button type="submit" class="btn btn-primary btn-outline mt-6">
+                <div class="mt-6">
+                        <div class="bg-red-600 bg-opacity-20 py-3 p-4 rounded">
+                            <FormKit type="checkbox" label="Pentru clienții noi, este necesară prezența unui sau mai mulți fidejusori (garant/поручитель)." name="garant"
+                                outer-class="mt-2 formkit-cerere-terms font-medium" validation="accepted"
+                                validation-visibility="dirty" :validation-messages="{
+                                    accepted: 'Vă rugăm să confirmați că sunteți de acord să vă prezentați cu cel puțin un fidejusor',
+                                }" />
+                        </div>
+                    </div>
+                <div class="flex justify-end mt-6">
+                    <button type="submit" class="btn btn-primary btn-outline">
                         Trimite
                     </button>
                 </div>
