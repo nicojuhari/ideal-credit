@@ -22,13 +22,13 @@
             <div class="flex justify-between items-center gap-4">
                 <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
                     <IconsLogo class="w-10" />
-                    <h2 class="text-lg">Ideal Credit</h2>
+                    <p class="text-lg mb-0">Ideal Credit</p>
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">
                         <NuxtLink to="/refinantare-credite" title="Refinanțare Credite">Refinanțare</NuxtLink>
-                        <NuxtLink to="/despre-noi">Despre noi</NuxtLink>
-                        <NuxtLink to="/contacte">Contacte</NuxtLink>
+                        <NuxtLink to="/despre-noi" title="Despre noi">Despre noi</NuxtLink>
+                        <NuxtLink to="/contacte" title="Contacte">Contacte</NuxtLink>
                         <UiPhoneButton light/>
                     </nav>
                     <div class="flex md:hidden">
@@ -45,19 +45,19 @@
                                         <IconsClose class="cursor-pointer m-auto" @click="toggleMenu" />
                                     </div>
                                 </div>
-                                <NuxtLink to="/"
+                                <NuxtLink to="/" title="Pagina Principală"
                                     class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Pagina Principală
                                 </NuxtLink>
-                                <NuxtLink to="/refinantare-credite"
+                                <NuxtLink to="/refinantare-credite" title="Refinanțare Credite"
                                     class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Refinanțare
                                 </NuxtLink>
-                                <NuxtLink to="/despre-noi"
+                                <NuxtLink to="/despre-noi" title="Despre noi"
                                     class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Despre noi
                                 </NuxtLink>
-                                <NuxtLink to="/contacte"
+                                <NuxtLink to="/contacte" title="Contacte"
                                     class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
                                     Contacte
                                 </NuxtLink>
