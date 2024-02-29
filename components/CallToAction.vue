@@ -4,8 +4,8 @@
             <h3 class="title text-center mt-8 mb-4 md:my-4">Solicită un credit acum!</h3>
         </div>
         <div class="flex gap-8 items-center justify-center flex-col md:flex-row">
-            <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online" class="btn btn-primary btn-outline w-48">Aplică Online</NuxtLink>
-            <UiPhoneButton class="w-48" />
+            <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online" class="btn btn-primary btn-outline w-60">Aplică Online</NuxtLink>
+            <UiPhoneButton class="w-60" />
         </div>
     </div>
 </template>

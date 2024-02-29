@@ -4,7 +4,7 @@
         <div class="modal-container bg-brand-black rounded-lg z-10 m-auto w-full flex flex-col flex-1 max-h-full pb-4"
             :class="[{ 'to-close': toClose == true }, { 'max-w-sm': !large }, { 'max-w-xl': large }]">
             <div class="modal-header flex justify-between items-center p-4">
-                <div class="text-lg font-medium text-white">{{ modalTitle }}</div>
+                <div class="text-lg font-bold text-white">{{ modalTitle }}</div>
                 <div class="modal-close cursor-pointer hover:bg-white hover:bg-opacity-10 transition-all p-1 rounded-full"
                     @click="closeModal">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"

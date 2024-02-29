@@ -37,7 +37,7 @@ const list = [
         <div class="container my-6 relative">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <div v-for="item in list" :key="item.name" class="bg-brand-black px-4 py-8 rounded-lg flex-grow" :title="item.name">
-                        <div class="mb-6 font-medium text-brand-color text-lg">{{ item.name }}</div>
+                        <div class="mb-6 font-bold text-brand-color text-lg">{{ item.name }}</div>
                         <div> {{ item.description }}</div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ const list = [
                 <li><strong>Construirea istoricului de credit:</strong> Rambursarea corectă a creditului poate contribui la îmbunătățirea scorului de credit, ajutându-te să obții condiții mai avantajoase pentru viitoarele finanțări.</li>
                 <li><strong>Credit auto cu gaj:</strong> Mașina devine garanția creditului, ceea ce poate duce la dobânzi mai mici.</li>
             </ul>
-            <p class="mt-6 mb-0 font-medium">Contactează-ne pentru mai multe informații și îți vom oferi toate detaliile necesare pentru a te bucura de mașina dorită cât mai curînd.</p>
+            <p class="mt-6 mb-0 font-bold">Contactează-ne pentru mai multe informații și îți vom oferi toate detaliile necesare pentru a te bucura de mașina dorită cât mai curînd.</p>
         </div>
         <div class="container mt-4 md:mt-6">
             <CalculatorCredit />

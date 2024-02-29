@@ -149,7 +149,7 @@ const submitForm = async () => {
                                 argumenteze motivul acelui refuz.</li>
                         </ul>
                         <FormKit type="checkbox" label="Sunt deacord cu termenii și declarațiile de mai sus" name="terms"
-                            outer-class="mt-2 formkit-cerere-terms font-medium" validation="accepted"
+                            outer-class="mt-2 formkit-cerere-terms font-bold" validation="accepted"
                             validation-visibility="dirty" :validation-messages="{
                                 accepted: 'Vă rugăm să confirmați că sunteți de acord cu termenii de mai sus',
                             }" />
@@ -159,7 +159,7 @@ const submitForm = async () => {
                 <div class="mt-6">
                         <div class="bg-red-600 bg-opacity-20 py-3 p-4 rounded">
                             <FormKit type="checkbox" label="Pentru clienții noi, este necesară prezența unui sau mai mulți fidejusori (garant/поручитель)." name="garant"
-                                outer-class="mt-2 formkit-cerere-terms font-medium" validation="accepted"
+                                outer-class="mt-2 formkit-cerere-terms font-bold" validation="accepted"
                                 validation-visibility="dirty" :validation-messages="{
                                     accepted: 'Vă rugăm să confirmați că sunteți de acord să vă prezentați cu cel puțin un fidejusor',
                                 }" />

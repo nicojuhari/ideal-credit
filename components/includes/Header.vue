@@ -46,19 +46,19 @@
                                     </div>
                                 </div>
                                 <NuxtLink to="/" title="Pagina Principală"
-                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
                                     Pagina Principală
                                 </NuxtLink>
                                 <NuxtLink to="/refinantare-credite" title="Refinanțare Credite"
-                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
                                     Refinanțare
                                 </NuxtLink>
                                 <NuxtLink to="/despre-noi" title="Despre noi"
-                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
                                     Despre noi
                                 </NuxtLink>
                                 <NuxtLink to="/contacte" title="Contacte"
-                                    class="flex w-full font-medium p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
                                     Contacte
                                 </NuxtLink>
                                 
