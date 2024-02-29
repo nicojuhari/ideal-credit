@@ -26,7 +26,7 @@ const list = [
 </script>
 <template>
     <div class="mb-6">
-        <div class="bg-in-squares py-20 md:py-40">
+        <div class="bg-in-squares py-32 md:py-48">
             <div class="container cs-blur pb-4">
                 <h1 class="text-center hero-title">Credit Ipotecar
                     <span class="subtitle flex justify-center mt-2">pentru procurarea sau construcția bunurilor imobile</span>
@@ -37,7 +37,7 @@ const list = [
         <div class="container my-6 relative">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                 <div v-for="item in list" :key="item.name" class="card flex-grow" :title="item.name">
-                    <div class="mb-6 font-bold text-brand-color text-lg">{{ item.name }}</div>
+                    <div class="mb-6 text-brand-color text-xl">{{ item.name }}</div>
                     <div> {{ item.description }}</div>
                 </div>
             </div>
