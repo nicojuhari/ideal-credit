@@ -14,8 +14,8 @@
         <div class="">
             <h2 class="card-title text-center">Condițiile de creditare</h2>
             <div class="flex gap-4 flex-col">
-                <div v-for="item in list" class="flex text-xl">
-                    <Icon name="ph:dot-outline-light" class="w-8 h-8 flex-shrink-0 text-brand-color text-opacity-50"/>
+                <div v-for="item in list" class="flex text-xl items-center">
+                    <Icon name="i-ph-check-light" class="w-6 h-6 flex-shrink-0 text-green-600 text-opacity-70 mr-2"/>
                     {{ item }}
                 </div>
             </div>

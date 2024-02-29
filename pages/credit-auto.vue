@@ -36,7 +36,7 @@ const list = [
         </div>
         <div class="container my-6 relative">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div v-for="item in list" :key="item.name" class="bg-brand-black px-4 py-8 rounded-lg flex-grow" :title="item.name">
+                    <div v-for="item in list" :key="item.name" class="card flex-grow" :title="item.name">
                         <div class="mb-6 font-bold text-brand-color text-lg">{{ item.name }}</div>
                         <div> {{ item.description }}</div>
                     </div>

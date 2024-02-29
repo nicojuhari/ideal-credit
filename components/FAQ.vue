@@ -33,9 +33,9 @@
 
 </script>
 <template>
-    <div class="grid grid-cols-1 gap-4 md:gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div v-for="item in list" :class="classes" class="group">
-                <div class="text-brand-raisin-black font-normal text-xl">{{ item.question }}</div>
+                <div class="text-brand-raisin-black font-medium text-xl">{{ item.question }}</div>
                 <div class="text-brand-raisin-black text-opacity-90">{{ item.answer }}</div>
             </div>
         </div>
