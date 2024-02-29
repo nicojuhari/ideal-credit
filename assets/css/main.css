@@ -18,7 +18,7 @@ body.menu-open, body.modal-open {
 
 .container {
     @apply mx-auto max-w-5xl;
-    width: calc(100% - 2rem);
+    width: calc(100% - 2rem) !important;
 }
 
 .sm-container {
