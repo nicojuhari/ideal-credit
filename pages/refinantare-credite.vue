@@ -4,7 +4,7 @@ useHead({
     title: 'Credit pentru refinanțarea altor credite mai scumpe ',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Oferim credit pentru refinanțarea altor credite mai scumpe, cu dobânzi avantajoase, fără comisioane ascunse și pe un termen mai lung.' },
+        { name: 'description', content: 'Oferim credit pentru refinanțarea altor credite mai scumpe, cu dobânzi avantajoase, fără comisioane și pe un termen mai lung.' },
         { name: 'keywords', content: 'refinanțare credite, credite Moldova, credite rapide, credite online, împrumuturi' }
     ],
 })

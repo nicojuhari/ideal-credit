@@ -4,7 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite rapide cu dobânzi mici și fără comisioane ascunse',
+            title: 'Credite rapide cu dobânzi mici și fără comisioane',
             script: [
                 { src: 'https://cdn.splitbee.io/sb.js', async: true}
             ],

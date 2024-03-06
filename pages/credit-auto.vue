@@ -3,7 +3,7 @@ useHead({
     title: 'Credit Auto - pentru mașina visurilor tale',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Oferim credit auto persoanelor fizice și juridice din Republica Moldova, pentru cumpărarea mașinii dorite, cu dobânzi mici și fără comisioane ascunse.' },
+        { name: 'description', content: 'Oferim credit auto persoanelor fizice și juridice din Republica Moldova, pentru cumpărarea mașinii dorite, cu dobânzi mici și fără comisioane.' },
         { name: 'keywords', content: 'credit auto, credit auto md, credit rapid, credit Moldova, credit online, împrumut' }
     ],
 })

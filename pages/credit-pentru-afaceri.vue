@@ -3,7 +3,7 @@ useHead({
     title: 'Credit pentru Afaceri - finanțare rapidă și avantajoasă',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Investește în afacerea ta, cu ajutorul creditelor noastre pentru afaceri. Acordăm credite cu dobânzi avantajoase și fără comisioane ascunse! Aplică online.' },
+        { name: 'description', content: 'Investește în afacerea ta, cu ajutorul creditelor noastre pentru afaceri. Acordăm credite cu dobânzi avantajoase și fără comisioane! Aplică online.' },
         { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credite Moldova, credit online, împrumuturi' }
     ],
 })

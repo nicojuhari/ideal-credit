@@ -2,7 +2,7 @@
     let list = [
         '0% comision de acordare',
         'Dobânzi fixe',
-        'Fără comisioane ascunse',
+        'Fără comisioane',
         'Rambursare anticipată fără comision',
         'Reduceri pentru clienții cu istorie creditară pozitivă',
     ]

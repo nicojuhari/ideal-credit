@@ -29,7 +29,7 @@
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="mt-4">oferă credite rapide nebancare cu dobânzi mici și fără comisioane ascunse, pentru persoane fizice și juridice din Republica Moldova.</p>
+                <p class="mt-4">oferă credite rapide nebancare cu dobânzi mici și fără comisioane, pentru persoane fizice și juridice din Republica Moldova.</p>
                 <ul class="mt-4">
                     <li class="mb-2" v-for="item in links" :key="item.link">
                     <NuxtLink :to="item.link" class="text-lg underline underline-offset-2" :title="item.title">{{ item.title }}</NuxtLink>
