@@ -36,10 +36,10 @@
                             <IconsBurgerMenu />
                         </div>
                         <div v-if="showMenu" @click="toggleMenu"
-                            class="fixed left-0 top-0 bg-black bg-opacity-70 w-full h-screen z-50"></div>
+                            class="fixed left-0 top-0 bg-black bg-opacity-70 w-full h-screen z-40"></div>
                         <transition name="menu-slide">
                             <div v-if="showMenu"
-                                class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col">
+                                class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col z-50">
                                 <div class="p-4 flex justify-end">
                                     <div class="p-2 bg-brand-black cursor-pointer rounded-full">
                                         <IconsClose class="cursor-pointer m-auto" @click="toggleMenu" />

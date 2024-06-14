@@ -51,5 +51,8 @@ export default defineNuxtConfig({
     sitemap: {
     // exclude all URLs that start with /secret
         exclude: ['/autoritatea-de-supraveghere'],
+        sources: [
+            '/api/__sitemap__/urls',
+        ]
     }
 })
