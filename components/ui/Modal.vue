@@ -54,7 +54,7 @@ const closeModal = () => {
 }
 </script>
 
-<style>
+<style scoped>
 .modal-container {
     animation: modalAnimation .4s forwards;
 }

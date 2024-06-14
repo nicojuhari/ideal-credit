@@ -39,8 +39,3 @@
         </table>
     </div>
 </template>
-<style>
-    .grafic-table {
-        max-height: 400px;
-    }
-</style>

@@ -74,21 +74,3 @@
         </div>
     </header>
 </template>
-<style>
-.mobile-dropdown {
-    max-width: 320px;
-    min-height: 100dvh;
-    z-index: 100;
-}
-.menu-slide-leave-to,
-.menu-slide-enter-from {
-    transform: translateX(-100%);
-    opacity: .9;
-}
-
-.menu-slide-leave-active,
-.menu-slide-enter-active {
-    transition: all .6s ease-in-out;
-}
-
-</style>
