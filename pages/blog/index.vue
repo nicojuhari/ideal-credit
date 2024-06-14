@@ -37,7 +37,7 @@ useSchemaOrg([
                                 class="w-full object-center object-cover border-0 group-hover:scale-125 duration-300" />
                             </div>
                         <div class="p-6">
-                            <div class="font-semibold text-lg line-clamp-2  duration-300 ">
+                            <div class="font-bold text-lg line-clamp-2  duration-300 ">
                                 {{ content.title }}
                             </div>
                             <div class="flex pt-6 text-sm">

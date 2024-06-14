@@ -54,7 +54,7 @@
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card light">
             <h1 class="page-title">Contacte</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-light text-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-2xl">
                 <div class="flex gap-4 items-center">
                     <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-5">
                         <IconsMobile class="w-6 text-brand-color"/>
