@@ -1,10 +1,10 @@
 // trailing-slash.global.js
 
 export default function ({ path, query, hash }) {
-    // if (path === "/" || !path.endsWith("/")) return;
+    if (path === "/" || !path.endsWith("/")) return;
 
-    // const nextPath = path.replace(/\/+$/, "") || "/",
-    //     nextRoute = { path: nextPath, query, hash };
+    const nextPath = path.replace(/\/+$/, "") || "/",
+        nextRoute = { path: nextPath, query, hash };
 
-    // return navigateTo(nextRoute, { redirectCode: 301 });
+    return navigateTo(nextRoute, { redirectCode: 301 });
 }
