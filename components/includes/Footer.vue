@@ -43,14 +43,14 @@
                             {{ oficiu.title }}
                         </div>
                         <div class="flex gap-4 mb-4 items-center">
-                            <div class="p-2 rounded-full bg-brand-raisin-black">
+                            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
                                 <Icon name="ph:map-pin-light"
                                     class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
                             </div>
                             <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
                         </div>
                         <a :href="'tel:' + oficiu.mobile[0]" class="flex gap-4 items-center">
-                            <div class="p-2 rounded-full bg-brand-raisin-black">
+                            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
                                 <Icon name="ph:phone-light"
                                     class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
                             </div>
@@ -62,7 +62,8 @@
 
         </div>
         <div class="container mb-4 mt-10">
-            <p class="mb-0">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
+            <p class="mb-1 text-xl font-medium text-center">Din lege</p>
+            <p class="mb-1">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
                 limite cu privire la:</p>
             <ul class="list-outside list-disc ml-6 space-y-1.5">
                 <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
@@ -75,7 +76,7 @@
             </ul>
         </div>
         <div class="container pb-6 mt-10">
-            <p class="mb-0">Dicționar financiar:</p>
+            <p class="mb-1 text-xl font-medium text-center">Dicționar financiar</p>
             <ul class="list-outside list-disc ml-6 space-y-1.5">
                 <li><span class="font-bold">Credit - </span> este o operațiune financiară prin care o persoană fizică
                     sau juridică primește o sumă de bani de la o altă entitate, cu obligația de a o rambursa, de obicei

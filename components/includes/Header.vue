@@ -29,45 +29,45 @@
                         <NuxtLink to="/refinantare-credite" title="Refinanțare Credite">Refinanțare</NuxtLink>
                         <NuxtLink to="/despre-noi" title="Despre noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte" title="Contacte">Contacte</NuxtLink>
-                        <UiPhoneButton light/>
+                        <UiPhoneButton light />
                     </nav>
                     <div class="flex md:hidden">
                         <div @click="toggleMenu" class="p-2 bg-brand-black cursor-pointer rounded-full">
                             <IconsBurgerMenu />
                         </div>
-                        <div v-if="showMenu" @click="toggleMenu"
-                            class="fixed left-0 top-0 bg-black bg-opacity-70 w-full h-screen z-40"></div>
-                        <transition name="menu-slide">
+                        <!-- <div v-if="showMenu" @click="toggleMenu"
+                            class="fixed left-0 top-0 bg-black bg-opacity-70 w-full h-screen z-40"></div> -->
+                        <Transition name="menu-slide">
                             <div v-if="showMenu"
-                                class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col z-50">
+                                class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col z-50 h-[100dvh] overflow-y-auto">
                                 <div class="p-4 flex justify-end">
-                                    <div class="p-2 bg-brand-black cursor-pointer rounded-full">
-                                        <IconsClose class="cursor-pointer m-auto" @click="toggleMenu" />
-                                    </div>
+                                    <Icon name="i-ph-x-circle-thin" class="cursor-pointer h-11 w-11 text-white text-opacity-80"
+                                        @click="toggleMenu" />
                                 </div>
-                                <NuxtLink to="/" title="Pagina Principală"
-                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
-                                    Pagina Principală
-                                </NuxtLink>
+
                                 <NuxtLink to="/refinantare-credite" title="Refinanțare Credite"
-                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium text-lg p-4 border-b border-opacity-30 border-gray-300">
                                     Refinanțare
                                 </NuxtLink>
                                 <NuxtLink to="/despre-noi" title="Despre noi"
-                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium text-lg p-4 border-b border-opacity-30 border-gray-300">
                                     Despre noi
                                 </NuxtLink>
                                 <NuxtLink to="/contacte" title="Contacte"
-                                    class="flex w-full font-bold p-4 border-b border-opacity-30 border-gray-300">
+                                    class="flex w-full font-medium text-lg p-4 border-b border-opacity-30 border-gray-300">
                                     Contacte
                                 </NuxtLink>
-                                
-                                <div class="p-4 mt-auto mb-5 flex gap-6 flex-col items-center text-center">
-                                   <div class="text-xl">Solicită un credit acum!</div> 
-                                    <UiPhoneButton light/>
+
+                                <div class="p-4 mt-auto mb-5 flex gap-8 flex-col items-center text-center">
+                                    <div class="text-xl">Solicită un credit acum!</div>
+                                    <UiPhoneButton light />
+                                    <div class="flex gap-8">
+                                        <UiViberButton />
+                                        <UiWhatsappButton />
+                                    </div>
                                 </div>
                             </div>
-                        </transition>
+                        </Transition>
                     </div>
                 </div>
             </div>

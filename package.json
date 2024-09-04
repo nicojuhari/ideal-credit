@@ -7,18 +7,18 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxtjs/seo": "^2.0.0-rc.19",
+    "@nuxt/icon": "^1.5.1",
+    "@nuxtjs/seo": "^2.0.0-rc.20",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxi": "^3.13.1",
-    "nuxt": "^3.13.0",
-    "nuxt-icon": "^1.0.0-beta.7"
+    "nuxt": "^3.13.1"
   },
   "dependencies": {
     "@formkit/nuxt": "^1.6.5",
     "@formkit/vue": "^1.6.5",
     "@playwright/test": "^1.46.1",
     "@storyblok/nuxt": "^6.0.10",
-    "axios": "^1.7.6",
+    "axios": "^1.7.7",
     "ideal-credit": "^0.2.6"
   }
 }
