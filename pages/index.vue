@@ -12,7 +12,7 @@
     <div>
         <HomeHeroComp />
         <div class="container relative">
-            <TipuriCredite/>
+            <!-- <TipuriCredite/> -->
         </div>
         <div class="container mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <Beneficii class="md:min-h-[440px]"/>

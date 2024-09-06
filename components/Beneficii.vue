@@ -12,7 +12,7 @@
         <!-- <NuxtImg src="/avantaje-credite.webp" alt="Avantaje Credite" height="124" class="m-auto" /> -->
         <img src="/avantaje-credite.webp" alt="Avantaje Credite" height="128" width="128" class="m-auto h-32 object-contain" />
         <div>
-            <h2 class="card-title text-center">Avantaje</h2>
+            <h3 class="card-title text-center">Avantaje</h3>
             <div class="space-y-4">
                 <div v-for="item in list" class="flex text-xl items-center">
                     <Icon name="i-ph-check-light" class="w-6 h-6 flex-shrink-0 text-green-600 text-opacity-70 mr-2" />

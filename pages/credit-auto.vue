@@ -19,44 +19,60 @@ const list = [
     },
     {
         name: 'Suma',
-        description: '50% - 80%, din costul mașinii'
+        description: '50% - 80%, din costul automobilului'
     }
 ]
 
 </script>
 <template>
     <div class="mb-6">
-        <div class="bg-in-squares py-32 md:py-48">
-            <div class="container cs-blur pb-4">
-                <h1 class="text-center hero-title">Credit Auto
-                        <span class="subtitle flex justify-center mt-2">pentru mașina visurilor tale</span>
-                    </h1>
-                <UiHeroSectionCTA />
-            </div>
-        </div>
-        <div class="container my-6 relative">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <div v-for="item in list" :key="item.name" class="card flex-grow" :title="item.name">
-                        <div class="mb-6 text-brand-color text-xl">{{ item.name }}</div>
-                        <div> {{ item.description }}</div>
+        <div class="py-16 md:py-24">
+            <div class="container grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="flex flex-col md:col-span-8 h-full">
+                    <h1 class="hero-title text-center md:text-left">Credit auto</h1>
+                    <h2 class="subtitle mt-3 text-center md:text-left">Oferim credite pentru a cumpăra mașina ta de vis.</h2>
+                    <UiRecenziiSlider class="mt-8" />
+                    <UiHeroSectionCTA class="my-10 md:mt-16" />
+                </div>
+                <div class="md:col-span-4 grid place-items-center">
+                    <div class="space-y-4 w-full cs-blur cs-blur--center">
+                        <div v-for="item in list" :key="item.name" class="bg-brand-black p-4 rounded-lg"
+                            :title="item.name">
+                            <div class="text-brand-color text-opacity-70">{{ item.name }}</div>
+                            <div> {{ item.description }}</div>
+                        </div>
+                        <UiCalculatorCreditCTA />
                     </div>
                 </div>
             </div>
+        </div>
         <div class="container relative card light text-lg">
             <h2 class="card-title text-center">Ce este un credit auto?</h2>
-            <p>Un credit auto este un împrumut acordat persoanelor fizice și juridice pentru cumpărarea unei mașini noi sau second-hand.</p>
-            <p>Suma finanțată variază în funcție de valoarea automobilului, situația financiară și istoria creditară al clientului. Puteți obține pînă la 80% din valoarea mașinii.</p>
-            <p>Creditul auto poate fi oferit cu sau fără gaj. Cele cu gaj presupun ca mașina achiziționată devine garanția creditului.</p>
+            <p>Un credit auto este un împrumut acordat persoanelor fizice și juridice pentru cumpărarea unei mașini noi
+                sau second-hand.</p>
+            <p>Suma finanțată variază în funcție de valoarea automobilului, situația financiară și istoria creditară al
+                clientului. Puteți obține pînă la 80% din valoarea mașinii.</p>
+            <p>Creditul auto poate fi oferit cu sau fără gaj. Cele cu gaj presupun ca mașina achiziționată devine
+                garanția creditului.</p>
             <p class="mb-0">
                 Beneficiile cheie ale unui credit auto:
             </p>
             <ul class="list-outside list-disc ml-6">
-                <li><strong>Accesibilitate:</strong> Poți achiziționa o mașină mai performantă, mai sigură sau mai spațioasă decât ți-ai permite din economii. Acest lucru îți poate îmbunătăți calitatea vieții, oferind siguranță sporită familiei, acces la locuri de muncă mai îndepărtate sau facilitând transportul pentru afacerea ta.</li>
-                <li><strong>Plăți lunare predictibile:</strong> Spre deosebire de costurile fluctuante de combustibil și mentenanță, ratele lunare fixe ale creditului oferă predictibilitate și ușurează gestionarea bugetului.</li>
-                <li><strong>Construirea istoricului de credit:</strong> Rambursarea corectă a creditului poate contribui la îmbunătățirea scorului de credit, ajutându-te să obții condiții mai avantajoase pentru viitoarele finanțări.</li>
-                <li><strong>Credit auto cu gaj:</strong> Mașina devine garanția creditului, ceea ce poate duce la dobânzi mai mici.</li>
+                <li><strong>Accesibilitate:</strong> Poți achiziționa o mașină mai performantă, mai sigură sau mai
+                    spațioasă decât ți-ai permite din economii. Acest lucru îți poate îmbunătăți calitatea vieții,
+                    oferind siguranță sporită familiei, acces la locuri de muncă mai îndepărtate sau facilitând
+                    transportul pentru afacerea ta.</li>
+                <li><strong>Plăți lunare predictibile:</strong> Spre deosebire de costurile fluctuante de combustibil și
+                    mentenanță, ratele lunare fixe ale creditului oferă predictibilitate și ușurează gestionarea
+                    bugetului.</li>
+                <li><strong>Construirea istoricului de credit:</strong> Rambursarea corectă a creditului poate contribui
+                    la îmbunătățirea scorului de credit, ajutându-te să obții condiții mai avantajoase pentru viitoarele
+                    finanțări.</li>
+                <li><strong>Credit auto cu gaj:</strong> Mașina devine garanția creditului, ceea ce poate duce la
+                    dobânzi mai mici.</li>
             </ul>
-            <p class="mt-6 mb-0 font-bold">Contactează-ne pentru mai multe informații și îți vom oferi toate detaliile necesare pentru a te bucura de mașina dorită cât mai curînd.</p>
+            <p class="mt-6 mb-0 font-bold">Contactează-ne pentru mai multe informații și îți vom oferi toate detaliile
+                necesare pentru a te bucura de mașina dorită cât mai curînd.</p>
         </div>
         <div class="container mt-4 md:mt-6">
             <CalculatorCredit />
