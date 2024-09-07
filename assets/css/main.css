@@ -190,9 +190,9 @@ input[type=number] {
     right: var(--cs-blur-right);
     bottom: var(--cs-blur-bottom);
     left: var(--cs-blur-left);
-    height: 22rem;
-    width: 22rem;
-    opacity: 0.09;
+    height: 20rem;
+    width: 20rem;
+    opacity: 0.075;
     z-index: -1;
     filter: blur(100px);
     @apply bg-brand-color;

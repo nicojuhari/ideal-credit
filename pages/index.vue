@@ -11,7 +11,7 @@
     const benefits = [
         'Dobânzi fixe și avantajoase',
         'Fără comisioane',
-        'Reduceri pentru clienți fideli',
+        'Reduceri pentru clienții fideli',
         'Transparență și claritate',
     ]
 
@@ -22,9 +22,9 @@
             <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
                 <div class="flex flex-col md:col-span-8 h-full justify-center">
                     <h1 class="hero-title text-center md:text-left">Credite rapide</h1>
-                    <h2 class="subtitle mt-2 text-center md:text-left">Oferim credite pentru nevoi personale și afaceri.
+                    <h2 class="subtitle mt-2 text-center md:text-left">Credite pentru nevoi personale și afaceri.
                     </h2>
-                    <UiBenefitsList :benefits="benefits" class="my-8" />
+                    <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
                     <UiRecenziiButton class="mt-auto" />
                 </div>
                 <div class="md:col-span-4 cs-blur cs-blur--center">

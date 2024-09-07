@@ -8,7 +8,7 @@
             <Icon name="i-ph-star-fill" class="w-5 h-5" />
             <Icon name="i-ph-star-fill" class="w-5 h-5" />
         </div>
-        <div class="text-gray-200 text-sm">Sute de clienți mulțumiți!</div>
+        <div class="text-gray-200 text-sm truncate">Sute de clienți mulțumiți!</div>
     </div>
 </template>
 

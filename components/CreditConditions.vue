@@ -8,9 +8,9 @@
 </script>
 <template>
     <div class="card light space-y-8">
-        <h3 class="card-title text-center">Condițiile de creditare</h3>
+        <div class="card-title text-center">Condițiile de creditare</div>
         <div class="space-y-4">
-            <div v-for="item in list" class="flex text-xl items-center gap-2.5">
+            <div v-for="item in list" class="flex text-xl items-center gap-4">
                 <Icon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-green-500" />
                 {{ item }}
             </div>
