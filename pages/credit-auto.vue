@@ -31,7 +31,7 @@ const list = [
                 <div class="flex flex-col md:col-span-8 h-full">
                     <h1 class="hero-title text-center md:text-left">Credit auto</h1>
                     <h2 class="subtitle mt-3 text-center md:text-left">Oferim credite pentru a cumpăra mașina ta de vis.</h2>
-                    <UiRecenziiSlider class="mt-8" />
+                    <UiRecenziiButton class="mt-8" />
                     <UiHeroSectionCTA class="my-10 md:mt-16" />
                 </div>
                 <div class="md:col-span-4 grid place-items-center">

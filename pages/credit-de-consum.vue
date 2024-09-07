@@ -23,27 +23,27 @@ const list = [
     }
 ]
 
+const benefits = [
+    'Pentru necesități urgente',
+    'Fără comisioane',
+    'Dobânzi fixe și avantajoase',
+    'Transparență și claritate',
+]
+
 </script>
 <template>
     <div class="mb-6">
-        <div class="py-16 md:py-24">
-            <div class="container grid grid-cols-1 md:grid-cols-12 gap-6">
-                <div class="flex flex-col md:col-span-8 h-full">
-                    <h1 class="hero-title text-center md:text-left">Credite de consum</h1>
-                    <h2 class="subtitle mt-3 text-center md:text-left">Oferim credite pentru nevoi personale / pînă la
-                        salariu.</h2>
-                    <UiRecenziiSlider class="mt-8" />
-                    <UiHeroSectionCTA class="my-10 md:mt-16" />
+        <div class="pt-12 pb-6 md:pt-24 md:pb-12">
+            <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
+                <div class="flex flex-col md:col-span-8 h-full justify-center">
+                    <h1 class="hero-title text-center md:text-left">Credit de consum</h1>
+                    <h2 class="subtitle mt-2 text-center md:text-left">Oferim credite pentru nevoi personale / pînă la salariu.</h2>
+                    <UiBenefitsList :benefits="benefits" class="mt-8" />
+                    <UiRecenziiButton class="mt-8 md:mt-auto" />
                 </div>
-                <div class="md:col-span-4 grid place-items-center cs-blur cs-blur--center">
-                    <div class="space-y-4 w-full">
-                        <div v-for="item in list" :key="item.name" class="bg-brand-black p-4 rounded-lg"
-                            :title="item.name">
-                            <div class="text-brand-color text-opacity-70">{{ item.name }}</div>
-                            <div> {{ item.description }}</div>
-                        </div>
-                        <UiCalculatorCreditCTA />
-                    </div>
+                <div class="md:col-span-4 cs-blur cs-blur--center">
+                    <UiHeroSectionCTA />
+                    <UiCalculatorCreditCTA class="mt-4" />
                 </div>
             </div>
         </div>
