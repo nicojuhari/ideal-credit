@@ -19,7 +19,6 @@ const list = [
 <template>
     <div class="grid grid-cols-1 gap-10">
         <div v-for="item in list">
-            
             <div class="text-lg">{{ item.address }}</div>
             <div class="text-lg">{{ item.addressNumbers }}</div>
             <div class="text-sm italic">( {{ item.title }} )</div>

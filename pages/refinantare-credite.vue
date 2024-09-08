@@ -9,43 +9,38 @@ useHead({
     ],
 })
 
-const list = [
-    {
-        name: 'Destinația',
-        description: 'pentru refinanțarea creditelor, oferite de alte instituții bancare sau nebancare'
-    },
-    {
-        name: 'Termen',
-        description: 'pînă la 60 de luni, cu posibilitatea de prelungire'
-    },
-     {
-        name: 'Suma',
-        description: 'pînă la 100%, din datoriile existente'
-    }
+const benefits = [
+    'Dobânzi fixe și avantajoase',
+    'Fără comisioane',
+    'Pentru toate tipurile de credite',
+    'Pînă la 100%, din datoriile existente',
 ]
 </script>
 <template>
     <div class="mb-6">
-        <div class="bg-in-squares py-32 md:py-48">
-            <div class="container cs-blur pb-4">
-                <h1 class="text-center hero-title">Credit pentru Refinanțare
-                    <span class="subtitle flex justify-center mt-2">a altor credite mai scumpe</span>
-                </h1>
-                <UiHeroSectionCTA/>
-            </div>
-        </div>
-        <div class="container my-6 relative">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                <div v-for="item in list" :key="item.name" class="card flex-grow" :title="item.name">
-                    <div class="mb-6 text-brand-color text-xl">{{ item.name }}</div>
-                    <div> {{ item.description }}</div>
+        <div class="py-14 md:py-28 bg-in-squares">
+            <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
+                <div class="flex flex-col md:col-span-8 h-full justify-center">
+                    <h1 class="hero-title text-center md:text-left">Credit Refinanțare</h1>
+                    <h2 class="subtitle mt-2 text-center md:text-left">Credite pentru refinanțarea altor credite mai
+                        scumpe.</h2>
+                    <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
+                    <UiRecenziiButton class="mt-auto" />
+                </div>
+                <div class="md:col-span-4 cs-blur cs-blur--center grid items-center">
+                    <UiButtonsCTA toHeroSection />
+                    <UiCalculatorCreditCTA class="mt-4" />
                 </div>
             </div>
+        </div>
+        <div class="container mb-4 md:mb-6">
+            <CreditConditions />
         </div>
         <div class="container text-lg relative">
             <div class="card light">
                 <h2 class="card-title text-center">Ce este un credit pentru refinanțare?</h2>
-                <p>Creditul pentru refinanțare este un tip de împrumut care înlocuiește un credit existent cu unul nou, de regulă cu condiții mai favorabile.</p>
+                <p>Creditul pentru refinanțare este un tip de împrumut care înlocuiește un credit existent cu unul nou,
+                    de regulă cu condiții mai favorabile.</p>
                 <p class="mb-0">
                     Scopul refinanțării:
                 </p>
@@ -57,13 +52,20 @@ const list = [
                     Beneficiile refinanțării:
                 </p>
                 <ul class="list-outside list-disc ml-6">
-                    <li><strong>Reducerea cheltuielilor:</strong> Dobânzi mai mici pot însemna economii semnificative pe durata creditului.</li>
-                    <li><strong>Simplificarea gestionării datoriilor:</strong> Un singur credit în loc de mai multe ușurează planificarea și plățile.</li>
-                    <li><strong>Prelungirea perioadei de rambursare:</strong> Termene mai lungi pot oferi o flexibilitate sporită în gestionarea bugetului.</li>
-                    <li><strong>Posibilitatea refinanțării cu istoric negativ:</strong> Persoanele cu istoric financiar problematic pot beneficia de restructurarea datoriilor prin refinanțare.</li>
+                    <li><strong>Reducerea cheltuielilor:</strong> Dobânzi mai mici pot însemna economii semnificative pe
+                        durata creditului.</li>
+                    <li><strong>Simplificarea gestionării datoriilor:</strong> Un singur credit în loc de mai multe
+                        ușurează planificarea și plățile.</li>
+                    <li><strong>Prelungirea perioadei de rambursare:</strong> Termene mai lungi pot oferi o
+                        flexibilitate sporită în gestionarea bugetului.</li>
+                    <li><strong>Posibilitatea refinanțării cu istoric negativ:</strong> Persoanele cu istoric financiar
+                        problematic pot beneficia de restructurarea datoriilor prin refinanțare.</li>
                 </ul>
-                <p class="mt-6">Un credit pentru refinanțare este o soluție financiară eficientă pentru cei care doresc să-și reorganizeze datoriile existente sau să obțină condiții mai favorabile pentru împrumuturile lor.</p>
-                <p class="mb-0 font-bold">Contactează-ne acum pentru a afla mai multe despre cum te putem ajuta să ai o situație financiară mai bună.</p>
+                <p class="mt-6">Un credit pentru refinanțare este o soluție financiară eficientă pentru cei care doresc
+                    să-și reorganizeze datoriile existente sau să obțină condiții mai favorabile pentru împrumuturile
+                    lor.</p>
+                <p class="mb-0 font-bold">Contactează-ne acum pentru a afla mai multe despre cum te putem ajuta să ai o
+                    situație financiară mai bună.</p>
             </div>
         </div>
         <div class="container mt-4 md:mt-6">

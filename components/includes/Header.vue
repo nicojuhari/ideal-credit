@@ -58,13 +58,9 @@
                                     Contacte
                                 </NuxtLink>
 
-                                <div class="p-4 mt-auto mb-5 flex gap-8 flex-col items-center text-center">
-                                    <div class="text-xl">Solicită un credit acum!</div>
-                                    <UiPhoneButton light />
-                                    <div class="flex gap-8">
-                                        <UiViberButton />
-                                        <UiWhatsappButton />
-                                    </div>
+                                <div class="mt-auto mb-5 space-y-4 p-4 text-center">
+                                    <div class="text-lg">Solicită un credit acum!</div>
+                                    <UiButtonsCTA toMenu />
                                 </div>
                             </div>
                         </Transition>

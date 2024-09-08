@@ -8,16 +8,12 @@
 </script>
 <template>
     <div class="card light space-y-8">
-        <img src="/conditiile-de-creditare.webp" alt="Condițiile de creditare" height="128" width="128" class="m-auto h-32 object-contain" />
-        <div>
-            <h2 class="card-title text-center">Condițiile de creditare</h2>
-            <div class="space-y-4">
-                <div v-for="item in list" class="flex text-xl items-center">
-                    <Icon name="i-ph-check-light" class="w-6 h-6 flex-shrink-0 text-green-600 text-opacity-70 mr-2" />
-                    {{ item }}
-                </div>
+        <div class="card-title text-center">Condițiile de creditare</div>
+        <div class="space-y-4">
+            <div v-for="item in list" class="flex text-xl items-center gap-4">
+                <Icon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-green-500" />
+                {{ item }}
             </div>
         </div>
-
     </div>
 </template>

@@ -21,22 +21,21 @@
         answer: `Da, dacă veniturile Dvs. sunt suficiente pentru a achita mai multe credite paralele, iar creditele active sunt achitate fără întârzieri.`
     },
     {
-        question: 'Am credite la alte organizații/bănci, le pot refinanța la Ideal Credit?',
+        question: 'Am credite la alte companii, le pot refinanța la Ideal Credit?',
         answer: `Da, Ideal Credit refinanțează credite de la alte organizații sau bănci în urma analizei detaliate a situației Dvs. financiare.`
     },
     {
-        question: 'Ce înseamnă DAE la credit?',
+        question: 'Ce este DAE la credit?',
         answer: `DAE, sau Dobânda Anuală Efectivă, este un indicator crucial în domeniul creditelor, reprezentând costul total al unui credit pentru consumatori, incluzând atât dobânda aferentă împrumutului cât și alte costuri asociate. Este important să luați în considerare DAE atunci când comparați diferite oferte de credite.`
     }
  ]
- let classes = 'bg-white p-4 py-6 rounded-lg duration-300 flex flex-col gap-4'
 
 </script>
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <div v-for="item in list" :class="classes" class="group">
-                <div class="text-brand-raisin-black font-bold text-xl">{{ item.question }}</div>
-                <div class="text-brand-raisin-black text-opacity-90">{{ item.answer }}</div>
-            </div>
+    <div class="space-y-4 md:space-y-6">
+        <div v-for="(item, idx) in list" :class="{ 'col-span-2': list.length == idx + 1 }" class="card light">
+            <div class="text-brand-black font-semibold text-xl mb-2">{{ item.question }}</div>
+            <div class="text-gray-600">{{ item.answer }}</div>
         </div>
+    </div>
 </template>

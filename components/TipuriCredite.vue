@@ -6,13 +6,21 @@ let credits = [
     { name: 'Credit pentru afaceri', link: 'credit-pentru-afaceri', icon: 'ph:chart-bar-light' }
 ]
 
-let classes = 'bg-brand-black px-4 py-8 text-lg rounded-lg duration-300 hover:bg-opacity-80 flex flex-col justify-between items-center gap-6 flex-grow text-center'
+let classes = 'flex items-center h-14 gap-4 px-4 bg-gray-600 bg-opacity-10 hover:bg-opacity-0 border-opacity-0 hover:border-brand-color border rounded-lg transition-all duration-300'
 </script>
 <template>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes" class="group" :title="item.name">
-            <Icon :name="item.icon" class="text-brand-color text-opacity-50 w-10 h-10 group-hover:scale-110 group-hover:text-opacity-100 duration-500" />
-            <span class="h-14 md:h-auto">{{ item.name }}</span>
-        </nuxt-link>
+    <div class="card light">
+        <div class="card-title text-center">Tipuri de credite</div>
+        <div class="space-y-4">
+            <nuxt-link v-for="(item, idx) in credits" :key="item.name" :to="item.link" :class="classes" class="group"
+                :title="item.name">
+                <Icon :name="item.icon"
+                    class="w-6 h-6 shrink-0 text-gray-600 group-hover:text-brand-color transition-all duration-300" />
+                <h3
+                    class="font-medium text-lg text-brand-black group-hover:text-brand-color transition-all duration-300">
+                    {{ item.name }}
+                </h3>
+            </nuxt-link>
+        </div>
     </div>
 </template>
