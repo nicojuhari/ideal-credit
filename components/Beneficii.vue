@@ -14,9 +14,9 @@
         <div>
             <h3 class="card-title text-center">Avantaje</h3>
             <div class="space-y-4">
-                <div v-for="item in list" class="flex text-xl items-center">
-                    <Icon name="i-ph-check-light" class="w-6 h-6 flex-shrink-0 text-green-600 text-opacity-70 mr-2" />
-                    {{ item }}
+                <div v-for="item in list" class="flex text-xl items-center gap-2">
+                    <Icon name="i-ph-check-light" class="w-6 h-6 shrink-0 text-green-600 text-opacity-70" />
+                    <span>{{ item }}</span>
                 </div>
             </div>
         </div>

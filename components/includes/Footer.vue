@@ -24,22 +24,21 @@
 <template>
     <footer class="bg-brand-bg border-t border-brand-color border-opacity-10 relative">
         <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-6 py-8 px-2 md:px-0">
-            <div>
+            <div class="space-y-6">
                 <div class="flex items-center gap-3">
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="mt-4">oferă credite rapide nebancare cu dobânzi mici și fără comisioane, pentru persoane
-                    fizice și juridice din Republica Moldova.</p>
+                <p class="mt-4">Credite pentru nevoi personale și afaceri în Republica Moldova.</p>
                 <div>
                     <NuxtLink to="/blog" class="btn btn-secondary btn-outline w-full md:w-auto">Blog</NuxtLink>
                 </div>
             </div>
             <div class="md:col-span-2">
-                <div class="h-10 text-xl flex items-center font-bold">Adresa oficiilor</div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                     <div v-for="oficiu in oficii" :key="oficiu.address">
-                        <div class="font-bold mb-2">
+                        <div class="text-gray-400 mb-2">
                             {{ oficiu.title }}
                         </div>
                         <div class="flex gap-4 mb-4 items-center">
@@ -102,18 +101,16 @@
             </ul>
         </div>
 
-        <div class="container my-6">
-            <!-- <div class="h-10 text-xl flex items-center font-bold">Linkuri</div> -->
-
-            <div class="border p-2 rounded border-brand-color opacity-70 text-center">
-                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                    class="text-brand-color text-sm">Autoritatea de Supraveghere și metodele de reclamații</NuxtLink>
-            </div>
+        <div class="container my-6 text-center">
+            <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
+                class="text-brand-color text-sm underline">Autoritatea de Supraveghere și metodele de reclamații
+            </NuxtLink>
         </div>
         <div class="container mt-6">
             <div class="divider"></div>
             <div class="text-center py-6 gap-1 flex-wrap">
-                &copy; {{ new Date().getFullYear() }} - Organizația de Creditare Nebancară <strong>"Ideal
+                &copy; {{ new Date().getFullYear() }} - Organizația de Creditare Nebancară <strong
+                    class="font-medium">"Ideal
                     Credit"</strong> SRL
             </div>
         </div>

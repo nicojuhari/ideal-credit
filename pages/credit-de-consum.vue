@@ -8,44 +8,33 @@ useHead({
     ],
 })
 
-const list = [
-    {
-        name: 'Destinația',
-        description: 'necesități personale curente și urgente'
-    },
-    {
-        name: 'Termen',
-        description: 'pînă la 60 de luni, cu posibilitatea de prelungire'
-    },
-    {
-        name: 'Suma',
-        description: 'maxim 100 000 MDL'
-    }
-]
-
 const benefits = [
-    'Pentru necesități urgente',
     'Fără comisioane',
-    'Dobânzi fixe și avantajoase',
-    'Transparență și claritate',
+    'Dobânzi fixe și mici',
+    'Până la 100 000 MDL',
+    'Pentru necesități urgente',
 ]
 
 </script>
 <template>
     <div class="mb-6">
-        <div class="pt-12 pb-6 md:pt-24 md:pb-12">
+        <div class="pt-12 pb-6 md:pt-24 md:pb-12 bg-in-squares">
             <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
                 <div class="flex flex-col md:col-span-8 h-full justify-center">
-                    <h1 class="hero-title text-center md:text-left">Credit de consum</h1>
-                    <h2 class="subtitle mt-2 text-center md:text-left">Oferim credite pentru nevoi personale / pînă la salariu.</h2>
-                    <UiBenefitsList :benefits="benefits" class="mt-8" />
-                    <UiRecenziiButton class="mt-8 md:mt-auto" />
+                    <h1 class="hero-title text-center md:text-left">Credit de Consum</h1>
+                    <h2 class="subtitle mt-2 text-center md:text-left">Credite pentru nevoi personale și pînă la
+                        salariu.</h2>
+                    <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
+                    <UiRecenziiButton class="mt-auto" />
                 </div>
-                <div class="md:col-span-4 cs-blur cs-blur--center">
+                <div class="md:col-span-4 cs-blur cs-blur--center grid items-center">
                     <UiHeroSectionCTA />
                     <UiCalculatorCreditCTA class="mt-4" />
                 </div>
             </div>
+        </div>
+        <div class="container mb-4 md:mb-6">
+            <CreditConditions />
         </div>
         <div class="container relative card light text-lg mt-4 md:mt-6">
             <h3 class="card-title text-center">Ce este un credit de consum ?</h3>

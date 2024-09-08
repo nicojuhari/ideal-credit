@@ -8,23 +8,19 @@ const cls = 'rounded-lg flex-col inline-flex gap-4 items-center p-6 md:py-8- asp
 
 <template>
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 items-center">
-        <div class="text-center">
-            <h4 class="title md:!mb-0">Solicită un credit!</h4>
-            <p class="text-gray-400">sau primești o consultație în 5 minute</p>
-        </div>
-            <div class="grid grid-cols-2 gap-4">
+        <h4 class="title md:!mb-0 text-center">Solicită un credit!</h4>
+        <div class="grid grid-cols-2 gap-4">
             <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online" :class="cls"
                 class="text-slate-600  bg-slate-600/20">
                 <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />
                 <span class="text-sm">Cerere online</span>
             </NuxtLink>
-            <a href="tel:+37378805060" title="+373 78 80 50 60"
-                :class="cls" class="text-blue-400 bg-blue-400/20">
+            <a href="tel:+37378805060" title="+373 78 80 50 60" :class="cls" class="text-blue-400 bg-blue-400/20">
                 <Icon name="i-ph-phone-call" class="w-6 h-6 shrink-0" />
                 <span class="text-sm">Telefon</span>
             </a>
-            <a href="https://wa.me/+37378805060" target="_blank" title="Scrieți sau apelați pe WhatsApp"
-                :class="cls" class="text-[#25D366] bg-[#25D366]/20">
+            <a href="https://wa.me/+37378805060" target="_blank" title="Scrieți sau apelați pe WhatsApp" :class="cls"
+                class="text-[#25D366] bg-[#25D366]/20">
                 <Icon name="i-ph-whatsapp-logo-light" class="w-8 h-8 shrink-0" />
                 <span class="text-sm">WhatsApp</span>
             </a>

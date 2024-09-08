@@ -23,28 +23,33 @@ const list = [
     }
 ]
 
+const benefits = [
+    'Dobânzi fixe',
+    'Fără comisioane',
+    'Pînă la 80%, din costul automobilului',
+    'Pentru cumpărarea unui automobil nou sau folosit',
+]
+
 </script>
 <template>
     <div class="mb-6">
-        <div class="py-16 md:py-24">
-            <div class="container grid grid-cols-1 md:grid-cols-12 gap-6">
-                <div class="flex flex-col md:col-span-8 h-full">
-                    <h1 class="hero-title text-center md:text-left">Credit auto</h1>
-                    <h2 class="subtitle mt-3 text-center md:text-left">Oferim credite pentru a cumpăra mașina ta de vis.</h2>
-                    <UiRecenziiButton class="mt-8" />
-                    <UiHeroSectionCTA class="my-10 md:mt-16" />
+        <div class="pt-12 pb-6 md:pt-24 md:pb-12 bg-in-squares">
+            <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
+                <div class="flex flex-col md:col-span-8 h-full justify-center">
+                    <h1 class="hero-title text-center md:text-left">Credit Auto</h1>
+                    <h2 class="subtitle mt-2 text-center md:text-left">Credite pentru procurarea mașinii dorite.
+                    </h2>
+                    <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
+                    <UiRecenziiButton class="mt-auto" />
                 </div>
-                <div class="md:col-span-4 grid place-items-center">
-                    <div class="space-y-4 w-full cs-blur cs-blur--center">
-                        <div v-for="item in list" :key="item.name" class="bg-brand-black p-4 rounded-lg"
-                            :title="item.name">
-                            <div class="text-brand-color text-opacity-70">{{ item.name }}</div>
-                            <div> {{ item.description }}</div>
-                        </div>
-                        <UiCalculatorCreditCTA />
-                    </div>
+                <div class="md:col-span-4 cs-blur cs-blur--center grid items-center">
+                    <UiHeroSectionCTA />
+                    <UiCalculatorCreditCTA class="mt-4" />
                 </div>
             </div>
+        </div>
+        <div class="container mb-4 md:mb-6">
+            <CreditConditions />
         </div>
         <div class="container relative card light text-lg">
             <h2 class="card-title text-center">Ce este un credit auto?</h2>

@@ -17,8 +17,8 @@
 
 </script>
 <template>
-    <div>
-        <div class="pt-12 pb-6 md:pt-24 md:pb-12">
+    <div class="mb-6">
+        <div class="pt-12 pb-6 md:pt-24 md:pb-12 bg-in-squares">
             <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
                 <div class="flex flex-col md:col-span-8 h-full justify-center">
                     <h1 class="hero-title text-center md:text-left">Credite rapide</h1>
@@ -27,7 +27,7 @@
                     <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
                     <UiRecenziiButton class="mt-auto" />
                 </div>
-                <div class="md:col-span-4 cs-blur cs-blur--center">
+                <div class="md:col-span-4 cs-blur cs-blur--center grid items-center">
                     <UiHeroSectionCTA />
                     <UiCalculatorCreditCTA class="mt-4" />
                 </div>
@@ -43,16 +43,14 @@
         <div class="container mt-4 md:mt-6">
             <CallToAction class="card light" />
         </div>
-        <div class="container mt-4 md:mt-6 mb-6">
-            <h3 class="title text-center pt-12 md:pt-16">Metode de achitare</h3>
-            <p class="max-w-[600px] mx-auto text-center pb-4">Vă oferim soluții rapide, eficiente și ieftine pentru
+        <div class="container mt-4 md:mt-6">
+            <h4 class="title text-center pt-12 md:pt-16">Metode de achitare</h4>
+            <p class="max-w-[600px] mx-auto text-center">Vă oferim soluții rapide și ieftine pentru
                 rambursarea creditului.</p>
             <PaymentMethods />
         </div>
-        <div class="container mt-4 md:mt-6 mb-6">
-            <h3 class="title text-center pt-12 md:pt-16">Întrebări Frecvente</h3>
-            <p class="max-w-[600px] mx-auto text-center pb-4">Iată câteva dintre cele mai frecvente întrebări și
-                răspunsuri la acestea, care vă pot ajuta să înțelegeți mai bine opțiunile noastre de creditare.</p>
+        <div class="container mt-4 md:mt-6">
+            <h4 class="title text-center pt-12 md:pt-16">Întrebări Frecvente</h4>
             <FAQ />
         </div>
     </div>

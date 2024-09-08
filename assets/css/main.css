@@ -45,7 +45,8 @@ h4 {
 } */
 
 .hero-title {
-    @apply font-bold text-5xl md:text-7xl text-white; 
+    @apply font-bold text-5xl md:text-7xl text-white;
+    line-height: 1.2;
 }
 
 .subtitle {
@@ -239,14 +240,14 @@ input[type=number] {
     width: 100%;
     height: 100%;
     background: #242424;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0) 90%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .bg-in-squares:before {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 90%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
     }
-}
+} */
 
 .richtext a {
     font-weight: bold;
