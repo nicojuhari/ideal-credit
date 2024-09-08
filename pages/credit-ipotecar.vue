@@ -18,7 +18,7 @@ const benefits = [
 </script>
 <template>
     <div class="mb-6">
-        <div class="pt-12 pb-6 md:pt-24 md:pb-12 bg-in-squares">
+        <div class="py-14 md:py-28 bg-in-squares">
             <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
                 <div class="flex flex-col md:col-span-8 h-full justify-center">
                     <h1 class="hero-title text-center md:text-left">Credit Ipotecar</h1>
