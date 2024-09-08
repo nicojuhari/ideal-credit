@@ -29,36 +29,39 @@
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="mt-4">Credite pentru nevoi personale și afaceri în Republica Moldova.</p>
-                <div>
-                    <NuxtLink to="/blog" class="btn btn-secondary btn-outline w-full md:w-auto">Blog</NuxtLink>
-                </div>
+                <p>Credite pentru nevoi personale și afaceri în Republica Moldova.</p>
             </div>
-            <div class="md:col-span-2">
+            <div>
                 <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="grid grid-cols-1 gap-8 mt-6">
                     <div v-for="oficiu in oficii" :key="oficiu.address">
-                        <div class="text-gray-400 mb-2">
+                        <div class="text-gray-600 mb-2">
                             {{ oficiu.title }}
                         </div>
                         <div class="flex gap-4 mb-4 items-center">
                             <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
-                                <Icon name="ph:map-pin-light"
-                                    class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
+                                <Icon name="i-ph-map-pin-light"
+                                    class="w-6 h-6 flex-shrink-0 text-white text-opacity-50" />
                             </div>
                             <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
                         </div>
                         <a :href="'tel:' + oficiu.mobile[0]" class="flex gap-4 items-center">
                             <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
-                                <Icon name="ph:phone-light"
-                                    class="w-6 h-6 flex-shrink-0 text-brand-color text-opacity-50" />
+                                <Icon name="i-ph-phone-call"
+                                    class="w-6 h-6 flex-shrink-0 text-white text-opacity-50" />
                             </div>
                             <div>{{ oficiu.mobile[1] }}</div>
                         </a>
                     </div>
                 </div>
             </div>
-
+            <div class="flex flex-col gap-4">
+                <div class="h-10 text-xl flex items-center">Linkuri</div>
+                <NuxtLink to="/blog" class="inline-flex underline">Blog</NuxtLink>
+                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
+                    class="underline">Autoritatea de Supraveghere și metodele de reclamații
+                </NuxtLink>
+            </div>
         </div>
         <div class="container mb-4 mt-10">
             <p class="mb-1 text-xl font-medium text-center">Din lege</p>
@@ -99,12 +102,6 @@
                 <li><span class="font-bold">Cesiune - </span>reprezintă transferul drepturilor și obligațiilor de
                     împrumut către o altă entitate (cesionar).</li>
             </ul>
-        </div>
-
-        <div class="container my-6 text-center">
-            <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                class="text-brand-color text-sm underline">Autoritatea de Supraveghere și metodele de reclamații
-            </NuxtLink>
         </div>
         <div class="container mt-6">
             <div class="divider"></div>

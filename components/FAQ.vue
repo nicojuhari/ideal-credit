@@ -33,9 +33,9 @@
 </script>
 <template>
     <div class="space-y-4 md:space-y-6">
-            <div v-for="(item, idx) in list" :class="{ 'col-span-2': list.length == idx + 1 }" class="card light">
-                <div class="text-brand-black font-semibold text-xl mb-2">{{ item.question }}</div>
-                <div class="text-gray-600">{{ item.answer }}</div>
-            </div>
+        <div v-for="(item, idx) in list" :class="{ 'col-span-2': list.length == idx + 1 }" class="card light">
+            <div class="text-brand-black font-semibold text-xl mb-2">{{ item.question }}</div>
+            <div class="text-gray-600">{{ item.answer }}</div>
         </div>
+    </div>
 </template>

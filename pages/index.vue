@@ -28,7 +28,7 @@
                     <UiRecenziiButton class="mt-auto" />
                 </div>
                 <div class="md:col-span-4 cs-blur cs-blur--center grid items-center">
-                    <UiHeroSectionCTA />
+                    <UiButtonsCTA toHeroSection />
                     <UiCalculatorCreditCTA class="mt-4" />
                 </div>
             </div>
