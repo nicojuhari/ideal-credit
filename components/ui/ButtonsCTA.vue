@@ -10,6 +10,7 @@ const props = defineProps({
         default: false
     }
 })
+const { trackEvent } = useFacebookPixel()
 const phoneNumber = '+37378805060';
 const viberUrl = `viber://chat?number=${encodeURIComponent(phoneNumber)}`;
 
@@ -55,16 +56,16 @@ if(props.toMenu) {
                 <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />
                 <span class="text-sm">Cerere online</span>
             </NuxtLink>
-            <a href="tel:+37378805060" title="+373 78 80 50 60" :class="[cls, toHeroSection ? btnColors.phone.toHeroSection : btnColors.phone.toCallToAction]">
+            <a href="tel:+37378805060" @click="trackEvent('Contact')" title="+373 78 80 50 60" :class="[cls, toHeroSection ? btnColors.phone.toHeroSection : btnColors.phone.toCallToAction]">
                 <Icon name="i-ph-phone-call" class="w-6 h-6 shrink-0" />
                 <span class="text-sm">Telefon</span>
             </a>
-            <a href="https://wa.me/+37378805060" target="_blank" title="Scrieți sau apelați pe WhatsApp"
+            <a href="https://wa.me/+37378805060" @click="trackEvent('Contact')" target="_blank" title="Scrieți sau apelați pe WhatsApp"
                 :class="[cls, toHeroSection ? btnColors.whatsapp.toHeroSection : btnColors.whatsapp.toCallToAction]">
                 <Icon name="i-ph-whatsapp-logo-light" class="w-8 h-8 shrink-0" />
                 <span class="text-sm">WhatsApp</span>
             </a>
-            <a :href="viberUrl" :class="[cls, toHeroSection ? btnColors.viber.toHeroSection : btnColors.viber.toCallToAction]" title="Scrieți sau apelați pe Viber">
+            <a :href="viberUrl" @click="trackEvent('Contact')" :class="[cls, toHeroSection ? btnColors.viber.toHeroSection : btnColors.viber.toCallToAction]" title="Scrieți sau apelați pe Viber">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" viewBox="0 0 24 24"
                     fill="currentColor">
                     <path

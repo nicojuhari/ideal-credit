@@ -10,6 +10,9 @@
         }
     })
 
+    const { trackEvent } = useFacebookPixel()
+
+
     let cls = 'h-10 rounded-full gap-4'
 
     if(props.hideText) {
@@ -26,7 +29,7 @@
 
 </script>
 <template>
-    <a href="tel:+37378805060" title="+373 78 80 50 60" :class="cls">
+    <a href="tel:+37378805060" @click="trackEvent('Contact')" title="+373 78 80 50 60" :class="cls">
         <IconsPhone class="w-6 h-6 phone" />
         <div v-if="!hideText" class="tracking-widest">078 80 50 60</div>
     </a>

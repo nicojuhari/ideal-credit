@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { reset } from '@formkit/core'
+const { trackEvent } = useFacebookPixel()
 
 const formData = ref({})
 const formSuccess = ref(false)
@@ -37,6 +38,8 @@ const submitForm = async () => {
 
         if (data.success) {
 
+            trackEvent('Lead');
+
             setTimeout(() => {
                 // formSend.value = false;
                 reset('cerere-online-form', {})
@@ -52,6 +55,11 @@ const submitForm = async () => {
         }, 1000)
     }
 }
+
+onMounted(() => {
+    trackEvent('ViewContent');
+})
+
 </script>
 <template>
     <div class="container sm-container relative my-4 md:my-6">

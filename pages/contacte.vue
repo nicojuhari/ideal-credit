@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    const { trackEvent } = useFacebookPixel()
 
     useHead({
         title: 'Contactele companiei de creditare Ideal Credit din R. Moldova',
@@ -38,9 +39,12 @@
                 formSend.value = true;
                 formData.value = {}
 
+                trackEvent('SubmitApplication');
+
                 setTimeout(() => {
                     formSend.value = false;
                 }, 3000)
+                
             }
         } catch (e) {
             console.error(e)
@@ -59,13 +63,13 @@
                     <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-5">
                         <IconsMobile class="w-6 text-brand-color"/>
                     </div>
-                    <a href="tel:+37378805060"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
+                    <a href="tel:+37378805060" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
                 </div>
                 <div class="flex gap-4 items-center">
                     <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-5">
                         <IconsMail class="w-6 text-brand-color"/>
                     </div>
-                    <a href="mailto:info@idealcredit.md">info@idealcredit.md</a>
+                    <a href="mailto:info@idealcredit.md" @click="trackEvent('Contact')">info@idealcredit.md</a>
                 </div>
             </div>
         </div>    
@@ -74,7 +78,7 @@
             <UiLoading v-if="loading" local/>
             <div v-if="formSend" class="grid place-content-center my-16 duration-700">
                 <IconsCheck class="text-brand-color h-32 mx-auto" />
-                <div class="text-2xl">Vă mulțumim pentru mesaj!</div>
+                <div class="text-2xl">Mulțumim pentru mesaj.<br>Vă contactăm în curând!</div>
             </div>
             <FormKit v-else type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
                 :validation-messages="{

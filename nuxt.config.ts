@@ -29,18 +29,19 @@ export default defineNuxtConfig({
       cssPath: '~/assets/css/main.css',
   },
 
-  runtimeConfig: {
-      siteUrl: 'https://idealcredit.md',
-      icm_api_url: process.env.NUXT_ICM_API_URL,
-      secret_key: process.env.NUXT_SECRET_KEY,
-      storyblok_mode: process.env.storyblok_mode as 'draft' | 'published',
-      public: {
-          siteUrl: 'https://idealcredit.md',
-          siteName: 'Ideal Credit',
-          siteDescription: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Dobânzi mici și fără comisioane ascunse. Aplică online!',
-          language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
-      }
-  },
+    runtimeConfig: {
+        siteUrl: 'https://idealcredit.md',
+        icm_api_url: process.env.NUXT_ICM_API_URL,
+        secret_key: process.env.NUXT_SECRET_KEY,
+        storyblok_mode: process.env.storyblok_mode as 'draft' | 'published',
+        public: {
+            siteUrl: 'https://idealcredit.md',
+            siteName: 'Ideal Credit',
+            siteDescription: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Dobânzi mici și fără comisioane ascunse. Aplică online!',
+            language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
+            fb_pixel_id: 2254113158275780
+        }
+    },
 
   site: {
       url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',

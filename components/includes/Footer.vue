@@ -1,4 +1,6 @@
 <script setup>
+    const { trackEvent } = useFacebookPixel()
+    
     const oficii = [
         {
             title: 'Sediul principal',
@@ -45,7 +47,7 @@
                             </div>
                             <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
                         </div>
-                        <a :href="'tel:' + oficiu.mobile[0]" class="flex gap-4 items-center">
+                        <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="flex gap-4 items-center">
                             <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
                                 <Icon name="i-ph-phone-call"
                                     class="w-6 h-6 flex-shrink-0 text-white text-opacity-50" />

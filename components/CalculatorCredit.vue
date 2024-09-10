@@ -4,6 +4,8 @@
     // import { createGrafic } from '../utils/grafic';
     // import { calcDAE } from '../utils/dae'
 
+    const { trackEvent } = useFacebookPixel()
+
     const creditSuma = ref(10000)
     const creditTermen = ref(12)
 
@@ -32,6 +34,8 @@
             period: creditTermen.value, 
             interest: 4,
         })
+
+        trackEvent('CustomizeProduct');
 
         if(graficCalculat.value.length == 0) return
 
