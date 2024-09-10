@@ -35,13 +35,18 @@
             interest: 4,
         })
 
-        trackEvent('CustomizeProduct');
-
         if(graficCalculat.value.length == 0) return
 
         dae.value = calcDAE(graficCalculat.value, creditSuma.value)
         dobindaTotal.value = graficCalculat.value.reduce((acc, rata) => rata.dobinda_rata + acc, 0)
     })
+
+    watch([creditSuma, creditTermen],
+        () => {
+            trackEvent('CustomizeProduct');
+        },
+        { once: true }
+    )
 
     const creditComision = computed(() => {
         return tarife.comision * +creditSuma.value / 100;
