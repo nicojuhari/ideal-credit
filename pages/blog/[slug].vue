@@ -19,6 +19,7 @@ useHead({
         { property: 'og:url', content: `https://idealcredit.md${route.fullPath}` },
         { property: 'og:type', content: `blogpost` },
         { property: 'og:image', content: story?.value.content.image.filename },
+        { property: 'og:image:alt', content: story?.value.name },
         { property: 'og:title', content: story?.value.name },
         { property: 'og:description', content: story?.value.content.meta_description },
     ],

@@ -17,7 +17,6 @@
   "dependencies": {
     "@formkit/nuxt": "^1.6.5",
     "@formkit/vue": "^1.6.5",
-    "@playwright/test": "^1.46.1",
     "@storyblok/nuxt": "^6.0.10",
     "axios": "^1.7.7",
     "ideal-credit": "^0.2.6"
