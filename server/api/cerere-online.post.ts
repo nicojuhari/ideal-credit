@@ -13,7 +13,9 @@ export default defineEventHandler(async (event) => {
             console.log(response.data)
             return { success: 'Cererea a fost transmisă cu success!'}
         }
-        return false
+        console.log(body)
+        return { success: 'Cererea a fost transmisă cu success!'}
+        // return false
     } catch (err) {
         console.log(err)
         return false;

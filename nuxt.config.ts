@@ -50,10 +50,13 @@ export default defineNuxtConfig({
 
   sitemap: {
   // exclude all URLs that start with /secret
-      exclude: ['/autoritatea-de-supraveghere'],
+      exclude: ['/autoritatea-de-supraveghere', '/cerere-test'],
       sources: [
           '/api/__sitemap__/urls',
       ]
+  },
+  devServer: {
+    port: 3001
   },
 
   compatibilityDate: '2024-09-04'
