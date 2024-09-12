@@ -16,10 +16,15 @@ export default defineEventHandler(async (event) => {
                 'Referer': apiURL,
                 'DNT': '1',
                 'Connection': 'keep-alive',
-                'Upgrade-Insecure-Requests': '1'
+                'Upgrade-Insecure-Requests': '1',
+                'Content-Type': 'application/json',
             }
             // 
-            let response = await axios.post(apiURL + '/cerere_online?secret_key=' + config.secret_key, body, { headers })
+            let response = await axios.post( apiURL + '/cerere_online?secret_key=' + config.secret_key, 
+                { 
+                    body, 
+                    headers 
+                })
 
             console.log(response.data)
             return { success: 'Cererea a fost transmisă cu success!'}
