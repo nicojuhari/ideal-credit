@@ -5,9 +5,6 @@ export default defineNuxtConfig({
                 lang: 'ro'
             },
             title: 'Credite rapide - pentru nevoi personale și afaceri',
-            script: [
-                { src: 'https://cdn.splitbee.io/sb.js', async: true}
-            ],
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
