@@ -34,24 +34,24 @@
             </div>
         </div>
         <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <TipuriCredite />
-            <CreditConditions />
+            <LazyTipuriCredite />
+            <LazyCreditConditions />
         </div>
         <div class="container mt-4 md:mt-6">
-            <CalculatorCredit />
+            <LazyCalculatorCredit />
         </div>
         <div class="container mt-4 md:mt-6">
-            <CallToAction class="card light" />
+            <LazyCallToAction class="card light" />
         </div>
         <div class="container mt-4 md:mt-6">
             <h4 class="title text-center pt-12 md:pt-16">Metode de achitare</h4>
             <p class="max-w-[600px] mx-auto text-center">Vă oferim soluții rapide și ieftine pentru
                 rambursarea creditului.</p>
-            <PaymentMethods />
+            <LazyPaymentMethods />
         </div>
         <div class="container mt-4 md:mt-6">
             <h4 class="title text-center pt-12 md:pt-16">Întrebări Frecvente</h4>
-            <FAQ />
+            <LazyFAQ />
         </div>
     </div>
 </template>

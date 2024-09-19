@@ -129,7 +129,7 @@
                 
             </FormKit>
         </div>
-        <CallToAction class="card light mt-4 md:mt-6"/>
+        <LazyCallToAction class="card light mt-4 md:mt-6"/>
         <div id="adresa-oficiilor" class="-translate-y-14"></div>
         <div class="card mt-4 md:mt-6">
             <div class="card-title text-center">Adresa oficiilor</div>

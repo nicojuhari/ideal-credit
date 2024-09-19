@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="container sm-container mt-4 md:mt-6">
-            <CallToAction class="card light"/>
+            <LazyCallToAction class="card light"/>
         </div>
     </div>
 </template>

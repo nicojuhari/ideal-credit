@@ -4,7 +4,7 @@
     <main class="flex-auto">
       <NuxtPage />
     </main>
-    <IncludesFooter class="mt-auto"/>
+    <LazyIncludesFooter class="mt-auto"/>
   </div>
 </template>
 <script setup>

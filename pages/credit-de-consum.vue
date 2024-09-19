@@ -62,10 +62,10 @@ const benefits = [
             <p class="mb-0 font-bold">Contactează-ne acum pentru a afla mai multe despre cum te putem ajuta.</p>
         </div>
         <div class="container mt-4 md:mt-6">
-            <CalculatorCredit />
+            <LazyCalculatorCredit />
         </div>
         <div class="container card light mt-4 md:mt-6">
-            <CallToAction />
+            <LazyCallToAction />
         </div>
     </div>
 </template>

@@ -63,10 +63,10 @@ const benefits = [
                 gratuită!</p>
         </div>
         <div class="container mt-4 md:mt-6">
-            <CalculatorCredit />
+            <LazyCalculatorCredit />
         </div>
         <div class="container card light mt-4 md:mt-6">
-            <CallToAction />
+            <LazyCallToAction />
         </div>
     </div>
 </template>

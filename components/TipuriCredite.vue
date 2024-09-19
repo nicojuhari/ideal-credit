@@ -17,7 +17,7 @@ let classes = 'flex items-center h-14 gap-4 px-4 bg-gray-600 bg-opacity-10 hover
                 <Icon :name="item.icon"
                     class="w-6 h-6 shrink-0 text-gray-600 group-hover:text-brand-color transition-all duration-300" />
                 <h3
-                    class="font-medium text-lg text-brand-black group-hover:text-brand-color transition-all duration-300">
+                    class="text-lg text-brand-black group-hover:text-brand-color transition-all duration-300">
                     {{ item.name }}
                 </h3>
             </nuxt-link>
