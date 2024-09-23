@@ -4,7 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite rapide - pentru nevoi personale și afaceri',
+            title: 'Credit Rapid și Avantajos în Chișinău, Moldova. Aplică Online!',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
                 { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" },
             ],
             meta: [
-                { name: 'description', content: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Dobânzi mici și fără comisioane ascunse. Aplică online!' },
+                { name: 'description', content: 'Ideal Credit oferă Credit Rapid nebancar pentru nevoi personale și afaceri, doar cu buletinul, în Moldova. Dobânzi fixe și fără comisioane ascunse. Aplică online!' },
                 { name: 'keywords', content: 'credit rapid, credit online, împrumut, credit nevoi personale, credit Chișinău Moldova, credit online md, credit avantajos' },
                 { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"}
             ],

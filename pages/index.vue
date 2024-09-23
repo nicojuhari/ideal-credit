@@ -1,16 +1,16 @@
 <script setup>
     useHead({
-        title: 'Credite rapide pentru nevoi personale și afaceri',
+        title: 'Credit Rapid și Avantajos în Chișinău, Moldova. Aplică Online!',
         titleTemplate: '%pageTitle',
         meta: [
-            { name: 'description', content: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Dobânzi mici și fără comisioane ascunse. Aplică online!' },
-            { name: 'keywords', content: 'credit rapid, credit online, împrumut, credit nevoi personale, credit Chișinău Moldova, credit online md, credit avantajos' },
+            { name: 'description', content: 'Ideal Credit din Moldova, oferă credite nebancare pentru nevoi personale și afaceri, cu dobânzi fixe și fără comisioane ascunse. Aplică rapid online!' },
+            { name: 'keywords', content: 'credit rapid, credit online, împrumut, credit nevoi personale, credit Chișinău Moldova, credit online md, credit online rapid' },
         ],
     })
 
     const benefits = [
         'Dobânzi fixe și avantajoase',
-        'Fără comisioane',
+        'Fără comisioane ascunse',
         'Reduceri pentru clienții fideli',
         'Transparență și claritate',
     ]
@@ -21,8 +21,8 @@
         <div class="py-14 md:py-28 bg-in-squares">
             <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
                 <div class="flex flex-col md:col-span-8 h-full justify-center">
-                    <h1 class="hero-title text-center md:text-left">Credite rapide</h1>
-                    <h2 class="subtitle mt-2 text-center md:text-left">Credite pentru nevoi personale și afaceri.
+                    <h1 class="hero-title text-center md:text-left">Credit Rapid</h1>
+                    <h2 class="subtitle mt-2 text-center md:text-left">Credite nebancare pentru nevoi personale și afaceri.
                     </h2>
                     <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
                     <UiRecenziiButton class="mt-auto" />
@@ -33,9 +33,18 @@
                 </div>
             </div>
         </div>
-        <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <!-- <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <LazyTipuriCredite />
             <LazyCreditConditions />
+        </div> -->
+        <div class="container mt-4 md:mt-6">
+            <HowItWorks />
+        </div>
+        <div class="container mt-4 md:mt-6 cs-blur">
+            <LazyCreditConditions />
+        </div>
+        <div class="container mt-4 md:mt-6">
+           <LazyTipuriCredite />
         </div>
         <div class="container mt-4 md:mt-6">
             <LazyCalculatorCredit />

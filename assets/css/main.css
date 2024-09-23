@@ -8,7 +8,7 @@ html {
 }
 
 body{
-    @apply bg-brand-bg text-brand-white-smoke;
+    @apply bg-brand-bg text-white;
     font-family: Inter, Arial, sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
@@ -21,7 +21,7 @@ body.menu-open, body.modal-open {
 }
 
 .container {
-    @apply mx-auto max-w-5xl;
+    @apply mx-auto max-w-5xl relative;
     width: calc(100% - 2rem);
 }
 
@@ -34,19 +34,6 @@ h1,h2,h3,h4 {
     font-weight: 400;
     line-height: 1.15;
 }
-
-/* h1 {
-    @apply text-[3rem] md:text-[5.6rem];
-}
-h2 {
-    @apply text-[2.5rem] md:text-[4.2rem];
-}
-h3 {
-    @apply text-[1.8rem] md:text-[3.1rem];
-}
-h4 {
-    @apply text-[1.3rem] md:text-[2.4rem];
-} */
 
 .hero-title {
     @apply font-semibold text-5xl md:text-7xl text-white;
@@ -123,29 +110,21 @@ textarea {
 }
 
 .card {
-    @apply rounded-lg px-4 py-8 md:px-8 md:py-14 shadow-md bg-brand-black overflow-hidden;
+    @apply rounded-lg px-4 py-10 md:px-8 md:py-14 shadow-md bg-brand-black overflow-hidden;
 }
 
 .card.light {
-    @apply text-brand-black;
-    background: #fbfbfb;
-}
-
-.card-title {
-    font-weight: 600;
+    background: #ececec;
+    color:#181818;
 }
 
 .blog-page .card {
     @apply py-4 md:py-8
 }
 
-.title {
-    font-weight: 600;
-}
-
-
 .card-title, .title {
     @apply text-3xl md:text-4xl mb-6 md:mb-8;
+    font-weight: 500;
 }
 
 .page-title {

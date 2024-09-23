@@ -1,19 +1,23 @@
 <script setup>
     const list = [
-        'Cetățean al Republicii Moldova cu buletin de identitate valid',
-        'Sursă de venit stabilă, confirmată și neconfirmată',
-        'Posibilitatea deplină pentru deservirea creditului',
-        'Gaj sau garant, în funcție de capacitatea de creditare',
+        'Vârsta între 23 și 65 de ani',
+        'Sursă de venit stabilă',
+        'Buletin de identitate valabil',
+        'Responsabilitate pentru rambursarea creditului',
     ]
 </script>
 <template>
-    <div class="card light space-y-8">
+    <div class="card space-y-8">
         <div class="card-title text-center">Condițiile de creditare</div>
         <div class="space-y-4">
             <div v-for="item in list" class="flex text-xl items-center gap-4">
-                <Icon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-green-500" />
+                <Icon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-brand-green" />
                 {{ item }}
             </div>
+        </div>
+        <div class="inline-flex items-center gap-4 pt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-white/50 w-6 h-6 shrink-0" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
+            <span>În funcție de evaluarea riscului de credit, se poate solicita garanții adiționale: fidejusiune (garant) sau gaj (imobil).</span>
         </div>
     </div>
 </template>
