@@ -33,16 +33,16 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <LazyTipuriCredite />
+        <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <HowItWorks />
             <LazyCreditConditions />
-        </div> -->
-        <div class="container mt-4 md:mt-6">
+        </div>
+        <!-- <div class="container mt-4 md:mt-6">
             <HowItWorks />
         </div>
         <div class="container mt-4 md:mt-6 cs-blur">
             <LazyCreditConditions />
-        </div>
+        </div> -->
         <div class="container mt-4 md:mt-6">
            <LazyTipuriCredite />
         </div>
@@ -53,9 +53,7 @@
             <LazyCallToAction class="card light" />
         </div>
         <div class="container mt-4 md:mt-6">
-            <h4 class="title text-center pt-12 md:pt-16">Metode de achitare</h4>
-            <p class="max-w-[600px] mx-auto text-center">Vă oferim soluții rapide și ieftine pentru
-                rambursarea creditului.</p>
+           
             <LazyPaymentMethods />
         </div>
         <div class="container mt-4 md:mt-6">

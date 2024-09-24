@@ -11,7 +11,7 @@
                     <th class="px-4 py-2 font-bold text-left whitespace-nowrap">Nr.</th>
                     <th class="px-4 py-2 font-bold text-left whitespace-nowrap">Data</th>
                     <th class="px-4 py-2 font-bold text-left whitespace-nowrap">Credit</th>
-                    <th class="px-4 py-2 font-bold text-left whitespace-nowrap">Dobinda</th>
+                    <th class="px-4 py-2 font-bold text-left whitespace-nowrap">Dobânda</th>
                     <th class="px-4 py-2 font-bold text-left whitespace-nowrap">Total</th>
                 </tr>
             </thead>

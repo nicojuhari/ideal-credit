@@ -43,7 +43,7 @@ h1,h2,h3,h4 {
 .subtitle {
     font-weight: 300;
     line-height: 1.3;
-    @apply md:text-lg text-gray-400;
+    @apply md:text-lg text-brand-gray-dark;
 }
 
 section {
@@ -58,21 +58,18 @@ p {
     @apply h-10 px-8 rounded-full inline-flex gap-3 items-center justify-center text-lg;
 }
 .btn-primary {
-    @apply bg-white text-brand-black border-white border;
+    @apply bg-brand-gray text-brand-black border-brand-gray border;
 }
 .btn-primary.btn-light {
-    @apply bg-opacity-10 border-opacity-0 text-white ;
+    @apply bg-brand-black-light border-brand-black-light text-white ;
+}
+
+.btn-primary.btn-outline {
+    @apply bg-opacity-0 border-brand-black text-brand-black;
 }
 
 .btn-secondary {
     @apply bg-brand-color text-brand-color bg-opacity-20 border border-brand-color border-opacity-0
-}
-.btn-outline {
-    @apply bg-opacity-0 border-opacity-100;
-}
-
-.btn-primary.btn-outline {
-    @apply border-brand-black;
 }
 
 input {
@@ -114,8 +111,7 @@ textarea {
 }
 
 .card.light {
-    background: #ececec;
-    color:#181818;
+    @apply bg-brand-gray text-brand-black;
 }
 
 .blog-page .card {
@@ -123,7 +119,7 @@ textarea {
 }
 
 .card-title, .title {
-    @apply text-3xl md:text-4xl mb-6 md:mb-8;
+    @apply text-[1.75rem] md:text-4xl mb-6 md:mb-8;
     font-weight: 500;
 }
 
@@ -139,13 +135,11 @@ input[type="range"]::-webkit-slider-thumb {
     height: 24px;
     cursor: ew-resize;
     border-radius: 50%;
-    box-shadow: rgba(255, 154, 0, .5) 1px 0px 8px;
-    /* border: 5px solid; */
-    @apply border-brand-white-smoke bg-brand-color;
+    @apply border-brand-black-light bg-brand-color;
 }
 
 .input-calculator {
-    @apply rounded-lg bg-transparent px-2 text-white bg-gray-100 bg-opacity-10 border-0 outline-none font-bold text-2xl w-[8.5rem] text-right;
+    @apply rounded-lg bg-transparent px-2 text-white bg-brand-black-light border-0 outline-none font-bold text-2xl w-[8.5rem] text-right;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -159,6 +153,8 @@ input[type="range"]::-webkit-slider-thumb {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+
 .cs-blur {
     isolation: isolate;
     position: relative;
@@ -196,10 +192,6 @@ input[type=number] {
     transform: translate(50%, -50%);
 }
 
-.cs-notice {
-    @apply bg-brand-color rounded py-2 px-4 bg-opacity-20 flex gap-4 text-brand-black items-center;
-}
-
 .divider {
     width: 100%;
     height: 1px;
@@ -225,12 +217,6 @@ input[type=number] {
     background: #242424;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
 }
-
-/* @media (min-width: 768px) {
-    .bg-in-squares:before {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
-    }
-} */
 
 .richtext a {
     font-weight: bold;

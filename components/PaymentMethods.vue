@@ -1,12 +1,6 @@
 <script setup>
-const list = [
-    'În unul din oficiile companiei Ideal Credit',
-    'În caseria Prin intermediul băncii "VictoriaBank"',
-    'La orice oficiu poștal din Republica Moldova',
-    'Online Banking',
-]
 
-const list2 = [
+const list = [
     {
         title: 'Ideal Credit',
         description: 'În unul din <a href="/contacte#adresa-oficiilor" class="underline">oficiile companiei</a>',
@@ -30,14 +24,10 @@ const list2 = [
 ]
 </script>
 <template>
-    <div class="grid grid-cols-2 gap-4 md:gap-6">
-        <div v-for="(item,idx) in list2" :key="item.title"
-            class="card flex-grow"
-            :class="{'col-span-2': list2.length == idx + 1 }">
-            <div class="mb-2 text-white text-lg md:text-2xl">
-                {{ item.title }}
+    <div class="space-y-6 card">
+            <h2 class="card-title text-center">Metode de achitare</h2>
+            <div  v-for="item in list" :key="item.title" class="text-lg">
+                <span class="shrink-0 font-medium">{{ item.title }} - </span> <span class="text-brand-gray-dark" v-html="item.description"></span>
             </div>
-            <div class="text-sm md:text-base text-gray-400" v-html="item.description"></div>
         </div>
-    </div>
 </template>

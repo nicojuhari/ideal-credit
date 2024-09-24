@@ -24,33 +24,34 @@ if(props.toHeroSection) {
 
 const btnColors = {
     online: {
-        toHeroSection: 'text-slate-400 bg-brand-black',
-        toCallToAction: 'text-slate-500 bg-slate-400/20'
+        toHeroSection: 'text-brand-gray-dark bg-brand-black',
+        toCallToAction: 'text-brand-black bg-slate-400/20'
     },
     phone: {
-        toHeroSection: 'text-blue-400 bg-brand-black',
+        toHeroSection: 'text-blue-600 bg-brand-black',
         toCallToAction: 'text-blue-600 bg-blue-400/20'
     },
     whatsapp: {
-        toHeroSection: 'text-[#25D366] bg-brand-black',
-        toCallToAction: 'text-[#25D366] bg-[#25D366]/20'
+        toHeroSection: 'text-[#14ac4c] bg-brand-black',
+        toCallToAction: 'text-[#14ac4c] bg-[#14ac4c]/20'
     },
     viber: {
         toHeroSection: 'text-[#7360f2] bg-brand-black',
-        toCallToAction: 'text-[#7360f2] bg-[#7360f2]/20'
+        toCallToAction: 'text-[#5846d6] bg-[#5846d6]/20'
     }
 }
 
 if(props.toMenu) {
     btnColors.online.toCallToAction = 'text-slate-200 bg-slate-600/30',
-    btnColors.phone.toCallToAction = 'text-blue-200 bg-blue-600/30'
+    btnColors.phone.toCallToAction = 'text-blue-200 bg-blue-600/30',
+    btnColors.viber.toCallToAction = 'text-[#8c7bff] bg-[#7360f2]/20'
 }
 
 </script>
 <template>
     <div class="space-y-4 text-center">
-        <div v-if="toHeroSection" class="text-gray-200">Solicită un credit acum!</div>
-        <div class="grid gap-4" :class="toHeroSection ? 'grid-cols-1' : 'grid-cols-2'">
+        <div v-if="toHeroSection" class="text-brand-gray-dark">Solicită un credit acum!</div>
+        <div class="grid gap-4" :class="toHeroSection ? 'grid-cols-1' : 'grid-cols-2 md:grid-cols-4'">
             <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online"
                 :class="[cls, toHeroSection ? btnColors.online.toHeroSection : btnColors.online.toCallToAction]">
                 <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />

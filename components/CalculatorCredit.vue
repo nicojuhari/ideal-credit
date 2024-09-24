@@ -98,7 +98,7 @@
                         <div>300 000 lei</div>
                     </div>
                 </div>
-                <div class="mt-6">
+                <div class="mt-10">
                     <div class="flex gap-4 justify-between items-center mb-1">
                         <div>Termen</div>
                         <label for="credit-period-input">
@@ -116,22 +116,22 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <div class="grid place-content-center mt-6">
+                <div class="grid place-content-center mt-2 text-brand-gray-dark">
                     <div
-                        class="w-44 h-44 grid place-content-center gap-4 border-4 rounded-full text-center border-white border-opacity-30">
-                        <div class="text-white text-opacity-60">Prima rată</div>
+                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center border-brand-black-light bg-">
+                        <div>Prima rată</div>
                         <div class="text-brand-color title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
-                        <div><span class="text-white text-opacity-60">MDL</span></div>
+                        <div>MDL</div>
                     </div>
                 </div>
-                <div class="flex justify-center mt-6">
-                    <button class="btn btn-primary btn-light"
+                <div class="flex justify-center mt-8">
+                    <button class="btn btn-primary"
                         @click="showModal = true">Vezi toate ratele</button>
                 </div>
             </div>
         </div>
-        <div class="text-center subtitle mt-12 mb-6">Costurile creditului</div>
+        <div class="text-center mt-12 mb-6">Costurile creditului</div>
         <div class="grid gap-3 md:gap-10 grid-cols-1 md:grid-cols-2">
             <div>
                 <div class="flex gap-6 justify-between">
@@ -162,6 +162,9 @@
                 </div>
             </div>
         </div>
+        <div class="mt-8 flex gap-4 bg-brand-black-light p-4 rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-brand-color" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
+            <span>Debitorul (Consumatorul) este responsabil pentru rambursarea creditului</span></div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Graficul de rambursare*">
             <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
             <div class="mt-6 text-brand-color">* Exemplu Reprezentativ</div>
