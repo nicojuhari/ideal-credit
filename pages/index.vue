@@ -35,12 +35,6 @@
             <HowItWorks />
             <LazyCreditConditions />
         </div>
-        <!-- <div class="container mt-4 md:mt-6">
-            <HowItWorks />
-        </div>
-        <div class="container mt-4 md:mt-6 cs-blur">
-            <LazyCreditConditions />
-        </div> -->
         <div class="container mt-4 md:mt-6">
            <LazyTipuriCredite />
         </div>

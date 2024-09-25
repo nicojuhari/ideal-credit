@@ -14,25 +14,55 @@
             <div class="card light">
                 <h1 class="page-title">Despre noi</h1>
                 <div class="text-lg">
-                   
-                    <p>Suntem o companie de finanțare și suntem aici pentru a vă ajuta să vă îndepliniți obiectivele financiare.</p>
-                    <p><strong>Organizația de Creditare Nebancară Ideal Credit SRL</strong>
-                            activează cu success pe piața financiară nebancară al Republicii Moldova din <b>2010</b></p>
-                    <p>În acest timp compania a reușit să înregistreze o dezvoltare continuă,
-                        oferind clienților săi suport financiar și consultanță profesională în
-                        vederea soluționării problemelor acestora.</p>
-                    <p>Oferta noastră de împrumuturi este variată și flexibilă, astfel încât să putem satisface nevoile diferite ale clienților noștri.</p>
-                    <p>Indiferent dacă aveți nevoie de un împrumut pentru achiziționarea unei proprietăți, pentru a vă consolida 
-                        datoriile sau pentru a finanța un proiect personal, suntem pregătiți să vă oferim soluții personalizate, adaptate nevoilor și posibilităților dumneavoastră financiare.</p>
-                    <p>În plus, vă oferim transparență și flexibilitate în ceea ce privește costurile împrumutului, astfel încât să puteți lua o decizie informată și să știți exact cât veți plăti în fiecare lună.</p>
-                    <p>Suntem dedicați să vă oferim servicii de calitate și să vă ajutăm să vă atingeți obiectivele financiare.</p>
-                    
-
-                    <p>Credem în performanța pe care oamenii sînt capabili să o atingă.
-                        Acesta este motorul activității noastre, drept dovadă fiind abordarea
-                        individuală a fiecarui client în parte și oferirea serviciilor simple și accesibile.</p>
-                    
-                    <p>Nu ezitați să ne contactați pentru a afla mai multe despre opțiunile de împrumut disponibile sau pentru a discuta despre nevoile dumneavoastră financiare specifice.</p>
+                    <p>Partenerul dumneavoastră de încredere în finanțare din Moldova.</p>
+                    <p><strong>Ideal Credit SRL</strong> este o organizație de creditare nebancară de top, care activează cu succes pe piața financiară a Republicii Moldova din 2010. În cei peste 13 ani de activitate, ne-am consolidat poziția ca un partener de încredere pentru mii de clienți, oferind soluții financiare inovatoare și accesibile.</p>
+                    <h2 class="mb-2">Misiunea noastră</h2>
+                    <p>
+                        Ne dedicăm să sprijinim creșterea economică a Moldovei prin oferirea de acces la finanțare pentru persoane fizice și întreprinderi mici și mijlocii. Credem în potențialul fiecărui client și ne străduim să oferim servicii personalizate care să răspundă nevoilor lor unice.
+                    </p>
+                    <h2 class="mb-2">Ce ne diferențiază</h2>
+                    <ul class="list-disc list-inside">
+                        <li>
+                            <strong>Expertiză locală:</strong> Înțelegem în profunzime piața financiară din Moldova și provocările cu care se confruntă clienții noștri.
+                        </li>
+                        <li>
+                            <strong>Produse diverse:</strong> Oferim o gamă largă de împrumuturi, de la credite de consum până la finanțări pentru afaceri și agricultură.
+                        </li>
+                        <li>
+                            <strong>Proces simplificat:</strong> Aplicare rapidă și aprobare accelerată, cu documentație minimă.
+                        </li>
+                        <li>
+                            <strong>Transparență totală:</strong> Fără comisioane ascunse, cu toate costurile prezentate clar de la început.
+                        </li>
+                        <li>
+                            <strong>Consultanță profesională:</strong> Echipa noastră de experți vă ghidează în alegerea celei mai potrivite soluții financiare.
+                        </li>
+                    </ul>
+                    <h2 class="mb-2 mt-6">Produsele noastre principale</h2>
+                    <ul class="list-disc list-inside">
+                        <li><NuxtLink to="/credit-de-consum" title="credit de consum">Credite de consum</NuxtLink></li>
+                        <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri">Împrumuturi pentru afaceri</NuxtLink></li>
+                        <li>Credite agricole</li>
+                        <li>Finanțare pentru echipamente și utilaje</li>
+                        <li><NuxtLink to="/credit-auto" title="credite auto">Credite auto</NuxtLink></li>
+                        <li>Finanțare pentru echipamente și utilaje</li>
+                        <li><NuxtLink to="/credit-ipotecar" title="credite ipotecar">Credite pentru îmbunătățirea locuinței</NuxtLink></li>
+                    </ul>
+                    <h2 class="mt-6 mb-2">Angajamentul nostru față de clienți</h2>
+                    <p>La Ideal Credit, punem clientul în centrul tuturor activităților noastre. Ne străduim constant să îmbunătățim serviciile, 
+                        să simplificăm procesele și să oferim rate competitive. 
+                        Suntem mândri să fim un pilon de sprijin pentru dezvoltarea economică și socială a Moldovei.
+                    </p>
+                    <h2 class="mt-6 mb-2">Responsabilitate socială</h2>
+                    <p>
+                        Ne implicăm activ în comunitatea locală prin diverse programe de educație financiară și susținere a antreprenoriatului. Credem că o Moldovă prosperă se construiește prin efortul comun al tuturor actorilor economici.
+                    </p>
+                    <p>
+                        Alegeți Ideal Credit SRL pentru o experiență financiară transparentă, eficientă și adaptată nevoilor dumneavoastră. Suntem aici pentru a transforma visurile în realitate și pentru a sprijini creșterea afacerii dumneavoastră.
+                    </p>
+                    <p>
+                        Contactați-ne astăzi pentru a descoperi cum vă putem ajuta să vă atingeți obiectivele financiare!
+                    </p>
                 </div>
             </div>
         </div>

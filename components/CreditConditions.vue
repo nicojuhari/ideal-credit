@@ -1,6 +1,6 @@
 <script setup>
     const list = [
-        'Vârsta între 23 și 65 de ani',
+        'Vârsta de la 23 de ani',
         'Sursă de venit stabilă',
         'Buletin de identitate valabil',
         'Responsabilitate pentru rambursarea creditului',

@@ -31,7 +31,7 @@
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <div> Credite nebancare pentru nevoi personale și afaceri, destinate persoanleor fizice și juridice din Moldova.</div>
+                <div> Credite nebancare pentru nevoi personale și afaceri, destinate persoanleor fizice și juridice din Moldova. Rapid și Avantajos!</div>
             </div>
             <div>
                 <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
@@ -109,7 +109,7 @@
                     debitor pentru a împrumuta o sumă de bani, incluzând dobanda, comisioanele și alte taxe asociate.
                 </li>
                 <li><span class="font-medium">Penalitate - </span> este o sancțiune financiară aplicată debitorului care
-                    întârzie la plata ratelor lunare sau nerespectă alte clauze din contractul de credit.</li>
+                    întârzie la plata ratelor lunare sau nu respectă alte clauze din contractul de credit.</li>
                 <li><span class="font-medium">Cesiune - </span>reprezintă transferul drepturilor și obligațiilor de
                     împrumut către o altă entitate (cesionar).</li>
             </ul>
