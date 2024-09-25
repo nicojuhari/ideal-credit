@@ -36,7 +36,7 @@ h1,h2,h3,h4 {
 }
 
 .hero-title {
-    @apply font-semibold text-5xl md:text-7xl text-white;
+    @apply font-semibold text-4xl md:text-6xl text-white;
     line-height: 1.2;
 }
 
@@ -111,7 +111,7 @@ textarea {
 }
 
 .card.light {
-    @apply bg-brand-gray text-brand-black;
+    @apply bg-brand-gray text-brand-bg;
 }
 
 .blog-page .card {

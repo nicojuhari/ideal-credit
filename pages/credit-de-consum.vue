@@ -37,7 +37,7 @@ const benefits = [
             <CreditConditions />
         </div>
         <div class="container relative card light text-lg mt-4 md:mt-6">
-            <h3 class="card-title text-center">Ce este un credit de consum ?</h3>
+            <h2 class="card-title text-center">Ce este un credit de consum ?</h2>
             <p>Un credit de consum este o sumă de bani împrumutată de la o instituție financiară bancară sau nebancară,
                 de către o persoană fizică pentru a finanța diverse nevoi personale.</p>
             <p class="mb-0">Spre deosebire de un <NuxtLink to="/credit-ipotecar" class="underline">credit ipotecar

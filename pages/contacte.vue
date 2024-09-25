@@ -74,7 +74,7 @@
             </div>
         </div>    
         <div class="card mt-4 md:mt-6 relative overflow-hidden">
-            <div class="card-title text-center">Scrie-ne un mesaj</div>
+            <h2 class="card-title text-center">Scrie-ne un mesaj</h2>
             <UiLoading v-if="loading" local/>
             <div v-if="formSend" class="grid place-content-center my-16 duration-700">
                 <IconsCheck class="text-brand-color h-32 mx-auto" />
@@ -132,7 +132,7 @@
         <LazyCallToAction class="card light mt-4 md:mt-6"/>
         <div id="adresa-oficiilor" class="-translate-y-14"></div>
         <div class="card mt-4 md:mt-6">
-            <div class="card-title text-center">Adresa oficiilor</div>
+            <h2 class="card-title text-center">Adresa oficiilor</h2>
             <LazyListaOficiilor/>
         </div>
     </div>

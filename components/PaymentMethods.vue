@@ -26,8 +26,13 @@ const list = [
 <template>
     <div class="space-y-6 card">
             <h2 class="card-title text-center">Metode de achitare</h2>
-            <div  v-for="item in list" :key="item.title" class="text-lg">
-                <span class="shrink-0 font-medium">{{ item.title }} - </span> <span class="text-brand-gray-dark" v-html="item.description"></span>
-            </div>
+            <ul class="list-disc list-inside space-y-8 md:space-y-6">
+                <li v-for="item in list" :key="item.title" class="flex gap-2 items-center">
+                    <Icon name="i-ph-dot-fill" class="w-5 h-5 text-brand-color shrink-0" />
+                    <div>
+                        <span class="text-xl font-medium">{{ item.title }}:</span> <span class="text-brand-gray-dark" v-html="item.description"></span>
+                    </div>
+                </li>
+            </ul>
         </div>
 </template>

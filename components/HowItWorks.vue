@@ -19,7 +19,7 @@
 </script>
 <template>
     <div class="card light">
-        <div class="card-title text-center">Cum să obții un credit?</div>
+        <h2 class="card-title text-center">Cum să obții un credit?</h2>
         <div class="space-y-6">
             <div v-for="item in list" class="flex items-start gap-4">
                 <Icon :name="item.icon" class="w-8 h-8 shrink-0 text-brand-green" />
