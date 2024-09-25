@@ -1,9 +1,9 @@
 <script setup>
     useHead({
-        title: 'Credite Nebancare în Moldova. Rapid și Avantajos, Aplică Online!',
+        title: 'Credite Nebancare în Moldova. Solicită un Credit Rapid, Online!',
         titleTemplate: '%pageTitle',
         meta: [
-            { name: 'description', content: 'Oferim credite nebancare persoanelor fizice și juridice din Moldova, pentru nevoi personale și afaceri. Aplică pentru un credit, online! Rapid și Simplu!' },
+            { name: 'description', content: 'Ideal Credit oferă credite nebancare persoanelor fizice și juridice din Moldova, pentru nevoi personale și afaceri. Aplică acum pentru un Credit Rapid, Online!' },
         ],
     })
 

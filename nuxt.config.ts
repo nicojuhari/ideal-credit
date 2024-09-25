@@ -4,7 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite Nebancare în Moldova. Rapid și Avantajos, Aplică Online!',
+            title: 'Credite Nebancare în Moldova. Solicită un Credit Rapid, Online!',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
                 { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" },
             ],
             meta: [
-                { name: 'description', content: 'Oferim credite nebancare persoanelor fizice și juridice din Moldova, pentru nevoi personale și afaceri. Aplică pentru un credit, online! Rapid și Simplu!' },
+                { name: 'description', content: 'Ideal Credit oferă credite nebancare persoanelor fizice și juridice din Moldova, pentru nevoi personale și afaceri. Aplică acum pentru un Credit Rapid, Online!' },
                 { name: 'keywords', content: 'credit rapid, credite nebancare, credit online, împrumut rapid, credit nevoi personale, credit Chișinău Moldova, credite md, credit avantajos' },
                 { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"}
             ],
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
         public: {
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
-            siteDescription: 'Oferim credite nebancare persoanelor fizice și juridice din Moldova, pentru nevoi personale și afaceri. Aplică pentru un credit, online! Rapid și Simplu!',
+            siteDescription: 'Ideal Credit oferă credite nebancare persoanelor fizice și juridice din Moldova, pentru nevoi personale și afaceri. Aplică acum pentru un Credit Rapid, Online!',
             language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
             fb_pixel_id: 2254113158275780,
             gtag_id: 'G-YXDZGPPXPH'
