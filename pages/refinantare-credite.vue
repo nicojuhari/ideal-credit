@@ -33,10 +33,11 @@ const benefits = [
                 </div>
             </div>
         </div>
-        <div class="container mb-4 md:mb-6">
-            <CreditConditions />
+        <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <HowItWorks />
+            <LazyCreditConditions />
         </div>
-        <div class="container text-lg relative">
+        <div class="container text-lg relative mt-4 md:mt-6">
             <div class="card light">
                 <h2 class="card-title text-center">Ce este un credit pentru refinanțare?</h2>
                 <p>Creditul pentru refinanțare este un tip de împrumut care înlocuiește un credit existent cu unul nou,
