@@ -42,7 +42,8 @@ export default defineNuxtConfig({
             siteName: 'Ideal Credit',
             siteDescription: 'Oferim credite rapide nebancare, pentru nevoi personale și afaceri în Chișinău, Republica Moldova. Dobânzi mici și fără comisioane ascunse. Aplică online!',
             language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
-            fb_pixel_id: 2254113158275780
+            fb_pixel_id: 2254113158275780,
+            gtag_id: 'G-YXDZGPPXPH'
         }
     },
 
