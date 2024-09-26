@@ -21,7 +21,7 @@
             <div class="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-6">
                 <div class="flex flex-col md:col-span-8 h-full justify-center">
                     <h1 class="hero-title text-center md:text-left">Credite Nebancare</h1>
-                    <h2 class="subtitle mt-4 text-center md:text-left">Oferim credite rapide pentru nevoi personale și afaceri.</h2>
+                    <h2 class="subtitle mt-4 text-center md:text-left max-w-80 md:max-w-max mx-auto md:ml-0">Oferim credite rapide pentru nevoi personale și afaceri.</h2>
                     <UiBenefitsList :benefits="benefits" class="my-12 md:my-10" />
                     <UiRecenziiButton class="mt-auto" />
                 </div>

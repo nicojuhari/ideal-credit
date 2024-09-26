@@ -2,25 +2,20 @@
     const { trackEvent } = useFacebookPixel()
     
     const oficii = [
-        {
+        {   
+            id: 1,
             title: 'Sediul principal',
-            address: 'or. Căușeni, str. M.Eminescu',
+            address: 'or. Căușeni, str. Mihai Eminescu',
             addressNumbers: 'nr. 17,  of. 47',
             mobile: ['+37379066566', '0790 66 5 66'],
         },
-        {
+        {   
+            id: 2,
             title: 'Sucursala Nr. 1',
             address: 'm. Chișinău, str. Miron Costin',
             addressNumbers: 'nr. 25,  of. 115',
             mobile: ['+37378805060', '078 80 50 60'],
         }
-    ]
-
-    const links = [
-        {
-            title: 'Blog financiar >>',
-            link: '/blog',
-        },
     ]
 </script>
 <template>
@@ -31,43 +26,39 @@
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <div> Credite nebancare pentru nevoi personale și afaceri, destinate persoanleor fizice și juridice din Moldova. Rapid și Avantajos!</div>
+                <div>Credite nebancare pentru nevoi personale și afaceri, destinate persoanleor fizice și juridice din Republica Moldova.<br><br>Solicită acum un <NuxtLink to="/cerere-de-credit-online" title="Credit rapid, online">Credit Rapid, Online!</NuxtLink></div>
             </div>
             <div>
                 <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
                 <div class="grid grid-cols-1 gap-8 mt-6">
-                    <div v-for="oficiu in oficii" :key="oficiu.address">
-                        <div class="text-gray-600 mb-2">
+                    <div v-for="oficiu in oficii" :key="oficiu.address" class="space-y-1.5">
+                        <div class="mb-2 underline underline-offset-2">
                             {{ oficiu.title }}
                         </div>
-                        <div class="flex gap-4 mb-4 items-center">
-                            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
-                                <Icon name="i-ph-map-pin-light"
-                                    class="w-6 h-6 flex-shrink-0 text-white text-opacity-50" />
-                            </div>
-                            <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
-                        </div>
-                        <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="flex gap-4 items-center">
-                            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-brand-raisin-black">
-                                <Icon name="i-ph-phone-call"
-                                    class="w-6 h-6 flex-shrink-0 text-white text-opacity-50" />
-                            </div>
-                            <div>{{ oficiu.mobile[1] }}</div>
+                        <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
+                        <div>Luni - Vineri: 08:30 - 16:30</div>
+                        <div v-if="oficiu.id == 2" class="text-sm italic">(este nevoie de programare prealabilă)</div>
+                        <div class="py-1"></div>
+                        <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="btn btn-primary btn-light">
+                            tel: {{ oficiu.mobile[1] }}
                         </a>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-4">
                 <div class="h-10 text-xl flex items-center">Linkuri</div>
-                <NuxtLink to="/blog" class="inline-flex underline">Blog</NuxtLink>
+                <NuxtLink to="/blog" class="inline-flex underline underline-offset-2">Blog</NuxtLink>
+                <NuxtLink to="/terms" rel="nofollow" class="inline-flex underline underline-offset-2">Termeni și Condiții</NuxtLink>
+                <NuxtLink to="/cookies" rel="nofollow" class="inline-flex underline underline-offset-2">Politica de Cookies</NuxtLink>
+                <NuxtLink to="/privacy" rel="nofollow" class="inline-flex underline underline-offset-2">Politica de Confidențialitate</NuxtLink>
                 <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                    class="underline">Autoritatea de Supraveghere și metodele de reclamații
+                    class="underline text-brand-color/90 underline-offset-2">Autoritatea de Supraveghere<br>și metodele de reclamații
                 </NuxtLink>
             </div>
         </div>
-        <div class="container mb-4 mt-10">
-            <p class="mb-2 text-xl text-center">Extras din lege</p>
-            <p class="mb-1">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
+        <div class="container mt-12">
+            <p class="mb-6 text-2xl text-center">Extras din lege</p>
+            <p class="mb-4 pl-6">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
                 limite cu privire la:</p>
             <ul class="list-outside list-disc ml-6 space-y-1.5">
                 <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
@@ -79,8 +70,8 @@
                     contractului (cu excepția contractelor ipotecare).</li>
             </ul>
         </div>
-        <div class="container pb-6 mt-10">
-            <p class="mb-2 text-2xl text-center">Dicționar financiar</p>
+        <div class="container mt-12">
+            <p class="mb-6 text-2xl text-center">Dicționar financiar</p>
             <ul class="list-outside list-disc ml-6 space-y-2.5">
                 <li><span class="font-medium">Credit - </span>este o operațiune financiară prin care o persoană fizică
                     sau juridică primește o sumă de bani de la o altă entitate, cu obligația de a o rambursa, de obicei
@@ -114,7 +105,7 @@
                     împrumut către o altă entitate (cesionar).</li>
             </ul>
         </div>
-        <div class="container mt-6">
+        <div class="container mt-10">
             <div class="divider"></div>
             <div class="text-center py-6 gap-1 flex-wrap">
                 &copy; {{ new Date().getFullYear() }} - Organizația de Creditare Nebancară <strong

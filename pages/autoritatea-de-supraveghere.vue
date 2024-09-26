@@ -1,14 +1,17 @@
 <script setup>
     useHead({
+        title: 'Autoritatea de supraveghere a O.C.N. Ideal Credit SRL',
+        titleTemplate: '%pageTitle',
         meta: [
+            { name: 'description', content: 'Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este Comisia Națională a Pieței Financiare.' },
             { name: 'robots', content: 'noindex,nofollow' }
-        ]
+        ],
     })
 </script>
 <template>
      <div class="container sm-container relative my-4 md:my-6">
-        <div class="card">
-            <div class="text-2xl text-center leading-relaxed mb-10">Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este <strong class="text-brand-color ">Comisia Națională a Pieței Financiare.</strong></div>
+        <div class="card light">
+            <div class="text-2xl text-center leading-relaxed mb-10">Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este <strong class="text-brand-color/90">Comisia Națională a Pieței Financiare.</strong></div>
             
             <div class="text-lg text-center my-6">Contactele instituției</div>
             <div class="flex flex-col gap-4">
@@ -28,7 +31,7 @@
     </ul>
     <div class="my-12">
         <div class="flex flex-col items-center justify-center gap-4 mb-6">
-             Telefonul consumatorului* <a class="text-brand-color font-bold text-3xl" href="tel:+37322859595">(+373 22) 85 95 95</a>
+             Telefonul consumatorului* <a class="text-brand-color/90 font-bold text-3xl" href="tel:+37322859595">(+373 22) 85 95 95</a>
         </div>
        
         <div class="italic">* Tariful către acest număr de apel va fi considerat apel cu tarif normal conform rețelei și tipului de abonament al inițiatorului.</div>
