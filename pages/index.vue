@@ -39,6 +39,9 @@
            <LazyTipuriCredite />
         </div>
         <div class="container mt-4 md:mt-6">
+           <LazyShortAboutUs />
+        </div>
+        <div class="container mt-4 md:mt-6">
             <LazyCalculatorCredit />
         </div>
         <div class="container mt-4 md:mt-6">
