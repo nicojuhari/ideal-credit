@@ -14,6 +14,11 @@
     const dobindaTotal = ref(0)
 
     const showModal= ref(false)
+    const preContractRef = ref(null)
+    const openModal = () => {
+        showModal.value = true
+        trackEvent('CustomizeProduct');
+    }
 
 
     const tarife = {
@@ -127,7 +132,7 @@
                 </div>
                 <div class="flex justify-center mt-8">
                     <button class="btn btn-primary"
-                        @click="showModal = true">Vezi toate ratele</button>
+                        @click="openModal">Vezi preContractul</button>
                 </div>
             </div>
         </div>
@@ -165,10 +170,171 @@
         <div class="mt-8 flex gap-4 bg-brand-black-light p-4 rounded-md">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-brand-color" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
             <span>Debitorul (Consumatorul) este responsabil pentru rambursarea creditului</span></div>
-        <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Graficul de rambursare*">
-            <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
-            <div class="mt-6 text-brand-color">* Exemplu Reprezentativ</div>
+        <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
+            <div v-html="preContractRef?.innerHTML"></div>
         </uiModal>
+        <div ref="preContractRef" class="hidden">
+            <div>
+                <h4 class="text-center my-6 text-lg font-medium">Graficul de Rambursare conform preContractului de mai jos</h4>
+                <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
+                <h4 class="text-center my-6 text-lg font-medium">Informaţii standard privind creditul pentru consumatori</h4>
+                <table class="table-fixsed w-full border-collapse pre-contract-table border" id="preContractTable">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" class="table-subheader">1. Denumirea și datele de contact al Organizației</td>
+                        </tr>   
+                        <tr> 
+                            <td>Creditor</td>
+                            <td>Organizația de Creditare Nebancară "Ideal Credit" SRL</td>
+                        </tr>
+                        <tr> 
+                            <td>Adresa</td>
+                            <td>m.Chișinău, str.Miron Costin, nr.25, of.115 (sucursala nr.1)<br><br>sau<br><br>or.Căușeni, str.Mihai Eminescu nr.17, of.47 (sediul principal)</td>
+                        </tr>
+                        <tr> 
+                            <td>Nr. Telefon</td>
+                            <td>079066566, 078805060</td>
+                        </tr>
+                        <tr> 
+                            <td>Adresa de Email</td>
+                            <td>info@idealcredit.md</td>
+                        </tr>
+                        <tr> 
+                            <td>Pagina web</td>
+                            <td>www.idealcredit.md</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="table-subheader">2. Descrierea principalelor caracteristici ale produsului de creditare</td>
+                        </tr>
+                        <tr> 
+                            <td>Tipul de credit </td>
+                            <td>Credit nebancar</td>
+                        </tr>
+                        <tr> 
+                            <td>
+                                Valoarea totală a creditului<br>
+                                <i class="text-sm">Înseamnă plafonul sau sumele totale puse la dispoziţie în temeiul contractului de credit</i>
+                            </td>
+                            <td> {{ creditSuma }} MDL</td>
+                        </tr>
+                        <tr> 
+                            <td>
+                                Condiţiile care reglementează tragerea creditului<br>
+                                <i class="text-sm">Înseamnă modul şi momentul de obţinere a banilor</i>
+                            </td>
+                            <td>Mijloacele bănești se vor elibera exclusiv din casieria Organizației</td>
+                        </tr>
+                        <tr> 
+                            <td>Durata Contractului de credit</td>
+                            <td>{{ creditTermen }} luni</td>
+                        </tr>
+                        <tr> 
+                            <td>Ratele şi ordinea în care acestea vor fi achitate </td>
+                            <td> 
+                                Conform graficului anexat la prezenta informație, acceptat și semnat de către client<br>
+                                <i>* Găsiți graficul mai sus!</i>
+                            </td>
+                        </tr>
+                        <!-- <tr> 
+                            <td>Suma totală pe care va trebui să o achitaţi<br>
+                                <i class="text-sm">Înseamnă suma capitalului împrumutat plus dobînda şi posibilele costuri aferente creditului</i>
+                            </td>
+                            <td>{{ +dobindaTotal + +creditSuma }} MDL</td>
+                        </tr> -->
+                        <!-- <tr>
+                            <td>
+                               <i class="text-sm">Dacă este cazul:</i><br>
+                                Garanţii necesare<br>
+                                <i class="text-sm">Descrierea garanţiei pe care trebuie să o furnizaţi în raport cu contractul de credit</i>
+                            </td>
+                            <td>În funcție de evaluarea riscului de credit, se poate solicita garanții adiționale: fidejusiune (garant) sau gaj (imobil).</td>
+                        </tr> -->
+                        <tr>
+                            <td colspan="2" class="table-subheader">3. Costurile creditului</td>
+                        </tr>
+                        <tr>
+                            <td>Dobînda lunară</td>
+                            <td>4% lunar</td>
+                        </tr>
+                        <tr>
+                            <td>Rata dobînzii aferente creditului</td>
+                            <td>48% (dobîndă fixă)</td>
+                        </tr>
+                        <tr>
+                            <td>Dobînda anuală efectivă (DAE)</td>
+                            <td>{{  dae }} %</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="text-sm">Dacă este cazul:</i><br>
+                                Pentru obţinerea creditului, este obligatoriu să se încheie:
+                            </td>
+                            <td>În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="table-subheader">4. Costuri aferente</td>
+                        </tr>
+                        <tr>
+                            <td>Comision pentru eliberarea creditului</td>
+                            <td>0.00 % din suma eliberată</td>
+                        </tr>
+                        <tr>
+                            <td>Comision pentru prelungirea Contractului</td>
+                            <td>Comisionul pentru prelungirea termenului Contractului
+                                este egal cu dobînda necesar a fi achitată pentru rata
+                                care a fost amînată. (La solicitarea clientului)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Costuri în caz de întîrziere la plată </td>
+                            <td>Se va calcula o penalitate în mărime de 0.04% maxim, pentru fiecare zi de întîrziere din valoarea totală a creditului</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">În conformitate cu prevederile art. 15, alin. 7), lit. a) din Legea nr. 202 din 12.07.2013 privind contractele de credit
+pentru consumatori, orice alte plăți aferente creditului acordat (comisioane, taxe, penalități, dobînzii de întîrziere și
+orice alt tip de plată), cu excepția dobînzii, se vor încasa conform regulii ca acestea să nu depășească cumulativ
+0,04% din valoarea totală a creditului pe o zi de credit înmulțit la numărul de zile pentru care este contractat
+creditul.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="table-subheader">5. Alte aspecte juridice importante</td>
+                        </tr>
+                        <tr>
+                            <td>Dreptul de revocare</td>
+                            <td>Clientul are dreptul la revocarea Contractului timp de 14
+                                zile de la data semnării lui cu, condiția că, creditul nu a
+                                fost eliberat din casierie. Organizația are dreptul la
+                                revocarea Contractului dacă clientul încalcă condițiile
+                                acestuia.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rambursare anticipată</td>
+                            <td>Clientul are dreptul să ramburseze anticipat creditul.
+                                Pentru aceasta, Organizația nu percepe careva taxe
+                                neprecăzute în Contract.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Consultarea unei baze de date</td>
+                            <td>În cazul în care cererea de solicitare a creditului va fi
+                                respinsă, iar temei pentru respingere a constituit
+                                informația vizualizată într-o bază de date, Organizația va
+                                informa clientul referitor la baza de date accesată
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dreptul la un proiect de Contract de credit</td>
+                            <td>Clientul are dreptul, la cerere, să obţină gratuit un exemplar al proiectului de Contract de credit.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="my-6">Îmi exprim acordul ca, Contractul de credit să fie încheiat în mai puțin de 15 zile calendaristice de la
+data semnării prezentei informații preContractuale.</div>
+               <div class="text-right mt-12">Semnătura: ________________</div>
+            </div>
+        </div>
     </div>
     
 </template>

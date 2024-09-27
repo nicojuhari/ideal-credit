@@ -185,7 +185,7 @@ onMounted(() => {
             </FormKit>
             <UiLoading v-if="loading" local />
             <UiModal @close="formSuccess = false" v-if="formSuccess" modal-title="Cererea a fost trimisă cu succes!">
-                <div class="text-white my-6 space-y-4">
+                <div class="my-6 space-y-4">
                     <div>Veți primi un răspuns în maxim 2 ore în zilele lucrătoare.</div>
                     <div>Vă mulțumim că ați ales Ideal Credit!</div>
                 </div>
