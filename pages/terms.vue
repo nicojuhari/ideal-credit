@@ -4,7 +4,6 @@ useHead({
     titleTemplate: '%pageTitle',
     meta: [
         { name: 'description', content: 'Termeni și Condiții - OCN Ideal Credit SRL' },
-        { name: 'robots', content: 'noindex,nofollow' }
     ],
 })
 </script>

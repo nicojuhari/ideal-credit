@@ -4,7 +4,6 @@ useHead({
     titleTemplate: '%pageTitle',
     meta: [
         { name: 'description', content: 'Politica de Cookies - OCN Ideal Credit SRL' },
-        { name: 'robots', content: 'noindex,nofollow' }
     ],
 })
 </script>

@@ -65,7 +65,8 @@ onMounted(() => {
 <template>
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card light">
-            <h1 class="page-title">Cerere de credit online</h1>
+            <h1 class="card-title text-center">Cerere de credit online</h1>
+            <div class="text-center my-8 italic">ai nevoie doar de 3 minute!</div>
             <FormKit id="cerere-online-form" type="form" method="POST" :actions="false" @submit="submitForm"
                 v-model="formData" incomplete-message="Ne pare rău, careva cîmpuri sunt greșite sau lipsesc">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -92,7 +93,7 @@ onMounted(() => {
                 required: 'Scopul este obligatoriu',
                 length: 'Cel puțin 5 caractere, maximum 25',
             }" />
-                <h2 class="subtitle mt-12 mb-2">Date personale</h2>
+                <h2 class="mt-12 mb-4">Date personale</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormKit type="text" name="prenume" placeholder="Ion" label="Prenume"
                         validation="required|length:3,25" input-class="bg-white bg-opacity-10" :validation-messages="{
@@ -121,7 +122,7 @@ onMounted(() => {
             }">
                     </FormKit>
                 </div>
-                <h2 class="subtitle mt-12 mb-2">Date Financiare</h2>
+                <h2 class="mt-12 mb-4">Date Financiare</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <FormKit type="number" name="venituri" placeholder="9000" label="Venituri oficiale (MDL)"
                         help="Venituri care pot fi confirmate prin documente" validation="required"
@@ -158,8 +159,9 @@ onMounted(() => {
                                 sursele accesibile, cum ar fi Biroul Istoriilor de Credit.</li>
                             <li>În cazul refuzului de acordare a creditului, Ideal Credit SRL nu este obligată să
                                 argumenteze motivul acelui refuz.</li>
+                            <li>Sunt de acord cu utilizarea <NuxtLink to="/cookies"  title="Politica de Cookies" class="underline">cookie-urilor</NuxtLink>, cu <NuxtLink to="/terms" title="Termeni și condiții" class="underline">termenii și condițiile</NuxtLink>, precum și cu <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="underline">politica de confidențialitate</NuxtLink>.</li>
                         </ul>
-                        <FormKit type="checkbox" label="Sunt deacord cu termenii și declarațiile de mai sus"
+                        <FormKit type="checkbox" label="Accept declarațiile de mai sus"
                             name="terms" outer-class="mt-2 formkit-cerere-terms font-bold" validation="accepted"
                             validation-visibility="dirty" :validation-messages="{
                 accepted: 'Vă rugăm să confirmați că sunteți de acord cu termenii de mai sus',

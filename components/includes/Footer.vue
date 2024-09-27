@@ -47,10 +47,10 @@
             </div>
             <div class="flex flex-col gap-4">
                 <div class="h-10 text-xl flex items-center">Linkuri</div>
-                <NuxtLink to="/blog" class="inline-flex underline underline-offset-2">Blog</NuxtLink>
-                <NuxtLink to="/terms" rel="nofollow" class="inline-flex underline underline-offset-2">Termeni și Condiții</NuxtLink>
-                <NuxtLink to="/cookies" rel="nofollow" class="inline-flex underline underline-offset-2">Politica de Cookies</NuxtLink>
-                <NuxtLink to="/privacy" rel="nofollow" class="inline-flex underline underline-offset-2">Politica de Confidențialitate</NuxtLink>
+                <NuxtLink to="/blog" title="Blog financiar" class="inline-flex underline underline-offset-2">Blog</NuxtLink>
+                <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex underline underline-offset-2">Termeni și Condiții</NuxtLink>
+                <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex underline underline-offset-2">Politica de Cookies</NuxtLink>
+                <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex underline underline-offset-2">Politica de Confidențialitate</NuxtLink>
                 <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
                     class="underline text-brand-color/90 underline-offset-2">Autoritatea de Supraveghere<br>și metodele de reclamații
                 </NuxtLink>
