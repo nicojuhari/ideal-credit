@@ -46,7 +46,9 @@ export default defineNuxtConfig({
             gtag_id: 'G-YXDZGPPXPH'
         }
     },
-
+    routeRules : {
+        '/': { prerender: true },
+    },
     site: {
         url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',
         name: 'Ideal Credit',
