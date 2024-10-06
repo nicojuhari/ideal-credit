@@ -9,11 +9,11 @@ html {
 
 body{
     @apply bg-brand-bg text-white;
-    font-family: Inter, Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    letter-spacing: 0.025rem;
+    letter-spacing: 0.02rem;
 }
 
 body.menu-open, body.modal-open {
