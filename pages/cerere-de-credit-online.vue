@@ -75,8 +75,8 @@ onMounted(() => {
                         input-class="bg-white bg-opacity-10" :validation-messages="{
                 required: 'Suma este obligatorie',
                 length: 'Cel puțin 3 caractere, maximum 25',
-                max: 'Maximum 300000 MDL',
-                min: 'Minim 10 mii lei',
+                max: 'Maximum 300.000 MDL',
+                min: 'Minim 10.000 MDL',
             }" />
                     <FormKit type="number" step="1" min="6" max="60" name="termen" placeholder="12"
                         label="Termen (luni)" validation="required|number|max:60|min:6"
