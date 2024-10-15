@@ -5,12 +5,11 @@ export default defineNuxtPlugin(() => {
 
 
     let script = document.createElement("script");
-    script.setAttribute("defer", "");
+    script.setAttribute("async", "");
     script.setAttribute("src", `https://www.googletagmanager.com/gtag/js?id=${config.public.gtag_id}`);
     document.head.appendChild(script);
 
     let script2 = document.createElement("script");
-    script2.setAttribute("defer", "");
     script2.innerHTML = `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
