@@ -26,7 +26,6 @@
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">
-                        <NuxtLink to="/refinantare-credite" title="Refinanțare Credite">Refinanțare</NuxtLink>
                         <NuxtLink to="/despre-noi" title="Despre noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte" title="Contacte">Contacte</NuxtLink>
                         <UiPhoneButton light />

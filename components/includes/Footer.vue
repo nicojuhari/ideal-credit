@@ -40,7 +40,7 @@
                         <div v-if="oficiu.id == 2" class="text-sm italic">(este nevoie de programare prealabilă)</div>
                         <div class="py-1"></div>
                         <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="btn btn-primary btn-light">
-                            tel: {{ oficiu.mobile[1] }}
+                            {{ oficiu.mobile[1] }}
                         </a>
                     </div>
                 </div>
