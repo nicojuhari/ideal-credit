@@ -51,7 +51,7 @@ const benefits = [
                 <li><span class="font-bold">Capital de lucru:</span> Acoperirea cheltuielilor curente ale afacerii
                     (salarii, furnizori, utilități) în perioadele cu fluxul de numerar fluctuant.</li>
                 <li><span class="font-bold underline">
-                        <NuxtLink to="/refinantare-credite">Refinanțarea datoriilor:</NuxtLink>
+                    <span>Refinanțarea datoriilor:</span>
                     </span> Consolidarea și restructurarea datoriilor existente spre condiții mai avantajoase.</li>
             </ul>
             <p class="mt-6 mb-0">Beneficiile creditelor pentru afaceri:</p>

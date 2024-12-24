@@ -43,11 +43,6 @@
                                     <Icon name="i-ph-x-circle-thin" class="cursor-pointer h-11 w-11 text-white text-opacity-80"
                                         @click="toggleMenu" />
                                 </div>
-
-                                <NuxtLink to="/refinantare-credite" title="Refinanțare Credite"
-                                    class="flex w-full font-medium text-lg p-4 border-b border-opacity-30 border-gray-300">
-                                    Refinanțare
-                                </NuxtLink>
                                 <NuxtLink to="/despre-noi" title="Despre noi"
                                     class="flex w-full font-medium text-lg p-4 border-b border-opacity-30 border-gray-300">
                                     Despre noi
