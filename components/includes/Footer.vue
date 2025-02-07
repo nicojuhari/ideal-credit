@@ -54,6 +54,14 @@
                 <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
                     class="underline text-brand-color/90 underline-offset-2">Autoritatea de Supraveghere<br>și metodele de reclamații
                 </NuxtLink>
+                <div class="flex gap-6 items-center">
+                    <NuxtLink href="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" viewBox="0 0 256 256"><path fill="#fff" d="M128 80a48 48 0 1 0 48 48a48 48 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32.1 32.1 0 0 1-32 32Zm44-132H84a56 56 0 0 0-56 56v88a56 56 0 0 0 56 56h88a56 56 0 0 0 56-56V84a56 56 0 0 0-56-56Zm40 144a40 40 0 0 1-40 40H84a40 40 0 0 1-40-40V84a40 40 0 0 1 40-40h88a40 40 0 0 1 40 40Zm-20-96a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z"/></svg>
+                    </NuxtLink>
+                    <NuxtLink href="https://www.facebook.com/idealcredit.md" title="Facebook" target="_blank" rel="nofollow">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" viewBox="0 0 256 256"><path fill="#fff" d="M232 128a104 104 0 1 0-104 104a104.1 104.1 0 0 0 104-104Zm-96 87.6V152h24a8 8 0 0 0 0-16h-24v-24a16 16 0 0 1 16-16h16a8 8 0 0 0 0-16h-16a32.1 32.1 0 0 0-32 32v24H96a8 8 0 0 0 0 16h24v63.6a88 88 0 1 1 16 0Z"/></svg>    
+                    </NuxtLink>
+                </div>
             </div>
         </div>
         <div class="container mt-12">
