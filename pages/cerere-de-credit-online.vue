@@ -151,7 +151,7 @@ onMounted(() => {
                 </div>
                 <div class="mt-6">
 
-                    <div class="bg-brand-color bg-opacity-20 py-3 p-4 rounded">
+                    <div class="bg-orange-color bg-opacity-20 py-3 p-4 rounded">
                         <ul class="list-disc list-inside">
                             <li>Aceasta este o cerere de credit online preventivă.</li>
                             <li>Declar pe propria răspundere exactitatea datelor prezentate mai sus.</li>

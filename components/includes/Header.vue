@@ -16,13 +16,10 @@
     })
 </script>
 <template>
-    <header
-        class="border-b border-brand-color border-opacity-10 bg-brand-bg bg-opacity-70 sticky top-0 backdrop-blur-lg z-10">
-        <div class="container py-4">
-            <div class="flex justify-between items-center gap-4">
-                <NuxtLink to="/" class="flex gap-3 items-center" title="Ideal Credit">
+    <header class="bg-black-500/70 border-b border-brand-500/5 sticky top-0 backdrop-blur-lg z-10">
+            <div class="flex justify-between items-center gap-4 h-18 container">
+                <NuxtLink to="/" title="Ideal Credit">
                     <IconsLogo class="w-10" />
-                    <p class="text-lg mb-0">Ideal Credit</p>
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">
@@ -31,14 +28,14 @@
                         <UiPhoneButton light />
                     </nav>
                     <div class="flex md:hidden">
-                        <div @click="toggleMenu" class="p-2 bg-brand-black cursor-pointer rounded-full">
+                        <div @click="toggleMenu" class="p-2 bg-orange-black cursor-pointer rounded-full">
                             <IconsBurgerMenu />
                         </div>
                         <!-- <div v-if="showMenu" @click="toggleMenu"
                             class="fixed left-0 top-0 bg-black bg-opacity-70 w-full h-screen z-40"></div> -->
                         <Transition name="menu-slide">
                             <div v-if="showMenu"
-                                class="absolute top-0 left-0 bg-brand-black mobile-dropdown shadow-md w-full flex flex-col z-50 h-[100dvh] overflow-y-auto">
+                                class="absolute top-0 left-0 bg-orange-black mobile-dropdown shadow-md w-full flex flex-col z-50 h-[100dvh] overflow-y-auto">
                                 <div class="p-4 flex justify-end">
                                     <Icon name="i-ph-x-circle-thin" class="cursor-pointer h-11 w-11 text-white text-opacity-80"
                                         @click="toggleMenu" />
@@ -61,6 +58,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </header>
 </template>

@@ -13,7 +13,7 @@ let classes = 'flex flex-col items-center justify-center gap-4 hover:scale-105 t
         <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes" class="group card"
             :title="item.name">
             <Icon :name="item.icon"
-                class="w-10 h-10 shrink-0 text-brand-color/70 group-hover:text-brand-color transition-all duration-300" />
+                class="w-10 h-10 shrink-0 text-orange-color/70 group-hover:text-orange-color transition-all duration-300" />
             <h3 class="text-center h-10">
                 {{ item.name }}
             </h3>

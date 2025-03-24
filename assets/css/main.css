@@ -1,15 +1,52 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap'); */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@nuxt/ui";
 
+/* "brand-500": "#ff9a00",
+"brand-black": "#252525",
+"brand-black-light": "#333333",
+"brand-bg": "#181818",
+"brand-gray": "#ececec",
+"brand-950": "#dddddd",
+"brand-green": "#57A773",
+"brand-blue": "#323b54",
+"brand-white-smoke": "#F7F4F3",
+"brand-charcoal": "#383F51",
+"brand-light-yellow": "#FEFEE3",
+"brand-raisin-black": "#252323", */
+
+@theme static {
+    --color-brand-50: #fffbea;
+    --color-brand-100: #fff3c5;
+    --color-brand-200: #ffe685;
+    --color-brand-300: #ffd346;
+    --color-brand-400: #ffbd1b;
+    --color-brand-500: #ff9a00;
+    --color-brand-600: #e27300;
+    --color-brand-700: #bb4e02;
+    --color-brand-800: #983c08;
+    --color-brand-900: #7c310b;
+    --color-brand-950: #481700;
+
+    --color-black: oklch(21.342% 0 none);
+    --color-black-50: oklch(26.032% 0 none);
+    --color-black-100: oklch(25.615% 0 none);
+    --color-black-200: oklch(24.776% 0 none);
+    --color-black-300: oklch(23.503% 0 none);
+    --color-black-400: oklch(22.645% 0 none);
+    --color-black-500: oklch(21.342% 0 none);
+    --color-black-600: oklch(20.019% 0 none);
+    --color-black-700: oklch(19.125% 0 none);
+    --color-black-800: oklch(17.764% 0 none);
+    --color-black-900: oklch(16.842% 0 none);
+    --color-black-950: oklch(16.376% 0 none);
+}
 html {
     scroll-behavior: smooth;
 }
 
 body{
-    @apply bg-brand-bg text-white;
-    /* font-family: Arial, sans-serif; */
+    @apply bg-black-600  text-white;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
@@ -26,24 +63,28 @@ body.menu-open, body.modal-open {
 }
 
 .sm-container {
-    @apply max-w-2xl;
+    @apply max-w-3xl;
 }
 
-/* TYPOGRAPHY */
-h1,h2,h3,h4 {
+.card {
+    @apply bg-black-100;
+}
+
+
+/* h1,h2,h3,h4 {
     font-weight: 400;
     line-height: 1.15;
-}
+} */
 
-.hero-title {
-    @apply font-semibold text-4xl md:text-6xl text-white;
-    line-height: 1.2;
-}
+/* .hero-title {
+    @apply font-semibold text-7xl md:text-7xl text-white;
+    line-height: 1;
+} */
 
 .subtitle {
     font-weight: 300;
     line-height: 1.3;
-    @apply md:text-lg text-brand-gray-dark;
+    @apply md:text-lg text-gray-950;
 }
 
 section {
@@ -58,22 +99,22 @@ p {
     @apply h-10 px-8 rounded-full inline-flex gap-3 items-center justify-center text-lg;
 }
 .btn-primary {
-    @apply bg-brand-gray text-brand-black border-brand-gray border;
+    @apply bg-brand-500 text-brand-500 border-brand-500 border;
 }
 .btn-primary.btn-light {
-    @apply bg-brand-black-light border-brand-black-light text-white ;
+    @apply bg-brand-500 border-brand-500 text-white ;
 }
 
 .btn-primary.btn-outline {
-    @apply bg-opacity-0 border-brand-black text-brand-black;
+    @apply border-brand-500 text-brand-500 bg-brand-500/0;
 }
 
 .btn-secondary {
-    @apply bg-brand-color text-brand-color bg-opacity-20 border border-brand-color border-opacity-0
+    @apply bg-brand-500/20 text-brand-500 border border-brand-500/0;
 }
 
 input {
-    @apply rounded-lg border py-2 px-4 w-full border-brand-black outline-none;
+    @apply rounded-lg border py-2 px-4 w-full border-black-600 outline-none;
 }
 
 textarea {
@@ -81,9 +122,6 @@ textarea {
     min-height: 6rem;
 }
 
-/* .formkit-outer {
-    @apply mt-6;
-} */
 
 .formkit-messages {
     @apply text-[#c62828];
@@ -96,7 +134,7 @@ textarea {
     @apply text-xs opacity-70 mt-1;
 }
 .formkit-options {
-    @apply p-4 border border-brand-black rounded
+    @apply p-4 border border-black-600 rounded
 }
 .formkit-option .formkit-wrapper, .formkit-cerere-terms .formkit-wrapper {
     @apply flex items-center gap-4;
@@ -107,11 +145,11 @@ textarea {
 }
 
 .card {
-    @apply rounded-lg px-4 py-10 md:px-8 md:py-14 shadow-md bg-brand-black overflow-hidden;
+    @apply rounded-lg px-4 py-10 md:px-8 md:py-14 shadow-md bg-black-800 overflow-hidden;
 }
 
 .card.light {
-    @apply bg-brand-gray text-brand-bg;
+    @apply bg-white text-black-950;
 }
 
 .blog-page .card {
@@ -135,21 +173,21 @@ input[type="range"]::-webkit-slider-thumb {
     height: 24px;
     cursor: ew-resize;
     border-radius: 50%;
-    @apply border-brand-black-light bg-brand-color;
+    @apply border-black-600 bg-brand-500;
 }
 
 .input-calculator {
-    @apply rounded-lg bg-transparent px-2 text-white bg-brand-black-light border-0 outline-none font-bold text-2xl w-[8.5rem] text-right;
+    @apply rounded-lg bg-transparent px-2 text-white border-0 outline-none font-bold text-2xl w-[8.5rem] text-right;
 }
 
-/* Chrome, Safari, Edge, Opera */
+
 .input-calculator::-webkit-outer-spin-button,
 .input-calculator::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Firefox */
+
 input[type=number] {
     -moz-appearance: textfield;
 }
@@ -175,7 +213,7 @@ input[type=number] {
     opacity: 0.075;
     z-index: -1;
     filter: blur(100px);
-    @apply bg-brand-color;
+    @apply bg-brand-500;
     transform: translate(0, -50%);
 }
 .cs-blur.cs-blur--right::after {
@@ -201,22 +239,27 @@ input[type=number] {
     margin-right: auto;
 }
 
-.bg-in-squares {
-    position: relative;
-    background-image: url('/tiles.svg');
+.bg-squares {
+    background-color: #161616;
+    background-image:
+        linear-gradient(to right, #212121 1px, transparent 1px),
+        linear-gradient(to bottom, #212121 1px, transparent 1px);
+    background-size: 60px 60px;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 }
 
-.bg-in-squares:before {
+/* Optional fade effect */
+.bg-squares::after {
     content: '';
     position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #242424;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, #161616 80%);
+    pointer-events: none;
 }
+
+
 
 .richtext a {
     font-weight: bold;
@@ -279,7 +322,7 @@ input[type=number] {
 .pre-contract-table td {
     padding: 8px 6px;
     border: 1px solid;
-    @apply border-brand-black-light;
+    @apply border-black-600;
 }
 
 .pre-contract-table td:first-of-type {
@@ -287,10 +330,9 @@ input[type=number] {
 }
 
 .pre-contract-table td.table-subheader {
-    @apply bg-brand-color/90 w-full;
+    @apply bg-brand-500/90 w-full;
 }
 
-/* Modal */
 
 .modal-container {
     animation: modalAnimation .4s forwards;

@@ -19,7 +19,7 @@
     ]
 </script>
 <template>
-    <footer class="bg-brand-bg border-t border-brand-color border-opacity-10 relative">
+    <footer class="bg-black-950 border-t border-brand-500/10 relative">
         <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-6 py-8 px-2 md:px-0">
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
@@ -52,7 +52,7 @@
                 <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex underline underline-offset-2">Politica de Cookies</NuxtLink>
                 <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex underline underline-offset-2">Politica de Confidențialitate</NuxtLink>
                 <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                    class="underline text-brand-color/90 underline-offset-2">Autoritatea de Supraveghere<br>și metodele de reclamații
+                    class="underline text-orange-color/90 underline-offset-2">Autoritatea de Supraveghere<br>și metodele de reclamații
                 </NuxtLink>
                 <div class="flex gap-6 items-center">
                     <NuxtLink href="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
