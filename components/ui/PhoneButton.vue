@@ -22,15 +22,15 @@
     cls += ' inline-flex border items-center justify-center'
 
     if(props.light) {
-        cls += ' border-brand-color text-brand-color px-4'
+        cls += ' border-brand-500 text-brand-500 px-4'
     } else {
-        cls += ' bg-brand-color text-white border-[#f09306]'
+        cls += ' bg-brand-500 text-white border-brand-500'
     }
 
 </script>
 <template>
-    <a href="tel:+37378805060" @click="trackEvent('Contact')" title="+373 78 80 50 60" :class="cls">
-        <IconsPhone class="w-6 h-6 phone" />
+    <a href="tel:+37378805060" @click="trackEvent('Contact')" title="+373 78 80 50 60" :class="cls" class="px-4">
+        <IconsPhone class="w-5 h-5 phone" />
         <div v-if="!hideText" class="tracking-widest">078 80 50 60</div>
     </a>
 </template>

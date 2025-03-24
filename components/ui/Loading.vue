@@ -5,7 +5,7 @@
     const classes = defineProps({
         class: {
             type: String,
-            default: 'w-24 h-24 text-brand-color'
+            default: 'w-24 h-24 text-orange-color'
         },
         local: {
             type: Boolean,

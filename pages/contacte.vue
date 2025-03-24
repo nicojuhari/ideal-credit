@@ -60,14 +60,14 @@
             <h1 class="page-title">Contacte</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-2xl">
                 <div class="flex gap-4 items-center">
-                    <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-5">
-                        <IconsMobile class="w-6 text-brand-color"/>
+                    <div class="h-12 w-12 rounded-full flex items-center justify-center bg-orange-color bg-opacity-5">
+                        <IconsMobile class="w-6 text-orange-color"/>
                     </div>
                     <a href="tel:+37378805060" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
                 </div>
                 <div class="flex gap-4 items-center">
-                    <div class="h-12 w-12 rounded-full flex items-center justify-center bg-brand-color bg-opacity-5">
-                        <IconsMail class="w-6 text-brand-color"/>
+                    <div class="h-12 w-12 rounded-full flex items-center justify-center bg-orange-color bg-opacity-5">
+                        <IconsMail class="w-6 text-orange-color"/>
                     </div>
                     <a href="mailto:info@idealcredit.md" @click="trackEvent('Contact')">info@idealcredit.md</a>
                 </div>
@@ -77,7 +77,7 @@
             <h2 class="card-title text-center">Scrie-ne un mesaj</h2>
             <UiLoading v-if="loading" local/>
             <div v-if="formSend" class="grid place-content-center my-16 duration-700">
-                <IconsCheck class="text-brand-color h-32 mx-auto" />
+                <IconsCheck class="text-orange-color h-32 mx-auto" />
                 <div class="text-2xl">Mulțumim pentru mesaj.<br>Vă contactăm în curând!</div>
             </div>
             <FormKit v-else type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"

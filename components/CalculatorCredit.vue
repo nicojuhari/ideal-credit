@@ -121,11 +121,11 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <div class="grid place-content-center mt-2 text-brand-gray-dark">
+                <div class="grid place-content-center mt-2 text-orange-gray-dark">
                     <div
-                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center border-brand-black-light bg-">
+                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center border-orange-black-light bg-">
                         <div>Prima rată</div>
-                        <div class="text-brand-color title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
+                        <div class="text-orange-color title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
                         <div>MDL</div>
                     </div>
@@ -167,8 +167,8 @@
                 </div>
             </div>
         </div>
-        <div class="mt-8 flex gap-4 bg-brand-black-light p-4 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-brand-color" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
+        <div class="mt-8 flex gap-4 bg-orange-black-light p-4 rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-orange-color" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
             <span>Debitorul (Consumatorul) este responsabil pentru rambursarea creditului</span></div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>

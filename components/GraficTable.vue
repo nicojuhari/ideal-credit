@@ -4,8 +4,8 @@
 
 </script>
 <template>
-    <div class="overflow-auto border border-brand-black-light">
-        <table class="table-fixed min-w-full text-sm divide-y divide-brand-black-light  grafic-table overflow-y-auto">
+    <div class="overflow-auto border border-orange-black-light">
+        <table class="table-fixed min-w-full text-sm divide-y divide-orange-black-light  grafic-table overflow-y-auto">
             <thead>
                 <tr>
                     <th class="px-4 py-2 font-bold text-left whitespace-nowrap w-28">Nr.</th>
@@ -16,7 +16,7 @@
                 </tr>
             </thead>
 
-            <tbody class="divide-y divide-brand-black-light">
+            <tbody class="divide-y divide-orange-black-light">
                 <tr v-for="(rata, idx) in grafic">
                     <td class="px-4 py-2 font-bold whitespace-nowrap">{{ idx + 1 }}</td>
                     <td class="px-4 py-2 whitespace-nowrap">{{ new
