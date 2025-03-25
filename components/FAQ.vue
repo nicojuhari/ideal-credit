@@ -48,18 +48,13 @@
         question: 'Care este diferența dintre împrumut și credit? ',
         answer: 'În esență, toate creditele sunt împrumuturi, dar nu toate împrumuturile sunt credite. Creditele sunt împrumuturi formalizate, cu termeni și condiții clare, în timp ce împrumuturile pot avea forme mai flexibile și informale, de exemplu lipsa a unei dobânzi.'
     },
-    {
-        question: 'Care sunt avantajele de a alege Ideal Credit?',
-        answer: `Oferim o gamă variată de produse, cu dobânzi fixe și transparente, fără surprize neplăcute. Contractele noastre sunt clare, ușor de înțeles și nu conțin clauze ascunse.`
-    },
-
  ]
 
 </script>
 <template>
-    <div class="space-y-6 card light">
-        <div v-for="(item, idx) in list" :class="{ 'col-span-2': list.length == idx + 1 }">
-            <div class="font-semibold text-xl mb-1">{{ item.question }}</div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div v-for="item in list">
+            <div class="font-semibold text-2xl mb-2">{{ item.question }}</div>
             <div>{{ item.answer }}</div>
         </div>
     </div>

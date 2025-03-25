@@ -19,27 +19,28 @@
     ]
 </script>
 <template>
-    <footer class="bg-black-950 border-t border-brand-500/10 relative">
+    <footer class="bg-black-500/70 border-t border-brand-500/10 relative">
         <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-6 py-8 px-2 md:px-0">
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <div>Credite nebancare pentru nevoi personale și afaceri, destinate persoanleor fizice și juridice din Republica Moldova.<br><br>Solicită acum un <NuxtLink to="/cerere-de-credit-online" title="Credit rapid, online">Credit Rapid, Online!</NuxtLink></div>
+                <p class="text-white/80">Credite nebancare pentru afaceri și nevoi personale, destinate persoanleor fizice și juridice din Republica Moldova.<br>Solicită acum un <NuxtLink to="/cerere-de-credit-online" title="Credit rapid, online">Credit Rapid, Online!</NuxtLink></p>
             </div>
             <div>
                 <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
                 <div class="grid grid-cols-1 gap-8 mt-6">
                     <div v-for="oficiu in oficii" :key="oficiu.address" class="space-y-1.5">
-                        <div class="mb-2 underline underline-offset-2">
+                        <div class="mb-2 font-semibold text-xl">
                             {{ oficiu.title }}
                         </div>
-                        <div>{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
-                        <div>Luni - Vineri: 08:30 - 16:30</div>
-                        <div v-if="oficiu.id == 2" class="text-sm italic">(este nevoie de programare prealabilă)</div>
+                        <div class="text-white/80">{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
+                        <div class="text-white/80">Luni - Vineri: 08:30 - 16:30</div>
+                        <div v-if="oficiu.id == 2" class="text-sm italic text-white/80">(este nevoie de programare prealabilă)</div>
                         <div class="py-1"></div>
-                        <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="btn btn-primary btn-light">
+                        <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="btn btn-primary btn-outline">
+                            <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0" />
                             {{ oficiu.mobile[1] }}
                         </a>
                     </div>
@@ -47,12 +48,12 @@
             </div>
             <div class="flex flex-col gap-4">
                 <div class="h-10 text-xl flex items-center">Linkuri</div>
-                <NuxtLink to="/blog" title="Blog financiar" class="inline-flex underline underline-offset-2">Blog</NuxtLink>
-                <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex underline underline-offset-2">Termeni și Condiții</NuxtLink>
-                <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex underline underline-offset-2">Politica de Cookies</NuxtLink>
-                <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex underline underline-offset-2">Politica de Confidențialitate</NuxtLink>
+                <NuxtLink to="/blog" title="Blog financiar" class="inline-flex">Blog</NuxtLink>
+                <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex">Termeni și Condiții</NuxtLink>
+                <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Politica de Cookies</NuxtLink>
+                <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Politica de Confidențialitate</NuxtLink>
                 <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                    class="underline text-orange-color/90 underline-offset-2">Autoritatea de Supraveghere<br>și metodele de reclamații
+                    class="text-brand-500/70">Autoritatea de Supraveghere<br>și metodele de reclamații
                 </NuxtLink>
                 <div class="flex gap-6 items-center">
                     <NuxtLink href="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
