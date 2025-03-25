@@ -96,10 +96,10 @@ p {
 }
 
 .btn {
-    @apply h-10 px-8 rounded-full inline-flex gap-3 items-center justify-center text-lg;
+    @apply h-10 px-6 rounded-full inline-flex gap-3 items-center justify-center text-lg cursor-pointer;
 }
 .btn-primary {
-    @apply bg-brand-500 text-brand-500 border-brand-500 border;
+    @apply bg-gray-200 text-black border-gray-200 border;
 }
 .btn-primary.btn-light {
     @apply bg-brand-500 border-brand-500 text-white ;
@@ -145,7 +145,7 @@ textarea {
 }
 
 .card {
-    @apply rounded-lg px-4 py-10 md:px-8 md:py-14 shadow-md bg-black-800 overflow-hidden;
+    @apply rounded-lg px-4 py-10 md:px-8 md:py-14 shadow-md bg-black-400 overflow-hidden;
 }
 
 .card.light {
@@ -177,7 +177,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .input-calculator {
-    @apply rounded-lg bg-transparent px-2 text-white border-0 outline-none font-bold text-2xl w-[8.5rem] text-right;
+    @apply rounded-lg bg-white/5 px-2 text-white border-0 outline-none font-bold text-2xl w-[8.5rem] text-right;
 }
 
 
@@ -245,6 +245,7 @@ input[type=number] {
         linear-gradient(to right, #212121 1px, transparent 1px),
         linear-gradient(to bottom, #212121 1px, transparent 1px);
     background-size: 60px 60px;
+    background-position: top center;
     position: absolute;
     inset: 0;
     z-index: -1;

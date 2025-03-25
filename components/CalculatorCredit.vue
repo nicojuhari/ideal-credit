@@ -96,7 +96,7 @@
                     </div>
                     <label for="credit-amount-range">
                     <input id="credit-amout-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
-                        class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                        class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
                     <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
                         <div>1000 lei</div>
@@ -112,9 +112,9 @@
                     </div>
                     <label for="credit-period-range">
                         <input id="credit-period-range" type="range" v-model="creditTermen" min="6" max="60" step="1"
-                        class="mb-3 w-full h-1 bg-white bg-opacity-30 rounded-lg appearance-none cursor-pointer border-0 p-0">
+                        class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
-                    <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
+                    <div class="flex gap-6 justify-between text-white/80 text-sm">
                         <div>6 luni</div>
                         <div>60 luni</div>
                     </div>
@@ -123,9 +123,9 @@
             <div class="flex flex-col">
                 <div class="grid place-content-center mt-2 text-orange-gray-dark">
                     <div
-                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center border-orange-black-light bg-">
+                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center border-white/20">
                         <div>Prima rată</div>
-                        <div class="text-orange-color title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
+                        <div class="text-brand-500 title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
                         <div>MDL</div>
                     </div>
@@ -167,8 +167,8 @@
                 </div>
             </div>
         </div>
-        <div class="mt-8 flex gap-4 bg-orange-black-light p-4 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-orange-color" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
+        <div class="mt-8 flex gap-4 bg-white/5 p-4 rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-brand-500/70" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
             <span>Debitorul (Consumatorul) este responsabil pentru rambursarea creditului</span></div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>

@@ -25,14 +25,17 @@ const list = [
 </script>
 <template>
     <div class="space-y-6 card">
-            <h2 class="card-title text-center">Metode de achitare</h2>
-            <ul class="list-disc list-inside space-y-8 md:space-y-6">
+            <h2 class="card-title text-center">Metode de achitare a creditului</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <ul class="list-disc list-inside space-y-8 md:space-y-6">
                 <li v-for="item in list" :key="item.title" class="flex gap-2 items-center">
-                    <Icon name="i-ph-dot-fill" class="w-5 h-5 text-orange-color shrink-0" />
+                    <UIcon name="i-ph-dot-fill" class="w-5 h-5 text-brand-500/50 shrink-0" />
                     <div>
-                        <span class="text-xl font-medium">{{ item.title }}:</span> <span class="text-orange-gray-dark" v-html="item.description"></span>
+                        <span class="text-xl font-medium">{{ item.title }}:</span> <span class="text-white/80" v-html="item.description"></span>
                     </div>
                 </li>
             </ul>
+            <img src="/ideal-credit-metode-de-achitare.webp" alt="Metode de achitare" class="w-full sm:w-[70%] mx-auto -order-1 lg:order-2">
+            </div>
         </div>
 </template>

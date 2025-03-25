@@ -10,19 +10,19 @@ const { trackEvent } = useFacebookPixel()
 const phoneNumber = '+37378805060';
 const viberUrl = `viber://chat?number=${encodeURIComponent(phoneNumber)}`;
 
-let cls = ''
-if(props.toHeroSection) {
-    cls = 'aspect-square bg-black-400 rounded-lg w-full flex flex-col gap-4 items-center justify-center hover:scale-105 transition-all duration-300'
-} else {
-    cls = 'rounded-lg flex-col inline-flex gap-4 items-center p-6 md:py-8- aspect-square md:aspect-auto justify-center hover:scale-105 transition-all duration-300'
-}
+let cls = 'aspect-square bg-black-400 rounded-lg w-full flex flex-col gap-4 items-center justify-center hover:scale-105 transition-all duration-300'
+// let cls = ''
+// if(props.toHeroSection) {
+// } else {
+//     cls = 'rounded-lg flex-col inline-flex gap-4 items-center p-6 md:py-8- aspect-square md:aspect-auto justify-center hover:scale-105 transition-all duration-300'
+// }
 
 
 </script>
 <template>
     <div class="space-y-6 text-center">
-        <div v-if="toHeroSection" class="text-gray-300">Solicită un credit acum!</div>
-        <div class="grid grid-cols-2 gap-6">
+        <div v-if="toHeroSection" class="text-white/80">Solicită un credit acum!</div>
+        <div class="grid grid-cols-2 gap-6" :class="!props.toHeroSection ? 'lg:grid-cols-4' : ''">
             <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online" 
             class="text-gray-300" :class="cls">
                 <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />

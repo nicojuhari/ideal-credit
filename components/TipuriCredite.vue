@@ -1,22 +1,30 @@
 <script setup>
 let credits = [
-    { name: 'Credit de consum', link: 'credit-de-consum', icon: 'ph:shopping-cart-simple-thin' },
-    { name: 'Credit auto', link: 'credit-auto', icon: 'ph:car-profile-thin' },
-    { name: 'Credit ipotecar', link: 'credit-ipotecar', icon: 'ph:house-line-thin' },
-    { name: 'Credit pentru afaceri', link: 'credit-pentru-afaceri', icon: 'ph:chart-bar-thin' }
+    { name: 'Credit pentru dezvoltarea afacerii', link: 'credit-pentru-afaceri', image: '/credit-pentru-afaceri.webp' },
+    { name: 'Credit pentru nevoi personale', link: 'credit-de-consum', image: '/credit-pentru-nevoi-personale.webp' },
 ]
 
-let classes = 'flex flex-col items-center justify-center gap-4 hover:scale-105 transition-all duration-300'
+let classes = 'flex flex-col items-center justify-center gap-8 hover:scale-105 transition-all duration-300'
+
+let benefits = [
+    'Rapid',
+    'Transparent',
+    'Dobânzi fixe',
+    'Fără comisioane ascunse'
+]
 </script>
 <template>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes" class="group card"
-            :title="item.name">
-            <Icon :name="item.icon"
-                class="w-10 h-10 shrink-0 text-orange-color/70 group-hover:text-orange-color transition-all duration-300" />
-            <h3 class="text-center h-10">
-                {{ item.name }}
-            </h3>
-        </nuxt-link>
-    </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="card grid place-items-center">
+                <UIcon name="i-ph-thumbs-up-light" class="text-brand-500 w-14 h-14 mb-8" />
+                <UiBenefitsList :items="benefits"/>
+            </div>
+            <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes" class="group card"
+                :title="item.name">
+                <img :src="item.image" :alt="item.name" class="h-[200px] object-cover">
+                <h3 class="text-center text-2xl font-semibold lg:h-16">
+                    {{ item.name }}
+                </h3>
+            </nuxt-link>
+        </div>
 </template>
