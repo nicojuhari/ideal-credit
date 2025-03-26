@@ -1,1 +1,0 @@
-import{L as s,c,o,a as n,d as a,M as r}from"./C8t5xOoC.js";const i={},_={class:"grid grid-cols-1 gap-8 items-center pt-8"};function d(l,t){const e=r;return o(),c("div",_,[t[0]||(t[0]=n("h4",{class:"title text-center !mb-0"},"Solicită un credit!",-1)),a(e)])}const f=s(i,[["render",d]]);export{f as default};
