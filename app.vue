@@ -17,4 +17,7 @@ useHead({
     { property: 'og:image:alt', content: 'Credite nebancare pentru afaceri și nevoi personale' },
   ],
 })
+
+import '@/assets/css/main.css';
+
 </script>

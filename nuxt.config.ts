@@ -19,7 +19,7 @@ export default defineNuxtConfig({
         },
     },
     modules: ['@nuxt/ui', '@formkit/nuxt', '@nuxtjs/seo', [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }]],
-    css: ['@/assets/css/main.css'],
+    // css: ['@/assets/css/main.css'],
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',
         icm_api_url: process.env.NUXT_ICM_API_URL,
