@@ -9,7 +9,7 @@ useHead({
 </script>
 
 <template>
-    <div class="container sm-container card light my-6">
+    <div class="container sm-container card my-6">
         <h1 class="card-title text-center">Politica de Cookies<br>OCN Ideal Credit SRL</h1>
 
         <p>Această Politică de Cookies explică modul în care OCN Ideal Credit SRL ("noi", "nouă" sau "compania noastră") utilizează cookies și tehnologii similare pe site-ul nostru web. Vă rugăm să citiți cu atenție această politică pentru a înțelege cum colectăm și utilizăm informațiile.</p>

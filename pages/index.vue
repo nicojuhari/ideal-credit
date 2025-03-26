@@ -7,10 +7,10 @@
         <div class="container grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div class="flex flex-col lg:col-span-8 h-full justify-center text-center lg:text-left">
                 <UiRecenziiButton />
-                <h1 class="font-semibold text-7xl lg:text-[110px] leading-none my-12 lg:my-8">Credite<br>nebancare <span class="text-brand-500 font-light text-[50%] lg:text-[35%] block mt-2.5">pentru afaceri și nevoi personale</span></h1>
-                <!-- <p class="text-gray-200 text-lg pt-2">Rapid, transparent, cu dobânzi fixe<br class="lg:hidden"> și fără comisioane ascunse.</p> -->
+                <h1 class="font-semibold text-7xl lg:text-[110px] leading-none my-10">Credite<br>nebancare <span class="text-brand-500 font-light text-[50%] lg:text-[35%] block mt-2 lg:mt-0">pentru afaceri și nevoi personale</span></h1>
+                <p class="text-gray-200 text-lg !mb-0">Rapid, transparent, dobânzi fixe<br class="lg:hidden"> și fără comisioane ascunse.</p>
             </div>
-            <div class="lg:col-span-4 space-y-6 gap-4">
+            <div class="lg:col-span-4 gap-6 flex flex-col justify-end">
                 <UiButtonsCTA toHeroSection />
                 <UiCalculatorCreditCTA />
             </div>
@@ -36,7 +36,7 @@
         <LazyPaymentMethods />
     </div>
     <div class="container my-4 md:my-6">
-        <h2 class="title text-center pt-12 md:pt-16">Întrebări Frecvente</h2>
+        <h2 class="title text-center pt-8">Întrebări Frecvente</h2>
         <LazyFAQ />
     </div>
 </template>

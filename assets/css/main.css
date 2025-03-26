@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap'); */
-@import "tailwindcss";
+@import "tailwindcss"; 
 @import "@nuxt/ui";
 
 /* "brand-500": "#ff9a00",
@@ -114,12 +114,18 @@ p {
 }
 
 input {
-    @apply rounded-lg border py-2 px-4 w-full border-black-600 outline-none;
+    @apply rounded-lg border py-2 px-4 w-full border-white/20 outline-none;
 }
 
 textarea {
     @apply rounded py-2 px-4 w-full h-24 max-h-36 outline-none;
     min-height: 6rem;
+}
+
+::placeholder {
+    opacity: 0.4;
+    color: rgb(156 163 175);
+    /* gray-400 */
 }
 
 
@@ -134,7 +140,7 @@ textarea {
     @apply text-xs opacity-70 mt-1;
 }
 .formkit-options {
-    @apply p-4 border border-black-600 rounded
+    @apply p-4 border border-white/20 rounded-lg;
 }
 .formkit-option .formkit-wrapper, .formkit-cerere-terms .formkit-wrapper {
     @apply flex items-center gap-4;
