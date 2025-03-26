@@ -21,7 +21,7 @@ let cls = 'aspect-square bg-black-400 rounded-lg w-full flex flex-col gap-4 item
 </script>
 <template>
     <!-- <div v-if="toHeroSection" class="text-white/80">Solicită un credit acum!</div> -->
-    <div class="grid grid-cols-2 gap-6" :class="!props.toHeroSection ? 'lg:grid-cols-4' : ''">
+    <div class="grid grid-cols-2 gap-4 lg:gap-6" :class="!props.toHeroSection ? 'lg:grid-cols-4' : ''">
         <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online" 
         class="text-gray-300" :class="cls">
             <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />

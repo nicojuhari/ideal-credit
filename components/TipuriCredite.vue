@@ -13,9 +13,9 @@ const items = [
 ]
 </script>
 <template>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
             <div class="card flex flex-col items-center justify-center gap-8">
-                <div class="h-[200px] grid place-items-center">
+                <div class="h-[180px] flex flex-col gap-8 items-center justify-end">
                     <div class="flex items-center justify-center gap-2">
                         <UIcon name="i-ph-star-fill" class="text-brand-500 text-2xl shrink-0" v-for="i in 5" :key="i" />
                     </div>
@@ -23,12 +23,12 @@ const items = [
                         <img :src="item" class="rounded-lg">
                     </UCarousel>
                 </div>
-                <h3 class="text-center text-2xl font-semibold lg:h-16">Ce spun clienții noștri</h3>
+                <h3 class="text-center text-xl lg:h-16">Ce spun clienții noștri</h3>
             </div>
             <nuxt-link v-for="item in credits" :key="item.name" :to="item.link" :class="classes" class="group card"
                 :title="item.name">
-                <img :src="item.image" :alt="item.name" class="h-[200px] object-cover">
-                <h3 class="text-center text-2xl font-semibold lg:h-16">
+                <img :src="item.image" :alt="item.name" class="h-[180px] object-cover">
+                <h3 class="text-center text-xl lg:h-16">
                     {{ item.name }}
                 </h3>
             </nuxt-link>

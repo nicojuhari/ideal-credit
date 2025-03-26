@@ -35,7 +35,7 @@ const list = [
                     </div>
                 </li>
             </ul>
-            <img src="/ideal-credit-metode-de-achitare.webp" alt="Metode de achitare" class="w-full sm:w-[70%] mx-auto -order-1 lg:order-2">
+            <img src="/ideal-credit-metode-de-achitare.webp" alt="Metode de achitare" class="w-full sm:w-[60%] mx-auto -order-1 lg:order-2 -scale-x-100">
             </div>
         </div>
 </template>
