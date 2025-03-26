@@ -62,6 +62,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-11-06',
 
     nitro: {
+        preset: 'vercel',
         routeRules: {
             '/credit-auto': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
             '/credit-ipotecar': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } }
