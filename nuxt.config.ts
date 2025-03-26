@@ -66,5 +66,10 @@ export default defineNuxtConfig({
             '/credit-auto': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
             '/credit-ipotecar': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } }
         }
+    },
+    vite: {
+        css: {
+            devSourcemap: process.env.NODE_ENV !== 'production'
+        }
     }
 })
