@@ -8,7 +8,7 @@ useHead({
 })
 </script>
 <template>
-    <div class="container sm-container card light my-6">
+    <div class="container sm-container card my-6">
         <h1 class="card-title text-center">Termeni și Condiții<br>OCN Ideal Credit SRL</h1>
 
         <h2 class="text-xl mt-8 mb-2">1. Dispoziții generale</h2>

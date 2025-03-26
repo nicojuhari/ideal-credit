@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-12 mb-6">Costurile creditului</div>
+        <div class="text-center mt-12 mb-8">Costurile creditului</div>
         <div class="grid gap-3 md:gap-10 grid-cols-1 md:grid-cols-2">
             <div>
                 <div class="flex gap-6 justify-between">
@@ -167,9 +167,10 @@
                 </div>
             </div>
         </div>
-        <div class="mt-8 flex gap-4 bg-white/5 p-4 rounded-md">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0 text-brand-500/70" fill="currentColor"  viewBox="0 0 256 256"><path d="M128 26a102 102 0 1 0 102 102A102.2 102.2 0 0 0 128 26Zm0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90Zm14-42a6 6 0 0 1-6 6h-8a6 6 0 0 1-6-6v-50h-2a6 6 0 0 1 0-12h8a6 6 0 0 1 6 6v50h2a6 6 0 0 1 6 6Zm-26-92a10 10 0 1 1 10 10a10 10 0 0 1-10-10Z"/></svg>
-            <span>Debitorul (Consumatorul) este responsabil pentru rambursarea creditului</span></div>
+        <div class="mt-8 flex gap-4 items-center">
+            <UIcon name="i-ph-info" class="text-brand-500/50 text-2xl shrink-0" />
+            <span class="text-sm text-white/80">Consumatorul este responsabil pentru rambursarea creditului.</span>
+        </div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>
         </uiModal>

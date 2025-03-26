@@ -56,19 +56,15 @@
 </script>
 <template>
     <div class="container sm-container relative my-4 md:my-6">
-        <div class="card light">
+        <div class="card">
             <h1 class="page-title">Contacte</h1>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-2xl">
                 <div class="flex gap-4 items-center">
-                    <div class="h-12 w-12 rounded-full flex items-center justify-center bg-orange-color bg-opacity-5">
-                        <IconsMobile class="w-6 text-orange-color"/>
-                    </div>
+                    <UIcon name="i-ph-phone-call" class="w-8 h-8 shrink-0 text-brand-500/50"/>
                     <a href="tel:+37378805060" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
                 </div>
                 <div class="flex gap-4 items-center">
-                    <div class="h-12 w-12 rounded-full flex items-center justify-center bg-orange-color bg-opacity-5">
-                        <IconsMail class="w-6 text-orange-color"/>
-                    </div>
+                    <UIcon name="i-ph-envelope" class="w-8 h-8 shrink-0 text-brand-500/50"/>
                     <a href="mailto:info@idealcredit.md" @click="trackEvent('Contact')">info@idealcredit.md</a>
                 </div>
             </div>
@@ -77,8 +73,8 @@
             <h2 class="card-title text-center">Scrie-ne un mesaj</h2>
             <UiLoading v-if="loading" local/>
             <div v-if="formSend" class="grid place-content-center my-16 duration-700">
-                <IconsCheck class="text-orange-color h-32 mx-auto" />
-                <div class="text-2xl">Mulțumim pentru mesaj.<br>Vă contactăm în curând!</div>
+                <UIcon name="i-ph-check" class="text-brand-500 h-32 w-32 mx-auto" />
+                <div class="text-2xl mt-4">Mulțumim pentru mesaj.<br>Vă contactăm în curând!</div>
             </div>
             <FormKit v-else type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
                 :validation-messages="{
@@ -89,7 +85,6 @@
                     name="nume" 
                     label="Nume" 
                     validation="required|length:3,25"
-                    input-class="bg-white bg-opacity-10"
                     outer-class="mb-6"
                     :validation-messages="{
                         required: 'Numele este obligatoriu',
@@ -102,7 +97,6 @@
                         name="email" 
                         label="Email" 
                         validation="email"
-                        input-class="bg-white bg-opacity-10" 
                         :validation-messages="{
                                 email: 'Email-ul are format greșit'
                             }"
@@ -112,24 +106,23 @@
                         name="telefon" 
                         label="Telefon/Mobil" 
                         validation="tel"
-                        input-class="bg-white bg-opacity-10" 
                         :validation-messages="{
                                 tel: 'Telefonul are format greșit'
                             }"
                     />
                 </div>
 
-                <FormKit type="textarea" name="mesaj" label="Mesaj" outer-class="mb-6" input-class="bg-white bg-opacity-10">
+                <FormKit type="textarea" name="mesaj" label="Mesaj" outer-class="mb-6" input-class="border-white/20 border">
                 </FormKit>
                 <div class="flex justify-end">
-                        <button type="submit" class="btn btn-secondary">
+                        <button type="submit" class="btn btn-primary">
                         Trimite
                     </button>
                 </div>
                 
             </FormKit>
         </div>
-        <LazyCallToAction class="card light mt-4 md:mt-6"/>
+        <LazyCallToAction class="mt-4 md:mt-6"/>
         <div id="adresa-oficiilor" class="-translate-y-14"></div>
         <div class="card mt-4 md:mt-6">
             <h2 class="card-title text-center">Adresa oficiilor</h2>

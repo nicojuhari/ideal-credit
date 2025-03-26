@@ -10,7 +10,7 @@
 </script>
 <template>
      <div class="container sm-container relative my-4 md:my-6">
-        <div class="card light">
+        <div class="card">
             <div class="text-2xl text-center leading-relaxed mb-10">Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este <strong class="text-orange-color/90">Comisia Națională a Pieței Financiare.</strong></div>
             
             <div class="text-lg text-center my-6">Contactele instituției</div>

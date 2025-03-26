@@ -36,6 +36,9 @@ export default defineNuxtConfig({
     },
     routeRules : {
         '/': { prerender: true },
+        '/credit-pentru-nevoi-personale': { prerender: true },
+        '/credit-pentru-afaceri': { prerender: true },
+        '/credit-de-consum': { redirect: '/credit-pentru-nevoi-personale',  },
     },
     site: {
         url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',
@@ -57,4 +60,11 @@ export default defineNuxtConfig({
     },
 
     compatibilityDate: '2024-11-06',
+
+    nitro: {
+        routeRules: {
+            '/credit-auto': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
+            '/credit-ipotecar': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } }
+        }
+    }
 })

@@ -40,13 +40,12 @@
                     </ul>
                     <h2 class="mb-2 mt-6">Produsele noastre principale</h2>
                     <ul class="list-disc list-inside">
-                        <li><NuxtLink to="/credit-de-consum" title="credit de consum">Credite de consum</NuxtLink></li>
+                        <li><NuxtLink to="/credit-pentru-nevoi-personale" title="credit pentru nevoi personale">Credite pentru nevoi personale</NuxtLink></li>
                         <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri">Împrumuturi pentru afaceri</NuxtLink></li>
                         <li>Credite agricole</li>
                         <li>Finanțare pentru echipamente și utilaje</li>
-                        <li><NuxtLink to="/credit-auto" title="credite auto">Credite auto</NuxtLink></li>
-                        <li>Finanțare pentru echipamente și utilaje</li>
-                        <li><NuxtLink to="/credit-ipotecar" title="credite ipotecar">Credite pentru îmbunătățirea locuinței</NuxtLink></li>
+                        <li>Credite pentru procurarea unui autoturism</li>
+                        <li>Credite pentru îmbunătățirea locuinței</li>
                     </ul>
                     <h2 class="mt-6 mb-2">Angajamentul nostru față de clienți</h2>
                     <p>La Ideal Credit, punem clientul în centrul tuturor activităților noastre. Ne străduim constant să îmbunătățim serviciile, 
