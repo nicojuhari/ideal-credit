@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*.pdf$
+Disallow: /cdn-cgi/*
+Disallow: /autoritatea-de-supraveghere
+
+Sitemap: https://idealcredit.md/sitemap.xml
