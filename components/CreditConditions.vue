@@ -15,9 +15,9 @@
                 {{ item }}
             </div>
         </div>
-        <div class="inline-flex gap-4 mt-8 items-center text-sm text-white/80">
-            <UIcon name="i-ph-info" class="w-6 h-6 shrink-0 text-brand-500/50" />
-            <span>În funcție de evaluarea riscului de credit, se poate solicita garanții adiționale: fidejusiune sau gaj imobil.</span>
+        <div class="inline-flex gap-4 mt-8 items-center">
+            <UIcon name="i-ph-info" class="w-6 h-6 shrink-0 text-green-600/50" />
+            <span class="text-gray-500 text-sm">În funcție de evaluarea riscului de credit, se poate solicita garanții adiționale: fidejusiune sau gaj imobil.</span>
         </div>
     </div>
 </template>

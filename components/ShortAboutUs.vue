@@ -14,7 +14,7 @@
             <div class="text-lg flex flex-col">
                 <p>Scopul nostru la Ideal Credit SRL este de a oferi soluții financiare accesibile și transparente pentru antreprenori și persoane fizice.</p>
                 <p>Am ajutat sute de clienți să-și atingă obiectivele personale și profesionale, cu milioane de lei în credite acordate.</p>
-                <p><strong>Credite nebancare</strong> — rapid și flexibil, fără comisioane ascunse. Alege să ai o experiență plăcută, fără surprize!</p>
+                <p>Alege Ideal Credit pentru un proces simplu și fără surprize!</p>
             </div>
         </div>
     </div>

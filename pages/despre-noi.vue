@@ -11,16 +11,16 @@
 <template>
     <div class="my-4 md:my-6">
         <div class="container sm-container">
-            <div class="card light">
+            <div class="card">
                 <h1 class="page-title">Despre noi</h1>
                 <div class="text-lg">
                     <p>Partenerul dumneavoastră de încredere în finanțare din Moldova.</p>
                     <p><strong>Ideal Credit SRL</strong> este o organizație de creditare nebancară de top, care activează cu succes pe piața financiară a Republicii Moldova din 2010. În cei peste 13 ani de activitate, ne-am consolidat poziția ca un partener de încredere pentru mii de clienți, oferind soluții financiare inovatoare și accesibile.</p>
-                    <h2 class="mb-2">Misiunea noastră</h2>
+                    <h2 class="mb-2 text-2xl">Misiunea noastră</h2>
                     <p>
                         Ne dedicăm să sprijinim creșterea economică a Moldovei prin oferirea de acces la finanțare pentru persoane fizice și întreprinderi mici și mijlocii. Credem în potențialul fiecărui client și ne străduim să oferim servicii personalizate care să răspundă nevoilor lor unice.
                     </p>
-                    <h2 class="mb-2">Ce ne diferențiază</h2>
+                    <h2 class="mb-2 text-2xl">Ce ne diferențiază</h2>
                     <ul class="list-disc list-inside">
                         <li>
                             <strong>Expertiză locală:</strong> Înțelegem în profunzime piața financiară din Moldova și provocările cu care se confruntă clienții noștri.
@@ -38,21 +38,21 @@
                             <strong>Consultanță profesională:</strong> Echipa noastră de experți vă ghidează în alegerea celei mai potrivite soluții financiare.
                         </li>
                     </ul>
-                    <h2 class="mb-2 mt-6">Produsele noastre principale</h2>
+                    <h2 class="mb-2 mt-6 text-2xl">Produsele noastre principale</h2>
                     <ul class="list-disc list-inside">
-                        <li><NuxtLink to="/credit-pentru-nevoi-personale" title="credit pentru nevoi personale">Credite pentru nevoi personale</NuxtLink></li>
-                        <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri">Împrumuturi pentru afaceri</NuxtLink></li>
+                        <li><NuxtLink to="/credit-pentru-nevoi-personale" title="credit pentru nevoi personale" class="text-brand-500">Credite pentru nevoi personale</NuxtLink></li>
+                        <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri" class="text-brand-500">Împrumuturi pentru afaceri</NuxtLink></li>
                         <li>Credite agricole</li>
                         <li>Finanțare pentru echipamente și utilaje</li>
                         <li>Credite pentru procurarea unui autoturism</li>
                         <li>Credite pentru îmbunătățirea locuinței</li>
                     </ul>
-                    <h2 class="mt-6 mb-2">Angajamentul nostru față de clienți</h2>
+                    <h2 class="mt-6 mb-2 text-2xl">Angajamentul nostru față de clienți</h2>
                     <p>La Ideal Credit, punem clientul în centrul tuturor activităților noastre. Ne străduim constant să îmbunătățim serviciile, 
                         să simplificăm procesele și să oferim rate competitive. 
                         Suntem mândri să fim un pilon de sprijin pentru dezvoltarea economică și socială a Moldovei.
                     </p>
-                    <h2 class="mt-6 mb-2">Responsabilitate socială</h2>
+                    <h2 class="mt-6 mb-2 text-2xl">Responsabilitate socială</h2>
                     <p>
                         Ne implicăm activ în comunitatea locală prin diverse programe de educație financiară și susținere a antreprenoriatului. Credem că o Moldovă prosperă se construiește prin efortul comun al tuturor actorilor economici.
                     </p>
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="container sm-container mt-4 md:mt-6">
-            <LazyCallToAction class="card light"/>
+            <LazyCallToAction class="card"/>
         </div>
     </div>
 </template>

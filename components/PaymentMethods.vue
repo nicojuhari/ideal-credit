@@ -31,7 +31,7 @@ const list = [
                 <li v-for="item in list" :key="item.title" class="flex gap-2 items-center">
                     <UIcon name="i-ph-dot-fill" class="w-5 h-5 text-brand-500/50 shrink-0" />
                     <div>
-                        <span class="text-xl font-medium">{{ item.title }}:</span> <span class="text-white/80" v-html="item.description"></span>
+                        <span class="text-xl font-medium">{{ item.title }}:</span> <span class="text-gray-300" v-html="item.description"></span>
                     </div>
                 </li>
             </ul>

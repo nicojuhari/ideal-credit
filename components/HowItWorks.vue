@@ -25,7 +25,7 @@
                 <UIcon :name="item.icon" class="w-8 h-8 shrink-0 text-brand-500/50" />
                 <div>
                     <p class="text-xl font-medium !mb-0">{{ item.title }}</p>
-                    <p class="mt-1.5 text-white/80 !mb-0">{{ item.text }}</p>
+                    <p class="mt-1.5 text-gray-300 !mb-0">{{ item.text }}</p>
                 </div>
             </div>
         </div>
