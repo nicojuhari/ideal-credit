@@ -14,7 +14,7 @@
   "dependencies": {
     "@formkit/nuxt": "^1.6.9",
     "@formkit/vue": "^1.6.9",
-    "@nuxt/ui": "^3.0.0",
+    "@nuxt/ui": "^3.0.1",
     "@storyblok/nuxt": "^6.2.4",
     "ideal-credit": "^0.2.6"
   }

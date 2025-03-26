@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap'); */
-@import "tailwindcss"; 
+@import "tailwindcss" theme(static);
 @import "@nuxt/ui";
 
 /* "brand-500": "#ff9a00",
