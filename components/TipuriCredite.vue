@@ -20,7 +20,7 @@ const items = [
                         <UIcon name="i-ph-star-fill" class="text-brand-500 text-2xl shrink-0" v-for="i in 5" :key="i" />
                     </div>
                     <UCarousel v-slot="{ item }" :items="items" loop :autoplay="{ delay: 3000 }" class="w-full mx-auto">
-                        <img :src="item" class="rounded-lg">
+                        <img :src="item" class="rounded-lg" alt="Recenzie client despre Ideal Credit">
                     </UCarousel>
                 </div>
                 <h3 class="text-center text-xl lg:h-16">Ce spun clienții noștri</h3>
