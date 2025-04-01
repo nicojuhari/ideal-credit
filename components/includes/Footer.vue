@@ -53,7 +53,7 @@
                 <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Politica de Cookies</NuxtLink>
                 <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Politica de Confidențialitate</NuxtLink>
                 <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                    class="text-green-600/50">Autoritatea de Supraveghere<br>și metodele de reclamații
+                    class="text-green-600">Autoritatea de Supraveghere<br>și metodele de reclamații
                 </NuxtLink>
                 <div class="flex gap-6 items-center">
                     <NuxtLink href="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
@@ -117,7 +117,7 @@
         <div class="container mt-10">
             <div class="divider"></div>
             <div class="text-center py-6 gap-1 flex-wrap">
-                &copy; {{ new Date().getFullYear() }} - Organizația de Creditare Nebancară <strong
+                &copy; {{ new Date().getFullYear() }} Organizația de Creditare Nebancară <strong
                     class="font-medium">"Ideal
                     Credit"</strong> SRL
             </div>

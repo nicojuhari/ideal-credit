@@ -20,6 +20,9 @@
         <TipuriCredite />
     </div>
     <div class="container mt-4 md:mt-6">
+        <RecenziiClient />
+    </div>
+    <div class="container mt-4 md:mt-6">
         <CalculatorCredit />
     </div>
     <div class="container mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
