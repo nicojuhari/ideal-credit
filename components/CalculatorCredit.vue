@@ -22,12 +22,6 @@
         dobinda: [4, 3.5, 3]
     }
 
-    watch(showModal, (val) => {
-        if(val) {
-            trackEvent('CustomizeProduct');
-        }
-    }, { once: true })
-
 
     watchEffect(() => {
         if(creditTermen.value < 6) creditTermen.value = 6
@@ -48,7 +42,7 @@
         dobindaTotal.value = graficCalculat.value.reduce((acc, rata) => rata.dobinda_rata + acc, 0)
     })
 
-    watch([creditSuma, creditTermen],
+    watch([creditSuma, creditTermen, showModal],
         () => {
             trackEvent('CustomizeProduct');
         },
