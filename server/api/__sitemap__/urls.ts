@@ -9,8 +9,6 @@
 //
 import StoryblokClient from 'storyblok-js-client';
 
-
-
 import { asSitemapUrl, defineSitemapEventHandler } from '#imports'
 
 export default defineSitemapEventHandler(async () => {

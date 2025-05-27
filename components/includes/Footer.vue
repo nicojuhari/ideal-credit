@@ -17,6 +17,14 @@
             mobile: ['+37378805060', '078 80 50 60'],
         }
     ]
+
+    const clickContact = ref(false)
+
+    watch(clickContact, (val) => {
+        if(val) {
+            trackEvent('Contact');
+        }
+    }, { once: true })
 </script>
 <template>
     <footer class="bg-black-500/70 border-t border-brand-500/10 relative">
@@ -39,7 +47,7 @@
                         <div class="text-gray-300">Luni - Vineri: 08:30 - 16:30</div>
                         <div v-if="oficiu.id == 2" class="text-sm italic text-gray-300">(este nevoie de programare prealabilă)</div>
                         <div class="py-1"></div>
-                        <a :href="'tel:' + oficiu.mobile[0]" @click="trackEvent('Contact')" class="btn btn-primary btn-outline">
+                        <a :href="'tel:' + oficiu.mobile[0]" @click="clickContact = true" class="btn btn-primary btn-outline">
                             <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0" />
                             {{ oficiu.mobile[1] }}
                         </a>

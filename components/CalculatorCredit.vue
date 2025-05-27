@@ -15,16 +15,18 @@
 
     const showModal= ref(false)
     const preContractRef = ref(null)
-    const openModal = () => {
-        showModal.value = true
-        trackEvent('CustomizeProduct');
-    }
 
 
     const tarife = {
         comision: 0,
         dobinda: [4, 3.5, 3]
     }
+
+    watch(showModal, (val) => {
+        if(val) {
+            trackEvent('CustomizeProduct');
+        }
+    }, { once: true })
 
 
     watchEffect(() => {
@@ -73,10 +75,11 @@
     }
 
     const validateInput = (e) => {
-        const val = e.target.value
+        const val = e.target.value;
         if(isNaN(val)) {
             e.target.value = ''
         }
+
         e.target.value = Math.round(val)
     }
 
@@ -132,7 +135,7 @@
                 </div>
                 <div class="flex justify-center mt-8">
                     <button class="btn btn-primary"
-                        @click="openModal">Vezi preContractul</button>
+                        @click="showModal = true">Vezi preContractul</button>
                 </div>
             </div>
         </div>

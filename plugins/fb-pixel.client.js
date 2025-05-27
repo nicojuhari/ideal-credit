@@ -1,7 +1,7 @@
 export default defineNuxtPlugin(() => {
   
   //only in production
-  if (import.meta.env.DEV) return;
+  // if (import.meta.env.DEV) return;
   
   const { fb_pixel_id } = useRuntimeConfig().public
 

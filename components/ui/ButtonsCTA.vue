@@ -11,12 +11,15 @@ const phoneNumber = '+37378805060';
 const viberUrl = `viber://chat?number=${encodeURIComponent(phoneNumber)}`;
 
 let cls = 'aspect-square bg-black-400 rounded-lg w-full flex flex-col gap-4 items-center justify-center hover:scale-105 transition-all duration-300'
-// let cls = ''
-// if(props.toHeroSection) {
-// } else {
-//     cls = 'rounded-lg flex-col inline-flex gap-4 items-center p-6 md:py-8- aspect-square md:aspect-auto justify-center hover:scale-105 transition-all duration-300'
-// }
 
+
+const clickContact = ref(false)
+
+watch(clickContact, (val) => {
+    if(val) {
+        trackEvent('Contact');
+    }
+}, { once: true })
 
 </script>
 <template>
@@ -27,16 +30,16 @@ let cls = 'aspect-square bg-black-400 rounded-lg w-full flex flex-col gap-4 item
             <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />
             <span class="text-sm">Cerere online</span>
         </NuxtLink>
-        <a href="tel:+37378805060" @click="trackEvent('Contact')" title="Sunați-ne la telefon" class="text-blue-400" :class="cls">
+        <a href="tel:+37378805060" @click="clickContact = true" title="Sunați-ne la telefon" class="text-blue-400" :class="cls">
             <Icon name="i-ph-phone-call" class="w-6 h-6 shrink-0" />
             <span class="text-sm">Telefon</span>
         </a>
-        <a href="https://wa.me/+37378805060" @click="trackEvent('Contact')" target="_blank" title="Scrieți-ne pe WhatsApp"
+        <a href="https://wa.me/+37378805060" @click="clickContact = true" target="_blank" title="Scrieți-ne pe WhatsApp"
             class="text-[#14ac4c]" :class="cls">
             <Icon name="i-ph-whatsapp-logo-light" class="w-7 h-7 shrink-0" />
             <span class="text-sm">WhatsApp</span>
         </a>
-        <a :href="viberUrl" @click="trackEvent('Contact')" class="text-[#7360f2]" :class="cls" title="Scrieți-ne pe Viber">
+        <a :href="viberUrl" @click="clickContact = true" class="text-[#7360f2]" :class="cls" title="Scrieți-ne pe Viber">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 shrink-0" viewBox="0 0 24 24"
                 fill="currentColor">
                 <path
