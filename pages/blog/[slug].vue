@@ -1,10 +1,12 @@
 <script setup>
+import { richTextResolver } from '@storyblok/richtext';
 const route = useRoute();
+const { render } = richTextResolver();
 
-const story = await useStoryblok('blog/' + route.params.slug);
+const story = await useStoryblok('blog/' + route.params.slug, { version: 'published' });
 
 const htmlText = computed(() => {
-    return useStoryblokApi().richTextResolver.render(story.value.content.content)
+    return render(story.value.content.content)
 })
 
 useHead({
@@ -40,9 +42,9 @@ useSchemaOrg([
 </script>
 
 <template>
-    <section class="py-5 md:py-10 blog-page">
-        <div class="container sm-container card" v-if="story">
-            <h1 class="text-3xl mb-6 font-bold">{{ story?.name }}</h1>
+    <div class="py-4 md:py-8 blog-page">
+        <div class="container sm-container" v-if="story">
+            <h1 class="text-2xl mb-4 font-bold">{{ story?.name }}</h1>
             <div>
                 <img :src="story.content?.image?.filename" :alt="story.content.image.alt | story.name"
                     class="w-full object-center object-cover border-0 rounded aspect-video" />
@@ -51,6 +53,10 @@ useSchemaOrg([
                 <div class="richtext text-lg" v-html="htmlText">
                 </div>
             </div>
+            <div class="mt-6 space-y-2 border-t border-gray-600 pt-6">
+                <p>Vă mulțumim că ați citit articolul <span class="font-bold">"{{ story?.name }}"</span>.</p>
+                <p>Vedeți și <nuxt-link to="/blog" title="Blog financiar" class="text-green-600 underline">alte articole</nuxt-link> pentru mai multe informații.</p>
+            </div>
         </div>
-    </section>
+    </div>
 </template>

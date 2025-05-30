@@ -6,7 +6,10 @@ const storyblokApi = useStoryblokApi();
 
 const { data } = await storyblokApi.get("cdn/stories", {
     starts_with: "blog",
+    version: "published"
 });
+
+console.log(data);
 
 stories.value = data.stories;
 
