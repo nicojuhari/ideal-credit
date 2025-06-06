@@ -8,7 +8,7 @@
 </script>
 <template>
     <div class="card">
-        <h2 class="card-title text-center">Condițiile de creditare</h2>
+        <h3 class="card-title text-center">Condițiile de creditare</h3>
         <div class="space-y-6">
             <div v-for="item in list" class="flex text-xl items-center gap-4">
                 <UIcon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-brand-500/50" />

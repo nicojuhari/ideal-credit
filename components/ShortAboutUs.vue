@@ -5,7 +5,7 @@
 </script>
 <template>
     <div class="card">
-        <h2 class="card-title text-center">De ce să alegi<br class="lg:hidden"> Ideal Credit?</h2>
+        <h3 class="card-title text-center">De ce să alegi<br class="lg:hidden"> Ideal Credit?</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="flex flex-col items-center text-center">
                 <div class="text-brand-500 text-[216px] font-bold leading-none">{{ experience }}</div>

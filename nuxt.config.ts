@@ -4,7 +4,8 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite nebancare pentru afaceri și nevoi personale',
+            title: 'Credite nebancare rapide pentru afaceri și nevoi personale',
+            titleTemplate: '%s',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
@@ -29,9 +30,8 @@ export default defineNuxtConfig({
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
             siteDescription: 'Ideal Credit oferă credite avantajoase pentru persoane fizice și juridice din Moldova. Obține finanțare rapidă pentru nevoi personale sau afaceri. Aplică online!',
-            language: 'ro-RO', // prefer more explicit language codes like `en-AU` over `en`
             fb_pixel_id: 2254113158275780,
-            gtag_id: 'G-YXDZGPPXPH'
+            gtag_id: 'G-YXDZGPPXPH',
         }
     },
     routeRules : {

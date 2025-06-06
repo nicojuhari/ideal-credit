@@ -22,10 +22,10 @@ const benefits = [
             <div class="container grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div class="flex flex-col lg:col-span-8 h-full justify-center text-center lg:text-left">
                     <UiRecenziiButton />
-                    <h1 class="font-semibold text-4xl lg:text-7xl leading-none my-10">Credit pentru<br>nevoi personale</h1>
-                    <h2 class="text-gray-300 text-lg !mb-0">Credite urgente, de consum și pînă la salariu.</h2>
+                    <h1 class="font-medium text-5xl lg:text-7xl leading-none mt-10 mb-6">Credit pentru<br>nevoi personale</h1>
+                    <h2 class="text-brand-500 text-xl">Credite nebancare rapide, fără bătăi de cap, pentru cheltuieli urgente.</h2>
                 </div>
-                <div class="lg:col-span-4 gap-6 flex flex-col justify-end">
+                <div class="lg:col-span-4 gap-6 flex flex-col">
                     <UiButtonsCTA toHeroSection />
                     <UiCalculatorCreditCTA />
                 </div>

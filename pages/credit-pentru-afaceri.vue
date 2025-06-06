@@ -15,8 +15,8 @@ useHead({
             <div class="container grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
                 <div class="flex flex-col lg:col-span-8 h-full justify-center text-center lg:text-left">
                     <UiRecenziiButton />
-                    <h1 class="font-semibold text-4xl lg:text-7xl leading-none my-10">Credit pentru<br>dezvoltarea afacerii</h1>
-                    <h2 class="text-gray-300 text-lg !mb-0">Credite flexibile și avantajoase pentru creșterea afacerii tale.</h2>
+                    <h1 class="font-medium text-6xl lg:text-[100px] leading-none mt-10 mb-6">Credit<br>pentru afaceri</h1>
+                    <h2 class="text-brand-500 text-xl">Soluții financiare flexibile și avantajoase pentru creșterea afacerii tale.</h2>
                 </div>
                 <div class="lg:col-span-4 gap-6 flex flex-col justify-end">
                     <UiButtonsCTA toHeroSection />

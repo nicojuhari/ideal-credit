@@ -1,16 +1,21 @@
 <script setup>
 
-</script>
+    const list = [
+        'Rapid și transparent',
+        'Fără comisioane ascunse',
+        'Dobânzi fixe și avantajoase',
+    ]
+</script>   
 <template>
     <div class="py-8 md:py-16 relative">
         <div class="bg-squares -mt-[1px]"></div>
         <div class="container grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div class="flex flex-col lg:col-span-8 h-full justify-center text-center lg:text-left">
                 <UiRecenziiButton />
-                <h1 class="font-semibold text-7xl lg:text-[110px] leading-none my-10 lg:mt-4">Credite<br>nebancare <span class="text-brand-500 font-light text-[50%] lg:text-[35%] block mt-2 lg:mt-0">pentru afaceri și nevoi personale</span></h1>
-                <p class="text-gray-300 text-lg !mb-0">Rapid, transparent, dobânzi fixe<br class="lg:hidden"> și fără comisioane ascunse.</p>
+                <h1 class="font-medium text-7xl lg:text-[100px] leading-none my-10 lg:my-6">Credite<br>nebancare<span class="text-brand-500 font-extralight text-[50%] lg:text-[35%] block mt-2 lg:mt-0">pentru afaceri și nevoi personale</span></h1>
+                <p class="text-gray-300 text-xl">Rapid, transparent, dobânzi fixe<br class="lg:hidden"> și fără comisioane ascunse.</p>
             </div>
-            <div class="lg:col-span-4 gap-6 flex flex-col justify-end">
+            <div class="lg:col-span-4 gap-6 flex flex-col">
                 <UiButtonsCTA toHeroSection />
                 <UiCalculatorCreditCTA />
             </div>
@@ -30,16 +35,13 @@
         <LazyCreditConditions />
     </div>
     <div class="container mt-4 md:mt-6">
-        <LazyCallToAction/>
-    </div>
-    <div class="container mt-4 md:mt-6">
         <LazyShortAboutUs />
     </div>
     <div class="container mt-4 md:mt-6">
         <LazyPaymentMethods />
     </div>
     <div class="container my-4 md:my-6">
-        <h2 class="title text-center pt-8">Întrebări Frecvente</h2>
+        <h4 class="title text-center pt-8">Întrebări frecvente</h4>
         <LazyFAQ />
     </div>
 </template>

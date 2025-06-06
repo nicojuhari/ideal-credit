@@ -1,5 +1,5 @@
 <template>
-  <UApp>
+  <UApp :locale="ro">
     <div class="flex flex-col min-h-screen">
       <IncludesHeader />
       <main class="flex-auto">
@@ -9,7 +9,8 @@
     </div>
   </UApp>
 </template>
-<script setup>
+<script setup>  
+import { ro } from '@nuxt/ui/locale'
 
 useHead({
   meta: [

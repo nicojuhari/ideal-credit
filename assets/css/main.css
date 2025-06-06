@@ -40,9 +40,10 @@
     --color-black-900: oklch(16.842% 0 none);
     --color-black-950: oklch(16.376% 0 none);
 }
-html {
+
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
 body{
     @apply bg-black-600  text-gray-100;
@@ -150,7 +151,7 @@ textarea {
 }
 
 .card {
-    @apply rounded-lg px-4 py-10 md:px-8 md:py-14 shadow-md bg-black-400 overflow-hidden;
+    @apply rounded-lg px-4 py-8 md:px-6 md:py-10 shadow-md bg-black-400 overflow-hidden;
 }
 
 .card.light {

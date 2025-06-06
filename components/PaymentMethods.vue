@@ -25,7 +25,7 @@ const list = [
 </script>
 <template>
     <div class="space-y-6 card">
-            <h2 class="card-title text-center">Metode de achitare a creditului</h2>
+            <h4 class="card-title text-center">Metode de achitare a creditului</h4>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <ul class="list-disc list-inside space-y-8 md:space-y-6">
                 <li v-for="item in list" :key="item.title" class="flex gap-2 items-center">
