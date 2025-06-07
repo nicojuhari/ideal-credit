@@ -4,8 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro'
             },
-            title: 'Credite nebancare rapide pentru afaceri și nevoi personale',
-            titleTemplate: '%s',
+            title: 'Credite nebancare pentru afaceri și nevoi personale',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
