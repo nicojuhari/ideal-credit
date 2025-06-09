@@ -10,57 +10,7 @@ useHead({
 
 
 useSchemaOrg([
-  {
-  "@context": "https://schema.org",
-  "@type": "FinancialService",
-  "name": "Credit pentru nevoi personale",
-  "areaServed": {
-    "@type": "State",
-    "name": "Republica Moldova"
-  },
-  "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
-  "offers": [ // Correctly placed 'offers' array
-    {
-      "@type": "LoanOrCredit",
-      "name": "Credit pentru nevoi personale",
-      "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
-      "url": "https://idealcredit.md/#",
-      "amount": {
-        "@type": "MonetaryAmount",
-        "value": 1000,
-        "currency": "MDL",
-        "minValue": 1000,
-        "maxValue": 300000
-      },
-      "interestRate": {
-        "@type": "QuantitativeValue",
-        "value": 4,
-        "unitText": "%",
-        "description": "Dobândă lunară fixă"
-      },
-      "annualPercentageRate": {
-        "@type": "QuantitativeValue",
-        "value": 60.83,
-        "unitText": "%",
-        "description": "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului."
-      },
-      "loanTerm": {
-        "@type": "QuantitativeValue",
-        "value": 6,
-        "unitText": "Months",
-        "minValue": 6,
-        "maxValue": 60
-      },
-      "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "price": 0,
-        "priceCurrency": "MDL",
-        "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
-      }
-    }
-  ]
-}  
+    personalLoanSchema
 ])
 
 </script>

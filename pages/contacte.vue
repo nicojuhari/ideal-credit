@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    import { localBusinessChisinauSchema, localBusinessCauseniSchema } from '~/utils/schema'
     const { trackEvent } = useFacebookPixel()
 
     useHead({
@@ -54,88 +55,8 @@
     }
 
     useSchemaOrg([
-        {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ideal Credit Căușeni",
-  "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
-  "url": "https://idealcredit.md/",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
-    "addressLocality": "Căușeni",
-    "addressRegion": "Căușeni",
-    "postalCode": "MD-4301",
-    "addressCountry": "MD"
-  },
-  "telephone": "+37379066566",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:30",
-      "closes": "16:30"
-    }
-  ],
-  "areaServed": {
-    "@type": "State",
-    "name": "Republica Moldova"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "13"
-  },
-        "image": "https://idealcredit.md/ideal-credit-logo.svg",
-        "hasMap": "https://maps.app.goo.gl/T7nCkvKXGKLFKU3Z9"
-    },
-    {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ideal Credit Chișinău",
-  "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
-  "url": "https://idealcredit.md/",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "str. Miron Costin, nr.25, of.115",
-    "addressLocality": "Chișinău",
-    "addressRegion": "MD",
-    "postalCode": "MD-2068",
-    "addressCountry": "MD"
-  },
-  "telephone": "+37378805060",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:30",
-      "closes": "16:30"
-    }
-  ],
-  "areaServed": {
-    "@type": "State",
-    "name": "Republica Moldova"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "10"
-  },
-  "image": "https://idealcredit.md/ideal-credit-logo.svg",
-  "hasMap": "https://maps.app.goo.gl/EYxf2NnK3ScynGH79"
-}
+        localBusinessChisinauSchema,
+        localBusinessCauseniSchema
     ])
 
 </script>
