@@ -58,8 +58,20 @@ useSchemaOrg([
                 "https://www.instagram.com/idealcredit",
                 "https://www.linkedin.com/company/idealcredit",
                 "https://www.youtube.com/@idealcredit"
-            ]
+            ],
+            "aggregateRating": { // This is the general rating for the entire organization
+                "@type": "AggregateRating",
+                "ratingValue": "4.9", // Or an overall average you prefer
+                "reviewCount": "23",
+                // IMPORTANT: Replace "xxx-xxx" with the TOTAL number of reviews across all platforms
+                // that contribute to this overall rating.
+                "itemReviewed": {
+                  "@type": "Organization",
+                  "name": "Ideal Credit"
+                }
+              }
         },
+        
 ])
 
 </script>

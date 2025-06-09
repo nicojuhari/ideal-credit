@@ -52,7 +52,6 @@ useSchemaOrg([
       "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "priceType": "Comision de acordare",
         "price": 0,
         "priceCurrency": "MDL",
         "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
