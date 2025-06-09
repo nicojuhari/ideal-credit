@@ -1,99 +1,110 @@
 <script setup>
     useSchemaOrg([
         {
-            "@context": "https://schema.org",
-            "@type": "FinancialService",
-            "name": "Credite nebancare pentru afaceri și nevoi personale",
-            "provider": {
-                "@type": "Organization",
-                "name": "Ideal Credit",
-                "url": "https://idealcredit.md/"
-            },
-            "serviceType": "LoanOrCredit",
-            "areaServed": {
-                "@type": "State",
-                "name": "Republica Moldova"
-            },
-            "description": "Oferim soluții financiare accesibile și transparente pentru antreprenori și persoane fizice, cu un istoric de 15 ani de experiență pe piața financiară din Republica Moldova.",
-            "offers": [
-                {
-                "@type": "LoanOrCredit",
-                "name": "Credit pentru dezvoltarea afacerii",
-                "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, concepute pentru a susține dezvoltarea afacerilor în Republica Moldova.",
-                "url": "https://idealcredit.md/#",
-                "amount": {
-                    "@type": "QuantitativeValue",
-                    "value": 1000,
-                    "unitText": "MDL",
-                    "minValue": 1000,
-                    "maxValue": 300000
-                },
-                "interestRate": {
-                    "@type": "QuantitativeValue",
-                    "value": 4,
-                    "unitText": "%",
-                    "description": "Dobândă lunară fixă"
-                },
-                "annualPercentageRate": {
-                    "@type": "QuantitativeValue",
-                    "value": 60.83,
-                    "unitText": "%",
-                    "description": "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului."
-                },
-                "loanTerm": {
-                    "@type": "QuantitativeValue",
-                    "value": 6,
-                    "unitText": "Months",
-                    "minValue": 6,
-                    "maxValue": 60
-                },
-                "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
-                "repaymentSchedule": "Conform graficului de rambursare anexat la contractul de credit.",
-                "feesAndCommissions": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
-                },
-                {
-                "@type": "LoanOrCredit",
-                "name": "Credit pentru nevoi personale",
-                "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
-                "url": "https://idealcredit.md/#",
-                "amount": {
-                    "@type": "QuantitativeValue",
-                    "value": 1000,
-                    "unitText": "MDL",
-                    "minValue": 1000,
-                    "maxValue": 300000
-                },
-                "interestRate": {
-                    "@type": "QuantitativeValue",
-                    "value": 4,
-                    "unitText": "%",
-                    "description": "Dobândă lunară fixă"
-                },
-                "annualPercentageRate": {
-                    "@type": "QuantitativeValue",
-                    "value": 60.83,
-                    "unitText": "%",
-                    "description": "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului."
-                },
-                "loanTerm": {
-                    "@type": "QuantitativeValue",
-                    "value": 6,
-                    "unitText": "Months",
-                    "minValue": 6,
-                    "maxValue": 60
-                },
-                "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
-                "repaymentSchedule": "Conform graficului de rambursare anexat la contractul de credit.",
-                "feesAndCommissions": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
-                }
-            ]
-        },
-        {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Credite nebancare pentru afaceri și nevoi personale",
+  "areaServed": {
+    "@type": "State",
+    "name": "Republica Moldova"
+  },
+  "description": "Ideal Credit oferă soluții financiare rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, destinate atât antreprenorilor pentru dezvoltarea afacerilor, cât și persoanelor fizice pentru nevoi personale, pe întreg teritoriul Republicii Moldova.",
+  "offers": [
+    {
+      "@type": "LoanOrCredit",
+      "name": "Credit pentru dezvoltarea afacerii",
+      "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, concepute pentru a susține dezvoltarea afacerilor în Republica Moldova.",
+      "url": "https://idealcredit.md/#",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "value": 1000,
+        "currency": "MDL",
+        "minValue": 1000,
+        "maxValue": 300000
+      },
+      "interestRate": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitText": "%",
+        "description": "Dobândă lunară fixă"
+      },
+      "annualPercentageRate": {
+        "@type": "QuantitativeValue",
+        "value": 60.83,
+        "unitText": "%",
+        "description": "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului."
+      },
+      "loanTerm": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months",
+        "minValue": 6,
+        "maxValue": 60
+      },
+      "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceType": "Comision de acordare",
+        "price": 0,
+        "priceCurrency": "MDL",
+        "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+      }
+    },
+    {
+      "@type": "LoanOrCredit",
+      "name": "Credit pentru nevoi personale",
+      "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
+      "url": "https://idealcredit.md/#",
+      "amount": {
+        "@type": "MonetaryAmount",
+        "value": 1000,
+        "currency": "MDL",
+        "minValue": 1000,
+        "maxValue": 300000
+      },
+      "interestRate": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitText": "%",
+        "description": "Dobândă lunară fixă"
+      },
+      "annualPercentageRate": {
+        "@type": "QuantitativeValue",
+        "value": 60.83,
+        "unitText": "%",
+        "description": "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului."
+      },
+      "loanTerm": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months",
+        "minValue": 6,
+        "maxValue": 60
+      },
+      "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceType": "Comision de acordare",
+        "price": 0,
+        "priceCurrency": "MDL",
+        "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+      }
+    }
+  ]
+},
+          {
             "@context": "https://schema.org",
             "@type": "AggregateRating",
             "itemReviewed": {
             "@type": "LocalBusiness",
-            "name": "Ideal Credit Căușeni"
+            "name": "Ideal Credit Căușeni",
+            "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
+                    "addressLocality": "Căușeni",
+                    "addressRegion": "Căușeni",
+                    "postalCode": "MD-4301",
+                }
             },
             "ratingValue": "5",
             "ratingCount": "13"
@@ -103,11 +114,18 @@
             "@type": "AggregateRating",
             "itemReviewed": {
             "@type": "LocalBusiness",
-            "name": "Ideal Credit Chișinău"
+            "name": "Ideal Credit Chișinău",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "str. Miron Costin, nr.25, of.115",
+                "addressLocality": "Chișinău",
+                "addressRegion": "Chișinău",
+                "postalCode": "MD-2068",
+            }
             },
             "ratingValue": "4.9",
             "ratingCount": "10"
-        },
+        },   
         {
             "@context": "https://schema.org",
             "@type": "HowTo",

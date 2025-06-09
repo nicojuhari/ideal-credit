@@ -19,7 +19,7 @@
                     "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
                     "addressLocality": "Căușeni",
                     "addressRegion": "Căușeni",
-                    "postalCode": "4301",
+                    "postalCode": "MD-4301",
                     "addressCountry": "MD"
                 },
                 {
@@ -27,7 +27,7 @@
                     "streetAddress": "str. Miron Costin, nr.25, of.115",
                     "addressLocality": "Chișinău",
                     "addressRegion": "Chișinău",
-                    "postalCode": "2068",
+                    "postalCode": "MD-2068",
                     "addressCountry": "MD"
                 }
             ],
@@ -51,12 +51,19 @@
             "currenciesAccepted": "MDL",
             "areaServed": "MD"
         }, 
-         {
+          {
             "@context": "https://schema.org",
             "@type": "AggregateRating",
             "itemReviewed": {
             "@type": "LocalBusiness",
-            "name": "Ideal Credit Căușeni"
+            "name": "Ideal Credit Căușeni",
+            "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
+                    "addressLocality": "Căușeni",
+                    "addressRegion": "Căușeni",
+                    "postalCode": "MD-4301",
+                }
             },
             "ratingValue": "5",
             "ratingCount": "13"
@@ -66,11 +73,18 @@
             "@type": "AggregateRating",
             "itemReviewed": {
             "@type": "LocalBusiness",
-            "name": "Ideal Credit Chișinău"
+            "name": "Ideal Credit Chișinău",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "str. Miron Costin, nr.25, of.115",
+                "addressLocality": "Chișinău",
+                "addressRegion": "Chișinău",
+                "postalCode": "MD-2068",
+            }
             },
             "ratingValue": "4.9",
             "ratingCount": "10"
-        }
+        }   
     ])
 </script>
 <template>

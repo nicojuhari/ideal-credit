@@ -1,45 +1,34 @@
 <script setup>
 useHead({
-    title: 'Credit pentru nevoi personale',
+    title: 'Credit pentru nevoi personale - rapid și transparent',
     meta: [
         { name: 'description', content: 'Obține creditul ideal pentru nevoile tale personale, cu soluții flexibile și fără comisioane ascunse. Alege Ideal Credit pentru realizarea visurilor tale. Aplică online!' },
         { name: 'keywords', content: 'credit pentru nevoi personale, credit rapid, credit de consum, credite Moldova, credite Chișinău, credite online, împrumuturi' }
     ],
 })
 
-const benefits = [
-    'Fără comisioane',
-    'Dobânzi fixe și mici',
-    'Până la 100 000 MDL',
-    'Pentru necesități urgente',
-]
+
 
 useSchemaOrg([
-    {
+  {
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Credit pentru nevoi personale",
-  "provider": {
-    "@type": "Organization",
-    "name": "Ideal Credit",
-    "url": "https://idealcredit.md/"
-  },
-  "serviceType": "LoanOrCredit",
   "areaServed": {
     "@type": "State",
     "name": "Republica Moldova"
   },
   "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
-  "offers": [
+  "offers": [ // Correctly placed 'offers' array
     {
       "@type": "LoanOrCredit",
       "name": "Credit pentru nevoi personale",
       "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
       "url": "https://idealcredit.md/#",
       "amount": {
-        "@type": "QuantitativeValue",
+        "@type": "MonetaryAmount",
         "value": 1000,
-        "unitText": "MDL",
+        "currency": "MDL",
         "minValue": 1000,
         "maxValue": 300000
       },
@@ -63,11 +52,16 @@ useSchemaOrg([
         "maxValue": 60
       },
       "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
-      "repaymentSchedule": "Conform graficului de rambursare anexat la contractul de credit.",
-      "feesAndCommissions": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceType": "Comision de acordare",
+        "price": 0,
+        "priceCurrency": "MDL",
+        "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+      }
     }
   ]
-}
+}  
 ])
 
 </script>

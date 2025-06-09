@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: 'Credit pentru dezvoltarea afacerii tale',
+    title: 'Credit pentru afaceri - rapid și transparent',
     meta: [
         { name: 'description', content: 'Investește în afacerea ta cu soluții de credit flexibile și avantajoase. Acordăm credite rapide, fără comisioane ascunse și cu dobânzi competitive. Aplică online!' },
         { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credite Moldova, credit online, împrumuturi' }
@@ -8,31 +8,25 @@ useHead({
 })
 
 useSchemaOrg([
-  {
+    {
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Credit pentru afaceri",
-  "provider": {
-    "@type": "Organization",
-    "name": "Ideal Credit",
-    "url": "https://idealcredit.md/"
-  },
-  "serviceType": "LoanOrCredit",
   "areaServed": {
     "@type": "State",
     "name": "Republica Moldova"
   },
-  "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse pentru afacerile din Republica Moldova.",
-  "offers": [
+  "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse pentru dezvoltarea afacerilor în Republica Moldova.",
+  "offers": [ // Correctly placed 'offers' array
     {
       "@type": "LoanOrCredit",
       "name": "Credit pentru afaceri",
       "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, concepute pentru a susține afacerile din Republica Moldova.",
       "url": "https://idealcredit.md/#",
       "amount": {
-        "@type": "QuantitativeValue",
+        "@type": "MonetaryAmount",
         "value": 1000,
-        "unitText": "MDL",
+        "currency": "MDL",
         "minValue": 1000,
         "maxValue": 300000
       },
@@ -56,11 +50,17 @@ useSchemaOrg([
         "maxValue": 60
       },
       "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
-      "repaymentSchedule": "Conform graficului de rambursare anexat la contractul de credit.",
-      "feesAndCommissions": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceType": "Comision de acordare",
+        "price": 0,
+        "priceCurrency": "MDL",
+        "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+      }
     }
   ]
-}  
+},
+
 ])
 
 </script>
