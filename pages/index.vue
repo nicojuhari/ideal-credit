@@ -102,7 +102,7 @@
     "addressLocality": "Căușeni",
     "addressRegion": "Căușeni",
     "postalCode": "MD-4301",
-    "addressCountry": "Republica Moldova"
+    "addressCountry": "MD"
   },
   "telephone": "+37379066566",
   "openingHoursSpecification": [

@@ -8,13 +8,21 @@ useHead({
 })
 
 useSchemaOrg([
-    {
+{
   "@context": "https://schema.org",
   "@type": "FinancialService",
   "name": "Credit pentru afaceri",
   "areaServed": {
     "@type": "State",
     "name": "Republica Moldova"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
+    "addressLocality": "Căușeni",
+    "addressRegion": "Căușeni",
+    "postalCode": "MD-4301",
+    "addressCountry": "MD"
   },
   "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse pentru dezvoltarea afacerilor în Republica Moldova.",
   "offers": [ // Correctly placed 'offers' array
