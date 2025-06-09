@@ -7,6 +7,71 @@
             { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
         ],
     })
+
+    useSchemaOrg([
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Ideal Credit",
+            "address": [
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
+                    "addressLocality": "Căușeni",
+                    "addressRegion": "Căușeni",
+                    "postalCode": "4301",
+                    "addressCountry": "MD"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "str. Miron Costin, nr.25, of.115",
+                    "addressLocality": "Chișinău",
+                    "addressRegion": "Chișinău",
+                    "postalCode": "2068",
+                    "addressCountry": "MD"
+                }
+            ],
+            "telephone": "+37378805060",
+            "email": "info@idealcredit.md",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                    ],
+                    "opens": "08:30",
+                    "closes": "16:30"
+                }
+            ],
+            "paymentAccepted": "cash sau transfer bancar",
+            "currenciesAccepted": "MDL",
+            "areaServed": "MD"
+        }, 
+         {
+            "@context": "https://schema.org",
+            "@type": "AggregateRating",
+            "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": "Ideal Credit Căușeni"
+            },
+            "ratingValue": "5",
+            "ratingCount": "13"
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "AggregateRating",
+            "itemReviewed": {
+            "@type": "LocalBusiness",
+            "name": "Ideal Credit Chișinău"
+            },
+            "ratingValue": "4.9",
+            "ratingCount": "10"
+        }
+    ])
 </script>
 <template>
     <div class="my-4 md:my-6">
@@ -78,8 +143,8 @@
                 </div>
             </div>
         </div>
-        <div class="container sm-container mt-4 md:mt-6">
-            <LazyCallToAction class="card"/>
+        <div class="container sm-container">
+            <LazyCallToAction/>
         </div>
     </div>
 </template>

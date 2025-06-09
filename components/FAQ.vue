@@ -50,12 +50,25 @@
     },
  ]
 
+ useSchemaOrg([
+    {
+        '@type': 'FAQPage',
+        mainEntity: list.map(item => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer
+            }
+        }))
+    }
+ ])
 </script>
 <template>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div v-for="item in list">
-            <div class="font-semibold text-2xl mb-2">{{ item.question }}</div>
-            <div>{{ item.answer }}</div>
+            <div class="font-bold mb-2">{{ item.question }}</div>
+            <div class="text-gray-400">{{ item.answer }}</div>
         </div>
     </div>
 </template>

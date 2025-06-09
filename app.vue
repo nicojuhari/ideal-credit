@@ -1,5 +1,5 @@
 <template>
-  <UApp :locale="ro">
+  <UApp>
     <div class="flex flex-col min-h-screen">
       <IncludesHeader />
       <main class="flex-auto">
@@ -10,7 +10,8 @@
   </UApp>
 </template>
 <script setup>  
-import { ro } from '@nuxt/ui/locale'
+import '@/assets/css/main.css';
+const config = useRuntimeConfig()
 
 useHead({
   meta: [
@@ -19,6 +20,46 @@ useHead({
   ],
 })
 
-import '@/assets/css/main.css';
+useSchemaOrg([
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ideal Credit",
+    "url": "https://idealcredit.md/"
+  },
+   {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Ideal Credit",
+            "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
+            "url": "https://idealcredit.md/",
+            "logo": "https://idealcredit.md/ideal-credit-logo.svg",
+            "description": config.public.description,
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+37378805060",
+                    "contactType": "customer service",
+                    "email": "contact@idealcredit.md",
+                    "areaServed": "MD",
+                    "availableLanguage": "ro"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+37379066566",
+                    "contactType": "admin",
+                    "email": "info@idealcredit.md",
+                    "areaServed": "MD",
+                    "availableLanguage": "ro"
+                }
+            ],
+            "sameAs": [
+                "https://www.facebook.com/idealcredit",
+                "https://www.instagram.com/idealcredit",
+                "https://www.linkedin.com/company/idealcredit",
+                "https://www.youtube.com/@idealcredit"
+            ]
+        },
+])
 
 </script>

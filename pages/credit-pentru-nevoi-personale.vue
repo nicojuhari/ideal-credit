@@ -14,6 +14,62 @@ const benefits = [
     'Pentru necesități urgente',
 ]
 
+useSchemaOrg([
+    {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Credit pentru nevoi personale",
+  "provider": {
+    "@type": "Organization",
+    "name": "Ideal Credit",
+    "url": "https://idealcredit.md/"
+  },
+  "serviceType": "LoanOrCredit",
+  "areaServed": {
+    "@type": "State",
+    "name": "Republica Moldova"
+  },
+  "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
+  "offers": [
+    {
+      "@type": "LoanOrCredit",
+      "name": "Credit pentru nevoi personale",
+      "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
+      "url": "https://idealcredit.md/#",
+      "amount": {
+        "@type": "QuantitativeValue",
+        "value": 1000,
+        "unitText": "MDL",
+        "minValue": 1000,
+        "maxValue": 300000
+      },
+      "interestRate": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitText": "%",
+        "description": "Dobândă lunară fixă"
+      },
+      "annualPercentageRate": {
+        "@type": "QuantitativeValue",
+        "value": 60.83,
+        "unitText": "%",
+        "description": "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului."
+      },
+      "loanTerm": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "Months",
+        "minValue": 6,
+        "maxValue": 60
+      },
+      "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
+      "repaymentSchedule": "Conform graficului de rambursare anexat la contractul de credit.",
+      "feesAndCommissions": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
+    }
+  ]
+}
+])
+
 </script>
 <template>
     <div class="mb-6">
@@ -23,16 +79,21 @@ const benefits = [
                 <div class="flex flex-col lg:col-span-8 h-full justify-center text-center lg:text-left">
                     <UiRecenziiButton />
                     <h1 class="font-medium text-5xl lg:text-7xl leading-none mt-10 mb-6">Credit pentru<br>nevoi personale</h1>
-                    <h2 class="text-brand-500 text-xl">Credite nebancare rapide, fără bătăi de cap, pentru cheltuieli urgente.</h2>
+                    <h2 class="text-brand-500 text-xl">Credite nebancare rapide, transparente și fără bătăi de cap.</h2>
                 </div>
-                <div class="lg:col-span-4 gap-6 flex flex-col">
+                <div class="lg:col-span-4 gap-6 flex flex-col justify-end">
                     <UiButtonsCTA toHeroSection />
-                    <UiCalculatorCreditCTA />
                 </div>
             </div>
         </div>
-       
-        <div class="container relative card text-lg ">
+        <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 ">
+            <HowItWorks />
+            <LazyCreditConditions />
+        </div>
+        <div class="container mt-4 md:mt-6">
+            <LazyCalculatorCredit />
+        </div>
+        <div class="container relative card text-lg mt-4 md:mt-6 ">
             <h2 class="card-title text-center">Ce este un credit pentru nevoi personale  ?</h2>
             <p>Un credit pentru nevoi personale este o sumă de bani împrumutată de la o instituție financiară bancară sau nebancară,
                 de către o persoană fizică pentru a finanța diverse nevoi personale.</p>
@@ -55,13 +116,8 @@ const benefits = [
             <p class="mt-6">Creditul pentru nevoi personale poate fi un instrument util doar dacă vă permiteți rambursarea lui în
                 condiții convenabile.</p>
         </div>
-         <div class="container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
-            <HowItWorks />
-            <LazyCreditConditions />
-        </div>
-        <div class="container mt-4 md:mt-6">
-            <LazyCalculatorCredit />
-        </div>
+       
+        
         <div class="container mt-4 md:mt-6">
             <LazyCallToAction />
         </div>

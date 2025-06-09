@@ -41,11 +41,11 @@
                                         @click="toggleMenu" />
                                 </div>
                                 <NuxtLink to="/despre-noi" title="Despre noi"
-                                    class="flex w-full font-medium text-lg p-4 border-b border-gray-300/30">
+                                    class="flex w-full font-medium text-lg p-4 border-b border-gray-400/30">
                                     Despre noi
                                 </NuxtLink>
                                 <NuxtLink to="/contacte" title="Contacte"
-                                    class="flex w-full font-medium text-lg p-4 border-b border-gray-300/30">
+                                    class="flex w-full font-medium text-lg p-4 border-b border-gray-400/30">
                                     Contacte
                                 </NuxtLink>
 

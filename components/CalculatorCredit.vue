@@ -76,7 +76,6 @@
 
         e.target.value = Math.round(val)
     }
-
 </script>
 <template>
     <div class="card relative">
@@ -95,7 +94,7 @@
                     <input id="credit-amout-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
                         class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
-                    <div class="flex gap-6 justify-between text-white text-opacity-80 text-sm">
+                    <div class="flex gap-6 justify-between text-gray-400 text-sm">
                         <div>1000 lei</div>
                         <div>300 000 lei</div>
                     </div>
@@ -111,7 +110,7 @@
                         <input id="credit-period-range" type="range" v-model="creditTermen" min="6" max="60" step="1"
                         class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
-                    <div class="flex gap-6 justify-between text-gray-300 text-sm">
+                    <div class="flex gap-6 justify-between text-gray-400 text-sm">
                         <div>6 luni</div>
                         <div>60 luni</div>
                     </div>
@@ -166,7 +165,7 @@
         </div>
         <div class="mt-8 flex gap-4 items-center">
             <UIcon name="i-ph-info" class="text-green-600/50 w-6 h-6 shrink-0" />
-            <span class="text-sm text-gray-500">Consumatorul este responsabil pentru rambursarea creditului.</span>
+            <span class="text-gray-400">Consumatorul este responsabil pentru rambursarea creditului.</span>
         </div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>

@@ -10,10 +10,10 @@ const { trackEvent } = useFacebookPixel()
 const phoneNumber = '+37378805060';
 const viberUrl = `viber://chat?number=${encodeURIComponent(phoneNumber)}`;
 
-let cls = 'h-10 flex gap-3 items-center px-4 rounded-full w-full hover:scale-105 transition-all duration-300'
+let cls = 'flex flex-col justify-center items-center gap-3 px-4 rounded-lg aspect-square w-full hover:scale-105 transition-all duration-300'
 
 const computedCls = computed(() => {
-    return props.toHeroSection ?  'space-y-6' : 'grid grid-cols-1 lg:grid-cols-2 gap-6'
+    return !props.toHeroSection ?  'lg:grid-cols-4' : ''
 })
 
 const clickContact = ref(false)
@@ -27,23 +27,23 @@ watch(clickContact, (val) => {
 </script>
 <template>
     <!-- <div v-if="toHeroSection" class="text-gray-300 text-center text-lg">Solicită un credit acum!</div> -->
-    <div :class="computedCls">
+    <div class="grid grid-cols-2 gap-6" :class="computedCls">
         <NuxtLink to="/cerere-de-credit-online" title="Cerere de credit online" 
-        class="text-gray-100 bg-gray-100/10 border border-gray-100/15" :class="cls">
-            <Icon name="i-ph-pencil-simple-line" class="w-5 h-5 shrink-0" />
-            <span class="text-sm">Cerere online</span>
+        class="text-gray-100 bg-black-400" :class="cls">
+            <Icon name="i-ph-pencil-simple-line" class="w-6 h-6 shrink-0" />
+            <span>Cerere online</span>
         </NuxtLink>
-        <a href="tel:+37378805060" @click="clickContact = true" title="Sunați-ne la telefon" class="text-blue-400 bg-blue-400/10 border border-blue-400/15" :class="cls">
-            <Icon name="i-ph-phone-call" class="w-5 h-5 shrink-0" />
-            <span class="text-sm">Telefon</span>
+        <a href="tel:+37378805060" @click="clickContact = true" title="Sunați-ne la telefon" class="text-blue-400 bg-black-400" :class="cls">
+            <Icon name="i-ph-phone-call" class="w-6 h-6 shrink-0" />
+            <span>Telefon</span>
         </a>
         <a href="https://wa.me/+37378805060" @click="clickContact = true" target="_blank" title="Scrieți-ne pe WhatsApp"
-            class="text-[#14ac4c] bg-[#14ac4c]/10 border border-[#14ac4c]/15" :class="cls">
-            <Icon name="i-ph-whatsapp-logo-light" class="w-6 h-6 shrink-0" />
-            <span class="text-sm">WhatsApp</span>
+            class="text-[#14ac4c] bg-black-400" :class="cls">
+            <Icon name="i-ph-whatsapp-logo-light" class="w-7 h-7 shrink-0" />
+            <span>WhatsApp</span>
         </a>
-        <a :href="viberUrl" @click="clickContact = true" class="text-[#7360f2] bg-[#7360f2]/10 border border-[#7360f2]/15" :class="cls" title="Scrieți-ne pe Viber">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 shrink-0" viewBox="0 0 24 24"
+        <a :href="viberUrl" @click="clickContact = true" class="text-[#7360f2] bg-black-400" :class="cls" title="Scrieți-ne pe Viber">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 shrink-0" viewBox="0 0 24 24"
                 fill="currentColor">
                 <path
                     d="M7.965 6.202a.82.82 0 0 0-.537.106h-.014c-.375.22-.713.497-1.001.823c-.24.277-.37.557-.404.827c-.02.16-.006.322.041.475l.018.01c.27.793.622 1.556 1.052 2.274a13.4 13.4 0 0 0 2.03 2.775l.024.034l.038.028l.023.027l.028.024a13.6 13.6 0 0 0 2.782 2.04c1.155.629 1.856.926 2.277 1.05v.006c.123.038.235.055.348.055a1.6 1.6 0 0 0 .964-.414c.325-.288.6-.627.814-1.004v-.007c.201-.38.133-.738-.157-.981A12 12 0 0 0 14.41 13c-.448-.243-.903-.096-1.087.15l-.393.496c-.202.246-.568.212-.568.212l-.01.006c-2.731-.697-3.46-3.462-3.46-3.462s-.034-.376.219-.568l.492-.396c.236-.192.4-.646.147-1.094a12 12 0 0 0-1.347-1.88a.75.75 0 0 0-.44-.263M12.58 5a.5.5 0 0 0 0 1c1.264 0 2.314.413 3.145 1.205c.427.433.76.946.978 1.508c.219.563.319 1.164.293 1.766a.5.5 0 0 0 1 .042a5.4 5.4 0 0 0-.361-2.17a5.4 5.4 0 0 0-1.204-1.854l-.01-.01C15.39 5.502 14.085 5 12.579 5" />
@@ -54,7 +54,7 @@ watch(clickContact, (val) => {
                 <path
                     d="M7.067 2.384a22.15 22.15 0 0 1 9.664 0l.339.075a5.16 5.16 0 0 1 3.872 3.763a19.7 19.7 0 0 1 0 9.7a5.16 5.16 0 0 1-3.872 3.763l-.34.075a22.2 22.2 0 0 1-6.077.499L8 22.633a.75.75 0 0 1-1.24-.435l-.439-2.622a5.16 5.16 0 0 1-3.465-3.654a19.7 19.7 0 0 1 0-9.7a5.16 5.16 0 0 1 3.872-3.763zm9.337 1.463a20.65 20.65 0 0 0-9.01 0l-.34.076A3.66 3.66 0 0 0 4.31 6.591a18.2 18.2 0 0 0 0 8.962a3.66 3.66 0 0 0 2.745 2.668l.09.02a.75.75 0 0 1 .576.608l.294 1.758l1.872-1.675a.75.75 0 0 1 .553-.19a20.7 20.7 0 0 0 5.964-.445l.339-.076a3.66 3.66 0 0 0 2.745-2.668c.746-2.94.746-6.021 0-8.962a3.66 3.66 0 0 0-2.745-2.668z" />
             </svg>
-            <span class="text-sm">Viber</span>
+            <span>Viber</span>
         </a>
     </div>
 </template>

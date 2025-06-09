@@ -11,7 +11,7 @@
                 <div class="text-brand-500 text-[216px] font-bold leading-none">{{ experience }}</div>
                 <p class="text-lg">ani de experiență<br class="hidden lg:block"> pe piața financiară din Republica Moldova.</p>
             </div>
-            <div class="text-lg flex flex-col">
+            <div class="text-lg space-y-4">
                 <p>Scopul nostru la Ideal Credit SRL este de a oferi soluții financiare accesibile și transparente pentru antreprenori și persoane fizice.</p>
                 <p>Am ajutat sute de clienți să-și atingă obiectivele personale și profesionale, cu milioane de lei în credite acordate.</p>
                 <p>Alege Ideal Credit pentru un proces simplu și fără surprize!</p>

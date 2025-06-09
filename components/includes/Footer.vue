@@ -34,7 +34,7 @@
                     <IconsLogo class="h-10 " />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="text-gray-300">Credite nebancare pentru afaceri și nevoi personale, destinate persoanleor fizice și juridice din Republica Moldova.<br>Solicită acum un <NuxtLink to="/cerere-de-credit-online" title="Credit rapid, online">Credit Rapid, Online!</NuxtLink></p>
+                <p class="text-gray-400">Credite nebancare pentru afaceri și nevoi personale, destinate persoanleor fizice și juridice din Republica Moldova.</p>
             </div>
             <div>
                 <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
@@ -43,9 +43,9 @@
                         <div class="mb-2 font-semibold text-xl">
                             {{ oficiu.title }}
                         </div>
-                        <div class="text-gray-300">{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
-                        <div class="text-gray-300">Luni - Vineri: 08:30 - 16:30</div>
-                        <div v-if="oficiu.id == 2" class="text-sm italic text-gray-300">(este nevoie de programare prealabilă)</div>
+                        <div class="text-gray-400">{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
+                        <div class="text-gray-400">Luni - Vineri: 08:30 - 16:30</div>
+                        <div v-if="oficiu.id == 2" class="text-sm italic text-gray-400">(este nevoie de programare prealabilă)</div>
                         <div class="py-1"></div>
                         <a :href="'tel:' + oficiu.mobile[0]" @click="clickContact = true" class="btn btn-primary btn-outline">
                             <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0" />
@@ -56,7 +56,7 @@
             </div>
             <div class="flex flex-col gap-4">
                 <div class="h-10 text-xl flex items-center">Linkuri</div>
-                <NuxtLink to="/blog" title="Blog financiar" class="inline-flex">Blog</NuxtLink>
+                <NuxtLink to="/blog" title="Blog financiar" class="inline-flex mt-3">Blog</NuxtLink>
                 <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex">Termeni și Condiții</NuxtLink>
                 <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Politica de Cookies</NuxtLink>
                 <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Politica de Confidențialitate</NuxtLink>
@@ -73,8 +73,8 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-12">
-            <p class="mb-6 text-2xl text-center">Extras din lege</p>
+        <div class="container mt-12 text-gray-400">
+            <p class="mb-6 text-2xl text-center text-gray-200">Extras din lege</p>
             <p class="mb-4 pl-6">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
                 limite cu privire la:</p>
             <ul class="list-outside list-disc ml-6 space-y-1.5">
@@ -89,7 +89,7 @@
         </div>
         <div class="container mt-12">
             <p class="mb-6 text-2xl text-center">Dicționar financiar</p>
-            <ul class="list-outside list-disc ml-6 space-y-2.5">
+            <ul class="list-outside list-disc ml-6 space-y-2.5 text-gray-400">
                 <li><span class="font-medium">Credit - </span>este o operațiune financiară prin care o persoană fizică
                     sau juridică primește o sumă de bani de la o altă entitate, cu obligația de a o rambursa, de obicei
                     cu dobândă, într-o perioadă determinată.</li>
