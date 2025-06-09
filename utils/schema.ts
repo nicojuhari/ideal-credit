@@ -106,6 +106,7 @@ export const localBusinessChisinauSchema = {
     "name": "Ideal Credit Chișinău",
     "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
     "url": "https://idealcredit.md/",
+    "priceRange": "10000-300000 MDL",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "str. Miron Costin, nr.25, of.115",
@@ -148,6 +149,7 @@ export const localBusinessCauseniSchema = {
     "name": "Ideal Credit Căușeni",
     "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
     "url": "https://idealcredit.md/",
+    "priceRange": "10000-300000 MDL",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",

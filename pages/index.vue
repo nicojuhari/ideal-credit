@@ -6,6 +6,11 @@ import {
     howToSchema 
 } from '~/utils/schema'
 
+useHead({
+    title: 'Ideal Credit | Credite nebancare pentru afaceri și nevoi personale',
+    titleTemplate: '%pageTitle',
+})
+
 useSchemaOrg([
     financialServiceSchema,
     localBusinessChisinauSchema,

@@ -12,7 +12,7 @@ export default defineNuxtConfig({
                 { rel: 'apple-touch-icon', sizes:"180x180", href:"/apple-touch-icon.png" },
             ],
             meta: [
-                { name: 'description', content: 'Ideal Credit oferă credite avantajoase pentru persoane fizice și juridice din Moldova. Obține finanțare rapidă pentru nevoi personale sau afaceri. Aplică online!' },
+                { name: 'description', content: 'Ideal Credit oferă credite rapide pentru afaceri și nevoi personale în Moldova. Rapid, transparent, cu dobânzi fixe și fără comisioane. Aplică acum online!' },
                 { name: 'keywords', content: 'credit rapid, credite nebancare, credit online, împrumut rapid, credit nevoi personale, credit Chișinău Moldova, credite md, credit avantajos' },
                 { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"}
             ],
