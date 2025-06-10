@@ -25,6 +25,78 @@
             trackEvent('Contact');
         }
     }, { once: true })
+
+
+    const list = [
+        {
+            name: 'Credit',
+            desc: 'Operațiune prin care o persoană fizică sau juridică primește o sumă de bani cu obligația de rambursare, de obicei cu dobândă, într-un termen stabilit.'
+        },
+        {
+            name: 'Dobândă',
+            desc: 'Costul utilizării banilor împrumutați, exprimat procentual din suma principală.'
+        },
+        {
+            name: 'DAE (Dobânda Anuală Efectivă)',
+            desc: 'Indicator care reflectă costul total al creditului pentru consumator: dobânda anuală plus toate comisioanele și taxele aferente.'
+        },
+        {
+            name: 'Contract de Credit',
+            desc: 'Acord legal între creditor și debitor prin care se stabilesc suma împrumutată, dobânda, comisioanele, graficul de rambursare și alte condiții.'
+        },
+        {
+            name: 'Creditor',
+            desc: 'Entitate (instituție financiară sau persoană) care acordă împrumuturi în scop comercial sau profesional.'
+        },
+        {
+            name: 'Debitor',
+            desc: 'Persoană fizică sau juridică care are obligația de a rambursa creditul și costurile asociate.'
+        },
+        {
+            name: 'Consumator',
+            desc: 'Persoană fizică care utilizează produse sau servicii pentru necesități personale, nelegate de activitatea profesională.'
+        },
+        {
+            name: 'Bonitatea',
+            desc: 'Capacitatea consumatorului de a rambursa creditul la scadență, incluzând dobânda și costurile totale.'
+        },
+        {
+            name: 'Valoarea Totală a Creditului',
+            desc: 'Suma efectiv pusă la dispoziție de creditor conform contractului.'
+        },
+        {
+            name: 'Costul Total al Creditului',
+            desc: 'Suma pe care debitorul o plătește în total: principal + dobândă + comisioane + taxe.'
+        },
+        {
+            name: 'Garanție (gaj, ipotecă)',
+            desc: 'Bunuri sau drepturi puse în securitate de către debitor pentru garantarea rambursării creditului.'
+        },
+        {
+            name: 'Penalitate',
+            desc: 'Sumă suplimentară datorată pentru întârzierea plății ratelor sau nerespectarea clauzelor contractuale.'
+        },
+        {
+            name: 'Perioadă de grație',
+            desc: 'Interval în care o nu se achită una sau mai multe rate de credit și/sau dobândă. Se reflectă în graficul de rambursare al contractului de credit.'
+        },
+        {
+            name: 'Cesiune',
+            desc: 'Transferul drepturilor și obligațiilor rezultate din contractul de credit către o terță parte (cesionar).'
+        },
+        {
+            name: 'BIC (Biroul Istoriilor de Credit)',
+            desc: 'Instituție care colectează și stochează date despre istoricul de credit al persoanelor fizice sau juridice.'
+        }
+    ]
+
+
+
+    
+
+
+
+
 </script>
 <template>
     <footer class="bg-black-500/70 border-t border-brand-500/10 relative">
@@ -73,11 +145,11 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-12 text-gray-400">
-            <p class="mb-6 text-2xl text-center text-gray-200">Extras din lege</p>
+        <div class="container mt-12">
+            <p class="mb-6 text-2xl text-center">Extras din lege</p>
             <p class="mb-4 pl-6">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
                 limite cu privire la:</p>
-            <ul class="list-outside list-disc ml-6 space-y-1.5">
+            <ul class="list-outside list-disc ml-6 space-y-1.5 text-gray-400">
                 <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
                 <li>Toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere și orice alt tip
                     de plată), cu excepția dobânzii, să nu depășească 0,04% /zi din valoarea totală a creditului pentru
@@ -90,36 +162,8 @@
         <div class="container mt-12">
             <p class="mb-6 text-2xl text-center">Dicționar financiar</p>
             <ul class="list-outside list-disc ml-6 space-y-2.5 text-gray-400">
-                <li><span class="font-medium">Credit - </span>este o operațiune financiară prin care o persoană fizică
-                    sau juridică primește o sumă de bani de la o altă entitate, cu obligația de a o rambursa, de obicei
-                    cu dobândă, într-o perioadă determinată.</li>
-                <li><span class="font-medium">Dobânda - </span>este prețul plătit pentru folosirea banilor împrumutați,
-                    calculată ca un procentaj din suma principală.</li>
-                <li><span class="font-medium">Contract de Credit - </span> reprezintă un acord legal între un creditor
-                    (instituție financiară) și un debitor (persoana care împrumută) prin care creditorul pune la
-                    dispoziția debitorului o sumă de bani, iar debitorul se obligă să o ramburseze în rate, împreună cu
-                    dobânda și alte costuri stabilite, într-o anumită perioadă de timp.</li>
-                <li><span class="font-medium">Creditor - </span>persoană fizică sau juridică care acordă sau se angajează 
-                    să acorde credite sau împrumuturi fiind în exerciţiul activităţii sale comerciale sau profesionale.
-                </li>
-                <li><span class="font-medium">Debitor - </span>este o persoana fizică sau juridică care are o obligație
-                    financiară către o altă parte(creditor), și care trebuie să ramburseze o sumă de bani, o creanță sau
-                    o prestație.</li>
-                <li><span class="font-medium">Consumator - </span> persoană fizică care intenţionează să comande 
-                    ori să procure sau care comandă, procură ori foloseşte produse şi servicii pentru necesităţi nelegate 
-                    de activitatea de antreprenor sau cea profesională;</li>
-                <li><span class="font-medium">Bonitatea Consumatorului - </span> capacitatea consumatorului de a restitui, la scadenţă, creditul conform contractului de credit, inclusiv dobînda şi costurile aferente.
-                </li>
-                <li><span class="font-medium">Valoarea Totală a Creditului - </span> sumele totale puse la dispoziţie 
-                    în baza unui contract de credit.
-                </li>
-                <li><span class="font-medium">Costul Total al Creditului - </span> reprezintă suma totală platită de
-                    debitor pentru a împrumuta o sumă de bani, incluzând dobanda, comisioanele și alte taxe asociate.
-                </li>
-                <li><span class="font-medium">Penalitate - </span> este o sancțiune financiară aplicată debitorului care
-                    întârzie la plata ratelor lunare sau nu respectă alte clauze din contractul de credit.</li>
-                <li><span class="font-medium">Cesiune - </span>reprezintă transferul drepturilor și obligațiilor de
-                    împrumut către o altă entitate (cesionar).</li>
+                <li v-for="item in list" :key="item.name"><span class="font-bold">{{ item.name }} - </span>{{ item.desc }}</li>
+                
             </ul>
         </div>
         <div class="container mt-10">
