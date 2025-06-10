@@ -21,7 +21,7 @@ useSchemaOrg([
             <div class="container grid grid-cols-1 lg:grid-cols-12 gap-8">
                 <div class="flex flex-col lg:col-span-8 h-full justify-center text-center lg:text-left">
                     <UiRecenziiButton />
-                    <h1 class="font-medium text-5xl lg:text-7xl leading-none mt-10 mb-6">Credit pentru<br>nevoi personale</h1>
+                    <h1 class="font-medium text-5xl lg:text-7xl leading-none mt-10 mb-6">Credit pentru <br>nevoi personale</h1>
                     <h2 class="text-brand-500 text-xl">Credite nebancare rapide, transparente și fără bătăi de cap.</h2>
                 </div>
                 <div class="lg:col-span-4 gap-6 flex flex-col justify-end">
