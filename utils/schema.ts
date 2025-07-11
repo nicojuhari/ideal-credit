@@ -21,7 +21,7 @@ export const financialServiceSchema = {
     "offers": [
         {
             "@type": "LoanOrCredit",
-            "name": "Credit pentru dezvoltarea afacerii",
+            "name": "Credit pentru afaceri",
             "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, concepute pentru a susține dezvoltarea afacerilor în Republica Moldova.",
             "url": "https://idealcredit.md/#",
             "amount": {
@@ -103,13 +103,13 @@ export const financialServiceSchema = {
 export const localBusinessChisinauSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Ideal Credit Chișinău",
+    "name": "Ideal Credit",
     "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
     "url": "https://idealcredit.md/",
     "priceRange": "10000-300000 MDL",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "str. Miron Costin, nr.25, of.115",
+        "streetAddress": "Miron Costin, 25, of.115",
         "addressLocality": "Chișinău",
         "addressRegion": "MD",
         "postalCode": "MD-2068",
@@ -146,16 +146,16 @@ export const localBusinessChisinauSchema = {
 export const localBusinessCauseniSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Ideal Credit Căușeni",
+    "name": "Ideal Credit",
     "legalName": "Organizația de Creditare Nebancară \"Ideal Credit\" SRL",
     "url": "https://idealcredit.md/",
     "priceRange": "10000-300000 MDL",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "str. Mihai Eminescu nr. 17, of. 47",
+        "streetAddress": "Mihai Eminescu, 17, of. 47",
         "addressLocality": "Căușeni",
         "addressRegion": "Căușeni",
-        "postalCode": "MD-4301",
+        "postalCode": "MD-4304",
         "addressCountry": "MD"
     },
     "telephone": "+37379066566",
