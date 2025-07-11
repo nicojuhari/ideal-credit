@@ -8,7 +8,7 @@ import {
 
 useHead({
     title: 'Credite nebancare pentru afaceri și nevoi personale',
-    titleTemplate: '%pageTitle | Ideal Credit',
+    titleTemplate: '%pageTitle',
 })
 
 useSchemaOrg([
