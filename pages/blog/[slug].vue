@@ -44,7 +44,7 @@ useSchemaOrg([
 <template>
     <div class="py-4 md:py-8 blog-page">
         <div class="container sm-container" v-if="story">
-            <h1 class="text-2xl mb-4 font-bold">{{ story?.name }}</h1>
+            <h1 class="text-2xl md:text-3xl mb-4 font-bold">{{ story?.name }}</h1>
             <div>
                 <img :src="story.content?.image?.filename" :alt="story.content.image.alt | story.name"
                     class="w-full object-center object-cover border-0 rounded aspect-video" />

@@ -9,8 +9,6 @@ const { data } = await storyblokApi.get("cdn/stories", {
     version: "published"
 });
 
-console.log(data);
-
 stories.value = data.stories;
 
 useHead({
@@ -33,15 +31,15 @@ useSchemaOrg([
         <div class="container">
             <h1 class="title text-center my-10">Blog financiar</h1>
             <div class="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                <NuxtLink v-for="{ content, full_slug } in stories" :to="`/${full_slug}`" :key="content.id" :title="content.title"
+                <NuxtLink v-for="{ content, full_slug, name } in stories" :to="`/${full_slug}`" :key="content.id" :title="name"
                     class="group cursor-pointer flex-shrink-0 bg-black-100 rounded-xl overflow-hidden shadow-xl">
                     <div class="rounded-t-xl overflow-hidden">
-                            <img :src="content.image.filename" :alt="content.title" 
+                            <img :src="content.image.filename" :alt="name" 
                                 class="w-full object-center object-cover border-0 group-hover:scale-125 duration-300" />
                             </div>
                         <div class="p-6">
-                            <div class="font-bold text-lg line-clamp-2 duration-300 ">
-                                {{ content.title }}
+                            <div class="font-bold line-clamp-2 duration-300 ">
+                                {{ name }}
                             </div>
                         </div>
                 </NuxtLink>
