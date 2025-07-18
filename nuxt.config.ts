@@ -2,7 +2,7 @@ export default defineNuxtConfig({
     app: {
         head: { 
             htmlAttrs: {
-                lang: 'ro-MD'
+                lang: 'ro'
             },
             title: 'Credite nebancare pentru afaceri și nevoi personale',
             link: [
@@ -43,6 +43,7 @@ export default defineNuxtConfig({
         '/credit-pentru-nevoi-personale': { prerender: true },
         '/credit-pentru-afaceri': { prerender: true },
         '/credit-de-consum': { redirect: '/credit-pentru-nevoi-personale',  },
+        '/blog/scorul-de-credit-si-de-ce-conteaza': { redirect: { to: '/blog/istoria-de-credit-si-impactul-asupra-finantelor-tale', statusCode: 301 } },
     },
     site: {
         url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',
@@ -70,7 +71,8 @@ export default defineNuxtConfig({
         preset: 'vercel',
         routeRules: {
             '/credit-auto': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
-            '/credit-ipotecar': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } }
+            '/credit-ipotecar': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
+            '/blog/scorul-de-credit-si-de-ce-conteaza': { redirect: { to: '/blog/istoria-de-credit-si-impactul-asupra-finantelor-tale', statusCode: 301 } },
         }
     },
     vite: {

@@ -79,9 +79,9 @@
             <div class="card">
                 <h3 class="text-center title mb-8">Rapoarte</h3>
                 <div class="flex flex-col gap-6">
-                    <a href="/raport_audit_2024.pdf">1. Raport de Audit 2024</a>
-                    <a href="/raport_audit_2023.pdf">2. Raport de Audit 2023</a>
-                    <a href="/raport_audit_2022.pdf">2. Raport de Audit 2022</a>
+                    <a href="/raport-audit-2024.pdf" target="_blank">1. Raport de Audit 2024</a>
+                    <a href="/raport-audit-2023.pdf" target="_blank">2. Raport de Audit 2023</a>
+                    <a href="/raport-audit-2022.pdf" target="_blank">3. Raport de Audit 2022</a>
                 </div>
             </div>
         </div>
