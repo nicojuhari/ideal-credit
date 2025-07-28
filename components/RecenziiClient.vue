@@ -29,21 +29,22 @@ const allReviews = [...imageReviews, ...textReviews]
 </script>
 
 <template>
-    <div class="card">
-        <h3 class="card-title text-center">Ce spun clienții noștri?</h3>
-        <div class="flex flex-col gap-4 items-center">
-            <UCarousel v-slot="{ item }" :ui="{ item: 'basis-1/1 lg:basis-1/2' }" :items="allReviews" loop :autoplay="{ delay: 2600 }" class="w-full mx-auto">
+    <div>
+        <div class="flex items-center justify-center gap-1 mb-6">
+            <UIcon name="i-ph-star-fill" class="text-brand-500 text-lg shrink-0" v-for="i in 5" :key="i" />
+        </div>
+        <h3 class="title text-center">Ce spun clienții noștri?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div v-for="item in allReviews" :key="item" class="bg-white rounded-lg">
                 <!-- Image Review -->
                 <img v-if="typeof item === 'string'" :src="item" class="rounded-lg mx-auto" alt="Recenzie client despre Ideal Credit">
                 <!-- Text Review -->
-                <div v-else class="p-6 rounded-lg max-w-sm mx-auto bg-white text-black">
+                <div v-else class="p-6 max-w-sm mx-auto text-black">
                     <div class="font-semibold text-lg">{{ item.name }}</div>
-                    <div class="text-gray-800 mt-2 text-sm line-clamp-3">{{ item.text }}</div>
+                    <div class="text-gray-800 mt-2 text-sm line-cslamp-3">{{ item.text }}</div>
                 </div>
-            </UCarousel>
-             <div class="flex items-center justify-center gap-2">
-                <UIcon name="i-ph-star-fill" class="text-brand-500 text-2xl shrink-0" v-for="i in 5" :key="i" />
             </div>
+             
         </div>
     </div>
 </template>

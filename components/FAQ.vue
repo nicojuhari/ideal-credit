@@ -5,16 +5,8 @@ const list2 = [
     "answer": "Credite nebancare rapide pentru nevoi personale (consum) și credit pentru afaceri."
   },
   {
-    "question": "Cum pot aplica pentru un credit nebancar?",
-    "answer": "Completezi cererea online, prin telefon, Viber, WhatsApp sau vii la unul din oficiile noastre din Chișinău sau Căușeni."
-  },
-  {
     "question": "Care este suma maximă pe care o pot obține?",
     "answer": "Evaluăm individual: în funcție de venituri, cheltuieli, istoric de credit și garanții propuse."
-  },
-  {
-    "question": "Ce perioadă de rambursare pot alege?",
-    "answer": "Pe termen scurt (1-12 luni) sau mediu (12-36 luni), negociabil conform nevoilor și garanțiilor."
   },
   {
     "question": "Dobânda este fixă sau flotantă?",
@@ -25,28 +17,20 @@ const list2 = [
     "answer": "Nu. Toate costurile sunt afișate transparent înainte de semnarea contractului."
   },
   {
-    "question": "Pot achita anticipat creditul fără penalități?",
+    "question": "Pot plăti anticipat fără costuri suplimentare?",
     "answer": "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada utilizată."
   },
   {
     "question": "Pot obține credit doar cu buletinul, fără gaj?",
-    "answer": "Da, dacă ai venit stabil, istoric de credit bun și responsabilitate financiară."
+    "answer": "Da, dacă ai venit stabil, istoric de credit bun și ești responsabil financiar."
   },
   {
-    "question": "Pot refinanța creditele de la alte companii?",
-    "answer": "Da, evaluăm refinanțarea oricăror credite existente și îți oferim o soluție avantajoasă."
-  },
-  {
-    "question": "Pot lua un nou credit dacă am deja unul?",
-    "answer": "Da, atâta timp cât veniturile îți permit să achiți toate ratele lunare."
-  },
-  {
-    "question": "Cum urmăresc ratele lunare?",
-    "answer": "Primești grafic de rambursare, care este parte a contractului de credit."
+    "question": "Pot refinanța sau lua un nou credit dacă am deja unul?", 
+    "answer": "Da, refinanțăm credite existente în funcție de capacitatea ta de rambursare."
   },
   {
     "question": "Ce garanții pot oferi?",
-    "answer": "Garanții imobiliare (locuință, teren) sau garanții personale (fidejusiune) de la terți cu venituri stabile."
+    "answer": "Garanții imobiliare (locuință, teren) sau garanții personale (fidejusiune)."
   },
   {
     "question": "Ce se întâmplă dacă întârzii o rată?",
@@ -54,7 +38,7 @@ const list2 = [
   },
   {
     "question": "Pot restructura creditul dacă apar probleme?",
-    "answer": "Da, dar nu în toate cazurile. Este important să ne contactați din timp, pentru a găsi împreună soluții de evitare a penalizărilor."
+    "answer": "Da, contactează-ne din timp ca să găsim împreună cea mai bună soluție."
   }
 ]
 
@@ -73,8 +57,8 @@ const list2 = [
  ])
 </script>
 <template>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div v-for="item in list2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+        <div v-for="item in list2" class="card">
             <div class="font-bold mb-2">{{ item.question }}</div>
             <div class="text-gray-400">{{ item.answer }}</div>
         </div>

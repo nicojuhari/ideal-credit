@@ -1,34 +1,47 @@
 <script setup>
-    import { motion } from 'motion-v'
+    const props = defineProps({
+        type: {
+            type: String,
+            default: 'pf',
+        },
+    })
 
-    const listPF = [
-        'Vârsta de la 23 de ani',
-        'Sursă de venit stabilă',
-        'Buletin de identitate valabil',
-        'Responsabilitate financiară',
-    ]
-    const listPJ = [
-        'Activitate economică validă',
-        'Acte constitutive',
-    ]
+    const creditTypes = {
+        pf: {
+            title: 'Credit pentru nevoi personale',
+            link: 'credit-pentru-nevoi-personale', 
+            icon: 'i-ph-shopping-cart-duotone',
+            list: [
+                'Vârsta de la 23 de ani',
+                'Sursă de venit stabilă',
+                'Buletin de identitate valabil',
+                'Responsabilitate financiară',
+            ]
+        },
+        pj: {
+            title: 'Credit pentru afaceri',
+            link: 'credit-pentru-afaceri', 
+            icon: 'i-ph-chart-bar-duotone',
+            list: [
+                'Activitate economică validă',
+                'Actele de înființare',
+                'Evidența contabilă',
+                'Extras bancar - minim 3 luni',
+            ]
+        },
+    }
 </script>
 <template>
-    <motion.div class="card"
-    :initial="{ opacity: 0, y: 10 }"
-    :whileInView="{ opacity: 1, y: 0 }"
-    :in-view-options="{ margin: '0px 0px -200px 0px' }"
-    :transition="{ delay: 0.2, duration: 0.6, ease: 'easeInOut' }"
-    >
-        <h3 class="card-title text-center">Condițiile de creditare</h3>
-        <div class="space-y-6">
-            <div v-for="item in listPF" class="flex text-xl items-center gap-4">
-                <UIcon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-brand-500/50" />
+    <nuxt-link :to="creditTypes[type].link" class="card group">
+        <div class="flex items-center justify-center mb-8">
+            <UIcon :name="creditTypes[type].icon" class="w-16 h-16 text-green-400 text-center mx-auto group-hover:scale-105 transition-all duration-300" />
+        </div>
+        <h2 class="text-2xl font-semibold text-center mb-10">{{ creditTypes[type].title }}</h2>
+        <div class="space-y-4">
+            <div v-for="item in creditTypes[type].list" class="flex text-xl items-center gap-2">
+                <UIcon name="i-ph-dot-duotone" class="w-5 h-5 flex-shrink-0 text-gray-400" />
                 {{ item }}
             </div>
         </div>
-        <div class="inline-flex gap-4 mt-8 items-center">
-            <UIcon name="i-ph-info" class="w-6 h-6 shrink-0 text-green-600/50" />
-            <span class="text-gray-400">În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.</span>
-        </div>
-    </motion.div>
+    </nuxt-link>
 </template>

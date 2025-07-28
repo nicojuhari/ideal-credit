@@ -151,10 +151,6 @@
                     <div>0.04 %</div>
                 </div>
         </div>
-        <div class="mt-8 flex gap-4 items-center">
-            <UIcon name="i-ph-info" class="text-blue-600 w-6 h-6 shrink-0" />
-            <span class="text-gray-400">Consumatorul este responsabil pentru rambursarea creditului.</span>
-        </div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>
         </uiModal>
@@ -321,5 +317,5 @@ data semnării prezentei informații preContractuale.</div>
             </div>
         </div>
     </div>
-    
+    <UiInfo class="mt-6">Consumatorul este responsabil pentru rambursarea creditului.</UiInfo>
 </template>
