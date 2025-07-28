@@ -99,7 +99,7 @@
 
 </script>
 <template>
-    <footer class="bg-black-500/70 border-t border-brand-500/10 relative">
+    <footer class="bg-black-500 border-t border-brand-500/10 relative">
         <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-6 py-8 px-2 md:px-0">
             <div class="space-y-6">
                 <div class="flex items-center gap-3">

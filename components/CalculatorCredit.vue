@@ -27,7 +27,7 @@
         if(creditTermen.value < 6) creditTermen.value = 6
         if(creditTermen.value > 60) creditTermen.value = 60
         
-        if(creditSuma.value < 1000) creditSuma.value = 1000
+        if(creditSuma.value < 10000) creditSuma.value = 10000
         if(creditSuma.value > 300000) creditSuma.value = 300000
         
         graficCalculat.value = createGrafic({
@@ -58,7 +58,7 @@
 
         if(type === 'suma') {
             creditSuma.value = val
-            if(val < 1000) creditSuma.value = 1000
+            if(val < 10000) creditSuma.value = 10000
             if(val > 300000) creditSuma.value = 300000
         }
         if(type === 'termen') {
@@ -85,23 +85,23 @@
             <div>
                 <div class="mt-6">
                     <div class="flex gap-4 justify-between items-center mb-1">
-                        <div>Suma</div>
+                        <div>Suma (MDL)</div>
                         <label for="credit-amount-input">
                             <input id="credit-amount-input" type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
                         </label>
                     </div>
                     <label for="credit-amount-range">
-                    <input id="credit-amout-range" type="range" v-model="creditSuma" min="1000" max="300000" step="100"
+                    <input id="credit-amout-range" type="range" v-model="creditSuma" min="10000" max="300000" step="500"
                         class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
-                    <div class="flex gap-6 justify-between text-gray-400 text-sm">
-                        <div>1000 lei</div>
-                        <div>300 000 lei</div>
-                    </div>
+                    <!-- <div class="flex gap-6 justify-between text-gray-400 text-sm">
+                        <div>10 000</div>
+                        <div>300 000</div>
+                    </div> -->
                 </div>
                 <div class="mt-10">
                     <div class="flex gap-4 justify-between items-center mb-1">
-                        <div>Termen</div>
+                        <div>Termen (luni)</div>
                         <label for="credit-period-input">
                             <input id="credit-period-input" type="number" :value="creditTermen" @input="validateInput" @change="validateChange($event.target.value, 'termen')" class="input-calculator" />
                         </label>
@@ -110,16 +110,16 @@
                         <input id="credit-period-range" type="range" v-model="creditTermen" min="6" max="60" step="1"
                         class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
-                    <div class="flex gap-6 justify-between text-gray-400 text-sm">
-                        <div>6 luni</div>
-                        <div>60 luni</div>
-                    </div>
+                    <!-- <div class="flex gap-6 justify-between text-gray-400 text-sm">
+                        <div>6</div>
+                        <div>60</div>
+                    </div> -->
                 </div>
             </div>
-            <div class="flex flex-col">
-                <div class="grid place-content-center mt-2 text-orange-gray-dark">
+            <div class="">
+                <div class="grid place-content-center mt-2">
                     <div
-                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center border-white/20">
+                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center">
                         <div>Prima rată</div>
                         <div class="text-brand-500 title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
@@ -127,28 +127,13 @@
                     </div>
                 </div>
                 <div class="flex justify-center mt-8">
-                    <button class="btn btn-primary"
-                        @click="showModal = true">Vezi preContractul</button>
+                    <UButton color="neutral" variant="soft" size="xl"
+                        @click="showModal = true">Vezi preContractul</UButton>
                 </div>
             </div>
         </div>
         <div class="text-center mt-12 mb-8">Costurile creditului</div>
-        <div class="grid gap-3 md:gap-10 grid-cols-1 md:grid-cols-2">
-            <div>
-                <div class="flex gap-6 justify-between">
-                    <div>Comision de acordare</div>
-                    <div>0 MDL</div>
-                </div>
-                <div class="flex gap-6 justify-between mt-3">
-                    <div>Penalitate pe zi</div>
-                    <div>0.04 %</div>
-                </div>
-                <div class="flex gap-6 justify-between mt-3">
-                    <div>Dobânda lunară</div>
-                    <div>{{ tarife.dobinda[0] }} %</div>
-                </div>
-            </div>
-            <div>
+        <div class="">
                 <div class="flex gap-6 justify-between">
                     <div>Dobânda anuală medie</div>
                     <div>{{ tarife.dobinda[0] * 12 }} %</div>
@@ -161,10 +146,13 @@
                     <div>Costul total al creditului</div>
                     <div>{{ dobindaTotal + creditComision }} MDL</div>
                 </div>
-            </div>
+                <div class="flex gap-6 justify-between mt-3">
+                    <div>Penalitate pe zi</div>
+                    <div>0.04 %</div>
+                </div>
         </div>
         <div class="mt-8 flex gap-4 items-center">
-            <UIcon name="i-ph-info" class="text-green-600/50 w-6 h-6 shrink-0" />
+            <UIcon name="i-ph-info" class="text-blue-600 w-6 h-6 shrink-0" />
             <span class="text-gray-400">Consumatorul este responsabil pentru rambursarea creditului.</span>
         </div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">

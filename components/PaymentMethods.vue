@@ -3,7 +3,7 @@
 const list = [
     {
         title: 'Ideal Credit',
-        description: 'În unul din <a href="/contacte#adresa-oficiilor" class="underline text-green-600">oficiile companiei</a>',
+        description: 'În unul din <a href="/contacte#adresa-oficiilor" class="link">oficiile companiei</a>',
     },
     {
         title: 'Victoriabank',

@@ -1,0 +1,120 @@
+
+
+body {
+    @apply bg-black-600 text-white/90;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    @apply mx-auto max-w-5xl relative;
+    width: calc(100% - 2rem);
+}
+
+.sm-container {
+    @apply max-w-3xl;
+}
+
+.card {
+    @apply rounded-lg px-4 py-4 md:px-6 md:py-8 border bg-black-400 overflow-hidden;
+}
+
+.card-title,
+.title {
+    @apply text-2xl md:text-4xl mb-6 md:mb-8 font-semibold;
+}
+
+.link {
+    @apply text-green-500 underline;
+}
+
+/* Hero Background */
+.bg-squares {
+    background-color: #111111;
+    background-image:
+        linear-gradient(to right, #212121 1px, transparent 1px),
+        linear-gradient(to bottom, #212121 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: top center;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+/* Optional fade effect */
+.bg-squares::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, #111111 80%);
+    pointer-events: none;
+}
+
+.cs-blur {
+    isolation: isolate;
+    position: relative;
+    --cs-blur-top: auto;
+    --cs-blur-right: auto;
+    --cs-blur-bottom: auto;
+    --cs-blur-left: auto;
+}
+
+.cs-blur::after {
+    content: "";
+    position: absolute;
+    top: var(--cs-blur-top);
+    right: var(--cs-blur-right);
+    bottom: var(--cs-blur-bottom);
+    left: var(--cs-blur-left);
+    height: 20rem;
+    width: 20rem;
+    opacity: 0.075;
+    z-index: -1;
+    filter: blur(100px);
+    @apply bg-brand-500;
+    transform: translate(0, -50%);
+}
+
+.cs-blur.cs-blur--right::after {
+    --cs-blur-right: 0;
+}
+
+.cs-blur.cs-blur--top::after {
+    --cs-blur-top: 0;
+}
+
+.cs-blur.cs-blur--center::after {
+    --cs-blur-right: 50%;
+    --cs-blur-top: 50%;
+    transform: translate(50%, -50%);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 24px;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 24px;
+    cursor: ew-resize;
+    border-radius: 50%;
+    @apply bg-brand-500;
+}
+
+input[type="range"] {
+    @apply bg-black-300;
+}
+
+.input-calculator {
+    @apply rounded-lg bg-black-300 px-1 text-white border outline-none font-bold text-2xl w-[8.5rem] text-right h-10;
+}
+
+
+.input-calculator::-webkit-outer-spin-button,
+.input-calculator::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

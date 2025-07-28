@@ -1,7 +1,7 @@
 export default defineAppConfig({
     ui: {
         colors: {
-            primary: "blue",
+            primary: "brand",
             neutral: "gray",
             secondary: "green",
         },
@@ -15,7 +15,7 @@ export default defineAppConfig({
         },
         button: {
             slots: {
-                base: "!px-4 rounded-full",
+                base: "!px-4 rounded-full cursor-pointer",
             },
             defaultVariants: {
                 color: "primary",
