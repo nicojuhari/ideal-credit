@@ -1,4 +1,6 @@
 <script setup>
+    import { motion } from 'motion-v'
+
     const list = [
         {
             title: 'Completezi cererea',
@@ -18,7 +20,12 @@
     ]
 </script>
 <template>
-    <div class="card">
+    <motion.div class="card"
+    :initial="{ opacity: 0, y: 10 }"
+    :whileInView="{ opacity: 1, y: 0 }"
+    :in-view-options="{ margin: '0px 0px -200px 0px' }"
+    :transition="{ duration: 0.6, ease: 'easeInOut' }"
+    >
         <h3 class="card-title text-center">3 pași simpli</h3>
         <div class="space-y-6">
             <div v-for="item in list" class="flex items-start gap-4">
@@ -29,5 +36,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
 </template>

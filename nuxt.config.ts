@@ -23,7 +23,7 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: ['@nuxt/ui', '@formkit/nuxt', '@nuxtjs/seo', [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }]],
+    modules: ['@nuxt/ui', '@formkit/nuxt', '@nuxtjs/seo', [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }], 'motion-v/nuxt'],
     // css: ['@/assets/css/main.css'],
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',

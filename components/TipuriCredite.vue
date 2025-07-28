@@ -4,7 +4,7 @@ let credits = [
     { name: 'Credit pentru nevoi personale', link: 'credit-pentru-nevoi-personale', image: '/credit-pentru-nevoi-personale.webp' },
 ]
 
-let classes = 'flex flex-col md:flex-row items-center gap-8 hover:scale-105 transition-all duration-300 p-6 bg-black-400 rounded-lg'
+let classes = 'flex flex-col md:flex-row items-center gap-8 hover:scale-105 transition-all duration-300 p-6 bg-black-500 rounded-lg'
 
 </script>
 <template>
