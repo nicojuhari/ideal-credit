@@ -4,7 +4,7 @@
     })
 </script>
 <template>
-    <div class="card">
+    <div>
         <h3 class="card-title text-center">De ce să alegi<br class="lg:hidden"> Ideal Credit?</h3>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="flex flex-col items-center text-center">
