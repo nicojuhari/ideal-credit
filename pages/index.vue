@@ -19,19 +19,18 @@ useSchemaOrg([
 ])
 </script>
 <template>
-    <div class="relative">
+    <section class="relative">
         <div class="bg-squares -mt-[1px]"></div>
-        <div class="container py-24 md:py-32 text-center">
-            <h1 class="font-semibold text-6xl md:text-8xl my-10 lg:my-6">Credite Nebancare<span class="font-extralight text-gray-400 text-[35%] md:text-[35%] block mt-2"> pentru afaceri și nevoi personale</span></h1>
-            <p class="text-brand-500 text-xl mt-6 md:mt-8 font-medium">Rapid, Transparent și Avantajos</p>
+        <div class="container text-center my-24 md:my-32">
+            <h1 class="font-semibold text-6xl md:text-8xl">Credite Nebancare<span class="font-extralight text-gray-400 text-[35%] md:text-[35%] block mt-2"> pentru afaceri și nevoi personale</span></h1>
+            <!-- <p class="text-brand-500 text-xl mt-12 md:mt-16">Rapid, Transparent și Avantajos</p> -->
             <UiButtonsCTA class="mt-12 md:mt-16"/>
-            <!-- <UiButtonsCTA class="mt-16 md:mt-20"/> -->
             <div class="cs-blur cs-blur--center z-[-1]"></div>
         </div>
-        <div class="container">
+        <div class="container mt-12 md:mt-16">
             <CalculatorCredit/>
         </div>
-    </div>
+    </section>
    
     <section class="container">
         <UiBadgeForSection class="mb-6">Condițiile de creditare</UiBadgeForSection>

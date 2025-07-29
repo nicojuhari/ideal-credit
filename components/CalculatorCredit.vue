@@ -135,21 +135,21 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-12 mb-8">Costurile creditului</div>
-        <div class="">
+        <!-- <div class="text-center mt-12 mb-8 text-lg">Costurile creditului</div> -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 md:mt-12">
             <div class="flex gap-6 justify-between">
                 <div>Dobânda anuală medie</div>
                 <div>{{ tarife.dobinda[0] * 12 }} %</div>
             </div>
-            <div class="flex gap-6 justify-between mt-3">
+            <div class="flex gap-6 justify-between">
                 <div>DAE<span class="text-sm"> (Dobânda anuală efectivă)</span></div>
                 <div>{{ dae }} %</div>
             </div>
-            <div class="flex gap-6 justify-between mt-3">
+            <div class="flex gap-6 justify-between">
                 <div>Costul total al creditului</div>
                 <div>{{ dobindaTotal + creditComision }} MDL</div>
             </div>
-            <div class="flex gap-6 justify-between mt-3">
+            <div class="flex gap-6 justify-between">
                 <div>Penalitate pe zi</div>
                 <div>0.04 %</div>
             </div>
