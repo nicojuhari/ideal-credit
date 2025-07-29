@@ -123,3 +123,17 @@ input[type="range"] {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+.pre-contract-table td {
+    padding: 8px 6px;
+    border: 1px solid;
+    @apply border-black-300;
+}
+
+.pre-contract-table td:first-of-type {
+    width: 40%;
+}
+
+.pre-contract-table td.table-subheader {
+    @apply bg-brand-500/80 w-full;
+}
