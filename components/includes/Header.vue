@@ -1,9 +1,18 @@
 <script setup>
     import { ref } from 'vue'
     import { useRoute } from 'vue-router';
-    
+     
+    const { trackEvent } = useFacebookPixel()
     const route = useRoute();
     const showMenu = ref(false)
+
+     const clickContact = ref(false)
+
+    watch(clickContact, (val) => {
+        if(val) {
+            trackEvent('Contact');
+        }
+    }, { once: true })
 
     const toggleMenu = () => {
         showMenu.value = !showMenu.value
@@ -16,16 +25,19 @@
     })
 </script>
 <template>
-    <header class="bg-black-500/70 border-b border-brand-500/5 sticky top-0 backdrop-blur-lg z-10">
+    <header class="bg-black-500 border-b sticky top-0 backdrop-blur-lg z-10">
             <div class="flex justify-between items-center gap-4 h-14  container">
                 <NuxtLink to="/" title="Ideal Credit">
-                    <IconsLogo class="w-10" />
+                    <IconsLogo class="w-8" />
                 </NuxtLink>
                 <div>
                     <nav class="items-center gap-6 hidden md:flex">
                         <NuxtLink to="/despre-noi" title="Despre noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte" title="Contacte">Contacte</NuxtLink>
-                        <UiPhoneButton light />
+                        <NuxtLink to="/blog" title="Blog">Blog</NuxtLink>
+                        <UButton icon="i-ph-phone-light" to="tel:+37378805060" @click="clickContact = true" variant="outline">
+                            078 80 50 60
+                        </UButton>
                     </nav>
                     <div class="flex md:hidden">
                         <div @click="toggleMenu" class="p-2 bg-black-400 cursor-pointer rounded-full">

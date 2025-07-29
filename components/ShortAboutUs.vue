@@ -3,19 +3,37 @@
         return new Date().getFullYear() - 2010
     })
 </script>
+
 <template>
     <div>
-        <h3 class="card-title text-center">De ce să alegi<br class="lg:hidden"> Ideal Credit?</h3>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div class="flex flex-col items-center text-center">
-                <div class="text-brand-500 text-[216px] font-bold leading-none">{{ experience }}</div>
-                <p class="text-lg">ani de experiență<br class="hidden lg:block"> pe piața financiară din Republica Moldova.</p>
+        <h3 class="title text-center"> De ce să alegi Ideal Credit?</h3>
+            <div class="text-center">
+                <div class="text-brand-500 text-9xl xl:text-[216px] font-black leading-none tracking-tight">
+                    {{ experience }}
+                </div>
+                <p class="text-lg lg:text-xl text-gray-400 mt-2">
+                    ani de experiență<br class="hidden lg:block"> pe piața financiară nebancară din Republica Moldova
+                </p>
             </div>
-            <div class="text-lg space-y-4">
-                <p>Scopul nostru la Ideal Credit SRL este de a oferi soluții financiare accesibile și transparente pentru antreprenori și persoane fizice.</p>
-                <p>Am ajutat sute de clienți să-și atingă obiectivele personale și profesionale, cu milioane de lei în credite acordate.</p>
-                <p>Alege Ideal Credit pentru un proces simplu și fără surprize!</p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 md:mt-12">
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-2 text-green-400">Misiunea Noastră</h4>
+                    <p class="leading-relaxed">
+                        Să oferim soluții financiare accesibile și transparente pentru antreprenori și persoane fizice.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-2 text-green-400">Impactul Nostru</h4>
+                    <p class="leading-relaxed">
+                       Am ajutat sute de clienți să-și atingă obiectivele personale și profesionale.
+                    </p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-semibold mb-2 text-green-400">Process Simplu</h4>
+                    <p class="leading-relaxed">
+                       Alege Ideal Credit pentru un proces simplu, rapid, transparent și fără surprize!
+                    </p>
+                </div>
             </div>
-        </div>
     </div>
 </template>

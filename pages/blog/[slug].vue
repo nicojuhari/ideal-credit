@@ -53,9 +53,9 @@ useSchemaOrg([
                 <div class="richtext text-lg" v-html="htmlText">
                 </div>
             </div>
-            <div class="mt-6 space-y-2 border-t border-gray-600 pt-6">
+            <div class="mt-6 space-y-2 border-t pt-6">
                 <p>Vă mulțumim că ați citit articolul <span class="font-bold">"{{ story?.name }}"</span>.</p>
-                <p>Vedeți și <nuxt-link to="/blog" title="Blog financiar" class="text-green-600 underline">alte articole</nuxt-link> pentru mai multe informații.</p>
+                <p>Vedeți și <nuxt-link to="/blog" title="Blog financiar" class="link">alte articole</nuxt-link> pentru mai multe informații.</p>
             </div>
         </div>
     </div>
