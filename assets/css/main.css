@@ -3,7 +3,7 @@
 @import "@nuxt/ui";
 
 :root {
-    --ui-border: #333333;
+    --ui-border: #212121;
 }
 
 @theme static {

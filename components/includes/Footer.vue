@@ -99,53 +99,51 @@
 
 </script>
 <template>
-    <footer class="bg-black-500 border-t border-brand-500/10 relative">
-        <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-6 py-8 px-2 md:px-0">
-            <div class="space-y-6">
+    <footer class="bg-black-500 border-t relative py-8">
+        <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-6 px-2 md:px-0">
+            <div class="space-y-2.5 md:space-y-6">
                 <div class="flex items-center gap-3">
-                    <IconsLogo class="h-10 " />
+                    <IconsLogo class="w-8" />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="text-gray-400">Credite nebancare pentru afaceri și nevoi personale, destinate persoanleor fizice și juridice din Republica Moldova.</p>
-            </div>
-            <div>
-                <div class="h-10 text-xl flex items-center">Adresa oficiilor</div>
-                <div class="grid grid-cols-1 gap-8 mt-6">
-                    <div v-for="oficiu in oficii" :key="oficiu.address" class="space-y-1.5">
-                        <div class="mb-2 font-semibold text-xl">
-                            {{ oficiu.title }}
-                        </div>
-                        <div class="text-gray-400">{{ oficiu.address }}<br>{{ oficiu.addressNumbers }}</div>
-                        <div class="text-gray-400">Luni - Vineri: 08:30 - 16:30</div>
-                        <div v-if="oficiu.id == 2" class="text-sm italic text-gray-400">(este nevoie de programare prealabilă)</div>
-                        <div class="py-1"></div>
-                        <a :href="'tel:' + oficiu.mobile[0]" @click="clickContact = true" class="btn btn-primary btn-outline">
-                            <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0" />
-                            {{ oficiu.mobile[1] }}
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-col gap-4">
-                <div class="h-10 text-xl flex items-center">Linkuri</div>
-                <NuxtLink to="/blog" title="Blog financiar" class="inline-flex mt-3">Blog</NuxtLink>
-                <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex">Termeni și Condiții</NuxtLink>
-                <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Politica de Cookies</NuxtLink>
-                <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Politica de Confidențialitate</NuxtLink>
-                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere"
-                    class="text-green-600">Autoritatea de Supraveghere<br>și metodele de reclamații
-                </NuxtLink>
-                <div class="flex gap-6 items-center">
-                    <NuxtLink href="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" viewBox="0 0 256 256"><path fill="#fff" d="M128 80a48 48 0 1 0 48 48a48 48 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32.1 32.1 0 0 1-32 32Zm44-132H84a56 56 0 0 0-56 56v88a56 56 0 0 0 56 56h88a56 56 0 0 0 56-56V84a56 56 0 0 0-56-56Zm40 144a40 40 0 0 1-40 40H84a40 40 0 0 1-40-40V84a40 40 0 0 1 40-40h88a40 40 0 0 1 40 40Zm-20-96a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z"/></svg>
+                <p class="text-gray-400">Credite nebancare pentru afaceri și nevoi personale (credite de consum).</p>
+                <div class="flex gap-6 items-center justify-center md:justify-start">
+                    <NuxtLink to="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
+                        <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0" />
                     </NuxtLink>
-                    <NuxtLink href="https://www.facebook.com/idealcredit.md" title="Facebook" target="_blank" rel="nofollow">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 shrink-0" viewBox="0 0 256 256"><path fill="#fff" d="M232 128a104 104 0 1 0-104 104a104.1 104.1 0 0 0 104-104Zm-96 87.6V152h24a8 8 0 0 0 0-16h-24v-24a16 16 0 0 1 16-16h16a8 8 0 0 0 0-16h-16a32.1 32.1 0 0 0-32 32v24H96a8 8 0 0 0 0 16h24v63.6a88 88 0 1 1 16 0Z"/></svg>    
+                    <NuxtLink to="https://www.facebook.com/idealcredit.md" title="Facebook" target="_blank" rel="nofollow">
+                        <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0" />
+                    </NuxtLink>
+                    <NuxtLink to="https://www.linkedin.com/company/idealcredit/" title="Linkedin" target="_blank" rel="nofollow">
+                        <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0" />
                     </NuxtLink>
                 </div>
+            </div>
+            <div v-for="oficiu in oficii" :key="oficiu.address" class="space-y-2.5 md:space-y-6">
+                <div class="text-xl">
+                    {{ oficiu.title }}
+                </div>
+                <p class="text-gray-400">{{ oficiu.address }}, <br>{{ oficiu.addressNumbers }}</p>
+                <div class="text-gray-400">Luni - Vineri: 08:30 - 16:30</div>
+                
+                <UButton icon="i-ph-phone-light" :to="'tel:' + oficiu.mobile[0]" @click="clickContact = true" variant="outline">
+                    {{ oficiu.mobile[1] }}
+                </UButton>
             </div>
         </div>
-        <div class="container mt-12">
+        <div class="container py-6">
+           
+        </div>
+        <div class="container border-t py-6">
+            <div class="flex flex-col md:flex-row gap-4 ">
+                <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex">Termeni</NuxtLink>
+                <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Cookies</NuxtLink>
+                <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Confidențialitate</NuxtLink>
+                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere" class="link md:ml-auto">Autoritatea de Supraveghere</NuxtLink>
+            </div>
+             
+            </div>
+        <div class="container mt-10">
             <p class="mb-6 text-2xl text-center">Extras din lege</p>
             <p class="mb-4 pl-6">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
                 limite cu privire la:</p>
@@ -168,7 +166,7 @@
         </div>
         <div class="container mt-10">
             <div class="divider"></div>
-            <div class="text-center py-6 gap-1 flex-wrap">
+            <div class="text-center pt-6 gap-1 flex-wrap">
                 &copy; {{ new Date().getFullYear() }} Organizația de Creditare Nebancară <strong
                     class="font-medium">"Ideal
                     Credit"</strong> SRL

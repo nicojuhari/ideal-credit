@@ -78,12 +78,14 @@
     }
 </script>
 <template>
-    <div class="card relative">
-        <div id="calculator-de-credit" class="invisible absolute -z-10 -top-20 md:-top-24"></div>
-        <h3 class="card-title text-center">Calculator de credit</h3>
-        <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
-            <div>
-                <div class="mt-6">
+    <div class="relative">
+        <div class="card">
+            
+            <div id="calculator-de-credit" class="invisible absolute -z-10 -top-20 md:-top-24"></div>
+            <h3 class="card-title text-center">Calculator de credit</h3>
+            <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
+                <div>
+                    <div class="mt-6">
                     <div class="flex gap-4 justify-between items-center mb-1">
                         <div>Suma (MDL)</div>
                         <label for="credit-amount-input">
@@ -91,7 +93,7 @@
                         </label>
                     </div>
                     <label for="credit-amount-range">
-                    <input id="credit-amout-range" type="range" v-model="creditSuma" min="10000" max="300000" step="500"
+                        <input id="credit-amout-range" type="range" v-model="creditSuma" min="10000" max="300000" step="500"
                         class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
                     <!-- <div class="flex gap-6 justify-between text-gray-400 text-sm">
@@ -119,37 +121,38 @@
             <div class="">
                 <div class="grid place-content-center mt-2">
                     <div
-                        class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center">
-                        <div>Prima rată</div>
-                        <div class="text-brand-500 title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
+                    class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center">
+                    <div>Prima rată</div>
+                    <div class="text-brand-500 title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
                         <div>MDL</div>
                     </div>
                 </div>
-                <div class="flex justify-center mt-8">
+                <div class="mt-8 flex justify-center">
                     <UButton color="neutral" variant="soft" size="xl"
-                        @click="showModal = true">Vezi preContractul</UButton>
+                    @click="showModal = true">Vezi preContractul</UButton>
+                    <!-- <UiButtonsCTA class="mt-16 md:mt-20"/> -->
                 </div>
             </div>
         </div>
         <div class="text-center mt-12 mb-8">Costurile creditului</div>
         <div class="">
-                <div class="flex gap-6 justify-between">
-                    <div>Dobânda anuală medie</div>
-                    <div>{{ tarife.dobinda[0] * 12 }} %</div>
-                </div>
-                <div class="flex gap-6 justify-between mt-3">
-                    <div>DAE<span class="text-sm"> (Dobânda anuală efectivă)</span></div>
-                    <div>{{ dae }} %</div>
-                </div>
-                <div class="flex gap-6 justify-between mt-3">
-                    <div>Costul total al creditului</div>
-                    <div>{{ dobindaTotal + creditComision }} MDL</div>
-                </div>
-                <div class="flex gap-6 justify-between mt-3">
-                    <div>Penalitate pe zi</div>
-                    <div>0.04 %</div>
-                </div>
+            <div class="flex gap-6 justify-between">
+                <div>Dobânda anuală medie</div>
+                <div>{{ tarife.dobinda[0] * 12 }} %</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-3">
+                <div>DAE<span class="text-sm"> (Dobânda anuală efectivă)</span></div>
+                <div>{{ dae }} %</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-3">
+                <div>Costul total al creditului</div>
+                <div>{{ dobindaTotal + creditComision }} MDL</div>
+            </div>
+            <div class="flex gap-6 justify-between mt-3">
+                <div>Penalitate pe zi</div>
+                <div>0.04 %</div>
+            </div>
         </div>
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>
@@ -224,7 +227,7 @@
                         </tr> -->
                         <!-- <tr>
                             <td>
-                               <i class="text-sm">Dacă este cazul:</i><br>
+                                <i class="text-sm">Dacă este cazul:</i><br>
                                 Garanţii necesare<br>
                                 <i class="text-sm">Descrierea garanţiei pe care trebuie să o furnizaţi în raport cu contractul de credit</i>
                             </td>
@@ -272,50 +275,51 @@
                         </tr>
                         <tr>
                             <td colspan="2">În conformitate cu prevederile art. 15, alin. 7), lit. a) din Legea nr. 202 din 12.07.2013 privind contractele de credit
-pentru consumatori, orice alte plăți aferente creditului acordat (comisioane, taxe, penalități, dobînzii de întîrziere și
-orice alt tip de plată), cu excepția dobînzii, se vor încasa conform regulii ca acestea să nu depășească cumulativ
-0,04% din valoarea totală a creditului pe o zi de credit înmulțit la numărul de zile pentru care este contractat
-creditul.</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="table-subheader">5. Alte aspecte juridice importante</td>
-                        </tr>
-                        <tr>
-                            <td>Dreptul de revocare</td>
-                            <td>Clientul are dreptul la revocarea Contractului timp de 14
-                                zile de la data semnării lui cu, condiția că, creditul nu a
-                                fost eliberat din casierie. Organizația are dreptul la
-                                revocarea Contractului dacă clientul încalcă condițiile
-                                acestuia.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Rambursare anticipată</td>
-                            <td>Clientul are dreptul să ramburseze anticipat creditul.
-                                Pentru aceasta, Organizația nu percepe careva taxe
-                                neprecăzute în Contract.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Consultarea unei baze de date</td>
-                            <td>În cazul în care cererea de solicitare a creditului va fi
-                                respinsă, iar temei pentru respingere a constituit
-                                informația vizualizată într-o bază de date, Organizația va
-                                informa clientul referitor la baza de date accesată
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Dreptul la un proiect de Contract de credit</td>
-                            <td>Clientul are dreptul, la cerere, să obţină gratuit un exemplar al proiectului de Contract de credit.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="my-6">Îmi exprim acordul ca, Contractul de credit să fie încheiat în mai puțin de 15 zile calendaristice de la
-data semnării prezentei informații preContractuale.</div>
-               <div class="text-right mt-12">Semnătura: ________________</div>
-            </div>
+                                pentru consumatori, orice alte plăți aferente creditului acordat (comisioane, taxe, penalități, dobînzii de întîrziere și
+                                orice alt tip de plată), cu excepția dobînzii, se vor încasa conform regulii ca acestea să nu depășească cumulativ
+                                0,04% din valoarea totală a creditului pe o zi de credit înmulțit la numărul de zile pentru care este contractat
+                                creditul.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="table-subheader">5. Alte aspecte juridice importante</td>
+                            </tr>
+                            <tr>
+                                <td>Dreptul de revocare</td>
+                                <td>Clientul are dreptul la revocarea Contractului timp de 14
+                                    zile de la data semnării lui cu, condiția că, creditul nu a
+                                    fost eliberat din casierie. Organizația are dreptul la
+                                    revocarea Contractului dacă clientul încalcă condițiile
+                                    acestuia.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Rambursare anticipată</td>
+                                <td>Clientul are dreptul să ramburseze anticipat creditul.
+                                    Pentru aceasta, Organizația nu percepe careva taxe
+                                    neprecăzute în Contract.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Consultarea unei baze de date</td>
+                                <td>În cazul în care cererea de solicitare a creditului va fi
+                                    respinsă, iar temei pentru respingere a constituit
+                                    informația vizualizată într-o bază de date, Organizația va
+                                    informa clientul referitor la baza de date accesată
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dreptul la un proiect de Contract de credit</td>
+                                <td>Clientul are dreptul, la cerere, să obţină gratuit un exemplar al proiectului de Contract de credit.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="my-6">Îmi exprim acordul ca, Contractul de credit să fie încheiat în mai puțin de 15 zile calendaristice de la
+                        data semnării prezentei informații preContractuale.</div>
+                        <div class="text-right mt-12">Semnătura: ________________</div>
+                    </div>
+                </div>
         </div>
+        <UiInfo class="mt-6">Consumatorul este responsabil pentru rambursarea creditului.</UiInfo>
     </div>
-    <UiInfo class="mt-6">Consumatorul este responsabil pentru rambursarea creditului.</UiInfo>
 </template>
