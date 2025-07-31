@@ -1,29 +1,52 @@
-<script setup>
-    import { ref } from 'vue'
+<script setup lang="ts">
+
+    import type { FormError, FormSubmitEvent } from '@nuxt/ui'
+
     import { localBusinessChisinauSchema, localBusinessCauseniSchema } from '~/utils/schema'
     const { trackEvent } = useFacebookPixel()
 
     useHead({
-        title: 'Contactele companiei de creditare Ideal Credit din R. Moldova',
+        title: 'Contactele organizației de creditare nebancare Ideal Credit SRL, din Republica Moldova',
         titleTemplate: '%pageTitle',
         meta: [
-            { name: 'description', content: 'Contacte și adresa oficiilor organizației de creditare nebancare Ideal Credit SRL, ce activează cu success pe piața financiară a Republicii Moldova din 2010.' },
+            { name: 'description', content: 'Contactele și adresa oficiilor organizației de creditare nebancare Ideal Credit SRL, ce activează cu success pe piața financiară a Republicii Moldova din 2010.' },
             { name: 'keywords', content: 'ideal credit, credit rapid, credite Moldova, credite Chișinău, credit online, împrumuturi' }
         ],
     })
-
-    const formData = ref({})
+    const web3FormAccessKey = 'c8f3c3c1-46ab-46bf-a139-4c4bb6265d95'
+    const formData = ref({
+        nume: '',
+        email: '',
+        telefon: '',
+        mesaj: '',
+        access_key: web3FormAccessKey,
+        subject: '',
+        from_name: 'Website Contact Form'
+    })
     const formSend = ref(false)
     const loading = ref(false)
-    const web3FormAccessKey = 'c8f3c3c1-46ab-46bf-a139-4c4bb6265d95'
 
+    const validate = (state: any): FormError[] => {
+        const errors = []
+        if (state.email && !validateEmail(state.email)) errors.push({ name: 'email', message: 'Email-ul este invalid' })
+        if (!state.nume || state.nume.length < 3) errors.push({ name: 'nume', message: 'Numele trebuie să conțină cel puțin 3 caractere' })
+        if (state.telefon && !validatePhone(state.telefon)) errors.push({ name: 'telefon', message: 'Telefonul mobil trebuie să conțină 9 cifre' })
 
-    const submitForm = async () => {
+        //email or phone is required
+        if (!state.email || !state.telefon) errors.push({ name: 'email_phone', message: 'Este necesar să introduceți email-ul sau telefonul' })
+
+        if (!state.mesaj) errors.push({ name: 'mesaj', message: 'Mesajul este obligatoriu' })
+        if(state.mesaj.length < 10) errors.push({ name: 'mesaj', message: 'Mesajul trebuie să conțină cel puțin 10 caractere' })
+
+        return errors
+
+    }
+
+    async function submitForm(event: FormSubmitEvent<typeof formData>) {
         loading.value = true
         try {
-            formData.value.access_key = web3FormAccessKey;
+            
             formData.value.subject = formData.value.nume + ' a trimis un mesaj ...';
-            formData.value.from_name = 'Website Contact Form';
 
             let response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
@@ -38,7 +61,15 @@
 
             if (data.success) {
                 formSend.value = true;
-                formData.value = {}
+                formData.value = {
+                    nume: '',
+                    email: '',
+                    telefon: '',
+                    mesaj: '',
+                    access_key: web3FormAccessKey,
+                    subject: '',
+                    from_name: 'Ideal Credit Website Contact Form'
+                }
 
                 trackEvent('SubmitApplication');
 
@@ -63,76 +94,60 @@
 <template>
     <div class="container sm-container relative my-4 md:my-6">
         <div class="card">
-            <h1 class="page-title">Contacte</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-2xl">
-                <div class="flex gap-4 items-center">
-                    <UIcon name="i-ph-phone-call" class="w-8 h-8 shrink-0 text-brand-500/50"/>
+            <h1 class="title text-center">Contacte</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl">
+                <div class="flex gap-2 items-center">
+                    <UIcon name="i-ph-phone-call" class="w-8 h-8 shrink-0 text-blue-400"/>
                     <a href="tel:+37378805060" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
                 </div>
-                <div class="flex gap-4 items-center">
-                    <UIcon name="i-ph-envelope" class="w-8 h-8 shrink-0 text-brand-500/50"/>
+                <div class="flex gap-2 items-center">
+                    <UIcon name="i-ph-envelope" class="w-8 h-8 shrink-0 text-blue-400"/>
                     <a href="mailto:info@idealcredit.md" @click="trackEvent('Contact')">info@idealcredit.md</a>
                 </div>
             </div>
         </div>    
         <div class="card mt-4 md:mt-6 relative overflow-hidden">
-            <h2 class="card-title text-center">Scrie-ne un mesaj</h2>
+            <h2 class="card-title text-center">Scrie-ne direct</h2>
             <UiLoading v-if="loading" local/>
             <div v-if="formSend" class="grid place-content-center my-16 duration-700">
                 <UIcon name="i-ph-check" class="text-brand-500 h-32 w-32 mx-auto" />
                 <div class="text-2xl mt-4">Mulțumim pentru mesaj.<br>Vă contactăm în curând!</div>
             </div>
-            <FormKit v-else type="form" method="POST" :actions="false" @submit="submitForm" v-model="formData"
-                :validation-messages="{
-                        incomplete: 'Ne pare rău, careva cîmpuri sunt goale sau greșite',
-                    }">
-                <FormKit 
-                    type="text" 
-                    name="nume" 
-                    label="Nume" 
-                    validation="required|length:3,25"
-                    outer-class="mb-6"
-                    :validation-messages="{
-                        required: 'Numele este obligatoriu',
-                        length: 'Cel puțin 3 caractere, maximum 25'
-                    }"
-                />
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <FormKit 
-                        type="email" 
-                        name="email" 
-                        label="Email" 
-                        validation="email"
-                        :validation-messages="{
-                                email: 'Email-ul are format greșit'
-                            }"
-                    />
-                    <FormKit 
-                        type="tel" 
-                        name="telefon" 
-                        label="Telefon/Mobil" 
-                        validation="tel"
-                        :validation-messages="{
-                                tel: 'Telefonul are format greșit'
-                            }"
-                    />
+            <UForm v-else class="space-y-6 contact-form" @submit="submitForm" :state="formData" :validate="validate">
+                <UFormField label="Nume" name="nume">
+                    <UInput v-model="formData.nume" />
+                </UFormField>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <UFormField label="Email" name="email">
+                        <UInput v-model="formData.email" />
+                    </UFormField>
+                    <UFormField label="Mobil" name="telefon">
+                        <UInput v-model="formData.telefon" name="telefon" />
+                    </UFormField>
                 </div>
+                <UFormField name="email_phone">
 
-                <FormKit type="textarea" name="mesaj" label="Mesaj" outer-class="mb-6" input-class="border-white/20 border">
-                </FormKit>
+                </UFormField>
+                <UFormField label="Mesaj" name="mesaj">
+                    <UTextarea v-model="formData.mesaj" />
+                </UFormField>
                 <div class="flex justify-end">
-                        <button type="submit" class="btn btn-primary">
+                    <UButton type="submit" :loading="loading" :disabled="loading || formSend">
                         Trimite
-                    </button>
+                    </UButton>
                 </div>
-                
-            </FormKit>
+            </UForm>
         </div>
-        <LazyCallToAction class="mt-4 md:mt-6"/>
-        <div id="adresa-oficiilor" class="-translate-y-14"></div>
-        <div class="card mt-4 md:mt-6">
-            <h2 class="card-title text-center">Adresa oficiilor</h2>
-            <LazyListaOficiilor/>
-        </div>
+       
+        <section>
+            <div id="adresa-oficiilor" class="-translate-y-14"></div>
+            <div class="card">
+                <h2 class="card-title text-center">Adresa oficiilor</h2>
+                <LazyListaOficiilor/>
+            </div>
+        </section>
+        <section>
+            <LazyCallToAction/>
+        </section>
     </div>
 </template>

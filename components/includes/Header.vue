@@ -35,7 +35,7 @@
                         <NuxtLink to="/despre-noi" title="Despre noi">Despre noi</NuxtLink>
                         <NuxtLink to="/contacte" title="Contacte">Contacte</NuxtLink>
                         <NuxtLink to="/blog" title="Blog">Blog</NuxtLink>
-                        <UButton icon="i-ph-phone-light" to="tel:+37378805060" @click="clickContact = true" variant="outline">
+                        <UButton icon="i-ph-phone-light" class="ring-brand-500 text-brand-500" to="tel:+37378805060" @click="clickContact = true" variant="outline">
                             078 80 50 60
                         </UButton>
                     </nav>
@@ -48,9 +48,8 @@
                         <Transition name="menu-slide">
                             <div v-if="showMenu"
                                 class="absolute top-0 left-0 bg-black-600 mobile-dropdown shadow-md w-full flex flex-col z-50 h-[100dvh] overflow-y-auto">
-                                <div class="p-4 flex justify-end">
-                                    <UIcon name="i-ph-x-circle-thin" class="cursor-pointer h-11 w-11 text-white text-opacity-80"
-                                        @click="toggleMenu" />
+                                <div class="text-right py-2">
+                                   <UButton icon="i-ph-x" square variant="ghost" color="neutral" class="rounded-full !px-2 bg-black-400 text-white" @click="toggleMenu" />
                                 </div>
                                 <NuxtLink to="/despre-noi" title="Despre noi"
                                     class="flex w-full font-medium text-lg p-4 border-b border-gray-400/30">
@@ -60,8 +59,11 @@
                                     class="flex w-full font-medium text-lg p-4 border-b border-gray-400/30">
                                     Contacte
                                 </NuxtLink>
-
-                                <div class="mt-auto mb-5 space-y-4 text-center">
+                                <NuxtLink to="/blog" title="Blog"
+                                    class="flex w-full font-medium text-lg p-4 border-b border-gray-400/30">
+                                    Blog
+                                </NuxtLink>
+                                <div class="mt-auto mb-10 space-y-4 text-center">
                                     <div class="text-lg">Solicită un credit acum!</div>
                                     <UiButtonsCTA toMenu />
                                 </div>

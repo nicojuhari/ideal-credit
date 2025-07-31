@@ -7,14 +7,6 @@ const props = defineProps({
     }
 })
 const { trackEvent } = useFacebookPixel()
-const phoneNumber = '+37378805060';
-// const viberUrl = `viber://chat?number=${encodeURIComponent(phoneNumber)}`;
-
-// let cls = 'flex flex-col justify-center items-center gap-3 px-4 rounded-lg aspect-square w-full hover:scale-105 transition-all duration-300'
-
-const computedCls = computed(() => {
-    return !props.toHeroSection ?  'lg:grid-cols-4' : ''
-})
 
 const clickContact = ref(false)
 
@@ -27,7 +19,7 @@ watch(clickContact, (val) => {
 </script>
 <template>
     <!-- <div v-if="toHeroSection" class="text-gray-300 text-center text-lg">Solicită un credit acum!</div> -->
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-6 relative max-w-[320px] mx-auto">
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-6 relative max-w-[320px] md:max-w-none mx-auto">
         <UButton icon="i-ph-pencil-simple-line" variant="outline" to="/cerere-de-credit-online" title="Cerere de credit online" 
         class="ring-brand-500 text-brand-500 rounded-full px-4 hover:bg-brand-500/10 w-full sm:w-[180px] justify-center">
             <span class="truncate">Cerere online</span>

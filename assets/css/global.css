@@ -137,3 +137,22 @@ input[type=number] {
 .pre-contract-table td.table-subheader {
     @apply bg-brand-500/80 w-full;
 }
+
+form input, form textarea, .form-select {
+    @apply rounded ring-1 ring-white/5 text-white p-2 w-full bg-black-400 outline-none;
+}
+
+form textarea {
+    min-height: 6rem;
+    max-height: 12rem;
+}
+
+form label {
+    @apply text-white;
+}
+
+form *::placeholder {
+    opacity: 0.4;
+    color: rgb(156 163 175);
+    /* gray-400 */
+}
