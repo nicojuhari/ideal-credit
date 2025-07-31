@@ -109,13 +109,13 @@
                 <p class="text-gray-400">Credite nebancare pentru afaceri și nevoi personale (credite de consum).</p>
                 <div class="flex gap-6 items-center justify-center md:justify-start">
                     <NuxtLink to="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
-                        <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0" />
+                        <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0 text-blue-400" />
                     </NuxtLink>
                     <NuxtLink to="https://www.facebook.com/idealcredit.md" title="Facebook" target="_blank" rel="nofollow">
-                        <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0" />
+                        <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0 text-blue-400" />
                     </NuxtLink>
                     <NuxtLink to="https://www.linkedin.com/company/idealcredit/" title="Linkedin" target="_blank" rel="nofollow">
-                        <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0" />
+                        <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0 text-blue-400" />
                     </NuxtLink>
                 </div>
             </div>
