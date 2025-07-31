@@ -12,8 +12,6 @@
     "nuxt": "^3.17.6"
   },
   "dependencies": {
-    "@formkit/nuxt": "^1.6.9",
-    "@formkit/vue": "^1.6.9",
     "@nuxt/ui": "^3.2.0",
     "@storyblok/nuxt": "^8.0.0",
     "@storyblok/richtext": "^3.5.0",

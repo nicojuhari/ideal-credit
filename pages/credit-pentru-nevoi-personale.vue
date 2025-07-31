@@ -17,11 +17,12 @@ useSchemaOrg([
 <template>
     <section class="relative">
         <div class="bg-squares -mt-[1px]"></div>
-        <div class="container mt-16 md:mt-24">
-            <h1 class="font-semibold text-center text-6xl md:text-8xl">Credit <span class="font-extralight text-brand-500 text-[34%] md:text-[40%] block mt-2">pentru nevoi personale</span></h1>
-            <UiRecenziiButton  class="my-14 md:my-16"/>
+        <div class="container mt-10 md:mt-14">
+            <UiRecenziiButton  class="mb-10 md:mb-14"/>
+            <h1 class="font-semibold text-center text-8xl md:text-[140px]">Credit <span class="font-extralight text-gray-400 text-[40%] block mt-2"> pentru nevoi personale</span></h1>
+            <UiButtonsCTA class="mt-12 md:mt-16"/>
             <div class="cs-blur cs-blur--center z-[-1]"></div>
-            <CalculatorCredit/>
+            <CalculatorCredit class="mt-12 md:mt-26"/>
         </div>
     </section>
     <section class="container">
