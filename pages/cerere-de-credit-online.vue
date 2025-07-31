@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { reset } from '@formkit/core'
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 
 const { trackEvent } = useFacebookPixel()
