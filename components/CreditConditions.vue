@@ -10,7 +10,7 @@
         pf: {
             title: 'Credit pentru nevoi personale',
             link: 'credit-pentru-nevoi-personale', 
-            icon: 'i-ph-shopping-cart-duotone',
+            icon: 'i-ph-shopping-cart-light',
             list: [
                 'Vârsta de la 23 de ani',
                 'Sursă de venit stabilă',
@@ -21,7 +21,7 @@
         pj: {
             title: 'Credit pentru afaceri',
             link: 'credit-pentru-afaceri', 
-            icon: 'i-ph-chart-bar-duotone',
+            icon: 'i-ph-chart-bar-light',
             list: [
                 'Activitate economică validă',
                 'Actele de înființare',
@@ -32,9 +32,9 @@
     }
 </script>
 <template>
-    <nuxt-link :to="creditTypes[type].link" class="card group">
+    <div class="card group">
         <div class="flex items-center justify-center mb-8">
-            <UIcon :name="creditTypes[type].icon" class="w-16 h-16 text-green-400 text-center mx-auto group-hover:scale-105 transition-all duration-300" />
+            <UIcon :name="creditTypes[type].icon" class="w-16 h-16 text-blue-500 text-center mx-auto group-hover:scale-105 transition-all duration-300" />
         </div>
         <h2 class="text-2xl font-semibold text-center mb-10">{{ creditTypes[type].title }}</h2>
         <div class="space-y-4">
@@ -43,5 +43,8 @@
                 {{ item }}
             </div>
         </div>
-    </nuxt-link>
+        <div class="mt-10 text-center">
+            <UButton :to="creditTypes[type].link" icon="i-ph-arrow-right-duotone" variant="outline" color="success" label="Mai multe detalii"></UButton>
+        </div>
+    </div>
 </template>

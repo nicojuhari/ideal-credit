@@ -38,9 +38,9 @@ section {
 .bg-squares {
     background-color: #111111;
     background-image:
-        linear-gradient(to right, #161616 1px, transparent 1px),
-        linear-gradient(to bottom, #161616 1px, transparent 1px);
-    background-size: 30px 30px;
+        linear-gradient(to right, #181818 1px, transparent 1px),
+        linear-gradient(to bottom, #181818 1px, transparent 1px);
+    background-size: 60px 60px;
     background-position: top center;
     position: absolute;
     inset: 0;

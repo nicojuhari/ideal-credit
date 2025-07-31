@@ -24,7 +24,7 @@
         <h2 class="card-title text-center">Cum primești creditul?</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <div v-for="(item, index) in list" :key="index" class="card group">
-                <div class="text-green-400 group-hover:scale-105 transition-all duration-300">
+                <div class="text-blue-500 group-hover:scale-105 transition-all duration-300">
                     <span class="font-bold text-8xl">{{ index + 1 }}</span>
                     <p class="text-2xl font-bold mt-2">{{ item.title }}</p>
                 </div>

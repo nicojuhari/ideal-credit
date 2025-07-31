@@ -82,9 +82,9 @@
         <div class="card">
             
             <div id="calculator-de-credit" class="invisible absolute -z-10 -top-20 md:-top-24"></div>
-            <!-- <h2 class="text-center card-title">Calculator de credit</h2> -->
+            <h2 class="text-center card-title py-2">Calculator de credit</h2>
             <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
-                <div class="space-y-4 md:space-y-6">
+                <div class="space-y-4 md:space-y-8">
                     <div>
                         <div class="flex gap-4 justify-between items-center mb-1">
                             <div>Suma (MDL)</div>
@@ -111,16 +111,16 @@
                 </div>
                 </div>
             <div class="space-y-1">
-                <div class="mx-auto w-38 h-38 grid place-content-center gap-2 border-6 rounded-full text-center">
+                <div class="mx-auto w-40 h-40 grid place-content-center gap-2 border-6 rounded-full text-center">
                     <div class="text-sm">Prima rată</div>
                     <div class="text-brand-500 text-3xl font-semibold">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata).toLocaleString() || 0}}</div>
                     <div class="text-sm">MDL</div>
                 </div>
                 
-                <div class="mt-2 flex justify-center">
-                    <button class="text-gray-400 hover:text-gray-500 underline text-sm cursor-pointer"
-                    @click="showModal = true">Vezi preContractul</button>
+                <div class="mt-4 flex justify-center">
+                    <UButton color="neutral" variant="subtle" size="sm"
+                    @click="showModal = true">Vezi preContractul</UButton>
                 </div>
             </div>
         </div>
@@ -141,9 +141,6 @@
                 <div>Penalitate pe zi</div>
                 <div>0.04 %</div>
             </div>
-        </div>
-        <div class="mt-8">
-            <UiButtonsCTA />
         </div>
         
         <!-- <div class="text-center mt-12 mb-8 text-lg">Costurile creditului</div> -->
