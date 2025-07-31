@@ -21,13 +21,12 @@ useSchemaOrg([
 <template>
     <section class="relative">
         <div class="bg-squares -mt-[1px]"></div>
-        <div class="container text-center my-24 md:my-32">
-            <h1 class="font-semibold text-6xl md:text-8xl">Credite Nebancare<span class="font-extralight text-gray-400 text-[35%] md:text-[35%] block mt-2"> pentru afaceri și nevoi personale</span></h1>
+        <div class="container mt-16 md:mt-24">
+            <h1 class="font-semibold text-center text-6xl md:text-8xl">Credite Nebancare<span class="font-extralight text-brand-500 text-[34%] md:text-[40%] block mt-2"> pentru afaceri și nevoi personale</span></h1>
+            <UiRecenziiButton  class="my-14 md:my-16"/>
             <!-- <p class="text-brand-500 text-xl mt-12 md:mt-16">Rapid, Transparent și Avantajos</p> -->
-            <UiButtonsCTA class="mt-12 md:mt-16"/>
+            <!-- <UiButtonsCTA class="mt-12 md:mt-16"/> -->
             <div class="cs-blur cs-blur--center z-[-1]"></div>
-        </div>
-        <div class="container mt-12 md:mt-16">
             <CalculatorCredit/>
         </div>
     </section>

@@ -82,26 +82,22 @@
         <div class="card">
             
             <div id="calculator-de-credit" class="invisible absolute -z-10 -top-20 md:-top-24"></div>
-            <h3 class="card-title text-center">Calculator de credit</h3>
+            <!-- <h2 class="text-center card-title">Calculator de credit</h2> -->
             <div class="grid gap-6 md:gap-10 grid-cols-1 md:grid-cols-2">
-                <div>
-                    <div class="mt-6">
-                    <div class="flex gap-4 justify-between items-center mb-1">
-                        <div>Suma (MDL)</div>
-                        <label for="credit-amount-input">
-                            <input id="credit-amount-input" type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
+                <div class="space-y-4 md:space-y-6">
+                    <div>
+                        <div class="flex gap-4 justify-between items-center mb-1">
+                            <div>Suma (MDL)</div>
+                            <label for="credit-amount-input">
+                                <input id="credit-amount-input" type="number" :value="creditSuma" @input="validateInput" @change="validateChange($event.target.value, 'suma')" class="input-calculator" />
+                            </label>
+                        </div>
+                        <label for="credit-amount-range">
+                            <input id="credit-amout-range" type="range" v-model="creditSuma" min="10000" max="300000" step="500"
+                            class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                         </label>
                     </div>
-                    <label for="credit-amount-range">
-                        <input id="credit-amout-range" type="range" v-model="creditSuma" min="10000" max="300000" step="500"
-                        class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
-                    </label>
-                    <!-- <div class="flex gap-6 justify-between text-gray-400 text-sm">
-                        <div>10 000</div>
-                        <div>300 000</div>
-                    </div> -->
-                </div>
-                <div class="mt-10">
+                    <div>
                     <div class="flex gap-4 justify-between items-center mb-1">
                         <div>Termen (luni)</div>
                         <label for="credit-period-input">
@@ -112,48 +108,45 @@
                         <input id="credit-period-range" type="range" v-model="creditTermen" min="6" max="60" step="1"
                         class="mb-4 w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer border-0 !p-0">
                     </label>
-                    <!-- <div class="flex gap-6 justify-between text-gray-400 text-sm">
-                        <div>6</div>
-                        <div>60</div>
-                    </div> -->
                 </div>
-            </div>
-            <div class="">
-                <div class="grid place-content-center mt-2">
-                    <div
-                    class="w-48 h-48 grid place-content-center gap-4 border-4 rounded-full text-center">
-                    <div>Prima rată</div>
-                    <div class="text-brand-500 title !my-0">{{ (graficCalculat?.[0]?.credit_rata +
-                            graficCalculat?.[0]?.dobinda_rata) || 0}}</div>
-                        <div>MDL</div>
-                    </div>
                 </div>
-                <div class="mt-8 flex justify-center">
-                    <UButton color="neutral" variant="soft" size="xl"
-                    @click="showModal = true">Vezi preContractul</UButton>
-                    <!-- <UiButtonsCTA class="mt-16 md:mt-20"/> -->
+            <div class="space-y-1">
+                <div class="mx-auto w-38 h-38 grid place-content-center gap-2 border-6 rounded-full text-center">
+                    <div class="text-sm">Prima rată</div>
+                    <div class="text-brand-500 text-3xl font-semibold">{{ (graficCalculat?.[0]?.credit_rata +
+                            graficCalculat?.[0]?.dobinda_rata).toLocaleString() || 0}}</div>
+                    <div class="text-sm">MDL</div>
+                </div>
+                
+                <div class="mt-2 flex justify-center">
+                    <button class="text-gray-400 hover:text-gray-500 underline text-sm cursor-pointer"
+                    @click="showModal = true">Vezi preContractul</button>
                 </div>
             </div>
         </div>
-        <!-- <div class="text-center mt-12 mb-8 text-lg">Costurile creditului</div> -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 md:mt-12">
-            <div class="flex gap-6 justify-between">
-                <div>Dobânda anuală medie</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 mt-8 text-sm">
+            <div class="flex gap-6 justify-between text-sm">
+                <div>Dobânda anuală</div>
                 <div>{{ tarife.dobinda[0] * 12 }} %</div>
             </div>
-            <div class="flex gap-6 justify-between">
-                <div>DAE<span class="text-sm"> (Dobânda anuală efectivă)</span></div>
+            <div class="flex gap-6 justify-between text-sm">
+                <div>DAE<span class="text-sm">(Dobânda anuală efectivă)</span></div>
                 <div>{{ dae }} %</div>
             </div>
-            <div class="flex gap-6 justify-between">
+            <div class="flex gap-6 justify-between text-sm">
                 <div>Costul total al creditului</div>
-                <div>{{ dobindaTotal + creditComision }} MDL</div>
+                <div>{{ (dobindaTotal + creditComision).toLocaleString() }} MDL</div>
             </div>
-            <div class="flex gap-6 justify-between">
+            <div class="flex gap-6 justify-between text-sm">
                 <div>Penalitate pe zi</div>
                 <div>0.04 %</div>
             </div>
         </div>
+        <div class="mt-8">
+            <UiButtonsCTA />
+        </div>
+        
+        <!-- <div class="text-center mt-12 mb-8 text-lg">Costurile creditului</div> -->
         <uiModal large v-if="showModal" @close="showModal = false" modalTitle="Informația preContractuală">
             <div v-html="preContractRef?.innerHTML"></div>
         </uiModal>
