@@ -155,6 +155,6 @@ form label {
 
 form *::placeholder {
     opacity: 0.4;
-    color: rgb(156 163 175);
+    color: rgb(174, 181, 192);
     /* gray-400 */
 }
