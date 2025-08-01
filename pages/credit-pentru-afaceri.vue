@@ -18,12 +18,12 @@ useSchemaOrg([
 <template>
     <section class="relative">
         <div class="bg-squares -mt-[1px]"></div>
-        <div class="container mt-10 md:mt-14">
-            <UiRecenziiButton  class="mb-10 md:mb-14"/>
+        <div class="container mt-8 md:mt-12">
+            <UiRecenziiButton  class="mb-12 md:mb-16"/>
             <h1 class="font-semibold text-center text-5xl md:text-[120px]">Credit pentru afaceri</h1>
             <UiButtonsCTA class="mt-12 md:mt-16"/>
             <div class="cs-blur cs-blur--center z-[-1]"></div>
-            <CalculatorCredit class="mt-12 md:mt-26"/>
+            <CalculatorCredit class="mt-12 md:mt-24"/>
         </div>
     </section>
     <section class="container">
