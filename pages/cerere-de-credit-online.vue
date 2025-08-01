@@ -130,11 +130,12 @@ onMounted(() => {
     <div class="container relative my-4 md:my-6">
         <div class="card">
             <h1 class="card-title text-center !mb-2">Cerere de credit online</h1>
-            <div class="text-center mb-8 text-xs text-green-500">ai nevoie doar de <span class="font-bold">2 minute</span>!</div>
+            <div class="text-center mb-8 text-blue-400">Gata în <span class="font-bold">2 minute</span>!</div>
             
             <UForm :state="formData" :validate="validate" @submit="submitForm" class="space-y-4 md:space-y-6">
+                <h3 class="mt-12 mb-6 text-green-400 text-center text-xl">Date despre credit</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <UFormField label="Suma creditului (lei)" name="suma">
+                    <UFormField label="Suma (lei)" name="suma">
                         <UInput type="number" step="100" max="300000" min="10000" v-model="formData.suma" />
                     </UFormField>
                     <UFormField label="Termen (luni)" name="termen">
@@ -144,7 +145,7 @@ onMounted(() => {
                         <USelect v-model="formData.scopul_creditului" :items="['Pentru nevoi personale', 'Pentru afaceri', 'Refinanțare', 'Procurare bun imobil', 'Altele']" class="w-full form-select" />
                     </UFormField>
                 </div>
-                <h3 class="mt-12 mb-4 font-bold text-green-400 text-center">Date personale</h3>
+                <h3 class="mt-12 mb-6 text-green-400 text-center text-xl">Date personale</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <UFormField label="Nume" name="nume">
                         <UInput type="text" v-model="formData.nume" />
@@ -152,24 +153,24 @@ onMounted(() => {
                     <UFormField label="Prenume" name="prenume">
                         <UInput type="text" v-model="formData.prenume" />
                     </UFormField>
-                    <UFormField label="Adresa de rezidență" name="adresa_domiciliu" help="Oraș/Sat, Strada, număr, bloc, ap.">
-                        <UInput type="text" v-model="formData.adresa_domiciliu" />
+                    <UFormField label="Adresa de locuire" name="adresa_domiciliu">
+                        <UInput type="text" v-model="formData.adresa_domiciliu" placeholder="Oraș/Sat, Strada, număr, bloc, ap." />
                     </UFormField>
-                    <UFormField label="Telefon (mobil)" name="telefon" >
+                    <UFormField label="Telefon (doar mobil)" name="telefon" >
                         <UInput type="tel" v-model="formData.telefon" />
                     </UFormField>
                 </div>
-                <h3 class="mt-12 mb-4 font-bold text-green-400 text-center">Date financiare</h3>
+                <h3 class="mt-12 mb-6 text-green-400 text-center text-xl">Date financiare</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <UFormField label="Venituri lunare (MDL)" name="venituri">
+                    <UFormField label="Venit lunar (lei)" name="venituri">
                         <UInput type="number" v-model="formData.venituri" />
                     </UFormField>
-                    <UFormField label="Datorii lunare (MDL)" name="datorii" help="Alte credite, dacă nu ai datorii pune 0">
-                        <UInput type="number" v-model="formData.datorii" />
+                    <UFormField label="Datorii lunare (lei)" name="datorii">
+                        <UInput type="number" v-model="formData.datorii" placeholder="Alte credite, dacă nu ai datorii pune 0" />
                     </UFormField>
                 </div>
-                 <UFormField label="Locul de muncă" name="locul_de_munca" help="Denumirea companiei, funcția, adresa, ...">
-                    <UInput type="text" v-model="formData.locul_de_munca" />
+                 <UFormField label="Locul de muncă" name="locul_de_munca">
+                    <UInput type="text" v-model="formData.locul_de_munca" placeholder="Denumirea companiei și funcția" />
                 </UFormField>
                 <UFormField label="Ce bunuri ai în proprietate?" name="bunuri">
                     <UCheckboxGroup v-model="formData.bunuri" :items="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Altele', 'Nu am nimic']" class="w-full py-3 p-4 bg-black-400 rounded" />
@@ -178,7 +179,7 @@ onMounted(() => {
                 <div class="bg-brand-500/10 py-3 p-4 rounded">
                     <div class="text-2xl font-bold mb-4 text-brand-500">Atenție!</div>
                     <ul class="list-disc list-inside">
-                        <li>Aceasta este o cerere de credit online preventivă.</li>
+                        <li>Aceasta este o cerere de credit online <strong class="underline text-brand-500">preventivă</strong>.</li>
                         <li>Declar pe propria răspundere exactitatea datelor prezentate mai sus.</li>
                         <li>În caz de necesitate Ideal Credit SRL va verifica informaţia oferită, utilizând toate
                             sursele accesibile, cum ar fi Biroul Istoriilor de Credit.</li>
@@ -201,7 +202,7 @@ onMounted(() => {
                     </UFormField>
                 </div>
                 <div class="flex justify-end">
-                    <UButton type="submit" :loading="loading" :disabled="loading">Trimite Cererea</UButton>
+                    <UButton type="submit" :loading="loading" :disabled="loading" color="success" label="Trimite cererea" icon="i-ph-arrow-right-duotone" />
                 </div>
             </UForm>
             
