@@ -21,7 +21,7 @@ const formData = ref({
     subject: '',
     from_name: 'Cerere de Credit Online'
 })
-const formSuccess = ref(true)
+const formSuccess = ref(false)
 const formError = ref(false)
 
 useHead({
