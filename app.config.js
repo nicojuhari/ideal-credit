@@ -7,7 +7,11 @@ export default defineAppConfig({
         },
         modal: {
             slots: {
+                overlay: "bg-black-950/50",
                 close: "cursor-pointer",
+                content: "!text-white bg-black-400",
+                title: "text-white font-bold",
+                close: "!text-white bg-transparent hover:bg-white/10",
             },
         },
         icons: {
@@ -15,7 +19,7 @@ export default defineAppConfig({
         },
         button: {
             slots: {
-                base: "!px-4 rounded-full cursor-pointer",
+                base: "rounded-full cursor-pointer",
             },
             defaultVariants: {
                 color: "primary",

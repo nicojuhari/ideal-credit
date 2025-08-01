@@ -1,5 +1,5 @@
 <script setup>
-import { businessCreditSchema, personalLoanSchema } from '~/utils/schema'
+import { businessCreditSchema, personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
 
 useHead({
     title: 'Credit pentru afaceri - rapid și transparent',
@@ -20,50 +20,52 @@ useSchemaOrg([
         <div class="bg-squares -mt-[1px]"></div>
         <div class="container mt-10 md:mt-14">
             <UiRecenziiButton  class="mb-10 md:mb-14"/>
-            <h1 class="font-semibold text-center text-8xl md:text-[160px]">Credit <span class="font-extralight text-gray-400 text-[40%] block mt-2"> pentru afaceri</span></h1>
+            <h1 class="font-semibold text-center text-5xl md:text-[120px]">Credit pentru afaceri</h1>
             <UiButtonsCTA class="mt-12 md:mt-16"/>
             <div class="cs-blur cs-blur--center z-[-1]"></div>
             <CalculatorCredit class="mt-12 md:mt-26"/>
         </div>
     </section>
+    <section class="container">
+        <UiBadgeForSection class="mb-6">Condițiile de creditare</UiBadgeForSection>
+        <h2 class="title text-center">Ce trebuie?</h2>
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div v-for="item in creditConditionsSchema.pj.list" class="flex text-xl items-center gap-2 card">
+                <UIcon name="i-ph-check-circle-bold" class="w-5 h-5 flex-shrink-0 text-blue-500" />
+                <span>{{ item }}</span>
+            </div>
+        </div>
+        <UiInfo class="mt-6">În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.</UiInfo>
+    </section>
      <section class="container">
         <LazyHowItWorks />
     </section>
     <section>
-        <div class="container text-lg">
+        <div class="container text-lg space-y-4">
             <h2 class="card-title text-center">Ce este un credit pentru afaceri?</h2>
-            <div>Un credit pentru afaceri este un împrumut financiar acordat către o companie sau un antreprenor pentru
-                a finanța diverse nevoi legate de activitatea economică.</div>
-            <p class="mt-6 mb-0">Scopul creditelor pentru afaceri:</p>
+            <div>Un credit pentru afaceri e un împrumut nebancar dedicat companiilor și antreprenorilor. Îți oferă capitalul necesar pentru orice etapă a afacerii.</div>
+            <h3 class="text-2xl font-bold pt-4">Scopuri principale</h3>
             <ul class="list-outside list-disc ml-6 mb-6">
-                <li><span class="font-bold">Startup-uri:</span> Finanțarea cheltuielilor inițiale pentru lansarea unei
-                    noi afaceri.</li>
-                <li><span class="font-bold">Dezvoltare:</span> Investiții în extinderea afacerii existente, modernizare,
-                    marketing, tehnologie sau angajarea de personal suplimentar.</li>
-                <li><span class="font-bold">Capital de lucru:</span> Acoperirea cheltuielilor curente ale afacerii
-                    (salarii, furnizori, utilități) în perioadele cu fluxul de numerar fluctuant.</li>
-                <li><span class="font-bold underline">
-                    <span>Refinanțarea datoriilor:</span>
-                    </span> Consolidarea și restructurarea datoriilor existente spre condiții mai avantajoase.</li>
+                <li><strong>Startup-uri:</strong> finanțează costurile de lansare (înregistrare, echipamente, stoc inițial).</li>
+                <li><strong>Dezvoltare:</strong> modernizare spațiu, achiziție tehnologie, marketing, angajări.</li>
+                <li><strong>Capital de lucru:</strong> acoperi salarii, furnizori și utilități în perioadele cu lichidități fluctuante.</li>
+                <li><strong>Refinanțarea:</strong> consolidezi creditele vechi într-o singură rată la costuri mai mici.</li>
             </ul>
-            <p class="mt-6 mb-0">Beneficiile creditelor pentru afaceri:</p>
+            <h3 class="text-2xl font-bold pt-4">Beneficii pentru afacerea ta</h3>
             <ul class="list-outside list-disc ml-6 mb-6">
-                <li><span class="font-bold">Accelerarea creșterii:</span> Posibilitatea de a investi în dezvoltarea
-                    afacerii fără a utiliza exclusiv fonduri proprii..</li>
-                <li><span class="font-bold">Îmbunătățirea fluxului de numerar:</span> Acoperirea cheltuielilor curente
-                    și gestionarea mai eficientă a capitalului de lucru.</li>
-                <li><span class="font-bold">Flexibilitate financiară:</span> Finanțarea unor proiecte sau nevoi
-                    neprevăzute care apar în desfășurarea activității.</li>
-                <li><span class="font-bold">Posibilitatea de a profita de oportunități:</span> Achiziționarea de
-                    echipamente noi, extinderea pe noi piețe etc.</li>
+                <li><strong>Creștere accelerată:</strong> investești rapid fără să golești conturile proprii.</li>
+                <li><strong>Flux de numerar stabil:</strong> eviți blocajele în operațiuni zilnice.</li>
+                <li><strong>Flexibilitate:</strong> adaptezi suma și termenii în funcție de proiect.</li>
+                <li><strong>Oportunități noi:</strong> intri pe piețe noi sau cumperi echipamente performante.</li>
             </ul>
-            <p>Un credit pentru afaceri poate fi un instrument valoros pentru dezvoltarea și succesul companiei tale,
-                însă decizia de a lua un împrumut trebuie luată responsabil, evaluând atent riscurile și beneficiile.
-            </p>
-            <p>Noi, oferim rate dobânzi avantajoase și perioade de rambursare flexibile, astfel încât să nu pui presiune
-                pe fluxul de numerar al companiei tale.</p>
-            <p>Contactează-ne acum pentru a afla mai multe despre cum te putem ajuta să îți duci afacerea la nivelul
-                următor.</p>
+            <h3 class="text-2xl font-bold pt-4">De ce să alegi Ideal Credit?</h3>
+            <ul class="list-outside list-disc ml-6 mb-6">
+                <li>Dobândă fixă, negociabilă la cerere</li>
+                <li>Aprobarea cererii în 24-48 ore</li>
+                <li>Documentație minimă: certificat de înregistrare, situație financiară simplificată</li>
+                <li>Fără comisioane ascunse</li>
+                <li>Consultanță gratuită la fiecare pas</li>
+            </ul>
         </div>
     </section>
 </template>

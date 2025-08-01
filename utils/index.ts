@@ -7,3 +7,8 @@ export const validateEmail = (email: string) => {
 export const validatePhone = (phone: string) => {
     return /^[0-9]{9}$/.test(phone)
 }
+
+//only numbers
+export const onlyNumbers = (value: string) => {
+    return /^[0-9]+$/.test(value)
+}

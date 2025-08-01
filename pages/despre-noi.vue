@@ -14,68 +14,58 @@
         localBusinessChisinauSchema,
         localBusinessCauseniSchema
     ])
+
+    const getFullYear = () => {
+        return new Date().getFullYear()
+    }
 </script>
 <template>
     <div class="my-4 md:my-6">
-        <div class="container sm-container">
+        <div class="container">
             <div class="card">
-                <h1 class="page-title">Despre noi</h1>
-                <div class="text-lg">
-                    <p>Partenerul dumneavoastră de încredere în finanțare din Moldova.</p>
-                    <p><strong>Ideal Credit SRL</strong> este o organizație de creditare nebancară de top, care activează cu succes pe piața financiară a Republicii Moldova din 2010. În cei peste 13 ani de activitate, ne-am consolidat poziția ca un partener de încredere pentru mii de clienți, oferind soluții financiare inovatoare și accesibile.</p>
-                    <h2 class="mb-2 text-2xl">Misiunea noastră</h2>
+                <h1 class="title text-center">Despre noi</h1>
+                <div class="text-lg space-y-4">
+                    <p>Partenerul tău de încredere în finanțare din Moldova.</p>
+                    <p>Ideal Credit SRL activează din 2010 pe piața nebancară. În cei peste <span class="text-green-400">{{ getFullYear() - 2010 }} ani de activitate</span>, am deservit sute de clienți - persoane fizice și întreprinderi.</p>
+                    <h2 class="pt-4 font-bold text-2xl">Misiunea noastră</h2>
                     <p>
-                        Ne dedicăm să sprijinim creșterea economică a Moldovei prin oferirea de acces la finanțare pentru persoane fizice și întreprinderi mici și mijlocii. Credem în potențialul fiecărui client și ne străduim să oferim servicii personalizate care să răspundă nevoilor lor unice.
+                       Sprijinim dezvoltarea economică a Moldovei prin soluții financiare rapide, transparente și adaptate fiecărui client.
                     </p>
-                    <h2 class="mb-2 text-2xl">Ce ne diferențiază</h2>
+                    <h2 class="pt-4 font-bold text-2xl">Ce ne diferențiază</h2>
                     <ul class="list-disc list-inside">
                         <li>
-                            <strong>Expertiză locală:</strong> Înțelegem în profunzime piața financiară din Moldova și provocările cu care se confruntă clienții noștri.
+                            <strong>Expertiză locală:</strong> Înțelegem realitățile financiare și nevoile antreprenorilor și ale familiilor din Republica Moldova.
                         </li>
                         <li>
-                            <strong>Produse diverse:</strong> Oferim o gamă largă de împrumuturi, de la credite de consum până la finanțări pentru afaceri și agricultură.
+                            <strong>Proces rapid:</strong> Cerere simplă, aprobare în 24-48 ore și contractare cu documente minime.
                         </li>
                         <li>
-                            <strong>Proces simplificat:</strong> Aplicare rapidă și aprobare accelerată, cu documentație minimă.
+                            <strong>Transparență completă:</strong> Fără comisioane ascunse. Toate costurile și dobânzile sunt comunicate din start.
                         </li>
                         <li>
-                            <strong>Transparență totală:</strong> Fără comisioane ascunse, cu toate costurile prezentate clar de la început.
-                        </li>
-                        <li>
-                            <strong>Consultanță profesională:</strong> Echipa noastră de experți vă ghidează în alegerea celei mai potrivite soluții financiare.
+                            <strong>Consultanță dedicată:</strong> Echipa noastră îți stă alături pas cu pas, de la analiză până la semnarea contractului.
                         </li>
                     </ul>
-                    <h2 class="mb-2 mt-6 text-2xl">Produsele noastre principale</h2>
+                    <h2 class="pt-4 font-bold text-2xl">Produsele noastre</h2>
                     <ul class="list-disc list-inside">
-                        <li><NuxtLink to="/credit-pentru-nevoi-personale" title="credit pentru nevoi personale" class="text-brand-500">Credite pentru nevoi personale</NuxtLink></li>
-                        <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri" class="text-brand-500">Împrumuturi pentru afaceri</NuxtLink></li>
-                        <li>Credite agricole</li>
-                        <li>Finanțare pentru echipamente și utilaje</li>
-                        <li>Credite pentru procurarea unui autoturism</li>
-                        <li>Credite pentru îmbunătățirea locuinței</li>
+                        <li><NuxtLink to="/credit-pentru-nevoi-personale" title="credit pentru nevoi personale" class="link">Credite pentru nevoi personale (credit de consum)</NuxtLink> - pentru achiziții de bunuri de uz casnic, mijloace de transport, pînă la salariu.</li>
+                        <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri" class="link">Credite pentru afaceri</NuxtLink> - pentru investiții în echipamente, mijloace circulante, modernizare sau dezvoltare.</li>
                     </ul>
-                    <h2 class="mt-6 mb-2 text-2xl">Angajamentul nostru față de clienți</h2>
-                    <p>La Ideal Credit, punem clientul în centrul tuturor activităților noastre. Ne străduim constant să îmbunătățim serviciile, 
-                        să simplificăm procesele și să oferim rate competitive. 
-                        Suntem mândri să fim un pilon de sprijin pentru dezvoltarea economică și socială a Moldovei.
-                    </p>
-                    <h2 class="mt-6 mb-2 text-2xl">Responsabilitate socială</h2>
-                    <p>
-                        Ne implicăm activ în comunitatea locală prin diverse programe de educație financiară și susținere a antreprenoriatului. Credem că o Moldovă prosperă se construiește prin efortul comun al tuturor actorilor economici.
-                    </p>
-                    <p>
-                        Alegeți Ideal Credit SRL pentru o experiență financiară transparentă, eficientă și adaptată nevoilor dumneavoastră. Suntem aici pentru a transforma visurile în realitate și pentru a sprijini creșterea afacerii dumneavoastră.
-                    </p>
-                    <p>
-                        Contactați-ne astăzi pentru a descoperi cum vă putem ajuta să vă atingeți obiectivele financiare!
-                    </p>
+                    <h2 class="pt-4 font-bold text-2xl">Angajamentul nostru</h2>
+                    <ul class="list-disc list-inside">
+                        <li>Serviciu prietenos și profesionist</li>
+                        <li>Rate avantajoase, fixe pe toată durata contractului</li>
+                        <li>Flexibilitate: negociem dobânda în funcție de profilul tău financiar</li>
+                    </ul>
+                    <p>Alege Ideal Credit SRL pentru o finanțare simplă, sigură și rapidă.</p>
+                    <LazyCallToAction class="mt-10">Solicită un credit<br> și începe-ți proiectul cu încredere!</LazyCallToAction>
                 </div>
             </div>
         </div>
-        <div class="container sm-container mt-4 md:mt-6">
+        <div class="container mt-4 md:mt-6">
             <RegulamenteList/>
         </div>
-        <div class="container sm-container mt-4 md:mt-6">
+        <div class="container mt-4 md:mt-6">
             <div class="card">
                 <h3 class="text-center title mb-8">Rapoarte</h3>
                 <div class="flex flex-col gap-6">
@@ -84,9 +74,6 @@
                     <a href="/raport-audit-2022.pdf" target="_blank">3. Raport de Audit 2022</a>
                 </div>
             </div>
-        </div>
-        <div class="container sm-container">
-            <LazyCallToAction/>
         </div>
     </div>
 </template>

@@ -302,4 +302,29 @@ export const personalLoanSchema = {
         "priceCurrency": "MDL",
         "description": "Comision de acordare: 0 MDL. Penalitate pe zi: 0.04% din valoarea totală a creditului pentru fiecare zi de întârziere. Comision pentru prelungirea Contractului: egal cu dobânda necesară a fi achitată pentru rata amânată."
     }
-} 
+}
+
+export const creditConditionsSchema = {
+    'pf': {
+        'title': 'Credit pentru nevoi personale',
+        'link': 'credit-pentru-nevoi-personale',
+        'icon': 'i-ph-shopping-cart-light',
+        'list': [
+            'Vârsta de la 23 de ani',
+            'Sursă de venit stabilă',
+            'Buletin de identitate valabil',
+            'Responsabilitate financiară',
+        ]
+    },
+    'pj': {
+        'title': 'Credit pentru afaceri',
+        'link': 'credit-pentru-afaceri',
+        'icon': 'i-ph-chart-bar-light',
+        'list': [
+            'Activitate economică validă',
+            'Actele de înființare',
+            'Evidența contabilă',
+            'Extras bancar - minim 3 luni',
+        ]
+    },
+}
