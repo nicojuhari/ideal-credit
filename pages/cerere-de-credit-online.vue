@@ -21,7 +21,7 @@ const formData = ref({
     subject: '',
     from_name: 'Cerere de Credit Online'
 })
-const formSuccess = ref(false)
+const formSuccess = ref(true)
 const formError = ref(false)
 
 useHead({
@@ -37,8 +37,35 @@ const loading = ref(false)
 const validate = (state: any): FormError[] => {
     const errors = []
     if (!state.suma) errors.push({ name: 'suma', message: 'Suma este obligatorie' })
+    if(!onlyNumbers(state.suma)) errors.push({ name: 'suma', message: 'Suma trebuie să conțină doar cifre' })
+    if(state.suma < 10000) errors.push({ name: 'suma', message: 'Suma minimă este 10.000 MDL' })
+    if(state.suma > 300000) errors.push({ name: 'suma', message: 'Suma maximă este 300.000 MDL' })
+
     if (!state.termen) errors.push({ name: 'termen', message: 'Termenul este obligatoriu' })
+    if(!onlyNumbers(state.termen)) errors.push({ name: 'termen', message: 'Termenul trebuie să conțină doar cifre' })
+    if(state.termen < 6) errors.push({ name: 'termen', message: 'Termenul minim este 6 luni' })
+    if(state.termen > 60) errors.push({ name: 'termen', message: 'Termenul maxim este 60 luni' })
+
     if (!state.scopul_creditului) errors.push({ name: 'scopul_creditului', message: 'Scopul creditului este obligatoriu' })
+
+    if (!state.nume || state.nume.length < 3) errors.push({ name: 'nume', message: 'Nume este obligatoriu' })
+    if (!state.prenume || state.prenume.length < 3) errors.push({ name: 'prenume', message: 'Prenume este obligatoriu' })
+    if (!state.adresa_domiciliu || state.adresa_domiciliu.length < 3) errors.push({ name: 'adresa_domiciliu', message: 'Adresa de rezidență este obligatorie' })
+    if (!state.telefon) errors.push({ name: 'telefon', message: 'Telefon este obligatoriu' })
+    if(!validatePhone(state.telefon)) errors.push({ name: 'telefon', message: 'Telefonul trebuie să conțină 9 cifre' })
+    
+
+    if(!onlyNumbers(state.venituri)) errors.push({ name: 'venituri', message: 'Venitul trebuie să conțină doar cifre' })
+    if(!onlyNumbers(state.datorii)) errors.push({ name: 'datorii', message: 'Datoriile trebuie să conțină doar cifre sau să fie 0' })
+    
+    if(state.locul_de_munca.length < 3) errors.push({ name: 'locul_de_munca', message: 'Locul de muncă trebuie să conțină cel puțin 3 caractere' })
+
+    if(state.bunuri.length === 0) errors.push({ name: 'bunuri', message: 'Bunurile în proprietate sunt obligatorii' })
+
+    if(!state.terms) errors.push({ name: 'terms', message: 'Acceptați termenii și condițiile' })
+    if(!state.garant) errors.push({ name: 'garant', message: 'Acest punct este obligatoriu.' })
+   
+
     return errors
 }
 
@@ -63,12 +90,25 @@ const submitForm = async (event: FormSubmitEvent<typeof formData>) => {
 
             setTimeout(() => {
                 // formSend.value = false;
-                reset('cerere-online-form', {})
+                formData.value = {
+                    suma: '',
+                    termen: '',
+                    scopul_creditului: '',
+                    nume: '',
+                    prenume: '',
+                    adresa_domiciliu: '',
+                    telefon: '',
+                    venituri: '',
+                    datorii: '',
+                    locul_de_munca: '',
+                    bunuri: [],
+                    terms: false,
+                    garant: false,
+                    subject: '',
+                    from_name: 'Cerere de Credit Online'
+                }
                 formSuccess.value = true
             }, 1200)
-        } else {
-            console.log(response)
-            formError.value = true
         }
     } catch (e) {
         console.error(e)
@@ -94,7 +134,7 @@ onMounted(() => {
             
             <UForm :state="formData" :validate="validate" @submit="submitForm" class="space-y-4 md:space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-                    <UFormField label="Suma creditului (MDL)" name="suma">
+                    <UFormField label="Suma creditului (lei)" name="suma">
                         <UInput type="number" step="100" max="300000" min="10000" v-model="formData.suma" />
                     </UFormField>
                     <UFormField label="Termen (luni)" name="termen">
@@ -115,7 +155,7 @@ onMounted(() => {
                     <UFormField label="Adresa de rezidență" name="adresa_domiciliu" help="Oraș/Sat, Strada, număr, bloc, ap.">
                         <UInput type="text" v-model="formData.adresa_domiciliu" />
                     </UFormField>
-                    <UFormField label="Mobil" name="telefon">
+                    <UFormField label="Telefon (mobil)" name="telefon" >
                         <UInput type="tel" v-model="formData.telefon" />
                     </UFormField>
                 </div>
@@ -131,11 +171,12 @@ onMounted(() => {
                  <UFormField label="Locul de muncă" name="locul_de_munca" help="Denumirea companiei, funcția, adresa, ...">
                     <UInput type="text" v-model="formData.locul_de_munca" />
                 </UFormField>
-                <UFormField label="Bunuri în proprietate" name="bunuri">
-                    <UCheckboxGroup v-model="formData.bunuri" :items="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Altele', 'Nu am nimic']" class="w-full p-2 bg-black-400 rounded" />
+                <UFormField label="Ce bunuri ai în proprietate?" name="bunuri">
+                    <UCheckboxGroup v-model="formData.bunuri" :items="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Altele', 'Nu am nimic']" class="w-full py-3 p-4 bg-black-400 rounded" />
                 </UFormField>
                 
-                <div class="bg-brand-400/10 py-3 p-4 rounded">
+                <div class="bg-brand-500/10 py-3 p-4 rounded">
+                    <div class="text-2xl font-bold mb-4 text-brand-500">Atenție!</div>
                     <ul class="list-disc list-inside">
                         <li>Aceasta este o cerere de credit online preventivă.</li>
                         <li>Declar pe propria răspundere exactitatea datelor prezentate mai sus.</li>
@@ -149,26 +190,40 @@ onMounted(() => {
                         <UCheckbox v-model="formData.terms" label="Accept declarațiile de mai sus" />
                     </UFormField>
                 </div>
-                <div class="bg-red-400/10 py-3 p-4 rounded">
+                <div class="bg-red-500/10 py-3 p-4 rounded">
+                    <div class="text-2xl font-bold mb-4 text-red-500">Important pentru clienții noi!</div>
                     <ul class="list-disc list-inside">
                         <li>Sunt gata să ofer unul sau mai mulți fidejusori (garant/поручитель).</li>
                         <li>Și să mă prezint cu ei în oficiul Ideal Credit pentru a semna contractul de credit (în caz de aprobare a creditului).</li>
                     </ul>
                     <UFormField name="garant" required class="mt-4 text-2xl">
-                        <UCheckbox v-model="formData.garant" label="Acest punct este obligatoriu pentru clienții noi."/>
+                        <UCheckbox v-model="formData.garant" label="Accept condițiile de mai sus."/>
                     </UFormField>
                 </div>
                 <div class="flex justify-end">
-                    <UButton type="submit" :loading="loading" :disabled="loading">Trimite</UButton>
+                    <UButton type="submit" :loading="loading" :disabled="loading">Trimite Cererea</UButton>
                 </div>
             </UForm>
             
             <UiLoading v-if="loading" local />
-            <UModal v-model:open="formSuccess" class="text-black-950" title="Cererea a fost trimisă cu succes!">
+            <UModal v-model:open="formSuccess" title="Cererea a fost trimisă cu succes!">
                 <template #body>
-                    <div class="my-6 space-y-4">
-                        <div>Veți primi un răspuns în maxim 2 ore în zilele lucrătoare.</div>
-                        <div>Vă mulțumim că ați ales Ideal Credit!</div>
+                    <div class="space-y-4 text-center">
+                        <div class="flex justify-center">
+                            <UIcon name="i-ph-check-circle" class="text-blue-500 text-9xl" />
+                        </div>
+                        <div class="text-lg">Veți primi un sunet în 2-3 ore<br><span class="text-sm text-green-400"> în zilele de luni până vineri</span></div>
+                        <div class="text-lg text-brand-500">Mulțumim pentru încredere!</div>
+                    </div>
+                </template>
+            </UModal>
+            <UModal v-model:open="formError" class="text-black-950" title="Eroare">
+                <template #body>
+                    <div class="space-y-4">
+                        <div class="flex justify-center">
+                            <UIcon name="i-ph-warning" class="text-red-500 text-9xl" />
+                        </div>
+                        <div>Vă rugăm să verificați datele introduse și să încercați din nou.</div>
                     </div>
                 </template>
             </UModal>
