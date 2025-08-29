@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
+import { UiBadgeForSection } from '#components'
 
 const { trackEvent } = useFacebookPixel()
 
@@ -62,7 +63,7 @@ const validate = (state: any): FormError[] => {
 
     if(state.bunuri.length === 0) errors.push({ name: 'bunuri', message: 'Bunurile în proprietate sunt obligatorii' })
 
-    if(!state.terms) errors.push({ name: 'terms', message: 'Acceptați termenii și condițiile' })
+    if(!state.terms) errors.push({ name: 'terms', message: 'Acceptați condițiile.' })
     if(!state.garant) errors.push({ name: 'garant', message: 'Acest punct este obligatoriu.' })
    
 
@@ -130,10 +131,11 @@ onMounted(() => {
     <div class="container relative my-4 md:my-6">
         <div class="card">
             <h1 class="card-title text-center !mb-2">Cerere de credit online</h1>
-            <div class="text-center mb-8 text-blue-400">Gata în <span class="font-bold">2 minute</span>!</div>
-            
+            <UiBadgeForSection class="mt-4">
+                Ai nevoie doar de 2 minute!
+            </UiBadgeForSection>
             <UForm :state="formData" :validate="validate" @submit="submitForm" class="space-y-4 md:space-y-6">
-                <h3 class="mt-12 mb-6 text-green-400 text-center text-xl">Date despre credit</h3>
+                <h3 class="mt-12 mb-6 text-green-400 text-center font-bold">Date despre credit</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <UFormField label="Suma (lei)" name="suma">
                         <UInput type="number" step="100" max="300000" min="10000" v-model="formData.suma" />
@@ -142,10 +144,10 @@ onMounted(() => {
                         <UInput type="number" step="1" min="6" max="60" v-model="formData.termen" />
                     </UFormField>
                     <UFormField label="Scopul creditului" name="scopul_creditului">
-                        <USelect v-model="formData.scopul_creditului" :items="['Pentru nevoi personale', 'Pentru afaceri', 'Refinanțare', 'Procurare bun imobil', 'Altele']" class="w-full form-select" />
+                        <USelect v-model="formData.scopul_creditului" placeholder="Selectează scopul creditului" :items="['Pentru nevoi personale', 'Pentru afaceri', 'Refinanțare', 'Procurare bun imobil', 'Altele']" class="w-full form-select" />
                     </UFormField>
                 </div>
-                <h3 class="mt-12 mb-6 text-green-400 text-center text-xl">Date personale</h3>
+                <h3 class="mt-12 mb-6 text-green-400 text-center font-bold">Date personale</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <UFormField label="Nume" name="nume">
                         <UInput type="text" v-model="formData.nume" />
@@ -160,7 +162,7 @@ onMounted(() => {
                         <UInput type="tel" v-model="formData.telefon" />
                     </UFormField>
                 </div>
-                <h3 class="mt-12 mb-6 text-green-400 text-center text-xl">Date financiare</h3>
+                <h3 class="mt-12 mb-6 text-green-400 text-center font-bold">Date financiare</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <UFormField label="Venit lunar (lei)" name="venituri">
                         <UInput type="number" v-model="formData.venituri" />
@@ -176,32 +178,35 @@ onMounted(() => {
                     <UCheckboxGroup v-model="formData.bunuri" :items="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Altele', 'Nu am nimic']" class="w-full py-3 p-4 bg-black-400 rounded" />
                 </UFormField>
                 
-                <div class="bg-brand-500/10 py-3 p-4 rounded">
-                    <div class="text-2xl font-bold mb-4 text-brand-500">Atenție!</div>
-                    <ul class="list-disc list-inside">
-                        <li>Aceasta este o cerere de credit online <strong class="underline text-brand-500">preventivă</strong>.</li>
-                        <li>Declar pe propria răspundere exactitatea datelor prezentate mai sus.</li>
-                        <li>În caz de necesitate Ideal Credit SRL va verifica informaţia oferită, utilizând toate
-                            sursele accesibile, cum ar fi Biroul Istoriilor de Credit.</li>
+                <div class="mt-8">
+                    <!-- <div class="text-2xl font-bold mb-4 text-brand-500">Atenție!</div> -->
+                    <ul class="list-disc list-inside space-y-1 text-primary">
+                        <li>Aceasta este o cerere de credit online <span class="underline">preventivă</span>.</li>
+                
+                        <!-- <li>În caz de necesitate Ideal Credit SRL va verifica informaţia oferită, utilizând toate
+                            sursele accesibile, cum ar fi Biroul Istoriilor de Credit.</li> -->
                         <li>În cazul refuzului de acordare a creditului, Ideal Credit SRL nu este obligată să
                             argumenteze motivul acelui refuz.</li>
-                        <li>Sunt de acord cu utilizarea <NuxtLink to="/cookies"  title="Politica de Cookies" class="underline">cookie-urilor</NuxtLink>, cu <NuxtLink to="/terms" title="Termeni și condiții" class="underline">termenii și condițiile</NuxtLink>, precum și cu <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="underline">politica de confidențialitate</NuxtLink>.</li>
+                        <!-- <li>Sunt de acord cu utilizarea <NuxtLink to="/cookies"  title="Politica de Cookies" class="underline">cookie-urilor</NuxtLink>, cu <NuxtLink to="/terms" title="Termeni și condiții" class="underline">termenii și condițiile</NuxtLink>, precum și cu <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="underline">politica de confidențialitate</NuxtLink>.</li> -->
                     </ul>
                     <UFormField name="terms" required class="mt-4">
-                        <UCheckbox v-model="formData.terms" label="Accept declarațiile de mai sus" />
+                        <UCheckbox v-model="formData.terms" color="success" label="Accept condițiile de mai sus.">
+                            
+                        </UCheckbox>
+                        
                     </UFormField>
                 </div>
-                <div class="bg-red-500/10 py-3 p-4 rounded">
-                    <div class="text-2xl font-bold mb-4 text-red-500">Important pentru clienții noi!</div>
-                    <ul class="list-disc list-inside">
+                <div class="mt-8">
+                    <!-- <div class="text-2xl font-bold mb-4 text-red-500">Important!</div> -->
+                    <ul class="list-disc list-inside space-y-1 text-error">
                         <li>Sunt gata să ofer unul sau mai mulți fidejusori (garant/поручитель).</li>
-                        <li>Și să mă prezint cu ei în oficiul Ideal Credit pentru a semna contractul de credit (în caz de aprobare a creditului).</li>
+                        <li>În caz de aprobare, voi veni (împreună cu fidejusorii) în oficiul companiei, pentru a semna contractul de credit.</li>
                     </ul>
-                    <UFormField name="garant" required class="mt-4 text-2xl">
-                        <UCheckbox v-model="formData.garant" label="Accept condițiile de mai sus."/>
+                    <UFormField name="garant" required class="mt-4">
+                        <UCheckbox v-model="formData.garant" color="success" label="Accept declarațiile de mai sus." />
                     </UFormField>
                 </div>
-                <div class="flex justify-end">
+                <div class="flex justify-end mt-8">
                     <UButton type="submit" :loading="loading" :disabled="loading" color="success" label="Trimite cererea" icon="i-ph-arrow-right-duotone" />
                 </div>
             </UForm>

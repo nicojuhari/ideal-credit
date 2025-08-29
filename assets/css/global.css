@@ -141,7 +141,11 @@ input[type=number] {
 }
 
 form input, form textarea, .form-select {
-    @apply rounded ring-1 ring-white/5 text-white p-2 w-full bg-black-400 outline-none;
+    @apply rounded ring-1 ring-white/5 text-white p-2 w-full bg-black-400 outline-none text-lg;
+}
+
+.form-select, form input:not([type="checkbox"]) {
+    @apply h-10;
 }
 
 form textarea {

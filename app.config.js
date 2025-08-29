@@ -12,7 +12,7 @@ export default defineAppConfig({
                 content: "!text-white bg-black-400",
                 title: "text-white font-bold",
                 close: "!text-white bg-transparent hover:bg-white/10",
-            },
+            }
         },
         icons: {
             close: "i-ph-x-bold",
@@ -30,12 +30,12 @@ export default defineAppConfig({
         input: {
             slots: {
                 root: "w-full",
-            },
+            }
         },
         textarea: {
             slots: {
                 root: "w-full",
-            },
+            }
         },
     },
 });
