@@ -175,12 +175,12 @@ onMounted(() => {
                     <UInput type="text" v-model="formData.locul_de_munca" placeholder="Denumirea companiei și funcția" />
                 </UFormField>
                 <UFormField label="Ce bunuri ai în proprietate?" name="bunuri">
-                    <UCheckboxGroup v-model="formData.bunuri" :items="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Altele', 'Nu am nimic']" class="w-full py-3 p-4 bg-black-400 rounded" />
+                    <UCheckboxGroup color="success" v-model="formData.bunuri" :items="['Autoturism', 'Casă', 'Apartament', 'Terenuri', 'Altele', 'Nu am nimic']" class="w-full py-3 p-4 bg-black-400 rounded" />
                 </UFormField>
                 
-                <div class="mt-8">
+                <div class="bg-brand-500/10 p-4 rounded">
                     <!-- <div class="text-2xl font-bold mb-4 text-brand-500">Atenție!</div> -->
-                    <ul class="list-disc list-inside space-y-1 text-primary">
+                    <ul class="list-disc list-inside space-y-1 text-brand-500">
                         <li>Aceasta este o cerere de credit online <span class="underline">preventivă</span>.</li>
                 
                         <!-- <li>În caz de necesitate Ideal Credit SRL va verifica informaţia oferită, utilizând toate
@@ -196,9 +196,9 @@ onMounted(() => {
                         
                     </UFormField>
                 </div>
-                <div class="mt-8">
+                <div class="bg-blue-400/10 p-4 rounded">
                     <!-- <div class="text-2xl font-bold mb-4 text-red-500">Important!</div> -->
-                    <ul class="list-disc list-inside space-y-1 text-error">
+                    <ul class="list-disc list-inside space-y-1 text-blue-400">
                         <li>Sunt gata să ofer unul sau mai mulți fidejusori (garant/поручитель).</li>
                         <li>În caz de aprobare, voi veni (împreună cu fidejusorii) în oficiul companiei, pentru a semna contractul de credit.</li>
                     </ul>
