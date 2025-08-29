@@ -6,10 +6,10 @@
     const { trackEvent } = useFacebookPixel()
 
     useHead({
-        title: 'Contactele organizației de creditare nebancare Ideal Credit SRL, din Republica Moldova',
+        title: 'Contactele companiei creditare Ideal Credit SRL din Republica Moldova',
         titleTemplate: '%pageTitle',
         meta: [
-            { name: 'description', content: 'Contactele și adresa oficiilor organizației de creditare nebancare Ideal Credit SRL, ce activează cu success pe piața financiară a Republicii Moldova din 2010.' },
+            { name: 'description', content: 'Contactați Ideal Credit SRL!  Pentru servicii financiare nebancare de încredere în Republica Moldova, găsiți datele noastre de contact și adresa oficiilor.' },
             { name: 'keywords', content: 'ideal credit, credit rapid, credite Moldova, credite Chișinău, credit online, împrumuturi' }
         ],
     })

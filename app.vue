@@ -5,11 +5,10 @@
       <main class="flex-auto">
         <NuxtPage />
       </main>
-      <LazyIncludesFooter class="mt-auto"/>
+      <IncludesFooter class="mt-auto"/>
     </div>
 </template>
-<script setup>  
-import '@/assets/css/main.css';
+<script setup>
 const config = useRuntimeConfig()
 
 useHead({

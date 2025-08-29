@@ -2,7 +2,7 @@ export default defineNuxtConfig({
     app: {
         head: { 
             htmlAttrs: {
-                lang: 'ro'
+                lang: 'ro-MD'
             },
             title: 'Credite nebancare pentru afaceri și nevoi personale',
             link: [
@@ -23,8 +23,8 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: ['@nuxt/ui', '@nuxtjs/seo', [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }], 'motion-v/nuxt'],
-    // css: ['@/assets/css/main.css'],
+    modules: ['@nuxt/ui', '@nuxtjs/seo', [ "@storyblok/nuxt", { accessToken: 'HkdYYsU6W0SQKNL9nL1seQtt' }]],
+    css: ['@/assets/css/main.css'],
     runtimeConfig: {
         siteUrl: 'https://idealcredit.md',
         icm_api_url: process.env.NUXT_ICM_API_URL,
@@ -48,12 +48,13 @@ export default defineNuxtConfig({
     site: {
         url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',
         name: 'Ideal Credit',
+        defaultLocale: 'ro-MD',
     },
 
     ui: {
         colorMode: false
     },
-
+    compatibilityDate: '2025-07-15',
     sitemap: {
     // exclude all URLs that start with /secret
         exclude: ['/autoritatea-de-supraveghere'],
@@ -64,9 +65,6 @@ export default defineNuxtConfig({
     devServer: {
         port: 3001
     },
-
-    compatibilityDate: '2024-11-06',
-
     nitro: {
         preset: 'vercel',
         routeRules: {

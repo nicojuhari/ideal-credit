@@ -12,10 +12,10 @@ const { data } = await storyblokApi.get("cdn/stories", {
 stories.value = data.stories;
 
 useHead({
-    title: 'Blog financiar',
+    title: 'Blogul Ideal Credit - sfaturi și perspective financiare',
     meta: [
         { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },
-        { name: 'description', content: 'Descoperă lumea creditelor cu Ideal Credit! Explorăm totul în mod clar și educativ. Ia decizii financiare înțelepte pentru un viitor mai sigur!' }
+        { name: 'description', content: 'Descoperă lumea creditelor cu Ideal Credit! Obțineți informații utile pentru un viitor sigur. Călătoria ta spre înțelepciunea financiară începe aici!' }
     ],
 })
 

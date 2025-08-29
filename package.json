@@ -9,14 +9,13 @@
   "devDependencies": {
     "@iconify-json/ph": "^1.2.2",
     "@nuxtjs/seo": "^3.1.0",
-    "nuxt": "^3.17.6"
+    "nuxt": "^4.0.3"
   },
   "dependencies": {
-    "@nuxt/ui": "^3.2.0",
-    "@storyblok/nuxt": "^8.0.0",
-    "@storyblok/richtext": "^3.5.0",
+    "@nuxt/ui": "^3.3.2",
+    "@storyblok/nuxt": "^8.0.4",
+    "@storyblok/richtext": "^3.6.1",
     "ideal-credit": "^0.2.6",
-    "motion-v": "^1.5.0",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.12"
   }
 }
