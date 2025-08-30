@@ -26,10 +26,10 @@ const formSuccess = ref(false)
 const formError = ref(false)
 
 useHead({
-    title: 'Cerere de credit online rapid și simplu',
+    title: 'Cerere de credit online - Rapid și Eficient',
     meta: [
-        { name: 'description', content: 'Depune o cerere de credit online. Ideal Credit oferă credite rapide pentru nevoi personale și afaceri, cu dobânzi fixe și fără comisioane.' },
-        { name: 'keywords', content: 'ideal credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
+        { name: 'description', content: 'Obține rapid un credit nebancar. Oferim soluții flexible pentru nevoi personale și afaceri, cu dobânzi competitive și fără comisioane ascunse. Aplică Online! ' },
+        { name: 'keywords', content: 'cerere de credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
     ]
 })
 
