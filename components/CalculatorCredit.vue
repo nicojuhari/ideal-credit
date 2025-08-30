@@ -149,9 +149,9 @@
         </uiModal>
         <div ref="preContractRef" class="hidden">
             <div>
-                <h4 class="text-center my-6 text-lg font-medium">Graficul de Rambursare conform preContractului de mai jos</h4>
+                <p class="text-center my-6 text-lg font-medium">Graficul de Rambursare conform preContractului de mai jos</p>
                 <GraficTable :grafic="graficCalculat" :dobindaTotal="dobindaTotal" :credit="creditSuma" />
-                <h4 class="text-center my-6 text-lg font-medium">Informaţii standard privind creditul pentru consumatori</h4>
+                <p class="text-center my-6 text-lg font-medium">Informaţii standard privind creditul pentru consumatori</p>
                 <table class="table-fixsed w-full border-collapse pre-contract-table border" id="preContractTable">
                     <tbody>
                         <tr>

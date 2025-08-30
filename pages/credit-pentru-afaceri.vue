@@ -2,10 +2,11 @@
 import { businessCreditSchema, personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
 
 useHead({
-    title: 'Credit pentru afaceri - rapid și transparent',
+    title: 'Credit pentru Afaceri - soluții rapide și transparente | Ideal Credit',
+    titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Investește în afacerea ta cu soluții de credit flexibile și avantajoase. Acordăm credite rapide, fără comisioane ascunse și cu dobânzi competitive. Aplică online!' },
-        { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credite Moldova, credit online, împrumuturi' }
+        { name: 'description', content: 'Obține credit pentru afacerea ta cu soluții flexibile și avantajoase. Credite rapide, fără comisioane ascunse și dobânzi competitive pentru dezvoltarea ta!' },
+        { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credit Moldova, credit online, împrumuturi nebancare' }
     ],
 })
 

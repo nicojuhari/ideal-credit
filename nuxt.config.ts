@@ -4,7 +4,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro-MD'
             },
-            title: 'Credite nebancare pentru afaceri și nevoi personale',
+            title: 'Credite Nebancare în Moldova - Rapid și Simplu | Ideal Credit',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
@@ -12,7 +12,7 @@ export default defineNuxtConfig({
                 { rel: 'apple-touch-icon', sizes:"180x180", href:"/apple-touch-icon.png" },
             ],
             meta: [
-                { name: 'description', content: 'Ideal Credit oferă credite rapide pentru afaceri și nevoi personale în Moldova. Rapid, transparent, cu dobânzi fixe și fără comisioane. Aplică acum online!' },
+                { name: 'description', content: 'Ideal Credit oferă credite nebancare pentru afaceri și nevoi personale în Moldova. Rapid, transparent, cu dobânzi fixe și fără comisioane. Aplică Online!' },
                 { name: 'keywords', content: 'credit rapid, credite nebancare, credit online, împrumut rapid, credit nevoi personale, credit Chișinău Moldova, credite md, credit avantajos' },
                 { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"},
                 { property: 'og:locale', content: 'ro_MD' },
@@ -33,7 +33,7 @@ export default defineNuxtConfig({
         public: {
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
-            siteDescription: 'Ideal Credit oferă credite avantajoase pentru persoane fizice și juridice din Moldova. Obține finanțare rapidă pentru nevoi personale sau afaceri. Aplică online!',
+            siteDescription: 'Ideal Credit oferă credite nebancare pentru afaceri și nevoi personale în Moldova. Rapid, transparent, cu dobânzi fixe și fără comisioane. Aplică Online!',
             fb_pixel_id: 2254113158275780,
             gtag_id: 'G-YXDZGPPXPH',
         }

@@ -7,7 +7,7 @@ import {
 } from '~/utils/schema'
 
 useHead({
-    title: 'Credite nebancare pentru afaceri și nevoi personale',
+    title: 'Credite Nebancare în Moldova - Rapid și Simplu | Ideal Credit',
     titleTemplate: '%pageTitle',
 })
 

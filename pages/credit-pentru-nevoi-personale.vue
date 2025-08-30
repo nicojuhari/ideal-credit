@@ -1,10 +1,11 @@
 <script setup>
 import { personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
 useHead({
-    title: 'Credit pentru nevoi personale - rapid și transparent',
+    title: 'Credite rapide pentru nevoi personale - Ideal Credit te ajută!',
+    titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Obține creditul ideal pentru nevoile tale personale, cu soluții flexibile și fără comisioane ascunse. Alege Ideal Credit pentru realizarea visurilor tale. Aplică online!' },
-        { name: 'keywords', content: 'credit pentru nevoi personale, credit rapid, credit de consum, credite Moldova, credite Chișinău, credite online, împrumuturi' }
+        { name: 'description', content: 'Obține creditul perfect pentru nevoile tale personale, cu soluții flexibile și fără comisioane ascunse. Alege Ideal Credit pentru a-ți îndeplini visurile!' },
+        { name: 'keywords', content: 'credit pentru nevoi personale, credit rapid, credit de consum, credite Moldova, credit Chișinău, credit online, împrumuturi nebancare' }
     ],
 })
 

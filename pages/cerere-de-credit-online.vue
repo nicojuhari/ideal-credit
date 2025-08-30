@@ -135,7 +135,7 @@ onMounted(() => {
                 Ai nevoie doar de 2 minute!
             </UiBadgeForSection>
             <UForm :state="formData" :validate="validate" @submit="submitForm" class="space-y-4 md:space-y-6">
-                <h3 class="mt-12 mb-6 text-green-400 text-center font-bold">Date despre credit</h3>
+                <h2 class="mt-12 mb-6 text-green-400 text-center font-bold">Date despre credit</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <UFormField label="Suma (lei)" name="suma">
                         <UInput type="number" step="100" max="300000" min="10000" v-model="formData.suma" />
@@ -147,7 +147,7 @@ onMounted(() => {
                         <USelect v-model="formData.scopul_creditului" placeholder="Selectează scopul creditului" :items="['Pentru nevoi personale', 'Pentru afaceri', 'Refinanțare', 'Procurare bun imobil', 'Altele']" class="w-full form-select" />
                     </UFormField>
                 </div>
-                <h3 class="mt-12 mb-6 text-green-400 text-center font-bold">Date personale</h3>
+                <h2 class="mt-12 mb-6 text-green-400 text-center font-bold">Date personale</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <UFormField label="Nume" name="nume">
                         <UInput type="text" v-model="formData.nume" />
