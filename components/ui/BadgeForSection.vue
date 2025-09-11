@@ -3,8 +3,8 @@
 </script>
 <template>
     <div class="text-center">
-        <UBadge color="primary" variant="soft" size="md" class="text-center rounded-full px-4 py-1">
+        <div class="text-sm inline-flex items-center justify-center bg-black-400 border rounded-full px-4 py-1">
             <slot />
-        </UBadge>
+        </div>
     </div>
 </template>

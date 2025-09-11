@@ -306,9 +306,7 @@ export const personalLoanSchema = {
 
 export const creditConditionsSchema = {
     'pf': {
-        'title': 'Credit pentru nevoi personale',
-        'link': 'credit-pentru-nevoi-personale',
-        'icon': 'i-ph-shopping-cart-light',
+        'title': 'Credit persoană fizică',
         'list': [
             'Vârsta de la 23 de ani',
             'Sursă de venit stabilă',
@@ -317,9 +315,7 @@ export const creditConditionsSchema = {
         ]
     },
     'pj': {
-        'title': 'Credit pentru afaceri',
-        'link': 'credit-pentru-afaceri',
-        'icon': 'i-ph-chart-bar-light',
+        'title': 'Credit persoană juridică',
         'list': [
             'Activitate economică validă',
             'Actele de înființare',

@@ -19,7 +19,7 @@ export default defineAppConfig({
         },
         button: {
             slots: {
-                base: "rounded-full cursor-pointer",
+                base: "rounded-full cursor-pointer !px-6",
             },
             defaultVariants: {
                 color: "primary",
