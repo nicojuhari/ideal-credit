@@ -1,11 +1,12 @@
 <script setup>
+import ShortAboutUs from '~/components/ShortAboutUs.vue';
 import { businessCreditSchema, personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
 
 useHead({
-    title: 'Credit pentru Afaceri - soluții rapide și transparente | Ideal Credit',
+    title: 'Credit pentru afaceri | Investiții sau Cash-Flow | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Obține credit pentru afacerea ta cu soluții flexibile și avantajoase. Credite rapide, fără comisioane ascunse și dobânzi competitive pentru dezvoltarea ta!' },
+        { name: 'description', content: 'Credit pentru afaceri în Moldova cu aprobare rapidă și condiții clare. Finanțare pentru investiții, echipamente sau capital de lucru, fără birocrație!' },
         { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credit Moldova, credit online, împrumuturi nebancare' }
     ],
 })
@@ -17,16 +18,17 @@ useSchemaOrg([
 
 </script>
 <template>
-    <section class="relative">
+    <div class="relative pt-10 md:pt-12">
         <div class="bg-squares -mt-[1px]"></div>
-        <div class="container mt-8 md:mt-12">
-            <UiRecenziiButton  class="mb-12 md:mb-16"/>
-            <h1 class="font-semibold text-center text-5xl md:text-[120px]">Credit pentru afaceri</h1>
-            <UiButtonsCTA class="mt-12 md:mt-16"/>
+        <div class="container">
+            <UiRecenziiButton class="mb-16"/>
+            <h1 class="font-semibold text-center text-4xl md:text-8xl">Credit pentru afaceri</h1>
+            <p class="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">Credit pentru afaceri - bani rapizi pentru investiții, echipamente sau capital de lucru. Proces simplu și consultanță gratuită.</p>
+            <UiMainCTA class="mt-16"/>
             <div class="cs-blur cs-blur--center z-[-1]"></div>
             <CalculatorCredit class="mt-12 md:mt-24"/>
         </div>
-    </section>
+    </div>
     <section class="container">
         <UiBadgeForSection class="mb-6">Condițiile de creditare</UiBadgeForSection>
         <h2 class="title text-center">Ce trebuie?</h2>
@@ -44,29 +46,24 @@ useSchemaOrg([
     <section>
         <div class="container text-lg space-y-4">
             <h2 class="card-title text-center">Ce este un credit pentru afaceri?</h2>
-            <div>Un credit pentru afaceri e un împrumut nebancar dedicat companiilor și antreprenorilor. Îți oferă capitalul necesar pentru orice etapă a afacerii.</div>
-            <h3 class="text-2xl font-bold pt-4">Scopuri principale</h3>
-            <ul class="list-outside list-disc ml-6 mb-6">
-                <li><strong>Startup-uri:</strong> finanțează costurile de lansare (înregistrare, echipamente, stoc inițial).</li>
-                <li><strong>Dezvoltare:</strong> modernizare spațiu, achiziție tehnologie, marketing, angajări.</li>
-                <li><strong>Capital de lucru:</strong> acoperi salarii, furnizori și utilități în perioadele cu lichidități fluctuante.</li>
-                <li><strong>Refinanțarea:</strong> consolidezi creditele vechi într-o singură rată la costuri mai mici.</li>
+            <div>Un credit pentru afaceri este un împrumut dedicat companiilor și antreprenorilor. Îți oferă banii necesari pentru orice etapă a afacerii, de la lansare până la dezvoltare sau refinanțare.</div>
+            <h3 class="text-2xl pt-4">Scopuri principale</h3>
+            <ul class="list-outside list-disc ml-6 text-gray-400">
+                <li>Startup-uri: finanțează lansarea afacerii - înregistrare, echipamente, stoc inițial.</li>
+                <li>Dezvoltare: modernizare spațiu, marketing sau angajări.</li>
+                <li>Capital de lucru: acoperi salarii, furnizori și facturi în perioade cu flux de numerar variabil.</li>
+                <li>Refinanțare: consolidezi creditele vechi într-o singură rată, la costuri mai mici.</li>
             </ul>
-            <h3 class="text-2xl font-bold pt-4">Beneficii pentru afacerea ta</h3>
-            <ul class="list-outside list-disc ml-6 mb-6">
-                <li><strong>Creștere accelerată:</strong> investești rapid fără să golești conturile proprii.</li>
-                <li><strong>Flux de numerar stabil:</strong> eviți blocajele în operațiuni zilnice.</li>
-                <li><strong>Flexibilitate:</strong> adaptezi suma și termenii în funcție de proiect.</li>
-                <li><strong>Oportunități noi:</strong> intri pe piețe noi sau cumperi echipamente performante.</li>
-            </ul>
-            <h3 class="text-2xl font-bold pt-4">De ce să alegi Ideal Credit?</h3>
-            <ul class="list-outside list-disc ml-6 mb-6">
-                <li>Dobândă fixă, negociabilă la cerere</li>
-                <li>Aprobarea cererii în 24-48 ore</li>
-                <li>Documentație minimă: certificat de înregistrare, situație financiară simplificată</li>
-                <li>Fără comisioane ascunse</li>
-                <li>Consultanță gratuită la fiecare pas</li>
+            <h3 class="text-2xl pt-4">Beneficii pentru afacerea ta</h3>
+            <ul class="list-outside list-disc ml-6">
+                <li>Creștere rapidă: investești fără să golești conturile proprii.</li>
+                <li>Flux de numerar stabil: eviți probleme în operațiunile zilnice.</li>
+                <li>Flexibilitate: adaptezi suma și termenii în funcție de proiect.</li>
+                <li>Oportunități noi: intri pe piețe noi sau cumperi echipamente performante.</li>
             </ul>
         </div>
+    </section>
+    <section>
+        <ShortAboutUs/>
     </section>
 </template>

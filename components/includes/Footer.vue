@@ -106,17 +106,17 @@
                     <IconsLogo class="w-8" />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="text-gray-300">Credite nebancare în Moldova<br> pentru afaceri și persoane fizice.</p>
+                <p class="text-gray-400">Credite nebancare în Moldova<br> pentru afaceri și persoane fizice.</p>
             </div>
             <div class="flex gap-6 items-center">
-                <NuxtLink to="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
-                    <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0 text-blue-400" />
+                <NuxtLink to="https://www.instagram.com/idealcredit.md/" title="Pagina Ideal Credit pe Instagram" target="_blank">
+                    <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0" />
                 </NuxtLink>
-                <NuxtLink to="https://www.facebook.com/idealcredit.md" title="Facebook" target="_blank" rel="nofollow">
-                    <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0 text-blue-400" />
+                <NuxtLink to="https://www.facebook.com/idealcredit.md" title="Pagina Ideal Credit pe Facebook" target="_blank">
+                    <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0" />
                 </NuxtLink>
-                <NuxtLink to="https://www.linkedin.com/company/idealcredit/" title="Linkedin" target="_blank" rel="nofollow">
-                    <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0 text-blue-400" />
+                <NuxtLink to="https://www.linkedin.com/company/idealcredit/" title="Pagina Ideal Credit pe Linkedin" target="_blank">
+                    <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0" />
                 </NuxtLink>
             </div>
         </div>
@@ -135,7 +135,7 @@
                 <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex">Termeni</NuxtLink>
                 <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Cookies</NuxtLink>
                 <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Confidențialitate</NuxtLink>
-                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere" class="text-green-400">Autoritatea de Supraveghere</NuxtLink>
+                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere" class="link">Autoritatea de Supraveghere</NuxtLink>
             </div>
         </div>
         <div class="container mt-12">
@@ -160,8 +160,7 @@
             </ul>
         </div>
         <div class="container mt-10 px-6 text-center pt-8 gap-1 flex-wrap border-t">
-            &copy; {{ new Date().getFullYear() }} Organizația de Creditare Nebancară <span
-                class="text-brand-400">Ideal Credit</span> SRL
+            &copy; {{ new Date().getFullYear() }} Organizația de Creditare Nebancară <strong>Ideal Credit</strong> SRL
         </div>
     </footer>
 </template>
