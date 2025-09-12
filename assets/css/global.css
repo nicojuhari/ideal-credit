@@ -22,12 +22,16 @@ section {
 }
 
 .card {
-    @apply rounded-lg px-4 py-4 md:px-6 md:py-8 border bg-black-600 overflow-hidden;
+    @apply rounded-lg p-4 md:px-6 md:py-8 border bg-black-600 overflow-hidden;
 }
 
 .card-title,
 .title {
     @apply text-3xl md:text-4xl mb-10 md:mb-12 px-4 md:px-0 font-medium;
+}
+
+.card .card-title {
+    @apply mt-2;
 }
 
 .link {

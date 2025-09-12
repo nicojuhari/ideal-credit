@@ -23,7 +23,7 @@
     <div class="my-4 md:my-6">
         <div class="container">
             <div class="card">
-                <h1 class="title text-center">Despre noi</h1>
+                <h1 class="card-title text-center">Despre noi</h1>
                 <div class="text-lg space-y-4">
                     <p>Ideal Credit SRL activează din 2010.</p>
                     <p>Avem peste <span class="text-brand-500">{{ getFullYear() - 2010 }} ani </span> experiență în <NuxtLink to="/" title="Credite nebancare" class="link">credite nebancare.</NuxtLink></p>

@@ -96,7 +96,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div class="card text-xl space-y-8 text-center">
-                <h1 class="title text-center">Contacte</h1>   
+                <h1 class="card-title text-center">Contacte</h1>   
                 <div class="flex gap-2 items-center">
                     <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0 text-brand-500"/>
                     <a href="tel:+37378805060" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
