@@ -1,56 +1,63 @@
 <script setup>
-const imageReviews = [
-    '/recenzii/ideal-credit-recenzie-1.webp',
-    '/recenzii/ideal-credit-recenzie-2.webp',
-    '/recenzii/ideal-credit-recenzie-3.webp',
-]
 
-const textReviews = [
+const reviews = [
     {
-        name: 'Alexandru',
-        text: 'Am primit creditul în 24 de ore, fără bătăi de cap. Serviciu rapid și profesionist.',
+        name: 'Alexandru, Chișinău',
+        text: 'Mulțumesc! Am primit creditul în 24 de ore, fără bătăi de cap. Echipa a fost foarte profesionistă.',
     },
     {
-        name: 'Maria',
-        text: 'Transparență totală, fără comisioane ascunse. Dobândă negociabilă. Am investit în afacerea mea și am crescut.',
+        name: 'Maria, Antreprenoare',
+        text: 'Sunt recunoscătoare pentru transparență. Fără comisioane ascunse, dobânda a fost negociată și am putut investi în afacere.',
+    },
+    {
+        image: '/recenzii/ideal-credit-recenzie-1.webp'
     },
     {
         name: 'Elena',
-        text: 'Am luat credit de consum cu dobândă avantajoasă. Am renovat bucătăria așa cum mi-am dorit.'
+        text: 'Sunt foarte mulțumită. Am luat credit de consum cu dobândă bună și am renovat bucătăria cum îmi doream.'
+    },
+    {
+        image: '/recenzii/ideal-credit-recenzie-2.webp'
     },
     {
         name: 'Victor',
-        text: 'Banca m-a refuzat, dar Ideal Credit m-a ajutat în 2 zile să cumpăr mașina dorită. Fără probleme.',
+        text: 'Mulțumesc Ideal Credit — banca m-a refuzat, dar voi m-ați ajutat în 2 zile să cumpăr mașina dorită.',
     },
     {
-        name: 'Ion',
-        text: 'Am modernizat magazinul în 3 luni. Proces simplu, dobândă fixă și consiliere pe măsură',
+        image: '/recenzii/ideal-credit-recenzie-3.webp'
+    },
+    {
+        name: 'Ion, Proprietar magazin',
+        text: 'Am modernizat magazinul în 3 luni. Proces simplu, dobândă fixă și consultanță. Sunt recunoscător',
     },
     {
         name: 'Ana',
-        text: 'Am achiziționat utilaje pentru atelier în 2 zile, și acestea au ajutat să mă dezvolt.',
+        text: 'Am cumpărat utilaje în 2 zile și asta ne-a ajutat să creștem. Mulțumim pentru sprijin!',
     },
 ]
 
-// Combine both types of reviews
-const allReviews = [...imageReviews, ...textReviews]
 </script>
 
 <template>
     <div>
-        <div class="flex items-center justify-center gap-1 mb-6">
-            <UIcon name="i-ph-star-fill" class="text-brand-500 text-lg shrink-0" v-for="i in 5" :key="i" />
-        </div>
-        <h3 class="title text-center">Ce spun clienții noștri?</h3>
+        <h2 class="title text-center">Ce spun clienții noștri?</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            <div v-for="item in allReviews" :key="item" class="bg-white rounded-lg">
+            <div v-for="item in reviews" :key="typeof item === 'string' ? item : item.name" class="card flex flex-col">
                 <!-- Image Review -->
-                <img v-if="typeof item === 'string'" :src="item" class="rounded-lg mx-auto" alt="Recenzie client despre Ideal Credit">
+                 <div  v-if="item?.image" class="m-auto">
+                     <img :src="item.image" class="rounded-lg m-auto mb-4" alt="Recenzie client despre Ideal Credit">
+                    <div class="flex items-center justify-center gap-1">
+                        <UIcon name="i-ph-star-fill" class="text-brand-500 text-lg shrink-0" v-for="i in 5" :key="i" />
+                    </div>
+                 </div>
                 <!-- Text Review -->
-                <div v-else class="p-6 max-w-sm mx-auto text-black">
-                    <div class="font-semibold text-lg">{{ item.name }}</div>
-                    <div class="text-gray-800 mt-2 text-sm line-cslamp-3">{{ item.text }}</div>
+                <div v-else class="p-6 max-w-sm mx-auto">
+                    <p class="text-gray-400 line-cslamp-3">{{ item.text }}</p>
+                    <p class="text-xl mt-4">
+                       {{ item.name }}
+                    </p>
                 </div>
+                
             </div>
              
         </div>

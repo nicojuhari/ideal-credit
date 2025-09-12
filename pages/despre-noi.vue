@@ -25,40 +25,36 @@
             <div class="card">
                 <h1 class="title text-center">Despre noi</h1>
                 <div class="text-lg space-y-4">
-                    <p>Partenerul tău de încredere în finanțare din Moldova.</p>
-                    <p>Ideal Credit SRL activează din 2010 pe piața nebancară. În cei peste <span class="text-green-400">{{ getFullYear() - 2010 }} ani de activitate</span>, am deservit sute de clienți - persoane fizice și întreprinderi.</p>
-                    <h2 class="pt-4 font-bold text-2xl">Misiunea noastră</h2>
+                    <p>Ideal Credit SRL activează din 2010.</p>
+                    <p>Avem peste <span class="text-brand-500">{{ getFullYear() - 2010 }} ani </span> experiență în <NuxtLink to="/" title="Credite nebancare" class="link">credite nebancare.</NuxtLink></p>
+                    <p>Am ajutat sute de persoane fizice și companii să obțină finanțare rapidă și transparentă.</p>
+                    
+                    <h2 class="pt-6 text-2xl">Misiunea noastră</h2>
+                    <p>Să susținem creșterea economică a Moldovei prin soluții financiare simple și corecte. Ne concentrăm pe rezultate reale pentru clienți — nu pe termeni ascunși.</p>
+
+                    <h2 class="pt-6 text-2xl">Ce ne diferențiază</h2>
+                    <ul class="list-disc list-inside">
+                        <li>Expertiză locală - știm exact nevoile antreprenorilor și familiilor din Moldova.</li>
+                        <li>Proces rapid - decizie în 1 - 3 ore.</li>
+                        <li>Documentație minimă - buletin și adeverință de venit sau certificat de înregistrare pentru firme.</li>
+                        <li>Transparență totală — fără comisioane ascunse; toate costurile sunt comunicate din start.</li>
+                        <li>Consultanță gratuită - te ghidăm pas cu pas, de la analiză până la semnarea contractului.</li>
+                    </ul>
+
+                    <h2 class="pt-6 text-2xl">Ce oferim (pe scurt)</h2>
                     <p>
-                       Sprijinim dezvoltarea economică a Moldovei prin soluții financiare rapide, transparente și adaptate fiecărui client.
+                        <NuxtLink to="/credit-pentru-nevoi-personale" title="Credit pentru nevoi personale" class="link">Credite pentru nevoi personale</NuxtLink> - pentru electrocasnice, mașină, tratamente medicale, cheltuieli urgente sau până la salariu.
                     </p>
-                    <h2 class="pt-4 font-bold text-2xl">Ce ne diferențiază</h2>
-                    <ul class="list-disc list-inside">
-                        <li>
-                            <strong>Expertiză locală:</strong> Înțelegem realitățile financiare și nevoile antreprenorilor și ale familiilor din Republica Moldova.
-                        </li>
-                        <li>
-                            <strong>Proces rapid:</strong> Cerere simplă, aprobare în 24-48 ore și contractare cu documente minime.
-                        </li>
-                        <li>
-                            <strong>Transparență completă:</strong> Fără comisioane ascunse. Toate costurile și dobânzile sunt comunicate din start.
-                        </li>
-                        <li>
-                            <strong>Consultanță dedicată:</strong> Echipa noastră îți stă alături pas cu pas, de la analiză până la semnarea contractului.
-                        </li>
-                    </ul>
-                    <h2 class="pt-4 font-bold text-2xl">Produsele noastre</h2>
-                    <ul class="list-disc list-inside">
-                        <li><NuxtLink to="/credit-pentru-nevoi-personale" title="credit pentru nevoi personale" class="link">Credite pentru nevoi personale (credit de consum)</NuxtLink> - pentru achiziții de bunuri de uz casnic, mijloace de transport, pînă la salariu.</li>
-                        <li><NuxtLink to="/credit-pentru-afaceri" title="împrumuturi pentru afaceri" class="link">Credite pentru afaceri</NuxtLink> - pentru investiții în echipamente, mijloace circulante, modernizare sau dezvoltare.</li>
-                    </ul>
-                    <h2 class="pt-4 font-bold text-2xl">Angajamentul nostru</h2>
-                    <ul class="list-disc list-inside">
-                        <li>Serviciu prietenos și profesionist</li>
-                        <li>Rate avantajoase, fixe pe toată durata contractului</li>
-                        <li>Flexibilitate: negociem dobânda în funcție de profilul tău financiar</li>
-                    </ul>
-                    <p>Alege Ideal Credit SRL pentru o finanțare simplă, sigură și rapidă.</p>
-                    <LazyCallToAction class="mt-10">Solicită un credit<br> și începe-ți proiectul cu încredere!</LazyCallToAction>
+                    <p>
+                        <NuxtLink to="/credit-pentru-afaceri" title="Credit pentru afaceri" class="link">Credite pentru afaceri</NuxtLink> - pentru echipamente sau tehnologie, capital de lucru sau refinanțare, modernizare sau extindere.
+                    </p>
+                    
+                    <h2 class="pt-6 text-2xl">Angajamentul nostru</h2>
+                    <p>Să oferim un serviciu prietenos și profesionist. Condiții clare. Suport real pe termen lung. Vrem ca finanțarea să devină o unealtă pentru creșterea ta — nu o povară.</p>
+                    
+                    <h3 class="pt-6">Alege Ideal Credit — finanțare simplă, sigură și rapidă.</h3>
+                    
+                    <LazyCallToAction class="py-8" />
                 </div>
             </div>
         </div>

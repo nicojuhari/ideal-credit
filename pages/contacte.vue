@@ -6,11 +6,11 @@
     const { trackEvent } = useFacebookPixel()
 
     useHead({
-        title: 'Contactele companiei creditare Ideal Credit SRL din Republica Moldova',
+        title: 'Contacte și Adresa Oficiilor | Ideal Credit',
         titleTemplate: '%pageTitle',
         meta: [
-            { name: 'description', content: 'Contactați Ideal Credit SRL!  Pentru servicii financiare nebancare de încredere în Republica Moldova, găsiți datele noastre de contact și adresa oficiilor.' },
-            { name: 'keywords', content: 'ideal credit, credit rapid, credite Moldova, credite Chișinău, credit online, împrumuturi' }
+            { name: 'description', content: 'Contactează Ideal Credit — adrese, telefoane și programul oficiilor. Consultanță gratuită pentru credite business și de consum. Suntem aici să te ajutăm.' },
+            { name: 'keywords', content: 'ideal credit, credit pentru afaceri, credite Moldova, credite Chișinău, credite nebancare' }
         ],
     })
     const web3FormAccessKey = 'c8f3c3c1-46ab-46bf-a139-4c4bb6265d95'
@@ -92,21 +92,25 @@
 
 </script>
 <template>
-    <div class="container sm-container relative my-4 md:my-6">
-        <div class="card">
-            <h1 class="title text-center">Contacte</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xl">
+    <div class="container sm-constainer relative my-4 md:my-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="card text-xl space-y-8 text-center">
+                <h1 class="title text-center">Contacte</h1>   
                 <div class="flex gap-2 items-center">
-                    <UIcon name="i-ph-phone-call" class="w-8 h-8 shrink-0 text-blue-400"/>
+                    <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0 text-brand-500"/>
                     <a href="tel:+37378805060" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 78 80 50 60</a>
                 </div>
                 <div class="flex gap-2 items-center">
-                    <UIcon name="i-ph-envelope" class="w-8 h-8 shrink-0 text-blue-400"/>
+                    <UIcon name="i-ph-phone-light" class="w-6 h-6 shrink-0 text-brand-500"/>
+                    <a href="tel:+37379066566" @click="trackEvent('Contact')"><span class="opacity-50">(+373)</span> 790 66 5 66</a>
+                </div>
+                <div class="flex gap-2.5 items-center">
+                    <UIcon name="i-ph-envelope-light" class="w-6 h-6 shrink-0 text-brand-500"/>
                     <a href="mailto:info@idealcredit.md" @click="trackEvent('Contact')">info@idealcredit.md</a>
                 </div>
             </div>
-        </div>    
-        <div class="card mt-4 md:mt-6 relative overflow-hidden">
+             <div class="card relative overflow-hidden">
             <h2 class="card-title text-center">Scrie-ne direct</h2>
             <UiLoading v-if="loading" local/>
             <div v-if="formSend" class="grid place-content-center my-16 duration-700">
@@ -132,22 +136,20 @@
                     <UTextarea v-model="formData.mesaj" />
                 </UFormField>
                 <div class="flex justify-end">
-                    <UButton type="submit" :loading="loading" :disabled="loading || formSend">
+                    <UButton type="submit" color="success" :loading="loading" :disabled="loading || formSend">
                         Trimite
                     </UButton>
                 </div>
             </UForm>
         </div>
-       
-        <section>
+        </div>
+        <div class="mt-4 md:mt-6">
             <div id="adresa-oficiilor" class="-translate-y-14"></div>
             <div class="card">
                 <h2 class="card-title text-center">Adresa oficiilor</h2>
-                <LazyListaOficiilor/>
+                <ListaOficiilor/>
             </div>
-        </section>
-        <section>
-            <LazyCallToAction/>
-        </section>
+        </div>
+        <CallToAction class="py-10"/>
     </div>
 </template>

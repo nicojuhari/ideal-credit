@@ -28,7 +28,8 @@ useSchemaOrg([
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Ideal Credit",
-    "url": "https://idealcredit.md/"
+    "url": "https://idealcredit.md/",
+    "alternateName": "Ideal Credit"
   },
    {
             "@context": "https://schema.org",

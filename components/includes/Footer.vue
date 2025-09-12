@@ -99,52 +99,47 @@
 
 </script>
 <template>
-    <footer class="bg-black-500 border-t relative py-8">
-        <div class="container grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-6 px-2 md:px-0">
-            <div class="space-y-2.5 md:space-y-6">
+    <footer class="bg-black-600 border-t relative py-10">
+        <div class="container flex flex-col md:flex-row justify-between md:items-center gap-8 pb-8 border-b">
+            <div class="space-y-4">
                 <div class="flex items-center gap-3">
                     <IconsLogo class="w-8" />
                     <div class="text-xl">Ideal Credit</div>
                 </div>
-                <p class="text-gray-400">Credite nebancare pentru afaceri și nevoi personale (credite de consum).</p>
-                <div class="flex gap-6 items-center justify-center md:justify-start pt-4">
-                    <NuxtLink to="https://www.instagram.com/idealcredit.md/" title="Instagram" target="_blank" rel="nofollow" >
-                        <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0 text-blue-400" />
-                    </NuxtLink>
-                    <NuxtLink to="https://www.facebook.com/idealcredit.md" title="Facebook" target="_blank" rel="nofollow">
-                        <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0 text-blue-400" />
-                    </NuxtLink>
-                    <NuxtLink to="https://www.linkedin.com/company/idealcredit/" title="Linkedin" target="_blank" rel="nofollow">
-                        <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0 text-blue-400" />
-                    </NuxtLink>
-                </div>
+                <p class="text-gray-400">Credite nebancare în Moldova<br> pentru afaceri și persoane fizice.</p>
             </div>
-            <div v-for="oficiu in oficii" :key="oficiu.address" class="space-y-2.5 md:space-y-6">
-                <div class="text-xl">
-                    {{ oficiu.title }}
-                </div>
-                <p class="text-gray-400">{{ oficiu.address }}, <br>{{ oficiu.addressNumbers }}</p>
-                <div class="text-gray-400">Luni - Vineri: 08:30 - 16:30</div>
+            <div class="flex gap-6 items-center">
+                <NuxtLink to="https://www.instagram.com/idealcredit.md/" title="Pagina Ideal Credit pe Instagram" target="_blank">
+                    <UIcon name="i-ph-instagram-logo" class="w-8 h-8 shrink-0" />
+                </NuxtLink>
+                <NuxtLink to="https://www.facebook.com/idealcredit.md" title="Pagina Ideal Credit pe Facebook" target="_blank">
+                    <UIcon name="i-ph-facebook-logo" class="w-8 h-8 shrink-0" />
+                </NuxtLink>
+                <NuxtLink to="https://www.linkedin.com/company/idealcredit/" title="Pagina Ideal Credit pe Linkedin" target="_blank">
+                    <UIcon name="i-ph-linkedin-logo" class="w-8 h-8 shrink-0" />
+                </NuxtLink>
+            </div>
+        </div>
+        <div class="container py-8 grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-12 border-b">
+           <div v-for="oficiu in oficii" :key="oficiu.address" class="space-y-4">
+                <p class="text-xl font-bold"> {{ oficiu.title }}</p>
+                <p class="text-gray-300">{{ oficiu.address }}, <br>{{ oficiu.addressNumbers }}</p>
+                <p class="text-gray-300">Luni - Vineri: 08:30 - 16:30</p>
                 
                 <UButton icon="i-ph-phone-light" :to="'tel:' + oficiu.mobile[0]" @click="clickContact = true" variant="outline">
                     {{ oficiu.mobile[1] }}
                 </UButton>
             </div>
-        </div>
-        <div class="container py-6">
-           
-        </div>
-        <div class="container border-t py-6">
-            <div class="flex flex-col md:flex-row gap-4 ">
+            <div class="gap-y-4 flex flex-col">
+                <p class="text-xl font-bold">Linkuri</p>
                 <NuxtLink to="/terms" title="Termeni și Condiții" class="inline-flex">Termeni</NuxtLink>
                 <NuxtLink to="/cookies" title="Politica de Cookies" class="inline-flex">Cookies</NuxtLink>
                 <NuxtLink to="/privacy" title="Politica de Confidențialitate" class="inline-flex">Confidențialitate</NuxtLink>
-                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere" class="link md:ml-auto">Autoritatea de Supraveghere</NuxtLink>
+                <NuxtLink to="/autoritatea-de-supraveghere" rel="nofollow" title="Autoritatea de Supraveghere" class="link">Autoritatea de Supraveghere</NuxtLink>
             </div>
-             
-            </div>
-        <div class="container mt-10">
-            <p class="mb-6 text-2xl text-center">Extras din lege</p>
+        </div>
+        <div class="container mt-12">
+            <p class="mb-6 text-xl text-center">Extras din lege</p>
             <p class="mb-4 pl-6">În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse
                 limite cu privire la:</p>
             <ul class="list-outside list-disc ml-6 space-y-1.5 text-gray-400">
@@ -158,19 +153,14 @@
             </ul>
         </div>
         <div class="container mt-12">
-            <p class="mb-6 text-2xl text-center">Dicționar financiar</p>
+            <p class="mb-6 text-xl text-center">Dicționar financiar</p>
             <ul class="list-outside list-disc ml-6 space-y-2.5 text-gray-400">
                 <li v-for="item in list" :key="item.name"><span class="font-bold">{{ item.name }} - </span>{{ item.desc }}</li>
                 
             </ul>
         </div>
-        <div class="container mt-10">
-            <div class="divider"></div>
-            <div class="text-center pt-6 gap-1 flex-wrap">
-                &copy; {{ new Date().getFullYear() }} Organizația de Creditare Nebancară <strong
-                    class="font-medium">"Ideal
-                    Credit"</strong> SRL
-            </div>
+        <div class="container mt-10 px-6 text-center pt-8 gap-1 flex-wrap border-t">
+            &copy; {{ new Date().getFullYear() }} Organizația de Creditare Nebancară <strong>Ideal Credit</strong> SRL
         </div>
     </footer>
 </template>

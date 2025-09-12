@@ -12,10 +12,10 @@ const { data } = await storyblokApi.get("cdn/stories", {
 stories.value = data.stories;
 
 useHead({
-    title: 'Blogul Ideal Credit - sfaturi și perspective financiare',
+    title: 'Blog - Finanțe personale și business în Moldova | Ideal Credit',
     meta: [
         { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },
-        { name: 'description', content: 'Descoperă lumea creditelor cu Ideal Credit! Obțineți informații utile pentru un viitor sigur. Călătoria ta spre înțelepciunea financiară începe aici!' }
+        { name: 'description', content: 'Blog financiar cu ghiduri simple despre credite, gestionarea cash-flow-ului și planificare financiară. Informații practice pentru afaceri și persoane fizice' }
     ],
 })
 
@@ -27,9 +27,8 @@ useSchemaOrg([
 
 </script>
 <template>
-    <section class="px-4 py-10 md:py-20">
-        <div class="container">
-            <h1 class="title text-center my-10">Blog financiar</h1>
+    <div class="container my-4 md:my-6">
+        <h1 class="title text-center my-10">Blog financiar</h1>
             <div class="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 <NuxtLink v-for="{ content, full_slug, name } in stories" :to="`/${full_slug}`" :key="content.id" :title="name"
                     class="group cursor-pointer flex-shrink-0 bg-black-500 border rounded-xl overflow-hidden shadow-xl">
@@ -44,6 +43,5 @@ useSchemaOrg([
                         </div>
                 </NuxtLink>
             </div>
-        </div>
-    </section>
+    </div>
 </template>

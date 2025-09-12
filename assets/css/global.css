@@ -1,15 +1,15 @@
 
 
 body {
-    @apply bg-black-600 text-white/90;
-    font-family: 'Inter', sans-serif;
+    @apply bg-black-800 text-white/90;
+    /* default browser font */
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
 }
 
 section {
-    @apply pt-8 pb-10 md:py-16;
+    @apply mt-28 mb-20 md:mt-42 md:mb-28;
 }
 
 .container {
@@ -22,12 +22,12 @@ section {
 }
 
 .card {
-    @apply rounded-lg px-4 py-4 md:px-6 md:py-8 border bg-black-500 overflow-hidden;
+    @apply rounded-lg px-4 py-4 md:px-6 md:py-8 border bg-black-600 overflow-hidden;
 }
 
 .card-title,
 .title {
-    @apply text-2xl md:text-4xl mb-6 md:mb-8 font-semibold;
+    @apply text-4xl mb-10 md:mb-12 px-4 md:px-0 font-semibold;
 }
 
 .link {
@@ -36,10 +36,10 @@ section {
 
 /* Hero Background */
 .bg-squares {
-    background-color: #111111;
+    background-color: #0b0b0b; /* like body bg color */
     background-image:
-        linear-gradient(to right, #181818 1px, transparent 1px),
-        linear-gradient(to bottom, #181818 1px, transparent 1px);
+        linear-gradient(to right, #191919 1px, transparent 1px),
+        linear-gradient(to bottom, #191919 1px, transparent 1px);
     background-size: 60px 60px;
     background-position: top center;
     position: absolute;
@@ -52,7 +52,7 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent, #111111 80%);
+    background: linear-gradient(to bottom, transparent, #0b0b0b 80%); /* like body bg color */
     pointer-events: none;
 }
 
@@ -74,7 +74,7 @@ section {
     left: var(--cs-blur-left);
     height: 20rem;
     width: 20rem;
-    opacity: 0.05;
+    opacity: 0.06;
     z-index: -1;
     filter: blur(100px);
     @apply bg-brand-500;
@@ -106,11 +106,11 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 input[type="range"] {
-    @apply bg-black-400;
+    @apply bg-black-300;
 }
 
 .input-calculator {
-    @apply rounded-lg bg-black-400 px-1 text-white border outline-none font-semibold text-xl w-[8.5rem] text-right h-10;
+    @apply rounded-lg bg-black-300 px-1 text-white outline-none font-semibold text-xl w-[8.5rem] text-right h-10;
 }
 
 

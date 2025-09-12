@@ -2,38 +2,40 @@
     const experience = computed(() => {
         return new Date().getFullYear() - 2010
     })
+
+    const list = [
+        'Pe piața nebancară din Moldova din 2010.',
+        'Condiții clare și costuri transparente.',
+        'Mii de credite acordate cu success.',
+        'Credite rapide și avantajoase.',
+        'Sute de clienți mulțumiți!',
+    ]
 </script>
 
+
+
 <template>
-    <div>
-        <h3 class="title text-center"> De ce să alegi Ideal Credit?</h3>
-            <div class="text-center">
-                <div class="text-brand-500 text-[180px] font-black leading-none tracking-tight">
-                    {{ experience }}
-                </div>
-                <p class="text-lg text-gray-400 mt-2">
-                    ani de experiență<br class="hidden lg:block"> pe piața financiară nebancară din Republica Moldova
-                </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 md:mt-12 card border rounded-xl ">
-                <div class="p-6 flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-blue-400/10 rounded-full flex items-center justify-center mb-6 md:mb-8">
-                        <UIcon name="i-ph-lightbulb-duotone" class="w-8 h-8 text-blue-400" />
+    <section class="container">
+        <h2 class="title text-center"> De ce să alegi Ideal Credit?</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div>
+                <div class="text-center mx-auto bg-black-500 border-6 border-black-400 rounded-full max-w-[300px] aspect-square flex flex-col justify-center">
+                    <div class="text-brand-500 text-[160px] font-bold leading-none font-stretch-50% -mt-6">
+                        {{ experience }}
                     </div>
-                    <p class="text-lg">Dobândă fixă și fără comisioane ascunse</p>
-                </div>
-                <div class="p-6 flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-blue-400/10 rounded-full flex items-center justify-center mb-6 md:mb-8">
-                        <UIcon name="i-ph-users-duotone" class="w-8 h-8 text-blue-400" />
-                    </div>
-                    <p class="text-lg">Sute de clienți mulțumiți,<br> mii de credite acordate</p>
-                </div>
-                <div class="p-6 flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-blue-400/10 rounded-full flex items-center justify-center mb-6 md:mb-8">
-                        <UIcon name="i-ph-check-duotone" class="w-8 h-8 text-blue-400" />
-                    </div>
-                    <p class="text-lg">Simplu, rapid, transparent<br> și fără surprize</p>
+                    <p class="text-xl">
+                        ani de experiență
+                    </p>
                 </div>
             </div>
-    </div>
+            <div class="flex flex-col justify-center">
+                <ul class="space-y-6">
+                    <li v-for="item in list" :key="item" class="flex gap-2.5 items-center">
+                        <UIcon name="i-ph-check" class="w-5 h-5 shrink-0 text-green-500" />
+                        <span class="text-xl text-gray-300">{{ item }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </template>

@@ -7,7 +7,7 @@ import {
 } from '~/utils/schema'
 
 useHead({
-    title: 'Credite Nebancare în Moldova - Rapid și Simplu | Ideal Credit',
+    title: 'Credite Nebancare în Moldova | Rapid și Avantajos | Ideal Credit',
     titleTemplate: '%pageTitle',
 })
 
@@ -19,43 +19,43 @@ useSchemaOrg([
 ])
 </script>
 <template>
-    <section class="relative">
+    <div class="relative pt-10 md:pt-12">
         <div class="bg-squares -mt-[1px]"></div>
-        <div class="container mt-8 md:mt-12">
-            <UiRecenziiButton  class="mb-12 md:mb-16"/>
-            <h1 class="font-semibold text-center text-6xl md:text-8xl">Credite Nebancare<span class="font-extralight text-gray-400 text-[35%] block mt-2"> pentru afaceri și nevoi personale</span></h1>
-            <UiButtonsCTA class="mt-12 md:mt-16"/>
+        <div class="container">
+            <UiRecenziiButton class="mb-16"/>
+            <h1 class="font-semibold text-center text-6xl md:text-8xl">Credite Nebancare</h1>
+            <p class="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">Oferim credite nebancare în Moldova cu dobânzi fixe, fără comisioane ascunse, rapid și avantajos.</p>
+            <UiMainCTA class="mt-16"/>
             <div class="cs-blur cs-blur--center z-[-1]"></div>
             <CalculatorCredit class="mt-12 md:mt-24"/>
         </div>
-    </section>
+    </div>
    
     <section class="container">
-        <UiBadgeForSection class="mb-6">Condițiile de creditare</UiBadgeForSection>
-        <h2 class="title text-center">Ce credite oferim?</h2>
+        <h2 class="title text-center">Condițiile de creditare</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <CreditConditions type="pj" />
             <CreditConditions type="pf" />
         </div>
-        <UiInfo class="mt-6">În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.</UiInfo>
+        <UiInfo class="mt-6">În funcție de evaluarea riscului de credit, se va solicita informații suplimentare și/sau garanții: fidejusiune sau gaj imobil.</UiInfo>
     </section>
     <section class="container">
-        <LazyHowItWorks />
+        <HowItWorks />
     </section>
     <section class="container">
-        <UiBadgeForSection class="mb-6">Metode de achitare</UiBadgeForSection>
-        <h2 class="title text-center">Cum rambursezi creditul?</h2>
-        <LazyPaymentMethods />
+        <h2 class="title text-center">Tipuri de credite</h2>
+        <ServiciiList/>
     </section>
     <section class="container">
-        <LazyShortAboutUs />
+        <h2 class="title text-center">Metode de achitare a creditului</h2>
+        <PaymentMethods />
     </section>
-    <section class="container">
+    <ShortAboutUs />
+    <section class="container" id="recenzii">
         <RecenziiClient />
     </section>
     <section class="container">
-        <UiBadgeForSection class="mb-6">F.A.Q</UiBadgeForSection>
-        <h3 class="title text-center">Întrebări frecvente</h3>
-        <LazyFAQ />
+        <h2 class="title text-center">Întrebări frecvente</h2>
+        <FAQ />
     </section>
 </template>
