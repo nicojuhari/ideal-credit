@@ -1,7 +1,7 @@
 <script setup lang="ts">
     const list = [
         {
-            title: 'Credit pentru afceri',
+            title: 'Credit pentru afaceri',
             link: '/credit-pentru-afaceri',
             icon: 'i-ph-chart-line-up-light'
             
