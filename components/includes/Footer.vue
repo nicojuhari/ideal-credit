@@ -99,7 +99,7 @@
 
 </script>
 <template>
-    <footer class="bg-black-700 border-t relative py-10">
+    <footer class="bg-black-600 border-t relative py-10">
         <div class="container flex flex-col md:flex-row justify-between md:items-center gap-8 pb-8 border-b">
             <div class="space-y-4">
                 <div class="flex items-center gap-3">

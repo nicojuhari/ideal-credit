@@ -30,14 +30,13 @@ useSchemaOrg([
         </div>
     </div>
     <section class="container">
-        <UiBadgeForSection class="mb-6">Condițiile de creditare</UiBadgeForSection>
-        <h2 class="title text-center">Ce trebuie?</h2>
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <div v-for="item in creditConditionsSchema.pj.list" class="flex text-xl items-center gap-2 card">
-                <UIcon name="i-ph-check-circle-bold" class="w-5 h-5 flex-shrink-0 text-blue-500" />
+        <h2 class="title text-center">Condițiile de creditare</h2>
+        <ul class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <li v-for="item in creditConditionsSchema.pj.list" class="flex text-xl items-center gap-2 card">
+                <UIcon name="i-ph-check" class="w-5 h-5 flex-shrink-0 text-green-400" />
                 <span>{{ item }}</span>
-            </div>
-        </div>
+            </li>
+        </ul>
         <UiInfo class="mt-6">În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.</UiInfo>
     </section>
      <section class="container">
@@ -46,16 +45,16 @@ useSchemaOrg([
     <section>
         <div class="container text-lg space-y-4">
             <h2 class="card-title text-center">Ce este un credit pentru afaceri?</h2>
-            <div>Un credit pentru afaceri este un împrumut dedicat companiilor și antreprenorilor. Îți oferă banii necesari pentru orice etapă a afacerii, de la lansare până la dezvoltare sau refinanțare.</div>
+            <p>Un credit pentru afaceri este un împrumut dedicat companiilor și antreprenorilor. Îți oferă banii necesari pentru orice etapă a afacerii, de la lansare până la dezvoltare sau refinanțare.</p>
             <h3 class="text-2xl pt-4">Scopuri principale</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
                 <li>Startup-uri: finanțează lansarea afacerii - înregistrare, echipamente, stoc inițial.</li>
                 <li>Dezvoltare: modernizare spațiu, marketing sau angajări.</li>
                 <li>Capital de lucru: acoperi salarii, furnizori și facturi în perioade cu flux de numerar variabil.</li>
-                <li>Refinanțare: consolidezi creditele vechi într-o singură rată, la costuri mai mici.</li>
+                <li>Refinanțare: consolidezi creditele vechi într-un singur împrumut cu costuri mai mici.</li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru afacerea ta</h3>
-            <ul class="list-outside list-disc ml-6">
+            <ul class="list-outside list-disc ml-6 text-gray-400">
                 <li>Creștere rapidă: investești fără să golești conturile proprii.</li>
                 <li>Flux de numerar stabil: eviți probleme în operațiunile zilnice.</li>
                 <li>Flexibilitate: adaptezi suma și termenii în funcție de proiect.</li>

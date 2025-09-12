@@ -25,7 +25,7 @@
     })
 </script>
 <template>
-    <header class="bg-black-500 border-b sticky top-0 backdrop-blur-lg z-10">
+    <header class="bg-black-600 border-b sticky top-0 backdrop-blur-lg z-10">
             <div class="flex justify-between items-center gap-4 h-14  container">
                 <NuxtLink to="/" title="Ideal Credit">
                     <IconsLogo class="w-8" />

@@ -46,7 +46,7 @@ useSchemaOrg([
         <div class="container text-lg space-y-4">
             <h2 class="card-title text-center">Ce este un credit pentru nevoi personale?</h2>
             <p>Este un credit de consum destinat persoanelor fizice. Îţi pune la dispoziţie bani rapid, fără destinaţie fixă, pentru orice cheltuieli planificate sau neprevăzute.</p>
-            <h3 class="text-2xl pt-4">Când poți folosi banii:</h3>
+            <h3 class="text-2xl pt-4">Când poți folosi banii</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
                 <li>Achiziţii de bunuri: electrocasnice, mobilă, electronice</li>
                 <li>Sănătate: tratamente medicale, stomatologie</li>
