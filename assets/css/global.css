@@ -27,7 +27,7 @@ section {
 
 .card-title,
 .title {
-    @apply text-4xl mb-10 md:mb-12 px-4 md:px-0 font-semibold;
+    @apply text-3xl md:text-4xl mb-10 md:mb-12 px-4 md:px-0 font-medium;
 }
 
 .link {
