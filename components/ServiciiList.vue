@@ -8,7 +8,7 @@
         },
         {
             title: 'Credit pentru nevoi personale',
-            link: '/crdit-pentru-nevoi-personale',
+            link: '/credit-pentru-nevoi-personale',
             icon: 'i-ph-shopping-cart-light'
         }
     ]
