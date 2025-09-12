@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
-import { UiBadgeForSection } from '#components'
 
 const { trackEvent } = useFacebookPixel()
 
@@ -26,9 +25,9 @@ const formSuccess = ref(false)
 const formError = ref(false)
 
 useHead({
-    title: 'Cerere de credit online - Rapid și Eficient',
+    title: 'Cerere de Credit Online - Aplică în doar 2 minute | Ideal Credit',
     meta: [
-        { name: 'description', content: 'Obține rapid un credit nebancar. Oferim soluții flexible pentru nevoi personale și afaceri, cu dobânzi competitive și fără comisioane ascunse. Aplică Online! ' },
+        { name: 'description', content: 'Completează cererea de credit online la Ideal Credit. Decizie în 1 - 3 ore, documentație minimă și consultanță gratuită. Primești banii rapid!' },
         { name: 'keywords', content: 'cerere de credit, credite rapide, credite Moldova, credite Chișinău, credite online, împrumuturi' }
     ]
 })
@@ -131,10 +130,10 @@ onMounted(() => {
     <div class="container relative my-4 md:my-6">
         <div class="card">
             <h1 class="card-title text-center !mb-2">Cerere de credit online</h1>
-            <UiBadgeForSection class="mt-4">
-                Ai nevoie doar de 2 minute!
-            </UiBadgeForSection>
-            <UForm :state="formData" :validate="validate" @submit="submitForm" class="space-y-4 md:space-y-6">
+            <div class="mt-4 text-sm text-center text-brand-500">
+                Completezi în doar 2 minute
+            </div>
+            <UForm :state="formData" :validate="validate" @submit="submitForm" class="space-y-6 md:space-y-8 pt-10">
                 <h2 class="mt-12 mb-6 text-green-400 text-center font-bold">Date despre credit</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     <UFormField label="Suma (lei)" name="suma">

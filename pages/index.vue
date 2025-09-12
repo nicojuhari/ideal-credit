@@ -43,6 +43,10 @@ useSchemaOrg([
         <HowItWorks />
     </section>
     <section class="container">
+        <h2 class="title text-center">Tipuri de credite</h2>
+        <ServiciiList/>
+    </section>
+    <section class="container">
         <h2 class="title text-center">Metode de achitare a creditului</h2>
         <PaymentMethods />
     </section>

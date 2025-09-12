@@ -109,7 +109,7 @@
                 </div>
                 </div>
             <div class="space-y-1">
-                <div class="mx-auto w-40 h-40 grid place-content-center gap-2 border-6 border-black-300 bg-black-400/70 rounded-full text-center">
+                <div class="mx-auto w-40 h-40 grid place-content-center gap-2 border-6 border-black-300 bg-black-300/50 rounded-full text-center">
                     <div class="text-sm">Prima rată</div>
                     <div class="text-brand-500 text-3xl font-semibold">{{ (graficCalculat?.[0]?.credit_rata +
                             graficCalculat?.[0]?.dobinda_rata).toLocaleString() || 0}}</div>
