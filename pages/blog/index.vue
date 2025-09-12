@@ -13,6 +13,7 @@ stories.value = data.stories;
 
 useHead({
     title: 'Blog - Finanțe personale și business în Moldova | Ideal Credit',
+    titleTemplate: '%pageTitle',
     meta: [
         { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },
         { name: 'description', content: 'Blog financiar cu ghiduri simple despre credite, gestionarea cash-flow-ului și planificare financiară. Informații practice pentru afaceri și persoane fizice' }
