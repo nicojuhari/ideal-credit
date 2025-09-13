@@ -12,7 +12,7 @@ const { data } = await storyblokApi.get("cdn/stories", {
 stories.value = data.stories;
 
 useHead({
-    title: 'Blog - Finanțe personale și business în Moldova | Ideal Credit',
+    title: 'Blog Financiar - Sfaturi și Strategii | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
         { name: 'keywords', content: 'blog financiar, credite rapide, credite pentru afaceri, împrumuturi' },

@@ -2,7 +2,7 @@
 import ShortAboutUs from '~/components/ShortAboutUs.vue';
 import { personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
 useHead({
-    title: 'Credit pentru nevoi personale și urgente | Ideal Credit',
+    title: 'Credit pentru nevoi personale | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
         { name: 'description', content: 'Credit pentru nevoi personale în Moldova cu dobânda fixă. Obține un credit pentru cheltuieli urgente, până la salariu sau planuri personale. Aplică Online!' },

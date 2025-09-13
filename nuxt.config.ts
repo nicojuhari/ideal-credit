@@ -1,4 +1,4 @@
-const description = 'Credite nebancare rapide în Moldova pentru afaceri și persoane fizice. Dobândă fixă, condiții avantajoase, fără comisioane ascunse. Aplică online!'
+const siteDescription = 'Oferim credite nebancare în Moldova pentru afaceri și persoane fizice. Dobândă fixă, condiții avantajoase, fără comisioane ascunse. Aplică online!'
 
 
 export default defineNuxtConfig({
@@ -7,7 +7,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'ro-MD'
             },
-            title: 'Credite Nebancare în Moldova | Rapid și Avantajos | Ideal Credit',
+            title: 'Credite Nebancare în Moldova | Ideal Credit',
             link: [
                 { rel: 'icon', type:'image/x-icon', href: '/favicon.ico' },
                 { rel: 'shortcut icon', type:'image/png', sizes:"32x32", href:"/favicon-32x32.png" },
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
                 { rel: 'apple-touch-icon', sizes:"180x180", href:"/apple-touch-icon.png" },
             ],
             meta: [
-                { name: 'description', content: 'Credite nebancare rapide în Moldova pentru afaceri și persoane fizice. Dobândă fixă, condiții avantajoase, fără comisioane ascunse. Aplică online!' },
+                { name: 'description', content: siteDescription },
                 { name: 'keywords', content: 'credite nebancare, credit md, credit pentru afaceri, credit pentru nevoi personale, credit Chișinău Moldova' },
                 { name: 'google-site-verification', content: "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0"},
                 { property: 'og:locale', content: 'ro_MD' },
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
         public: {
             siteUrl: 'https://idealcredit.md',
             siteName: 'Ideal Credit',
-            siteDescription: 'Ideal Credit oferă credite nebancare pentru afaceri și nevoi personale în Moldova. Rapid, transparent, cu dobânzi fixe și fără comisioane. Aplică Online!',
+            siteDescription: siteDescription,
             fb_pixel_id: 2254113158275780,
             gtag_id: 'G-YXDZGPPXPH',
         }

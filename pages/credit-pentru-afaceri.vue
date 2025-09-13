@@ -3,7 +3,7 @@ import ShortAboutUs from '~/components/ShortAboutUs.vue';
 import { businessCreditSchema, personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
 
 useHead({
-    title: 'Credit pentru afaceri | Investiții sau Cash-Flow | Ideal Credit',
+    title: 'Credit pentru afaceri - Investiții rapide | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
         { name: 'description', content: 'Credit pentru afaceri în Moldova cu aprobare rapidă și condiții clare. Finanțare pentru investiții, echipamente sau capital de lucru, fără birocrație!' },

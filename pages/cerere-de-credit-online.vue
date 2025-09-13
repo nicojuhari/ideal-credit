@@ -25,7 +25,7 @@ const formSuccess = ref(false)
 const formError = ref(false)
 
 useHead({
-    title: 'Cerere de Credit Online - Aplică în doar 2 minute | Ideal Credit',
+    title: 'Cerere de Credit Online | Rapid și Simplu | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
         { name: 'description', content: 'Completează cererea de credit online la Ideal Credit. Decizie în 1 - 3 ore, documentație minimă și consultanță gratuită. Primești banii rapid!' },

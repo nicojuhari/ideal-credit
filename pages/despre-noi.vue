@@ -1,6 +1,6 @@
 <script setup>
     useHead({
-        title: 'Despre Ideal Credit: Credite avantajoase și servicii personalizate',
+        title: 'Despre noi | Ideal Credit - Companie de creditare',
         titleTemplate: '%pageTitle',
         meta: [
             { name: 'description', content: 'Ideal Credit este o organizație de creditare nebancară ce oferă credite cu dobânzi avantajoase și fără comisioane pentru nevoi personale și afaceri.' },
