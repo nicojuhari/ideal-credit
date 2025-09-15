@@ -2,10 +2,10 @@
 import ShortAboutUs from '~/components/ShortAboutUs.vue';
 import { personalLoanSchema } from '~/utils/schema'
 useHead({
-    title: 'Credit până la salariu | Ideal Credit',
+    title: 'Credit până la salariu | Credit urgent | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Credit până la salariu pentru persoanele angajate oficial. Aprobări rapide, dobânzi avantajoase și transparență totală. Aplică online la Ideal Credit.' },
+        { name: 'description', content: 'Credit până la salariu pentru persoanele angajate oficial și cu venit constant. Aprobare rapidă, dobânzi avantajoase și transparență totală. Aplică online!' },
         { name: 'keywords', content: 'credit până la salariu, credit rapid, credit de consum, credit Moldova, credit Chișinău, credite nebancare' }
     ],
 })
