@@ -5,7 +5,7 @@ useHead({
     title: 'Credit pentru nevoi personale | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Credit pentru nevoi personale în Moldova cu dobânda fixă. Obține un credit pentru cheltuieli urgente, până la salariu sau planuri personale. Aplică Online!' },
+        { name: 'description', content: 'Credit pentru nevoi personale în Moldova cu dobânda fixă. Obține un credit pentru cheltuieli urgente, pînă la salariu sau planuri personale. Aplică Online!' },
         { name: 'keywords', content: 'credit pentru nevoi personale, credit rapid, credit de consum, credit Moldova, credit Chișinău, credite nebancare' }
     ],
 })
@@ -52,7 +52,7 @@ useSchemaOrg([
                 <li>Sănătate: tratamente medicale, stomatologie</li>
                 <li>Locuință: renovări mici, reparații</li>
                 <li>Familie: vacanțe, nunți, evenimente</li>
-                <li>Urgențe: plata facturilor sau <NuxtLink to="/credit-pana-la-salariu" title="Credit până la salariu" class="link">credit până la salariu</NuxtLink></li>
+                <li>Urgențe: plata facturilor sau <NuxtLink to="/credit-pina-la-salariu" title="Credit pînă la salariu" class="link">credit pînă la salariu</NuxtLink></li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru tine</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">

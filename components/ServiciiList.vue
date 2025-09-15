@@ -12,8 +12,8 @@
             icon: 'i-ph-shopping-cart-light'
         },
         {
-            title: 'Credit până la salariu',
-            link: '/credit-pana-la-salariu',
+            title: 'Credit pînă la salariu',
+            link: '/credit-pina-la-salariu',
             icon: 'i-ph-hand-coins-light'
         }
     ]
