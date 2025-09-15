@@ -10,13 +10,18 @@
             title: 'Credit pentru nevoi personale',
             link: '/credit-pentru-nevoi-personale',
             icon: 'i-ph-shopping-cart-light'
+        },
+        {
+            title: 'Credit până la salariu',
+            link: '/credit-pana-la-salariu',
+            icon: 'i-ph-hand-coins-light'
         }
     ]
 </script>
 <template>
     <div class="flex flex-wrap items-center justify-center gap-6 gap-y-8">
         <NuxtLink
-        class="border h-10 border-brand-500 flex items-center px-8 rounded-full text-brand-500 gap-2.5 shrink-0"
+        class="border h-10 border-brand-500 flex items-center px-6 rounded-full text-brand-500 gap-2.5 shrink-0"
         v-for="item in list" 
         :key="item.link" :to="item.link" :title="item.title">
             <UIcon :name="item.icon" v-if="item.icon" class="w-5 h-5" />

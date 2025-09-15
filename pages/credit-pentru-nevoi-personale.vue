@@ -52,15 +52,15 @@ useSchemaOrg([
                 <li>Sănătate: tratamente medicale, stomatologie</li>
                 <li>Locuință: renovări mici, reparații</li>
                 <li>Familie: vacanțe, nunți, evenimente</li>
-                <li>Urgențe: plata facturilor sau „până la salariu”</li>
+                <li>Urgențe: plata facturilor sau <NuxtLink to="/credit-pana-la-salariu" title="Credit până la salariu" class="link">credit până la salariu</NuxtLink></li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru tine</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
                 <li>Aprobare rapidă: decizie în 1-3 ore</li>
-                <li>Rate fixe: știi exact cât plătești lunar.</li>
-                <li>Dobândă negociabilă: se ajustează în funcție de situația ta financiară.</li>
-                <li>Documentație minimă: buletin + adeverință de venit( dacă este nevoie).</li>
-                <li>Plată imediată: banii în cont sau cash după semnarea contractului.</li>
+                <li>Rate fixe: știi exact cât plătești lunar</li>
+                <li>Dobândă negociabilă: se ajustează în funcție de situația ta financiară</li>
+                <li>Documentație minimă: buletin + adeverință de venit( dacă este nevoie)</li>
+                <li>Plată imediată: banii în cont sau cash după semnarea contractului</li>
             </ul>
         </div>
         

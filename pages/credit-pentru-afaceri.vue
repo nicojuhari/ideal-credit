@@ -48,17 +48,17 @@ useSchemaOrg([
             <p>Un credit pentru afaceri este un împrumut dedicat companiilor și antreprenorilor. Îți oferă banii necesari pentru orice etapă a afacerii, de la lansare până la dezvoltare sau refinanțare.</p>
             <h3 class="text-2xl pt-4">Scopuri principale</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Startup-uri: finanțează lansarea afacerii - înregistrare, echipamente, stoc inițial.</li>
-                <li>Dezvoltare: modernizare spațiu, marketing sau angajări.</li>
-                <li>Capital de lucru: acoperi salarii, furnizori și facturi în perioade cu flux de numerar variabil.</li>
-                <li>Refinanțare: consolidezi creditele vechi într-un singur împrumut cu costuri mai mici.</li>
+                <li>Startup-uri: finanțează lansarea afacerii - înregistrare, echipamente, stoc inițial</li>
+                <li>Dezvoltare: modernizare spațiu, marketing sau angajări</li>
+                <li>Capital de lucru: acoperi salarii, furnizori și facturi în perioade cu flux de numerar variabil</li>
+                <li>Refinanțare: consolidezi creditele vechi într-un singur împrumut cu costuri mai mici</li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru afacerea ta</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Creștere rapidă: investești fără să golești conturile proprii.</li>
-                <li>Flux de numerar stabil: eviți probleme în operațiunile zilnice.</li>
-                <li>Flexibilitate: adaptezi suma și termenii în funcție de proiect.</li>
-                <li>Oportunități noi: intri pe piețe noi sau cumperi echipamente performante.</li>
+                <li>Creștere rapidă: investești fără să golești conturile proprii</li>
+                <li>Flux de numerar stabil: eviți probleme în operațiunile zilnice</li>
+                <li>Flexibilitate: adaptezi suma și termenii în funcție de proiect</li>
+                <li>Oportunități noi: intri pe piețe noi sau cumperi echipamente performante</li>
             </ul>
         </div>
     </section>

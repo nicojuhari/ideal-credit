@@ -19,8 +19,8 @@
         <h2 class="title text-center"> De ce să alegi Ideal Credit?</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
-                <div class="text-center mx-auto bg-black-500 border-6 border-black-400 rounded-full max-w-[300px] aspect-square flex flex-col justify-center">
-                    <div class="text-brand-500 text-[160px] font-bold leading-none font-stretch-50% -mt-6">
+                <div class="text-center mx-auto bg-black-500 border-6 border-black-400 rounded-full max-w-[280px] aspect-square flex flex-col justify-center">
+                    <div class="text-brand-500 text-[140px] font-bold leading-none font-stretch-50% -mt-6">
                         {{ experience }}
                     </div>
                     <p class="text-xl">
