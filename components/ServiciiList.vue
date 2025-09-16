@@ -3,7 +3,7 @@
         {
             title: 'Credit pentru afaceri',
             link: '/credit-pentru-afaceri',
-            icon: 'i-ph-chart-line-up-light'
+            icon: 'i-ph-chart-bar-light'
             
         },
         {
@@ -15,6 +15,11 @@
             title: 'Credit pînă la salariu',
             link: '/credit-pina-la-salariu',
             icon: 'i-ph-hand-coins-light'
+        },
+        {
+            title: 'Credit pentru afaceri mici',
+            link: '/credit-pentru-afaceri-mici',
+            icon: 'i-ph-chart-line-up-light'
         }
     ]
 </script>
