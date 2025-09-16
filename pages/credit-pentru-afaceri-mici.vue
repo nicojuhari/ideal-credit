@@ -6,7 +6,7 @@ useHead({
     title: 'Credit pentru afaceri mici | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Credit pentru afaceri în Moldova - dosar minim, decizie în 1-3 ore și eliberare rapidă a banilor. Garanții flexibile și consultanță gratuită!' },
+        { name: 'description', content: 'Oferim credit pentru afaceri mici în Moldova - dosar minim, decizie în 1-3 ore și eliberare rapidă a banilor. Garanții flexibile și consultanță gratuită!' },
         { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credit Moldova, credit online, împrumuturi nebancare' }
     ],
 })
