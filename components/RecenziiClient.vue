@@ -21,7 +21,7 @@ const reviews = [
     },
     {
         name: 'Victor',
-        text: 'Mulțumesc Ideal Credit — banca m-a refuzat, dar voi m-ați ajutat în 2 zile să cumpăr mașina dorită.',
+        text: 'Mulțumesc Ideal Credit - banca m-a refuzat, dar voi m-ați ajutat în 2 zile să cumpăr mașina dorită.',
     },
     {
         image: '/recenzii/ideal-credit-recenzie-3.webp'

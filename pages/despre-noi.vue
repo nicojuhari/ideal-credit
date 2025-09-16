@@ -30,14 +30,14 @@
                     <p>Am ajutat sute de persoane fizice și companii să obțină finanțare rapidă și transparentă.</p>
                     
                     <h2 class="pt-6 text-2xl">Misiunea noastră</h2>
-                    <p>Să susținem creșterea economică a Moldovei prin soluții financiare simple și corecte. Ne concentrăm pe rezultate reale pentru clienți — nu pe termeni ascunși.</p>
+                    <p>Să susținem creșterea economică a Moldovei prin soluții financiare simple și corecte. Ne concentrăm pe rezultate reale pentru clienți - nu pe termeni ascunși.</p>
 
                     <h2 class="pt-6 text-2xl">Ce ne diferențiază</h2>
                     <ul class="list-disc list-inside">
                         <li>Expertiză locală - știm exact nevoile antreprenorilor și familiilor din Moldova.</li>
                         <li>Proces rapid - decizie în 1 - 3 ore.</li>
                         <li>Documentație minimă - buletin și adeverință de venit sau certificat de înregistrare pentru firme.</li>
-                        <li>Transparență totală — fără comisioane ascunse; toate costurile sunt comunicate din start.</li>
+                        <li>Transparență totală - fără comisioane ascunse; toate costurile sunt comunicate din start.</li>
                         <li>Consultanță gratuită - te ghidăm pas cu pas, de la analiză până la semnarea contractului.</li>
                     </ul>
 
@@ -50,9 +50,9 @@
                     </p>
                     
                     <h2 class="pt-6 text-2xl">Angajamentul nostru</h2>
-                    <p>Să oferim un serviciu prietenos și profesionist. Condiții clare. Suport real pe termen lung. Vrem ca finanțarea să devină o unealtă pentru creșterea ta — nu o povară.</p>
+                    <p>Să oferim un serviciu prietenos și profesionist. Condiții clare. Suport real pe termen lung. Vrem ca finanțarea să devină o unealtă pentru creșterea ta - nu o povară.</p>
                     
-                    <h3 class="pt-6">Alege Ideal Credit — finanțare simplă, sigură și rapidă.</h3>
+                    <h3 class="pt-6">Alege Ideal Credit - finanțare simplă, sigură și rapidă.</h3>
                     
                     <LazyCallToAction class="py-8" />
                 </div>
@@ -68,6 +68,16 @@
                     <a href="/raport-audit-2024.pdf" target="_blank">1. Raport de Audit 2024</a>
                     <a href="/raport-audit-2023.pdf" target="_blank">2. Raport de Audit 2023</a>
                     <a href="/raport-audit-2022.pdf" target="_blank">3. Raport de Audit 2022</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4 md:mt-6">
+            <div class="card">
+                <h3 class="text-center title mb-8">Documente de constituire</h3>
+                <div class="flex flex-col gap-6">
+                    <a href="/ideal-credit-certificat-de-inregistrare.pdf" title="Certificat de inregistrare Ideal Credit SRL" target="_blank">Certificat de înregistrare</a>
+                    <a href="/ideal-credit-extras-registrul-organizatiilor-de-creditare-nebancare-autorizate.pdf" title="Extras din Regsitrul organizațiilor de creditare nebancare autorizate" target="_blank">Extras din Registrul organizațiilor de creditare nebancară autorizate</a>
                 </div>
             </div>
         </div>

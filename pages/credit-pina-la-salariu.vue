@@ -51,7 +51,7 @@ useSchemaOrg([
     <section>
         <div class="container text-lg space-y-4">
             <h2 class="card-title text-center">Ce este un credit pînă la salariu?</h2>
-            <p>Este un credit pe termen scurt destinat persoanelor cu salariu oficial. Îţi oferă bani rapid pentru cheltuieli urgente, până primeşti salariul. Nu are destinaţie fixă — foloseşti banii pentru ce ai nevoie..</p>
+            <p>Este un credit pe termen scurt destinat persoanelor cu salariu oficial. Îţi oferă bani rapid pentru cheltuieli urgente, până primeşti salariul. Nu are destinaţie fixă - foloseşti banii pentru ce ai nevoie..</p>
             <h3 class="text-2xl pt-4">Când poți folosi banii</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
                 <li>Urgenţe: plata facturilor, reparaţii neaşteptate</li>

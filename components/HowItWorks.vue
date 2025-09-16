@@ -7,7 +7,7 @@
         },
         {
             title: 'Primești răspunsul',
-            text: 'Analizăm cererea și îți comunicăm decizia rapid — în general în 1-3 ore.',
+            text: 'Analizăm cererea și îți comunicăm decizia rapid - în general în 1-3 ore.',
         },
         {
             title: 'Semnezi contractul',

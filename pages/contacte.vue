@@ -9,7 +9,7 @@
         title: 'Contacte și Adresa Oficiilor | Ideal Credit',
         titleTemplate: '%pageTitle',
         meta: [
-            { name: 'description', content: 'Contactează Ideal Credit — adrese, telefoane și programul oficiilor. Consultanță gratuită pentru credite business și de consum. Suntem aici să te ajutăm.' },
+            { name: 'description', content: 'Contactează Ideal Credit - adrese, telefoane și programul oficiilor. Consultanță gratuită pentru credite business și de consum. Suntem aici să te ajutăm.' },
             { name: 'keywords', content: 'ideal credit, credit pentru afaceri, credite Moldova, credite Chișinău, credite nebancare' }
         ],
     })
