@@ -8,7 +8,7 @@
         ],
     })
 
-    import { localBusinessChisinauSchema, localBusinessCauseniSchema } from '~/utils/schema'
+    import { localBusinessChisinauSchema, localBusinessCauseniSchema } from '@/utils/schema'
 
     useSchemaOrg([
         localBusinessChisinauSchema,

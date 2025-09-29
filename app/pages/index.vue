@@ -4,7 +4,7 @@ import {
     localBusinessChisinauSchema, 
     localBusinessCauseniSchema, 
     howToSchema 
-} from '~/utils/schema'
+} from '@/utils/schema'
 
 useHead({
     title: 'Credite Nebancare în Moldova | Ideal Credit',

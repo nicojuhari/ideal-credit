@@ -1,6 +1,6 @@
 <script setup>
 import ShortAboutUs from '~/components/ShortAboutUs.vue';
-import { personalLoanSchema } from '~/utils/schema'
+import { personalLoanSchema } from '@/utils/schema'
 useHead({
     title: 'Credit pînă la salariu | Credit urgent | Ideal Credit',
     titleTemplate: '%pageTitle',

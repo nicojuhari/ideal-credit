@@ -1,6 +1,6 @@
 <script setup>
 import ShortAboutUs from '~/components/ShortAboutUs.vue';
-import { personalLoanSchema, creditConditionsSchema } from '~/utils/schema'
+import { personalLoanSchema, creditConditionsSchema } from '@/utils/schema'
 useHead({
     title: 'Credit pentru nevoi personale | Ideal Credit',
     titleTemplate: '%pageTitle',
@@ -52,7 +52,7 @@ useSchemaOrg([
                 <li>Sănătate: tratamente medicale, stomatologie</li>
                 <li>Locuință: renovări mici, reparații</li>
                 <li>Familie: vacanțe, nunți, evenimente</li>
-                <li>Urgențe: plata facturilor sau <NuxtLink to="/credit-pina-la-salariu" title="Credit pînă la salariu" class="link">credit pînă la salariu</NuxtLink></li>
+                <li>Urgențe: plata facturilor sau <NuxtLink to="/credite/credit-pina-la-salariu" title="Credit pînă la salariu" class="link">credit pînă la salariu</NuxtLink></li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru tine</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">

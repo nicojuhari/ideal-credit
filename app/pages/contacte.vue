@@ -2,7 +2,7 @@
 
     import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 
-    import { localBusinessChisinauSchema, localBusinessCauseniSchema } from '~/utils/schema'
+    import { localBusinessChisinauSchema, localBusinessCauseniSchema } from '@/utils/schema'
     const { trackEvent } = useFacebookPixel()
 
     useHead({

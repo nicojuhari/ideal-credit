@@ -1,6 +1,6 @@
 <script setup>
 import ShortAboutUs from '~/components/ShortAboutUs.vue';
-import { businessCreditSchema, personalLoanSchema } from '~/utils/schema'
+import { businessCreditSchema, personalLoanSchema } from '@/utils/schema'
 
 useHead({
     title: 'Credit pentru militari în Moldova | Ideal Credit',

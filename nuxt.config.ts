@@ -62,7 +62,6 @@ export default defineNuxtConfig({
         name: 'Ideal Credit',
         defaultLocale: 'ro-MD',
     },
-
     ui: {
         colorMode: false
     },

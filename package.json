@@ -12,10 +12,9 @@
     "nuxt": "^4.1.2"
   },
   "dependencies": {
-    "@nuxt/ui": "^3.3.3",
+    "@nuxt/ui": "^4.0.0",
     "@storyblok/nuxt": "^8.1.2",
     "@storyblok/richtext": "^3.8.0",
-    "ideal-credit": "^0.2.6",
-    "tailwindcss": "^4.1.13"
+    "ideal-credit": "^0.2.6"
   }
 }
