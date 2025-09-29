@@ -17,6 +17,18 @@ useSchemaOrg([
     localBusinessCauseniSchema,
     howToSchema
 ])
+
+const stories = ref(null);
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get("cdn/stories", {
+    starts_with: "blog",
+    version: "published",
+    per_page: 3,
+    page: 1
+});
+
+stories.value = data.stories;
 </script>
 <template>
     <div class="relative pt-10 md:pt-12">
@@ -43,10 +55,6 @@ useSchemaOrg([
         <HowItWorks />
     </section>
     <section class="container">
-        <h2 class="title text-center">Tipuri de credite</h2>
-        <ServiciiList/>
-    </section>
-    <section class="container">
         <h2 class="title text-center">Metode de achitare a creditului</h2>
         <PaymentMethods />
     </section>
@@ -57,5 +65,15 @@ useSchemaOrg([
     <section class="container">
         <h2 class="title text-center">Întrebări frecvente</h2>
         <FAQ />
+    </section>
+    <section class="container">
+        <h2 class="title text-center">Blog</h2>
+        <div v-if="stories" class="space-y-6">
+            <BlogCards :stories="stories" />
+            <UButton to="/blog" title="Blog financiar" variant="outline" color="secondary" icon="i-ph-arrow-right-light">
+                Vezi toate articolele
+            </UButton>
+        </div>
+        <div v-else class="text-center text-gray-400 py-20">Se încarcă...</div>
     </section>
 </template>

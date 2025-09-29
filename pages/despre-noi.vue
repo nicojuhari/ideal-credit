@@ -43,10 +43,10 @@
 
                     <h2 class="pt-6 text-2xl">Ce oferim (pe scurt)</h2>
                     <p>
-                        <NuxtLink to="/credit-pentru-nevoi-personale" title="Credit pentru nevoi personale" class="link">Credite pentru nevoi personale</NuxtLink> - pentru electrocasnice, mașină, tratamente medicale, cheltuieli urgente sau pînă la salariu.
+                        <NuxtLink to="/credite/credit-pentru-nevoi-personale" title="Credit pentru nevoi personale" class="link">Credite pentru nevoi personale</NuxtLink> - pentru electrocasnice, mașină, tratamente medicale, cheltuieli urgente sau pînă la salariu.
                     </p>
                     <p>
-                        <NuxtLink to="/credit-pentru-afaceri" title="Credit pentru afaceri" class="link">Credite pentru afaceri</NuxtLink> - pentru echipamente sau tehnologie, capital de lucru sau refinanțare, modernizare sau extindere.
+                        <NuxtLink to="/credite/credit-pentru-afaceri" title="Credit pentru afaceri" class="link">Credite pentru afaceri</NuxtLink> - pentru echipamente sau tehnologie, capital de lucru sau refinanțare, modernizare sau extindere.
                     </p>
                     
                     <h2 class="pt-6 text-2xl">Angajamentul nostru</h2>

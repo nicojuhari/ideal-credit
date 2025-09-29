@@ -43,10 +43,19 @@ export default defineNuxtConfig({
     },
     routeRules : {
         '/': { prerender: true },
-        '/credit-pentru-nevoi-personale': { prerender: true },
-        '/credit-pentru-afaceri': { prerender: true },
-        '/credit-de-consum': { redirect: '/credit-pentru-nevoi-personale',  },
+        '/credite': { prerender: true },
+        '/credite/**': { prerender: true },
+        '/despre-noi': { prerender: true },
+        '/contacte': { prerender: true },
+        '/blog': { prerender: true },
+        '/blog/**': { prerender: true },
+        '/cerere-de-credit-online': { prerender: true },
+        '/credit-de-consum': { redirect: { to: '/credite/credit-pentru-nevoi-personale', statusCode: 301 } },
         '/blog/scorul-de-credit-si-de-ce-conteaza': { redirect: { to: '/blog/istoria-de-credit-si-impactul-asupra-finantelor-tale', statusCode: 301 } },
+        '/credit-pentru-afaceri': { redirect: { to: '/credite/credit-pentru-afaceri', statusCode: 301 } },
+        '/credit-pentru-afaceri-mici': { redirect: { to: '/credite/credit-pentru-afaceri-mici', statusCode: 301 } },
+        '/credit-pentru-nevoi-personale': { redirect: { to: '/credite/credit-pentru-nevoi-personale', statusCode: 301 } },
+        '/credit-pina-la-salariu': { redirect: { to: '/credite/credit-pina-la-salariu', statusCode: 301 } },
     },
     site: {
         url: process.env.NUXT_BASE_URL || 'https://idealcredit.md',
@@ -67,14 +76,6 @@ export default defineNuxtConfig({
     },
     devServer: {
         port: 3001
-    },
-    nitro: {
-        preset: 'vercel',
-        routeRules: {
-            '/credit-auto': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
-            '/credit-ipotecar': { redirect: { to: '/credit-pentru-nevoi-personale', statusCode: 301 } },
-            '/blog/scorul-de-credit-si-de-ce-conteaza': { redirect: { to: '/blog/istoria-de-credit-si-impactul-asupra-finantelor-tale', statusCode: 301 } },
-        }
     },
     vite: {
         css: {
