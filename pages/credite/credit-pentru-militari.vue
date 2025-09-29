@@ -6,7 +6,7 @@ useHead({
     title: 'Credit pentru militari în Moldova | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Credit pentru militari în Moldova — condiții clare, decizie rapidă și dobândă transparentă. Sume flexibile până la 300.000 lei. Aplică online la Ideal Credit.' },
+        { name: 'description', content: 'Credit pentru militari în Moldova — condiții clare, decizie rapidă și dobândă transparentă. Sume flexibile până la 300.000 lei. Aplică online!' },
         { name: 'keywords', content: 'credit pentru militari, credit de consum, credit Moldova, credite nebancare, împrumuturi rapide' }
     ],
 })
