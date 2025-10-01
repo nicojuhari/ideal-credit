@@ -1,6 +1,6 @@
 <script setup>
-import ShortAboutUs from '~/components/ShortAboutUs.vue';
-import { businessCreditSchema, personalLoanSchema } from '@/utils/schema'
+// import ShortAboutUs from '~/components/ShortAboutUs.vue';
+// import { businessCreditSchema, personalLoanSchema } from '@/utils/schema'
 
 useHead({
     title: 'Credit pentru militari în Moldova | Ideal Credit',
@@ -11,10 +11,10 @@ useHead({
     ],
 })
 
-useSchemaOrg([
-    businessCreditSchema,
-    personalLoanSchema
-])
+// useSchemaOrg([
+    
+//     personalLoanSchema
+// ])
 
 const creditConditionsSchema =   [
     'Vârsta între 23 și 65 ani',
@@ -56,20 +56,20 @@ const creditConditionsSchema =   [
             <p>Acest credit oferă acces rapid la bani pentru cheltuieli planificate sau urgente, cu documentație simplificată și condiții clare, concepute pentru rutina salarială specifică din armată.</p>
             <h3 class="text-2xl pt-4">Când poți folosi banii</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Urgențe: plata facturilor sau intervenții neprevăzute</li>
-                <li>Sănătate: tratamente, stomatologie pentru tine sau familie</li>
-                <li>Locuință: reparații mici, renovări sau mobilare</li>
-                <li>Familie și evenimente: vacanțe, nunți, educație copii</li>
-                <li>Transport: reparații auto sau achiziție vehicul mic</li>
-                <li>Alte nevoi personale: orice cheltuială urgentă sau planificată</li>
+                <li>Urgențe - plata facturilor sau intervenții neprevăzute</li>
+                <li>Sănătate - tratamente, stomatologie pentru tine sau familie</li>
+                <li>Locuință - reparații mici, renovări sau mobilare</li>
+                <li>Familie și evenimente - vacanțe, nunți, educație copii</li>
+                <li>Transport - reparații auto sau achiziție vehicul mic</li>
+                <li>Alte nevoi personale - orice cheltuială urgentă sau planificată</li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii specifice pentru militari</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Aprobare rapidă: decizie în 1-24 ore, în funcție de documente</li>
-                <li>Rate fixe și transparente: știi exact cât plătești lunar</li>
-                <li>Condiții adaptate venitului militar: evaluăm salariul și vechimea în structuri pentru oferte reale</li>
-                <li>Fără comisioane ascunse: contract clar, dobândă fixă pe perioada stabilită</li>
-                <li>Flexibilitate: sume între 10.000 și 300.000 lei, pe perioade de până la 5 ani</li>
+                <li>Aprobare rapidă - decizie în 1-3 ore, în funcție de documente</li>
+                <li>Rate fixe și transparente - știi exact cât plătești lunar</li>
+                <li>Condiții adaptate venitului militar - evaluăm salariul și vechimea în structuri pentru oferte reale</li>
+                <li>Fără comisioane ascunse - contract clar, dobândă fixă pe perioada stabilită</li>
+                <li>Flexibilitate - sume între 10.000 și 300.000 lei, pe perioade de până la 5 ani</li>
             </ul>
             <h3 class="text-2xl pt-4">Eligibilitate (orientativ)</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">

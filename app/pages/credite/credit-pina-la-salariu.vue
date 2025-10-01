@@ -54,19 +54,19 @@ useSchemaOrg([
             <p>Este un credit pe termen scurt destinat persoanelor cu salariu oficial. Îţi oferă bani rapid pentru cheltuieli urgente, până primeşti salariul. Nu are destinaţie fixă - foloseşti banii pentru ce ai nevoie..</p>
             <h3 class="text-2xl pt-4">Când poți folosi banii</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Urgenţe: plata facturilor, reparaţii neaşteptate</li>
-                <li>Sănătate: consultaţii, tratamente, stomatologie</li>
-                <li>Transport: reparaţii auto sau cheltuieli cu deplasarea la serviciu</li>
-                <li>Familie: cheltuieli pentru copii sau părinţi</li>
-                <li>Cash-flow personal: elimină golul financiar până la ziua de plată</li>
+                <li>Urgenţe - plata facturilor, reparaţii neaşteptate</li>
+                <li>Sănătate - consultaţii, tratamente, stomatologie</li>
+                <li>Transport - reparaţii auto sau cheltuieli cu deplasarea la serviciu</li>
+                <li>Familie - cheltuieli pentru copii sau părinţi</li>
+                <li>Cash-flow personal - elimină golul financiar până la ziua de plată</li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru tine</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Aprobare rapidă: decizie în 1-3 ore</li>
+                <li>Aprobare rapidă - decizie în 1-3 ore</li>
                 <li>Bani în cont sau cash imediat după semnarea contractului</li>
-                <li>Rate fixe: ştii exact cât plăteşti lunar</li>
-                <li>Transparent: fără comisioane ascunse</li>
-                <li>Condiţii flexibile: suma şi perioada se adaptează la salariul tău</li>
+                <li>Rate fixe - ştii exact cât plăteşti lunar</li>
+                <li>Transparent - fără comisioane ascunse</li>
+                <li>Condiţii flexibile - suma şi perioada se adaptează la salariul tău</li>
             </ul>
         </div>
         

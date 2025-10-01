@@ -41,8 +41,11 @@
             link: '/credit-pentru-militari',
             group: 'professional'
         },
-        
-
+        {
+            title: 'Credit pentru medici',
+            link: '/credit-pentru-medici',
+            group: 'professional'
+        },
     ]
 </script>
 <template>
