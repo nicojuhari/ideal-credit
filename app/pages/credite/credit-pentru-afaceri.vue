@@ -13,7 +13,7 @@ useHead({
 
 useSchemaOrg([
     businessCreditSchema,
-    personalLoanSchema
+    // personalLoanSchema
 ])
 
 </script>

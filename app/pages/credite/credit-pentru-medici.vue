@@ -1,6 +1,6 @@
 <script setup>
 import ShortAboutUs from '~/components/ShortAboutUs.vue';
-import { businessCreditSchema, personalLoanSchema } from '@/utils/schema'
+import { personalLoanSchema } from '@/utils/schema'
 
 useHead({
     title: 'Credit pentru medici | Rapid și Avantajos | Ideal Credit',
@@ -12,7 +12,7 @@ useHead({
 })
 
 useSchemaOrg([
-    businessCreditSchema,
+    // businessCreditSchema,
     personalLoanSchema
 ])
 

@@ -68,11 +68,13 @@ stories.value = data.stories;
     </section>
     <section class="container">
         <h2 class="title text-center">Blog</h2>
-        <div v-if="stories" class="space-y-6">
+        <div v-if="stories" class="space-y-8">
             <BlogCards :stories="stories" />
-            <UButton to="/blog" title="Blog financiar" variant="outline" color="secondary" icon="i-ph-arrow-right-light">
-                Vezi toate articolele
-            </UButton>
+            <div class="text-center">
+                <UButton to="/blog" title="Blog financiar" variant="outline" color="secondary" icon="i-ph-arrow-right-light">
+                    Vezi toate articolele
+                </UButton>
+            </div>
         </div>
         <div v-else class="text-center text-gray-400 py-20">Se încarcă...</div>
     </section>
