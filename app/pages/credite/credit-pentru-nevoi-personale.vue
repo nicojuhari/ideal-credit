@@ -50,7 +50,7 @@ useSchemaOrg([
             <ul class="list-outside list-disc ml-6 text-gray-400">
                 <li>Achiziţii de bunuri: electrocasnice, mobilă, electronice</li>
                 <li>Sănătate: tratamente medicale, stomatologie</li>
-                <li>Locuință: renovări mici, reparații</li>
+                <li>Locuință: renovări mici, <NuxtLink to="/credite/credit-pentru-reparatie" title="Credit pentru reparație" class="link">reparații</NuxtLink></li>
                 <li>Familie: vacanțe, nunți, evenimente</li>
                 <li>Urgențe: plata facturilor sau <NuxtLink to="/credite/credit-pina-la-salariu" title="Credit pînă la salariu" class="link">credit pînă la salariu</NuxtLink></li>
             </ul>

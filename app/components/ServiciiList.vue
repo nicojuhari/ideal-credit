@@ -58,7 +58,7 @@
         },
         {
             title: 'Credit pentru reparație',
-            link: '',
+            link: '/credit-pentru-reparatie',
             group: 'scop'
         },
         {
