@@ -226,14 +226,14 @@ export const howToSchema = {
 
 export const businessCreditSchema = {
     "@type": "LoanOrCredit",
-    "name": "Credit pentru afaceri",
-    "description": "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, concepute pentru a susține dezvoltarea afacerilor în Republica Moldova.",
+    "name": "Credit pentru afaceri mici",
+    "description": "Credit pentru afaceri mici - bani rapizi pentru dezvoltarea afacerilor. Susținem afacerile mici să devină mari.",
     "url": "https://idealcredit.md/#",
     "amount": {
         "@type": "MonetaryAmount",
         "value": 1000,
         "currency": "MDL",
-        "minValue": 1000,
+        "minValue": 10000,
         "maxValue": 300000
     },
     "interestRate": {
@@ -250,9 +250,9 @@ export const businessCreditSchema = {
     },
     "loanTerm": {
         "@type": "QuantitativeValue",
-        "value": 6,
+        "value": 12,
         "unitText": "Months",
-        "minValue": 6,
+        "minValue": 12,
         "maxValue": 60
     },
     "requiredCollateral": "În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj (imobil).",
@@ -271,9 +271,9 @@ export const personalLoanSchema = {
     "url": "https://idealcredit.md/#",
     "amount": {
         "@type": "MonetaryAmount",
-        "value": 1000,
+        "value": 10000,
         "currency": "MDL",
-        "minValue": 1000,
+        "minValue": 10000,
         "maxValue": 300000
     },
     "interestRate": {
@@ -319,7 +319,7 @@ export const creditConditionsSchema = {
         'list': [
             'Activitate economică validă',
             'Actele de înființare',
-            'Evidența contabilă',
+            'Evidența contabilă, contracte comerciale',
             'Extras bancar - minim 3 luni',
         ]
     },

@@ -6,14 +6,13 @@ useHead({
     title: 'Credit pentru afaceri mici | Ideal Credit',
     titleTemplate: '%pageTitle',
     meta: [
-        { name: 'description', content: 'Oferim credit pentru afaceri mici în Moldova - dosar minim, decizie în 1-3 ore și eliberare rapidă a banilor. Garanții flexibile și consultanță gratuită!' },
+        { name: 'description', content: 'Oferim credit pentru afaceri mici în Moldova cu aprobare rapidă și condiții clare. Finanțare pentru investiții, echipamente sau capital de lucru, fără birocrație!' },
         { name: 'keywords', content: 'credit pentru afaceri, business credit, credit rapid, credit Moldova, credit online, împrumuturi nebancare' }
     ],
 })
 
 useSchemaOrg([
     businessCreditSchema,
-    // personalLoanSchema
 ])
 
 </script>
@@ -23,7 +22,7 @@ useSchemaOrg([
         <div class="container">
             <UiRecenziiButton class="mb-16"/>
             <h1 class="font-semibold text-center text-5xl md:text-8xl">Credit pentru<br> afaceri mici</h1>
-            <p class="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">Credit pentru afaceri mici - capital rapid pentru dezvoltarea afacerilor. Susținem afacerile mici să devină mari.</p>
+            <p class="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">Credit pentru afaceri mici - bani rapizi pentru dezvoltarea afacerilor. Susținem afacerile mici să devină mari.</p>
             <UiMainCTA class="mt-16"/>
             <div class="cs-blur cs-blur--center z-[-1]"></div>
             <CalculatorCredit class="mt-18 md:mt-24"/>
@@ -49,9 +48,10 @@ useSchemaOrg([
             <p>Ideal Credit oferă soluții pentru afacerile mici cu sume până la 400 000 lei și perioadă de rambursare până la 48 luni.</p>
             <h3 class="text-2xl pt-4">Scopuri principale</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
-                <li>Startup-uri: acoperă costuri de lansare (înregistrare, echipamente, stoc inițial)</li>
-                <li>Dezvoltare: achiziție echipamente sau extindere canal vânzări</li>
-                <li>Capital de lucru sau refinanțare</li>
+                <li>Startup-uri: finanțează lansarea afacerii - înregistrare, echipamente, stoc inițial</li>
+                <li>Dezvoltare: modernizare spațiu, marketing sau angajări</li>
+                <li>Capital de lucru: acoperi salarii, furnizori și facturi în perioade cu flux de numerar variabil</li>
+                <li>Refinanțare: consolidezi creditele vechi într-un singur împrumut cu costuri mai mici</li>
             </ul>
             <h3 class="text-2xl pt-4">Beneficii pentru afacerea ta</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">

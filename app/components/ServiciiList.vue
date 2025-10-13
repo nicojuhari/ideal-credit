@@ -21,11 +21,6 @@
     ]
     const list = [
         {
-            title: 'Credit pentru afaceri',
-            link: '/credit-pentru-afaceri',
-            group: 'business'
-        },
-        {
             title: 'Credit pentru nevoi personale',
             link: '/credit-pentru-nevoi-personale',
             group: 'personal'
@@ -39,6 +34,11 @@
         {
             title: 'Credit pentru afaceri mici',
             link: '/credit-pentru-afaceri-mici',
+            group: 'business'
+        },
+         {
+            title: 'Credit pentru agricultură',
+            link: '/credit-pentru-agricultura',
             group: 'business'
         },
         {
