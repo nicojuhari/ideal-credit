@@ -43,7 +43,7 @@ useSchemaOrg([
     </section>
     <section>
         <div class="container text-lg space-y-4">
-            <h2 class="card-title text-center">Credit pentru agricultură</h2>
+            <h2 class="card-title text-center">Ce este un credit pentru agricultură?</h2>
             <p>Este un împrumut pentru fermieri și companii agricole (SRL, ÎI) care au nevoie de capital pentru cumpărarea tehnicii agricole, achiziția de semințe și fertilizanți sau plata lucrărilor sezoniere.</p>
             <h3 class="text-2xl pt-4">Scopuri principale</h3>
             <ul class="list-outside list-disc ml-6 text-gray-400">
