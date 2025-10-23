@@ -63,7 +63,7 @@
         },
         {
             title: 'Credit pentru automobil',
-            link: '',
+            link: '/credit-pentru-automobil',
             group: 'scop'
         },
 
