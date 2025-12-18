@@ -15,6 +15,6 @@
     "@nuxt/ui": "^4.3.0",
     "@storyblok/nuxt": "^8.1.2",
     "@storyblok/richtext": "^3.8.0",
-    "ideal-credit": "^0.1.1"
+    "ideal-credit": "^0.2.6"
   }
 }
