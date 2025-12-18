@@ -1,5 +1,3 @@
-
-
 body {
     @apply bg-black-800 text-white/90;
     /* default browser font */
@@ -40,7 +38,8 @@ section {
 
 /* Hero Background */
 .bg-squares {
-    background-color: #0b0b0b; /* like body bg color */
+    background-color: #0b0b0b;
+    /* like body bg color */
     background-image:
         linear-gradient(to right, #191919 1px, transparent 1px),
         linear-gradient(to bottom, #191919 1px, transparent 1px);
@@ -56,7 +55,8 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent, #0b0b0b 80%); /* like body bg color */
+    background: linear-gradient(to bottom, transparent, #0b0b0b 80%);
+    /* like body bg color */
     pointer-events: none;
 }
 
@@ -117,7 +117,6 @@ input[type="range"] {
     @apply rounded-lg bg-black-300 px-1 text-white outline-none font-semibold text-xl w-[8.5rem] text-right h-10;
 }
 
-
 .input-calculator::-webkit-outer-spin-button,
 .input-calculator::-webkit-inner-spin-button,
 form input[type=number]::-webkit-outer-spin-button,
@@ -133,7 +132,7 @@ input[type=number] {
 .pre-contract-table td {
     padding: 8px 6px;
     border: 1px solid;
-    @apply border-black-300;    
+    @apply border-black-300;
 }
 
 .pre-contract-table td:first-of-type {
@@ -144,11 +143,14 @@ input[type=number] {
     @apply bg-brand-500/80 w-full;
 }
 
-form input, form textarea, .form-select {
+form input,
+form textarea,
+.form-select {
     @apply rounded ring-1 ring-white/5 text-white p-2 w-full bg-black-400 outline-none text-lg;
 }
 
-.form-select, form input:not([type="checkbox"]) {
+.form-select,
+form input:not([type="checkbox"]) {
     @apply h-10;
 }
 
@@ -163,6 +165,11 @@ form label {
 
 form *::placeholder {
     opacity: 0.4;
-    color: rgb(174, 181, 192);
+    color: rgb(190, 196, 206);
+    font-size: 16px;
     /* gray-400 */
+}
+
+button[aria-label="Close"] {
+    @apply !px-0;
 }

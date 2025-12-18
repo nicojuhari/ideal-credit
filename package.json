@@ -8,13 +8,13 @@
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.2.2",
-    "@nuxtjs/seo": "^3.2.2",
-    "nuxt": "^4.1.2"
+    "@nuxtjs/seo": "^3.3.0",
+    "nuxt": "^4.2.2"
   },
   "dependencies": {
-    "@nuxt/ui": "^4.0.0",
+    "@nuxt/ui": "^4.3.0",
     "@storyblok/nuxt": "^8.1.2",
     "@storyblok/richtext": "^3.8.0",
-    "ideal-credit": "^0.2.6"
+    "ideal-credit": "^0.1.1"
   }
 }

@@ -11,7 +11,7 @@ export default defineAppConfig({
                 content: "!text-white bg-black-400",
                 title: "text-white font-bold",
                 close: "cursor-pointer !text-white bg-transparent hover:bg-white/10",
-            }
+            },
         },
         icons: {
             close: "i-ph-x-bold",
@@ -29,12 +29,23 @@ export default defineAppConfig({
         input: {
             slots: {
                 root: "w-full",
-            }
+            },
         },
         textarea: {
             slots: {
                 root: "w-full",
-            }
+            },
+        },
+        checkboxGroup: {
+            slots: {
+                fieldset: "flex gap-y-2 gap-x-4",
+            },
+        },
+
+        select: {
+            slots: {
+                content: "bg-black-400 !text-white",
+            },
         },
     },
 });

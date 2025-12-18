@@ -4,6 +4,8 @@
 
 :root {
     --ui-border: #212121;
+    --ui-text: #fafafa;
+    --ui-bg-accented: #333333;
 }
 
 @theme static {
@@ -85,6 +87,12 @@
     * {
         @apply border-(--ui-border)
     }
+}
+
+@layer utilities {
+    /* .text-default {
+        color: #fafafa;
+    } */
 }
 
 @import "./global.css";
