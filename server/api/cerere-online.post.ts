@@ -5,21 +5,25 @@ export default defineEventHandler(async (event) => {
     let apiURL = config.icm_api_url
     if(apiURL && body && config.secret_key) {
         try {
-            await $fetch( apiURL + '/cerere_online', {   
+            const response = await $fetch( apiURL + '/cerere-online', {   
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json",
-                        "x-api-secret-key" : config.secret_key,
+                        "x-api-key" : config.secret_key,
                         "User-Agent": "IdealCredit-Website/1.0",
                         "Accept": "application/json",
                         "X-Requested-With": "XMLHttpRequest",
                     },
                     body,
                 })
-            return { success: true }
+            if((response as any).success) {
+                return { success: true }
+            } else {
+                return { success: false }
+            }
         } catch (err: any) {
             console.error('API Request Failed:', {
-                url: apiURL + '/cerere_online',
+                url: apiURL + '/cerere-online',
                 status: err.response?.status,
                 statusText: err.response?.statusText,
                 headers: err.response?.headers,

@@ -154,6 +154,8 @@ const submitForm = async () => {
                 formSuccess.value = true;
                 currentStep.value = 0;
             }, 1200);
+        } else {
+            formError.value = true;
         }
     } catch (e) {
         console.error(e);
