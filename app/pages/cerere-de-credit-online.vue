@@ -174,7 +174,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="container relative my-4 md:my-6">
-        <h1 class="card-title text-center pt-4 !mb-4">Cerere de credit online</h1>
+        <h1 class="card-title text-center pt-4 mb-4!">Cerere de credit online</h1>
         <div class="max-w-md mx-auto card">
             <!-- Progress bar / Steps -->
             <div class="p-4 border rounded bg-black-300/40 border-white/5">
