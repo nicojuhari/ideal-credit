@@ -17,7 +17,7 @@
   --color-brand-900: #7c310b;
   --color-brand-950: #481700;
 
-  /* Black (dark grays — site backgrounds) */
+  /* Black (dark grays - site backgrounds) */
   --color-black-50: #e5e5e5;
   --color-black-100: #c9c9c9;
   --color-black-200: #989898;
@@ -68,7 +68,7 @@
   --color-gray-900: #585858;
   --color-gray-950: #333333;
 
-  /* shadcn/ui semantic tokens — mapped to brand dark theme */
+  /* shadcn/ui semantic tokens - mapped to brand dark theme */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -304,7 +304,7 @@ form *::placeholder {
   font-size: 16px;
 }
 
-/* ─── Number input — hide spin buttons ───────────────────────────────────── */
+/* ─── Number input - hide spin buttons ───────────────────────────────────── */
 .input-calculator::-webkit-outer-spin-button,
 .input-calculator::-webkit-inner-spin-button,
 form input[type=number]::-webkit-outer-spin-button,

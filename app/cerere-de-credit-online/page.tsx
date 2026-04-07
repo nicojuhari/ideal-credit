@@ -155,7 +155,7 @@ export default function CerereOnlinePage() {
                         />
                     </div>
                     <p className="mt-1.5 text-xs text-center text-brand-500">
-                        Pasul {step + 1} din {STEPS.length} — {STEPS[step].label}
+                        Pasul {step + 1} din {STEPS.length} - {STEPS[step].label}
                     </p>
                 </div>
 

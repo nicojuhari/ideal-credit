@@ -11,7 +11,7 @@ import { personalLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru polițiști - angajați sau pensionari MAI | Ideal Credit",
     description:
-        "Credit pentru polițiști — împrumut personal pentru angajați și pensionari MAI din Moldova. Aprobat rapid, rate fixe și fără comisioane ascunse.",
+        "Credit pentru polițiști - împrumut personal pentru angajați și pensionari MAI din Moldova. Aprobat rapid, rate fixe și fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-politisti" },
 };
 

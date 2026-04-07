@@ -11,7 +11,7 @@ import { personalLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru militari în Moldova | Ideal Credit",
     description:
-        "Credit pentru militari în Moldova — condiții clare, decizie rapidă și dobândă transparentă. Sume flexibile până la 300.000 lei. Aplică online!",
+        "Credit pentru militari în Moldova - condiții clare, decizie rapidă și dobândă transparentă. Sume flexibile până la 300.000 lei. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-militari" },
 };
 

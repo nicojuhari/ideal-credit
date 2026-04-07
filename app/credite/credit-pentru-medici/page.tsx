@@ -11,7 +11,7 @@ import { personalLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru medici | Rapid și Avantajos | Ideal Credit",
     description:
-        "Credit pentru medici — condiții speciale, dobânzi avantajoase și aprobare rapidă. Soluții transparente pentru medicii din Republica Moldova. Aplică online!",
+        "Credit pentru medici - condiții speciale, dobânzi avantajoase și aprobare rapidă. Soluții transparente pentru medicii din Republica Moldova. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-medici" },
 };
 
