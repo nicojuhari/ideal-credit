@@ -291,6 +291,7 @@ input[type="range"]::-webkit-slider-thumb {
 /* ─── Form styles ────────────────────────────────────────────────────────── */
 form input,
 form textarea,
+form button[role="combobox"],
 .form-select {
   @apply rounded ring-1 ring-white/5 text-white p-2 w-full bg-black-400 outline-none text-lg;
 }

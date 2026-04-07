@@ -39,9 +39,13 @@ export const cerereSchema = z.object({
   bunuri: z.array(z.string()).min(1, "Acest câmp este obligatoriu"),
 
   // Step 4
-  terms: z.literal(true, { message: "Acceptați condițiile." }),
-  have_garant: z.literal(true, { message: "Este necesar cel puțin un fidejusor." }),
-  in_oficiu: z.literal(true, { message: "Prezența în oficiu este obligatorie." }),
+  terms: z.boolean().refine((v) => v === true, "Acceptați condițiile."),
+  have_garant: z
+    .boolean()
+    .refine((v) => v === true, "Este necesar cel puțin un fidejusor."),
+  in_oficiu: z
+    .boolean()
+    .refine((v) => v === true, "Prezența în oficiu este obligatorie."),
 });
 
 export type CerereFormValues = z.input<typeof cerereSchema>;

@@ -7,6 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, TriangleAlert as Warning } from "lucide-react";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/components/ui/button";
+import { Field, FieldContent, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSet } from "@/components/ui/field";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cerereSchema, type CerereFormValues, STEPS, BUNURI_OPTIONS } from "./schema";
 
 const defaultValues: CerereFormValues = {
@@ -21,32 +26,12 @@ const defaultValues: CerereFormValues = {
     datorii: "",
     locul_de_munca: "",
     bunuri: [],
-    terms: false as unknown as true,
-    have_garant: false as unknown as true,
-    in_oficiu: false as unknown as true,
+    terms: false,
+    have_garant: false,
+    in_oficiu: false,
 };
 
-const inputCls =
-    "w-full rounded-md border bg-black-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500 transition-colors";
-const errorCls = "border-red-500/60 focus:ring-red-500";
-const okCls = "border-white/10";
-
-function FieldError({ message }: { message?: string }) {
-    return (
-        <AnimatePresence>
-            {message && (
-                <motion.p
-                    initial={{ opacity: 0, y: -4 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -4 }}
-                    className="text-red-500 text-xs mt-1"
-                >
-                    {message}
-                </motion.p>
-            )}
-        </AnimatePresence>
-    );
-}
+const SCOP_OPTIONS = ["Pentru nevoi personale", "Pentru afaceri", "Refinanțare", "Procurare bun imobil", "Altele"];
 
 export default function CerereOnlinePage() {
     const { trackEvent } = useFacebookPixel();
@@ -72,8 +57,6 @@ export default function CerereOnlinePage() {
         formState: { errors, touchedFields, isSubmitting },
     } = form;
 
-    // Debounced live validation as user types: re-validate touched fields ~400ms after the
-    // last change. Avoids flashing errors on the very first keystroke while still feeling live.
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     useEffect(() => {
         const sub = watch((_, { name }) => {
@@ -135,7 +118,7 @@ export default function CerereOnlinePage() {
         }
     };
 
-    const cls = (name: keyof CerereFormValues) => `${inputCls} ${errors[name] ? errorCls : okCls}`;
+    const invalid = (name: keyof CerereFormValues) => (errors[name] ? true : undefined);
 
     return (
         <div className="container relative my-4 md:my-6">
@@ -169,57 +152,77 @@ export default function CerereOnlinePage() {
                     >
                         {/* Step 1 */}
                         {step === 0 && (
-                            <div>
-                                <h2 className="mb-6 text-green-400 text-center font-bold text-xl">1. Date despre credit</h2>
-                                <div className="space-y-6">
-                                    <div>
-                                        <label className="block text-sm mb-1">
-                                            Suma (lei) <span className="text-xs text-gray-400">Minim 10000 lei</span>
-                                        </label>
-                                        <input
+                            <FieldSet>
+                                <FieldLegend className="mb-2 text-green-400 text-center font-bold text-xl">
+                                    1. Date despre credit
+                                </FieldLegend>
+                                <FieldGroup>
+                                    <Field data-invalid={invalid("suma") || undefined}>
+                                        <FieldLabel htmlFor="suma">Suma (lei)</FieldLabel>
+                                        <Input
+                                            id="suma"
                                             type="number"
                                             step="100"
                                             min={10000}
                                             max={300000}
-                                            className={cls("suma")}
+                                            aria-invalid={invalid("suma")}
                                             {...register("suma")}
                                         />
-                                        <FieldError message={errors.suma?.message} />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm mb-1">
-                                            Termen (luni) <span className="text-xs text-gray-400">Minim 6 luni, maxim 60 luni</span>
-                                        </label>
-                                        <input type="number" step="1" min={6} max={60} className={cls("termen")} {...register("termen")} />
-                                        <FieldError message={errors.termen?.message} />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm mb-1">Scopul creditului</label>
-                                        <select className={cls("scopul_creditului")} {...register("scopul_creditului")}>
-                                            <option value="">Selectează scopul creditului</option>
-                                            {[
-                                                "Pentru nevoi personale",
-                                                "Pentru afaceri",
-                                                "Refinanțare",
-                                                "Procurare bun imobil",
-                                                "Altele",
-                                            ].map((o) => (
-                                                <option key={o} value={o}>
-                                                    {o}
-                                                </option>
-                                            ))}
-                                        </select>
-                                        <FieldError message={errors.scopul_creditului?.message} />
-                                    </div>
-                                </div>
-                            </div>
+                                        <FieldDescription>Minim 10000 lei</FieldDescription>
+                                        {errors.suma?.message && <FieldError>{errors.suma.message}</FieldError>}
+                                    </Field>
+                                    <Field data-invalid={invalid("termen") || undefined}>
+                                        <FieldLabel htmlFor="termen">Termen (luni)</FieldLabel>
+                                        <Input
+                                            id="termen"
+                                            type="number"
+                                            step="1"
+                                            min={6}
+                                            max={60}
+                                            aria-invalid={invalid("termen")}
+                                            {...register("termen")}
+                                        />
+                                        <FieldDescription>Minim 6 luni, maxim 60 luni</FieldDescription>
+                                        {errors.termen?.message && <FieldError>{errors.termen.message}</FieldError>}
+                                    </Field>
+                                    <Field data-invalid={invalid("scopul_creditului") || undefined}>
+                                        <FieldLabel>Scopul creditului</FieldLabel>
+                                        <Controller
+                                            control={control}
+                                            name="scopul_creditului"
+                                            render={({ field }) => (
+                                                <Select value={field.value} onValueChange={field.onChange}>
+                                                    <SelectTrigger
+                                                        size="default"
+                                                        className="w-full h-10!"
+                                                        aria-invalid={invalid("scopul_creditului")}
+                                                    >
+                                                        <SelectValue
+                                                            className="text-gray-500 text-sm"
+                                                            placeholder="Selectează scopul creditului"
+                                                        />
+                                                    </SelectTrigger>
+                                                    <SelectContent>
+                                                        {SCOP_OPTIONS.map((o) => (
+                                                            <SelectItem key={o} value={o}>
+                                                                {o}
+                                                            </SelectItem>
+                                                        ))}
+                                                    </SelectContent>
+                                                </Select>
+                                            )}
+                                        />
+                                        {errors.scopul_creditului?.message && <FieldError>{errors.scopul_creditului.message}</FieldError>}
+                                    </Field>
+                                </FieldGroup>
+                            </FieldSet>
                         )}
 
                         {/* Step 2 */}
                         {step === 1 && (
-                            <div>
-                                <h2 className="mb-6 text-green-400 text-center font-bold text-xl">2. Date personale</h2>
-                                <div className="space-y-6">
+                            <FieldSet>
+                                <FieldLegend className="mb-2 text-green-400 text-center font-bold text-xl">2. Date personale</FieldLegend>
+                                <FieldGroup>
                                     {(
                                         [
                                             { key: "nume", label: "Nume", type: "text" },
@@ -232,7 +235,7 @@ export default function CerereOnlinePage() {
                                             },
                                             {
                                                 key: "telefon",
-                                                label: "Telefon mobil",
+                                                label: "Telefon mobil din Moldova",
                                                 type: "tel",
                                                 hint: "doar din 9 cifre",
                                                 maxLength: 9,
@@ -246,180 +249,180 @@ export default function CerereOnlinePage() {
                                             maxLength?: number;
                                         }>
                                     ).map(({ key, label, type, placeholder, hint, maxLength }) => (
-                                        <div key={key}>
-                                            <label className="block text-sm mb-1">
-                                                {label} {hint && <span className="text-xs text-gray-400">({hint})</span>}
-                                            </label>
-                                            <input
+                                        <Field key={key} data-invalid={invalid(key) || undefined}>
+                                            <FieldLabel htmlFor={key}>{label}</FieldLabel>
+                                            <Input
+                                                id={key}
                                                 type={type}
                                                 placeholder={placeholder}
                                                 maxLength={maxLength}
-                                                className={cls(key)}
+                                                aria-invalid={invalid(key)}
                                                 {...register(key)}
                                             />
-                                            <FieldError message={errors[key]?.message} />
-                                        </div>
+                                            {hint && <FieldDescription>{hint}</FieldDescription>}
+                                            {errors[key]?.message && <FieldError>{errors[key]?.message}</FieldError>}
+                                        </Field>
                                     ))}
-                                </div>
-                            </div>
+                                </FieldGroup>
+                            </FieldSet>
                         )}
 
                         {/* Step 3 */}
                         {step === 2 && (
-                            <div>
-                                <h2 className="mb-6 text-green-400 text-center font-bold text-xl">3. Date financiare</h2>
-                                <div className="space-y-6">
-                                    <div>
-                                        <label className="block mb-1">Venit lunar, oficial sau confirmat (lei)</label>
-                                        <p className="text-xs text-gray-400 mb-1">
-                                            Salariu, transferuri regulate, salariu de peste hotare, ...
-                                        </p>
-                                        <input type="number" min={0} className={cls("venituri")} {...register("venituri")} />
-                                        <FieldError message={errors.venituri?.message} />
-                                    </div>
-                                    <div>
-                                        <label className="block mb-1">Achitări lunare pentru alte credite</label>
-                                        <p className="text-xs text-gray-400 mb-1">Dacă nu ai, pune 0</p>
-                                        <input type="number" min={0} className={cls("datorii")} {...register("datorii")} />
-                                        <FieldError message={errors.datorii?.message} />
-                                    </div>
-                                    <div>
-                                        <label className="block mb-1">Locul de muncă</label>
-                                        <p className="text-xs text-gray-400 mb-1">Compania și funcția</p>
-                                        <input type="text" className={cls("locul_de_munca")} {...register("locul_de_munca")} />
-                                        <FieldError message={errors.locul_de_munca?.message} />
-                                    </div>
+                            <FieldSet>
+                                <FieldLegend className="mb-2 text-green-400 text-center font-bold text-xl">3. Date financiare</FieldLegend>
+                                <FieldGroup>
+                                    <Field data-invalid={invalid("venituri") || undefined}>
+                                        <FieldLabel htmlFor="venituri">Venit lunar, oficial sau confirmat (lei)</FieldLabel>
+                                        <Input
+                                            id="venituri"
+                                            type="number"
+                                            min={0}
+                                            aria-invalid={invalid("venituri")}
+                                            {...register("venituri")}
+                                        />
+                                        <FieldDescription>Salariu, transferuri regulate, salariu de peste hotare, ...</FieldDescription>
+                                        {errors.venituri?.message && <FieldError>{errors.venituri.message}</FieldError>}
+                                    </Field>
+                                    <Field data-invalid={invalid("datorii") || undefined}>
+                                        <FieldLabel htmlFor="datorii">Achitări lunare pentru alte credite</FieldLabel>
+                                        <Input
+                                            id="datorii"
+                                            type="number"
+                                            min={0}
+                                            aria-invalid={invalid("datorii")}
+                                            {...register("datorii")}
+                                        />
+                                        <FieldDescription>Dacă nu ai, pune 0</FieldDescription>
+                                        {errors.datorii?.message && <FieldError>{errors.datorii.message}</FieldError>}
+                                    </Field>
+                                    <Field data-invalid={invalid("locul_de_munca") || undefined}>
+                                        <FieldLabel htmlFor="locul_de_munca">Locul de muncă</FieldLabel>
+                                        <Input
+                                            id="locul_de_munca"
+                                            type="text"
+                                            aria-invalid={invalid("locul_de_munca")}
+                                            {...register("locul_de_munca")}
+                                        />
+                                        <FieldDescription>Compania și funcția</FieldDescription>
+                                        {errors.locul_de_munca?.message && <FieldError>{errors.locul_de_munca.message}</FieldError>}
+                                    </Field>
                                     <Controller
                                         control={control}
                                         name="bunuri"
                                         render={({ field }) => (
-                                            <div>
-                                                <label className="block mb-1">Aveți careva bunuri imobile în proprietate?</label>
-                                                <div className="mt-2 space-y-2">
+                                            <FieldSet data-invalid={invalid("bunuri") || undefined}>
+                                                <FieldLegend variant="label">Aveți careva bunuri imobile în proprietate?</FieldLegend>
+                                                <FieldGroup>
                                                     {BUNURI_OPTIONS.map((opt) => {
+                                                        const id = `bun-${opt}`;
                                                         const checked = field.value.includes(opt);
                                                         return (
-                                                            <label key={opt} className="flex items-center gap-2 cursor-pointer">
-                                                                <input
-                                                                    type="checkbox"
+                                                            <Field key={opt} orientation="horizontal">
+                                                                <Checkbox
+                                                                    id={id}
+                                                                    className="ring-1 ring-white/40"
                                                                     checked={checked}
-                                                                    onChange={(e) =>
+                                                                    onCheckedChange={(c) =>
                                                                         field.onChange(
-                                                                            e.target.checked
+                                                                            c
                                                                                 ? [...field.value, opt]
                                                                                 : field.value.filter((b) => b !== opt),
                                                                         )
                                                                     }
-                                                                    onBlur={field.onBlur}
-                                                                    className="accent-green-500 w-4! h-4! shrink-0"
                                                                 />
-                                                                <span className="text-sm text-gray-400">{opt}</span>
-                                                            </label>
+                                                                <FieldLabel htmlFor={id} className="font-normal">
+                                                                    {opt}
+                                                                </FieldLabel>
+                                                            </Field>
                                                         );
                                                     })}
-                                                </div>
-                                                <FieldError message={errors.bunuri?.message} />
-                                            </div>
+                                                </FieldGroup>
+                                                {errors.bunuri?.message && <FieldError>{errors.bunuri.message}</FieldError>}
+                                            </FieldSet>
                                         )}
                                     />
-                                </div>
-                            </div>
+                                </FieldGroup>
+                            </FieldSet>
                         )}
 
                         {/* Step 4 */}
                         {step === 3 && (
-                            <div>
-                                <h2 className="mb-6 text-green-400 text-center font-bold text-xl">4. Declarații</h2>
-                                <div className="space-y-6">
+                            <FieldSet>
+                                <FieldLegend className="mb-2 text-green-400 text-center font-bold text-xl">4. Declarații</FieldLegend>
+                                <FieldGroup>
+                                    {(
+                                        [
+                                            {
+                                                name: "have_garant",
+                                                label: "Sunt gata să ofer unul sau mai mulți fidejusori (garant/поручитель).",
+                                            },
+                                            {
+                                                name: "in_oficiu",
+                                                label: "În caz de aprobare, voi veni (împreună cu fidejusorii) în oficiul companiei, pentru a semna contractul de credit.",
+                                            },
+                                        ] as const
+                                    ).map(({ name, label }) => (
+                                        <Controller
+                                            key={name}
+                                            control={control}
+                                            name={name}
+                                            render={({ field }) => (
+                                                <Field data-invalid={invalid(name) || undefined}>
+                                                    <FieldLabel>{label}</FieldLabel>
+                                                    <div className="flex gap-3">
+                                                        {[{ label: "Da", value: true }].map((opt) => {
+                                                            const selected = field.value === opt.value;
+                                                            return (
+                                                                <Button
+                                                                    key={opt.label}
+                                                                    type="button"
+                                                                    variant="outline"
+                                                                    size="lg"
+                                                                    onClick={() => field.onChange(opt.value)}
+                                                                    className={
+                                                                        selected
+                                                                            ? "border-green-500 bg-green-500/10 text-white hover:bg-green-500/15"
+                                                                            : ""
+                                                                    }
+                                                                >
+                                                                    {opt.label}
+                                                                </Button>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                    {errors[name]?.message && <FieldError>{errors[name]?.message}</FieldError>}
+                                                </Field>
+                                            )}
+                                        />
+                                    ))}
+                                    <ul className="list-disc list-inside space-y-1 text-red-300 text-sm">
+                                        <li>Înțeleg că aceasta este o cerere de credit online preventivă, fără caracter obligatoriu.</li>
+                                        <li>
+                                            În cazul refuzului de acordare a creditului, Ideal Credit SRL nu este obligată să argumenteze
+                                            motivul acelui refuz.
+                                        </li>
+                                    </ul>
                                     <Controller
                                         control={control}
-                                        name="have_garant"
+                                        name="terms"
                                         render={({ field }) => (
-                                            <div>
-                                                <label className="block text-sm mb-3">
-                                                    Sunt gata să ofer unul sau mai mulți fidejusori (garant/поручитель).
-                                                </label>
-                                                <div className="flex gap-4">
-                                                    {[
-                                                        { label: "Da", value: true },
-                                                        { label: "Nu", value: false },
-                                                    ].map(({ label, value }) => (
-                                                        <label
-                                                            key={label}
-                                                            className={`flex items-center gap-2 cursor-pointer px-4 py-2 rounded-md border transition-colors ${
-                                                                field.value === value
-                                                                    ? "border-green-500 bg-green-500/10"
-                                                                    : "border-white/10"
-                                                            }`}
-                                                        >
-                                                            <input
-                                                                type="radio"
-                                                                checked={field.value === value}
-                                                                onChange={() => field.onChange(value as unknown as true)}
-                                                                className="accent-green-500 w-4! h-4! shrink-0"
-                                                            />
-                                                            {label}
-                                                        </label>
-                                                    ))}
-                                                </div>
-                                                <FieldError message={errors.have_garant?.message} />
-                                            </div>
+                                            <Field orientation="horizontal" data-invalid={invalid("terms") || undefined}>
+                                                <Checkbox
+                                                    className="ring-1 ring-white/40"
+                                                    id="terms"
+                                                    checked={!!field.value}
+                                                    onCheckedChange={(c) => field.onChange(!!c)}
+                                                />
+                                                <FieldContent>
+                                                    <FieldLabel htmlFor="terms">Accept declarațiile de mai sus.</FieldLabel>
+                                                    {errors.terms?.message && <FieldError>{errors.terms.message}</FieldError>}
+                                                </FieldContent>
+                                            </Field>
                                         )}
                                     />
-                                    <Controller
-                                        control={control}
-                                        name="in_oficiu"
-                                        render={({ field }) => (
-                                            <div>
-                                                <label className="block text-sm mb-3">
-                                                    În caz de aprobare, voi veni (împreună cu fidejusorii) în oficiul companiei, pentru a
-                                                    semna contractul de credit.
-                                                </label>
-                                                <div className="flex gap-4">
-                                                    {[
-                                                        { label: "Da", value: true },
-                                                        { label: "Nu", value: false },
-                                                    ].map(({ label, value }) => (
-                                                        <label
-                                                            key={label}
-                                                            className={`flex items-center gap-2 cursor-pointer px-4 py-2 rounded-md border transition-colors ${
-                                                                field.value === value
-                                                                    ? "border-green-500 bg-green-500/10"
-                                                                    : "border-white/10"
-                                                            }`}
-                                                        >
-                                                            <input
-                                                                type="radio"
-                                                                checked={field.value === value}
-                                                                onChange={() => field.onChange(value as unknown as true)}
-                                                                className="accent-green-500 w-4! h-4! shrink-0"
-                                                            />
-                                                            {label}
-                                                        </label>
-                                                    ))}
-                                                </div>
-                                                <FieldError message={errors.in_oficiu?.message} />
-                                            </div>
-                                        )}
-                                    />
-                                    <div>
-                                        <ul className="list-disc list-inside space-y-1 text-red-300 text-sm">
-                                            <li>
-                                                Înțeleg că aceasta este o cerere de credit online preventivă, fără caracter obligatoriu.
-                                            </li>
-                                            <li>
-                                                În cazul refuzului de acordare a creditului, Ideal Credit SRL nu este obligată să
-                                                argumenteze motivul acelui refuz.
-                                            </li>
-                                        </ul>
-                                        <label className="flex items-center gap-2 mt-4 cursor-pointer">
-                                            <input type="checkbox" className="accent-green-500 w-4! h-4! shrink-0" {...register("terms")} />
-                                            <span className="text-sm">Accept declarațiile de mai sus.</span>
-                                        </label>
-                                        <FieldError message={errors.terms?.message} />
-                                    </div>
-                                </div>
-                            </div>
+                                </FieldGroup>
+                            </FieldSet>
                         )}
                     </motion.div>
                 </AnimatePresence>
@@ -427,30 +430,23 @@ export default function CerereOnlinePage() {
                 {/* Nav buttons */}
                 <div className="flex justify-between mt-8">
                     {step > 0 && (
-                        <button
-                            type="button"
-                            onClick={prevStep}
-                            className="border border-white/20 hover:bg-white/5 px-4 py-2 rounded-md text-sm transition-colors"
-                        >
+                        <Button type="button" variant="outline" size="lg" onClick={prevStep}>
                             Înapoi
-                        </button>
+                        </Button>
                     )}
                     {step < STEPS.length - 1 ? (
-                        <button
-                            type="button"
-                            onClick={nextStep}
-                            className="ml-auto bg-green-600 hover:bg-green-500 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors"
-                        >
+                        <Button type="button" size="lg" onClick={nextStep} className="ml-auto bg-green-600 text-white hover:bg-green-500">
                             Continuă
-                        </button>
+                        </Button>
                     ) : (
-                        <button
+                        <Button
                             type="submit"
+                            size="lg"
                             disabled={loading || isSubmitting}
-                            className="ml-auto bg-green-600 hover:bg-green-500 disabled:opacity-50 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors"
+                            className="ml-auto bg-green-600 text-white hover:bg-green-500"
                         >
                             {loading ? "Se trimite..." : "Trimite cererea"}
-                        </button>
+                        </Button>
                     )}
                 </div>
             </form>
