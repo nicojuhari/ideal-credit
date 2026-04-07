@@ -326,7 +326,7 @@ export default function CerereOnlinePage() {
                     <FieldErr errors={stepErrors} name="in_oficiu" />
                   </div>
                   <div>
-                    <ul className="list-disc list-inside space-y-1 text-blue-400 text-sm">
+                    <ul className="list-disc list-inside space-y-1 text-blue-500 text-sm">
                       <li>Înțeleg că aceasta este o cerere de credit online preventivă, fără caracter obligatoriu.</li>
                       <li>În cazul refuzului de acordare a creditului, Ideal Credit SRL nu este obligată să argumenteze motivul acelui refuz.</li>
                     </ul>

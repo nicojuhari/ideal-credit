@@ -5,7 +5,7 @@
 /* ─── Brand Color Palette ────────────────────────────────────────────────── */
 @theme inline {
   /* Brand (orange) */
-  --color-brand-50:  #fffbea;
+  --color-brand-50: #fffbea;
   --color-brand-100: #fff3c5;
   --color-brand-200: #ffe685;
   --color-brand-300: #ffd346;
@@ -18,7 +18,7 @@
   --color-brand-950: #481700;
 
   /* Black (dark grays — site backgrounds) */
-  --color-black-50:  #e5e5e5;
+  --color-black-50: #e5e5e5;
   --color-black-100: #c9c9c9;
   --color-black-200: #989898;
   --color-black-300: #333333;
@@ -30,8 +30,20 @@
   --color-black-900: #040404;
   --color-black-950: #040404;
 
+  --color-blue-50: #f5f7fa;
+  --color-blue-100: #eaeef4;
+  --color-blue-200: #d0dae7;
+  --color-blue-300: #a7bbd2;
+  --color-blue-400: #7797b9;
+  --color-blue-500: #567aa1;
+  --color-blue-600: #436186;
+  --color-blue-700: #374e6d;
+  --color-blue-800: #2e4057;
+  --color-blue-900: #2c3a4e;
+  --color-blue-950: #1d2634;
+
   /* Green (secondary/success) */
-  --color-green-50:  #f6f9f4;
+  --color-green-50: #f6f9f4;
   --color-green-100: #ebf1e7;
   --color-green-200: #d6e3cf;
   --color-green-300: #b5cca9;
@@ -44,7 +56,7 @@
   --color-green-950: #172013;
 
   /* Gray (neutral text / borders) */
-  --color-gray-50:  #f7f7f7;
+  --color-gray-50: #f7f7f7;
   --color-gray-100: #f0f0f0;
   --color-gray-200: #e3e3e3;
   --color-gray-300: #d1d1d1;
@@ -57,56 +69,64 @@
   --color-gray-950: #333333;
 
   /* shadcn/ui semantic tokens — mapped to brand dark theme */
-  --color-background:         var(--background);
-  --color-foreground:         var(--foreground);
-  --color-card:               var(--card);
-  --color-card-foreground:    var(--card-foreground);
-  --color-popover:            var(--popover);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary:            var(--primary);
+  --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary:          var(--secondary);
+  --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted:              var(--muted);
-  --color-muted-foreground:   var(--muted-foreground);
-  --color-accent:             var(--accent);
-  --color-accent-foreground:  var(--accent-foreground);
-  --color-destructive:        var(--destructive);
-  --color-border:             var(--border);
-  --color-input:              var(--input);
-  --color-ring:               var(--ring);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
 
-  --radius-sm:  calc(var(--radius) * 0.6);
-  --radius-md:  calc(var(--radius) * 0.8);
-  --radius-lg:  var(--radius);
-  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
 }
 
 /* ─── Dark-only theme (site has no light mode) ───────────────────────────── */
 :root {
-  --background:            #0b0b0b; /* black-800 */
-  --foreground:            #fafafa;
-  --card:                  #111111; /* black-600 */
-  --card-foreground:       #fafafa;
-  --popover:               #212121; /* black-400 */
-  --popover-foreground:    #fafafa;
-  --primary:               #ff9a00; /* brand-500 */
-  --primary-foreground:    #0b0b0b;
-  --secondary:             #212121; /* black-400 */
-  --secondary-foreground:  #fafafa;
-  --muted:                 #212121;
-  --muted-foreground:      #aaaaaa; /* gray-500 */
-  --accent:                #333333; /* black-300 */
-  --accent-foreground:     #fafafa;
-  --destructive:           oklch(0.704 0.191 22.216);
-  --border:                #212121; /* black-400 */
-  --input:                 #212121;
-  --ring:                  #ff9a00;
-  --radius:                0.5rem;
+  --background: #0b0b0b;
+  /* black-800 */
+  --foreground: #fafafa;
+  --card: #111111;
+  /* black-600 */
+  --card-foreground: #fafafa;
+  --popover: #212121;
+  /* black-400 */
+  --popover-foreground: #fafafa;
+  --primary: #ff9a00;
+  /* brand-500 */
+  --primary-foreground: #0b0b0b;
+  --secondary: #212121;
+  /* black-400 */
+  --secondary-foreground: #fafafa;
+  --muted: #212121;
+  --muted-foreground: #aaaaaa;
+  /* gray-500 */
+  --accent: #333333;
+  /* black-300 */
+  --accent-foreground: #fafafa;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #212121;
+  /* black-400 */
+  --input: #212121;
+  --ring: #ff9a00;
+  --radius: 0.5rem;
 }
 
 /* ─── Base styles ────────────────────────────────────────────────────────── */
@@ -160,7 +180,7 @@
   .bg-squares {
     background-color: #0b0b0b;
     background-image:
-      linear-gradient(to right,  #191919 1px, transparent 1px),
+      linear-gradient(to right, #191919 1px, transparent 1px),
       linear-gradient(to bottom, #191919 1px, transparent 1px);
     background-size: 60px 60px;
     background-position: top center;
@@ -181,21 +201,21 @@
   .cs-blur {
     isolation: isolate;
     position: relative;
-    --cs-blur-top:    auto;
-    --cs-blur-right:  auto;
+    --cs-blur-top: auto;
+    --cs-blur-right: auto;
     --cs-blur-bottom: auto;
-    --cs-blur-left:   auto;
+    --cs-blur-left: auto;
   }
 
   .cs-blur::after {
     content: "";
     position: absolute;
-    top:    var(--cs-blur-top);
-    right:  var(--cs-blur-right);
+    top: var(--cs-blur-top);
+    right: var(--cs-blur-right);
     bottom: var(--cs-blur-bottom);
-    left:   var(--cs-blur-left);
+    left: var(--cs-blur-left);
     height: 20rem;
-    width:  20rem;
+    width: 20rem;
     opacity: 0.06;
     z-index: -1;
     filter: blur(100px);
@@ -203,11 +223,15 @@
     transform: translate(0, -50%);
   }
 
-  .cs-blur.cs-blur--right::after  { --cs-blur-right: 0; }
-  .cs-blur.cs-blur--top::after    { --cs-blur-top: 0; }
+  .cs-blur.cs-blur--right::after {
+    --cs-blur-right: 0;
+  }
+  .cs-blur.cs-blur--top::after {
+    --cs-blur-top: 0;
+  }
   .cs-blur.cs-blur--center::after {
     --cs-blur-right: 50%;
-    --cs-blur-top:   50%;
+    --cs-blur-top: 50%;
     transform: translate(50%, -50%);
   }
 
@@ -223,8 +247,12 @@
     @apply border-black-300;
   }
 
-  .pre-contract-table td:first-of-type { width: 40%; }
-  .pre-contract-table td.table-subheader { @apply bg-brand-500/80 w-full; }
+  .pre-contract-table td:first-of-type {
+    width: 40%;
+  }
+  .pre-contract-table td.table-subheader {
+    @apply bg-brand-500/80 w-full;
+  }
 }
 
 /* ─── Range slider ───────────────────────────────────────────────────────── */
@@ -235,7 +263,7 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width:  24px;
+  width: 24px;
   height: 24px;
   cursor: ew-resize;
   border-radius: 50%;
@@ -259,7 +287,9 @@ form textarea {
   max-height: 12rem;
 }
 
-form label { @apply text-white; }
+form label {
+  @apply text-white;
+}
 
 form *::placeholder {
   opacity: 0.4;
@@ -276,10 +306,14 @@ form input[type=number]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=number] { -moz-appearance: textfield; }
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* ─── Blog / rich text ───────────────────────────────────────────────────── */
-.richtext p { margin: 1rem 0; }
+.richtext p {
+  margin: 1rem 0;
+}
 
 .richtext a {
   font-weight: 400;
@@ -294,15 +328,23 @@ input[type=number] { -moz-appearance: textfield; }
   margin: 0;
 }
 
-.richtext table { @apply w-full border-collapse; }
+.richtext table {
+  @apply w-full border-collapse;
+}
 
 .richtext table,
 .richtext th,
-.richtext td { @apply border border-gray-200; }
+.richtext td {
+  @apply border border-gray-200;
+}
 
 .richtext th,
-.richtext td { @apply p-2; }
+.richtext td {
+  @apply p-2;
+}
 
 .richtext h2,
 .richtext h3,
-.richtext h4 { @apply text-2xl md:text-3xl font-semibold mb-2 mt-12; }
+.richtext h4 {
+  @apply text-2xl md:text-3xl font-semibold mb-2 mt-12;
+}
