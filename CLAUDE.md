@@ -5,6 +5,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Status
 
 This repository is **mid-migration** from Nuxt 4 (Vue 3) to **Next.js + shadcn/ui (React)**. The original Nuxt project lives in `nuxt-project/` and is the reference implementation. The new Next.js project will be built here. See `plan.md` for the full migration plan.
+Improve the styles and readability where is possible, add small animations using framer-motion or custom css
+
 
 ## Reference Codebase
 
@@ -22,7 +24,7 @@ Always read source components and pages from `nuxt-project/app/` when migrating.
 - **UI**: shadcn/ui + Tailwind CSS
 - **CMS**: Storyblok (`@storyblok/react`)
 - **Forms**: `react-hook-form` + `zod`
-- **Icons**: `@phosphor-icons/react` (replaces Phosphor iconify set)
+- **Icons**: `lucide-react` (replaces Phosphor iconify set)
 - **Loan calc**: `ideal-credit` npm package (framework-agnostic, reuse as-is)
 
 ## Commands (Nuxt reference project)
