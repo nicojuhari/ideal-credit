@@ -31,7 +31,7 @@ export default function CreditAgriculturaPage() {
                         Credit pentru agricultură - tehnică, semințe, îngrășăminte, pesticide și lucrări agricole. Proces simplu și
                         transparent.
                     </p>
-                    <MainCTA className="my-16" />
+                    <MainCTA className="my-18 md:mb-24" />
                     <div className="cs-blur cs-blur--center z-[-1]" />
                     <CalculatorCredit />
                 </div>

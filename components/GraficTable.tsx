@@ -12,11 +12,11 @@ interface GraficTableProps {
 
 export default function GraficTable({ grafic, dobindaTotal, credit }: GraficTableProps) {
     return (
-        <div className="border border-white/10 overflow-auto">
-            <table className="table-fixed min-w-100 w-full text-sm divide-y divide-white/10 grafic-table">
+        <div className="border border-white/10 overflow-auto w-full">
+            <table className="table-fixed min-w-100 text-sm divide-y divide-white/10 grafic-table">
                 <thead>
                     <tr>
-                        <th className="px-2 py-2 font-bold text-left whitespace-nowrap w-16">Nr.</th>
+                        <th className="px-2 py-2 font-bold text-left whitespace-nowrap w-12">Nr.</th>
                         <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Data</th>
                         <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Credit</th>
                         <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Dobânda</th>

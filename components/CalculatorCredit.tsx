@@ -166,11 +166,8 @@ export default function CalculatorCredit() {
                         <div>0.04 %</div>
                     </div>
                 </div>
-                <Info className="mt-6">
-                    <span>Consumatorul este responsabil pentru rambursarea creditului.</span>
-                </Info>
+                <Info className="mt-6">Consumatorul este responsabil pentru rambursarea creditului.</Info>
             </div>
         </div>
     );
 }
-

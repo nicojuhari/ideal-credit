@@ -60,14 +60,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     return (
         <div className="py-4 md:py-8 blog-page">
             <div className="container sm-container">
-                <h1 className="text-2xl md:text-3xl mb-4 font-bold">{story.name}</h1>
+                <h1 className="text-2xl md:text-3xl mb-4 font-semibold">{story.name}</h1>
                 {story.content?.image?.filename && (
                     <div className="relative w-full aspect-video rounded overflow-hidden">
                         <Image
                             src={story.content.image.filename}
                             alt={story.content.image.alt || story.name}
-                            fill
-                            className="object-cover object-center"
+                            width={600}
+                            height={450}
+                            className="object-cover object-center w-full"
                             priority
                         />
                     </div>

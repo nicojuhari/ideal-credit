@@ -31,7 +31,7 @@ export default function CreditMediciPage() {
                         Credit pentru medici - împrumut personal cu rată adaptată și rambursare ușoară pentru cheltuieli personale sau
                         urgente.
                     </p>
-                    <MainCTA className="my-16" />
+                    <MainCTA className="my-18 md:mb-24" />
                     <div className="cs-blur cs-blur--center z-[-1]" />
                     <CalculatorCredit />
                 </div>

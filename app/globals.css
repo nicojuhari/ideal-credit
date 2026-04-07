@@ -129,6 +129,17 @@
   --radius: 0.5rem;
 }
 
+@keyframes cta-slide-up {
+  from {
+    transform: translate(-6px, 4px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
 /* ─── Base styles ────────────────────────────────────────────────────────── */
 @layer base {
   * {
@@ -244,7 +255,7 @@
 
   /* ── Calculator input ── */
   .input-calculator {
-    @apply rounded-lg bg-black-300 px-1 text-white outline-none font-semibold text-xl w-[8.5rem] text-right h-10;
+    @apply rounded-lg bg-black-300 px-1 text-white outline-none font-semibold text-xl w-34 text-right h-10;
   }
 
   /* ── Pre-contract table ── */
@@ -320,6 +331,7 @@ input[type=number] {
 /* ─── Blog / rich text ───────────────────────────────────────────────────── */
 .richtext p {
   margin: 1rem 0;
+  @apply leading-relaxed text-gray-300 font-extralight;
 }
 
 .richtext a {
@@ -333,6 +345,7 @@ input[type=number] {
   list-style: disc;
   padding-left: 2rem;
   margin: 0;
+  font-weight: 200
 }
 
 .richtext table {
@@ -342,7 +355,7 @@ input[type=number] {
 .richtext table,
 .richtext th,
 .richtext td {
-  @apply border border-gray-200;
+  @apply border border-gray-200 font-extralight text-gray-300;
 }
 
 .richtext th,
@@ -353,5 +366,5 @@ input[type=number] {
 .richtext h2,
 .richtext h3,
 .richtext h4 {
-  @apply text-2xl md:text-3xl font-semibold mb-2 mt-12;
+  @apply text-xl font-semibold mb-2 mt-12;
 }

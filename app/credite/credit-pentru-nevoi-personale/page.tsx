@@ -28,7 +28,7 @@ export default function CreditNevoiPersonalePage() {
                     <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
                         Obține un credit pentru nevoi personale rapid și ușor, perfect pentru cheltuieli urgente sau proiecte mici.
                     </p>
-                    <MainCTA className="my-16" />
+                    <MainCTA className="my-18 md:mb-24" />
                     <div className="cs-blur cs-blur--center z-[-1]" />
                     <CalculatorCredit />
                 </div>

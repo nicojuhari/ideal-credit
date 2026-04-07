@@ -15,7 +15,7 @@ export default function PreContractContent({
     dobindaTotal: number;
 }) {
     return (
-        <div>
+        <div className="overflow-hidden">
             <p className="text-center my-6 text-lg font-medium">Graficul de Rambursare conform preContractului de mai jos</p>
             <GraficTable grafic={graficCalculat} dobindaTotal={dobindaTotal} credit={creditSuma} />
             <p className="text-center my-6 text-lg font-medium">Informaţii standard privind creditul pentru consumatori</p>

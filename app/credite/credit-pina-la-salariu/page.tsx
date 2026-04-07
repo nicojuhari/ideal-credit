@@ -30,7 +30,7 @@ export default function CreditPinaLaSalariuPage() {
                     <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
                         Oferim credit pînă la salariu pentru persoanele angajate oficial. Soluția perfectă pentru cheltuieli neprevăzute.
                     </p>
-                    <MainCTA className="my-16" />
+                    <MainCTA className="my-18 md:mb-24" />
                     <div className="cs-blur cs-blur--center z-[-1]" />
                     <CalculatorCredit />
                 </div>
