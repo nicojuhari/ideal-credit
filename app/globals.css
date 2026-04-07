@@ -143,6 +143,13 @@
   section {
     @apply mt-28 mb-20 md:mt-42 md:mb-28;
   }
+
+  button,
+  input[type="submit"],
+  input[type="radio"],
+  input[type="checkbox"] {
+    @apply cursor-pointer;
+  }
 }
 
 /* ─── Layout utilities ───────────────────────────────────────────────────── */

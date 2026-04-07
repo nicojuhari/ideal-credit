@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function CreditMilitariPage() {
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
             <div className="relative pt-10 md:pt-12">
                 <div className="bg-squares -mt-[1px]" />
                 <div className="container">
