@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://idealcredit.md"),
     title: {
         default: "Credite Nebancare în Moldova | Ideal Credit",
-        template: "%s | Ideal Credit",
+        template: "%s",
     },
     description: siteDescription,
     keywords: "credite nebancare, credit md, credit pentru afaceri, credit pentru nevoi personale, credit Chișinău Moldova",
