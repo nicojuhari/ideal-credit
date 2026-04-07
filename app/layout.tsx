@@ -122,6 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                 {/* JSON-LD */}
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+                <meta name="apple-mobile-web-app-title" content="Ideal Credit" />
             </head>
             <body className={`${InterFont.variable} flex flex-col min-h-screen`}>
                 <Header />

@@ -4,41 +4,7 @@ import Link from "next/link";
 import { Phone } from "lucide-react";
 import Logo from "@/components/icons/Logo";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
-
-const oficii = [
-  {
-    id: 1,
-    title: "Sediul principal",
-    address: "or. Căușeni, str. Mihai Eminescu",
-    addressNumbers: "nr. 17,  of. 47",
-    mobile: ["+37379066566", "079 06 65 66"],
-  },
-  {
-    id: 2,
-    title: "Sucursala Nr. 1",
-    address: "m. Chișinău, str. Miron Costin",
-    addressNumbers: "nr. 25,  of. 115",
-    mobile: ["+37378805060", "078 80 50 60"],
-  },
-];
-
-const glossary = [
-  { name: "Credit", desc: "Operațiune prin care o persoană fizică sau juridică primește o sumă de bani cu obligația de rambursare, de obicei cu dobândă, într-un termen stabilit." },
-  { name: "Dobândă", desc: "Costul utilizării banilor împrumutați, exprimat procentual din suma principală." },
-  { name: "DAE (Dobânda Anuală Efectivă)", desc: "Indicator care reflectă costul total al creditului pentru consumator: dobânda anuală plus toate comisioanele și taxele aferente." },
-  { name: "Contract de Credit", desc: "Acord legal între creditor și debitor prin care se stabilesc suma împrumutată, dobânda, comisioanele, graficul de rambursare și alte condiții." },
-  { name: "Creditor", desc: "Entitate (instituție financiară sau persoană) care acordă împrumuturi în scop comercial sau profesional." },
-  { name: "Debitor", desc: "Persoană fizică sau juridică care are obligația de a rambursa creditul și costurile asociate." },
-  { name: "Consumator", desc: "Persoană fizică care utilizează produse sau servicii pentru necesități personale, nelegate de activitatea profesională." },
-  { name: "Bonitatea", desc: "Capacitatea consumatorului de a rambursa creditul la scadență, incluzând dobânda și costurile totale." },
-  { name: "Valoarea Totală a Creditului", desc: "Suma efectiv pusă la dispoziție de creditor conform contractului." },
-  { name: "Costul Total al Creditului", desc: "Suma pe care debitorul o plătește în total: principal + dobândă + comisioane + taxe." },
-  { name: "Garanție (gaj, ipotecă)", desc: "Bunuri sau drepturi puse în securitate de către debitor pentru garantarea rambursării creditului." },
-  { name: "Penalitate", desc: "Sumă suplimentară datorată pentru întârzierea plății ratelor sau nerespectarea clauzelor contractuale." },
-  { name: "Perioadă de grație", desc: "Interval în care nu se achită una sau mai multe rate de credit și/sau dobândă. Se reflectă în graficul de rambursare al contractului de credit." },
-  { name: "Cesiune", desc: "Transferul drepturilor și obligațiilor rezultate din contractul de credit către o terță parte (cesionar)." },
-  { name: "BIC (Biroul Istoriilor de Credit)", desc: "Instituție care colectează și stochează date despre istoricul de credit al persoanelor fizice sau juridice." },
-];
+import { OFFICES, GLOSSARY_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   const { trackEvent } = useFacebookPixel();
@@ -91,21 +57,21 @@ export default function Footer() {
 
       {/* Offices + links */}
       <div className="container py-8 grid grid-cols-1 md:grid-cols-3 gap-8 gap-y-12 border-b">
-        {oficii.map((oficiu) => (
+        {OFFICES.map((oficiu) => (
           <div key={oficiu.id} className="space-y-4">
             <p className="text-xl font-bold">{oficiu.title}</p>
             <p className="text-gray-300">
-              {oficiu.address},<br />
+              {oficiu.city}, {oficiu.street},<br />
               {oficiu.addressNumbers}
             </p>
             <p className="text-gray-300">Luni - Vineri: 08:30 - 16:30</p>
             <a
-              href={`tel:${oficiu.mobile[0]}`}
+              href={`tel:${oficiu.mobile}`}
               onClick={() => trackEvent("Contact")}
               className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-brand-500 text-brand-500 hover:bg-brand-500/10 transition-colors duration-300 font-medium"
             >
               <Phone size={16} />
-              {oficiu.mobile[1]}
+              {oficiu.mobileDisplay}
             </a>
           </div>
         ))}
@@ -136,7 +102,7 @@ export default function Footer() {
       <div className="container mt-12">
         <p className="mb-6 text-xl text-center">Dicționar financiar</p>
         <ul className="list-outside list-disc ml-6 space-y-2.5 text-gray-400">
-          {glossary.map((item) => (
+          {GLOSSARY_LINKS.map((item) => (
             <li key={item.name}>
               <span className="font-bold">{item.name} — </span>
               {item.desc}

@@ -18,6 +18,9 @@ const STATIC_ROUTES = [
   "/contacte",
   "/despre-noi",
   "/blog",
+  "/privacy",
+  "/cookies",
+  "/terms",
 ];
 
 async function getBlogSlugs(): Promise<string[]> {
