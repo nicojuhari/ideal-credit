@@ -6,7 +6,7 @@ import Info from "@/components/ui/Info";
 import RecenziiButton from "@/components/ui/RecenziiButton";
 import MainCTA from "@/components/ui/MainCTA";
 import { Check } from "lucide-react";
-import { personalLoanSchema, creditConditionsSchema, businessCreditSchema } from "@/lib/schema";
+import { creditConditionsSchema, businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru agricultură | Ideal Credit",
@@ -20,7 +20,7 @@ export default function CreditAgriculturaPage() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
             <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-[1px]" />
+                <div className="bg-squares -mt-px" />
                 <div className="container">
                     <RecenziiButton className="mb-16" />
                     <h1
@@ -41,7 +41,7 @@ export default function CreditAgriculturaPage() {
                 <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {creditConditionsSchema.pj.list.map((item) => (
                         <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 flex-shrink-0 text-green-400" strokeWidth={3} />
+                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
                             <span>{item}</span>
                         </li>
                     ))}

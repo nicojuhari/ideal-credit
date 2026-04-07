@@ -59,7 +59,7 @@ export default async function HomePage() {
             />
 
             <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-[1px]" />
+                <div className="bg-squares -mt-px" />
                 <div className="container">
                     <RecenziiButton className="mb-16" />
                     <h1 className="font-semibold text-center text-6xl md:text-8xl">Credite Nebancare</h1>
@@ -81,7 +81,7 @@ export default async function HomePage() {
                             <ul className="list-outside list-none md:ml-6 space-y-1.5">
                                 {creditConditionsSchema[type].list.map((item) => (
                                     <li key={item} className="font-light flex items-center gap-2.5">
-                                        <Check className="w-5 h-5 flex-shrink-0 text-green-400" strokeWidth={3} />
+                                        <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
                                         <span className="text-gray-400 text-xl">{item}</span>
                                     </li>
                                 ))}

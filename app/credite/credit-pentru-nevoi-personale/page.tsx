@@ -21,7 +21,7 @@ export default function CreditNevoiPersonalePage() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
             <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-[1px]" />
+                <div className="bg-squares -mt-px" />
                 <div className="container">
                     <RecenziiButton className="mb-16" />
                     <h1 className="font-semibold text-center text-4xl md:text-8xl">Credit pentru nevoi personale</h1>
@@ -38,7 +38,7 @@ export default function CreditNevoiPersonalePage() {
                 <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {creditConditionsSchema.pf.list.map((item) => (
                         <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 flex-shrink-0 text-green-400" strokeWidth={3} />
+                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
                             <span>{item}</span>
                         </li>
                     ))}
