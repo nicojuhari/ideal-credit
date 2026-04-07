@@ -11,8 +11,7 @@ import Info from "@/components/ui/Info";
 import RecenziiButton from "@/components/ui/RecenziiButton";
 import MainCTA from "@/components/ui/MainCTA";
 import { creditConditionsSchema, financialServiceSchema, localBusinessChisinauSchema, localBusinessCauseniSchema, howToSchema } from "@/lib/schema";
-import { Check } from "@phosphor-icons/react/dist/ssr";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { Check, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Credite Nebancare în Moldova | Ideal Credit",
@@ -81,7 +80,7 @@ export default async function HomePage() {
               <ul className="list-outside list-none md:ml-6 space-y-1.5">
                 {creditConditionsSchema[type].list.map((item) => (
                   <li key={item} className="font-light flex items-center gap-2.5">
-                    <Check className="w-5 h-5 flex-shrink-0 text-green-400" weight="bold" />
+                    <Check className="w-5 h-5 flex-shrink-0 text-green-400" strokeWidth={3} />
                     <span className="text-gray-400 text-xl">{item}</span>
                   </li>
                 ))}

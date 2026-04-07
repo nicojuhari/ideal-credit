@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Envelope } from "@phosphor-icons/react";
+import { Phone, Mail, Check } from "lucide-react";
 import ListaOficiilor from "@/components/ListaOficiilor";
 import CallToAction from "@/components/CallToAction";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
-import { Check } from "@phosphor-icons/react";
 
 const WEB3FORMS_KEY = "c8f3c3c1-46ab-46bf-a139-4c4bb6265d95";
 
@@ -100,19 +99,19 @@ export default function ContactePage() {
         <div className="card text-xl space-y-8 text-center">
           <h1 className="card-title text-center">Contacte</h1>
           <div className="flex gap-2 items-center">
-            <Phone className="w-6 h-6 shrink-0 text-brand-500" weight="light" />
+            <Phone className="w-6 h-6 shrink-0 text-brand-500" />
             <a href="tel:+37378805060" onClick={() => trackEvent("Contact")}>
               <span className="opacity-50">(+373)</span> 78 80 50 60
             </a>
           </div>
           <div className="flex gap-2 items-center">
-            <Phone className="w-6 h-6 shrink-0 text-brand-500" weight="light" />
+            <Phone className="w-6 h-6 shrink-0 text-brand-500" />
             <a href="tel:+37379066566" onClick={() => trackEvent("Contact")}>
               <span className="opacity-50">(+373)</span> 790 66 5 66
             </a>
           </div>
           <div className="flex gap-2.5 items-center">
-            <Envelope className="w-6 h-6 shrink-0 text-brand-500" weight="light" />
+            <Mail className="w-6 h-6 shrink-0 text-brand-500" />
             <a href="mailto:info@idealcredit.md" onClick={() => trackEvent("Contact")}>
               info@idealcredit.md
             </a>

@@ -5,7 +5,7 @@ import ShortAboutUs from '@/components/ShortAboutUs';
 import Info from '@/components/ui/Info';
 import RecenziiButton from '@/components/ui/RecenziiButton';
 import MainCTA from '@/components/ui/MainCTA';
-import { Check } from '@phosphor-icons/react/dist/ssr';
+import { Check } from 'lucide-react';
 import { personalLoanSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function CreditMilitariPage() {
         <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {["Vârsta între 23 și 65 ani", "Angajat al Ministerului Apărării, de minim 12 luni", "Buletin de identitate valabil", "Fără restanțe la alte credite"].map((item) => (
             <li key={item} className="flex text-xl items-center gap-2 card">
-              <Check className="w-5 h-5 flex-shrink-0 text-green-400" weight="bold" />
+              <Check className="w-5 h-5 flex-shrink-0 text-green-400" strokeWidth={3} />
               <span>{item}</span>
             </li>
           ))}

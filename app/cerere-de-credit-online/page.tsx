@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Check, Warning } from "@phosphor-icons/react";
+import { Check, TriangleAlert as Warning } from "lucide-react";
 
 const STEPS = [
   { label: "Date despre credit", fields: ["suma", "termen", "scopul_creditului"] },

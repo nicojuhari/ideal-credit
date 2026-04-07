@@ -1,4 +1,4 @@
-import { Check } from "@phosphor-icons/react/dist/ssr";
+import { Check } from "lucide-react";
 
 const list = [
   "Pe piața nebancară din Moldova din 2010.",
@@ -27,7 +27,7 @@ export default function ShortAboutUs() {
           <ul className="space-y-6">
             {list.map((item) => (
               <li key={item} className="flex gap-2.5 items-center">
-                <Check className="w-5 h-5 shrink-0 text-green-500" weight="bold" />
+                <Check className="w-5 h-5 shrink-0 text-green-500" strokeWidth={3} />
                 <span className="text-xl text-gray-300">{item}</span>
               </li>
             ))}

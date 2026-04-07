@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { List, X, Phone } from "@phosphor-icons/react";
+import { Menu as List, X, Phone } from "lucide-react";
 import Logo from "@/components/icons/Logo";
 import ButtonsCTA from "@/components/ui/ButtonsCTA";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";

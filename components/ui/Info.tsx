@@ -1,9 +1,9 @@
-import { WarningCircle } from "@phosphor-icons/react/dist/ssr";
+import { CircleAlert } from "lucide-react";
 
 export default function Info({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <div className={`flex gap-2.5 items-center text-blue-400 justify-center ${className ?? ""}`}>
-      <WarningCircle className="w-5 h-5 shrink-0" weight="light" />
+      <CircleAlert className="w-5 h-5 shrink-0" />
       <span>{children}</span>
     </div>
   );

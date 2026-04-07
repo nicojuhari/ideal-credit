@@ -12,27 +12,27 @@ interface GraficTableProps {
 
 export default function GraficTable({ grafic, dobindaTotal, credit }: GraficTableProps) {
   return (
-    <div className="overflow-auto border border-white/10">
-      <table className="table-fixed min-w-full text-sm divide-y divide-white/10">
+    <div className="border border-white/10 overflow-x-auto w-full min-w-full">
+      <table className="table-fixed min-w-[400px] text-sm divide-y divide-white/10 grafic-table">
         <thead>
           <tr>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap w-16">Nr.</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">Data</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">Credit</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">Dobânda</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">Total</th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap w-16">Nr.</th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Data</th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Credit</th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Dobânda</th>
+            <th className="px-2 py-2 font-bold text-right whitespace-nowrap">Total</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-white/10">
           {grafic.map((rata, idx) => (
             <tr key={idx}>
-              <td className="px-4 py-2 font-bold whitespace-nowrap">{idx + 1}</td>
-              <td className="px-4 py-2 whitespace-nowrap">
+              <td className="px-2 py-2 font-bold whitespace-nowrap">{idx + 1}</td>
+              <td className="px-2 py-2 whitespace-nowrap">
                 {new Date(rata.data_rata).toLocaleDateString("ro-RO")}
               </td>
-              <td className="px-4 py-2 whitespace-nowrap">{rata.credit_rata}</td>
-              <td className="px-4 py-2 whitespace-nowrap">{rata.dobinda_rata}</td>
-              <td className="px-4 py-2 whitespace-nowrap">
+              <td className="px-2 py-2 whitespace-nowrap">{rata.credit_rata}</td>
+              <td className="px-2 py-2 whitespace-nowrap">{rata.dobinda_rata}</td>
+              <td className="px-2 py-2 text-right whitespace-nowrap">
                 {rata.dobinda_rata + rata.credit_rata}
               </td>
             </tr>
@@ -40,11 +40,11 @@ export default function GraficTable({ grafic, dobindaTotal, credit }: GraficTabl
         </tbody>
         <tfoot>
           <tr>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap"></th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">Total</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">{credit}</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">{dobindaTotal}</th>
-            <th className="px-4 py-2 font-bold text-left whitespace-nowrap">
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap"></th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap">Total</th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap">{credit}</th>
+            <th className="px-2 py-2 font-bold text-left whitespace-nowrap">{dobindaTotal}</th>
+            <th className="px-2 py-2 font-bold text-right whitespace-nowrap">
               {+credit + +dobindaTotal}
             </th>
           </tr>

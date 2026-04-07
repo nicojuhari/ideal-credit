@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Star } from "@phosphor-icons/react/dist/ssr";
+import { Star } from "lucide-react";
 
 type Review =
   | { name: string; text: string; image?: undefined }
@@ -53,7 +53,7 @@ export default function RecenziiClient() {
                 />
                 <div className="flex items-center justify-center gap-1">
                   {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} className="text-brand-500 text-lg shrink-0" weight="fill" />
+                    <Star key={j} className="text-brand-500 text-lg shrink-0 fill-current" />
                   ))}
                 </div>
               </div>

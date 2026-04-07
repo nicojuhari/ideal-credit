@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "lucide-react";
 
 export default function MainCTA({ className }: { className?: string }) {
   return (

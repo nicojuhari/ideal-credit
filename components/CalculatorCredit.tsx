@@ -140,7 +140,7 @@ export default function CalculatorCredit() {
                 >
                   Vezi preContractul
                 </DialogTrigger>
-                <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+                <DialogContent className="w-full sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
                   <DialogHeader>
                     <DialogTitle>Informația preContractuală</DialogTitle>
                   </DialogHeader>
@@ -211,6 +211,7 @@ function PreContractContent({
       <p className="text-center my-6 text-lg font-medium">
         Informaţii standard privind creditul pentru consumatori
       </p>
+      <div className="w-full">
       <table className="table-fixed w-full border-collapse pre-contract-table border" id="preContractTable">
         <tbody>
           <tr>
@@ -359,6 +360,8 @@ function PreContractContent({
           </tr>
         </tbody>
       </table>
+
+      </div>
       <div className="my-6">
         Îmi exprim acordul ca, Contractul de credit să fie încheiat în mai puțin de 15 zile calendaristice de la data semnării prezentei informații preContractuale.
       </div>
