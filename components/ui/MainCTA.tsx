@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
-export default function MainCTA() {
+export default function MainCTA({ className }: { className?: string }) {
   return (
     <Link
       href="/cerere-de-credit-online"
       title="Cerere de credit online"
-      className="rounded-full overflow-hidden px-4 justify-center gap-3 max-w-[190px] group hover:bg-brand-400/10 flex mx-auto items-center border border-brand-500 text-brand-500 h-10 transition-colors duration-300"
+      className={`rounded-full overflow-hidden px-4 justify-center gap-3 max-w-[190px] group hover:bg-brand-400/10 flex mx-auto items-center border border-brand-500 text-brand-500 h-10 transition-colors duration-300 ${className ?? ""}`}
     >
       <span className="truncate">Cerere Online</span>
       <ArrowUpRight
