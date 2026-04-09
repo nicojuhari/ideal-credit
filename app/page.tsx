@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CalculatorCredit from "@/components/CalculatorCredit";
-import HowItWorks from "@/components/HowItWorks";
-import PaymentMethods from "@/components/PaymentMethods";
-import ShortAboutUs from "@/components/ShortAboutUs";
-import RecenziiClient from "@/components/RecenziiClient";
-import FAQ, { faqSchema } from "@/components/FAQ";
-import BlogCards from "@/components/BlogCards";
+import dynamic from "next/dynamic";
+import HeroHome from "@/components/home/HeroHome";
+import TrustBar from "@/components/home/TrustBar";
+import { faqSchema } from "@/components/FAQ";
 import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
+
+// Below-the-fold sections: lazy-load to keep LCP on the hero headline
+const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
+const PaymentMethods = dynamic(() => import("@/components/PaymentMethods"));
+const WhyBento = dynamic(() => import("@/components/home/WhyBento"));
+const InvestorStrip = dynamic(() => import("@/components/home/InvestorStrip"));
+const RecenziiClient = dynamic(() => import("@/components/RecenziiClient"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
+const BlogCards = dynamic(() => import("@/components/BlogCards"));
 import {
     creditConditionsSchema,
     financialServiceSchema,
@@ -58,19 +62,8 @@ export default async function HomePage() {
                 }}
             />
 
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1 className="font-semibold text-center text-6xl md:text-8xl">Credite Nebancare</h1>
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Oferim credite nebancare în Moldova cu dobânzi fixe, fără comisioane ascunse, rapid și avantajos.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <HeroHome />
+            <TrustBar />
 
             <section className="container">
                 <h2 className="title text-center">Condițiile de creditare</h2>
@@ -104,7 +97,7 @@ export default async function HomePage() {
                 <PaymentMethods />
             </section>
 
-            <ShortAboutUs />
+            <WhyBento />
 
             <section className="container" id="recenzii">
                 <RecenziiClient />
@@ -114,6 +107,8 @@ export default async function HomePage() {
                 <h2 className="title text-center">Întrebări frecvente</h2>
                 <FAQ />
             </section>
+
+            <InvestorStrip />
 
             {stories.length > 0 && (
                 <section className="container">

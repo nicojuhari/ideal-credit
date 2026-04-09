@@ -1,3 +1,15 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, MessageCircle, ArrowRight } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { FAQ_ITEMS } from "@/lib/constants";
 
 export const faqSchema = {
@@ -10,15 +22,107 @@ export const faqSchema = {
   })),
 };
 
+function normalize(s: string) {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 export default function FAQ() {
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = normalize(query.trim());
+    if (!q) return FAQ_ITEMS;
+    return FAQ_ITEMS.filter(
+      (item) =>
+        normalize(item.question).includes(q) ||
+        normalize(String(item.answer)).includes(q),
+    );
+  }, [query]);
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-      {FAQ_ITEMS.map((item) => (
-        <div key={item.question} className="card">
-          <div className="text-xl mb-4">{item.question}</div>
-          <div className="text-gray-400">{item.answer}</div>
+    <div className="max-w-3xl mx-auto">
+      {/* Search */}
+      <div className="relative mb-6">
+        <Search
+          size={18}
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none"
+        />
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Caută în întrebări…"
+          className="w-full h-12 pl-11 pr-4 rounded-full bg-black-600/70 border border-white/10 text-white placeholder:text-white/40 outline-none focus:border-brand-500/50 focus:bg-black-600 transition-colors"
+        />
+      </div>
+
+      {/* Accordion */}
+      <div className="rounded-2xl border border-white/5 bg-black-600/60 px-2 md:px-5">
+        <AnimatePresence mode="wait">
+          {filtered.length > 0 ? (
+            <motion.div
+              key="list"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Accordion className="w-full">
+                {filtered.map((item, i) => (
+                  <AccordionItem
+                    key={item.question}
+                    value={`item-${i}`}
+                    className="border-white/5"
+                  >
+                    <AccordionTrigger className="text-left text-base md:text-lg font-medium hover:text-brand-500 hover:no-underline py-5 aria-expanded:text-brand-500">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-white/60 text-sm md:text-base leading-relaxed pb-5">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="empty"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="py-10 text-center text-white/50 text-sm"
+            >
+              Niciun rezultat pentru „{query}".
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* No-answer CTA */}
+      <div className="mt-6 rounded-2xl border border-white/5 bg-black-600/70 p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex items-start gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500">
+            <MessageCircle size={18} />
+          </div>
+          <div>
+            <div className="text-white font-medium">Nu găsești răspuns?</div>
+            <p className="text-sm text-white/55 mt-0.5">
+              Scrie-ne — îți răspundem într-un timp scurt și te ghidăm pas cu pas.
+            </p>
+          </div>
         </div>
-      ))}
+        <Link
+          href="/contacte"
+          className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all whitespace-nowrap"
+        >
+          Contactează-ne
+          <ArrowRight size={14} />
+        </Link>
+      </div>
     </div>
   );
 }

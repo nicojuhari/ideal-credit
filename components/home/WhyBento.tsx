@@ -1,0 +1,140 @@
+"use client";
+
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useRef } from "react";
+import {
+  ShieldCheck,
+  Zap,
+  Eye,
+  Users,
+  TrendingUp,
+  HeartHandshake,
+} from "lucide-react";
+
+function YearsCounter() {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-20%" });
+  const mv = useMotionValue(0);
+  const rounded = useTransform(mv, (v) => Math.round(v));
+  const target = new Date().getFullYear() - 2010;
+
+  useEffect(() => {
+    if (!inView) return;
+    const c = animate(mv, target, { duration: 1.6, ease: "easeOut" });
+    return c.stop;
+  }, [inView, mv, target]);
+
+  return (
+    <motion.span ref={ref} className="tabular-nums">
+      {rounded}
+    </motion.span>
+  );
+}
+
+type Cell = {
+  title: string;
+  body: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
+  className: string;
+};
+
+const cells: Cell[] = [
+  {
+    title: "Condiții transparente",
+    body: "Dobânzi fixe, zero comisioane ascunse — vezi totul înainte de a semna.",
+    icon: Eye,
+    className: "md:col-span-2",
+  },
+  {
+    title: "Decizie rapidă",
+    body: "Răspuns în până la 3 ore în timpul programului de lucru.",
+    icon: Zap,
+    className: "",
+  },
+  {
+    title: "Autorizat CNPF",
+    body: "Activitate reglementată și supravegheată de autoritatea de stat.",
+    icon: ShieldCheck,
+    className: "",
+  },
+  {
+    title: "Mii de clienți",
+    body: "Au ales Ideal Credit pentru nevoi personale și de business.",
+    icon: Users,
+    className: "",
+  },
+  {
+    title: "Avantajos pe termen lung",
+    body: "Planuri de rambursare adaptate la bugetul tău real.",
+    icon: TrendingUp,
+    className: "md:col-span-2",
+  },
+  {
+    title: "Suport uman",
+    body: "Consultanți reali, nu boți — te însoțim la fiecare pas.",
+    icon: HeartHandshake,
+    className: "",
+  },
+];
+
+export default function WhyBento() {
+  return (
+    <section className="container">
+      <h2 className="title text-center">De ce Ideal Credit?</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(160px,auto)]">
+        {/* Featured years cell */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="relative md:row-span-2 rounded-2xl p-[1px] bg-gradient-to-br from-brand-500/60 via-brand-500/10 to-transparent overflow-hidden"
+        >
+          <div className="relative h-full rounded-[calc(1rem-1px)] bg-black-600/90 p-6 flex flex-col justify-between overflow-hidden">
+            {/* Decorative rings */}
+            <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full border border-brand-500/20" />
+            <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full border border-brand-500/15" />
+            <div className="pointer-events-none absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-brand-500/5 blur-3xl" />
+
+            <div className="relative">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/60">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+                Din 2010
+              </span>
+            </div>
+            <div className="relative">
+              <div className="text-[6.5rem] md:text-[8rem] leading-none font-semibold text-brand-gradient">
+                <YearsCounter />
+              </div>
+              <div className="mt-2 text-xl text-white/80">ani de experiență</div>
+              <p className="mt-4 text-sm text-white/50 max-w-xs">
+                Finanțare nebancară de încredere pentru persoane fizice și afaceri din Moldova.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {cells.map((cell, i) => {
+          const Icon = cell.icon;
+          return (
+            <motion.div
+              key={cell.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.45, delay: 0.05 + i * 0.05, ease: "easeOut" }}
+              className={`group relative rounded-2xl border border-white/5 bg-black-600/70 p-5 hover:border-brand-500/30 hover:bg-black-600 transition-colors ${cell.className}`}
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 group-hover:bg-brand-500/15 transition-colors">
+                <Icon size={20} />
+              </div>
+              <h3 className="mt-4 text-base font-medium text-white">{cell.title}</h3>
+              <p className="mt-1 text-sm text-white/55 leading-relaxed">{cell.body}</p>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
