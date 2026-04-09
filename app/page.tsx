@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import HeroHome from "@/components/home/HeroHome";
-import TrustBar from "@/components/home/TrustBar";
 import { faqSchema } from "@/components/FAQ";
 import Info from "@/components/ui/Info";
 
@@ -63,7 +62,6 @@ export default async function HomePage() {
             />
 
             <HeroHome />
-            <TrustBar />
 
             <section className="container">
                 <h2 className="title text-center">Condițiile de creditare</h2>

@@ -5,83 +5,81 @@ import { motion } from "framer-motion";
 import { Banknote, Globe, Landmark, Mailbox, Sparkles } from "lucide-react";
 
 type Method = {
-  title: string;
-  description: React.ReactNode;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
-  recommended?: boolean;
+    title: string;
+    description: React.ReactNode;
+    icon: React.ComponentType<{ size?: number; className?: string }>;
+    recommended?: boolean;
 };
 
 const methods: Method[] = [
-  {
-    title: "Online Banking",
-    description: "Transfer bancar/de pe card pe contul IBAN al Ideal Credit.",
-    icon: Globe,
-    recommended: true,
-  },
-  {
-    title: "În numerar",
-    description: (
-      <>
-        În unul din{" "}
-        <Link href="/contacte#adresa-oficiilor" className="link">
-          oficiile companiei
-        </Link>{" "}
-        Ideal Credit.
-      </>
-    ),
-    icon: Banknote,
-  },
-  {
-    title: "Bancă",
-    description: "La orice filială a băncii VictoriaBank din țară.",
-    icon: Landmark,
-  },
-  {
-    title: "Poșta",
-    description: "La orice oficiu poștal din Republica Moldova.",
-    icon: Mailbox,
-  },
+    {
+        title: "Online Banking",
+        description: "Transfer bancar/de pe card pe contul IBAN al Ideal Credit.",
+        icon: Globe,
+        recommended: true,
+    },
+    {
+        title: "În numerar",
+        description: (
+            <>
+                În unul din{" "}
+                <Link href="/contacte#adresa-oficiilor" className="link">
+                    oficiile companiei
+                </Link>{" "}
+                Ideal Credit.
+            </>
+        ),
+        icon: Banknote,
+    },
+    {
+        title: "Bancă",
+        description: "La orice filială a băncii VictoriaBank din țară.",
+        icon: Landmark,
+    },
+    {
+        title: "Poșta",
+        description: "La orice oficiu poștal din Republica Moldova.",
+        icon: Mailbox,
+    },
 ];
 
 export default function PaymentMethods() {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {methods.map((item, i) => {
-        const Icon = item.icon;
-        return (
-          <motion.div
-            key={item.title}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.45, delay: i * 0.06, ease: "easeOut" }}
-            className={`group relative rounded-2xl border bg-black-600/70 p-5 transition-all hover:-translate-y-1 ${
-              item.recommended
-                ? "border-brand-500/40 shadow-glow-sm"
-                : "border-white/5 hover:border-white/15"
-            }`}
-          >
-            {item.recommended && (
-              <span className="absolute -top-2 right-4 inline-flex items-center gap-1 rounded-full bg-brand-gradient px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-black">
-                <Sparkles size={10} />
-                Recomandat
-              </span>
-            )}
+    return (
+        <div className="space-y-0 max-md:divide-y divide-white/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {methods.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                    <motion.div
+                        key={item.title}
+                        initial={{ opacity: 0, x: -12 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-10%" }}
+                        transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
+                        className="group flex items-start gap-4 py-5"
+                    >
+                        <div
+                            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
+                                item.recommended ? "bg-brand-500/15 text-brand-500" : "bg-white/5 text-white/50 group-hover:bg-white/15"
+                            }`}
+                        >
+                            <Icon size={18} />
+                        </div>
 
-            <div
-              className={`flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
-                item.recommended
-                  ? "bg-brand-500/15 text-brand-500"
-                  : "bg-white/[0.04] text-white/70 group-hover:bg-white/[0.08]"
-              }`}
-            >
-              <Icon size={20} />
-            </div>
-            <h3 className="mt-4 text-base font-medium text-white">{item.title}</h3>
-            <p className="mt-1.5 text-sm text-white/55 leading-relaxed">{item.description}</p>
-          </motion.div>
-        );
-      })}
-    </div>
-  );
+                        <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-1">
+                                <h3 className="text-lg text-white/90">{item.title}</h3>
+                                {item.recommended && (
+                                    <span className="inline-flex items-center gap-1 rounded-full bg-brand-gradient px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-black">
+                                        <Sparkles size={9} />
+                                        Recomandat
+                                    </span>
+                                )}
+                            </div>
+                            <p className="mt-1 text-sm text-white/45 leading-relaxed">{item.description}</p>
+                        </div>
+                    </motion.div>
+                );
+            })}
+        </div>
+    );
 }
