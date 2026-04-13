@@ -40,18 +40,18 @@ export default function FAQ({ items }: { items?: FaqItem[] }) {
         <div className="max-w-3xl mx-auto">
             {/* Search */}
             <div className="relative mb-6">
-                <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none" />
+                <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Caută în întrebări…"
-                    className="w-full h-12 pl-11 pr-4 rounded-full bg-black-600/70 border border-white/10 text-white placeholder:text-white/40 outline-none focus:border-brand-500/50 focus:bg-black-600 transition-colors"
+                    className="w-full h-12 pl-11 pr-4 rounded-full bg-black-600/70 border border-white/10 text-white placeholder:text-gray-500 outline-none focus:border-brand-500/50 focus:bg-black-600 transition-colors"
                 />
             </div>
 
             {/* Accordion */}
-            <div className="rounded-2xl border border-white/5 bg-black-600/60 px-2 md:px-5">
+            <div className="rounded-xl border border-white/5 bg-black-600/60 px-2 md:px-5">
                 <AnimatePresence mode="wait">
                     {filtered.length > 0 ? (
                         <motion.div
@@ -67,7 +67,7 @@ export default function FAQ({ items }: { items?: FaqItem[] }) {
                                         <AccordionTrigger className="text-left text-base md:text-lg font-medium hover:text-brand-500 hover:no-underline py-5 aria-expanded:text-brand-500">
                                             {item.question}
                                         </AccordionTrigger>
-                                        <AccordionContent className="text-white/60 text-sm md:text-base leading-relaxed pb-5">
+                                        <AccordionContent className="text-gray-500 text-sm md:text-base leading-relaxed pb-5">
                                             {item.answer}
                                         </AccordionContent>
                                     </AccordionItem>
@@ -81,7 +81,7 @@ export default function FAQ({ items }: { items?: FaqItem[] }) {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="py-10 text-center text-white/50 text-sm"
+                            className="py-10 text-center text-gray-500 text-sm"
                         >
                             Niciun rezultat pentru &quot;{query}&quot;.
                         </motion.div>
@@ -90,19 +90,19 @@ export default function FAQ({ items }: { items?: FaqItem[] }) {
             </div>
 
             {/* No-answer CTA */}
-            <div className="mt-6 rounded-2xl border border-white/5 bg-black-600/70 p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="mt-6 rounded-xl border border-white/5 bg-black-600/70 p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-500/10 text-green-500">
                         <MessageCircle size={18} />
                     </div>
                     <div>
                         <div className="text-white font-medium">Nu găsești răspuns?</div>
-                        <p className="text-sm text-white/55 mt-0.5">Scrie-ne - îți răspundem într-un timp scurt și te ghidăm pas cu pas.</p>
+                        <p className="text-sm text-gray-500 mt-0.5">Scrie-ne, îți răspundem într-un timp scurt și te ghidăm pas cu pas.</p>
                     </div>
                 </div>
                 <Link
                     href="/contacte"
-                    className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-green-800 text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap"
+                    className="mx-auto inline-flex items-center gap-2 h-10 px-4 rounded-full bg-green-800 text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap"
                 >
                     Contactează-ne
                     <ArrowRight size={14} />

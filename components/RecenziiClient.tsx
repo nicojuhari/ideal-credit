@@ -51,7 +51,7 @@ const reviews: Review[] = [
 
 function GoogleBadge() {
     return (
-        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-white/60">
+        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-gray-500">
             <svg width="10" height="10" viewBox="0 0 48 48" aria-hidden>
                 <path
                     fill="#FFC107"
@@ -77,7 +77,7 @@ function GoogleBadge() {
 
 function ViberBadge() {
     return (
-        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-white/60">
+        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-gray-500">
             <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden>
                 <path
                     fill="#665CAC"
@@ -91,7 +91,7 @@ function ViberBadge() {
 
 function FacebookBadge() {
     return (
-        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-white/60">
+        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-gray-500">
             <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden>
                 <path
                     fill="#1877F2"
@@ -105,7 +105,7 @@ function FacebookBadge() {
 
 function DirectBadge() {
     return (
-        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-white/60">
+        <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-gray-500">
             Direct
         </span>
     );
@@ -136,9 +136,9 @@ function TextCard({ review }: { review: TextReview }) {
                     <DirectBadge />
                 )}
             </div>
-            <p className="text-sm text-white/90 leading-relaxed font-light">{review.text}</p>
+            <p className="text-sm text-white leading-relaxed font-light">{review.text}</p>
             <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                <span className="text-sm text-white/50">{review.name}</span>
+                <span className="text-sm text-gray-500">{review.name}</span>
             </div>
         </div>
     );

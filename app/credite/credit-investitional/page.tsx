@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
+import WhyBento from "@/components/WhyBento";
 import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
 import { Check, X, Cog, Truck, Store, Monitor, Armchair, ArrowRight } from "lucide-react";
 import { investitionalSchema } from "@/lib/schema";
 import type { FaqItem } from "@/components/FAQ";
@@ -16,7 +14,7 @@ const FAQ = dynamic(() => import("@/components/FAQ"));
 export const metadata: Metadata = {
     title: "Credit Investițional pentru Afaceri în Moldova | Ideal Credit",
     description:
-        "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Până la 400.000 lei, termen până la 60 luni, decizie în 1-3 ore.",
+        "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Până la 400.000 lei, termen până la 60 luni, decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-investitional" },
 };
 
@@ -56,7 +54,6 @@ const investFaqSchema = {
         acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
 };
-
 
 const financingCategories = [
     {
@@ -103,25 +100,17 @@ export default function CreditInvestitionalPage() {
                     __html: JSON.stringify([investitionalSchema, investFaqSchema]),
                 }}
             />
-
             {/* Hero */}
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1
-                        className="font-semibold text-center text-4xl md:text-8xl"
-                        dangerouslySetInnerHTML={{ __html: "Credit<br />investițional" }}
-                    />
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Cumperi echipamente, extinzi spațiul sau modernizezi linia de producție.
-                        Termen până la 60 luni, rată fixă, costuri clare.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <ServiceHero
+                title={
+                    <>
+                        Credit
+                        <br />
+                        investițional
+                    </>
+                }
+                subtitle="Cumperi echipamente, extinzi spațiul sau modernizezi linia de producție. Termen până la 60 luni, rată fixă, costuri clare."
+            />
 
             {/* 1. Ce finanțezi */}
             <section className="container">
@@ -133,8 +122,8 @@ export default function CreditInvestitionalPage() {
                                 <Icon size={20} />
                             </span>
                             <div>
-                                <h3 className="text-base font-semibold text-white/90 mb-1">{title}</h3>
-                                <p className="text-sm text-white/55 leading-relaxed">{desc}</p>
+                                <h3 className="text-base font-semibold text-white mb-1">{title}</h3>
+                                <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
                             </div>
                         </div>
                     ))}
@@ -149,15 +138,15 @@ export default function CreditInvestitionalPage() {
                 <h2 className="title text-center">Condiții de eligibilitate</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Eligibil dacă</h3>
+                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
                         <ul className="space-y-2.5">
                             {[
-                                "Firmă înregistrată în Moldova (SRL, ÎI, GÎ, GT)",
+                                "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
                                 "Activitate economică de cel puțin 6 luni",
                                 "Investiția are legătură directă cu activitatea firmei",
                                 "Extrase bancare care arată rulaj constant",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -165,7 +154,7 @@ export default function CreditInvestitionalPage() {
                         </ul>
                     </div>
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Nu este necesar</h3>
+                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
                         <ul className="space-y-2.5">
                             {[
                                 "Plan de afaceri detaliat",
@@ -173,7 +162,7 @@ export default function CreditInvestitionalPage() {
                                 "Garanție imobiliară obligatorie (depinde de sumă)",
                                 "Proforma sau factură de la furnizor pentru aprobare",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
                                     {item}
                                 </li>
@@ -195,17 +184,17 @@ export default function CreditInvestitionalPage() {
                     <table className="w-full text-sm">
                         <thead>
                             <tr className="border-b border-white/5 bg-black-600/80">
-                                <th className="text-left px-5 py-3.5 text-white/40 font-medium w-2/5"></th>
+                                <th className="text-left px-5 py-3.5 text-gray-500 font-medium w-2/5"></th>
                                 <th className="px-5 py-3.5 text-brand-500 font-semibold text-center">Ideal Credit</th>
-                                <th className="px-5 py-3.5 text-white/40 font-medium text-center">Leasing</th>
+                                <th className="px-5 py-3.5 text-gray-500 font-medium text-center">Leasing</th>
                             </tr>
                         </thead>
                         <tbody className="bg-black-600/40">
                             {comparisonRows.map((row, i) => (
                                 <tr key={row.label} className={i < comparisonRows.length - 1 ? "border-b border-white/5" : ""}>
-                                    <td className="px-5 py-4 text-white/60">{row.label}</td>
+                                    <td className="px-5 py-4 text-gray-500">{row.label}</td>
                                     <td className="px-5 py-4 text-green-400 text-center font-medium">{row.ifn}</td>
-                                    <td className="px-5 py-4 text-white/40 text-center">{row.leasing}</td>
+                                    <td className="px-5 py-4 text-gray-500 text-center">{row.leasing}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -224,7 +213,7 @@ export default function CreditInvestitionalPage() {
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Investiția ta, rata ta lunară</h2>
-                        <p className="text-white/55 text-sm md:text-base max-w-md mx-auto">
+                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
                             Calculează cu calculatorul de mai sus sau trimite o cerere - te contactăm în câteva ore cu o ofertă concretă.
                         </p>
                     </div>
@@ -245,7 +234,7 @@ export default function CreditInvestitionalPage() {
                 </div>
             </section>
 
-            <ShortAboutUs />
+            <WhyBento />
         </>
     );
 }

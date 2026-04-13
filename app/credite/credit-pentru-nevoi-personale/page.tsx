@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
+import WhyBento from "@/components/WhyBento";
 import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
 import { Check, X, Home, Tv, Activity, Cake, Plane, Zap, Hammer, Wallet, ArrowRight } from "lucide-react";
 import { personalLoanSchema } from "@/lib/schema";
 import type { FaqItem } from "@/components/FAQ";
@@ -16,7 +14,7 @@ const FAQ = dynamic(() => import("@/components/FAQ"));
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
     description:
-        "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Aprobare în 1-3 ore. Până la 300.000 lei pentru orice nevoie personală.",
+        "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore. Până la 300.000 lei pentru orice nevoie personală.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
 };
 
@@ -120,24 +118,11 @@ export default function CreditNevoiPersonalePage() {
                     __html: JSON.stringify([personalLoanSchema, personalFaqSchema]),
                 }}
             />
-
             {/* Hero */}
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1 className="font-semibold text-center text-4xl md:text-8xl">
-                        Credit pentru nevoi personale
-                    </h1>
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Bani pentru orice nevoie, fără destinație impusă.
-                        Dobândă fixă, costuri clare, decizie în 1-3 ore.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <ServiceHero
+                title={"Credit pentru nevoi personale"}
+                subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
+            />
 
             {/* 1. Când folosești un credit personal */}
             <section className="container">
@@ -149,7 +134,7 @@ export default function CreditNevoiPersonalePage() {
                                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500">
                                     <Icon size={22} />
                                 </span>
-                                <span className="text-sm font-medium text-white/80 text-center leading-snug">{label}</span>
+                                <span className="text-sm font-medium text-white text-center leading-snug">{label}</span>
                             </>
                         );
                         return href ? (
@@ -175,7 +160,7 @@ export default function CreditNevoiPersonalePage() {
             {/* 2. Ce nu ți se cere */}
             <section className="container">
                 <div className="max-w-2xl mx-auto card flex flex-col gap-5">
-                    <h2 className="text-xl font-semibold text-white/90">Ce nu ți se cere</h2>
+                    <h2 className="text-xl font-semibold text-white">Ce nu ți se cere</h2>
                     <ul className="space-y-3">
                         {[
                             "Garant obligatoriu pentru sume mici",
@@ -183,7 +168,7 @@ export default function CreditNevoiPersonalePage() {
                             "Verificare exclusivă la biroul de credit - evaluăm situația reală",
                             "Comisioane de analiză sau de deschidere a dosarului",
                         ].map((item) => (
-                            <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                            <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                 <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
                                 {item}
                             </li>
@@ -202,7 +187,7 @@ export default function CreditNevoiPersonalePage() {
                         "Buletin de identitate valabil",
                         "Posibil garant sau gaj în funcție de suma solicitată",
                     ].map((item) => (
-                        <div key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                        <div key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                             <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                             {item}
                         </div>
@@ -238,8 +223,8 @@ export default function CreditNevoiPersonalePage() {
                                 <Icon size={20} />
                             </span>
                             <span className="flex flex-col min-w-0">
-                                <span className="text-sm font-medium text-white/90 group-hover:text-white transition-colors">{label}</span>
-                                <span className="mt-0.5 text-xs text-white/50 leading-snug">{desc}</span>
+                                <span className="text-sm font-medium text-white group-hover:text-white transition-colors">{label}</span>
+                                <span className="mt-0.5 text-xs text-gray-500 leading-snug">{desc}</span>
                             </span>
                         </Link>
                     ))}
@@ -247,7 +232,7 @@ export default function CreditNevoiPersonalePage() {
             </section>
 
             {/* 7. ShortAboutUs */}
-            <ShortAboutUs />
+            <WhyBento />
         </>
     );
 }

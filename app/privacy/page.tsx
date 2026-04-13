@@ -80,7 +80,7 @@ export default function PrivacyPage() {
                     tel: 079066566, 078805060
                 </div>
 
-                <p className="mt-8 text-gray-400">Această Politică de Confidențialitate a fost actualizată ultima dată la 26.07.2024.</p>
+                <p className="mt-8 text-gray-500">Această Politică de Confidențialitate a fost actualizată ultima dată la 26.07.2024.</p>
             </div>
         </div>
     );

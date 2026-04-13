@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
+import WhyBento from "@/components/WhyBento";
 import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
 import { Check, X, Cog, Leaf, Droplets, Sprout, TrendingUp, ArrowRight } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 import type { FaqItem } from "@/components/FAQ";
@@ -16,7 +14,7 @@ const FAQ = dynamic(() => import("@/components/FAQ"));
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
     description:
-        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital de lucru sezonier. Până la 400.000 lei, decizie în 1-3 ore.",
+        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital de lucru sezonier. Până la 400.000 lei, decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-agricultura" },
 };
 
@@ -101,23 +99,16 @@ export default function CreditAgriculturaPage() {
             />
 
             {/* Hero */}
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1
-                        className="font-semibold text-center text-5xl md:text-8xl"
-                        dangerouslySetInnerHTML={{ __html: "Credit pentru<br />agricultură" }}
-                    />
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova.
-                        Grafic adaptat sezonalității, până la 400.000 lei.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <ServiceHero
+                title={
+                    <>
+                        Credit pentru
+                        <br />
+                        agricultură
+                    </>
+                }
+                subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității, până la 400.000 lei."
+            />
 
             {/* 1. Ce finanțezi */}
             <section className="container">
@@ -129,9 +120,9 @@ export default function CreditAgriculturaPage() {
                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                     <Icon size={20} />
                                 </span>
-                                <h3 className="text-base font-semibold text-white/90">{title}</h3>
+                                <h3 className="text-base font-semibold text-white">{title}</h3>
                             </div>
-                            <p className="text-sm text-white/55 leading-relaxed flex-1">{desc}</p>
+                            <p className="text-sm text-gray-500 leading-relaxed flex-1">{desc}</p>
                             {link && (
                                 <Link
                                     href={link.href}
@@ -150,9 +141,11 @@ export default function CreditAgriculturaPage() {
                 <h2 className="title text-center">Adaptat la ritmul agriculturii</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Grafic de rambursare sezonier</h3>
-                        <p className="text-sm text-white/60 leading-relaxed">
-                            Agricultura nu produce venituri uniform pe parcursul anului. Știm asta. Structurăm graficul de rambursare în funcție de ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
+                        <h3 className="text-base font-semibold text-white">Grafic de rambursare sezonier</h3>
+                        <p className="text-sm text-gray-500 leading-relaxed">
+                            Agricultura nu produce venituri uniform pe parcursul anului. Știm asta. Structurăm graficul de rambursare în
+                            funcție de ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și
+                            vânzare.
                         </p>
                         <ul className="space-y-2 mt-1">
                             {[
@@ -160,7 +153,7 @@ export default function CreditAgriculturaPage() {
                                 "Posibilitate de perioadă de grație până la recoltă",
                                 "Termen de până la 60 luni pentru investiții mari",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-white/65">
+                                <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
                                     <Check className="w-3.5 h-3.5 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -168,8 +161,8 @@ export default function CreditAgriculturaPage() {
                         </ul>
                     </div>
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Cum evaluăm activitatea agricolă</h3>
-                        <p className="text-sm text-white/60 leading-relaxed">
+                        <h3 className="text-base font-semibold text-white">Cum evaluăm activitatea agricolă</h3>
+                        <p className="text-sm text-gray-500 leading-relaxed">
                             Nu evaluăm doar un salariu lunar fix. Analizăm imaginea completă a activității tale agricole.
                         </p>
                         <ul className="space-y-2 mt-1">
@@ -179,7 +172,7 @@ export default function CreditAgriculturaPage() {
                                 "Contracte de arendă sau titluri de proprietate",
                                 "Extrase bancare și fluxul de numerar anual",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-white/65">
+                                <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
                                     <Check className="w-3.5 h-3.5 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -194,15 +187,15 @@ export default function CreditAgriculturaPage() {
                 <h2 className="title text-center">Condiții de eligibilitate</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Eligibil dacă</h3>
+                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
                         <ul className="space-y-2.5">
                             {[
-                                "Activitate agricolă înregistrată (SRL, ÎI, GT, gospodărie țărănească)",
+                                "Activitate agricolă înregistrată (SRL, ÎI, GȚ, gospodărie țărănească)",
                                 "Activitate demonstrabilă în ultimul sezon",
                                 "Teren agricol în proprietate sau în arendă",
                                 "Extrase bancare sau alte dovezi de vânzări agricole",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -210,7 +203,7 @@ export default function CreditAgriculturaPage() {
                         </ul>
                     </div>
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Nu este necesar</h3>
+                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
                         <ul className="space-y-2.5">
                             {[
                                 "Plan de afaceri detaliat",
@@ -218,7 +211,7 @@ export default function CreditAgriculturaPage() {
                                 "Venit lunar fix și uniform",
                                 "Garanție imobiliară obligatorie (depinde de sumă)",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
                                     {item}
                                 </li>
@@ -247,7 +240,7 @@ export default function CreditAgriculturaPage() {
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Pregătit pentru sezon?</h2>
-                        <p className="text-white/55 text-sm md:text-base max-w-md mx-auto">
+                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
                             Aplică înainte de sezon pentru a fi pregătit cu inputurile și utilajele necesare.
                         </p>
                     </div>
@@ -268,7 +261,7 @@ export default function CreditAgriculturaPage() {
                 </div>
             </section>
 
-            <ShortAboutUs />
+            <WhyBento />
         </>
     );
 }

@@ -105,15 +105,15 @@ export default function CalculatorCredit() {
     return (
         <div className="p-4 md:p-6">
             <div className="flex items-center justify-between mb-5">
-                <h2 className="text-lg md:text-2xl font-semibold">Calculator de credit</h2>
-                <span className="text-[11px] uppercase tracking-wider text-white/60">4% lunar</span>
+                <h2 className="text-lg md:text-2xl font-medium">Calculator de credit</h2>
+                <span className="text-[11px] uppercase tracking-wider text-gray-500">4% lunar</span>
             </div>
 
             {/* Prima rată focal card */}
             <div className="relative rounded-xl p-px bg-linear-to-br from-brand-500/60 via-brand-500/20 to-transparent mb-5">
                 <div className="rounded-xl bg-black-700/80 px-5 py-4 flex items-center justify-between">
                     <div>
-                        <div className="flex items-center gap-2 text-xs text-white/50 uppercase tracking-wider">
+                        <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-wider">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-60" />
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
@@ -121,13 +121,13 @@ export default function CalculatorCredit() {
                             Prima rată
                         </div>
                         <div className="mt-1 text-3xl md:text-4xl font-semibold text-brand-gradient">
-                            <AnimatedNumber value={primaRata} /> <span className="text-base text-white/60 font-normal">MDL</span>
+                            <AnimatedNumber value={primaRata} /> <span className="text-base text-gray-500 font-normal">MDL</span>
                         </div>
                     </div>
                     <Dialog open={showModal} onOpenChange={setShowModal}>
                         <DialogTrigger
                             onClick={() => firePixelOnce()}
-                            className="text-white/50 hover:text-white/60 underline text-xs underline-offset-2 transition-colors"
+                            className="text-blue-300 hover:text-blue-200 underline text-xs underline-offset-2 transition-colors"
                         >
                             preContract
                         </DialogTrigger>
@@ -150,12 +150,12 @@ export default function CalculatorCredit() {
             {/* Sum block */}
             <div className="mb-5">
                 <div className="flex items-center justify-between mb-2">
-                    <label htmlFor="credit-amount-input" className="text-sm text-white/60">
+                    <label htmlFor="credit-amount-input" className="text-sm text-gray-500">
                         Suma
                     </label>
                     <div className="flex items-center gap-1 text-white">
                         <div className="input-calculator flex items-center justify-end">{creditSuma}</div>
-                        <span className="text-sm text-white/50">MDL</span>
+                        <span className="text-sm text-gray-500">MDL</span>
                     </div>
                 </div>
                 <GradientSlider
@@ -171,12 +171,12 @@ export default function CalculatorCredit() {
             {/* Term block */}
             <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
-                    <label htmlFor="credit-period-input" className="text-sm text-white/60">
+                    <label htmlFor="credit-period-input" className="text-sm text-gray-500">
                         Termen
                     </label>
                     <div className="flex items-center gap-1 text-white">
                         <div className="input-calculator flex items-center justify-end">{creditTermen}</div>
-                        <span className="text-sm text-white/50">luni</span>
+                        <span className="text-sm text-gray-500">luni</span>
                     </div>
                 </div>
                 <GradientSlider
@@ -192,16 +192,16 @@ export default function CalculatorCredit() {
             {/* DAE / cost strip */}
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
                 <div className="rounded-lg bg-black-400 px-3 py-2">
-                    <div className="text-[11px] uppercase tracking-wider text-white/40">DAE</div>
+                    <div className="text-[11px] uppercase tracking-wider text-gray-500">DAE</div>
                     <div className="text-sm font-semibold tabular-nums">{dae} %</div>
                 </div>
                 <div className="rounded-lg bg-black-400 px-3 py-2">
-                    <div className="text-[11px] uppercase tracking-wider text-white/40">Cost total</div>
+                    <div className="text-[11px] uppercase tracking-wider text-gray-500">Cost total</div>
                     <div className="text-sm font-semibold tabular-nums">{Math.round(dobindaTotal).toLocaleString("ro-RO")} MDL</div>
                 </div>
             </div>
             <MainCTA className="mt-6" />
-            <div className="mt-4 text-center text-xs text-white/40">
+            <div className="mt-4 text-center text-xs text-gray-500">
                 <span>Consumatorul este responsabil pentru rambursarea creditului.</span>
             </div>
         </div>

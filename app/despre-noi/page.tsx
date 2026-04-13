@@ -44,7 +44,7 @@ export default function DespreNoiPage() {
               <h2 className="pt-6 text-2xl">Ce ne diferențiază</h2>
               <ul className="list-disc list-inside">
                 <li>Expertiză locală - știm exact nevoile antreprenorilor și familiilor din Moldova.</li>
-                <li>Proces rapid - decizie în 1 - 3 ore.</li>
+                <li>Proces rapid - decizie în 2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri.</li>
                 <li>Documentație minimă - buletin și adeverință de venit sau certificat de înregistrare pentru firme.</li>
                 <li>Transparență totală - fără comisioane ascunse; toate costurile sunt comunicate din start.</li>
                 <li>Consultanță gratuită - te ghidăm pas cu pas, de la analiză până la semnarea contractului.</li>

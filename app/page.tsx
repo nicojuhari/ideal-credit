@@ -8,7 +8,7 @@ import { Check } from "lucide-react";
 
 const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
 const PaymentMethods = dynamic(() => import("@/components/PaymentMethods"));
-const WhyBento = dynamic(() => import("@/components/home/WhyBento"));
+const WhyBento = dynamic(() => import("@/components/WhyBento"));
 const RecenziiClient = dynamic(() => import("@/components/RecenziiClient"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
 const BlogCards = dynamic(() => import("@/components/BlogCards"));
@@ -19,7 +19,7 @@ import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCause
 export const metadata: Metadata = {
     title: "Credite Nebancare în Moldova | Ideal Credit",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice în Moldova. Dobândă fixă, fără comisioane ascunse, decizie în 1-3 ore. Din 2010.",
+        "Credite nebancare pentru afaceri și persoane fizice în Moldova. Dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore (persoane fizice) sau 1-2 zile lucrătoare (afaceri). Din 2010.",
     alternates: { canonical: "https://idealcredit.md/" },
 };
 
@@ -66,17 +66,17 @@ export default async function HomePage() {
                     {/* Card afaceri */}
                     <div className="card flex flex-col gap-5">
                         <div>
-                            <h3 className="text-xl font-semibold mb-1">Credit pentru afaceri mici</h3>
-                            <p className="text-sm text-white/50">Capital de lucru, investiții sau refinanțare - până la 400.000 lei.</p>
+                            <h3 className="text-2xl font-medium mb-1">Credit pentru afaceri mici</h3>
+                            <p className="text-sm text-gray-500">Capital de lucru, investiții sau refinanțare.</p>
                         </div>
                         <ul className="space-y-2 flex-1">
                             {[
-                                "Activitate economică înregistrată (SRL, ÎI, GÎ)",
+                                "Activitate economică înregistrată (SRL, ÎI, GȚ)",
                                 "Fără plan de afaceri obligatoriu",
                                 "Extrase bancare - minim 3 luni",
-                                "Decizie în 1-3 ore",
+                                "Decizie în 1-2 zile lucrătoare",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -93,17 +93,17 @@ export default async function HomePage() {
                     {/* Card personal */}
                     <div className="card flex flex-col gap-5">
                         <div>
-                            <h3 className="text-xl font-semibold mb-1">Credit personal rapid</h3>
-                            <p className="text-sm text-white/50">Pentru orice nevoie urgentă sau planificată - până la 300.000 lei.</p>
+                            <h3 className="text-2xl font-medium mb-1">Credit personal rapid</h3>
+                            <p className="text-sm text-gray-500">Pentru orice nevoie urgentă sau planificată.</p>
                         </div>
                         <ul className="space-y-2 flex-1">
                             {[
                                 "Vârsta de la 23 de ani",
                                 "Sursă de venit stabilă",
                                 "Buletin de identitate valabil",
-                                "Fără garanții pentru sume mici",
+                                "Decizie în 2-3 ore",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>

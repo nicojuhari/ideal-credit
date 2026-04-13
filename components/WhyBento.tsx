@@ -74,7 +74,7 @@ export default function WhyBento() {
                         <div className="pointer-events-none absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-brand-500/5 blur-3xl" />
 
                         <div className="relative">
-                            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/60">
+                            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-gray-500">
                                 <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                                 Din 2010
                             </span>
@@ -83,8 +83,8 @@ export default function WhyBento() {
                             <div className="text-[6.5rem] md:text-[8rem] leading-none font-semibold text-brand-gradient">
                                 <YearsCounter />
                             </div>
-                            <div className="mt-2 text-lg text-white/80">ani de experiență</div>
-                            <p className="mt-4 text-sm text-white/50 max-w-xs">
+                            <div className="mt-2 text-lg text-white">ani de experiență</div>
+                            <p className="mt-4 text-sm text-gray-500 max-w-xs">
                                 Finanțare nebancară de încredere pentru persoane fizice și afaceri din Moldova.
                             </p>
                         </div>
@@ -105,8 +105,8 @@ export default function WhyBento() {
                             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
                                 <Icon size={20} />
                             </div>
-                            <h3 className="mt-4 text-lg text-white/80">{cell.title}</h3>
-                            <p className="mt-1 text-sm text-white/50 leading-relaxed">{cell.body}</p>
+                            <h3 className="mt-4 text-lg text-white">{cell.title}</h3>
+                            <p className="mt-1 text-sm text-gray-500 leading-relaxed">{cell.body}</p>
                         </motion.div>
                     );
                 })}

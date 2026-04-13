@@ -30,7 +30,6 @@ type CreditItem = {
     label: string;
     desc: string;
     icon: React.ComponentType<{ size?: number; className?: string }>;
-    badge?: string;
 };
 
 const businessProducts: CreditItem[] = [
@@ -45,21 +44,18 @@ const businessProducts: CreditItem[] = [
         label: "Capital de lucru",
         desc: "Salarii, furnizori, stoc - flux de numerar stabil.",
         icon: TrendingUp,
-        badge: "Nou",
     },
     {
         href: "/credite/credit-investitional",
         label: "Credit investițional",
         desc: "Echipamente, extindere, modernizare.",
         icon: Building2,
-        badge: "Nou",
     },
     {
         href: "/credite/refinantare",
         label: "Refinanțare",
         desc: "Consolidezi datoriile, reduci rata lunară.",
         icon: RefreshCw,
-        badge: "Nou",
     },
     {
         href: "/credite/credit-pentru-agricultura",
@@ -99,7 +95,6 @@ const personalProducts: CreditItem[] = [
         label: "Bugetari",
         desc: "Condiții speciale pentru angajați la stat.",
         icon: BadgeCheck,
-        badge: "Nou",
     },
 ];
 
@@ -112,23 +107,13 @@ const simpleLinks = [
 function ProductLink({ item }: { item: CreditItem }) {
     const Icon = item.icon;
     return (
-        <Link
-            href={item.href}
-            className="group flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors"
-        >
+        <Link href={item.href} className="group flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 group-hover:bg-brand-500/20 transition-colors">
                 <Icon size={18} />
             </span>
             <span className="flex flex-col min-w-0">
-                <span className="flex items-center gap-1.5 text-sm font-medium text-white">
-                    {item.label}
-                    {item.badge && (
-                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-brand-500/15 text-brand-500 leading-none">
-                            {item.badge}
-                        </span>
-                    )}
-                </span>
-                <span className="text-xs text-white/50 leading-snug mt-0.5">{item.desc}</span>
+                <span className="flex items-center gap-1.5 text-sm font-medium text-white">{item.label}</span>
+                <span className="text-xs text-gray-500 leading-snug mt-0.5">{item.desc}</span>
             </span>
         </Link>
     );
@@ -145,8 +130,10 @@ export default function Header() {
     useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 8));
 
     useEffect(() => {
-        setMenuOpen(false);
-        setCreditOpen(false);
+        setTimeout(() => {
+            setMenuOpen(false);
+            setCreditOpen(false);
+        }, 0);
         document.body.classList.remove("menu-open");
     }, [pathname]);
 
@@ -169,20 +156,16 @@ export default function Header() {
         >
             <div className="flex justify-between items-center gap-4 h-full container">
                 <Link href="/" title="Ideal Credit" className="flex items-center gap-2">
-                    <Logo className="w-8" />
+                    <Logo className="w-8 md:w-10" />
                 </Link>
 
                 {/* Desktop nav */}
                 <nav className="items-center gap-1 hidden md:flex">
                     {/* Credite dropdown */}
-                    <div
-                        className="relative"
-                        onMouseEnter={() => setCreditOpen(true)}
-                        onMouseLeave={() => setCreditOpen(false)}
-                    >
+                    <div className="relative" onMouseEnter={() => setCreditOpen(true)} onMouseLeave={() => setCreditOpen(false)}>
                         <button
                             type="button"
-                            className="flex items-center gap-1 px-3 py-2 rounded-full text-white/90 hover:text-white transition-colors"
+                            className="flex items-center gap-1 px-3 py-2 rounded-full text-white hover:text-white transition-colors"
                             onClick={() => setCreditOpen((v) => !v)}
                             aria-expanded={creditOpen}
                         >
@@ -202,13 +185,13 @@ export default function Header() {
                                     className="absolute left-1/2 -translate-x-1/2 top-full pt-3"
                                 >
                                     <div
-                                        className="w-[680px] rounded-2xl border border-white/10 bg-black-600/95 backdrop-blur-xl shadow-glow"
+                                        className="w-170 rounded-xl border border-white/10 bg-black-600 backdrop-blur-xl shadow-glow"
                                         style={{ boxShadow: "0 20px 60px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04)" }}
                                     >
                                         <div className="grid grid-cols-2 gap-0 p-3">
                                             {/* Business column */}
                                             <div className="pr-3 border-r border-white/5">
-                                                <div className="text-[10px] uppercase tracking-widest text-white/35 font-medium mb-1.5 px-3">
+                                                <div className="text-[10px] uppercase tracking-widest text-gray-500 font-medium mb-1.5 px-3">
                                                     Pentru afaceri
                                                 </div>
                                                 {businessProducts.map((p) => (
@@ -218,7 +201,7 @@ export default function Header() {
 
                                             {/* Personal column */}
                                             <div className="pl-3">
-                                                <div className="text-[10px] uppercase tracking-widest text-white/35 font-medium mb-1.5 px-3">
+                                                <div className="text-[10px] uppercase tracking-widest text-gray-500 font-medium mb-1.5 px-3">
                                                     Pentru persoane fizice
                                                 </div>
                                                 {personalProducts.map((p) => (
@@ -228,7 +211,7 @@ export default function Header() {
                                         </div>
 
                                         <div className="px-6 py-3 border-t border-white/5 flex items-center justify-between">
-                                            <span className="text-xs text-white/40">Toate produsele de credit</span>
+                                            <span className="text-xs text-gray-500">Toate produsele de credit</span>
                                             <Link
                                                 href="/credite"
                                                 className="flex items-center gap-1 text-sm text-brand-500 hover:text-brand-400 transition-colors"
@@ -247,7 +230,7 @@ export default function Header() {
                             key={link.href}
                             href={link.href}
                             title={link.label}
-                            className="px-3 py-2 rounded-full text-white/90 hover:text-white transition-colors"
+                            className="px-3 py-2 rounded-full text-white hover:text-white transition-colors"
                         >
                             {link.label}
                         </Link>
@@ -259,17 +242,10 @@ export default function Header() {
                     <a
                         href="tel:+37378805060"
                         onClick={() => trackEvent("Contact")}
-                        className="flex items-center gap-2 h-9 px-3 rounded-full border border-white/10 text-white/90 hover:text-white hover:border-white/20 transition-colors text-sm font-medium"
+                        className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
                     >
-                        <Phone size={14} />
-                        078 80 50 60
+                        <Phone size={16} /> 078 80 50 60
                     </a>
-                    <Link
-                        href="/cerere-de-credit-online"
-                        className="flex items-center gap-2 h-9 px-4 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all"
-                    >
-                        Cerere Online
-                    </Link>
                 </div>
 
                 {/* Mobile burger */}
@@ -299,20 +275,14 @@ export default function Header() {
                             <Link href="/" className="flex items-center gap-2" onClick={toggleMenu}>
                                 <Logo className="w-8" />
                             </Link>
-                            <button
-                                onClick={toggleMenu}
-                                aria-label="Închide meniu"
-                                className="p-2 rounded-full bg-black-400 text-white"
-                            >
+                            <button onClick={toggleMenu} aria-label="Închide meniu" className="p-2 rounded-full bg-black-400 text-white">
                                 <X size={20} />
                             </button>
                         </div>
 
                         <div className="px-4 py-2">
                             {/* Business section */}
-                            <div className="text-xs uppercase tracking-wider text-white/40 mt-4 mb-2 px-1">
-                                Pentru afaceri
-                            </div>
+                            <div className="text-xs uppercase tracking-wider text-gray-500 mt-4 mb-2 px-1">Pentru afaceri</div>
                             <div className="grid grid-cols-1 gap-0.5">
                                 {businessProducts.map((p, i) => {
                                     const Icon = p.icon;
@@ -323,21 +293,11 @@ export default function Header() {
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: 0.03 + i * 0.025 }}
                                         >
-                                            <Link
-                                                href={p.href}
-                                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5"
-                                            >
+                                            <Link href={p.href} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5">
                                                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                                     <Icon size={18} />
                                                 </span>
-                                                <span className="flex items-center gap-1.5 text-base font-medium">
-                                                    {p.label}
-                                                    {p.badge && (
-                                                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-brand-500/15 text-brand-500 leading-none">
-                                                            {p.badge}
-                                                        </span>
-                                                    )}
-                                                </span>
+                                                <span className="flex items-center gap-1.5 text-base font-medium">{p.label}</span>
                                             </Link>
                                         </motion.div>
                                     );
@@ -345,9 +305,7 @@ export default function Header() {
                             </div>
 
                             {/* Personal section */}
-                            <div className="text-xs uppercase tracking-wider text-white/40 mt-5 mb-2 px-1">
-                                Pentru persoane fizice
-                            </div>
+                            <div className="text-xs uppercase tracking-wider text-gray-500 mt-5 mb-2 px-1">Pentru persoane fizice</div>
                             <div className="grid grid-cols-1 gap-0.5">
                                 {personalProducts.map((p, i) => {
                                     const Icon = p.icon;
@@ -358,21 +316,11 @@ export default function Header() {
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: 0.15 + i * 0.025 }}
                                         >
-                                            <Link
-                                                href={p.href}
-                                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5"
-                                            >
+                                            <Link href={p.href} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5">
                                                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                                     <Icon size={18} />
                                                 </span>
-                                                <span className="flex items-center gap-1.5 text-base font-medium">
-                                                    {p.label}
-                                                    {p.badge && (
-                                                        <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-brand-500/15 text-brand-500 leading-none">
-                                                            {p.badge}
-                                                        </span>
-                                                    )}
-                                                </span>
+                                                <span className="flex items-center gap-1.5 text-base font-medium">{p.label}</span>
                                             </Link>
                                         </motion.div>
                                     );
@@ -380,7 +328,7 @@ export default function Header() {
                             </div>
 
                             {/* Company links */}
-                            <div className="text-xs uppercase tracking-wider text-white/40 mt-5 mb-2 px-1">Companie</div>
+                            <div className="text-xs uppercase tracking-wider text-gray-500 mt-5 mb-2 px-1">Companie</div>
                             {simpleLinks.map((link, i) => (
                                 <motion.div
                                     key={link.href}
@@ -408,7 +356,7 @@ export default function Header() {
                             <a
                                 href="tel:+37378805060"
                                 onClick={() => trackEvent("Contact")}
-                                className="flex items-center justify-center gap-2 h-11 rounded-full border border-white/10 text-white font-medium"
+                                className="w-full max-w-[320px] flex mx-auto justify-center items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
                             >
                                 <Phone size={16} /> 078 80 50 60
                             </a>

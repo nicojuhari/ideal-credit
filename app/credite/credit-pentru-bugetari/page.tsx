@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
+import WhyBento from "@/components/WhyBento";
 import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
 import { Check, Stethoscope, Shield, BadgeCheck, ArrowRight } from "lucide-react";
 import type { FaqItem } from "@/components/FAQ";
 
@@ -38,7 +36,7 @@ const bugetariFaqItems: FaqItem[] = [
     },
     {
         question: "Cât timp durează aprobarea?",
-        answer: "În general 1-3 ore pentru dosarele complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
+        answer: "În general 2-3 ore pentru dosarele complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
     },
     {
         question: "Dobânda este fixă pe toată durata creditului?",
@@ -124,25 +122,17 @@ export default function CreditBugetariPage() {
                     __html: JSON.stringify([bugetariLoanSchema, bugetariFaqSchema]),
                 }}
             />
-
             {/* Hero */}
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1
-                        className="font-semibold text-center text-4xl md:text-8xl"
-                        dangerouslySetInnerHTML={{ __html: "Credite pentru<br />angajați la stat" }}
-                    />
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Condiții adaptate pentru medici, militari, polițiști și alți angajați bugetari.
-                        Dobândă fixă, aprobare în 1-3 ore.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <ServiceHero
+                title={
+                    <>
+                        Credite pentru
+                        <br />
+                        angajați la stat
+                    </>
+                }
+                subtitle="Condiții adaptate pentru medici, militari, polițiști și alți angajați bugetari. Dobândă fixă, aprobare în 2-3 ore."
+            />
 
             {/* 1. Categorii */}
             <section className="container">
@@ -154,17 +144,17 @@ export default function CreditBugetariPage() {
                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                     <Icon size={20} />
                                 </span>
-                                <h3 className="text-base font-semibold text-white/90">{title}</h3>
+                                <h3 className="text-base font-semibold text-white">{title}</h3>
                             </div>
                             <ul className="space-y-2 flex-1">
                                 {items.map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-sm text-white/65">
+                                    <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
                                         <Check className="w-3.5 h-3.5 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                         {item}
                                     </li>
                                 ))}
                             </ul>
-                            <p className="text-xs text-white/35 leading-relaxed border-t border-white/5 pt-3">{note}</p>
+                            <p className="text-xs text-gray-500 leading-relaxed border-t border-white/5 pt-3">{note}</p>
                         </div>
                     ))}
                 </div>
@@ -175,14 +165,15 @@ export default function CreditBugetariPage() {
                 <h2 className="title text-center">Condiții de bază</h2>
                 <div className="max-w-lg mx-auto card flex flex-col gap-4">
                     {commonConditions.map((item) => (
-                        <div key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                        <div key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                             <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                             {item}
                         </div>
                     ))}
                 </div>
                 <Info className="mt-6">
-                    Suma maximă este până la 300.000 lei. Garanțiile depind de suma solicitată - comunicăm cerința înainte de depunerea dosarului.
+                    Suma maximă este până la 300.000 lei. Garanțiile depind de suma solicitată - comunicăm cerința înainte de depunerea
+                    dosarului.
                 </Info>
             </section>
 
@@ -202,8 +193,8 @@ export default function CreditBugetariPage() {
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Aplică online în 5 minute</h2>
-                        <p className="text-white/55 text-sm md:text-base max-w-md mx-auto">
-                            Decizie în 1-3 ore. Dacă documentele sunt complete, banii pot fi disponibili în aceeași zi.
+                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
+                            Decizie în 2-3 ore. Dacă documentele sunt complete, banii pot fi disponibili în aceeași zi.
                         </p>
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-3">
@@ -223,7 +214,7 @@ export default function CreditBugetariPage() {
                 </div>
             </section>
 
-            <ShortAboutUs />
+            <WhyBento />
         </>
     );
 }

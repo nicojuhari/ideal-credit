@@ -81,12 +81,12 @@ function ProductCard({ product }: { product: Product }) {
             href={product.href}
             className="group flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-black-600/50 hover:border-white/15 hover:bg-black-600 transition-colors duration-200"
         >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 group-hover:bg-brand-500/20 transition-colors">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500 group-hover:bg-green-500/20 transition-colors">
                 <Icon size={20} />
             </span>
             <span className="flex flex-col min-w-0">
-                <span className="text-base font-medium text-white/90 group-hover:text-white transition-colors">{product.label}</span>
-                <span className="mt-0.5 text-sm text-white/60 leading-snug">{product.desc}</span>
+                <span className="text-base font-medium text-white group-hover:text-white transition-colors">{product.label}</span>
+                <span className="mt-0.5 text-sm text-gray-500 leading-snug">{product.desc}</span>
             </span>
         </Link>
     );
@@ -99,7 +99,7 @@ export default function ServiciiList() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                 {/* Business */}
                 <div>
-                    <h3 className="text-xs uppercase tracking-widest text-white/40 font-medium mb-3 px-1">Pentru afaceri</h3>
+                    <h3 className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3 px-1">Pentru afaceri</h3>
                     <div className="space-y-2">
                         {businessProducts.map((p) => (
                             <ProductCard key={p.href} product={p} />
@@ -109,7 +109,7 @@ export default function ServiciiList() {
 
                 {/* Personal */}
                 <div>
-                    <h3 className="text-xs uppercase tracking-widest text-white/40 font-medium mb-3 px-1">Pentru persoane fizice</h3>
+                    <h3 className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3 px-1">Pentru persoane fizice</h3>
                     <div className="space-y-2">
                         {personalProducts.map((p) => (
                             <ProductCard key={p.href} product={p} />

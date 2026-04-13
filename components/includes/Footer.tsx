@@ -5,6 +5,7 @@ import { Phone, MapPin } from "lucide-react";
 import Logo from "@/components/icons/Logo";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import { OFFICES, GLOSSARY_LINKS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 const productLinks = [
     { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
@@ -26,7 +27,7 @@ const legalLinks = [
     { href: "/terms", label: "Termeni" },
     { href: "/cookies", label: "Cookies" },
     { href: "/privacy", label: "Confidențialitate" },
-    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere" },
+    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere", className: "underline text-green-500" },
 ];
 
 export default function Footer() {
@@ -42,7 +43,7 @@ export default function Footer() {
                         <Logo className="w-8" />
                         <span className="text-xl font-semibold">Ideal Credit</span>
                     </Link>
-                    <p className="text-sm text-white/60 max-w-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
+                    <p className="text-sm text-gray-500 max-w-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
                     <div className="flex gap-4 items-center">
                         {[
                             {
@@ -79,11 +80,11 @@ export default function Footer() {
 
                 {/* Produse */}
                 <div>
-                    <p className="text-xs uppercase tracking-wider text-white/40 mb-4">Produse</p>
+                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Produse</p>
                     <ul className="space-y-2.5">
                         {productLinks.map((l) => (
                             <li key={l.href}>
-                                <Link href={l.href} className="text-sm text-white/70 hover:text-brand-500 transition-colors">
+                                <Link href={l.href} className="text-sm text-gray-500 hover:text-brand-500 transition-colors">
                                     {l.label}
                                 </Link>
                             </li>
@@ -93,11 +94,11 @@ export default function Footer() {
 
                 {/* Companie */}
                 <div>
-                    <p className="text-xs uppercase tracking-wider text-white/40 mb-4">Companie</p>
+                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Companie</p>
                     <ul className="space-y-2.5">
                         {companyLinks.map((l) => (
                             <li key={l.href}>
-                                <Link href={l.href} className="text-sm text-white/70 hover:text-brand-500 transition-colors">
+                                <Link href={l.href} className="text-sm text-gray-500 hover:text-brand-500 transition-colors">
                                     {l.label}
                                 </Link>
                             </li>
@@ -107,14 +108,14 @@ export default function Footer() {
 
                 {/* Legal */}
                 <div>
-                    <p className="text-xs uppercase tracking-wider text-white/40 mb-4">Legal</p>
+                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Legal</p>
                     <ul className="space-y-2.5">
                         {legalLinks.map((l) => (
                             <li key={l.href}>
                                 <Link
                                     href={l.href}
                                     rel={l.href === "/autoritatea-de-supraveghere" ? "nofollow" : undefined}
-                                    className="text-sm text-white/70 hover:text-brand-500 transition-colors"
+                                    className={cn("text-sm text-gray-500 hover:text-brand-500 transition-colors", l?.className)}
                                 >
                                     {l.label}
                                 </Link>
@@ -132,11 +133,11 @@ export default function Footer() {
                             <MapPin size={18} className="text-green-500" />
                             {oficiu.title}
                         </div>
-                        <p className="text-white/70 mt-2 leading-relaxed">
+                        <p className="text-gray-500 mt-2 leading-relaxed">
                             {oficiu.city}, {oficiu.street},<br />
                             {oficiu.addressNumbers}
                         </p>
-                        <p className="text-sm text-white/50 mt-2">Luni - Vineri · 08:30 - 16:30</p>
+                        <p className="text-sm text-gray-500 mt-2">Luni - Vineri · 08:30 - 16:30</p>
                         <a
                             href={`tel:${oficiu.mobile}`}
                             onClick={() => trackEvent("Contact")}
@@ -155,7 +156,7 @@ export default function Footer() {
                 <p className="mb-4 pl-6">
                     În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse limite cu privire la:
                 </p>
-                <ul className="list-outside list-disc ml-6 space-y-1.5 text-gray-400">
+                <ul className="list-outside list-disc ml-6 space-y-1.5 text-gray-500">
                     <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
                     <li>
                         Toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere și orice alt tip de plată), cu
@@ -172,7 +173,7 @@ export default function Footer() {
             {/* Glossary */}
             <div className="container mt-12">
                 <p className="mb-6 text-xl text-center">Dicționar financiar</p>
-                <ul className="list-outside list-disc ml-6 space-y-2.5 text-gray-400">
+                <ul className="list-outside list-disc ml-6 space-y-2.5 text-gray-500">
                     {GLOSSARY_LINKS.map((item) => (
                         <li key={item.name}>
                             <span className="font-bold">{item.name} - </span>
@@ -183,10 +184,10 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="container mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
+            <div className="container mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
                 <span>
                     &copy; {new Date().getFullYear()} Organizația de Creditare Nebancară{" "}
-                    <strong className="text-white/60">Ideal Credit</strong> SRL
+                    <strong className="text-gray-500">Ideal Credit</strong> SRL
                 </span>
                 <span>Toate drepturile rezervate.</span>
             </div>

@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import CalculatorCredit from "@/components/CalculatorCredit";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
 import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
+import ServiceHero from "@/components/ServiceHero";
 import { Check, X, TrendingUp, Building2, RefreshCw, Zap, ArrowRight } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 import type { FaqItem } from "@/components/FAQ";
+import WhyBento from "@/components/WhyBento";
 
 const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri Mici în Moldova | Ideal Credit",
     description:
-        "Credit nebancar pentru SRL și ÎI din Moldova - capital de lucru, investiții sau refinanțare. Aprobare în 1-3 ore, fără plan de afaceri obligatoriu. Până la 400.000 lei.",
+        "Credit nebancar pentru SRL și ÎI din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare, fără plan de afaceri obligatoriu. Până la 400.000 lei.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
 };
 
@@ -88,19 +86,6 @@ const useCases = [
     },
 ];
 
-const testimonials = [
-    {
-        quote: "Am primit finanțarea în aceeași zi în care am depus actele. Banca ne refuzase de două ori. La Ideal Credit au văzut că afacerea funcționează și au aprobat.",
-        name: "Alexandru M.",
-        detail: "Administrator SRL, Chișinău",
-    },
-    {
-        quote: "Aveam nevoie de capital pentru stoc înainte de sezon. Fără Ideal Credit ar fi trebuit să refuz comenzi. Creditul m-a ajutat să cresc vânzările cu 40% față de anul trecut.",
-        name: "Ion D.",
-        detail: "Antreprenor individual, Căușeni",
-    },
-];
-
 export default function CreditAfaceriMiciPage() {
     return (
         <>
@@ -110,40 +95,32 @@ export default function CreditAfaceriMiciPage() {
                     __html: JSON.stringify([businessCreditSchema, businessFaqSchema]),
                 }}
             />
-
             {/* Hero */}
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1
-                        className="font-semibold text-center text-5xl md:text-8xl"
-                        dangerouslySetInnerHTML={{ __html: "Credit pentru<br />afaceri mici" }}
-                    />
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Până la 400.000 lei, aprobare în 1-3 ore, fără birocrație
-                        excesivă.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <ServiceHero
+                title={
+                    <>
+                        Credit pentru
+                        <br />
+                        afaceri mici
+                    </>
+                }
+                subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Până la 400.000 lei, aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
+            />
 
             {/* 1. Este pentru afacerea mea? */}
             <section className="container">
                 <h2 className="title text-center">Este pentru afacerea mea?</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Eligibil dacă</h3>
+                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
                         <ul className="space-y-2.5">
                             {[
-                                "Firmă înregistrată în Moldova (SRL, ÎI, GÎ, GT)",
+                                "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
                                 "Activitate economică de cel puțin 3-6 luni",
                                 "Ai nevoie de capital rapid, fără să aștepți săptămâni",
                                 "Banca te-a refuzat sau condițiile sunt prea rigide",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -151,7 +128,7 @@ export default function CreditAfaceriMiciPage() {
                         </ul>
                     </div>
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white/90">Nu este necesar</h3>
+                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
                         <ul className="space-y-2.5">
                             {[
                                 "Plan de afaceri detaliat",
@@ -159,7 +136,7 @@ export default function CreditAfaceriMiciPage() {
                                 "Garanție imobiliară obligatorie (depinde de sumă)",
                                 "Profit demonstrat pe ultimul an fiscal",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-white/70">
+                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
                                     <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
                                     {item}
                                 </li>
@@ -183,10 +160,10 @@ export default function CreditAfaceriMiciPage() {
                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                     <Icon size={20} />
                                 </span>
-                                <h3 className="text-base font-semibold text-white/90">{title}</h3>
+                                <h3 className="text-base font-semibold text-white">{title}</h3>
                             </div>
-                            <p className="text-sm text-white/60 leading-relaxed">{desc}</p>
-                            <p className="text-xs text-white/35 italic leading-relaxed border-l border-white/10 pl-3">{example}</p>
+                            <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+                            <p className="text-xs text-gray-500 italic leading-relaxed border-l border-white/10 pl-3">{example}</p>
                             <Link
                                 href={href}
                                 className="inline-flex items-center gap-1.5 text-sm text-brand-500 hover:text-brand-400 transition-colors font-medium mt-auto"
@@ -209,25 +186,8 @@ export default function CreditAfaceriMiciPage() {
                 <FAQ items={businessFaqItems} />
             </section>
 
-            {/* 5. Testimoniale */}
-            <section className="container">
-                <h2 className="title text-center">Ce spun clienții noștri</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                    {testimonials.map(({ quote, name, detail }) => (
-                        <div key={name} className="flex flex-col gap-4 p-6 rounded-xl border border-white/5 bg-black-600/50">
-                            <span className="text-3xl leading-none text-brand-500/50 font-serif">&ldquo;</span>
-                            <p className="text-sm text-white/70 leading-relaxed flex-1 -mt-2">{quote}</p>
-                            <div>
-                                <div className="text-sm font-medium text-white/90">{name}</div>
-                                <div className="text-xs text-white/40 mt-0.5">{detail}</div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
             {/* 6. ShortAboutUs */}
-            <ShortAboutUs />
+            <WhyBento />
         </>
     );
 }

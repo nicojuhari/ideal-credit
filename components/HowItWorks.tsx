@@ -68,11 +68,11 @@ export default function HowItWorks() {
                                 </div>
 
                                 <div className="md:mt-5 md:px-4">
-                                    <div className="flex md:justify-center items-center gap-2 text-white/90">
+                                    <div className="flex md:justify-center items-center gap-2 text-white">
                                         <Icon size={16} className="text-brand-500 md:hidden" />
                                         <h3 className="text-lg md:text-xl">{item.title}</h3>
                                     </div>
-                                    <p className="mt-2 text-sm text-white/55 leading-relaxed max-w-xs md:mx-auto">{item.text}</p>
+                                    <p className="mt-2 text-sm text-gray-500 leading-relaxed max-w-xs md:mx-auto">{item.text}</p>
                                 </div>
                             </motion.div>
                         );

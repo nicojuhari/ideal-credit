@@ -32,7 +32,7 @@ export default async function BlogPage() {
       {stories.length > 0 ? (
         <BlogCards stories={stories} />
       ) : (
-        <div className="text-center text-gray-400 py-20">Se încarcă...</div>
+        <div className="text-center text-gray-500 py-20">Se încarcă...</div>
       )}
     </div>
   );

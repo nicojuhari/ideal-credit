@@ -59,7 +59,7 @@ export default function PaymentMethods() {
                     >
                         <div
                             className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
-                                item.recommended ? "bg-brand-500/15 text-brand-500" : "bg-white/5 text-white/50 group-hover:bg-white/15"
+                                item.recommended ? "bg-brand-500/15 text-brand-500" : "bg-white/5 text-gray-500 group-hover:bg-white/15"
                             }`}
                         >
                             <Icon size={18} />
@@ -67,7 +67,7 @@ export default function PaymentMethods() {
 
                         <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-1">
-                                <h3 className="text-lg text-white/90">{item.title}</h3>
+                                <h3 className="text-lg text-white">{item.title}</h3>
                                 {item.recommended && (
                                     <span className="inline-flex items-center gap-1 rounded-full bg-brand-gradient px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-black">
                                         <Sparkles size={9} />
@@ -75,7 +75,7 @@ export default function PaymentMethods() {
                                     </span>
                                 )}
                             </div>
-                            <p className="mt-1 text-sm text-white/45 leading-relaxed">{item.description}</p>
+                            <p className="mt-1 text-sm text-gray-500 leading-relaxed">{item.description}</p>
                         </div>
                     </motion.div>
                 );

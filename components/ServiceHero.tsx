@@ -1,11 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import CalculatorCredit from "@/components/CalculatorCredit";
 
-export default function HeroHome() {
+interface ServiceHeroProps {
+    title: React.ReactNode;
+    subtitle: string;
+}
+
+export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
     return (
         <div className="relative pt-10 md:pt-16 pb-10 md:pb-16">
             {/* Backgrounds */}
@@ -46,8 +50,7 @@ export default function HeroHome() {
                             transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
                             className="mt-6 font-medium tracking-tight text-[52px] md:text-[68px] leading-[1.02] text-center md:text-left"
                         >
-                            Credite nebancare <span className="text-brand-gradient">pentru afaceri</span>
-                            <span className="text-white inline-flex"> și consum</span>
+                            {title}
                         </motion.h1>
 
                         <motion.p
@@ -56,7 +59,7 @@ export default function HeroHome() {
                             transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
                             className="mt-6 text-lg text-gray-500 font-light max-w-xl text-center md:text-left mx-auto md:mx-0"
                         >
-                            Dobânda fixă, costuri transparente, fără comisioane ascunse și decizie rapidă.
+                            {subtitle}
                         </motion.p>
                     </div>
 
@@ -68,7 +71,6 @@ export default function HeroHome() {
                         transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
                         className="lg:col-span-5 relative"
                     >
-                        {/* Gradient border wrapper */}
                         <div className="relative rounded-xl p-px bg-linear-to-br from-brand-500/50 via-brand-500/10 to-transparent">
                             <div className="rounded-xl bg-black-600/90 backdrop-blur-xl shadow-glow">
                                 <CalculatorCredit />
