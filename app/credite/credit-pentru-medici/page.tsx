@@ -8,9 +8,9 @@ import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit pentru medici | Rapid și Avantajos | Ideal Credit",
+    title: "Credit pentru medici din Moldova | Ideal Credit",
     description:
-        "Credit pentru medici - condiții speciale, dobânzi avantajoase și aprobare rapidă. Soluții transparente pentru medicii din Republica Moldova. Aplică online!",
+        "Credit pentru medici și personal medical din Moldova - condiții adaptate, dobândă fixă, decizie în 2-3 ore. Fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-medici" },
 };
 
@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Pot obține credit fără garant?",
-        answer: "Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari, poate fi cerută fidejusiune sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+        answer: "Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari, poate fi cerută garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
     },
     {
         question: "Pot folosi banii pentru orice nevoie sau trebuie să justific destinația?",

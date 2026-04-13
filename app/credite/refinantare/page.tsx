@@ -46,7 +46,7 @@ const refinantareFaqItems: FaqItem[] = [
 const worthRefinancingItems = [
     "Plătești rate la 2 sau mai multe credite și vrei să simplifici",
     "Rata actuală consumă prea mult din venitul sau profitul lunar",
-    "Ai întârzieri și vrei să restartezi cu condiții mai clare",
+    "Ai întârzieri și vrei să o iei de la capăt cu condiții mai clare",
     "Dobânda actuală este mai mare decât ce poți obține acum",
     "Vrei să eliberezi un garant de pe contractul actual",
 ];

@@ -30,7 +30,7 @@ const bugetariFaqItems: FaqItem[] = [
     },
     {
         question: "Este garanția obligatorie pentru bugetari?",
-        answer: "Pentru sume mici, nu. Pentru sume mai mari, poate fi necesară fidejusiune sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+        answer: "Pentru sume mici, nu. Pentru sume mai mari, poate fi necesară garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
     },
     {
         question: "Cât timp durează aprobarea?",
@@ -164,12 +164,12 @@ export default function CreditBugetariPage() {
                     "Legitimație de serviciu (dacă există)",
                     "Actele garantului sau bunului gajat (dacă este cazul)",
                 ]}
-                note="Condițiile exacte (sumă, termen, garanții) se stabilesc în funcție de venit și profilul de risc al fiecărui solicitant."
+                note="Condițiile exacte (sumă, termen, garanții) se stabilesc în funcție de venit și situația financiară a fiecărui solicitant."
                 description={{
                     title: "Credit pentru angajați la stat în Moldova",
                     paragraphs: [
                         "Angajații din sectorul bugetar - medici, militari, polițiști, profesori, funcționari publici - beneficiază de un avantaj semnificativ în procesul de creditare: venitul stabil și garantat de stat reduce riscul de credit și simplifică evaluarea dosarului. La Ideal Credit ținăm cont de acest avantaj în analiza fiecărei cereri.",
-                        "Creditul pentru bugetari poate fi folosit pentru orice nevoie personala - renovare, cumpărare auto, cheltuieli medicale, un eveniment de familie sau orice situatie neprevăzuta. Nu cerem justificarea destinatiei banilor. Suma maximă ajunge până la 300.000 lei, iar termenul poate fi de până la 60 de luni.",
+                        "Creditul pentru bugetari poate fi folosit pentru orice nevoie personală - renovare, cumpărare auto, cheltuieli medicale, un eveniment de familie sau orice situație neprevăzută. Nu cerem justificarea destinației banilor. Suma maximă ajunge până la 300.000 lei, iar termenul poate fi de până la 60 de luni.",
                         "Nu este obligatorie garanția pentru sume mai mici. Procesul este simplu: aduci buletinul, adeverința de salariu și legitimația de serviciu dacă o ai. Decizia se ia în 2-3 ore, iar banii sunt disponibili în aceeași zi dacă dosarul este complet.",
                     ],
                 }}

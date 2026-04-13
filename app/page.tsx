@@ -118,8 +118,7 @@ export default async function HomePage() {
                     </div>
                 </div>
                 <Info className="mt-6">
-                    În funcție de suma solicitată și evaluarea riscului de credit, pot fi necesare garanții suplimentare: fidejusiune sau
-                    gaj imobil.
+                    În funcție de suma solicitată și situația financiară, pot fi necesare garanții suplimentare: garant personal sau gaj imobil.
                 </Info>
             </section>
 

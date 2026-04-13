@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Pot obține credit fără garant?",
-        answer: "Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari, poate fi cerută fidejusiune sau gaj imobil. Comunicăm cerința clar înainte de depunerea dosarului.",
+        answer: "Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari, poate fi cerută garant personal sau gaj imobil. Comunicăm cerința clar înainte de depunerea dosarului.",
     },
     {
         question: "Pot lua credit dacă am deja un credit activ?",
@@ -48,7 +48,7 @@ export default function CreditMilitariPage() {
             {/* Hero */}
             <ServiceHero
                 title={"Credit pentru militari"}
-                subtitle="Oferim credit pentru militarii din Republica Moldova - condiții clare, decizie în 2-3 ore și dobândă transparentă."
+                subtitle="Credit pentru militarii din Republica Moldova - condiții clare, decizie în 2-3 ore și dobândă fixă."
             />
 
             <CreditPageContent

@@ -46,7 +46,7 @@ const workingCapitalFaqItems: FaqItem[] = [
 const scenarios = [
     {
         icon: Clock,
-        title: "Creante blocate",
+        title: "Creanțe blocate",
         desc: "Ai livrat marfa, clientul plătește în 60 de zile. Furnizorii cer bani azi. Continuăm producția fără să aștepți.",
     },
     {
@@ -56,13 +56,13 @@ const scenarios = [
     },
     {
         icon: Users,
-        title: "Angajari noi",
+        title: "Angajări noi",
         desc: "Ai angajați noi dar primii clienți plătesc abia luna viitoare. Acoperi salariile fără presiune pe flux.",
     },
     {
         icon: Trophy,
         title: "Contract mare",
-        desc: "Ai câștigat un contract important dar ai nevoie de resurse să-l onorezi. Capitalizezi oportunitatea fără să o ratezi.",
+        desc: "Ai câștigat un contract important dar ai nevoie de resurse să-l onorezi. Folosești ocazia fără să o ratezi.",
     },
 ];
 

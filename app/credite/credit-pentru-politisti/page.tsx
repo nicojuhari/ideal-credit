@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Este obligatorie garanția?",
-        answer: "Nu întotdeauna. Pentru sume mai mici nu cerem garanție. Pentru sume mai mari poate fi necesară fidejusiune sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+        answer: "Nu întotdeauna. Pentru sume mai mici nu cerem garanție. Pentru sume mai mari poate fi necesară garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
     },
     {
         question: "Pot lua credit dacă am deja un credit activ la altă instituție?",
@@ -69,8 +69,8 @@ export default function CreditPolitistiPage() {
                 description={{
                     title: "Credit pentru polițiști și pensionari MAI din Moldova",
                     paragraphs: [
-                        "Creditul pentru polițiști este destinat personalului activ și pensionarilor Ministerului Afacerilor Interne din Moldova. Statutul de angajat sau pensionar MAI cu venit stabil și garantat de stat simplifica procesul de evaluare - dosarul este mai simplu, iar decizia vine mai rapid față de un client fără venit fix.",
-                        "Banii pot fi folosiți pentru orice nevoie personala - renovare, tratament medical, cheltuieli de familie, achizitie auto sau orice alta situatie. Dobânda este fixa pe toată durata contractului. Aprobăm în 2-3 ore, iar fondurile sunt disponibile în aceeași zi dacă dosarul este complet.",
+                        "Creditul pentru polițiști este destinat personalului activ și pensionarilor Ministerului Afacerilor Interne din Moldova. Statutul de angajat sau pensionar MAI cu venit garantat de stat simplifică procesul de evaluare - dosarul este mai simplu, iar decizia vine mai rapid față de un client fără venit fix.",
+                        "Banii pot fi folosiți pentru orice nevoie personală - renovare, tratament medical, cheltuieli de familie, achiziție auto sau orice altă situație. Dobânda este fixă pe toată durata contractului. Aprobăm în 2-3 ore, iar fondurile sunt disponibile în aceeași zi dacă dosarul este complet.",
                     ],
                 }}
                 relatedLinks={[

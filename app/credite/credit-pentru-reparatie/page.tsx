@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Este obligatorie garanția cu imobilul?",
-        answer: "Nu întotdeauna. Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari poate fi cerută fidejusiune sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+        answer: "Nu întotdeauna. Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari poate fi cerută garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
     },
     {
         question: "Pot obține credit pentru reparație dacă stau în chirie?",
@@ -69,7 +69,7 @@ export default function CreditReparatiePage() {
                 description={{
                     title: "Credit pentru reparație casă sau apartament",
                     paragraphs: [
-                        "Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renovara locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
+                        "Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renova locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
                         "Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii se virează direct în contul tău și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
                         "Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - evaluăm situația ta reală, nu doar documentele de proprietate.",
                     ],

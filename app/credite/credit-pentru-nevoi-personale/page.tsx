@@ -23,7 +23,7 @@ const personalFaqItems: FaqItem[] = [
     },
     {
         question: "Cât pot împrumuta fără garanții?",
-        answer: "Depinde de venitul tău și profilul de risc. Comunicăm limita clară înainte de cererea formală - nu îți pierzi timpul cu un dosar complet dacă suma nu e accesibilă fără garanții.",
+        answer: "Depinde de venitul tău și situația financiară. Comunicăm limita clară înainte de cererea formală - nu îți pierzi timpul cu un dosar complet dacă suma nu e accesibilă fără garanții.",
     },
     {
         question: "Trebuie neapărat adeverință de salariu?",
@@ -138,7 +138,7 @@ export default function CreditNevoiPersonalePage() {
                     "Ultimele 3 extrase de cont bancar (recomandat)",
                     "Actele garantului sau ale bunului gajat (dacă este cazul)",
                 ]}
-                note="Garanțiile depind de suma solicitată și profilul de risc. Comunicăm cerința clar înainte de semnarea contractului."
+                note="Garanțiile depind de suma solicitată și situația ta financiară. Comunicăm cerința clar înainte de semnarea contractului."
                 description={{
                     title: "Credit personal rapid în Moldova",
                     paragraphs: [

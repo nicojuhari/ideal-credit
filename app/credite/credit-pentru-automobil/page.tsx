@@ -29,7 +29,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Este obligatorie garanția cu mașina sau un imobil?",
-        answer: "Depinde de sumă. Pentru sume mai mici garanția nu este necesară. Pentru sume mai mari, poate fi cerută fidejusiune sau gaj. Comunicăm cerința clar înainte de depunerea dosarului.",
+        answer: "Depinde de sumă. Pentru sume mai mici garanția nu este necesară. Pentru sume mai mari, poate fi cerută garant personal sau gaj. Comunicăm cerința clar înainte de depunerea dosarului.",
     },
     {
         question: "Cât timp durează aprobarea?",

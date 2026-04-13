@@ -118,7 +118,7 @@ export default function PreContractContent({
                                 Pentru obţinerea creditului, este obligatoriu să se încheie:
                             </td>
                             <td>
-                                În funcție de evaluarea riscului de credit, pot fi încheiate contracte de fidejusiune (garant) sau gaj
+                                În funcție de evaluarea riscului de credit, pot fi încheiate contracte de garant personal sau gaj
                                 (imobil)
                             </td>
                         </tr>
