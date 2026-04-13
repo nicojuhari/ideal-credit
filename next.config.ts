@@ -49,6 +49,36 @@ const nextConfig: NextConfig = {
                 destination: "/blog/istoria-de-credit-si-impactul-asupra-finantelor-tale",
                 permanent: true,
             },
+            {
+                source: "/credite/credit-pentru-medici",
+                destination: "/credite/credit-pentru-bugetari",
+                permanent: true,
+            },
+            {
+                source: "/credite/credit-pentru-militari",
+                destination: "/credite/credit-pentru-bugetari",
+                permanent: true,
+            },
+            {
+                source: "/credite/credit-pentru-politisti",
+                destination: "/credite/credit-pentru-bugetari",
+                permanent: true,
+            },
+            {
+                source: "/credit-capital-de-lucru",
+                destination: "/credite/credit-capital-de-lucru",
+                permanent: true,
+            },
+            {
+                source: "/credit-investitional",
+                destination: "/credite/credit-investitional",
+                permanent: true,
+            },
+            {
+                source: "/refinantare",
+                destination: "/credite/refinantare",
+                permanent: true,
+            },
         ];
     },
 };

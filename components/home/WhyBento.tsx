@@ -2,7 +2,7 @@
 
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { ShieldCheck, Zap, Eye, Users, TrendingUp, HeartHandshake } from "lucide-react";
+import { ShieldCheck, Zap, Eye, TrendingUp, HeartHandshake } from "lucide-react";
 import { yearsSinceFoundation } from "@/lib/utils";
 
 function YearsCounter() {
@@ -35,33 +35,21 @@ type Cell = {
 const cells: Cell[] = [
     {
         title: "Condiții transparente",
-        body: "Dobânzi fixe, zero comisioane ascunse - vezi totul înainte de a semna.",
+        body: "Dobânzi fixe, zero comisioane ascunse - toate costurile înainte de semnare.",
         icon: Eye,
         className: "md:col-span-2",
     },
     {
         title: "Decizie rapidă",
-        body: "Răspuns în până la 3 ore în timpul programului de lucru.",
+        body: "Dosarul complet primit dimineața - răspunsul îl ai înainte de prânz.",
         icon: Zap,
         className: "",
     },
     {
-        title: "Autorizat CNPF",
-        body: "Activitate reglementată și supravegheată de autoritatea de stat.",
-        icon: ShieldCheck,
-        className: "",
-    },
-    {
-        title: "Mii de clienți",
-        body: "Au ales Ideal Credit pentru nevoi personale și de business.",
-        icon: Users,
-        className: "",
-    },
-    {
-        title: "Avantajos pe termen lung",
-        body: "Planuri de rambursare adaptate la bugetul tău real.",
+        title: "Rambursare anticipată gratuită",
+        body: "Plătești dobânda doar pentru perioada folosită. Nicio penalitate la achitare înainte de termen.",
         icon: TrendingUp,
-        className: "md:col-span-2",
+        className: "",
     },
 ];
 

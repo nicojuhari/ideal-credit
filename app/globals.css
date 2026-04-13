@@ -4,12 +4,20 @@
 
 /* ─── Marquee (testimonials) ─ defined at top level so @keyframes live in the global scope ─ */
 @keyframes marquee-x {
-  from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-50%, 0, 0); }
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 @keyframes marquee-x-reverse {
-  from { transform: translate3d(-50%, 0, 0); }
-  to   { transform: translate3d(0, 0, 0); }
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 .marquee {
   position: relative;
@@ -29,7 +37,9 @@
   animation-play-state: paused;
 }
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none !important; }
+  .marquee-track {
+    animation: none !important;
+  }
 }
 
 /* ─── Brand Color Palette ────────────────────────────────────────────────── */
@@ -231,7 +241,7 @@
   }
 
   .link {
-    @apply text-green-400 underline;
+    @apply text-blue-500 underline;
   }
 
   /* ── Hero grid background ── */
@@ -246,7 +256,7 @@
     inset: 0;
     z-index: -1;
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
-            mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
   }
 
   .bg-squares::after {
@@ -261,9 +271,9 @@
   .text-brand-gradient {
     background: var(--brand-gradient);
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-            color: transparent;
+    color: transparent;
   }
 
   .bg-brand-gradient {
@@ -336,7 +346,7 @@
 
   /* ── Calculator input ── */
   .input-calculator {
-    @apply rounded-lg bg-black-300 px-1 text-white outline-none font-semibold text-xl w-34 text-right h-10;
+    @apply px-1 text-white font-semibold text-xl text-right;
   }
 
   /* ── Pre-contract table ── */

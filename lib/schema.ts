@@ -199,3 +199,63 @@ export const businessCreditSchema = {
     maxValue: 60,
   },
 };
+
+export const workingCapitalSchema = {
+  "@context": "https://schema.org",
+  "@type": "LoanOrCredit",
+  name: "Credit capital de lucru pentru afaceri",
+  description:
+    "Credit nebancar pentru capital de lucru - salarii, furnizori, stocuri. Disponibil pentru SRL și ÎI din Moldova.",
+  amount: {
+    "@type": "MonetaryAmount",
+    currency: "MDL",
+    minValue: 10000,
+    maxValue: 400000,
+  },
+  loanTerm: {
+    "@type": "QuantitativeValue",
+    unitText: "Months",
+    minValue: 6,
+    maxValue: 36,
+  },
+};
+
+export const investitionalSchema = {
+  "@context": "https://schema.org",
+  "@type": "LoanOrCredit",
+  name: "Credit investițional pentru afaceri",
+  description:
+    "Credit nebancar pentru investiții în afaceri din Moldova - echipamente, extindere, modernizare.",
+  amount: {
+    "@type": "MonetaryAmount",
+    currency: "MDL",
+    minValue: 10000,
+    maxValue: 400000,
+  },
+  loanTerm: {
+    "@type": "QuantitativeValue",
+    unitText: "Months",
+    minValue: 12,
+    maxValue: 60,
+  },
+};
+
+export const refinantareSchema = {
+  "@context": "https://schema.org",
+  "@type": "LoanOrCredit",
+  name: "Refinanțare credit în Moldova",
+  description:
+    "Refinanțare credite nebancare și bancare pentru persoane fizice și juridice din Moldova.",
+  amount: {
+    "@type": "MonetaryAmount",
+    currency: "MDL",
+    minValue: 10000,
+    maxValue: 400000,
+  },
+  loanTerm: {
+    "@type": "QuantitativeValue",
+    unitText: "Months",
+    minValue: 6,
+    maxValue: 60,
+  },
+};

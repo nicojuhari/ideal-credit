@@ -25,54 +25,64 @@ export const OFFICES = [
 
 export const FAQ_ITEMS = [
   {
-    question: "Care este suma maximă pe care o pot obține?",
+    question: "Pot obține credit pentru afacere dacă banca m-a refuzat?",
     answer:
-      "Evaluăm individual: în funcție de venituri, cheltuieli, istoric de credit și garanții propuse.",
+      "Da. Evaluăm individual: analizăm situația reală a afacerii tale, nu doar un scor de credit. Mulți dintre clienții noștri business au primit finanțare după un refuz bancar.",
   },
   {
-    question: "Dobânda este fixă sau flotantă?",
+    question: "Ce sumă pot obține pentru afacerea mea?",
     answer:
-      "Dobânda este fixă pe toată durata contractului și negociabilă la aplicare.",
+      "Finanțăm afaceri între 10.000 și 400.000 lei. Suma exactă depinde de veniturile firmei, extrasele bancare și garanțiile disponibile. Evaluăm în 1-3 ore.",
   },
   {
-    question: "Există comisioane ascunse?",
+    question: "Ce documente sunt necesare pentru un credit de afacere?",
     answer:
-      "Nu. Toate costurile sunt afișate transparent înainte de semnarea contractului.",
-  },
-  {
-    question: "Pot plăti creditul anticipat? Are costuri?",
-    answer:
-      "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada utilizată.",
+      "Actele de înregistrare ale firmei (SRL/ÎI), extrase bancare pentru ultimele 3 luni și evidența contabilă de bază. Nu cerem plan de afaceri detaliat.",
   },
   {
     question: "Pot obține credit doar cu buletinul, fără gaj?",
     answer:
-      "Da, în anumite cazuri. Dacă ai venit stabil și istoric de plată bun, poți obține credit fără garanții. Pentru sume mai mari, cerem garanții sau fidejusiune.",
-  },
-  {
-    question: "Pot refinanța sau lua un nou credit dacă am deja unul?",
-    answer:
-      "Da. Evaluăm refinanțarea sau un nou credit în funcție de capacitatea ta de rambursare și istoricul curent.",
-  },
-  {
-    question: "Ce tipuri de garanții acceptați?",
-    answer:
-      "Acceptăm garanții imobiliare (locuință, teren) sau garanții personale (fidejusiune). Alternativele depind de mărimea finanțării și de analiza noastră.",
-  },
-  {
-    question: "Ce se întâmplă dacă întârzii o rată?",
-    answer:
-      "Se aplică o penalizare zilnică, care este clar precizată în contract.",
-  },
-  {
-    question: "Pot restructura creditul dacă apar probleme?",
-    answer:
-      "Da, contactează-ne din timp ca să găsim împreună cea mai bună soluție.",
+      "Da, în anumite cazuri. Dacă ai venit stabil și istoric de plată bun, poți obține credit fără garanții suplimentare. Pentru sume mai mari, cerem fidejusiune sau gaj imobil.",
   },
   {
     question: "Cât timp durează aprobarea?",
     answer:
-      "În general, răspundem în 1-3 ore pentru cererile complete. Timpul poate varia în funcție de complexitate și documentație.",
+      "În general, răspundem în 1-3 ore pentru cererile complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
+  },
+  {
+    question: "Dobânda este fixă sau flotantă?",
+    answer:
+      "Dobânda este fixă pe toată durata contractului. Știi exact cât plătești lunar de la prima rată până la ultima - suma nu se schimbă.",
+  },
+  {
+    question: "Există comisioane ascunse?",
+    answer:
+      "Nu. Toate costurile - dobânda, DAE, penalitățile posibile - sunt prezentate înainte de semnare. Ce citești în contract, aia plătești.",
+  },
+  {
+    question: "Pot rambursa creditul anticipat?",
+    answer:
+      "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată.",
+  },
+  {
+    question: "Ce se întâmplă dacă întârzii o rată?",
+    answer:
+      "Se aplică o penalizare zilnică specificată clar în contract. Dacă anticipezi o problemă, contactează-ne din timp - găsim soluții împreună.",
+  },
+  {
+    question: "Pot refinanța un credit existent?",
+    answer:
+      "Da. Preluăm credite de la alte instituții financiare sau bănci. Evaluăm dacă refinanțarea are sens financiar pentru tine și prezentăm calculul înainte de decizie.",
+  },
+  {
+    question: "Ce tipuri de garanții acceptați?",
+    answer:
+      "Garanții imobiliare (locuință, teren) sau garanție personală (fidejusiune). Necesitatea garanției depinde de suma solicitată și profilul de risc.",
+  },
+  {
+    question: "Care este suma maximă pe care o pot obține?",
+    answer:
+      "Până la 400.000 lei pentru credite de afaceri și până la 300.000 lei pentru credite personale. Suma exactă se stabilește după evaluarea individuală a dosarului.",
   },
 ];
 
@@ -92,4 +102,7 @@ export const GLOSSARY_LINKS = [
   { name: "Perioadă de grație", desc: "Interval în care nu se achită una sau mai multe rate de credit și/sau dobândă. Se reflectă în graficul de rambursare al contractului de credit." },
   { name: "Cesiune", desc: "Transferul drepturilor și obligațiilor rezultate din contractul de credit către o terță parte (cesionar)." },
   { name: "BIC (Biroul Istoriilor de Credit)", desc: "Instituție care colectează și stochează date despre istoricul de credit al persoanelor fizice sau juridice." },
+  { name: "Capital de lucru", desc: "Resurse financiare utilizate pentru acoperirea cheltuielilor operaționale curente ale unei afaceri: salarii, stocuri, furnizori." },
+  { name: "Refinanțare", desc: "Operațiunea prin care un credit existent este achitat și înlocuit cu un nou credit, de obicei cu condiții mai avantajoase." },
+  { name: "Fidejusiune", desc: "Garanție personală prin care o a treia persoană (fidejusor) se angajează să ramburseze creditul dacă debitorul principal nu o face." },
 ];

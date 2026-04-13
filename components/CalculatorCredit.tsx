@@ -6,14 +6,12 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import PreContractContent from "./PreContractContent";
+import MainCTA from "./ui/MainCTA";
 
 const SUM_MIN = 10000;
 const SUM_MAX = 300000;
 const TERM_MIN = 6;
 const TERM_MAX = 60;
-
-const sumPresets = [10000, 25000, 50000, 100000, 200000];
-const termPresets = [6, 12, 24, 36, 60];
 
 function AnimatedNumber({ value }: { value: number }) {
     const mv = useMotionValue(value);
@@ -60,22 +58,6 @@ function GradientSlider({
     );
 }
 
-function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
-    return (
-        <button
-            type="button"
-            onClick={onClick}
-            className={`h-8 px-3 rounded-full text-xs font-medium transition-all border ${
-                active
-                    ? "border-brand-500/60 bg-brand-500/15 text-brand-500"
-                    : "border-white/10 bg-white/[0.02] text-white/60 hover:text-white hover:border-white/20"
-            }`}
-        >
-            {children}
-        </button>
-    );
-}
-
 export default function CalculatorCredit() {
     const [creditSuma, setCreditSuma] = useState(10000);
     const [creditTermen, setCreditTermen] = useState(12);
@@ -107,8 +89,10 @@ export default function CalculatorCredit() {
     const primaRata = graficCalculat?.[0] ? graficCalculat[0].credit_rata + graficCalculat[0].dobinda_rata : 0;
 
     const handleSumaChange = (val: number) => {
-        const clamped = Math.min(SUM_MAX, Math.max(SUM_MIN, val));
-        setCreditSuma(clamped);
+        // if (isNaN(val)) return;
+        // if (val < SUM_MIN) val = 0;
+        if (val > SUM_MAX) val = SUM_MAX;
+        setCreditSuma(val);
         firePixelOnce();
     };
 
@@ -119,15 +103,15 @@ export default function CalculatorCredit() {
     };
 
     return (
-        <div className="p-5 md:p-7">
+        <div className="p-4 md:p-6">
             <div className="flex items-center justify-between mb-5">
-                <h2 className="text-lg md:text-xl font-semibold">Calculator de credit</h2>
-                <span className="text-[11px] uppercase tracking-wider text-white/40">4% lunar</span>
+                <h2 className="text-lg md:text-2xl font-semibold">Calculator de credit</h2>
+                <span className="text-[11px] uppercase tracking-wider text-white/60">4% lunar</span>
             </div>
 
             {/* Prima rată focal card */}
-            <div className="relative rounded-xl p-[1px] bg-gradient-to-br from-brand-500/70 via-brand-500/20 to-transparent mb-5">
-                <div className="rounded-[calc(0.75rem-1px)] bg-black-700/80 px-5 py-4 flex items-center justify-between">
+            <div className="relative rounded-xl p-px bg-linear-to-br from-brand-500/60 via-brand-500/20 to-transparent mb-5">
+                <div className="rounded-xl bg-black-700/80 px-5 py-4 flex items-center justify-between">
                     <div>
                         <div className="flex items-center gap-2 text-xs text-white/50 uppercase tracking-wider">
                             <span className="relative flex h-2 w-2">
@@ -140,28 +124,37 @@ export default function CalculatorCredit() {
                             <AnimatedNumber value={primaRata} /> <span className="text-base text-white/60 font-normal">MDL</span>
                         </div>
                     </div>
-                    <div className="text-right">
-                        <div className="text-[11px] uppercase tracking-wider text-white/40">Termen</div>
-                        <div className="text-xl font-semibold tabular-nums">{creditTermen} <span className="text-sm text-white/50 font-normal">luni</span></div>
-                    </div>
+                    <Dialog open={showModal} onOpenChange={setShowModal}>
+                        <DialogTrigger
+                            onClick={() => firePixelOnce()}
+                            className="text-white/50 hover:text-white/60 underline text-xs underline-offset-2 transition-colors"
+                        >
+                            preContract
+                        </DialogTrigger>
+                        <DialogContent className="w-full sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
+                            <DialogHeader>
+                                <DialogTitle>Informația preContractuală</DialogTitle>
+                            </DialogHeader>
+                            <PreContractContent
+                                creditSuma={creditSuma}
+                                creditTermen={creditTermen}
+                                dae={dae}
+                                graficCalculat={graficCalculat}
+                                dobindaTotal={dobindaTotal}
+                            />
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </div>
 
             {/* Sum block */}
             <div className="mb-5">
                 <div className="flex items-center justify-between mb-2">
-                    <label htmlFor="credit-amount-input" className="text-sm text-white/60">Suma</label>
+                    <label htmlFor="credit-amount-input" className="text-sm text-white/60">
+                        Suma
+                    </label>
                     <div className="flex items-center gap-1 text-white">
-                        <input
-                            id="credit-amount-input"
-                            type="number"
-                            value={creditSuma}
-                            onChange={(e) => {
-                                const v = Math.round(Number(e.target.value));
-                                if (!isNaN(v)) handleSumaChange(v);
-                            }}
-                            className="bg-transparent text-right font-semibold text-xl w-28 outline-none tabular-nums focus:text-brand-500"
-                        />
+                        <div className="input-calculator flex items-center justify-end">{creditSuma}</div>
                         <span className="text-sm text-white/50">MDL</span>
                     </div>
                 </div>
@@ -173,30 +166,16 @@ export default function CalculatorCredit() {
                     step={500}
                     onChange={handleSumaChange}
                 />
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                    {sumPresets.map((p) => (
-                        <Chip key={p} active={creditSuma === p} onClick={() => handleSumaChange(p)}>
-                            {p >= 1000 ? `${p / 1000}k` : p}
-                        </Chip>
-                    ))}
-                </div>
             </div>
 
             {/* Term block */}
             <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
-                    <label htmlFor="credit-period-input" className="text-sm text-white/60">Termen</label>
+                    <label htmlFor="credit-period-input" className="text-sm text-white/60">
+                        Termen
+                    </label>
                     <div className="flex items-center gap-1 text-white">
-                        <input
-                            id="credit-period-input"
-                            type="number"
-                            value={creditTermen}
-                            onChange={(e) => {
-                                const v = Math.round(Number(e.target.value));
-                                if (!isNaN(v)) handleTermenChange(v);
-                            }}
-                            className="bg-transparent text-right font-semibold text-xl w-14 outline-none tabular-nums focus:text-brand-500"
-                        />
+                        <div className="input-calculator flex items-center justify-end">{creditTermen}</div>
                         <span className="text-sm text-white/50">luni</span>
                     </div>
                 </div>
@@ -208,49 +187,22 @@ export default function CalculatorCredit() {
                     step={1}
                     onChange={handleTermenChange}
                 />
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                    {termPresets.map((p) => (
-                        <Chip key={p} active={creditTermen === p} onClick={() => handleTermenChange(p)}>
-                            {p} luni
-                        </Chip>
-                    ))}
-                </div>
             </div>
 
             {/* DAE / cost strip */}
-            <div className="grid grid-cols-2 gap-2 pt-4 border-t border-white/5">
-                <div className="rounded-lg bg-white/[0.02] px-3 py-2">
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                <div className="rounded-lg bg-black-400 px-3 py-2">
                     <div className="text-[11px] uppercase tracking-wider text-white/40">DAE</div>
                     <div className="text-sm font-semibold tabular-nums">{dae} %</div>
                 </div>
-                <div className="rounded-lg bg-white/[0.02] px-3 py-2">
+                <div className="rounded-lg bg-black-400 px-3 py-2">
                     <div className="text-[11px] uppercase tracking-wider text-white/40">Cost total</div>
                     <div className="text-sm font-semibold tabular-nums">{Math.round(dobindaTotal).toLocaleString("ro-RO")} MDL</div>
                 </div>
             </div>
-
-            <div className="mt-4 flex items-center justify-between text-xs text-white/40">
-                <span>Consumatorul este responsabil pentru rambursare.</span>
-                <Dialog open={showModal} onOpenChange={setShowModal}>
-                    <DialogTrigger
-                        onClick={() => firePixelOnce()}
-                        className="text-brand-500 hover:text-brand-400 underline underline-offset-2 transition-colors"
-                    >
-                        preContract
-                    </DialogTrigger>
-                    <DialogContent className="w-full sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
-                        <DialogHeader>
-                            <DialogTitle>Informația preContractuală</DialogTitle>
-                        </DialogHeader>
-                        <PreContractContent
-                            creditSuma={creditSuma}
-                            creditTermen={creditTermen}
-                            dae={dae}
-                            graficCalculat={graficCalculat}
-                            dobindaTotal={dobindaTotal}
-                        />
-                    </DialogContent>
-                </Dialog>
+            <MainCTA className="mt-6" />
+            <div className="mt-4 text-center text-xs text-white/40">
+                <span>Consumatorul este responsabil pentru rambursarea creditului.</span>
             </div>
         </div>
     );
