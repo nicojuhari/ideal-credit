@@ -12,7 +12,7 @@ import { businessCreditSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
     description:
-        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital de lucru sezonier. Până la 400.000 lei, decizie în 1-2 zile lucrătoare.",
+        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital de lucru sezonier. Până la 300.000 lei, decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-agricultura" },
 };
 
@@ -95,7 +95,7 @@ export default function CreditAgriculturaPage() {
                         agricultură
                     </>
                 }
-                subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității, până la 400.000 lei."
+                subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității, până la 300.000 lei."
             />
 
             {/* Ce finanțezi */}
@@ -105,7 +105,7 @@ export default function CreditAgriculturaPage() {
                     {financingCategories.map(({ icon: Icon, title, desc, link }) => (
                         <div key={title} className="flex flex-col gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50">
                             <div className="flex items-center gap-3">
-                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
+                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
                                     <Icon size={20} />
                                 </span>
                                 <h3 className="text-base font-semibold text-white">{title}</h3>
@@ -173,7 +173,7 @@ export default function CreditAgriculturaPage() {
             <CreditPageContent
                 eligibilityTitle="Condiții de eligibilitate"
                 eligibleIf={[
-                    "Activitate agricolă înregistrată (SRL, ÎI, GȚ, gospodărie țărănească)",
+                    "Activitate agricolă înregistrată (SRL, ÎI, GȚ)",
                     "Activitate demonstrabilă în ultimul sezon",
                     "Teren agricol în proprietate sau în arendă",
                     "Extrase bancare sau dovezi de vânzări agricole",
@@ -182,7 +182,7 @@ export default function CreditAgriculturaPage() {
                     "Buletin de identitate",
                     "Certificat de înregistrare (SRL/ÎI) sau legitimație gospodărie",
                     "Documente teren agricol (proprietate sau arendă)",
-                    "Extrase bancare sau acte de vânzare a producției (ultimele 6 luni)",
+                    "Extrase bancare sau acte de vânzare a producției",
                     "Actele bunului gajat (dacă este cazul)",
                 ]}
                 note="Graficul de rambursare este adaptat sezonului agricol - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare."
@@ -218,30 +218,6 @@ export default function CreditAgriculturaPage() {
             <CreditFAQ items={agricFaqItems} />
 
             {/* CTA */}
-            <section className="container">
-                <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Pregătit pentru sezon?</h2>
-                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
-                            Aplică înainte de sezon pentru a fi pregătit cu inputurile și utilajele necesare.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                        <Link
-                            href="/cerere-de-credit-online"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all"
-                        >
-                            Cerere online <ArrowRight size={15} />
-                        </Link>
-                        <Link
-                            href="/credite/credit-investitional"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all text-sm"
-                        >
-                            Credit pentru utilaje agricole
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             <WhyBento />
         </>

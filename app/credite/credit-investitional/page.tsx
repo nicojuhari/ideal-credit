@@ -12,7 +12,7 @@ import { investitionalSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit Investițional pentru Afaceri în Moldova | Ideal Credit",
     description:
-        "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Până la 400.000 lei, termen până la 60 luni, decizie în 1-2 zile lucrătoare.",
+        "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Până la 300.000 lei, termen până la 60 luni, decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-investitional" },
 };
 
@@ -74,7 +74,7 @@ const financingCategories = [
 const comparisonRows = [
     { label: "Proprietatea bunului", OCN: "Imediată, din prima zi", leasing: "La finalul contractului" },
     { label: "Flexibilitate bunuri", OCN: "Orice tip de bun", leasing: "Vehicule și echipamente specifice" },
-    { label: "Sumă disponibilă", OCN: "Până la 400.000 lei", leasing: "Variabilă, limitată de furnizor" },
+    { label: "Sumă disponibilă", OCN: "Până la 300.000 lei", leasing: "Variabilă, limitată de furnizor" },
     { label: "Rambursare anticipată", OCN: "Gratuită", leasing: "Cu penalizări" },
     { label: "Restricții de utilizare", OCN: "Nicio restricție", leasing: "Kilometraj, modificări interzise" },
 ];
@@ -106,7 +106,7 @@ export default function CreditInvestitionalPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {financingCategories.map(({ icon: Icon, title, desc }) => (
                         <div key={title} className="flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-black-600/50">
-                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 mt-0.5">
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500 mt-0.5">
                                 <Icon size={20} />
                             </span>
                             <div>
@@ -191,30 +191,6 @@ export default function CreditInvestitionalPage() {
             <CreditFAQ items={investFaqItems} />
 
             {/* CTA */}
-            <section className="container">
-                <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Investiția ta, rata ta lunară</h2>
-                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
-                            Trimite o cerere - te contactăm în câteva ore cu o ofertă concretă.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                        <Link
-                            href="/cerere-de-credit-online"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all"
-                        >
-                            Cerere online <ArrowRight size={15} />
-                        </Link>
-                        <Link
-                            href="/credite/credit-pentru-afaceri-mici"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all text-sm"
-                        >
-                            Toate creditele pentru afaceri
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             <WhyBento />
         </>

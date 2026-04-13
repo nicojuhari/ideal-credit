@@ -13,7 +13,9 @@ function YearsCounter() {
     const target = yearsSinceFoundation;
 
     useEffect(() => {
+        console.log("YearsCounter inView:", inView);
         if (!inView) return;
+        console.log("Animating years counter to", target);
         const c = animate(mv, target, { duration: 1.6, ease: "easeOut" });
         return c.stop;
     }, [inView, mv, target]);
@@ -74,7 +76,7 @@ export default function WhyBento() {
                         <div className="pointer-events-none absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-brand-500/5 blur-3xl" />
 
                         <div className="relative">
-                            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-gray-500">
+                            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-3 py-1 text-xs text-gray-500">
                                 <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                                 Din 2010
                             </span>

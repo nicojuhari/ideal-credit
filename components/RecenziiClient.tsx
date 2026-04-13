@@ -32,7 +32,7 @@ const reviews: Review[] = [
         kind: "text",
         badge: "Direct",
         name: "Victor",
-        text: "Mulțumesc Ideal Credit — banca m-a refuzat, dar voi m-ați ajutat în 2 zile să cumpăr mașina dorită.",
+        text: "Mulțumesc Ideal Credit - banca m-a refuzat, dar voi m-ați ajutat în 2 zile să cumpăr mașina dorită.",
     },
     { kind: "image", badge: "Facebook", image: "/recenzii/ideal-credit-recenzie-3.webp" },
     {

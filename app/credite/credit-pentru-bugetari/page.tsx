@@ -197,30 +197,6 @@ export default function CreditBugetariPage() {
             <CreditFAQ items={bugetariFaqItems} />
 
             {/* CTA */}
-            <section className="container">
-                <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Aplică online în 5 minute</h2>
-                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
-                            Decizie în 2-3 ore. Dacă documentele sunt complete, banii pot fi disponibili în aceeași zi.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                        <Link
-                            href="/cerere-de-credit-online"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all"
-                        >
-                            Cerere online <ArrowRight size={15} />
-                        </Link>
-                        <Link
-                            href="/credite/credit-pentru-nevoi-personale"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all text-sm"
-                        >
-                            Toate creditele personale
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             <WhyBento />
         </>

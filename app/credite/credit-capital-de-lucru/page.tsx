@@ -12,7 +12,7 @@ import { workingCapitalSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit Capital de Lucru pentru Afaceri | Ideal Credit Moldova",
     description:
-        "Credit capital de lucru pentru SRL și ÎI din Moldova. Acoperiți salarii, furnizori și stocuri - până la 400.000 lei, decizie în 1-2 zile lucrătoare.",
+        "Credit capital de lucru pentru SRL și ÎI din Moldova. Acoperiți salarii, furnizori și stocuri - până la 300.000 lei, decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-capital-de-lucru" },
 };
 
@@ -66,14 +66,6 @@ const scenarios = [
     },
 ];
 
-const comparisonRows = [
-    { label: "Viteză aprobare", OCN: "1-2 zile lucrătoare", bank: "1-5 zile lucrătoare" },
-    { label: "Documente", OCN: "Extrase 3 luni", bank: "Documentație extinsă" },
-    { label: "Flexibilitate sumă", OCN: "Negociabilă", bank: "Limitată la plafon" },
-    { label: "Disponibil după refuz bancar", OCN: "Da", bank: "Nu" },
-    { label: "Costuri", OCN: "Transparente, fixe", bank: "Comisioane multiple" },
-];
-
 export default function CreditCapitalDeLucruPage() {
     return (
         <>
@@ -101,7 +93,7 @@ export default function CreditCapitalDeLucruPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {scenarios.map(({ icon: Icon, title, desc }) => (
                         <div key={title} className="flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-black-600/50">
-                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 mt-0.5">
+                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500 mt-0.5">
                                 <Icon size={20} />
                             </span>
                             <div>
@@ -157,58 +149,9 @@ export default function CreditCapitalDeLucruPage() {
 
             <HowItWorks />
 
-            {/* Comparatie OCN vs. descoperit de cont */}
-            <section className="container">
-                <h2 className="title text-center">Credit OCN vs. descoperit de cont bancar</h2>
-                <div className="overflow-x-auto rounded-xl border border-white/5">
-                    <table className="w-full text-sm">
-                        <thead>
-                            <tr className="border-b border-white/5 bg-black-600/80">
-                                <th className="text-left px-5 py-3.5 text-gray-500 font-medium w-1/3"></th>
-                                <th className="px-5 py-3.5 text-brand-500 font-semibold text-center">Ideal Credit (OCN)</th>
-                                <th className="px-5 py-3.5 text-gray-500 font-medium text-center">Descoperit cont bancar</th>
-                            </tr>
-                        </thead>
-                        <tbody className="bg-black-600/40">
-                            {comparisonRows.map((row, i) => (
-                                <tr key={row.label} className={i < comparisonRows.length - 1 ? "border-b border-white/5" : ""}>
-                                    <td className="px-5 py-4 text-gray-500">{row.label}</td>
-                                    <td className="px-5 py-4 text-green-400 text-center font-medium">{row.OCN}</td>
-                                    <td className="px-5 py-4 text-gray-500 text-center">{row.bank}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
             <CreditFAQ items={workingCapitalFaqItems} />
 
             {/* CTA */}
-            <section className="container">
-                <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Gata să aplici?</h2>
-                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
-                            Cerere online în 5 minute. Decizie în 1-2 zile lucrătoare. Banii în cont rapid după aprobare.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                        <Link
-                            href="/cerere-de-credit-online"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all"
-                        >
-                            Cerere online <ArrowRight size={15} />
-                        </Link>
-                        <Link
-                            href="/credite/credit-pentru-afaceri-mici"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all text-sm"
-                        >
-                            Toate creditele pentru afaceri
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             <WhyBento />
         </>

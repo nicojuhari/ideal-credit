@@ -63,7 +63,7 @@ export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
                         </motion.p>
                     </div>
 
-                    {/* Right column — calculator */}
+                    {/* Right column - calculator */}
                     <motion.div
                         id="calculator"
                         initial={{ opacity: 0, y: 24 }}

@@ -196,36 +196,6 @@ export default function RefinantarePage() {
             <CreditFAQ items={refinantareFaqItems} />
 
             {/* CTA */}
-            <section className="container">
-                <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
-                    <div>
-                        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Calculăm împreună dacă merită</h2>
-                        <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
-                            Trimite o cerere sau sună-ne. Îți prezentăm un calcul comparativ concret înainte de orice semnătură.
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                        <Link
-                            href="/cerere-de-credit-online"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-brand-gradient text-black font-semibold text-sm shadow-glow-sm hover:brightness-110 transition-all"
-                        >
-                            Cerere online <ArrowRight size={15} />
-                        </Link>
-                        <Link
-                            href="/credite/credit-pentru-afaceri-mici"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all text-sm"
-                        >
-                            Credite pentru afaceri
-                        </Link>
-                        <Link
-                            href="/credite/credit-pentru-nevoi-personale"
-                            className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all text-sm"
-                        >
-                            Credite personale
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             <WhyBento />
         </>

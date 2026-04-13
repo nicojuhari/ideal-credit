@@ -12,7 +12,7 @@ import { businessCreditSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri Mici în Moldova | Ideal Credit",
     description:
-        "Credit nebancar pentru SRL și ÎI din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare, fără plan de afaceri obligatoriu. Până la 400.000 lei.",
+        "Credit nebancar pentru SRL și ÎI din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare, fără plan de afaceri obligatoriu. Până la 300.000 lei.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
 };
 
@@ -48,28 +48,24 @@ const useCases = [
         icon: TrendingUp,
         title: "Capital de lucru",
         desc: "Salarii, furnizori, stocuri - acoperi golurile din flux fără să oprești activitatea.",
-        example: "Ai facturat 80.000 lei dar clientul plătește în 45 de zile. Continuăm producția împreună.",
         href: "/credite/credit-capital-de-lucru",
     },
     {
         icon: Building2,
         title: "Investiții",
         desc: "Echipamente, utilaje, extindere spațiu, vehicule comerciale.",
-        example: "Un echipament de 120.000 lei plătit în 36 rate lunare egale.",
         href: "/credite/credit-investitional",
     },
     {
         icon: RefreshCw,
         title: "Refinanțare",
         desc: "Consolidezi creditele existente într-un singur credit cu rată mai mică.",
-        example: "Două credite cu rate de 8.000 lei/lună devin un singur credit de 6.500 lei/lună.",
         href: "/credite/refinantare",
     },
     {
         icon: Zap,
         title: "Start-up",
         desc: "Lansezi afacerea: înregistrare firmă, echipamente inițiale, stoc de pornire.",
-        example: "Evaluăm și activități noi cu potențial demonstrabil - nu doar firme cu ani în spate.",
         href: "/cerere-de-credit-online",
     },
 ];
@@ -92,25 +88,25 @@ export default function CreditAfaceriMiciPage() {
                         afaceri mici
                     </>
                 }
-                subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Până la 400.000 lei, aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
+                subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Până la 300.000 lei, aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
             />
 
             {/* Use-cases grid cu linkuri interne */}
             <section className="container">
                 <h2 className="title text-center">Pentru ce poți folosi creditul</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {useCases.map(({ icon: Icon, title, desc, example, href }) => (
+                    {useCases.map(({ icon: Icon, title, desc, href }) => (
                         <div key={title} className="flex flex-col gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50">
                             <div className="flex items-center gap-3">
-                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
+                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
                                     <Icon size={20} />
                                 </span>
                                 <h3 className="text-base font-semibold text-white">{title}</h3>
                             </div>
                             <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
-                            <p className="text-xs text-gray-500 italic leading-relaxed border-l border-white/10 pl-3">{example}</p>
                             <Link
                                 href={href}
+                                title={`Află mai multe despre ${title.toLowerCase()}`}
                                 className="inline-flex items-center gap-1.5 text-sm text-brand-500 hover:text-brand-400 transition-colors font-medium mt-auto"
                             >
                                 Află mai mult <ArrowRight size={14} />

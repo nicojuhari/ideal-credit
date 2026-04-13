@@ -60,7 +60,7 @@ export default function HeroHome() {
                         </motion.p>
                     </div>
 
-                    {/* Right column — calculator */}
+                    {/* Right column - calculator */}
                     <motion.div
                         id="calculator"
                         initial={{ opacity: 0, y: 24 }}
