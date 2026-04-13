@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import Info from "@/components/ui/Info";
-import { Check, X, Clock, Package, Users, Trophy, ArrowRight } from "lucide-react";
-import { workingCapitalSchema } from "@/lib/schema";
-import type { FaqItem } from "@/components/FAQ";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import WhyBento from "@/components/WhyBento";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
+import { Clock, Package, Users, Trophy, ArrowRight } from "lucide-react";
+import { workingCapitalSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit Capital de Lucru pentru Afaceri | Ideal Credit Moldova",
@@ -45,16 +43,6 @@ const workingCapitalFaqItems: FaqItem[] = [
     },
 ];
 
-const workingCapitalFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: workingCapitalFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
-
 const scenarios = [
     {
         icon: Clock,
@@ -79,11 +67,11 @@ const scenarios = [
 ];
 
 const comparisonRows = [
-    { label: "Viteză aprobare", ifn: "1-2 zile lucrătoare", bank: "1-5 zile lucrătoare" },
-    { label: "Documente", ifn: "Extrase 3 luni", bank: "Documentație extinsă" },
-    { label: "Flexibilitate sumă", ifn: "Negociabilă", bank: "Limitată la plafon" },
-    { label: "Disponibil după refuz bancar", ifn: "Da", bank: "Nu" },
-    { label: "Costuri", ifn: "Transparente, fixe", bank: "Comisioane multiple" },
+    { label: "Viteză aprobare", OCN: "1-2 zile lucrătoare", bank: "1-5 zile lucrătoare" },
+    { label: "Documente", OCN: "Extrase 3 luni", bank: "Documentație extinsă" },
+    { label: "Flexibilitate sumă", OCN: "Negociabilă", bank: "Limitată la plafon" },
+    { label: "Disponibil după refuz bancar", OCN: "Da", bank: "Nu" },
+    { label: "Costuri", OCN: "Transparente, fixe", bank: "Comisioane multiple" },
 ];
 
 export default function CreditCapitalDeLucruPage() {
@@ -92,7 +80,7 @@ export default function CreditCapitalDeLucruPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([workingCapitalSchema, workingCapitalFaqSchema]),
+                    __html: JSON.stringify(workingCapitalSchema),
                 }}
             />
             {/* Hero */}
@@ -107,7 +95,7 @@ export default function CreditCapitalDeLucruPage() {
                 subtitle="Menții activitatea firmei când încasările întârzie. Fără birocrație, fără așteptări săptămâni întregi."
             />
 
-            {/* 1. Când ai nevoie de capital de lucru */}
+            {/* Scenarii */}
             <section className="container">
                 <h2 className="title text-center">Când ai nevoie de capital de lucru</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -125,62 +113,59 @@ export default function CreditCapitalDeLucruPage() {
                 </div>
             </section>
 
-            {/* 2. Eligibilitate */}
-            <section className="container">
-                <h2 className="title text-center">Condiții de eligibilitate</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                                "Activitate economică de cel puțin 3-6 luni",
-                                "Extrase bancare care arată rulaj activ",
-                                "Ai nevoie de lichiditate rapidă pentru operațiuni",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Plan de afaceri detaliat",
-                                "Activitate de 2+ ani",
-                                "Garanție imobiliară obligatorie",
-                                "Profit demonstrat pe ultimul an fiscal",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-                <Info className="mt-6">
-                    În funcție de suma solicitată și evaluarea riscului, pot fi necesare garanții suplimentare: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Condiții de eligibilitate"
+                eligibleIf={[
+                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Activitate economică de cel puțin 3-6 luni",
+                    "Extrase bancare cu rulaj activ",
+                    "Nevoie de lichiditate pentru operațiuni curente",
+                ]}
+                documents={[
+                    "Buletin de identitate al administratorului",
+                    "Certificat de înregistrare (SRL/ÎI)",
+                    "Extrase bancare - ultimele 3-6 luni",
+                    "Contracte cu clienți sau furnizori (optional, ajută la evaluare)",
+                ]}
+                note="Finanțarea se aprobă pe baza rulajului real din extrase, nu doar pe baza bilanțului contabil."
+                description={{
+                    title: "Credit capital de lucru pentru firme din Moldova",
+                    paragraphs: [
+                        "Capitalul de lucru este banii de care ai nevoie să funcționezi zi de zi - salarii, furnizori, chirie, stocuri. Când încasările întârzie și cheltuielile nu pot aștepta, un credit de capital de lucru menține activitatea în mișcare fără să blochezi creșterea.",
+                        "La Ideal Credit evaluăm capacitatea de rambursare pe baza rulajului real din extrasele bancare, nu doar pe baza bilanțului anual. Asta înseamnă că și firmele cu câteva luni de activitate sau cu un an fiscal dificil pot accesa finanțare, dacă fluxul curent este stabil.",
+                        "Termenul de rambursare se adaptează ciclului tău de încasări - de la 6 la 36 de luni. Dacă clienții tăi plătesc la 60 de zile, structurăm creditul în consecință. Decizia se ia în 1-2 zile lucrătoare, iar fondurile sunt disponibile imediat după semnare.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-afaceri-mici",
+                        label: "Credit pentru afaceri mici",
+                        desc: "Toate tipurile de finanțare pentru antreprenori.",
+                    },
+                    {
+                        href: "/credite/credit-investitional",
+                        label: "Credit investițional",
+                        desc: "Finanțezi echipamente sau extinderi pe termen lung.",
+                    },
+                    {
+                        href: "/credite/refinantare",
+                        label: "Refinanțare",
+                        desc: "Consolidezi obligațiile existente într-un singur credit.",
+                    },
+                ]}
+            />
 
-            {/* 3. HowItWorks */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <HowItWorks />
 
-            {/* 4. Comparatie IFN vs. descoperit de cont */}
+            {/* Comparatie OCN vs. descoperit de cont */}
             <section className="container">
-                <h2 className="title text-center">Credit IFN vs. descoperit de cont bancar</h2>
+                <h2 className="title text-center">Credit OCN vs. descoperit de cont bancar</h2>
                 <div className="overflow-x-auto rounded-xl border border-white/5">
                     <table className="w-full text-sm">
                         <thead>
                             <tr className="border-b border-white/5 bg-black-600/80">
                                 <th className="text-left px-5 py-3.5 text-gray-500 font-medium w-1/3"></th>
-                                <th className="px-5 py-3.5 text-brand-500 font-semibold text-center">Ideal Credit (IFN)</th>
+                                <th className="px-5 py-3.5 text-brand-500 font-semibold text-center">Ideal Credit (OCN)</th>
                                 <th className="px-5 py-3.5 text-gray-500 font-medium text-center">Descoperit cont bancar</th>
                             </tr>
                         </thead>
@@ -188,7 +173,7 @@ export default function CreditCapitalDeLucruPage() {
                             {comparisonRows.map((row, i) => (
                                 <tr key={row.label} className={i < comparisonRows.length - 1 ? "border-b border-white/5" : ""}>
                                     <td className="px-5 py-4 text-gray-500">{row.label}</td>
-                                    <td className="px-5 py-4 text-green-400 text-center font-medium">{row.ifn}</td>
+                                    <td className="px-5 py-4 text-green-400 text-center font-medium">{row.OCN}</td>
                                     <td className="px-5 py-4 text-gray-500 text-center">{row.bank}</td>
                                 </tr>
                             ))}
@@ -197,13 +182,9 @@ export default function CreditCapitalDeLucruPage() {
                 </div>
             </section>
 
-            {/* 5. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={workingCapitalFaqItems} />
-            </section>
+            <CreditFAQ items={workingCapitalFaqItems} />
 
-            {/* 6. CTA */}
+            {/* CTA */}
             <section className="container">
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>

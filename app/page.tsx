@@ -124,9 +124,7 @@ export default async function HomePage() {
             </section>
 
             {/* 3. Cum functioneaza */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <HowItWorks />
 
             {/* 4. De ce Ideal Credit */}
             <WhyBento />

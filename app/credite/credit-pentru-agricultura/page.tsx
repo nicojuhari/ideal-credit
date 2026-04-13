@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import Info from "@/components/ui/Info";
-import { Check, X, Cog, Leaf, Droplets, Sprout, TrendingUp, ArrowRight } from "lucide-react";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
+import { Check, Cog, Leaf, Droplets, Sprout, TrendingUp, ArrowRight } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
-import type { FaqItem } from "@/components/FAQ";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
@@ -44,16 +42,6 @@ const agricFaqItems: FaqItem[] = [
         answer: "Da. Preluăm credite agricole de la alte instituții. Evaluăm dacă refinanțarea are sens financiar și prezentăm calculul înainte de decizie.",
     },
 ];
-
-const agricFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: agricFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
 
 const financingCategories = [
     {
@@ -94,7 +82,7 @@ export default function CreditAgriculturaPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([businessCreditSchema, agricFaqSchema]),
+                    __html: JSON.stringify(businessCreditSchema),
                 }}
             />
 
@@ -110,7 +98,7 @@ export default function CreditAgriculturaPage() {
                 subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității, până la 400.000 lei."
             />
 
-            {/* 1. Ce finanțezi */}
+            {/* Ce finanțezi */}
             <section className="container">
                 <h2 className="title text-center">Ce poți finanța</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -136,7 +124,7 @@ export default function CreditAgriculturaPage() {
                 </div>
             </section>
 
-            {/* 2. Specificul creditului agricol */}
+            {/* Specificul creditului agricol */}
             <section className="container">
                 <h2 className="title text-center">Adaptat la ritmul agriculturii</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -182,60 +170,54 @@ export default function CreditAgriculturaPage() {
                 </div>
             </section>
 
-            {/* 3. Eligibilitate */}
-            <section className="container">
-                <h2 className="title text-center">Condiții de eligibilitate</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Activitate agricolă înregistrată (SRL, ÎI, GȚ, gospodărie țărănească)",
-                                "Activitate demonstrabilă în ultimul sezon",
-                                "Teren agricol în proprietate sau în arendă",
-                                "Extrase bancare sau alte dovezi de vânzări agricole",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Plan de afaceri detaliat",
-                                "Proprietate obligatorie asupra terenului (arenda e suficientă)",
-                                "Venit lunar fix și uniform",
-                                "Garanție imobiliară obligatorie (depinde de sumă)",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-                <Info className="mt-6">
-                    În funcție de suma solicitată și evaluarea riscului, pot fi necesare garanții suplimentare: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Condiții de eligibilitate"
+                eligibleIf={[
+                    "Activitate agricolă înregistrată (SRL, ÎI, GȚ, gospodărie țărănească)",
+                    "Activitate demonstrabilă în ultimul sezon",
+                    "Teren agricol în proprietate sau în arendă",
+                    "Extrase bancare sau dovezi de vânzări agricole",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Certificat de înregistrare (SRL/ÎI) sau legitimație gospodărie",
+                    "Documente teren agricol (proprietate sau arendă)",
+                    "Extrase bancare sau acte de vânzare a producției (ultimele 6 luni)",
+                    "Actele bunului gajat (dacă este cazul)",
+                ]}
+                note="Graficul de rambursare este adaptat sezonului agricol - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare."
+                description={{
+                    title: "Credit agricol pentru fermieri și gospodării din Moldova",
+                    paragraphs: [
+                        "Creditul agricol de la Ideal Credit este conceput pentru fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate în agricultură. Finanțăm tehnica agricolă, semințele, îngrășămintele, irigațiile, forța de muncă sezonieră și orice alt cost legat de producția agricolă.",
+                        "Cel mai important avantaj față de un credit standard este graficul de rambursare adaptat sezonului. Știm că încasările agricole vin în valuri - după recoltare și vânzare - nu lunar uniform. De aceea structurăm ratele în funcție de ciclul tău de producție, cu posibilitate de perioadă de grație în lunile de cheltuieli mari.",
+                        "Nu cerem plan de afaceri formal sau profit demonstrat. Evaluăm activitatea reală - suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare. Dacă ai activitate agricolă demonstrabilă, indiferent de forma juridică, putem discuta despre finanțare.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-afaceri-mici",
+                        label: "Credit pentru afaceri mici",
+                        desc: "Finanțare generală pentru orice activitate economică înregistrată.",
+                    },
+                    {
+                        href: "/credite/credit-investitional",
+                        label: "Credit investițional",
+                        desc: "Tehnica agricolă și echipamente pe termen lung.",
+                    },
+                    {
+                        href: "/credite/credit-capital-de-lucru",
+                        label: "Credit capital de lucru",
+                        desc: "Lichiditate sezonieră pentru semințe, îngrășăminte și forță de muncă.",
+                    },
+                ]}
+            />
 
-            {/* 4. HowItWorks */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <HowItWorks />
 
-            {/* 5. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={agricFaqItems} />
-            </section>
+            <CreditFAQ items={agricFaqItems} />
 
-            {/* 6. CTA */}
+            {/* CTA */}
             <section className="container">
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>

@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import HowItWorks from "@/components/HowItWorks";
-import Info from "@/components/ui/Info";
 import ServiceHero from "@/components/ServiceHero";
-import { Check, X, TrendingUp, Building2, RefreshCw, Zap, ArrowRight } from "lucide-react";
-import { businessCreditSchema } from "@/lib/schema";
-import type { FaqItem } from "@/components/FAQ";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import WhyBento from "@/components/WhyBento";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
+import { TrendingUp, Building2, RefreshCw, Zap, ArrowRight } from "lucide-react";
+import { businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri Mici în Moldova | Ideal Credit",
@@ -44,16 +42,6 @@ const businessFaqItems: FaqItem[] = [
         answer: "Nu. Dobânda este fixă de la prima până la ultima rată. Suma lunară pe care o plătești nu se schimbă pe toată durata contractului.",
     },
 ];
-
-const businessFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: businessFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
 
 const useCases = [
     {
@@ -92,7 +80,7 @@ export default function CreditAfaceriMiciPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([businessCreditSchema, businessFaqSchema]),
+                    __html: JSON.stringify(businessCreditSchema),
                 }}
             />
             {/* Hero */}
@@ -107,50 +95,7 @@ export default function CreditAfaceriMiciPage() {
                 subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Până la 400.000 lei, aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
             />
 
-            {/* 1. Este pentru afacerea mea? */}
-            <section className="container">
-                <h2 className="title text-center">Este pentru afacerea mea?</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                                "Activitate economică de cel puțin 3-6 luni",
-                                "Ai nevoie de capital rapid, fără să aștepți săptămâni",
-                                "Banca te-a refuzat sau condițiile sunt prea rigide",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Plan de afaceri detaliat",
-                                "Activitate de 2+ ani",
-                                "Garanție imobiliară obligatorie (depinde de sumă)",
-                                "Profit demonstrat pe ultimul an fiscal",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-                <Info className="mt-6">
-                    În funcție de suma solicitată și evaluarea riscului de credit, pot fi necesare garanții suplimentare: fidejusiune sau
-                    gaj imobil.
-                </Info>
-            </section>
-
-            {/* 2. Pentru ce folosești banii */}
+            {/* Use-cases grid cu linkuri interne */}
             <section className="container">
                 <h2 className="title text-center">Pentru ce poți folosi creditul</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -175,18 +120,52 @@ export default function CreditAfaceriMiciPage() {
                 </div>
             </section>
 
-            {/* 3. Cum funcționează */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Este pentru afacerea mea?"
+                eligibleIf={[
+                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Activitate economică de cel puțin 3-6 luni",
+                    "Ai nevoie de capital rapid, fără să aștepți săptămâni",
+                    "Banca te-a refuzat sau condițiile sunt prea rigide",
+                ]}
+                documents={[
+                    "Buletin de identitate al administratorului",
+                    "Certificat de înregistrare a firmei (SRL/ÎI)",
+                    "Extrase bancare - ultimele 3-6 luni",
+                    "Actele de proprietate (dacă se solicită gaj)",
+                ]}
+                note="În funcție de suma solicitată, pot fi necesare garanții suplimentare: fidejusiune sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului."
+                description={{
+                    title: "Credit nebancar pentru afaceri mici în Moldova",
+                    paragraphs: [
+                        "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Nu contează dacă ești la început de drum sau dacă banca te-a refuzat - analizăm situația reală a afacerii tale, nu doar documentele formale.",
+                        "Pentru a te califica, ai nevoie de o firmă înregistrată în Moldova, câteva luni de activitate demonstrabilă și extrase bancare cu rulaj activ. Nu cerem plan de afaceri, profit obligatoriu sau garanție imobiliară pentru sume mai mici. Creditul poate fi folosit pentru orice nevoie legată de afacere: capital de lucru, echipamente, refinanțare sau extindere.",
+                        "Spre deosebire de o bancă, luăm decizii în 1-2 zile lucrătoare și nu te trimitem cu dosarul de la ghișeu la ghișeu. Dacă finanțarea nu este potrivită pentru situația ta, îți spunem direct - fără să îți pierzi timpul cu un dosar complet.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-capital-de-lucru",
+                        label: "Credit capital de lucru",
+                        desc: "Acoperi golurile de lichiditate fără să oprești activitatea.",
+                    },
+                    {
+                        href: "/credite/credit-investitional",
+                        label: "Credit investițional",
+                        desc: "Finanțezi echipamente sau extindere pe termen lung.",
+                    },
+                    {
+                        href: "/credite/refinantare",
+                        label: "Refinanțare",
+                        desc: "Consolidezi creditele existente într-un singur credit cu rată mai bună.",
+                    },
+                ]}
+            />
 
-            {/* 4. FAQ specific afaceri */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={businessFaqItems} />
-            </section>
+            <HowItWorks />
 
-            {/* 6. ShortAboutUs */}
+            <CreditFAQ items={businessFaqItems} />
+
             <WhyBento />
         </>
     );

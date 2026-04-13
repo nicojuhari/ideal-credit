@@ -2,7 +2,7 @@
 
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { ShieldCheck, Zap, Eye, TrendingUp, HeartHandshake } from "lucide-react";
+import { Zap, Eye, TrendingUp } from "lucide-react";
 import { yearsSinceFoundation } from "@/lib/utils";
 
 function YearsCounter() {

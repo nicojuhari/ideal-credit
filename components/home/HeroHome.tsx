@@ -56,7 +56,7 @@ export default function HeroHome() {
                             transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
                             className="mt-6 text-lg text-gray-500 font-light max-w-xl text-center md:text-left mx-auto md:mx-0"
                         >
-                            Dobânda fixă, costuri transparente, fără comisioane ascunse și decizie rapidă.
+                            Dobânda fixă, condiții clare, fără comisioane ascunse și decizie rapidă.
                         </motion.p>
                     </div>
 

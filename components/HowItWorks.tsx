@@ -32,7 +32,7 @@ export default function HowItWorks() {
     const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
-        <div ref={ref}>
+        <section ref={ref} className="container">
             <h2 className="card-title text-center">Obține un credit în 3 pași simpli</h2>
 
             <div className="relative">
@@ -79,6 +79,6 @@ export default function HowItWorks() {
                     })}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

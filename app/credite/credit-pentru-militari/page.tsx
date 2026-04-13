@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import Info from "@/components/ui/Info";
-import { Check } from "lucide-react";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -12,6 +13,33 @@ export const metadata: Metadata = {
         "Credit pentru militari în Moldova - condiții clare, decizie rapidă și dobândă transparentă. Sume flexibile până la 300.000 lei. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-militari" },
 };
+
+const faqItems: FaqItem[] = [
+    {
+        question: "Pot aplica dacă sunt pensionar al Ministerului Apărării?",
+        answer: "Da. Evaluăm cererile de la pensionari MAp cu pensie stabilă și demonstrabilă. Pensia militară este considerată venit stabil pentru scopul analizei creditului.",
+    },
+    {
+        question: "Ce documente trebuie să aduc de la unitatea militară?",
+        answer: "O adeverință de salariu emisă de unitatea militară și legitimația militară. Nu cerem documente suplimentare dacă dosarul de bază este complet.",
+    },
+    {
+        question: "Pot obține credit fără garant?",
+        answer: "Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari, poate fi cerută fidejusiune sau gaj imobil. Comunicăm cerința clar înainte de depunerea dosarului.",
+    },
+    {
+        question: "Pot lua credit dacă am deja un credit activ?",
+        answer: "Da, dacă capacitatea de rambursare o permite. Evaluăm toate obligațiile existente și stabilim suma care poate fi gestionată confortabil din veniturile tale.",
+    },
+    {
+        question: "Cât durează aprobarea?",
+        answer: "Decizia se ia în 2-3 ore pentru dosarele complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
+    },
+    {
+        question: "Dobânda se schimbă pe parcursul contractului?",
+        answer: "Nu. Dobânda este fixă de la prima până la ultima rată. Suma lunară pe care o semnezi nu se modifică pe toată durata creditului.",
+    },
+];
 
 export default function CreditMilitariPage() {
     return (
@@ -22,48 +50,39 @@ export default function CreditMilitariPage() {
                 title={"Credit pentru militari"}
                 subtitle="Oferim credit pentru militarii din Republica Moldova - condiții clare, decizie în 2-3 ore și dobândă transparentă."
             />
-            <section className="container">
-                <h2 className="title text-center">Condițiile de creditare</h2>
-                <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {[
-                        "Vârsta între 23 și 65 ani",
-                        "Angajat al Ministerului Apărării, de minim 12 luni",
-                        "Buletin de identitate valabil",
-                        "Fără restanțe la alte credite",
-                    ].map((item) => (
-                        <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-                <Info className="mt-6">
-                    În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
-            <section className="container">
-                <HowItWorks />
-            </section>
-            <section>
-                <div className="container text-lg space-y-4">
-                    <h2 className="card-title text-center">Ce este un credit pentru militari?</h2>
-                    <p>Este un împrumut de consum pentru angajații sau pensionarii Ministerului Apărării.</p>
-                    <h3 className="text-2xl pt-4">Când poți folosi banii</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-500">
-                        <li>Urgențe - plata facturilor sau intervenții neprevăzute</li>
-                        <li>Sănătate - tratamente, stomatologie</li>
-                        <li>Locuință - reparații mici, renovări sau mobilare</li>
-                        <li>Alte nevoi personale</li>
-                    </ul>
-                    <h3 className="text-2xl pt-4">Beneficii specifice pentru militari</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-500">
-                        <li>Aprobare rapidă - decizie în 2-3 ore</li>
-                        <li>Rate fixe și transparente</li>
-                        <li>Condiții adaptate venitului militar</li>
-                        <li>Fără comisioane ascunse</li>
-                    </ul>
-                </div>
-            </section>
+
+            <CreditPageContent
+                eligibilityTitle="Condiții de creditare"
+                eligibleIf={[
+                    "Vârsta între 23 și 65 de ani",
+                    "Angajat al Ministerului Apărării, de minim 12 luni",
+                    "Buletin de identitate valabil",
+                    "Fără restanțe la alte credite",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Legitimație militară",
+                    "Adeverință de salariu emisă de unitatea militară",
+                    "Carnet de muncă (opțional)",
+                ]}
+                note="Oferim condiții adaptate pentru personalul militar activ și pensionarii din sistem."
+                description={{
+                    title: "Credit pentru militari din Republica Moldova",
+                    paragraphs: [
+                        "Creditul pentru militari este destinat personalului activ și pensionarilor Ministerului Apărării din Moldova. Angajarea la stat cu venit garantat și stabil permite o evaluare mai rapidă și mai simplă - nu cerem documente suplimentare față de dosarul de bază.",
+                        "Aprobăm în 2-3 ore. Banii pot fi folosiți pentru orice nevoie personală - renovarea locuinței, un tratament medical, un eveniment de familie sau orice situație neprevăzută. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
+                    ],
+                }}
+                relatedLinks={[
+                    { href: "/credite/credit-pentru-bugetari", label: "Credit pentru angajați la stat", desc: "Condiții similare pentru toți angajații din sectorul bugetar." },
+                    { href: "/credite/credit-pentru-nevoi-personale", label: "Credit pentru nevoi personale", desc: "Credit flexibil pentru orice cheltuială personală." },
+                ]}
+            />
+
+            <HowItWorks />
+
+            <CreditFAQ items={faqItems} />
+
             <WhyBento />
         </>
     );

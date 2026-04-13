@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import Info from "@/components/ui/Info";
-import { Check, X, Cog, Truck, Store, Monitor, Armchair, ArrowRight } from "lucide-react";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
+import { Cog, Truck, Store, Monitor, Armchair, ArrowRight } from "lucide-react";
 import { investitionalSchema } from "@/lib/schema";
-import type { FaqItem } from "@/components/FAQ";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
     title: "Credit Investițional pentru Afaceri în Moldova | Ideal Credit",
@@ -45,16 +43,6 @@ const investFaqItems: FaqItem[] = [
     },
 ];
 
-const investFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: investFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
-
 const financingCategories = [
     {
         icon: Cog,
@@ -84,11 +72,11 @@ const financingCategories = [
 ];
 
 const comparisonRows = [
-    { label: "Proprietatea bunului", ifn: "Imediată, din prima zi", leasing: "La finalul contractului" },
-    { label: "Flexibilitate bunuri", ifn: "Orice tip de bun", leasing: "Vehicule și echipamente specifice" },
-    { label: "Sumă disponibilă", ifn: "Până la 400.000 lei", leasing: "Variabilă, limitată de furnizor" },
-    { label: "Rambursare anticipată", ifn: "Gratuită", leasing: "Cu penalizări" },
-    { label: "Restricții de utilizare", ifn: "Nicio restricție", leasing: "Kilometraj, modificări interzise" },
+    { label: "Proprietatea bunului", OCN: "Imediată, din prima zi", leasing: "La finalul contractului" },
+    { label: "Flexibilitate bunuri", OCN: "Orice tip de bun", leasing: "Vehicule și echipamente specifice" },
+    { label: "Sumă disponibilă", OCN: "Până la 400.000 lei", leasing: "Variabilă, limitată de furnizor" },
+    { label: "Rambursare anticipată", OCN: "Gratuită", leasing: "Cu penalizări" },
+    { label: "Restricții de utilizare", OCN: "Nicio restricție", leasing: "Kilometraj, modificări interzise" },
 ];
 
 export default function CreditInvestitionalPage() {
@@ -97,7 +85,7 @@ export default function CreditInvestitionalPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([investitionalSchema, investFaqSchema]),
+                    __html: JSON.stringify(investitionalSchema),
                 }}
             />
             {/* Hero */}
@@ -112,7 +100,7 @@ export default function CreditInvestitionalPage() {
                 subtitle="Cumperi echipamente, extinzi spațiul sau modernizezi linia de producție. Termen până la 60 luni, rată fixă, costuri clare."
             />
 
-            {/* 1. Ce finanțezi */}
+            {/* Ce finanțezi */}
             <section className="container">
                 <h2 className="title text-center">Ce poți finanța</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -128,56 +116,54 @@ export default function CreditInvestitionalPage() {
                         </div>
                     ))}
                 </div>
-                <Info className="mt-6">
-                    Nu ești sigur că bunul tău se califică? Contactează-ne înainte de a depune dosarul - evaluăm în câteva minute.
-                </Info>
             </section>
 
-            {/* 2. Eligibilitate */}
-            <section className="container">
-                <h2 className="title text-center">Condiții de eligibilitate</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Eligibil dacă</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                                "Activitate economică de cel puțin 6 luni",
-                                "Investiția are legătură directă cu activitatea firmei",
-                                "Extrase bancare care arată rulaj constant",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Nu este necesar</h3>
-                        <ul className="space-y-2.5">
-                            {[
-                                "Plan de afaceri detaliat",
-                                "Activitate de 2+ ani",
-                                "Garanție imobiliară obligatorie (depinde de sumă)",
-                                "Proforma sau factură de la furnizor pentru aprobare",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Condiții de eligibilitate"
+                eligibleIf={[
+                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Activitate economică de cel puțin 6 luni",
+                    "Investiția are legătură directă cu activitatea firmei",
+                    "Extrase bancare cu rulaj constant",
+                ]}
+                documents={[
+                    "Buletin de identitate al administratorului",
+                    "Certificat de înregistrare (SRL/ÎI)",
+                    "Extrase bancare - ultimele 3-6 luni",
+                    "Ofertă sau factură proformă pentru bunul achiziționat (dacă există)",
+                    "Actele de proprietate (pentru gaj, dacă este cazul)",
+                ]}
+                note="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
+                description={{
+                    title: "Credit investițional pentru afaceri din Moldova",
+                    paragraphs: [
+                        "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
+                        "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
+                        "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Evaluăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică, discutăm - indiferent dacă banca te-a refuzat sau condițiile ei sunt prea rigide.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-afaceri-mici",
+                        label: "Credit pentru afaceri mici",
+                        desc: "Toate tipurile de finanțare pentru antreprenori.",
+                    },
+                    {
+                        href: "/credite/credit-capital-de-lucru",
+                        label: "Credit capital de lucru",
+                        desc: "Lichiditate pentru operațiunile zilnice ale firmei.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-agricultura",
+                        label: "Credit pentru agricultură",
+                        desc: "Finanțare pentru tehnica agricolă și capital sezonier.",
+                    },
+                ]}
+            />
 
-            {/* 3. HowItWorks */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <HowItWorks />
 
-            {/* 4. Credit investițional vs. leasing */}
+            {/* Credit investițional vs. leasing */}
             <section className="container">
                 <h2 className="title text-center">Credit investițional vs. leasing</h2>
                 <div className="overflow-x-auto rounded-xl border border-white/5">
@@ -193,7 +179,7 @@ export default function CreditInvestitionalPage() {
                             {comparisonRows.map((row, i) => (
                                 <tr key={row.label} className={i < comparisonRows.length - 1 ? "border-b border-white/5" : ""}>
                                     <td className="px-5 py-4 text-gray-500">{row.label}</td>
-                                    <td className="px-5 py-4 text-green-400 text-center font-medium">{row.ifn}</td>
+                                    <td className="px-5 py-4 text-green-400 text-center font-medium">{row.OCN}</td>
                                     <td className="px-5 py-4 text-gray-500 text-center">{row.leasing}</td>
                                 </tr>
                             ))}
@@ -202,19 +188,15 @@ export default function CreditInvestitionalPage() {
                 </div>
             </section>
 
-            {/* 5. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={investFaqItems} />
-            </section>
+            <CreditFAQ items={investFaqItems} />
 
-            {/* 6. CTA */}
+            {/* CTA */}
             <section className="container">
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>
                         <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">Investiția ta, rata ta lunară</h2>
                         <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto">
-                            Calculează cu calculatorul de mai sus sau trimite o cerere - te contactăm în câteva ore cu o ofertă concretă.
+                            Trimite o cerere - te contactăm în câteva ore cu o ofertă concretă.
                         </p>
                     </div>
                     <div className="flex flex-wrap items-center justify-center gap-3">

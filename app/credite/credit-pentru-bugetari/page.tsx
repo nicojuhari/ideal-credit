@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import Info from "@/components/ui/Info";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import { Check, Stethoscope, Shield, BadgeCheck, ArrowRight } from "lucide-react";
-import type { FaqItem } from "@/components/FAQ";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
     title: "Credite pentru Bugetari - Medici, Militari, Polițiști | Ideal Credit",
@@ -44,16 +42,6 @@ const bugetariFaqItems: FaqItem[] = [
     },
 ];
 
-const bugetariFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: bugetariFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
-
 const bugetariLoanSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
@@ -83,6 +71,7 @@ const categories = [
             "Personal auxiliar din sistemul de sănătate",
         ],
         note: "Venit stabil și previzibil - condiții adaptate salariului din sistemul public.",
+        href: "/credite/credit-pentru-medici",
     },
     {
         icon: Shield,
@@ -93,6 +82,7 @@ const categories = [
             "Personal al Serviciului de Protecție și Pază de Stat",
         ],
         note: "Statut profesional stabil și venit garantat de stat.",
+        href: "/credite/credit-pentru-militari",
     },
     {
         icon: BadgeCheck,
@@ -103,14 +93,8 @@ const categories = [
             "Angajați ai instituțiilor de stat și autorităților publice",
         ],
         note: "Orice angajat cu contract de muncă în sectorul bugetar poate aplica.",
+        href: "/credite/credit-pentru-nevoi-personale",
     },
-];
-
-const commonConditions = [
-    "Vârsta de la 23 de ani",
-    "Contract de muncă activ în sectorul bugetar",
-    "Sursă de venit stabilă demonstrabilă",
-    "Buletin de identitate valabil",
 ];
 
 export default function CreditBugetariPage() {
@@ -119,7 +103,7 @@ export default function CreditBugetariPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([bugetariLoanSchema, bugetariFaqSchema]),
+                    __html: JSON.stringify(bugetariLoanSchema),
                 }}
             />
             {/* Hero */}
@@ -134,11 +118,11 @@ export default function CreditBugetariPage() {
                 subtitle="Condiții adaptate pentru medici, militari, polițiști și alți angajați bugetari. Dobândă fixă, aprobare în 2-3 ore."
             />
 
-            {/* 1. Categorii */}
+            {/* Categorii */}
             <section className="container">
                 <h2 className="title text-center">Cine poate aplica</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {categories.map(({ icon: Icon, title, items, note }) => (
+                    {categories.map(({ icon: Icon, title, items, note, href }) => (
                         <div key={title} className="flex flex-col gap-4 p-5 rounded-xl border border-white/5 bg-black-600/50">
                             <div className="flex items-center gap-3">
                                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
@@ -155,40 +139,64 @@ export default function CreditBugetariPage() {
                                 ))}
                             </ul>
                             <p className="text-xs text-gray-500 leading-relaxed border-t border-white/5 pt-3">{note}</p>
+                            <Link
+                                href={href}
+                                className="inline-flex items-center gap-1.5 text-xs text-brand-500 hover:text-brand-400 transition-colors font-medium"
+                            >
+                                Vezi condițiile specifice <ArrowRight size={12} />
+                            </Link>
                         </div>
                     ))}
                 </div>
             </section>
 
-            {/* 2. Condiții comune */}
-            <section className="container">
-                <h2 className="title text-center">Condiții de bază</h2>
-                <div className="max-w-lg mx-auto card flex flex-col gap-4">
-                    {commonConditions.map((item) => (
-                        <div key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                            <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                            {item}
-                        </div>
-                    ))}
-                </div>
-                <Info className="mt-6">
-                    Suma maximă este până la 300.000 lei. Garanțiile depind de suma solicitată - comunicăm cerința înainte de depunerea
-                    dosarului.
-                </Info>
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Condiții generale"
+                eligibleIf={[
+                    "Vârsta de la 23 de ani",
+                    "Contract de muncă activ în sectorul bugetar",
+                    "Sursă de venit stabilă demonstrabilă",
+                    "Buletin de identitate valabil",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Adeverință de salariu emisă de angajator",
+                    "Legitimație de serviciu (dacă există)",
+                    "Actele garantului sau bunului gajat (dacă este cazul)",
+                ]}
+                note="Condițiile exacte (sumă, termen, garanții) se stabilesc în funcție de venit și profilul de risc al fiecărui solicitant."
+                description={{
+                    title: "Credit pentru angajați la stat în Moldova",
+                    paragraphs: [
+                        "Angajații din sectorul bugetar - medici, militari, polițiști, profesori, funcționari publici - beneficiază de un avantaj semnificativ în procesul de creditare: venitul stabil și garantat de stat reduce riscul de credit și simplifică evaluarea dosarului. La Ideal Credit ținăm cont de acest avantaj în analiza fiecărei cereri.",
+                        "Creditul pentru bugetari poate fi folosit pentru orice nevoie personala - renovare, cumpărare auto, cheltuieli medicale, un eveniment de familie sau orice situatie neprevăzuta. Nu cerem justificarea destinatiei banilor. Suma maximă ajunge până la 300.000 lei, iar termenul poate fi de până la 60 de luni.",
+                        "Nu este obligatorie garanția pentru sume mai mici. Procesul este simplu: aduci buletinul, adeverința de salariu și legitimația de serviciu dacă o ai. Decizia se ia în 2-3 ore, iar banii sunt disponibili în aceeași zi dacă dosarul este complet.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-medici",
+                        label: "Credit pentru medici",
+                        desc: "Condiții specifice pentru personalul medical.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-militari",
+                        label: "Credit pentru militari",
+                        desc: "Condiții pentru angajații Ministerului Apărării.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-politisti",
+                        label: "Credit pentru polițiști",
+                        desc: "Condiții pentru angajații și pensionarii MAI.",
+                    },
+                ]}
+            />
 
-            {/* 3. Cum funcționează */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <HowItWorks />
 
-            {/* 4. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={bugetariFaqItems} />
-            </section>
+            <CreditFAQ items={bugetariFaqItems} />
 
-            {/* 5. CTA */}
+            {/* CTA */}
             <section className="container">
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>

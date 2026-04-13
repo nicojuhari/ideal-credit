@@ -2,16 +2,44 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import Info from "@/components/ui/Info";
-import { Check } from "lucide-react";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit pentru polițiști - angajați sau pensionari MAI | Ideal Credit",
+    title: "Credit pentru polițiști și pensionari MAI | Ideal Credit",
     description:
-        "Credit pentru polițiști - împrumut personal pentru angajați și pensionari MAI din Moldova. Aprobat rapid, rate fixe și fără comisioane ascunse.",
+        "Credit pentru polițiști și pensionari MAI din Moldova - condiții adaptate, dobândă fixă, aprobare în 2-3 ore. Sume până la 300.000 lei. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-politisti" },
 };
+
+const faqItems: FaqItem[] = [
+    {
+        question: "Pot aplica dacă sunt pensionar MAI cu pensie stabilă?",
+        answer: "Da. Evaluăm cererile de la pensionari MAI cu pensie demonstrabilă. Pensia din sistemul MAI este considerată venit stabil în procesul de analiză.",
+    },
+    {
+        question: "Ce documente aduc de la angajator?",
+        answer: "Legitimația de polițist sau talon de pensie MAI și o adeverință de salariu sau pensie. Nu cerem documente suplimentare dacă dosarul de bază este complet.",
+    },
+    {
+        question: "Este obligatorie garanția?",
+        answer: "Nu întotdeauna. Pentru sume mai mici nu cerem garanție. Pentru sume mai mari poate fi necesară fidejusiune sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+    },
+    {
+        question: "Pot lua credit dacă am deja un credit activ la altă instituție?",
+        answer: "Da, dacă capacitatea de rambursare o permite. Evaluăm toate obligațiile existente și stabilim suma care poate fi gestionată din veniturile tale lunare.",
+    },
+    {
+        question: "Cât durează aprobarea?",
+        answer: "Decizia se ia în 2-3 ore pentru dosarele complete. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi lucrătoare.",
+    },
+    {
+        question: "Pot rambursa creditul mai devreme fără penalități?",
+        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată - fără nicio penalitate de rambursare timpurie.",
+    },
+];
 
 export default function CreditPolitistiPage() {
     return (
@@ -20,49 +48,41 @@ export default function CreditPolitistiPage() {
             {/* Hero */}
             <ServiceHero
                 title={"Credit pentru polițiști"}
-                subtitle="Credit pentru polițiști sau pensionari MAI din Republica Moldova - bani pentru urgențe și cheltuieli personale."
+                subtitle="Credit pentru angajații și pensionarii MAI din Moldova - condiții clare, decizie în 2-3 ore, dobândă fixă."
             />
-            <section className="container">
-                <h2 className="title text-center">Condițiile de creditare</h2>
-                <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {[
-                        "Vârsta între 23 și 65 ani",
-                        "Angajat (minim 12 luni) sau pensionar MAI",
-                        "Buletin de identitate valabil",
-                        "Fără datorii la alte credite",
-                    ].map((item) => (
-                        <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-                <Info className="mt-6">
-                    În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
-            <section className="container">
-                <HowItWorks />
-            </section>
-            <section>
-                <div className="container text-lg space-y-4">
-                    <h2 className="card-title text-center">Ce este un credit pentru polițiști?</h2>
-                    <p>Un împrumut de consum destinat polițiștilor activi sau pensionari din Republica Moldova.</p>
-                    <h3 className="text-2xl pt-4">Când poți folosi banii</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-500">
-                        <li>Urgențe - plata facturilor sau cheltuieli neașteptate</li>
-                        <li>Sănătate - tratamente, stomatologie</li>
-                        <li>Educație - cursuri sau specializare profesională</li>
-                        <li>Locuință - reparații, renovări sau mobilare</li>
-                    </ul>
-                    <h3 className="text-2xl pt-4">Beneficii specifice pentru polițiști</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-500">
-                        <li>Aprobare rapidă - decizie în 2-3 ore</li>
-                        <li>Rate fixe și transparente</li>
-                        <li>Condiții adaptate salariului</li>
-                    </ul>
-                </div>
-            </section>
+
+            <CreditPageContent
+                eligibilityTitle="Condiții de creditare"
+                eligibleIf={[
+                    "Vârsta între 23 și 65 de ani",
+                    "Angajat (minim 12 luni) sau pensionar MAI",
+                    "Buletin de identitate valabil",
+                    "Fără datorii la alte credite",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Legitimație de polițist sau pensionar MAI",
+                    "Adeverință de salariu sau talon de pensie",
+                    "Carnet de muncă (opțional)",
+                ]}
+                note="Evaluăm și cererile de la pensionarii MAI cu pensie stabilă și demonstrabilă."
+                description={{
+                    title: "Credit pentru polițiști și pensionari MAI din Moldova",
+                    paragraphs: [
+                        "Creditul pentru polițiști este destinat personalului activ și pensionarilor Ministerului Afacerilor Interne din Moldova. Statutul de angajat sau pensionar MAI cu venit stabil și garantat de stat simplifica procesul de evaluare - dosarul este mai simplu, iar decizia vine mai rapid față de un client fără venit fix.",
+                        "Banii pot fi folosiți pentru orice nevoie personala - renovare, tratament medical, cheltuieli de familie, achizitie auto sau orice alta situatie. Dobânda este fixa pe toată durata contractului. Aprobăm în 2-3 ore, iar fondurile sunt disponibile în aceeași zi dacă dosarul este complet.",
+                    ],
+                }}
+                relatedLinks={[
+                    { href: "/credite/credit-pentru-bugetari", label: "Credit pentru angajați la stat", desc: "Toate categoriile de angajați bugetari." },
+                    { href: "/credite/credit-pentru-militari", label: "Credit pentru militari", desc: "Condiții similare pentru personalul Ministerului Apărării." },
+                ]}
+            />
+
+            <HowItWorks />
+
+            <CreditFAQ items={faqItems} />
+
             <WhyBento />
         </>
     );

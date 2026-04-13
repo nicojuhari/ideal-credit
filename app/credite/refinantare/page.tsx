@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import { Check, Briefcase, User, ArrowRight, ShieldAlert } from "lucide-react";
 import { refinantareSchema } from "@/lib/schema";
-import type { FaqItem } from "@/components/FAQ";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
     title: "Refinanțare Credit în Moldova - Reduci Rata Lunară | Ideal Credit",
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
 
 const refinantareFaqItems: FaqItem[] = [
     {
-        question: "Pot refinanța un credit de la altă IFN, nu doar de la bancă?",
+        question: "Pot refinanța un credit de la altă OCN, nu doar de la bancă?",
         answer: "Da. Preluăm credite de la orice instituție financiară - nebancară sau bancară. Nu contează de unde ai creditul actual.",
     },
     {
@@ -44,16 +43,6 @@ const refinantareFaqItems: FaqItem[] = [
     },
 ];
 
-const refinantareFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: refinantareFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
-
 const worthRefinancingItems = [
     "Plătești rate la 2 sau mai multe credite și vrei să simplifici",
     "Rata actuală consumă prea mult din venitul sau profitul lunar",
@@ -62,7 +51,7 @@ const worthRefinancingItems = [
     "Vrei să eliberezi un garant de pe contractul actual",
 ];
 
-const businessProducts = ["Credite IFN pentru SRL și ÎI", "Credite bancare pentru firme", "Linii de credit și overdraft"];
+const businessProducts = ["Credite OCN pentru SRL și ÎI", "Credite bancare pentru firme", "Linii de credit și overdraft"];
 
 const personalProducts = ["Credite de consum nebancare", "Credite bancare personale", "Credite până la salariu"];
 
@@ -72,20 +61,16 @@ export default function RefinantarePage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([refinantareSchema, refinantareFaqSchema]),
+                    __html: JSON.stringify(refinantareSchema),
                 }}
             />
             {/* Hero */}
             <ServiceHero
-                title={
-                    <>
-                        Refinanțare credit -<br />o singură rată, condiții mai bune
-                    </>
-                }
-                subtitle="Preluăm credite de la alte IFN-uri sau bănci. Evaluăm și cu istoric negativ în biroul de credit."
+                title={<>Refinanțare credit - cu condiții mai bune</>}
+                subtitle="Preluăm credite de la alte OCN-uri sau bănci. Evaluăm și cu istoric negativ în biroul de credit."
             />
 
-            {/* 1. Când merită refinanțarea? */}
+            {/* Când merită refinanțarea */}
             <section className="container">
                 <h2 className="title text-center">Când merită refinanțarea?</h2>
                 <div className="max-w-2xl mx-auto card flex flex-col gap-5">
@@ -101,7 +86,7 @@ export default function RefinantarePage() {
                 </div>
             </section>
 
-            {/* 2. Ce preluăm */}
+            {/* Ce preluăm */}
             <section className="container">
                 <h2 className="title text-center">Ce credite preluăm</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -140,7 +125,7 @@ export default function RefinantarePage() {
                 </div>
             </section>
 
-            {/* 3. Istoric negativ */}
+            {/* Istoric negativ */}
             <section className="container">
                 <div className="max-w-2xl mx-auto rounded-xl border border-white/8 bg-black-600/50 p-6 md:p-8 flex flex-col gap-4">
                     <div className="flex items-center gap-3">
@@ -163,18 +148,54 @@ export default function RefinantarePage() {
                 </div>
             </section>
 
-            {/* 4. Cum funcționează */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Cine poate refinanța"
+                eligibleIf={[
+                    "Ai unul sau mai multe credite active la orice instituție financiară",
+                    "Rata lunară actuală este greu de gestionat",
+                    "Vrei să simplifici mai multe obligații într-una singură",
+                    "Evaluăm și cu istoric negativ în biroul de credit",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Contractul de credit actual (sau toate contractele, dacă sunt mai multe)",
+                    "Extras de cont cu istoricul de plată",
+                    "Adeverință de salariu sau alt document de venit",
+                    "Actele firmei (dacă refinanțezi un credit de afaceri)",
+                ]}
+                note="Calculăm împreună dacă refinanțarea are sens financiar pentru situația ta - îți prezentăm numerele concrete înainte de orice decizie."
+                description={{
+                    title: "Refinanțare credite în Moldova - OCN și bănci",
+                    paragraphs: [
+                        "Refinanțarea înseamnă să înlocuiești un credit existent cu unul nou, cu condiții mai avantajoase - rată mai mică, termen mai lung sau mai multe credite consolidate într-unul singur. La Ideal Credit preluăm credite de la orice instituție financiară din Moldova, indiferent dacă este OCN sau bancă.",
+                        "Refinanțarea are sens când rata lunară actuală consumă prea mult din venit, când ai mai multe credite greu de urmărit sau când dobânda actuală este mai mare decât ce poți obține acum. Nu promitem că întotdeauna e avantajoasă - calculăm împreună și îți prezentăm numerele concrete înainte de semnare.",
+                        "Evaluăm și clienți cu întârzieri sau incident în biroul de credit. Nu este refuz automat - analizăm cauza, vechimea incidentului și situația actuală de venit. Dacă finanțarea are sens pentru tine, găsim o soluție. Dacă nu, îți spunem direct.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-afaceri-mici",
+                        label: "Credit pentru afaceri mici",
+                        desc: "Finanțare nouă pentru capital de lucru sau investiții.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-nevoi-personale",
+                        label: "Credit personal",
+                        desc: "Credit de consum cu rată fixă și costuri transparente.",
+                    },
+                    {
+                        href: "/credite/credit-capital-de-lucru",
+                        label: "Credit capital de lucru",
+                        desc: "Lichiditate rapidă pentru firmele din Moldova.",
+                    },
+                ]}
+            />
 
-            {/* 5. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={refinantareFaqItems} />
-            </section>
+            <HowItWorks />
 
-            {/* 6. CTA */}
+            <CreditFAQ items={refinantareFaqItems} />
+
+            {/* CTA */}
             <section className="container">
                 <div className="rounded-2xl border border-white/5 bg-black-600/50 p-8 md:p-10 text-center flex flex-col items-center gap-6">
                     <div>

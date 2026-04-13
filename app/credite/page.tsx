@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const hubFaqItems: FaqItem[] = [
     {
         question: "Care este diferența dintre un credit nebancar și un credit bancar?",
-        answer: "Un credit nebancar este acordat de o instituție financiară nebancară (IFN), autorizată și supravegheată de CNPF. Principala diferență față de bănci: procesul de aprobare este mai rapid (2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri), documentația este mai simplă și evaluarea este mai flexibilă - acceptăm clienți refuzați de bănci.",
+        answer: "Un credit nebancar este acordat de o instituție financiară nebancară (OCN), autorizată și supravegheată de CNPF. Principala diferență față de bănci: procesul de aprobare este mai rapid (2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri), documentația este mai simplă și evaluarea este mai flexibilă - acceptăm clienți refuzați de bănci.",
     },
     {
         question: "Cât timp durează aprobarea unui credit?",

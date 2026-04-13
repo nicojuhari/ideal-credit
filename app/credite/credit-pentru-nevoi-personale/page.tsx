@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import Info from "@/components/ui/Info";
-import { Check, X, Home, Tv, Activity, Cake, Plane, Zap, Hammer, Wallet, ArrowRight } from "lucide-react";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
+import { Home, Tv, Activity, Cake, Plane, Zap } from "lucide-react";
 import { personalLoanSchema } from "@/lib/schema";
-import type { FaqItem } from "@/components/FAQ";
-
-const FAQ = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
@@ -37,23 +35,13 @@ const personalFaqItems: FaqItem[] = [
     },
     {
         question: "Cum primesc banii după aprobare?",
-        answer: "Virement bancar sau numerar la birou - alegem împreună ce e mai convenabil pentru tine.",
+        answer: "Transfer bancar sau numerar la birou - alegem împreună ce e mai convenabil pentru tine.",
     },
     {
         question: "Pot rambursa creditul mai devreme?",
         answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată - nicio penalitate.",
     },
 ];
-
-const personalFaqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: personalFaqItems.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
 
 const useCases = [
     {
@@ -88,34 +76,13 @@ const useCases = [
     },
 ];
 
-const relatedProducts = [
-    {
-        href: "/credite/credit-pentru-reparatie",
-        label: "Credit reparație",
-        desc: "Renovezi cu rate fixe și costuri clare.",
-        icon: Hammer,
-    },
-    {
-        href: "/credite/credit-pina-la-salariu",
-        label: "Până la salariu",
-        desc: "Sumă mică acoperită rapid, rambursare la următorul salariu.",
-        icon: Wallet,
-    },
-    {
-        href: "/credite/refinantare",
-        label: "Refinanțare",
-        desc: "Consolidezi creditele existente, reduci rata lunară.",
-        icon: ArrowRight,
-    },
-];
-
 export default function CreditNevoiPersonalePage() {
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([personalLoanSchema, personalFaqSchema]),
+                    __html: JSON.stringify(personalLoanSchema),
                 }}
             />
             {/* Hero */}
@@ -124,7 +91,7 @@ export default function CreditNevoiPersonalePage() {
                 subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
             />
 
-            {/* 1. Când folosești un credit personal */}
+            {/* Use-cases tile grid */}
             <section className="container">
                 <h2 className="title text-center">Când folosești un credit personal</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
@@ -157,81 +124,52 @@ export default function CreditNevoiPersonalePage() {
                 </div>
             </section>
 
-            {/* 2. Ce nu ți se cere */}
-            <section className="container">
-                <div className="max-w-2xl mx-auto card flex flex-col gap-5">
-                    <h2 className="text-xl font-semibold text-white">Ce nu ți se cere</h2>
-                    <ul className="space-y-3">
-                        {[
-                            "Garant obligatoriu pentru sume mici",
-                            "Destinație specifică a banilor - folosești cum ai nevoie",
-                            "Verificare exclusivă la biroul de credit - evaluăm situația reală",
-                            "Comisioane de analiză sau de deschidere a dosarului",
-                        ].map((item) => (
-                            <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                <X className="w-4 h-4 shrink-0 text-red-400/80 mt-0.5" strokeWidth={2.5} />
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+            <CreditPageContent
+                eligibilityTitle="Condiții de bază"
+                eligibleIf={[
+                    "Vârsta de la 23 de ani",
+                    "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
+                    "Buletin de identitate valabil",
+                    "Capacitate de rambursare demonstrabilă",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Adeverință de salariu sau alt document de venit",
+                    "Ultimele 3 extrase de cont bancar (recomandat)",
+                    "Actele garantului sau ale bunului gajat (dacă este cazul)",
+                ]}
+                note="Garanțiile depind de suma solicitată și profilul de risc. Comunicăm cerința clar înainte de semnarea contractului."
+                description={{
+                    title: "Credit personal rapid în Moldova",
+                    paragraphs: [
+                        "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
+                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu cerem garant obligatoriu pentru sume mai mici și nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar.",
+                        "Aprobăm cererile în 2-3 ore. Dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Dacă ai întrebări despre sumă, termen sau garanții, discutăm înainte de a depune dosarul - fără surprize după semnare.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-reparatie",
+                        label: "Credit pentru reparație",
+                        desc: "Renovezi casa cu rate fixe și costuri clare.",
+                    },
+                    {
+                        href: "/credite/credit-pina-la-salariu",
+                        label: "Credit până la salariu",
+                        desc: "Sumă mică pentru urgențe, rambursare la salariu.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-automobil",
+                        label: "Credit pentru automobil",
+                        desc: "Cumperi sau repari mașina cu finanțare rapidă.",
+                    },
+                ]}
+            />
 
-            {/* 3. Condiții */}
-            <section className="container">
-                <h2 className="title text-center">Condiții de bază</h2>
-                <div className="max-w-lg mx-auto card flex flex-col gap-4">
-                    {[
-                        "Vârsta de la 23 de ani",
-                        "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
-                        "Buletin de identitate valabil",
-                        "Posibil garant sau gaj în funcție de suma solicitată",
-                    ].map((item) => (
-                        <div key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                            <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                            {item}
-                        </div>
-                    ))}
-                </div>
-                <Info className="mt-6">
-                    Garanțiile depind de suma solicitată și profilul de risc. Comunicăm asta clar înainte de semnare - fără surprize.
-                </Info>
-            </section>
+            <HowItWorks />
 
-            {/* 4. Cum funcționează */}
-            <section className="container">
-                <HowItWorks />
-            </section>
+            <CreditFAQ items={personalFaqItems} />
 
-            {/* 5. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ items={personalFaqItems} />
-            </section>
-
-            {/* 6. Produse înrudite */}
-            <section className="container">
-                <h2 className="title text-center">Produse înrudite</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {relatedProducts.map(({ href, label, desc, icon: Icon }) => (
-                        <Link
-                            key={href}
-                            href={href}
-                            className="group flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-black-600/50 hover:border-white/15 hover:bg-black-600 transition-colors duration-200"
-                        >
-                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 group-hover:bg-brand-500/20 transition-colors">
-                                <Icon size={20} />
-                            </span>
-                            <span className="flex flex-col min-w-0">
-                                <span className="text-sm font-medium text-white group-hover:text-white transition-colors">{label}</span>
-                                <span className="mt-0.5 text-xs text-gray-500 leading-snug">{desc}</span>
-                            </span>
-                        </Link>
-                    ))}
-                </div>
-            </section>
-
-            {/* 7. ShortAboutUs */}
             <WhyBento />
         </>
     );
