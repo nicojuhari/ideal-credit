@@ -19,7 +19,7 @@ import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCause
 export const metadata: Metadata = {
     title: "Credite Nebancare în Moldova | Ideal Credit",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice în Moldova. Dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore (persoane fizice) sau 1-2 zile lucrătoare (afaceri). Din 2010.",
+        "Credite nebancare pentru afaceri și consum în Moldova. Dobândă fixă, fără comisioane ascunse. Decizie rapidă. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/" },
 };
 
@@ -118,7 +118,8 @@ export default async function HomePage() {
                     </div>
                 </div>
                 <Info className="mt-6">
-                    În funcție de suma solicitată și situația financiară, pot fi necesare garanții suplimentare: garant personal sau gaj imobil.
+                    În funcție de suma solicitată și situația financiară, pot fi necesare garanții suplimentare: garant personal sau gaj
+                    imobil.
                 </Info>
             </section>
 

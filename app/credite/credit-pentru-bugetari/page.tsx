@@ -9,9 +9,9 @@ import type { FaqItem } from "@/components/CreditFAQ";
 import { Check, Stethoscope, Shield, BadgeCheck, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Credite pentru Bugetari - Medici, Militari, Polițiști | Ideal Credit",
+    title: "Credite pentru Angajați la Stat în Moldova | Ideal Credit",
     description:
-        "Credite pentru angajați la stat: medici, militari, polițiști și alți bugetari. Condiții adaptate venitului bugetar, dobândă fixă, aprobare rapidă.",
+        "Credite pentru bugetari: medici, militari, polițiști, profesori și funcționari. Condiții adaptate venitului de stat, dobândă fixă, aprobare în 2-3 ore.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-bugetari" },
 };
 

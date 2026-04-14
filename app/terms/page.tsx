@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Termeni și Condiții - OCN Ideal Credit SRL",
-  description: "Termeni și Condiții - OCN Ideal Credit SRL",
+  description:
+    "Citește condițiile contractuale ale OCN Ideal Credit SRL: drepturi, obligații, dobânzi, rambursare și informații legale pentru clienții noștri.",
   alternates: { canonical: "https://idealcredit.md/terms" },
 };
 

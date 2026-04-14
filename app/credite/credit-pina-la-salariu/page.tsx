@@ -8,9 +8,9 @@ import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit pînă la salariu | Credit urgent | Ideal Credit",
+    title: "Credit până la salariu | Credit urgent | Ideal Credit",
     description:
-        "Credit pînă la salariu pentru persoanele angajate oficial și cu venit constant. Aprobare rapidă, dobânzi avantajoase și transparență totală. Aplică online!",
+        "Credit până la salariu pentru persoanele angajate oficial și cu venit constant. Aprobare rapidă, dobânzi avantajoase și transparență totală. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pina-la-salariu" },
 };
 
@@ -47,8 +47,8 @@ export default function CreditPinaLaSalariuPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
             {/* Hero */}
             <ServiceHero
-                title={"Credit pînă la salariu"}
-                subtitle="Oferim credit pînă la salariu pentru persoanele angajate oficial. Soluția rapidă pentru cheltuieli neprevăzute."
+                title={"Credit până la salariu"}
+                subtitle="Oferim credit până la salariu pentru persoanele angajate oficial. Soluția rapidă pentru cheltuieli neprevăzute."
             />
 
             <CreditPageContent

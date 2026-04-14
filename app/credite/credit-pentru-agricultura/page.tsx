@@ -12,7 +12,7 @@ import { businessCreditSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
     description:
-        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital de lucru sezonier. Până la 300.000 lei, decizie în 1-2 zile lucrătoare.",
+        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei. Până la 300.000 lei.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-agricultura" },
 };
 

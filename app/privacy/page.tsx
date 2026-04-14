@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Politica de Confidențialitate - OCN Ideal Credit SRL",
-    description: "Politica de Confidențialitate - OCN Ideal Credit SRL",
+    description:
+        "Află cum colectăm, stocăm și protejăm datele tale personale conform legislației GDPR și normelor moldovenești. Drepturile tale ca utilizator Ideal Credit.",
+    alternates: { canonical: "https://idealcredit.md/privacy" },
 };
 
 export default function PrivacyPage() {

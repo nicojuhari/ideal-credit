@@ -12,7 +12,7 @@ import { businessCreditSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
     description:
-        "Credit nebancar pentru pentru afaceri mici din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare. Până la 300.000 lei.",
+        "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare. Până la 300.000 lei.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
 };
 

@@ -8,7 +8,7 @@ import { yearsSinceFoundation } from "@/lib/utils";
 export const metadata: Metadata = {
     title: "Despre noi | Ideal Credit - Companie de creditare",
     description:
-        "Ideal Credit este o instituție financiară nebancară cu peste 16 ani experiență în Moldova. Credite pentru persoane fizice și afaceri, transparente, rapide și fără costuri ascunse.",
+        "Ideal Credit - instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/despre-noi" },
 };
 

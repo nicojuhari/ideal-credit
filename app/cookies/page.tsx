@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Politica de Cookies - OCN Ideal Credit SRL",
-    description: "Politica de Cookies - OCN Ideal Credit SRL",
+    description:
+        "Cum folosim cookie-urile pe idealcredit.md: tipuri de cookies, servicii terțe (Google, Meta) și cum le poți controla sau dezactiva din browser.",
+    alternates: { canonical: "https://idealcredit.md/cookies" },
 };
 
 export default function CookiesPage() {

@@ -8,9 +8,9 @@ import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit pentru automobil | Ideal Credit",
+    title: "Credit pentru Automobil în Moldova | Ideal Credit",
     description:
-        "Credit pentru cumpărarea sau repararea automobilului. Obține rapid banii necesari, cu dobândă fixă și condiții transparente. Aplică online!",
+        "Credit pentru cumpărarea sau repararea automobilului în Moldova. Dobândă fixă, fără restricții pe tipul mașinii. Decizie în 2-3 ore. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-automobil" },
 };
 

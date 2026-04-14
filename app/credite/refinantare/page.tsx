@@ -10,7 +10,7 @@ import { Check, Briefcase, User, ArrowRight, ShieldAlert } from "lucide-react";
 import { refinantareSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Refinanțare Credit în Moldova - Reduci Rata Lunară | Ideal Credit",
+    title: "Refinanțare Credit Moldova - Rată Mai Mică | Ideal Credit",
     description:
         "Refinanțare credite nebancare și bancare în Moldova. Consolidează datoriile, reduci rata lunară. Evaluăm și cu istoric negativ. Decizie în 2-3 ore.",
     alternates: { canonical: "https://idealcredit.md/credite/refinantare" },
@@ -66,7 +66,7 @@ export default function RefinantarePage() {
             />
             {/* Hero */}
             <ServiceHero
-                title={<>Refinanțare credit - cu condiții mai bune</>}
+                title={<>Refinanțare credit cu rată mai mică</>}
                 subtitle="Preluăm credite de la alte OCN-uri sau bănci. Evaluăm și cu istoric negativ în biroul de credit."
             />
 
