@@ -244,8 +244,8 @@
   .bg-squares {
     background-color: #0b0b0b;
     background-image:
-      linear-gradient(to right, #191919 1px, transparent 1px),
-      linear-gradient(to bottom, #191919 1px, transparent 1px);
+      linear-gradient(to right, #212121 1px, transparent 1px),
+      linear-gradient(to bottom, #212121 1px, transparent 1px);
     background-size: 60px 60px;
     background-position: top center;
     position: absolute;
