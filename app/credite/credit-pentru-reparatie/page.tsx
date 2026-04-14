@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Este obligatorie garanția cu imobilul?",
-        answer: "Nu întotdeauna. Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari poate fi cerută garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+        answer: "La primul credit, fidejusorul (garant personal) este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu plăți la zi pot obține finanțarea fără fidejusor. Comunicăm cerința concretă înainte de depunerea dosarului.",
     },
     {
         question: "Pot obține credit pentru reparație dacă stau în chirie?",

@@ -38,7 +38,7 @@ export const FAQ_ITEMS = [
     },
     {
         question: "Pot obține credit doar cu buletinul, fără gaj?",
-        answer: "Da, în anumite cazuri. Dacă ai venit stabil și istoric de plată bun, poți obține credit fără garanții suplimentare. Pentru sume mai mari, cerem fidejusiune sau gaj imobil.",
+        answer: "Da. La primul credit solicităm întotdeauna un fidejusor (garant personal) - acesta nu este opțional. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau dacă venitul nu este stabil.",
     },
     {
         question: "Cât timp durează aprobarea?",
@@ -66,7 +66,11 @@ export const FAQ_ITEMS = [
     },
     {
         question: "Ce tipuri de garanții acceptați?",
-        answer: "Garanții imobiliare (locuință, teren) sau garanție personală (fidejusiune). La primul credit, de obicei solicităm un fidejusor. Clienții cu istoric bun de plată beneficiază de condiții mai flexibile.",
+        answer: "Există două tipuri: fidejusiunea (garanție personală - o persoană care garantează cu venitul său) și gajul imobiliar (locuință sau teren). La primul credit, fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
+    },
+    {
+        question: "Pot obține credit fără fidejusor (garant)?",
+        answer: "Da, dacă ești client existent cu un istoric bun de plăți, fără întârzieri, și cu venituri stabile dovedite. Clienții recurenți cu dosar solid pot beneficia de condiții mai avantajoase - inclusiv reducere de dobândă și fără obligativitatea fidejusorului. La primul credit, fidejusorul rămâne obligatoriu.",
     },
     {
         question: "Care este suma maximă pe care o pot obține?",

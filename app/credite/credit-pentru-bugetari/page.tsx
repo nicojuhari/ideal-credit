@@ -30,7 +30,7 @@ const bugetariFaqItems: FaqItem[] = [
     },
     {
         question: "Este garanția obligatorie pentru bugetari?",
-        answer: "Pentru sume mici, nu. Pentru sume mai mari, poate fi necesară garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+        answer: "La primul credit, fidejusorul (garant personal) este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau dacă venitul nu acoperă confortabil rata. Bugetarii cu angajare de lungă durată și fără restanțe pot beneficia de condiții mai bune la credite repetate, inclusiv fără fidejusor.",
     },
     {
         question: "Cât timp durează aprobarea?",

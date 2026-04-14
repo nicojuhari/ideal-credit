@@ -35,7 +35,7 @@ const investFaqItems: FaqItem[] = [
     },
     {
         question: "Ce garanții sunt necesare pentru un credit investițional?",
-        answer: "Depinde de sumă. Pentru sume mai mari, cerem garant personal sau gaj imobil. Comunicăm cerința de garanție înainte de depunerea dosarului.",
+        answer: "La primul credit, fidejusorul (garant personal) este întotdeauna obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau fluxuri de venituri nestabile.",
     },
     {
         question: "Pot combina creditul investițional cu capital de lucru?",

@@ -119,7 +119,7 @@ export default function PreContractContent({
                                 Pentru obţinerea creditului, este obligatoriu să se încheie:
                             </td>
                             <td>
-                                În funcție de evaluarea riscului de credit, pot fi încheiate contracte de garant personal sau gaj (imobil)
+                                La primul credit, fidejusiunea (contract de garant personal) este obligatorie. Gajul imobiliar poate fi solicitat suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu istoricul de plăți fără restanțe pot beneficia de condiții preferențiale, inclusiv fără fidejusiune.
                             </td>
                         </tr>
                         <tr>

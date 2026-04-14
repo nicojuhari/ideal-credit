@@ -83,8 +83,7 @@ export default function TermsPage() {
         veniturilor și altor factori relevanți.
       </p>
       <p>
-        5.3. În funcție de evaluarea riscului de credit, se pot solicita garanții
-        adiționale, cum ar fi fidejusiune (garant) sau gaj (imobil).
+        5.3. La acordarea primului credit, fidejusiunea (garant personal) este obligatorie. Gajul imobiliar poate fi solicitat suplimentar în cazul sumelor mari sau al veniturilor nestabile. Clienții cu un istoric de rambursare fără întârzieri și venituri stabile dovedite pot beneficia de condiții preferențiale la credite ulterioare, inclusiv fără obligativitatea fidejusiunii.
       </p>
 
       <h2 className="text-xl mt-8 mb-2">6. Dobânzi și comisioane</h2>

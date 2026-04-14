@@ -29,7 +29,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Este obligatorie garanția cu mașina sau un imobil?",
-        answer: "Depinde de sumă. Pentru sume mai mici garanția nu este necesară. Pentru sume mai mari, poate fi cerută garant personal sau gaj. Comunicăm cerința clar înainte de depunerea dosarului.",
+        answer: "La primul credit, fidejusorul (garant personal) este obligatoriu, indiferent de sumă. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
     },
     {
         question: "Cât timp durează aprobarea?",
@@ -75,8 +75,16 @@ export default function CreditAutomobilPage() {
                     ],
                 }}
                 relatedLinks={[
-                    { href: "/credite/credit-pentru-nevoi-personale", label: "Credit pentru nevoi personale", desc: "Credit flexibil pentru orice cheltuială personală." },
-                    { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Finanțezi renovarea casei cu rate fixe." },
+                    {
+                        href: "/credite/credit-pentru-nevoi-personale",
+                        label: "Credit pentru nevoi personale",
+                        desc: "Credit flexibil pentru orice cheltuială personală.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-reparatie",
+                        label: "Credit pentru reparație",
+                        desc: "Finanțezi renovarea casei cu rate fixe.",
+                    },
                 ]}
             />
 

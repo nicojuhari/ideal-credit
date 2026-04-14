@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const businessFaqItems: FaqItem[] = [
     {
         question: "Pot obține credit pentru SRL fără gaj?",
-        answer: "Da, pentru sume până la un anumit plafon stabilit după analiza firmei. Pentru sume mai mari, cerem garant personal sau gaj imobil. Comunicăm limita înainte de cererea formală.",
+        answer: "La primul credit, fidejusorul (garant personal - de obicei administratorul firmei) este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau fluxuri financiare nestabile.",
     },
     {
         question: "Ce se întâmplă dacă firma mea are mai puțin de un an de activitate?",
@@ -130,7 +130,7 @@ export default function CreditAfaceriMiciPage() {
                     "Extrase bancare - ultimele 3-6 luni",
                     "Actele de proprietate (dacă se solicită gaj)",
                 ]}
-                note="În funcție de suma solicitată, pot fi necesare garanții suplimentare: garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului."
+                note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu dosar solid pot obține creditul fără fidejusor."
                 description={{
                     title: "Credit nebancar pentru afaceri mici în Moldova",
                     paragraphs: [

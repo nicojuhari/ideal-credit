@@ -110,8 +110,8 @@ export default async function HomePage() {
                     </div>
                 </div>
                 <Info className="mt-6">
-                    În funcție de suma solicitată și situația financiară, pot fi necesare garanții suplimentare: garant personal sau gaj
-                    imobil.
+                    La primul credit este obligatoriu un fidejusor (garant personal). Pentru sume mari sau venituri nestabile poate fi cerut
+                    suplimentar gaj imobil. Clienții reptați, fără întârzieri pot beneficia de condiții mai bune, fără fidejusor.
                 </Info>
             </section>
 

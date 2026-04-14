@@ -164,7 +164,7 @@ export default function Footer() {
                         a creditului.
                     </li>
                     <li>
-                        Costului total al creditului (care include dobânzi, comisioane, taxe, penalități, dobânzi de întârziere și orice alt
+                        Costul total al creditului (care include dobânzi, comisioane, taxe, penalități, dobânzi de întârziere și orice alt
                         tip de plată) să nu fie mai mare decât valoarea debursată conform contractului (cu excepția contractelor ipotecare).
                     </li>
                 </ul>

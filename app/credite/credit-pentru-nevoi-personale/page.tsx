@@ -138,13 +138,13 @@ export default function CreditNevoiPersonalePage() {
                     "Ultimele 3 extrase de cont bancar (recomandat)",
                     "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
                 ]}
-                note="Garanțiile depind de suma solicitată și situația ta financiară. Comunicăm cerința clar înainte de semnarea contractului."
+                note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
                 description={{
                     title: "Credit personal rapid în Moldova",
                     paragraphs: [
                         "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
-                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit solicităm de obicei un fidejusor; clienții cu istoric bun de plată beneficiază de condiții mai flexibile.",
-                        "Aprobăm cererile în 2-3 ore. Dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Dacă ai întrebări despre sumă, termen sau garanții, discutăm înainte de a depune dosarul - fără surprize după semnare.",
+                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) este obligatoriu. Pentru sume mari sau venituri nestabile poate fi cerut suplimentar gaj imobil.",
+                        "Clienții recurenți cu istoric bun de plată și venituri stabile pot beneficia de dobândă redusă și fără fidejusor. Aprobăm în 2-3 ore - dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Discutăm cerințele de garanție înainte de depunerea dosarului - fără surprize după semnare.",
                     ],
                 }}
                 relatedLinks={[

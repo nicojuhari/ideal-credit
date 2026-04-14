@@ -25,7 +25,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Când trebuie să returnez banii?",
-        answer: "La data primirii salariului - de obicei în 15-30 de zile. Dacă ai nevoie de mai mult timp, putem structura rambursarea în 2-3 rate mici pe lunile următoare.",
+        answer: "La data primirii salariului - de obicei în 15-30 de zile. Dacă ai nevoie de mai mult timp, putem structura rambursarea în cîteva rate.",
     },
     {
         question: "Ce se întâmplă dacă nu pot plăti la timp?",
@@ -69,7 +69,7 @@ export default function CreditPinaLaSalariuPage() {
                     title: "Credit până la salariu - soluție rapidă pentru urgențe",
                     paragraphs: [
                         "Creditul până la salariu este o finanțare pe termen scurt pentru angajații cu venit stabil care au nevoie de bani rapizi pentru o cheltuială neprevăzută - o reparație urgentă, o factură medicală, o situație de familie. Suma este mică, termenul este scurt, procesul este simplu.",
-                        "Aprobăm în câteva ore. Nu ai nevoie de garant, nu ai nevoie de destinație justificată. Banii sunt ai tăi să-i folosești cum ai nevoie. Dacă lucrezi la același angajator de mai mult timp, procesul este și mai rapid. Rambursezi la salariu sau în 2-3 rate mici - alegem împreună varianta care se potrivește situației tale.",
+                        "Aprobăm în câteva ore. Nu ai nevoie de destinație justificată - banii sunt ai tăi să-i folosești cum ai nevoie. La primul credit solicităm un fidejusor (garant personal); Rambursezi la salariu sau în cîteva rate - alegem împreună varianta care se potrivește situației tale.",
                     ],
                 }}
                 relatedLinks={[

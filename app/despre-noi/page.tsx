@@ -155,9 +155,10 @@ export default function DespreNoiPage() {
                             <h2 className="pt-6 text-2xl">Întrebări frecvente</h2>
                             <div className="space-y-4">
                                 <div>
-                                    <p className="font-semibold">Am nevoie de gaj?</p>
+                                    <p className="font-semibold">Am nevoie de garant sau gaj?</p>
                                     <p>
-                                        Depinde de suma solicitată. La primul credit solicităm de obicei un fidejusor. Pentru sume mai mari poate fi cerut gaj imobil. Îți explicăm cerința clar înainte de semnare.
+                                        La primul credit, fidejusorul (garant personal) este obligatoriu. Gajul imobiliar poate fi cerut
+                                        suplimentar pentru sume mari sau venituri nestabile.
                                     </p>
                                 </div>
                                 <div>
@@ -167,7 +168,8 @@ export default function DespreNoiPage() {
                                 <div>
                                     <p className="font-semibold">Cum primesc banii?</p>
                                     <p>
-                                        Persoanele fizice pot ridica numerar la birou sau primi transferul la card/cont bancar. Pentru afaceri, fondurile se virează întotdeauna prin transfer bancar.
+                                        Persoanele fizice pot ridica numerar la birou sau primi transferul la card/cont bancar. Pentru
+                                        afaceri, fondurile se virează întotdeauna prin transfer bancar.
                                     </p>
                                 </div>
                                 <div>
@@ -177,7 +179,8 @@ export default function DespreNoiPage() {
                                 <div>
                                     <p className="font-semibold">Ce acte am nevoie?</p>
                                     <p>
-                                        Pentru persoane fizice: buletin și un document de confirmare a veniturilor (adeverință, extras de card sau verificare BIC). Pentru firme: certificat de înregistrare și extrase bancare.{" "}
+                                        Pentru persoane fizice: buletin și un document de confirmare a veniturilor (adeverință, extras de
+                                        card sau verificare BIC). Pentru firme: certificat de înregistrare și extrase bancare.{" "}
                                         <Link href="/contacte" className="link">
                                             Contactează-ne
                                         </Link>{" "}
