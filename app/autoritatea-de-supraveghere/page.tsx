@@ -66,7 +66,7 @@ export default function AutoritateaPage() {
               (+373 22) 85 95 95
             </a>
           </div>
-          <div className="italic text-sm text-gray-400">
+          <div className="italic text-sm text-gray-500">
             * Tariful către acest număr de apel va fi considerat apel cu tarif
             normal conform rețelei și tipului de abonament al inițiatorului.
           </div>

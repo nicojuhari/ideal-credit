@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
-import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
-import { Check } from "lucide-react";
+import WhyBento from "@/components/WhyBento";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -15,71 +14,77 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-automobil" },
 };
 
+const faqItems: FaqItem[] = [
+    {
+        question: "Pot cumpăra o mașină second-hand cu acest credit?",
+        answer: "Da. Finanțăm atât mașini noi cât și second-hand, de la persoane fizice sau dealeri. Nu există restricții pe vârsta sau tipul vehiculului - analizăm capacitatea ta de rambursare, nu mașina.",
+    },
+    {
+        question: "Mașina devine proprietatea mea din prima zi?",
+        answer: "Da. Spre deosebire de leasing, la credit auto mașina este a ta imediat. Nicio restricție de kilometraj, nicio clauză de răscumpărare la final.",
+    },
+    {
+        question: "Pot obține credit și pentru reparații majore la mașina existentă?",
+        answer: "Da. Finanțăm reparații tehnice majore - motor, cutie de viteze, suspensie, caroserie - nu doar achiziții. Nu cerem ofertă de la service înainte de aprobare.",
+    },
+    {
+        question: "Este obligatorie garanția cu mașina sau un imobil?",
+        answer: "Depinde de sumă. Pentru sume mai mici garanția nu este necesară. Pentru sume mai mari, poate fi cerută garant personal sau gaj. Comunicăm cerința clar înainte de depunerea dosarului.",
+    },
+    {
+        question: "Cât timp durează aprobarea?",
+        answer: "Decizia se ia în 2-3 ore pentru dosarele complete. Banii pot fi disponibili în aceeași zi lucrătoare după semnarea contractului.",
+    },
+    {
+        question: "Pot rambursa anticipat dacă vreau să închid creditul mai repede?",
+        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată, fără nicio penalitate.",
+    },
+];
+
 export default function CreditAutomobilPage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1
-                        className="font-semibold text-center text-5xl md:text-8xl"
-                        dangerouslySetInnerHTML={{ __html: "Credit pentru automobil" }}
-                    />
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Cumpără sau repară mașina fără complicații. Finanțare rapidă, condiții clare și dobândă fixă.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
-            <section className="container">
-                <h2 className="title text-center">Condițiile de creditare</h2>
-                <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {[
-                        "Vârsta între 23 și 55 de ani",
-                        "Venit confirmat și stabil",
-                        "Buletin de identitate valabil",
-                        "Responsabilitate financiară",
-                    ].map((item) => (
-                        <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-                <Info className="mt-6">
-                    În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
-            <section className="container">
-                <HowItWorks />
-            </section>
-            <section>
-                <div className="container text-lg space-y-4">
-                    <h2 className="card-title text-center">Ce este creditul pentru automobil?</h2>
-                    <p>
-                        Credit destinat achiziției, reparației sau modernizării unui automobil. Îți oferă rapid bani pentru cumpărarea unei
-                        mașini noi sau second-hand, reparații tehnice sau accesorii.
-                    </p>
-                    <h3 className="text-2xl pt-4">Când poți folosi banii</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-400">
-                        <li>Cumpărare automobil nou sau second-hand</li>
-                        <li>Reparații tehnice majore (motor, cutie, suspensie)</li>
-                        <li>Service și întreținere curentă</li>
-                        <li>Înlocuire anvelope, baterie, sau alte piese urgente</li>
-                    </ul>
-                    <h3 className="text-2xl pt-4">Ce primești concret</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-400">
-                        <li>Aprobarea rapidă - decizie în ore</li>
-                        <li>Sume flexibile</li>
-                        <li>Dobândă fixă și clară</li>
-                    </ul>
-                </div>
-            </section>
-            <ShortAboutUs />
+            {/* Hero */}
+            <ServiceHero
+                title={"Credit pentru automobil"}
+                subtitle="Cumpără sau repară mașina fără complicații. Finanțare rapidă, condiții clare și dobândă fixă."
+            />
+
+            <CreditPageContent
+                eligibilityTitle="Condiții de creditare"
+                eligibleIf={[
+                    "Vârsta între 23 și 55 de ani",
+                    "Venit confirmat și stabil",
+                    "Buletin de identitate valabil",
+                    "Fără restanțe mari la credite active",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
+                    "Actul tehnic al autovehiculului (dacă există)",
+                    "Actele proprietarului vânzător (pentru mașini second-hand)",
+                ]}
+                note="Spre deosebire de leasing, mașina este a ta din prima zi. Nicio restricție de utilizare sau clauze de răscumpărare."
+                description={{
+                    title: "Credit auto în Moldova - cumpărare sau reparație",
+                    paragraphs: [
+                        "Creditul pentru automobil de la Ideal Credit acoperă atât achiziția unei mașini noi sau second-hand, cât și reparațiile tehnice majore la mașina pe care o ai deja. Nu există restricții pe tipul vehiculului - finanțăm autoturisme, autoutilitare sau vehicule de lucru, de la persoane fizice sau dealeri.",
+                        "Spre deosebire de leasing, mașina îți aparține din prima zi. Nu există clauze de răscumpărare la final de contract, nu există restricții de kilometraj sau modificări interzise. Este un credit simplu - iei banii, cumperi sau repari mașina, plătești rate fixe lunare.",
+                        "Aprobăm în 2-3 ore fără să cerem ofertă de la dealer sau deviz de la service înainte de analiză. Dacă ai venit stabil și fără restanțe mari la alte credite, analizăm cererea ta direct. Dobânda este fixă pe toată durata contractului.",
+                    ],
+                }}
+                relatedLinks={[
+                    { href: "/credite/credit-pentru-nevoi-personale", label: "Credit pentru nevoi personale", desc: "Credit flexibil pentru orice cheltuială personală." },
+                    { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Finanțezi renovarea casei cu rate fixe." },
+                ]}
+            />
+
+            <HowItWorks />
+
+            <CreditFAQ items={faqItems} />
+
+            <WhyBento />
         </>
     );
 }

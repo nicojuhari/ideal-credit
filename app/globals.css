@@ -2,6 +2,46 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* ─── Marquee (testimonials) ─ defined at top level so @keyframes live in the global scope ─ */
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes marquee-x-reverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.marquee {
+  position: relative;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: marquee-x var(--marquee-duration, 55s) linear infinite;
+  will-change: transform;
+}
+.marquee-track[data-reverse="true"] {
+  animation-name: marquee-x-reverse;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
 /* ─── Brand Color Palette ────────────────────────────────────────────────── */
 @theme inline {
   /* Brand (orange) */
@@ -126,7 +166,17 @@
   /* black-400 */
   --input: #212121;
   --ring: #ff9a00;
-  --radius: 0.5rem;
+  --radius: 0.875rem;
+
+  /* Layered surfaces */
+  --surface-1: #111111;
+  --surface-2: #171717;
+  --surface-3: #1d1d1d;
+
+  /* Brand gradient + glow */
+  --brand-gradient: linear-gradient(135deg, #ffb347 0%, #ff9a00 50%, #ff6a00 100%);
+  --shadow-glow: 0 10px 40px -10px rgba(255, 154, 0, 0.35), 0 0 0 1px rgba(255, 154, 0, 0.08);
+  --shadow-glow-sm: 0 6px 20px -8px rgba(255, 154, 0, 0.28);
 }
 
 @keyframes cta-slide-up {
@@ -190,10 +240,6 @@
     @apply mt-2;
   }
 
-  .link {
-    @apply text-green-400 underline;
-  }
-
   /* ── Hero grid background ── */
   .bg-squares {
     background-color: #0b0b0b;
@@ -205,6 +251,8 @@
     position: absolute;
     inset: 0;
     z-index: -1;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%);
   }
 
   .bg-squares::after {
@@ -213,6 +261,45 @@
     inset: 0;
     background: linear-gradient(to bottom, transparent, #0b0b0b 80%);
     pointer-events: none;
+  }
+
+  /* ── Brand gradient text / surfaces ── */
+  .text-brand-gradient {
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .bg-brand-gradient {
+    background: var(--brand-gradient);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-sm {
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  .ring-glow {
+    box-shadow: 0 0 0 3px rgba(255, 154, 0, 0.18), 0 0 0 1px rgba(255, 154, 0, 0.6);
+  }
+
+  /* ── Subtle noise overlay ── */
+  .noise {
+    position: relative;
+  }
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   /* ── Decorative blur orb ── */
@@ -255,7 +342,7 @@
 
   /* ── Calculator input ── */
   .input-calculator {
-    @apply rounded-lg bg-black-300 px-1 text-white outline-none font-semibold text-xl w-34 text-right h-10;
+    @apply px-1 text-white font-semibold text-xl text-right;
   }
 
   /* ── Pre-contract table ── */
@@ -335,10 +422,11 @@ input[type=number] {
   @apply leading-relaxed text-gray-300 font-extralight;
 }
 
-.richtext a {
+.richtext a,
+.link {
   font-weight: 400;
   text-decoration: underline;
-  @apply text-green-400;
+  @apply text-blue-300;
 }
 
 .richtext ul,

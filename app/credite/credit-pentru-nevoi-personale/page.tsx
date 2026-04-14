@@ -1,91 +1,176 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
-import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
-import { Check } from "lucide-react";
-import { personalLoanSchema, creditConditionsSchema } from "@/lib/schema";
+import WhyBento from "@/components/WhyBento";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
+import { Home, Tv, Activity, Cake, Plane, Zap } from "lucide-react";
+import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit pentru nevoi personale | Ideal Credit",
+    title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
     description:
-        "Credit pentru nevoi personale în Moldova cu dobânda fixă. Obține un credit pentru cheltuieli urgente, pînă la salariu sau planuri personale. Aplică Online!",
+        "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore. Până la 300.000 lei pentru orice nevoie personală.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
 };
+
+const personalFaqItems: FaqItem[] = [
+    {
+        question: "Pot obține credit dacă am istoricul de credit negativ?",
+        answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează situația actuală - venit stabil, capacitate de rambursare și comportamentul recent.",
+    },
+    {
+        question: "Cât pot împrumuta fără garanții?",
+        answer: "Depinde de venitul tău și situația financiară. Comunicăm limita clară înainte de cererea formală - nu îți pierzi timpul cu un dosar complet dacă suma nu e accesibilă fără garanții.",
+    },
+    {
+        question: "Trebuie neapărat adeverință de salariu?",
+        answer: "Nu neapărat. Acceptăm orice formă de confirmare a veniturilor - adeverință de salariu, extras de card, pensie, activitate independentă sau verificare BIC. Discutăm ce ai disponibil înainte de a cere documente.",
+    },
+    {
+        question: "Pot lua un nou credit dacă am deja unul activ?",
+        answer: "Da, dacă capacitatea de rambursare o permite. Analizăm toate obligațiile existente și suma totală care poate fi gestionată confortabil.",
+    },
+    {
+        question: "Cum primesc banii după aprobare?",
+        answer: "Transfer bancar sau numerar la birou - alegem împreună ce e mai convenabil pentru tine.",
+    },
+    {
+        question: "Pot rambursa creditul mai devreme?",
+        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată - nicio penalitate.",
+    },
+];
+
+const useCases = [
+    {
+        icon: Home,
+        label: "Renovare acasă",
+        href: "/credite/credit-pentru-reparatie",
+    },
+    {
+        icon: Tv,
+        label: "Electrocasnice, mobilă",
+        href: null,
+    },
+    {
+        icon: Activity,
+        label: "Tratament medical",
+        href: null,
+    },
+    {
+        icon: Cake,
+        label: "Nuntă, botez, eveniment",
+        href: null,
+    },
+    {
+        icon: Plane,
+        label: "Vacanță planificată",
+        href: null,
+    },
+    {
+        icon: Zap,
+        label: "Urgențe financiare",
+        href: "/credite/credit-pina-la-salariu",
+    },
+];
 
 export default function CreditNevoiPersonalePage() {
     return (
         <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1 className="font-semibold text-center text-4xl md:text-8xl">Credit pentru nevoi personale</h1>
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Obține un credit pentru nevoi personale rapid și ușor, perfect pentru cheltuieli urgente sau proiecte mici.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(personalLoanSchema),
+                }}
+            />
+            {/* Hero */}
+            <ServiceHero
+                title={"Credit pentru nevoi personale"}
+                subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
+            />
+
+            {/* Use-cases tile grid */}
             <section className="container">
-                <h2 className="title text-center">Condițiile de creditare</h2>
-                <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {creditConditionsSchema.pf.list.map((item) => (
-                        <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-                <Info className="mt-6">
-                    În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
-            <section className="container">
-                <HowItWorks />
-            </section>
-            <section>
-                <div className="container text-lg space-y-4">
-                    <h2 className="card-title text-center">Ce este un credit pentru nevoi personale?</h2>
-                    <p>
-                        Este un credit de consum destinat persoanelor fizice. Îţi pune la dispoziţie bani rapid, fără destinaţie fixă,
-                        pentru orice cheltuieli planificate sau neprevăzute.
-                    </p>
-                    <h3 className="text-2xl pt-4">Când poți folosi banii</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-400">
-                        <li>Achiziţii de bunuri: electrocasnice, mobilă, electronice</li>
-                        <li>Sănătate: tratamente medicale, stomatologie</li>
-                        <li>
-                            Locuință: renovări mici,{" "}
-                            <Link href="/credite/credit-pentru-reparatie" title="Credit pentru reparație" className="link">
-                                reparații
+                <h2 className="title text-center">Când folosești un credit personal</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+                    {useCases.map(({ icon: Icon, label, href }) => {
+                        const content = (
+                            <>
+                                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500">
+                                    <Icon size={22} />
+                                </span>
+                                <span className="text-sm font-medium text-white text-center leading-snug">{label}</span>
+                            </>
+                        );
+                        return href ? (
+                            <Link
+                                key={label}
+                                href={href}
+                                className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50 hover:border-white/15 hover:bg-black-600 transition-colors"
+                            >
+                                {content}
                             </Link>
-                        </li>
-                        <li>Familie: vacanțe, nunți, evenimente</li>
-                        <li>
-                            Urgențe: plata facturilor sau{" "}
-                            <Link href="/credite/credit-pina-la-salariu" title="Credit pînă la salariu" className="link">
-                                credit pînă la salariu
-                            </Link>
-                        </li>
-                    </ul>
-                    <h3 className="text-2xl pt-4">Beneficii pentru tine</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-400">
-                        <li>Aprobare rapidă: decizie în 1-3 ore</li>
-                        <li>Rate fixe: știi exact cât plătești lunar</li>
-                        <li>Dobândă negociabilă</li>
-                        <li>Documentație minimă: buletin + adeverință de venit</li>
-                        <li>Plată imediată: banii după semnarea contractului</li>
-                    </ul>
+                        ) : (
+                            <div
+                                key={label}
+                                className="flex flex-col items-center gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50"
+                            >
+                                {content}
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
-            <ShortAboutUs />
+
+            <CreditPageContent
+                eligibilityTitle="Condiții de bază"
+                eligibleIf={[
+                    "Vârsta de la 23 de ani",
+                    "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
+                    "Buletin de identitate valabil",
+                    "Capacitate de rambursare demonstrabilă",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
+                    "Ultimele 3 extrase de cont bancar (recomandat)",
+                    "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
+                ]}
+                note="Garanțiile depind de suma solicitată și situația ta financiară. Comunicăm cerința clar înainte de semnarea contractului."
+                description={{
+                    title: "Credit personal rapid în Moldova",
+                    paragraphs: [
+                        "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
+                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit solicităm de obicei un fidejusor; clienții cu istoric bun de plată beneficiază de condiții mai flexibile.",
+                        "Aprobăm cererile în 2-3 ore. Dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Dacă ai întrebări despre sumă, termen sau garanții, discutăm înainte de a depune dosarul - fără surprize după semnare.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-reparatie",
+                        label: "Credit pentru reparație",
+                        desc: "Renovezi casa cu rate fixe și costuri clare.",
+                    },
+                    {
+                        href: "/credite/credit-pina-la-salariu",
+                        label: "Credit până la salariu",
+                        desc: "Sumă mică pentru urgențe, rambursare la salariu.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-automobil",
+                        label: "Credit pentru automobil",
+                        desc: "Cumperi sau repari mașina cu finanțare rapidă.",
+                    },
+                ]}
+            />
+
+            <HowItWorks />
+
+            <CreditFAQ items={personalFaqItems} />
+
+            <WhyBento />
         </>
     );
 }

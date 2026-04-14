@@ -78,7 +78,7 @@ export default function CookiesPage() {
                     tel: 079066566, 078805060
                 </div>
 
-                <p className="mt-8 text-gray-400">Această Politică de Cookies a fost actualizată ultima dată la 26.09.2024.</p>
+                <p className="mt-8 text-gray-500">Această Politică de Cookies a fost actualizată ultima dată la 26.09.2024.</p>
             </div>
         </div>
     );

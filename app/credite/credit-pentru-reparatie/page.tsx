@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import CalculatorCredit from "@/components/CalculatorCredit";
+import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
-import ShortAboutUs from "@/components/ShortAboutUs";
-import Info from "@/components/ui/Info";
-import RecenziiButton from "@/components/ui/RecenziiButton";
-import MainCTA from "@/components/ui/MainCTA";
-import { Check } from "lucide-react";
+import WhyBento from "@/components/WhyBento";
+import CreditPageContent from "@/components/CreditPageContent";
+import CreditFAQ from "@/components/CreditFAQ";
+import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -15,71 +14,85 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-reparatie" },
 };
 
+const faqItems: FaqItem[] = [
+    {
+        question: "Trebuie să prezint facturi de la constructor sau devize înainte de aprobare?",
+        answer: "Nu. Nu cerem devize sau facturi obligatorii pentru a aproba creditul. Dacă le ai, pot ajuta la stabilirea sumei, dar nu sunt o condiție. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar.",
+    },
+    {
+        question: "Pot folosi banii pentru orice lucrare de renovare?",
+        answer: "Da. Materiale de construcție, plata meșterilor, mobilare, instalații, ferestre, finisaje - nu există restricții pe destinația banilor odată aprobat creditul.",
+    },
+    {
+        question: "Este obligatorie garanția cu imobilul?",
+        answer: "Nu întotdeauna. Pentru sume mai mici, garanția nu este necesară. Pentru sume mai mari poate fi cerută garant personal sau gaj imobil. Comunicăm cerința înainte de depunerea dosarului.",
+    },
+    {
+        question: "Pot obține credit pentru reparație dacă stau în chirie?",
+        answer: "Da. Nu este obligatorie proprietatea imobilului. Dacă ai venit stabil și capacitate de rambursare, discutăm despre finanțare indiferent de statutul locuinței.",
+    },
+    {
+        question: "Cât timp durează aprobarea?",
+        answer: "În general 2-3 ore pentru dosarele complete. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi lucrătoare.",
+    },
+    {
+        question: "Dobânda se modifică dacă renovarea durează mai mult?",
+        answer: "Nu. Dobânda este fixă pe toată durata contractului, indiferent de câte luni durează lucrările. Rata lunară pe care o semnezi rămâne aceeași până la ultima plată.",
+    },
+];
+
 export default function CreditReparatiePage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
-            <div className="relative pt-10 md:pt-12">
-                <div className="bg-squares -mt-px" />
-                <div className="container">
-                    <RecenziiButton className="mb-16" />
-                    <h1
-                        className="font-semibold text-center text-5xl md:text-8xl"
-                        dangerouslySetInnerHTML={{ __html: "Credit pentru reparație" }}
-                    />
-                    <p className="text-center mt-6 px-4 md:px-0 text-gray-400 md:text-xl md:max-w-xl mx-auto text-lg font-light">
-                        Obține un credit pentru reparația casei sau apartamentului tău. Renovează-ți locuința acum și trăiește din plin.
-                    </p>
-                    <MainCTA className="my-18 md:mb-24" />
-                    <div className="cs-blur cs-blur--center z-[-1]" />
-                    <CalculatorCredit />
-                </div>
-            </div>
-            <section className="container">
-                <h2 className="title text-center">Condițiile de creditare</h2>
-                <ul className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {[
-                        "Vârsta între 23 și 55 de ani",
-                        "Venit confirmat și stabil",
-                        "Bun imobil în proprietate",
-                        "Responsabilitate financiară",
-                    ].map((item) => (
-                        <li key={item} className="flex text-xl items-center gap-2 card">
-                            <Check className="w-5 h-5 shrink-0 text-green-400" strokeWidth={3} />
-                            <span>{item}</span>
-                        </li>
-                    ))}
-                </ul>
-                <Info className="mt-6">
-                    În funcție de evaluarea riscului de credit, se va solicita garanții adiționale: fidejusiune sau gaj imobil.
-                </Info>
-            </section>
-            <section className="container">
-                <HowItWorks />
-            </section>
-            <section>
-                <div className="container text-lg space-y-4">
-                    <h2 className="card-title text-center">Ce este creditul pentru reparație?</h2>
-                    <p>
-                        Credit destinat lucrărilor de reparație și renovare pentru casă sau apartament. Îţi oferă rapid bani pentru
-                        materiale de construcție sau plata meșterilor.
-                    </p>
-                    <h3 className="text-2xl pt-4">Când poți folosi banii</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-400">
-                        <li>Reparații instalații (apă, gaz, electrice)</li>
-                        <li>Finisaje - zugrăveli, parchet, gresie, faianță</li>
-                        <li>Schimbare ferestre și uși</li>
-                        <li>Mobilare sau dotări pentru spațiul renovat</li>
-                    </ul>
-                    <h3 className="text-2xl pt-4">Ce primești concret</h3>
-                    <ul className="list-outside list-disc ml-6 text-gray-400">
-                        <li>Aprobarea rapidă - decizie în câteva ore</li>
-                        <li>Sume flexibile - alegi cât îţi trebuie pentru proiect</li>
-                        <li>Dobândă fixă și clară</li>
-                    </ul>
-                </div>
-            </section>
-            <ShortAboutUs />
+            {/* Hero */}
+            <ServiceHero
+                title={"Credit pentru reparație"}
+                subtitle="Obține un credit pentru reparația casei sau apartamentului tău. Renovează-ți locuința acum cu rate fixe și costuri clare."
+            />
+
+            <CreditPageContent
+                eligibilityTitle="Condiții de creditare"
+                eligibleIf={[
+                    "Vârsta între 23 și 55 de ani",
+                    "Venit confirmat și stabil",
+                    "Buletin de identitate valabil",
+                    "Locuință în proprietate sau în arendă (pentru lucrările planificate)",
+                ]}
+                documents={[
+                    "Buletin de identitate",
+                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
+                    "Actele imobilului (dacă se solicită gaj)",
+                    "Deviz estimativ de lucrări (opțional, ajută la determinarea sumei)",
+                ]}
+                note="Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
+                description={{
+                    title: "Credit pentru reparație casă sau apartament",
+                    paragraphs: [
+                        "Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renova locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
+                        "Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar, și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
+                        "Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - analizăm situația ta reală, nu doar documentele de proprietate.",
+                    ],
+                }}
+                relatedLinks={[
+                    {
+                        href: "/credite/credit-pentru-nevoi-personale",
+                        label: "Credit pentru nevoi personale",
+                        desc: "Credit flexibil pentru orice cheltuială.",
+                    },
+                    {
+                        href: "/credite/credit-pentru-automobil",
+                        label: "Credit pentru automobil",
+                        desc: "Finanțezi cumpărarea sau repararea mașinii.",
+                    },
+                ]}
+            />
+
+            <HowItWorks />
+
+            <CreditFAQ items={faqItems} />
+
+            <WhyBento />
         </>
     );
 }

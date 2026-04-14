@@ -127,8 +127,8 @@ export default function CerereOnlinePage() {
                 {/* Progress */}
                 <div className="p-4 border rounded bg-black-300/40 border-white/5 mb-6">
                     <div className="flex justify-between items-center">
-                        <p className="text-xs text-gray-400">0%</p>
-                        <p className="text-xs text-gray-400 text-right">100%</p>
+                        <p className="text-xs text-gray-500">0%</p>
+                        <p className="text-xs text-gray-500 text-right">100%</p>
                     </div>
                     <div className="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
                         <motion.div
