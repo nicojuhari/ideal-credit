@@ -78,7 +78,6 @@ const organizationSchema = {
                 "@type": "AggregateRating",
                 ratingValue: "4.9",
                 reviewCount: "23",
-                itemReviewed: { "@type": "Organization", name: "Ideal Credit" },
             },
         },
     ],
