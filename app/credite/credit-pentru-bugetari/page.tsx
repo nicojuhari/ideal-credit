@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 const bugetariFaqItems: FaqItem[] = [
     {
         question: "Ce documente sunt necesare pentru un credit bugetar?",
-        answer: "Buletin de identitate valabil, adeverință de salariu sau extras din sistemul de salarizare și, în unele cazuri, un document care confirmă angajarea la stat. Nu cerem mai mult decât este necesar.",
+        answer: "Buletin de identitate valabil și un document de confirmare a veniturilor - adeverință de salariu, extras din sistemul de salarizare sau verificare BIC. Nu cerem mai mult decât este necesar.",
     },
     {
         question: "Pot obține credit dacă sunt în perioadă de probă?",
-        answer: "Evaluăm individual. Dacă ai contract de muncă și venit demonstrabil, discutăm. Perioada de probă nu este un refuz automat.",
+        answer: "Analizăm individual. Dacă ai contract de muncă și venit demonstrabil, discutăm. Perioada de probă nu este un refuz automat.",
     },
     {
         question: "Pot lua credit dacă am deja un credit la altă instituție?",
-        answer: "Da, dacă capacitatea de rambursare o permite. Evaluăm toate obligațiile existente și stabilim suma care poate fi gestionată confortabil din veniturile tale.",
+        answer: "Da, dacă capacitatea de rambursare o permite. Analizăm toate obligațiile existente și stabilim suma care poate fi gestionată confortabil din veniturile tale.",
     },
     {
         question: "Este garanția obligatorie pentru bugetari?",
@@ -147,17 +147,17 @@ export default function CreditBugetariPage() {
                 ]}
                 documents={[
                     "Buletin de identitate",
-                    "Adeverință de salariu emisă de angajator",
+                    "Document de confirmare a veniturilor (adeverință de salariu, extras din sistemul de salarizare, verificare BIC)",
                     "Legitimație de serviciu (dacă există)",
-                    "Actele garantului sau bunului gajat (dacă este cazul)",
+                    "Actele fidejusorului sau bunului gajat (dacă este cazul)",
                 ]}
                 note="Condițiile exacte (sumă, termen, garanții) se stabilesc în funcție de venit și situația financiară a fiecărui solicitant."
                 description={{
                     title: "Credit pentru angajați la stat în Moldova",
                     paragraphs: [
-                        "Angajații din sectorul bugetar - medici, militari, polițiști, profesori, funcționari publici - beneficiază de un avantaj semnificativ în procesul de creditare: venitul stabil și garantat de stat reduce riscul de credit și simplifică evaluarea dosarului. La Ideal Credit ținăm cont de acest avantaj în analiza fiecărei cereri.",
-                        "Creditul pentru bugetari poate fi folosit pentru orice nevoie personală - renovare, cumpărare auto, cheltuieli medicale, un eveniment de familie sau orice situație neprevăzută. Nu cerem justificarea destinației banilor. Suma maximă ajunge până la 300.000 lei, iar termenul poate fi de până la 60 de luni.",
-                        "Nu este obligatorie garanția pentru sume mai mici. Procesul este simplu: aduci buletinul, adeverința de salariu și legitimația de serviciu dacă o ai. Decizia se ia în 2-3 ore, iar banii sunt disponibili în aceeași zi dacă dosarul este complet.",
+                        "Angajații din sectorul bugetar - medici, militari, polițiști, profesori, funcționari publici - au un avantaj clar în procesul de creditare: venitul stabil și garantat de stat reduce riscul și simplifică analiza dosarului. La Ideal Credit ținăm cont de acest avantaj în analiza fiecărei cereri.",
+                        "Creditul pentru bugetari poate fi folosit pentru orice nevoie personală - renovare, cumpărare auto, cheltuieli medicale, un eveniment de familie sau orice situație neprevăzută. Nu cerem justificarea destinației banilor. Termenul poate fi de până la 60 de luni, iar suma se stabilește în funcție de venit și situația financiară a fiecărui solicitant.",
+                        "Nu este obligatorie garanția pentru sume mai mici. Documentele necesare: buletin, confirmare de venituri și legitimație de serviciu dacă o ai. Decizia se ia în 2-3 ore, iar banii sunt disponibili în aceeași zi dacă dosarul este complet.",
                     ],
                 }}
                 relatedLinks={[

@@ -23,15 +23,15 @@ const businessFaqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă firma mea are mai puțin de un an de activitate?",
-        answer: "Evaluăm individual. Contează mai mult extrasele bancare și rulajul lunar decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate cu flux demonstrabil.",
+        answer: "Analizăm individual. Contează mai mult extrasele bancare și rulajul lunar decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate cu flux demonstrabil.",
     },
     {
         question: "Poate primi credit o firmă cu pierderi pe ultimul an?",
-        answer: "Evaluăm situația curentă a firmei, nu doar bilanțul anual. Dacă activitatea este stabilă acum și extrasele bancare arată rulaj activ, discutăm.",
+        answer: "Analizăm situația curentă a firmei, nu doar bilanțul anual. Dacă activitatea este stabilă acum și extrasele bancare arată rulaj activ, discutăm.",
     },
     {
         question: "Pot obține finanțare pentru mai multe nevoi simultan?",
-        answer: "Da, evaluăm suma totală necesară și structurăm creditul corespunzător - nu e nevoie să depui cereri separate pentru fiecare destinație.",
+        answer: "Da, analizăm suma totală necesară și structurăm creditul corespunzător - nu e nevoie să depui cereri separate pentru fiecare destinație.",
     },
     {
         question: "Cât de repede pot folosi banii după aprobare?",
@@ -121,8 +121,8 @@ export default function CreditAfaceriMiciPage() {
                 eligibleIf={[
                     "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
                     "Activitate economică de cel puțin 3-6 luni",
-                    "Ai nevoie de capital rapid, fără să aștepți săptămâni",
-                    "Banca te-a refuzat sau condițiile sunt prea rigide",
+                    "Ai nevoie de capital rapid, cu aprobare în 1-2 zile lucrătoare",
+                    "Cauți o analiză flexibilă, adaptată situației reale a afacerii",
                 ]}
                 documents={[
                     "Buletin de identitate al administratorului",
@@ -134,9 +134,9 @@ export default function CreditAfaceriMiciPage() {
                 description={{
                     title: "Credit nebancar pentru afaceri mici în Moldova",
                     paragraphs: [
-                        "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Nu contează dacă ești la început de drum sau dacă banca te-a refuzat - analizăm situația reală a afacerii tale, nu doar documentele formale.",
+                        "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile - nu doar documentele formale.",
                         "Pentru a te califica, ai nevoie de o firmă înregistrată în Moldova, câteva luni de activitate demonstrabilă și extrase bancare cu rulaj activ. Nu cerem plan de afaceri, profit obligatoriu sau garanție imobiliară pentru sume mai mici. Creditul poate fi folosit pentru orice nevoie legată de afacere: capital de lucru, echipamente, refinanțare sau extindere.",
-                        "Spre deosebire de o bancă, luăm decizii în 1-2 zile lucrătoare și nu te trimitem cu dosarul de la ghișeu la ghișeu. Dacă finanțarea nu este potrivită pentru situația ta, îți spunem direct - fără să îți pierzi timpul cu un dosar complet.",
+                        "Luăm decizii în 1-2 zile lucrătoare. Dacă finanțarea nu este potrivită pentru situația ta, îți spunem direct - fără să îți pierzi timpul cu un dosar complet.",
                     ],
                 }}
                 relatedLinks={[

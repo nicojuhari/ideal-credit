@@ -75,7 +75,7 @@ function FloatingCoins() {
                     <circle cx="55" cy="55" r="36" fill="#ff9a00" fillOpacity="0.1" stroke="#ff9a00" strokeWidth="1" strokeOpacity="0.5" />
                     <text
                         x="55"
-                        y="52"
+                        y="58"
                         textAnchor="middle"
                         fill="#ff9a00"
                         fillOpacity="0.85"
@@ -85,17 +85,6 @@ function FloatingCoins() {
                         letterSpacing="1"
                     >
                         MDL
-                    </text>
-                    <text
-                        x="55"
-                        y="68"
-                        textAnchor="middle"
-                        fill="#ff9a00"
-                        fillOpacity="0.5"
-                        fontSize="10"
-                        fontFamily="system-ui, sans-serif"
-                    >
-                        lei
                     </text>
                 </svg>
             </motion.div>

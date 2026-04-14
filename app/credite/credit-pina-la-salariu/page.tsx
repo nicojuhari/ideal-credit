@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 const faqItems: FaqItem[] = [
     {
-        question: "Pot obține credit până la salariu fără adeverință de salariu?",
-        answer: "Adeverința de salariu este documentul standard, dar acceptăm și extrasul de card salarial sau contractul de muncă. Dacă ai o altă dovadă de venit, discutăm înainte de a refuza cererea.",
+        question: "Trebuie neapărat adeverință de salariu?",
+        answer: "Nu neapărat. Acceptăm orice formă de confirmare a veniturilor - adeverință, extras de card salarial, contract de muncă sau verificare BIC. Discutăm ce ai disponibil înainte de a cere documente suplimentare.",
     },
     {
         question: "Care este suma maximă pe care o pot obține?",
@@ -61,8 +61,8 @@ export default function CreditPinaLaSalariuPage() {
                 ]}
                 documents={[
                     "Buletin de identitate",
-                    "Adeverință de salariu sau extras de card salarial",
-                    "Carnet de muncă sau contract de muncă (opțional)",
+                    "Document de confirmare a veniturilor (adeverință, extras de card salarial, verificare BIC etc.)",
+                    "Contract de muncă (opțional)",
                 ]}
                 note="Suma maximă depinde de venitul net lunar. Rambursarea se face la data următorului salariu sau în rate mici pe 2-3 luni."
                 description={{

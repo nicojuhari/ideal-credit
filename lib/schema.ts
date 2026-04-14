@@ -41,7 +41,7 @@ export const financialServiceSchema = {
 
 export const localBusinessChisinauSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "FinancialService"],
   name: "Ideal Credit",
   legalName: 'Organizația de Creditare Nebancară "Ideal Credit" SRL',
   url: "https://idealcredit.md/",
@@ -75,7 +75,7 @@ export const localBusinessChisinauSchema = {
 
 export const localBusinessCauseniSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "FinancialService"],
   name: "Ideal Credit",
   legalName: 'Organizația de Creditare Nebancară "Ideal Credit" SRL',
   url: "https://idealcredit.md/",
@@ -131,8 +131,8 @@ export const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      name: "Semnează contractul și primești banii",
-      text: "Dacă decizia este pozitivă, atunci semnezi contractul (în oficiul nostru) și primești banii.",
+      name: "Semnezi contractul și primești banii",
+      text: "Dacă decizia este pozitivă, semnezi contractul în oficiul nostru. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Pentru credite de afaceri, fondurile se virează prin transfer bancar.",
     },
   ],
 };
@@ -180,7 +180,7 @@ export const businessCreditSchema = {
     "Credit pentru afaceri mici - bani rapizi pentru dezvoltarea afacerilor.",
   amount: {
     "@type": "MonetaryAmount",
-    value: 1000,
+    value: 10000,
     currency: "MDL",
     minValue: 10000,
     maxValue: 300000,

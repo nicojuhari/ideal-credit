@@ -25,12 +25,12 @@ export const OFFICES = [
 
 export const FAQ_ITEMS = [
     {
-        question: "Pot obține credit pentru afacere dacă banca m-a refuzat?",
-        answer: "Da. Evaluăm individual: analizăm situația reală a afacerii tale, nu doar un scor de credit. Mulți dintre clienții noștri business au primit finanțare după un refuz bancar.",
+        question: "Pot obține credit pentru afacere chiar dacă am un profil mai puțin standard?",
+        answer: "Da. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile. Nu ne limităm la un scor de credit sau la criterii rigide.",
     },
     {
         question: "Ce sumă pot obține pentru afacerea mea?",
-        answer: "Finanțăm afaceri între 10.000 și 300.000 lei. Suma exactă depinde de veniturile firmei, extrasele bancare și garanțiile disponibile. Evaluăm în 1-3 ore.",
+        answer: "Suma minimă este 10.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client - nu există un plafon fix. Analizăm dosarul în 1-3 ore și comunicăm suma aprobată.",
     },
     {
         question: "Ce documente sunt necesare pentru un credit de afacere?",
@@ -62,15 +62,15 @@ export const FAQ_ITEMS = [
     },
     {
         question: "Pot refinanța un credit existent?",
-        answer: "Da. Preluăm credite de la alte instituții financiare sau bănci. Evaluăm dacă refinanțarea are sens financiar pentru tine și prezentăm calculul înainte de decizie.",
+        answer: "Da. Preluăm credite de la alte instituții financiare. Analizăm dacă refinanțarea are sens financiar pentru tine și prezentăm calculul înainte de decizie.",
     },
     {
         question: "Ce tipuri de garanții acceptați?",
-        answer: "Garanții imobiliare (locuință, teren) sau garanție personală (fidejusiune). Necesitatea garanției depinde de suma solicitată și profilul de risc.",
+        answer: "Garanții imobiliare (locuință, teren) sau garanție personală (fidejusiune). La primul credit, de obicei solicităm un fidejusor. Clienții cu istoric bun de plată beneficiază de condiții mai flexibile.",
     },
     {
         question: "Care este suma maximă pe care o pot obține?",
-        answer: "Până la 300.000 lei pentru credite de afaceri și până la 300.000 lei pentru credite personale. Suma exactă se stabilește după evaluarea individuală a dosarului.",
+        answer: "Suma minimă este 10.000 lei. Suma maximă nu este fixă - depinde de venit, garanțiile disponibile și situația fiecărui client. Analizăm individual și comunicăm suma accesibilă după prima discuție.",
     },
 ];
 

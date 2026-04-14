@@ -23,7 +23,7 @@ const agricFaqItems: FaqItem[] = [
     },
     {
         question: "Există perioadă de grație pentru creditul agricol?",
-        answer: "Evaluăm posibilitatea unei perioade de grație în funcție de cultura și ciclul de producție. Dacă recolta e în toamnă, discutăm un grafic adaptat - nu o rată fixă lunară care nu ține cont de sezonalitate.",
+        answer: "Analizăm posibilitatea unei perioade de grație în funcție de cultură și ciclul de producție. Dacă recolta e în toamnă, discutăm un grafic adaptat - nu o rată fixă lunară care nu ține cont de sezonalitate.",
     },
     {
         question: "Ce documente sunt necesare pentru un credit agricol?",
@@ -35,11 +35,11 @@ const agricFaqItems: FaqItem[] = [
     },
     {
         question: "Pot accesa creditul dacă arend terenul, nu îl dețin?",
-        answer: "Da, contractul de arendă este suficient ca dovadă a activității. Evaluăm capacitatea de producție și istoricul agricol, nu doar proprietatea terenului.",
+        answer: "Da, contractul de arendă este suficient ca dovadă a activității. Analizăm capacitatea de producție și istoricul agricol, nu doar proprietatea terenului.",
     },
     {
         question: "Pot refinanța un credit agricol existent la condiții mai bune?",
-        answer: "Da. Preluăm credite agricole de la alte instituții. Evaluăm dacă refinanțarea are sens financiar și prezentăm calculul înainte de decizie.",
+        answer: "Da. Preluăm credite agricole de la alte instituții financiare. Analizăm dacă refinanțarea are sens financiar și prezentăm calculul înainte de decizie.",
     },
 ];
 
@@ -149,9 +149,9 @@ export default function CreditAgriculturaPage() {
                         </ul>
                     </div>
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Cum evaluăm activitatea agricolă</h3>
+                        <h3 className="text-base font-semibold text-white">Cum analizăm activitatea agricolă</h3>
                         <p className="text-sm text-gray-500 leading-relaxed">
-                            Nu evaluăm doar un salariu lunar fix. Analizăm imaginea completă a activității tale agricole.
+                            Nu ne limităm la un salariu lunar fix. Analizăm imaginea completă a activității tale agricole.
                         </p>
                         <ul className="space-y-2 mt-1">
                             {[

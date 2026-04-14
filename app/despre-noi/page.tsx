@@ -36,7 +36,7 @@ export default function DespreNoiPage() {
                                     credite clare, corecte și rapide.
                                 </Link>
                             </p>
-                            <p>Nu suntem o bancă. Suntem mai flexibili, mai apropiați și mai omenești.</p>
+                            <p>Suntem o organizație de creditare nebancară autorizată și supravegheată de CNPF.</p>
                             <p className="text-brand-500 font-medium italic">&quot;Credite avantajoase pentru persoane serioase&quot;</p>
 
                             <h2 className="pt-6 text-2xl">Ce facem</h2>
@@ -124,8 +124,8 @@ export default function DespreNoiPage() {
                                     răspuns clar.
                                 </li>
                                 <li>
-                                    <strong>Flexibilitate reală</strong> - analizăm situația ta ca om, nu ca un algoritm. Dacă ai venituri
-                                    stabile și responsabilitate, găsim o soluție - chiar dacă banca te-a refuzat.
+                                    <strong>Flexibilitate reală</strong> - analizăm situația ta individual, nu după un algoritm rigid. Dacă
+                                    ai venituri stabile și capacitate de rambursare, găsim o soluție.
                                 </li>
                                 <li>
                                     <strong>{yearsSinceFoundation} ani de încredere</strong> - mii de clienți au obținut finanțare prin noi.
@@ -159,22 +159,20 @@ export default function DespreNoiPage() {
                             <h2 className="pt-6 text-2xl">Întrebări frecvente</h2>
                             <div className="space-y-4">
                                 <div>
-                                    <p className="font-semibold">Pot obține un credit dacă am fost refuzat de bancă?</p>
-                                    <p>
-                                        Da. Analizăm fiecare situație individual. Mulți dintre clienții noștri au venit după un refuz
-                                        bancar.
-                                    </p>
-                                </div>
-                                <div>
                                     <p className="font-semibold">Am nevoie de gaj?</p>
                                     <p>
-                                        Depinde de suma solicitată. Pentru sume mai mici, nu este necesar gaj. Îți explicăm opțiunile la
-                                        consultanța inițială.
+                                        Depinde de suma solicitată. La primul credit solicităm de obicei un fidejusor. Pentru sume mai mari poate fi cerut gaj imobil. Îți explicăm cerința clar înainte de semnare.
                                     </p>
                                 </div>
                                 <div>
                                     <p className="font-semibold">Cât de repede primesc banii?</p>
                                     <p>Decizie în 2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri.</p>
+                                </div>
+                                <div>
+                                    <p className="font-semibold">Cum primesc banii?</p>
+                                    <p>
+                                        Persoanele fizice pot ridica numerar la birou sau primi transferul la card/cont bancar. Pentru afaceri, fondurile se virează întotdeauna prin transfer bancar.
+                                    </p>
                                 </div>
                                 <div>
                                     <p className="font-semibold">Pot aplica online?</p>
@@ -183,8 +181,8 @@ export default function DespreNoiPage() {
                                 <div>
                                     <p className="font-semibold">Ce acte am nevoie?</p>
                                     <p>
-                                        Pentru persoane fizice: buletin și adeverință de venit. Pentru firme: certificat de înregistrare.{" "}
-                                        <Link href="/contact" className="link">
+                                        Pentru persoane fizice: buletin și un document de confirmare a veniturilor (adeverință, extras de card sau verificare BIC). Pentru firme: certificat de înregistrare și extrase bancare.{" "}
+                                        <Link href="/contacte" className="link">
                                             Contactează-ne
                                         </Link>{" "}
                                         și îți spunem exact ce ai nevoie.

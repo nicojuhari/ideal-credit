@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const faqItems: FaqItem[] = [
     {
         question: "Pot cumpăra o mașină second-hand cu acest credit?",
-        answer: "Da. Finanțăm atât mașini noi cât și second-hand, de la persoane fizice sau dealeri. Nu există restricții pe vârsta sau tipul vehiculului - evaluăm capacitatea ta de rambursare, nu mașina.",
+        answer: "Da. Finanțăm atât mașini noi cât și second-hand, de la persoane fizice sau dealeri. Nu există restricții pe vârsta sau tipul vehiculului - analizăm capacitatea ta de rambursare, nu mașina.",
     },
     {
         question: "Mașina devine proprietatea mea din prima zi?",
@@ -61,7 +61,7 @@ export default function CreditAutomobilPage() {
                 ]}
                 documents={[
                     "Buletin de identitate",
-                    "Adeverință de salariu sau alt document de venit",
+                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
                     "Actul tehnic al autovehiculului (dacă există)",
                     "Actele proprietarului vânzător (pentru mașini second-hand)",
                 ]}
@@ -71,7 +71,7 @@ export default function CreditAutomobilPage() {
                     paragraphs: [
                         "Creditul pentru automobil de la Ideal Credit acoperă atât achiziția unei mașini noi sau second-hand, cât și reparațiile tehnice majore la mașina pe care o ai deja. Nu există restricții pe tipul vehiculului - finanțăm autoturisme, autoutilitare sau vehicule de lucru, de la persoane fizice sau dealeri.",
                         "Spre deosebire de leasing, mașina îți aparține din prima zi. Nu există clauze de răscumpărare la final de contract, nu există restricții de kilometraj sau modificări interzise. Este un credit simplu - iei banii, cumperi sau repari mașina, plătești rate fixe lunare.",
-                        "Aprobăm în 2-3 ore fără să cerem ofertă de la dealer sau deviz de la service înainte de analiză. Dacă ai venit stabil și fără restanțe mari la alte credite, evaluăm cererea ta direct. Dobânda este fixă pe toată durata contractului.",
+                        "Aprobăm în 2-3 ore fără să cerem ofertă de la dealer sau deviz de la service înainte de analiză. Dacă ai venit stabil și fără restanțe mari la alte credite, analizăm cererea ta direct. Dobânda este fixă pe toată durata contractului.",
                     ],
                 }}
                 relatedLinks={[

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const personalFaqItems: FaqItem[] = [
     {
         question: "Pot obține credit dacă am istoricul de credit negativ?",
-        answer: "Evaluăm individual. Un incident din trecut nu înseamnă refuz automat. Contează situația actuală - venit stabil, capacitate de rambursare și comportamentul recent.",
+        answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează situația actuală - venit stabil, capacitate de rambursare și comportamentul recent.",
     },
     {
         question: "Cât pot împrumuta fără garanții?",
@@ -27,11 +27,11 @@ const personalFaqItems: FaqItem[] = [
     },
     {
         question: "Trebuie neapărat adeverință de salariu?",
-        answer: "Un document de venit este recomandat, dar evaluăm și alte surse: pensie, activitate independentă, venituri din chirie. Discutăm ce ai disponibil înainte de a cere documente.",
+        answer: "Nu neapărat. Acceptăm orice formă de confirmare a veniturilor - adeverință de salariu, extras de card, pensie, activitate independentă sau verificare BIC. Discutăm ce ai disponibil înainte de a cere documente.",
     },
     {
         question: "Pot lua un nou credit dacă am deja unul activ?",
-        answer: "Da, dacă capacitatea de rambursare o permite. Evaluăm toate obligațiile existente și suma totală care poate fi gestionată confortabil.",
+        answer: "Da, dacă capacitatea de rambursare o permite. Analizăm toate obligațiile existente și suma totală care poate fi gestionată confortabil.",
     },
     {
         question: "Cum primesc banii după aprobare?",
@@ -134,16 +134,16 @@ export default function CreditNevoiPersonalePage() {
                 ]}
                 documents={[
                     "Buletin de identitate",
-                    "Adeverință de salariu sau alt document de venit",
+                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
                     "Ultimele 3 extrase de cont bancar (recomandat)",
-                    "Actele garantului sau ale bunului gajat (dacă este cazul)",
+                    "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
                 ]}
                 note="Garanțiile depind de suma solicitată și situația ta financiară. Comunicăm cerința clar înainte de semnarea contractului."
                 description={{
                     title: "Credit personal rapid în Moldova",
                     paragraphs: [
                         "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
-                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu cerem garant obligatoriu pentru sume mai mici și nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar.",
+                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit solicităm de obicei un fidejusor; clienții cu istoric bun de plată beneficiază de condiții mai flexibile.",
                         "Aprobăm cererile în 2-3 ore. Dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Dacă ai întrebări despre sumă, termen sau garanții, discutăm înainte de a depune dosarul - fără surprize după semnare.",
                     ],
                 }}

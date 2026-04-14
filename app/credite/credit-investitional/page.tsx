@@ -39,7 +39,7 @@ const investFaqItems: FaqItem[] = [
     },
     {
         question: "Pot combina creditul investițional cu capital de lucru?",
-        answer: "Evaluăm situația totală a firmei și structurăm soluția adecvată. În unele cazuri, finanțăm ambele nevoi prin același dosar.",
+        answer: "Analizăm situația totală a firmei și structurăm soluția adecvată. În unele cazuri, finanțăm ambele nevoi prin același dosar.",
     },
 ];
 
@@ -139,7 +139,7 @@ export default function CreditInvestitionalPage() {
                     paragraphs: [
                         "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
                         "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
-                        "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Evaluăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică, discutăm - indiferent dacă banca te-a refuzat sau condițiile ei sunt prea rigide.",
+                        "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Analizăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică și ai capacitate de rambursare demonstrabilă, discutăm.",
                     ],
                 }}
                 relatedLinks={[

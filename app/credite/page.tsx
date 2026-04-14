@@ -17,20 +17,20 @@ export const metadata: Metadata = {
 
 const hubFaqItems: FaqItem[] = [
     {
-        question: "Care este diferența dintre un credit nebancar și un credit bancar?",
-        answer: "Un credit nebancar este acordat de o instituție financiară nebancară (OCN), autorizată și supravegheată de CNPF. Principala diferență față de bănci: procesul de aprobare este mai rapid (2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri), documentația este mai simplă și evaluarea este mai flexibilă - acceptăm clienți refuzați de bănci.",
+        question: "Ce este o organizație de creditare nebancară (OCN)?",
+        answer: "O OCN este o instituție financiară autorizată și supravegheată de CNPF, care oferă credite fără a fi bancă. Procesul de aprobare este mai rapid (2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri), documentația este mai simplă, iar analiza dosarului este adaptată situației reale a fiecărui client.",
     },
     {
         question: "Cât timp durează aprobarea unui credit?",
-        answer: "Pentru persoane fizice, răspundem în 2-3 ore. Pentru credite de afaceri, evaluarea durează 1-2 zile lucrătoare. Dacă documentele sunt complete, fondurile pot fi disponibile în aceeași zi sau ziua lucrătoare următoare.",
+        answer: "Pentru persoane fizice, răspundem în 2-3 ore. Pentru credite de afaceri, analiza dosarului durează 1-2 zile lucrătoare. Dacă documentele sunt complete, fondurile pot fi disponibile în aceeași zi sau ziua lucrătoare următoare.",
     },
     {
         question: "Există comisioane ascunse?",
         answer: "Nu. Toate costurile - dobânda, DAE și orice penalități posibile - sunt prezentate clar înainte de semnarea contractului. Ce citești în contract, aia plătești.",
     },
     {
-        question: "Pot obține credit dacă am fost refuzat de bancă?",
-        answer: "Da. Evaluăm situația reală, nu doar un scor de credit. Analizăm istoricul de activitate, fluxul de numerar și capacitatea actuală de rambursare. Mulți dintre clienții noștri au primit finanțare după un refuz bancar.",
+        question: "Pot obține credit dacă am un profil mai puțin standard?",
+        answer: "Da. Analizăm situația reală, nu doar un scor de credit. Luăm în considerare istoricul de activitate, fluxul de numerar și capacitatea actuală de rambursare.",
     },
 ];
 

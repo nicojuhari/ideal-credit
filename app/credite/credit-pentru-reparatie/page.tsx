@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const faqItems: FaqItem[] = [
     {
         question: "Trebuie să prezint facturi de la constructor sau devize înainte de aprobare?",
-        answer: "Nu. Nu cerem devize sau facturi obligatorii pentru a aproba creditul. Dacă le ai, pot ajuta la stabilirea sumei, dar nu sunt o condiție. Banii se virează direct în contul tău.",
+        answer: "Nu. Nu cerem devize sau facturi obligatorii pentru a aproba creditul. Dacă le ai, pot ajuta la stabilirea sumei, dar nu sunt o condiție. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar.",
     },
     {
         question: "Pot folosi banii pentru orice lucrare de renovare?",
@@ -61,17 +61,17 @@ export default function CreditReparatiePage() {
                 ]}
                 documents={[
                     "Buletin de identitate",
-                    "Adeverință de salariu sau alt document de venit",
+                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
                     "Actele imobilului (dacă se solicită gaj)",
-                    "Deviz estimativ de lucrări (optional, ajută la determinarea sumei)",
+                    "Deviz estimativ de lucrări (opțional, ajută la determinarea sumei)",
                 ]}
-                note="Banii se virează direct în contul tău. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
+                note="Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
                 description={{
                     title: "Credit pentru reparație casă sau apartament",
                     paragraphs: [
                         "Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renova locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
-                        "Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii se virează direct în contul tău și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
-                        "Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - evaluăm situația ta reală, nu doar documentele de proprietate.",
+                        "Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar, și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
+                        "Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - analizăm situația ta reală, nu doar documentele de proprietate.",
                     ],
                 }}
                 relatedLinks={[

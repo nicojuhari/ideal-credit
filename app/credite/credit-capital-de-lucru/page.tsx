@@ -35,7 +35,7 @@ const workingCapitalFaqItems: FaqItem[] = [
     },
     {
         question: "Pot obține capital de lucru dacă firma are 6 luni de activitate?",
-        answer: "Da, evaluăm individual. Contează rulajul lunar și stabilitatea fluxului de numerar, nu doar vechimea firmei.",
+        answer: "Da, analizăm individual. Contează rulajul lunar și stabilitatea fluxului de numerar, nu doar vechimea firmei.",
     },
     {
         question: "Cât de repede intră banii după aprobare?",
@@ -124,7 +124,7 @@ export default function CreditCapitalDeLucruPage() {
                     title: "Credit capital de lucru pentru firme din Moldova",
                     paragraphs: [
                         "Capitalul de lucru este banii de care ai nevoie să funcționezi zi de zi - salarii, furnizori, chirie, stocuri. Când încasările întârzie și cheltuielile nu pot aștepta, un credit de capital de lucru menține activitatea în mișcare fără să blochezi creșterea.",
-                        "La Ideal Credit evaluăm capacitatea de rambursare pe baza rulajului real din extrasele bancare, nu doar pe baza bilanțului anual. Asta înseamnă că și firmele cu câteva luni de activitate sau cu un an fiscal dificil pot accesa finanțare, dacă fluxul curent este stabil.",
+                        "La Ideal Credit analizăm capacitatea de rambursare pe baza rulajului real din extrasele bancare, nu doar pe baza bilanțului anual. Asta înseamnă că și firmele cu câteva luni de activitate sau cu un an fiscal dificil pot accesa finanțare, dacă fluxul curent este stabil.",
                         "Termenul de rambursare se adaptează ciclului tău de încasări - de la 6 la 36 de luni. Dacă clienții tăi plătesc la 60 de zile, structurăm creditul în consecință. Decizia se ia în 1-2 zile lucrătoare, iar fondurile sunt disponibile imediat după semnare.",
                     ],
                 }}
