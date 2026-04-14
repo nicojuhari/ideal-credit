@@ -14,7 +14,7 @@ export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
         <div className="relative pt-10 md:pt-16 pb-10 md:pb-16">
             {/* Backgrounds */}
             <div className="bg-squares -mt-px" />
-            <div className="pointer-events-none absolute inset-0 -z-1" aria-hidden>
+            <div className="pointer-events-none absolute inset-0 -z-1 overflow-hidden" aria-hidden>
                 <div
                     className="absolute left-[-10%] top-[-10%] h-112 w-md rounded-full opacity-[0.08] blur-[120px]"
                     style={{ background: "radial-gradient(circle, #ff9a00 0%, transparent 70%)" }}

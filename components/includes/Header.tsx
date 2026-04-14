@@ -146,14 +146,7 @@ export default function Header() {
     };
 
     return (
-        <motion.header
-            className="sticky top-0 z-30 border-b border-white/5 backdrop-blur-xl"
-            animate={{
-                backgroundColor: scrolled ? "rgba(11,11,11,0.85)" : "rgba(17,17,17,0.6)",
-                height: scrolled ? 56 : 68,
-            }}
-            transition={{ type: "tween", duration: 0.25, ease: "easeOut" }}
-        >
+        <header className="sticky top-0 z-30 border-b border-white/5 backdrop-blur-xl h-14 md:h-16 bg-black-800/70">
             <div className="flex justify-between items-center gap-4 h-full container">
                 <Link href="/" title="Ideal Credit" className="flex items-center gap-2">
                     <Logo className="w-8 md:w-10" />
@@ -365,6 +358,6 @@ export default function Header() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.header>
+        </header>
     );
 }

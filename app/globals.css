@@ -426,7 +426,7 @@ input[type=number] {
 .link {
   font-weight: 400;
   text-decoration: underline;
-  @apply text-blue-400;
+  @apply text-blue-300;
 }
 
 .richtext ul,

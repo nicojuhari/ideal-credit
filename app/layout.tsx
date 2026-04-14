@@ -113,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
                 <meta name="apple-mobile-web-app-title" content="Ideal Credit" />
             </head>
-            <body className={`${InterFont.variable} flex flex-col min-h-screen`}>
+            <body className={`${InterFont.variable} flex flex-col min-h-screen overflow-x-hidden`}>
                 <Header />
                 <main className="flex-auto">{children}</main>
                 <Footer />

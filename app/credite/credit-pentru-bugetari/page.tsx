@@ -70,8 +70,6 @@ const categories = [
             "Angajați ai spitalelor și policlinicilor de stat",
             "Personal auxiliar din sistemul de sănătate",
         ],
-        note: "Venit stabil și previzibil - condiții adaptate salariului din sistemul public.",
-        href: "/credite/credit-pentru-medici",
     },
     {
         icon: Shield,
@@ -81,8 +79,6 @@ const categories = [
             "Angajați ai Ministerului Afacerilor Interne",
             "Personal al Serviciului de Protecție și Pază de Stat",
         ],
-        note: "Statut profesional stabil și venit garantat de stat.",
-        href: "/credite/credit-pentru-militari",
     },
     {
         icon: BadgeCheck,
@@ -92,8 +88,6 @@ const categories = [
             "Funcționari publici și angajați ai administrației locale",
             "Angajați ai instituțiilor de stat și autorităților publice",
         ],
-        note: "Orice angajat cu contract de muncă în sectorul bugetar poate aplica.",
-        href: "/credite/credit-pentru-nevoi-personale",
     },
 ];
 
@@ -122,10 +116,10 @@ export default function CreditBugetariPage() {
             <section className="container">
                 <h2 className="title text-center">Cine poate aplica</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {categories.map(({ icon: Icon, title, items, note, href }) => (
+                    {categories.map(({ icon: Icon, title, items }) => (
                         <div key={title} className="flex flex-col gap-4 p-5 rounded-xl border border-white/5 bg-black-600/50">
                             <div className="flex items-center gap-3">
-                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
+                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
                                     <Icon size={20} />
                                 </span>
                                 <h3 className="text-base font-semibold text-white">{title}</h3>
@@ -138,13 +132,6 @@ export default function CreditBugetariPage() {
                                     </li>
                                 ))}
                             </ul>
-                            <p className="text-xs text-gray-500 leading-relaxed border-t border-white/5 pt-3">{note}</p>
-                            <Link
-                                href={href}
-                                className="inline-flex items-center gap-1.5 text-xs text-brand-500 hover:text-brand-400 transition-colors font-medium"
-                            >
-                                Vezi condițiile specifice <ArrowRight size={12} />
-                            </Link>
                         </div>
                     ))}
                 </div>

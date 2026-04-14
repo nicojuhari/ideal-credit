@@ -105,7 +105,7 @@ export default function CalculatorCredit() {
     return (
         <div className="p-4 md:p-6">
             <div className="flex items-center justify-between mb-5">
-                <h2 className="text-lg md:text-2xl font-medium">Calculator de credit</h2>
+                <h2 className="text-lg md:text-xl font-medium">Calculator de credit</h2>
                 <span className="text-[11px] uppercase tracking-wider text-gray-500">4% lunar</span>
             </div>
 
@@ -124,26 +124,6 @@ export default function CalculatorCredit() {
                             <AnimatedNumber value={primaRata} /> <span className="text-base text-gray-500 font-normal">MDL</span>
                         </div>
                     </div>
-                    <Dialog open={showModal} onOpenChange={setShowModal}>
-                        <DialogTrigger
-                            onClick={() => firePixelOnce()}
-                            className="text-blue-300 hover:text-blue-200 underline text-xs underline-offset-2 transition-colors"
-                        >
-                            preContract
-                        </DialogTrigger>
-                        <DialogContent className="w-full sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
-                            <DialogHeader>
-                                <DialogTitle>Informația preContractuală</DialogTitle>
-                            </DialogHeader>
-                            <PreContractContent
-                                creditSuma={creditSuma}
-                                creditTermen={creditTermen}
-                                dae={dae}
-                                graficCalculat={graficCalculat}
-                                dobindaTotal={dobindaTotal}
-                            />
-                        </DialogContent>
-                    </Dialog>
                 </div>
             </div>
 
@@ -201,9 +181,26 @@ export default function CalculatorCredit() {
                 </div>
             </div>
             <MainCTA className="mt-6" />
-            <div className="mt-4 text-center text-xs text-gray-500">
-                <span>Consumatorul este responsabil pentru rambursarea creditului.</span>
-            </div>
+            <Dialog open={showModal} onOpenChange={setShowModal}>
+                <DialogTrigger
+                    onClick={() => firePixelOnce()}
+                    className="text-blue-300 mx-auto hover:text-blue-200 underline text-xs underline-offset-2 transition-colors mt-4 md:mt-6 mb-2 text-center block"
+                >
+                    Graficul de achitare și Informația preContractuală
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
+                    <DialogHeader>
+                        <DialogTitle>Informația preContractuală</DialogTitle>
+                    </DialogHeader>
+                    <PreContractContent
+                        creditSuma={creditSuma}
+                        creditTermen={creditTermen}
+                        dae={dae}
+                        graficCalculat={graficCalculat}
+                        dobindaTotal={dobindaTotal}
+                    />
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }

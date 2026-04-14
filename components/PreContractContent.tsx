@@ -1,5 +1,6 @@
 import type { GraficRow } from "ideal-credit";
 import GraficTable from "./GraficTable";
+import Info from "./ui/Info";
 
 export default function PreContractContent({
     creditSuma,
@@ -118,8 +119,7 @@ export default function PreContractContent({
                                 Pentru obţinerea creditului, este obligatoriu să se încheie:
                             </td>
                             <td>
-                                În funcție de evaluarea riscului de credit, pot fi încheiate contracte de garant personal sau gaj
-                                (imobil)
+                                În funcție de evaluarea riscului de credit, pot fi încheiate contracte de garant personal sau gaj (imobil)
                             </td>
                         </tr>
                         <tr>
@@ -194,6 +194,9 @@ export default function PreContractContent({
                 prezentei informații preContractuale.
             </div>
             <div className="text-right mt-12">Semnătura: ________________</div>
+            <Info className="mt-6 text-center text-xs text-gray-500">
+                <span>Consumatorul este responsabil pentru rambursarea creditului.</span>
+            </Info>
         </div>
     );
 }
