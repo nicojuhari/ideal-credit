@@ -11,12 +11,8 @@ export const metadata: Metadata = {
 export default function ContacteLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([localBusinessChisinauSchema, localBusinessCauseniSchema]),
-                }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
             {children}
         </>
     );

@@ -15,12 +15,8 @@ export const metadata: Metadata = {
 export default function DespreNoiPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([localBusinessChisinauSchema, localBusinessCauseniSchema]),
-                }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
             <div className="my-4 md:my-6">
                 <div className="container">
                     <div className="card">
