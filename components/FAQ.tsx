@@ -9,15 +9,6 @@ import { FAQ_ITEMS } from "@/lib/constants";
 
 export type FaqItem = { question: string; answer: string };
 
-export const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQ_ITEMS.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-};
 
 function normalize(s: string) {
     return s

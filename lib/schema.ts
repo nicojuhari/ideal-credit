@@ -1,3 +1,15 @@
+import { FAQ_ITEMS } from "@/lib/constants";
+
+export const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+
 export const creditConditionsSchema = {
   pf: {
     title: "Credit persoană fizică",

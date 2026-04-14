@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import HeroHome from "@/components/home/HeroHome";
-import { faqSchema } from "@/components/FAQ";
 import Info from "@/components/ui/Info";
 import { Check } from "lucide-react";
 
@@ -14,7 +13,7 @@ const FAQ = dynamic(() => import("@/components/FAQ"));
 const BlogCards = dynamic(() => import("@/components/BlogCards"));
 const ServiciiList = dynamic(() => import("@/components/ServiciiList"));
 
-import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCauseniSchema, howToSchema } from "@/lib/schema";
+import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCauseniSchema, howToSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credite Nebancare în Moldova | Ideal Credit",
