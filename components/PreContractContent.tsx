@@ -35,13 +35,13 @@ export default function PreContractContent({
                         <tr>
                             <td>Adresa</td>
                             <td>
-                                m.Chișinău, str.Miron Costin, nr.25, of.115 (sucursala nr.1)
+                                m.Chișinău, str. Ginta Latină, nr. 18, of. 5 (sucursala nr.1)
                                 <br />
                                 <br />
                                 sau
                                 <br />
                                 <br />
-                                or.Căușeni, str.Mihai Eminescu nr.17, of.47 (sediul principal)
+                                or.Căușeni, str. Mihai Eminescu nr. 17, of. 47 (sediul principal)
                             </td>
                         </tr>
                         <tr>
@@ -119,7 +119,9 @@ export default function PreContractContent({
                                 Pentru obţinerea creditului, este obligatoriu să se încheie:
                             </td>
                             <td>
-                                La primul credit, fidejusiunea (contract de garant personal) este obligatorie. Gajul imobiliar poate fi solicitat suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu istoricul de plăți fără restanțe pot beneficia de condiții preferențiale, inclusiv fără fidejusiune.
+                                La primul credit, fidejusiunea (contract de garant personal) este obligatorie. Gajul imobiliar poate fi
+                                solicitat suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu istoricul de plăți fără
+                                restanțe pot beneficia de condiții preferențiale, inclusiv fără fidejusiune.
                             </td>
                         </tr>
                         <tr>

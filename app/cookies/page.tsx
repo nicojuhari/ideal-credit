@@ -73,7 +73,7 @@ export default function CookiesPage() {
                 <div className="mt-2">
                     OCN Ideal Credit SRL,
                     <br />
-                    or.Căușeni, str.Mihai Eminescu, nr.17, of.47
+                    or.Căușeni, Mihai Eminescu, nr. 17, of. 47
                     <br />
                     email: info@idealcredit.md
                     <br />
