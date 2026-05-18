@@ -1,5 +1,38 @@
 ## Last Updated
-2026-05-18 by /positioning-angles
+2026-05-18 by /positioning-angles | updated 2026-05-18 with core philosophy
+
+## Core Philosophy
+
+This is not marketing copy — it is the operating principle that shapes everything else.
+
+**We are a financial problem solver first. A credit provider second.**
+
+When a client comes with a financial or business problem, our job is to understand the full situation and find the solution that actually works — for them first, for us second. If a client succeeds, we succeed. If there is no good solution for them, we say so honestly. We don't force a product where one doesn't fit.
+
+Money is a tool. Credit is a tool. The goal — for the client and for us — is what that tool makes possible: a business that grows, a renovation that gets done, a gap that gets covered without derailing everything else.
+
+This philosophy is **never stated explicitly** in marketing copy ("we offer consultation," "we are honest"). It is expressed through:
+- Copy that asks about the client's situation before naming a product
+- CTAs that invite a conversation ("Discutăm") not just a transaction ("Aplică")
+- FAQ content that honestly tells people when they may not qualify
+- Blog content that helps people make the right decision — even if that decision is "not now"
+- A tone that treats readers as intelligent adults with real goals, not as loan applicants to be processed
+
+The implicit promise: *You walk in with a problem. We work with you to find the right answer.*
+
+**How the process embodies this philosophy:**
+
+The client intake model at Ideal Credit is built around respect for the client's time and the principle that analysis should happen before — not during — the face-to-face meeting.
+
+1. **Phone consultation first.** A real conversation, not a form. We understand the full situation before any documents are collected.
+2. **Remote analysis.** Documents and credit history are verified remotely (email, WhatsApp, Viber) before the appointment. By the time the client comes in, the analysis is complete.
+3. **Appointment only when the picture is ~100% clear.** We do not invite a client to the office to "apply." We invite them when we are confident the answer is yes.
+4. **Face-to-face confirms, not decides.** The in-person meeting verifies originals and finalizes — it is not the point where the hard decision happens.
+5. **Repayment is remote.** Bank transfer, mobile app, or post office — no need to visit the office to pay monthly.
+
+This model means: the rejection rate at the signing stage is extremely low. That is not a coincidence — it is the result of doing thorough work in steps 1 and 2. It is also a concrete proof point of the "financial problem solver first" principle: we earn the client's time by doing our homework before asking for it.
+
+---
 
 ## Primary Positioning
 

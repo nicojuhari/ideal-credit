@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 import CalculatorCredit from "@/components/CalculatorCredit";
 
 export default function HeroHome() {
@@ -31,11 +32,11 @@ export default function HeroHome() {
                                 transition={{ duration: 0.5, ease: "easeOut" }}
                                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 backdrop-blur px-4 py-1.5 text-xs md:text-sm text-white"
                             >
-                                <span className="flex items-center gap-0.5 text-green-500">
+                                <span className="flex items-center gap-0.5 text-brand-500">
                                     <Star size={12} fill="currentColor" /> 4.9
                                 </span>
                                 <span className="text-white/20">•</span>
-                                <span>Sute de clienți mulțumiți</span>
+                                <span>Din 2010 — finanțare nebancară de încredere</span>
                             </motion.div>
                         </div>
 
@@ -43,20 +44,42 @@ export default function HeroHome() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-                            className="mt-6 font-medium tracking-tight text-[52px] md:text-[68px] leading-[1.02] text-center md:text-left"
+                            className="mt-6 font-medium tracking-tight text-[48px] md:text-[64px] leading-[1.04] text-center md:text-left"
                         >
-                            Credite nebancare <span className="text-brand-gradient">pentru afaceri</span>
-                            <span className="text-white inline-flex"> și consum</span>
+                            Credite nebancare{" "}
+                            <span className="text-brand-gradient">de la 10.000</span>{" "}
+                            <span className="text-white">la 300.000 lei</span>
                         </motion.h1>
 
                         <motion.p
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
-                            className="mt-6 text-lg text-gray-500 font-light max-w-xl text-center md:text-left mx-auto md:mx-0"
+                            className="mt-5 text-lg text-gray-400 font-light max-w-xl text-center md:text-left mx-auto md:mx-0"
                         >
-                            Dobânda fixă, condiții clare, fără comisioane ascunse și decizie rapidă.
+                            Dobândă fixă, fără comisioane ascunse, fără penalități la rambursare anticipată.{" "}
+                            <span className="text-white/70">Răspuns în 1–3 ore.</span>
                         </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                            className="mt-8 flex flex-wrap gap-3 justify-center md:justify-start"
+                        >
+                            <Link
+                                href="/credite/credit-pentru-afaceri-mici"
+                                className="inline-flex items-center gap-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-black font-medium px-6 py-3 text-sm transition-colors"
+                            >
+                                Credit pentru afaceri <ArrowRight size={16} />
+                            </Link>
+                            <Link
+                                href="/credite/credit-pentru-nevoi-personale"
+                                className="inline-flex items-center gap-2 rounded-lg border border-white/15 hover:border-white/30 text-white hover:bg-white/5 font-medium px-6 py-3 text-sm transition-colors"
+                            >
+                                Credit personal <ArrowRight size={16} />
+                            </Link>
+                        </motion.div>
                     </div>
 
                     {/* Right column - calculator */}
@@ -67,7 +90,6 @@ export default function HeroHome() {
                         transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
                         className="lg:col-span-5 relative"
                     >
-                        {/* Gradient border wrapper */}
                         <div className="relative rounded-xl p-px bg-linear-to-br from-brand-500/50 via-brand-500/10 to-transparent">
                             <div className="rounded-xl bg-black-600/90 backdrop-blur-xl shadow-glow">
                                 <CalculatorCredit />
