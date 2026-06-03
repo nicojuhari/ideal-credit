@@ -146,4 +146,4 @@ Secondary: "Ai întrebări? Vino la biroul nostru sau sună-ne"
 DO SECOND — Strong SEO opportunity with real content gap. High commercial intent. Builds topical authority around "OCN" as a category. BNM currently owns this query with dry content — this article can outrank it with better UX and more useful comparison format.
 
 ## Status
-planning
+published — draft at app/blog/(articles)/ocn-vs-banca-credit-afaceri-moldova/page.mdx (2026-06-03)

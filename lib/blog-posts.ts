@@ -9,6 +9,33 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
     {
+        slug: "ocn-vs-banca-credit-afaceri-moldova",
+        title: "OCN sau bancă: ce să alegi când ai nevoie de credit pentru afacere în Moldova",
+        description:
+            "Comparație clară între credit bancar și credit OCN pentru afaceri în Moldova. Când e mai bun fiecare, de ce diferă dobânzile și cum decizi fără să greșești.",
+        date: "2026-06-03",
+        category: "ghid",
+        readMinutes: 9,
+    },
+    {
+        slug: "documente-necesare-credit-afaceri-moldova",
+        title: "Ce documente trebuie pentru un credit de afaceri în Moldova (și ce nu ți se va cere)",
+        description:
+            "Lista completă de acte necesare pentru credit de afaceri la un OCN. SRL, II, capital circulant sau investiție — iată ce pregătești și ce nu ți se cere.",
+        date: "2026-06-03",
+        category: "ghid",
+        readMinutes: 8,
+    },
+    {
+        slug: "ghid-credit-afaceri-ocn-moldova",
+        title: "Cum obții credit pentru afacere la un OCN în Moldova: ghid pas cu pas",
+        description:
+            "Exact cum funcționează procesul de obținere a unui credit de afaceri la un OCN — de la prima discuție până la banii în cont. Cu pași concreți și cifre reale.",
+        date: "2026-06-03",
+        category: "afaceri",
+        readMinutes: 11,
+    },
+    {
         slug: "cum-alegi-credit-nebancar-pentru-afaceri",
         title: "Cum alegi un credit nebancar pentru afacere — ghid practic",
         description:

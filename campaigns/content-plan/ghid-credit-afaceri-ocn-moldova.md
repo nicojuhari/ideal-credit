@@ -125,4 +125,4 @@ Secondary: "Vizitează-ne la biroul din Căușeni sau Chișinău"
 DO FIRST — highest opportunity score, clear content gap, strong PAA capture, aligns directly with the site's primary commercial goal
 
 ## Status
-planning
+published — draft at app/blog/(articles)/ghid-credit-afaceri-ocn-moldova/page.mdx (2026-06-03)

@@ -122,4 +122,4 @@ Secondary: "Vino direct la biroul nostru din Căușeni sau Chișinău cu dosarul
 DO FIRST — This is the highest-intent informational query in the keyword plan. The person asking this has already decided they want a credit; they're in preparation mode. Converting this reader to an applicant has very high probability. The content gap is real (no clean OCN-specific checklist exists in Romanian for Moldova).
 
 ## Status
-planning
+published — draft at app/blog/(articles)/documente-necesare-credit-afaceri-moldova/page.mdx (2026-06-03)
