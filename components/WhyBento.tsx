@@ -13,9 +13,7 @@ function YearsCounter() {
     const target = yearsSinceFoundation;
 
     useEffect(() => {
-        console.log("YearsCounter inView:", inView);
         if (!inView) return;
-        console.log("Animating years counter to", target);
         const c = animate(mv, target, { duration: 1.6, ease: "easeOut" });
         return c.stop;
     }, [inView, mv, target]);
