@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
         "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
+        description: "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const businessFaqItems: FaqItem[] = [

@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
         "Refinanțare credite nebancare și bancare în Moldova. Consolidează datoriile, reduci rata lunară. Evaluăm și cu istoric negativ. Decizie în 2-3 ore.",
     alternates: { canonical: "https://idealcredit.md/credite/refinantare" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Refinanțare Credit Moldova - Rată Mai Mică | Ideal Credit",
+        description: "Refinanțare credite nebancare și bancare în Moldova. Consolidează datoriile, reduci rata lunară. Evaluăm și cu istoric negativ. Decizie în 2-3 ore.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const refinantareFaqItems: FaqItem[] = [

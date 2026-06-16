@@ -12,6 +12,14 @@ export const metadata: Metadata = {
  description:
 "Credit pentru reparația casei sau apartament. Obține banii rapid și renovează-ți locuința acum. Dobândă fixă și sume flexibile. Aplică online!",
  alternates: { canonical:"https://idealcredit.md/credite/credit-pentru-reparatie" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
+        description: "Credit pentru reparația casei sau apartamentului. Obține banii rapid și renovează-ți locuința. Dobândă fixă și sume flexibile.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const faqItems: FaqItem[] = [

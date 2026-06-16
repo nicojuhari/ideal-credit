@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     description:
         "Credite pentru bugetari: medici, militari, polițiști, profesori și funcționari. Condiții adaptate venitului de stat, dobândă fixă, aprobare în 2-3 ore.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-bugetari" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Credite pentru Angajați la Stat în Moldova | Ideal Credit",
+        description: "Credite pentru bugetari: medici, militari, polițiști, profesori și funcționari. Condiții adaptate venitului de stat, dobândă fixă, aprobare în 2-3 ore.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const bugetariFaqItems: FaqItem[] = [

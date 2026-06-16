@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
         "Credit capital de lucru pentru SRL și ÎI din Moldova. Acoperiți salarii, furnizori și stocuri - decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-capital-de-lucru" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Credit Capital de Lucru pentru Afaceri | Ideal Credit Moldova",
+        description: "Credit capital de lucru pentru SRL și ÎI din Moldova. Acoperiți salarii, furnizori și stocuri - decizie în 1-2 zile lucrătoare.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const workingCapitalFaqItems: FaqItem[] = [

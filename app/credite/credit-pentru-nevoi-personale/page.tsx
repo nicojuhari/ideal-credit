@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     description:
         "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
+        description: "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const personalFaqItems: FaqItem[] = [

@@ -174,277 +174,266 @@ export default function CalculatorCreditPage() {
     const visibleRows = tableOpen ? schedule : schedule.slice(0, PREVIEW_ROWS);
 
     return (
-        <div>
-            <div className="bg-squares"></div>
-            <div className="container relativepy-16 md:py-20">
-                <div className="mb-10">
-                    <h1 className="text-3xl md:text-4xl font-semibold">Calculator Credit Online</h1>
-                    <p className="mt-3 text-sm leading-relaxed max-w-lg">
-                        Calculează rata lunară, costul total și graficul complet de rambursare. Alege suma, termenul și tipul de rambursare
-                        potrivit pentru tine.
-                    </p>
+        <div className="container relativepy-16 md:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 items-start">
+                {/* ── Inputs ── */}
+                <div className="rounded-2xl border border-white/5 bg-black-600/70 p-6 space-y-6">
+                    {/* Suma */}
+                    <div>
+                        <div className="flex items-center justify-between mb-2">
+                            <label htmlFor="suma-range" className="text-sm">
+                                Suma creditului
+                            </label>
+                            <div className="flex items-center gap-1.5 text-white">
+                                <span className="input-calculator text-xl">{suma.toLocaleString("ro-RO")}</span>
+                                <span className="text-sm text-white/50">MDL</span>
+                            </div>
+                        </div>
+                        <GradientSlider id="suma-range" value={suma} min={SUM_MIN} max={SUM_MAX} step={500} onChange={setSuma} />
+                        <div className="flex justify-between text-[11px] text-white/30 mt-1.5">
+                            <span>10.000</span>
+                            <span>300.000</span>
+                        </div>
+                    </div>
+
+                    {/* Termen */}
+                    <div>
+                        <div className="flex items-center justify-between mb-2">
+                            <label htmlFor="termen-range" className="text-sm">
+                                Termen
+                            </label>
+                            <div className="flex items-center gap-1.5 text-white">
+                                <span className="input-calculator text-xl">{termen}</span>
+                                <span className="text-sm text-white/50">luni</span>
+                            </div>
+                        </div>
+                        <GradientSlider id="termen-range" value={termen} min={TERM_MIN} max={TERM_MAX} step={1} onChange={setTermen} />
+                        <div className="flex justify-between text-[11px] text-white/30 mt-1.5">
+                            <span>6 luni</span>
+                            <span>60 luni</span>
+                        </div>
+                    </div>
+
+                    {/* Repayment type */}
+                    <div>
+                        <p className="text-sm mb-2">Tip rambursare</p>
+                        <div className="grid grid-cols-2 gap-2">
+                            {(["anuitate", "principal-egal"] as const).map((t) => (
+                                <button
+                                    key={t}
+                                    onClick={() => setType(t)}
+                                    className={`rounded-lg py-2 px-3 text-sm font-medium transition-all duration-200 ${
+                                        type === t
+                                            ? "bg-brand-500 text-black"
+                                            : "bg-black-400 text-white/60 hover:text-white border border-white/5"
+                                    }`}
+                                >
+                                    {t === "anuitate" ? "Anuitate" : "Principal egal"}
+                                </button>
+                            ))}
+                        </div>
+                        <p className="text-[11px] text-white/30 mt-2 leading-relaxed">
+                            {isFixed ? "Rate egale pe toată durata creditului" : "Ratele scad lunar - plătești mai puțin spre final"}
+                        </p>
+                    </div>
+
+                    {/* Grace period + Rate */}
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label className="text-sm block mb-2">Perioadă de grație</label>
+                            <select
+                                value={grace}
+                                onChange={(e) => setGrace(Number(e.target.value))}
+                                className="w-full bg-black-400 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500/50"
+                            >
+                                {[0, 1, 2, 3, 4, 5, 6].map((v) => (
+                                    <option key={v} value={v}>
+                                        {v === 0 ? "Fără" : `${v} ${v === 1 ? "lună" : "luni"}`}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="text-sm block mb-2">Dobândă lunară</label>
+                            <div className="flex items-center gap-1.5">
+                                <input
+                                    type="number"
+                                    value={rate}
+                                    min={0.5}
+                                    max={15}
+                                    step={0.1}
+                                    onChange={(e) => {
+                                        const v = parseFloat(e.target.value);
+                                        if (!isNaN(v) && v >= 0.5 && v <= 15) setRate(v);
+                                    }}
+                                    className="w-full bg-black-400 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500/50"
+                                />
+                                <span className="text-sm text-white/50 shrink-0">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {grace > 0 && (
+                        <p className="text-[11px] text-white/30 leading-relaxed -mt-2">
+                            În primele {grace} {grace === 1 ? "lună" : "luni"} plătești doar dobânda. Principalul se amortizează în cele{" "}
+                            {termen - grace} luni rămase.
+                        </p>
+                    )}
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 items-start">
-                    {/* ── Inputs ── */}
-                    <div className="rounded-2xl border border-white/5 bg-black-600/70 p-6 space-y-6">
-                        {/* Suma */}
-                        <div>
-                            <div className="flex items-center justify-between mb-2">
-                                <label htmlFor="suma-range" className="text-sm">
-                                    Suma creditului
-                                </label>
-                                <div className="flex items-center gap-1.5 text-white">
-                                    <span className="input-calculator text-xl">{suma.toLocaleString("ro-RO")}</span>
-                                    <span className="text-sm text-white/50">MDL</span>
+                {/* ── Results ── */}
+                <div className="space-y-4">
+                    {/* 4 stat cards */}
+                    <div className="grid grid-cols-2 gap-3">
+                        <div className="rounded-xl p-px bg-linear-to-br from-brand-500/60 via-brand-500/10 to-transparent">
+                            <div className="rounded-xl bg-black-600/90 px-4 py-4 h-full">
+                                <div className="text-[11px] uppercase tracking-wider text-white/50">
+                                    {isFixed ? "Rată lunară" : "Prima rată"}
                                 </div>
-                            </div>
-                            <GradientSlider id="suma-range" value={suma} min={SUM_MIN} max={SUM_MAX} step={500} onChange={setSuma} />
-                            <div className="flex justify-between text-[11px] text-white/30 mt-1.5">
-                                <span>10.000</span>
-                                <span>300.000</span>
-                            </div>
-                        </div>
-
-                        {/* Termen */}
-                        <div>
-                            <div className="flex items-center justify-between mb-2">
-                                <label htmlFor="termen-range" className="text-sm">
-                                    Termen
-                                </label>
-                                <div className="flex items-center gap-1.5 text-white">
-                                    <span className="input-calculator text-xl">{termen}</span>
-                                    <span className="text-sm text-white/50">luni</span>
+                                <div className="mt-1 text-2xl md:text-3xl font-semibold text-brand-gradient">
+                                    <AnimatedNumber value={firstPayment} />
+                                    <span className="text-sm font-normal text-white/50 ml-1">MDL</span>
                                 </div>
-                            </div>
-                            <GradientSlider id="termen-range" value={termen} min={TERM_MIN} max={TERM_MAX} step={1} onChange={setTermen} />
-                            <div className="flex justify-between text-[11px] text-white/30 mt-1.5">
-                                <span>6 luni</span>
-                                <span>60 luni</span>
+                                {!isFixed && (
+                                    <div className="text-xs text-white/40 mt-1">
+                                        Ultima: {Math.round(lastPayment).toLocaleString("ro-RO")} MDL
+                                    </div>
+                                )}
                             </div>
                         </div>
 
-                        {/* Repayment type */}
-                        <div>
-                            <p className="text-sm mb-2">Tip rambursare</p>
-                            <div className="grid grid-cols-2 gap-2">
-                                {(["anuitate", "principal-egal"] as const).map((t) => (
-                                    <button
-                                        key={t}
-                                        onClick={() => setType(t)}
-                                        className={`rounded-lg py-2 px-3 text-sm font-medium transition-all duration-200 ${
-                                            type === t
-                                                ? "bg-brand-500 text-black"
-                                                : "bg-black-400 text-white/60 hover:text-white border border-white/5"
-                                        }`}
-                                    >
-                                        {t === "anuitate" ? "Anuitate" : "Principal egal"}
-                                    </button>
-                                ))}
+                        <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 py-4">
+                            <div className="text-[11px] uppercase tracking-wider text-white/50">Total plătit</div>
+                            <div className="mt-1 text-2xl md:text-3xl font-semibold">
+                                <AnimatedNumber value={totalPaid} />
+                                <span className="text-sm font-normal text-white/50 ml-1">MDL</span>
                             </div>
-                            <p className="text-[11px] text-white/30 mt-2 leading-relaxed">
-                                {isFixed ? "Rate egale pe toată durata creditului" : "Ratele scad lunar - plătești mai puțin spre final"}
-                            </p>
                         </div>
 
-                        {/* Grace period + Rate */}
-                        <div className="grid grid-cols-2 gap-4">
-                            <div>
-                                <label className="text-sm block mb-2">Perioadă de grație</label>
-                                <select
-                                    value={grace}
-                                    onChange={(e) => setGrace(Number(e.target.value))}
-                                    className="w-full bg-black-400 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500/50"
-                                >
-                                    {[0, 1, 2, 3, 4, 5, 6].map((v) => (
-                                        <option key={v} value={v}>
-                                            {v === 0 ? "Fără" : `${v} ${v === 1 ? "lună" : "luni"}`}
-                                        </option>
+                        <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 py-4">
+                            <div className="text-[11px] uppercase tracking-wider text-white/50">Dobândă totală</div>
+                            <div className="mt-1 text-2xl md:text-3xl font-semibold">
+                                <AnimatedNumber value={totalInterest} />
+                                <span className="text-sm font-normal text-white/50 ml-1">MDL</span>
+                            </div>
+                        </div>
+
+                        <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 py-4">
+                            <div className="text-[11px] uppercase tracking-wider text-white/50">DAE</div>
+                            <div className="mt-1 text-2xl md:text-3xl font-semibold">
+                                {dae}
+                                <span className="text-sm font-normal text-white/50 ml-1">%/an</span>
+                            </div>
+                            <div className="text-[11px] text-white/25 mt-0.5">Dobândă anuală efectivă</div>
+                        </div>
+                    </div>
+
+                    {/* Balance chart */}
+                    <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 pt-4 pb-3">
+                        <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs text-white/40">Sold rămas în timp</span>
+                            <span className="text-xs text-white/40">{termen} luni</span>
+                        </div>
+                        <BalanceChart schedule={schedule} principal={suma} />
+                        <div className="flex justify-between text-[10px] text-white/20 mt-1">
+                            <span>Lună 1</span>
+                            <span>Lună {Math.ceil(termen / 2)}</span>
+                            <span>Lună {termen}</span>
+                        </div>
+                    </div>
+
+                    {/* Amortization table */}
+                    <div className="rounded-xl bg-black-600/70 border border-white/5 overflow-hidden">
+                        <div className="px-4 py-3 border-b border-white/5 flex items-center justify-between">
+                            <span className="text-sm font-medium">Grafic de rambursare</span>
+                            <span className="text-xs text-white/40">{schedule.length} rate</span>
+                        </div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-xs">
+                                <thead>
+                                    <tr className="text-white/35 border-b border-white/5">
+                                        <th className="text-left px-4 py-2.5 font-normal">#</th>
+                                        <th className="text-left px-4 py-2.5 font-normal">Data</th>
+                                        <th className="text-right px-4 py-2.5 font-normal">Plată</th>
+                                        <th className="text-right px-4 py-2.5 font-normal">Principal</th>
+                                        <th className="text-right px-4 py-2.5 font-normal">Dobândă</th>
+                                        <th className="text-right px-4 py-2.5 font-normal">Sold</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-white/5">
+                                    {visibleRows.map((r) => (
+                                        <tr
+                                            key={r.month}
+                                            className={r.principal === 0 ? "text-white/35" : "text-white/75 hover:bg-white/[0.02]"}
+                                        >
+                                            <td className="px-4 py-2.5">{r.month}</td>
+                                            <td className="px-4 py-2.5">{r.date}</td>
+                                            <td className="px-4 py-2.5 text-right font-semibold text-white tabular-nums">
+                                                {Math.round(r.payment).toLocaleString("ro-RO")}
+                                            </td>
+                                            <td className="px-4 py-2.5 text-right tabular-nums">
+                                                {r.principal ? Math.round(r.principal).toLocaleString("ro-RO") : "-"}
+                                            </td>
+                                            <td className="px-4 py-2.5 text-right tabular-nums text-brand-500/70">
+                                                {Math.round(r.interest).toLocaleString("ro-RO")}
+                                            </td>
+                                            <td className="px-4 py-2.5 text-right tabular-nums">
+                                                {Math.round(r.balance).toLocaleString("ro-RO")}
+                                            </td>
+                                        </tr>
                                     ))}
-                                </select>
-                            </div>
-                            <div>
-                                <label className="text-sm block mb-2">Dobândă lunară</label>
-                                <div className="flex items-center gap-1.5">
-                                    <input
-                                        type="number"
-                                        value={rate}
-                                        min={0.5}
-                                        max={15}
-                                        step={0.1}
-                                        onChange={(e) => {
-                                            const v = parseFloat(e.target.value);
-                                            if (!isNaN(v) && v >= 0.5 && v <= 15) setRate(v);
-                                        }}
-                                        className="w-full bg-black-400 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-brand-500/50"
-                                    />
-                                    <span className="text-sm text-white/50 shrink-0">%</span>
-                                </div>
-                            </div>
+                                </tbody>
+                                {tableOpen && (
+                                    <tfoot>
+                                        <tr className="border-t border-white/10 text-white/50 font-medium">
+                                            <td className="px-4 py-2.5" colSpan={2}>
+                                                Total
+                                            </td>
+                                            <td className="px-4 py-2.5 text-right text-white tabular-nums">
+                                                {Math.round(totalPaid).toLocaleString("ro-RO")}
+                                            </td>
+                                            <td className="px-4 py-2.5 text-right tabular-nums">{suma.toLocaleString("ro-RO")}</td>
+                                            <td className="px-4 py-2.5 text-right tabular-nums text-brand-500/70">
+                                                {Math.round(totalInterest).toLocaleString("ro-RO")}
+                                            </td>
+                                            <td className="px-4 py-2.5 text-right tabular-nums">0</td>
+                                        </tr>
+                                    </tfoot>
+                                )}
+                            </table>
                         </div>
-
-                        {grace > 0 && (
-                            <p className="text-[11px] text-white/30 leading-relaxed -mt-2">
-                                În primele {grace} {grace === 1 ? "lună" : "luni"} plătești doar dobânda. Principalul se amortizează în cele{" "}
-                                {termen - grace} luni rămase.
-                            </p>
+                        {schedule.length > PREVIEW_ROWS && (
+                            <button
+                                onClick={() => setTableOpen(!tableOpen)}
+                                className="w-full px-4 py-3 text-xs text-white/40 hover:text-white/70 border-t border-white/5 flex items-center justify-center gap-1.5 transition-colors"
+                            >
+                                {tableOpen ? (
+                                    <>
+                                        <ChevronUp size={14} />
+                                        Restrânge graficul
+                                    </>
+                                ) : (
+                                    <>
+                                        <ChevronDown size={14} />
+                                        Arată toate cele {schedule.length} rate
+                                    </>
+                                )}
+                            </button>
                         )}
                     </div>
 
-                    {/* ── Results ── */}
-                    <div className="space-y-4">
-                        {/* 4 stat cards */}
-                        <div className="grid grid-cols-2 gap-3">
-                            <div className="rounded-xl p-px bg-linear-to-br from-brand-500/60 via-brand-500/10 to-transparent">
-                                <div className="rounded-xl bg-black-600/90 px-4 py-4 h-full">
-                                    <div className="text-[11px] uppercase tracking-wider text-white/50">
-                                        {isFixed ? "Rată lunară" : "Prima rată"}
-                                    </div>
-                                    <div className="mt-1 text-2xl md:text-3xl font-semibold text-brand-gradient">
-                                        <AnimatedNumber value={firstPayment} />
-                                        <span className="text-sm font-normal text-white/50 ml-1">MDL</span>
-                                    </div>
-                                    {!isFixed && (
-                                        <div className="text-xs text-white/40 mt-1">
-                                            Ultima: {Math.round(lastPayment).toLocaleString("ro-RO")} MDL
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 py-4">
-                                <div className="text-[11px] uppercase tracking-wider text-white/50">Total plătit</div>
-                                <div className="mt-1 text-2xl md:text-3xl font-semibold">
-                                    <AnimatedNumber value={totalPaid} />
-                                    <span className="text-sm font-normal text-white/50 ml-1">MDL</span>
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 py-4">
-                                <div className="text-[11px] uppercase tracking-wider text-white/50">Dobândă totală</div>
-                                <div className="mt-1 text-2xl md:text-3xl font-semibold">
-                                    <AnimatedNumber value={totalInterest} />
-                                    <span className="text-sm font-normal text-white/50 ml-1">MDL</span>
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 py-4">
-                                <div className="text-[11px] uppercase tracking-wider text-white/50">DAE</div>
-                                <div className="mt-1 text-2xl md:text-3xl font-semibold">
-                                    {dae}
-                                    <span className="text-sm font-normal text-white/50 ml-1">%/an</span>
-                                </div>
-                                <div className="text-[11px] text-white/25 mt-0.5">Dobândă anuală efectivă</div>
-                            </div>
+                    {/* CTA */}
+                    <div className="rounded-xl border border-green-500/20 bg-green-500/5 px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div>
+                            <p className="text-sm font-medium text-white">Vrei acest credit?</p>
+                            <p className="text-xs text-white/50 mt-0.5">Completează cererea online în 5 minute.</p>
                         </div>
-
-                        {/* Balance chart */}
-                        <div className="rounded-xl bg-black-600/70 border border-white/5 px-4 pt-4 pb-3">
-                            <div className="flex items-center justify-between mb-2">
-                                <span className="text-xs text-white/40">Sold rămas în timp</span>
-                                <span className="text-xs text-white/40">{termen} luni</span>
-                            </div>
-                            <BalanceChart schedule={schedule} principal={suma} />
-                            <div className="flex justify-between text-[10px] text-white/20 mt-1">
-                                <span>Lună 1</span>
-                                <span>Lună {Math.ceil(termen / 2)}</span>
-                                <span>Lună {termen}</span>
-                            </div>
-                        </div>
-
-                        {/* Amortization table */}
-                        <div className="rounded-xl bg-black-600/70 border border-white/5 overflow-hidden">
-                            <div className="px-4 py-3 border-b border-white/5 flex items-center justify-between">
-                                <span className="text-sm font-medium">Grafic de rambursare</span>
-                                <span className="text-xs text-white/40">{schedule.length} rate</span>
-                            </div>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-xs">
-                                    <thead>
-                                        <tr className="text-white/35 border-b border-white/5">
-                                            <th className="text-left px-4 py-2.5 font-normal">#</th>
-                                            <th className="text-left px-4 py-2.5 font-normal">Data</th>
-                                            <th className="text-right px-4 py-2.5 font-normal">Plată</th>
-                                            <th className="text-right px-4 py-2.5 font-normal">Principal</th>
-                                            <th className="text-right px-4 py-2.5 font-normal">Dobândă</th>
-                                            <th className="text-right px-4 py-2.5 font-normal">Sold</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-white/5">
-                                        {visibleRows.map((r) => (
-                                            <tr
-                                                key={r.month}
-                                                className={r.principal === 0 ? "text-white/35" : "text-white/75 hover:bg-white/[0.02]"}
-                                            >
-                                                <td className="px-4 py-2.5">{r.month}</td>
-                                                <td className="px-4 py-2.5">{r.date}</td>
-                                                <td className="px-4 py-2.5 text-right font-semibold text-white tabular-nums">
-                                                    {Math.round(r.payment).toLocaleString("ro-RO")}
-                                                </td>
-                                                <td className="px-4 py-2.5 text-right tabular-nums">
-                                                    {r.principal ? Math.round(r.principal).toLocaleString("ro-RO") : "-"}
-                                                </td>
-                                                <td className="px-4 py-2.5 text-right tabular-nums text-brand-500/70">
-                                                    {Math.round(r.interest).toLocaleString("ro-RO")}
-                                                </td>
-                                                <td className="px-4 py-2.5 text-right tabular-nums">
-                                                    {Math.round(r.balance).toLocaleString("ro-RO")}
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                    {tableOpen && (
-                                        <tfoot>
-                                            <tr className="border-t border-white/10 text-white/50 font-medium">
-                                                <td className="px-4 py-2.5" colSpan={2}>
-                                                    Total
-                                                </td>
-                                                <td className="px-4 py-2.5 text-right text-white tabular-nums">
-                                                    {Math.round(totalPaid).toLocaleString("ro-RO")}
-                                                </td>
-                                                <td className="px-4 py-2.5 text-right tabular-nums">{suma.toLocaleString("ro-RO")}</td>
-                                                <td className="px-4 py-2.5 text-right tabular-nums text-brand-500/70">
-                                                    {Math.round(totalInterest).toLocaleString("ro-RO")}
-                                                </td>
-                                                <td className="px-4 py-2.5 text-right tabular-nums">0</td>
-                                            </tr>
-                                        </tfoot>
-                                    )}
-                                </table>
-                            </div>
-                            {schedule.length > PREVIEW_ROWS && (
-                                <button
-                                    onClick={() => setTableOpen(!tableOpen)}
-                                    className="w-full px-4 py-3 text-xs text-white/40 hover:text-white/70 border-t border-white/5 flex items-center justify-center gap-1.5 transition-colors"
-                                >
-                                    {tableOpen ? (
-                                        <>
-                                            <ChevronUp size={14} />
-                                            Restrânge graficul
-                                        </>
-                                    ) : (
-                                        <>
-                                            <ChevronDown size={14} />
-                                            Arată toate cele {schedule.length} rate
-                                        </>
-                                    )}
-                                </button>
-                            )}
-                        </div>
-
-                        {/* CTA */}
-                        <div className="rounded-xl border border-green-500/20 bg-green-500/5 px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                            <div>
-                                <p className="text-sm font-medium text-white">Vrei acest credit?</p>
-                                <p className="text-xs text-white/50 mt-0.5">Completează cererea online în 5 minute.</p>
-                            </div>
-                            <Link
-                                href="/cerere-de-credit-online"
-                                className="inline-flex items-center gap-2 rounded-lg bg-green-500 text-white px-5 py-2.5 text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
-                            >
-                                Aplică acum <ArrowRight size={16} />
-                            </Link>
-                        </div>
+                        <Link
+                            href="/cerere-de-credit-online"
+                            className="inline-flex items-center gap-2 rounded-lg bg-green-500 text-white px-5 py-2.5 text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
+                        >
+                            Aplică acum <ArrowRight size={16} />
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
 const FAQ = dynamic(() => import("@/components/FAQ"));
 const PaymentMethods = dynamic(() => import("@/components/PaymentMethods"));
 
-import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCauseniSchema, howToSchema, faqSchema } from "@/lib/schema";
+import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
  title:"Credite Nebancare în Moldova | Ideal Credit",
@@ -44,8 +44,6 @@ export default function HomePage() {
  return (
  <>
  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(financialServiceSchema) }} />
- <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
- <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

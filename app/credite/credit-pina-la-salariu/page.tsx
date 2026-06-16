@@ -12,6 +12,14 @@ export const metadata: Metadata = {
  description:
 "Credit până la salariu pentru persoanele angajate oficial și cu venit constant. Aprobare rapidă, dobânzi avantajoase și transparență totală. Aplică online!",
  alternates: { canonical:"https://idealcredit.md/credite/credit-pina-la-salariu" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Credit până la salariu | Credit urgent | Ideal Credit",
+        description: "Credit până la salariu pentru persoanele angajate oficial și cu venit constant. Aprobare rapidă, dobânzi avantajoase și transparență totală.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const faqItems: FaqItem[] = [
