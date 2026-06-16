@@ -11,7 +11,7 @@ interface ServiceHeroProps {
 
 export default function ServiceHero({ title, subtitle }: ServiceHeroProps) {
     return (
-        <div className="relative pt-16 md:pt-20 pb-10 md:pb-16">
+        <div className="relative pt-11 md:pt-20 pb-10 md:pb-16">
             {/* Backgrounds */}
             <div className="bg-squares -mt-px" />
             <div className="pointer-events-none absolute inset-0 -z-1 overflow-hidden" aria-hidden>

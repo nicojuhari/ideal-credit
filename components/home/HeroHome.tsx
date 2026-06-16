@@ -6,7 +6,7 @@ import TrustBadge from "@/components/ui/TrustBadge";
 
 export default function HeroHome() {
     return (
-        <div className="relative pt-16 md:pt-20 pb-10 md:pb-16">
+        <div className="relative pt-11 md:pt-20 pb-10 md:pb-16">
             {/* Backgrounds */}
             <div className="bg-squares -mt-px" />
             <div className="pointer-events-none absolute inset-0 -z-1 overflow-hidden" aria-hidden>
@@ -44,8 +44,7 @@ export default function HeroHome() {
                             transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
                             className="mt-10 md:text-base font-light max-w-xl text-center md:text-left mx-auto md:mx-0"
                         >
-                            Dobândă fixă și fără comisioane ascunse.{" "}
-                            <span className="max-sm:block">Răspuns în 1-3 ore.</span>
+                            Dobândă fixă și fără comisioane ascunse. <span className="max-sm:block">Răspuns în 1-3 ore.</span>
                         </motion.p>
                     </div>
 
