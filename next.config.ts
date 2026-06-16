@@ -5,17 +5,7 @@ const withMDX = createMDX({});
 
 const nextConfig: NextConfig = {
     pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-
     trailingSlash: false,
-
-    images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "a.storyblok.com",
-            },
-        ],
-    },
 
     async redirects() {
         return [

@@ -44,7 +44,7 @@ export default function Footer() {
                         <Logo className="w-7" />
                         <span className="text-base font-semibold leading-tight">Ideal Credit</span>
                     </Link>
-                    <p className="text-xs leading-relaxed">Creditare nebancară pentru afaceri și consum în Moldova.</p>
+                    <p className="text-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
                     <div className="flex gap-3 items-center">
                         {[
                             {
