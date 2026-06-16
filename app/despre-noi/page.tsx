@@ -21,7 +21,7 @@ export default function DespreNoiPage() {
                 <div className="container">
                     <div className="card">
                         <h1 className="card-title text-center">Despre noi</h1>
-                        <div className="text-lg space-y-4">
+                        <div className="space-y-4">
                             <p>
                                 Ideal Credit este o instituție financiară nebancară cu sediul central în Căușeni și sucursală în Chișinău.
                             </p>
@@ -33,7 +33,7 @@ export default function DespreNoiPage() {
                                 </Link>
                             </p>
                             <p>Suntem o organizație de creditare nebancară autorizată și supravegheată de CNPF.</p>
-                            <p className="text-brand-500 font-medium italic">&quot;Credite avantajoase pentru persoane serioase&quot;</p>
+                            <p className="text-brand-500 font-medium italic">&quot;Credite pentru succes!&quot;</p>
 
                             <h2 className="pt-6 text-2xl">Ce facem</h2>
                             <p>Oferim finanțare pentru cei care au nevoie de bani - fără birocrație inutilă și fără costuri ascunse.</p>
@@ -155,29 +155,29 @@ export default function DespreNoiPage() {
                             <h2 className="pt-6 text-2xl">Întrebări frecvente</h2>
                             <div className="space-y-4">
                                 <div>
-                                    <p className="font-semibold">Am nevoie de garant sau gaj?</p>
+                                    <p className="text-lg text-white">Am nevoie de garant sau gaj?</p>
                                     <p>
                                         La primul credit, fidejusorul (garant personal) este obligatoriu. Gajul imobiliar poate fi cerut
                                         suplimentar pentru sume mari sau venituri nestabile.
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="font-semibold">Cât de repede primesc banii?</p>
+                                    <p className="text-lg text-white">Cât de repede primesc banii?</p>
                                     <p>Decizie în 2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri.</p>
                                 </div>
                                 <div>
-                                    <p className="font-semibold">Cum primesc banii?</p>
+                                    <p className="text-lg text-white">Cum primesc banii?</p>
                                     <p>
                                         Persoanele fizice pot ridica numerar la birou sau primi transferul la card/cont bancar. Pentru
                                         afaceri, fondurile se virează întotdeauna prin transfer bancar.
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="font-semibold">Pot aplica online?</p>
+                                    <p className="text-lg text-white">Pot aplica online?</p>
                                     <p>Da. Platforma noastră online îți permite să completezi cererea de oriunde din Moldova.</p>
                                 </div>
                                 <div>
-                                    <p className="font-semibold">Ce acte am nevoie?</p>
+                                    <p className="text-lg text-white">Ce acte am nevoie?</p>
                                     <p>
                                         Pentru persoane fizice: buletin și un document de confirmare a veniturilor (adeverință, extras de
                                         card sau verificare BIC). Pentru firme: certificat de înregistrare și extrase bancare.{" "}

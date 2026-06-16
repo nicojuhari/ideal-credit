@@ -257,7 +257,7 @@ export default function PaymentMethods() {
                                 className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors ${
                                     item.recommended
                                         ? "bg-green-500/15 text-green-500"
-                                        : "bg-white/5 text-gray-500 group-hover:bg-white/10 group-hover:text-white"
+                                        : "bg-white/5 group-hover:bg-white/10 group-hover:text-white"
                                 }`}
                             >
                                 <Icon size={20} />
@@ -272,7 +272,7 @@ export default function PaymentMethods() {
                                         </span>
                                     )}
                                 </div>
-                                <p className="mt-0.5 text-sm text-gray-500 leading-relaxed">{item.description}</p>
+                                <p className="mt-0.5 text-sm leading-relaxed">{item.description}</p>
                             </div>
                         </motion.div>
                     );

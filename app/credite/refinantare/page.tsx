@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
 import CreditPageContent from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
-import { Check, Briefcase, User, ArrowRight, ShieldAlert } from "lucide-react";
+import ChecklistCard from "@/components/ui/ChecklistCard";
+import AlertBox from "@/components/ui/AlertBox";
+import { Check, Briefcase, User, ShieldAlert } from "lucide-react";
 import { refinantareSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -58,35 +59,20 @@ const personalProducts = ["Credite de consum nebancare", "Credite bancare person
 export default function RefinantarePage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(refinantareSchema),
-                }}
-            />
-            {/* Hero */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(refinantareSchema) }} />
+
             <ServiceHero
-                title={<>Refinanțare credit cu rată mai mică</>}
+                title="Refinanțare credit cu rată mai mică"
                 subtitle="Preluăm credite de la alte OCN-uri sau bănci. Evaluăm și cu istoric negativ în biroul de credit."
             />
 
-            {/* Când merită refinanțarea */}
-            <section className="container">
-                <h2 className="title text-center">Când merită refinanțarea?</h2>
-                <div className="max-w-2xl mx-auto card flex flex-col gap-5">
-                    <p className="text-sm text-gray-500">Merită dacă cel puțin unul din punctele de mai jos se aplică situației tale:</p>
-                    <ul className="space-y-3">
-                        {worthRefinancingItems.map((item) => (
-                            <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </section>
+            <ChecklistCard
+                heading="Când merită refinanțarea?"
+                intro="Merită dacă cel puțin unul din punctele de mai jos se aplică situației tale:"
+                items={worthRefinancingItems}
+                centered
+            />
 
-            {/* Ce preluăm */}
             <section className="container">
                 <h2 className="title text-center">Ce credite preluăm</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -95,11 +81,11 @@ export default function RefinantarePage() {
                             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                 <Briefcase size={18} />
                             </span>
-                            <h3 className="text-base font-semibold text-white">Pentru afaceri</h3>
+                            <h3 className="text-base font-semibold">Pentru afaceri</h3>
                         </div>
                         <ul className="space-y-2.5">
                             {businessProducts.map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
+                                <li key={item} className="flex items-start gap-2.5 text-sm">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -111,11 +97,11 @@ export default function RefinantarePage() {
                             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
                                 <User size={18} />
                             </span>
-                            <h3 className="text-base font-semibold text-white">Pentru persoane fizice</h3>
+                            <h3 className="text-base font-semibold">Pentru persoane fizice</h3>
                         </div>
                         <ul className="space-y-2.5">
                             {personalProducts.map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
+                                <li key={item} className="flex items-start gap-2.5 text-sm">
                                     <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -125,28 +111,18 @@ export default function RefinantarePage() {
                 </div>
             </section>
 
-            {/* Istoric negativ */}
-            <section className="container">
-                <div className="max-w-2xl mx-auto rounded-xl border border-white/8 bg-black-600/50 p-6 md:p-8 flex flex-col gap-4">
-                    <div className="flex items-center gap-3">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400">
-                            <ShieldAlert size={20} />
-                        </span>
-                        <h2 className="text-lg font-semibold text-white">Ce se întâmplă cu istoricul negativ?</h2>
-                    </div>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                        Nu refuzăm automat cererile de refinanțare cu incident în biroul de credit.
-                    </p>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                        Evaluăm trei lucruri: vechimea incidentului, cauza lui și situația curentă de venit. Un incident vechi, cu o
-                        explicație clară și venituri stabile azi, nu blochează automat aprobarea.
-                    </p>
-                    <p className="text-sm text-gray-500 leading-relaxed">
-                        Mulți clienți ai noștri au refinanțat după un refuz bancar. Dacă banca a spus nu, nu înseamnă că răspunsul e același
-                        și la noi.
-                    </p>
-                </div>
-            </section>
+            <AlertBox icon={ShieldAlert} heading="Ce se întâmplă cu istoricul negativ?" color="amber">
+                <p className="text-sm leading-relaxed">
+                    Nu refuzăm automat cererile de refinanțare cu incident în biroul de credit.
+                </p>
+                <p className="text-sm leading-relaxed">
+                    Evaluăm trei lucruri: vechimea incidentului, cauza lui și situația curentă de venit. Un incident vechi, cu o
+                    explicație clară și venituri stabile azi, nu blochează automat aprobarea.
+                </p>
+                <p className="text-sm leading-relaxed">
+                    Mulți clienți ai noștri au refinanțat după un refuz bancar. Dacă banca a spus nu, nu înseamnă că răspunsul e același și la noi.
+                </p>
+            </AlertBox>
 
             <CreditPageContent
                 eligibilityTitle="Cine poate refinanța"
@@ -173,30 +149,14 @@ export default function RefinantarePage() {
                     ],
                 }}
                 relatedLinks={[
-                    {
-                        href: "/credite/credit-pentru-afaceri-mici",
-                        label: "Credit pentru afaceri mici",
-                        desc: "Finanțare nouă pentru capital de lucru sau investiții.",
-                    },
-                    {
-                        href: "/credite/credit-pentru-nevoi-personale",
-                        label: "Credit personal",
-                        desc: "Credit de consum cu rată fixă și costuri transparente.",
-                    },
-                    {
-                        href: "/credite/credit-capital-de-lucru",
-                        label: "Credit capital de lucru",
-                        desc: "Lichiditate rapidă pentru firmele din Moldova.",
-                    },
+                    { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Finanțare nouă pentru capital de lucru sau investiții." },
+                    { href: "/credite/credit-pentru-nevoi-personale", label: "Credit personal", desc: "Credit de consum cu rată fixă și costuri transparente." },
+                    { href: "/credite/credit-capital-de-lucru", label: "Credit capital de lucru", desc: "Lichiditate rapidă pentru firmele din Moldova." },
                 ]}
             />
 
             <HowItWorks />
-
             <CreditFAQ items={refinantareFaqItems} />
-
-            {/* CTA */}
-
             <WhyBento />
         </>
     );

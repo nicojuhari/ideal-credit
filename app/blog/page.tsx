@@ -1,39 +1,75 @@
 import type { Metadata } from "next";
-import BlogCards from "@/components/BlogCards";
+import Link from "next/link";
+import { blogPosts, type BlogPost } from "@/lib/blog-posts";
+import { ArrowRight, Clock, Briefcase, User, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog Financiar - Sfaturi și Strategii | Ideal Credit",
-  description:
-    "Blog financiar cu ghiduri simple despre credite, gestionarea cash-flow-ului și planificare financiară. Informații practice pentru afaceri și persoane fizice",
-  alternates: { canonical: "https://idealcredit.md/blog" },
+ title:"Blog - Ghiduri practice despre credite | Ideal Credit",
+ description:
+"Ghiduri practice pentru antreprenori și persoane fizice care evaluează un credit nebancar în Moldova. Informații clare, fără generalități.",
+ alternates: { canonical:"https://idealcredit.md/blog" },
 };
 
-async function getStories() {
-  try {
-    const token = process.env.STORYBLOK_ACCESS_TOKEN;
-    const res = await fetch(
-      `https://api.storyblok.com/v2/cdn/stories?starts_with=blog&token=${token}&version=published&per_page=100`,
-      { next: { revalidate: 3600 } }
-    );
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.stories ?? [];
-  } catch {
-    return [];
-  }
+const categoryLabel: Record<BlogPost["category"], string> = {
+ afaceri:"Afaceri",
+ personal:"Personal",
+ ghid:"Ghid",
+};
+
+const categoryIcon: Record<BlogPost["category"], React.ComponentType<{ size?: number; className?: string }>> = {
+ afaceri: Briefcase,
+ personal: User,
+ ghid: BookOpen,
+};
+
+function PostCard({ post }: { post: BlogPost }) {
+ const Icon = categoryIcon[post.category];
+ return (
+ <Link
+ href={`/blog/${post.slug}`}
+ className="group flex flex-col gap-4 rounded-2xl border border-white/5 bg-black-600/60 p-6 hover:border-white/15 hover:bg-black-600 transition-colors duration-200"
+ >
+ <div className="flex items-center justify-between">
+ <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/3 px-3 py-1 text-xs">
+ <Icon size={11} />
+ {categoryLabel[post.category]}
+ </span>
+ <span className="inline-flex items-center gap-1 text-xs">
+ <Clock size={11} />
+ {post.readMinutes} min
+ </span>
+ </div>
+ <h2 className="text-base font-medium text-white leading-snug group-hover:text-brand-500 transition-colors line-clamp-2">
+ {post.title}
+ </h2>
+ <p className="text-sm leading-relaxed line-clamp-3 flex-1">{post.description}</p>
+ <span className="inline-flex items-center gap-1 text-xs text-brand-500 font-medium">
+ Citește <ArrowRight size={13} />
+ </span>
+ </Link>
+ );
 }
 
-export default async function BlogPage() {
-  const stories = await getStories();
+export default function BlogPage() {
+ return (
+ <div className="container my-8 md:my-12">
+ <div className="text-center mb-12">
+ <h1 className="title mb-3">Ghiduri practice</h1>
+ <p className=" max-w-xl mx-auto text-sm leading-relaxed">
+ Articole scrise pentru antreprenori și persoane fizice care evaluează un credit nebancar - nu educație financiară
+ generală, ci răspunsuri la întrebările pe care le ai înainte să aplici.
+ </p>
+ </div>
 
-  return (
-    <div className="container my-4 md:my-6">
-      <h1 className="title text-center my-10">Blog financiar</h1>
-      {stories.length > 0 ? (
-        <BlogCards stories={stories} />
-      ) : (
-        <div className="text-center text-gray-500 py-20">Se încarcă...</div>
-      )}
-    </div>
-  );
+ {blogPosts.length > 0 ? (
+ <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+ {blogPosts.map((post) => (
+ <PostCard key={post.slug} post={post} />
+ ))}
+ </div>
+ ) : (
+ <p className="text-center py-20">Articolele se publică în curând.</p>
+ )}
+ </div>
+ );
 }

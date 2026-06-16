@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
 import CreditPageContent from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
+import ServiceTileGrid from "@/components/ui/ServiceTileGrid";
+import type { ServiceTileItem } from "@/components/ui/ServiceTileGrid";
 import { Home, Tv, Activity, Cake, Plane, Zap } from "lucide-react";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
     description:
-        "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore. Până la 300.000 lei pentru orice nevoie personală.",
+        "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
 };
 
@@ -43,86 +44,26 @@ const personalFaqItems: FaqItem[] = [
     },
 ];
 
-const useCases = [
-    {
-        icon: Home,
-        label: "Renovare acasă",
-        href: "/credite/credit-pentru-reparatie",
-    },
-    {
-        icon: Tv,
-        label: "Electrocasnice, mobilă",
-        href: null,
-    },
-    {
-        icon: Activity,
-        label: "Tratament medical",
-        href: null,
-    },
-    {
-        icon: Cake,
-        label: "Nuntă, botez, eveniment",
-        href: null,
-    },
-    {
-        icon: Plane,
-        label: "Vacanță planificată",
-        href: null,
-    },
-    {
-        icon: Zap,
-        label: "Urgențe financiare",
-        href: "/credite/credit-pina-la-salariu",
-    },
+const useCases: ServiceTileItem[] = [
+    { icon: Home, label: "Renovare acasă", href: "/credite/credit-pentru-reparatie" },
+    { icon: Tv, label: "Electrocasnice, mobilă", href: null },
+    { icon: Activity, label: "Tratament medical", href: null },
+    { icon: Cake, label: "Nuntă, botez, eveniment", href: null },
+    { icon: Plane, label: "Vacanță planificată", href: null },
+    { icon: Zap, label: "Urgențe financiare", href: "/credite/credit-pina-la-salariu" },
 ];
 
 export default function CreditNevoiPersonalePage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(personalLoanSchema),
-                }}
-            />
-            {/* Hero */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
+
             <ServiceHero
-                title={"Credit pentru nevoi personale"}
+                title="Credit pentru nevoi personale"
                 subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
             />
 
-            {/* Use-cases tile grid */}
-            <section className="container">
-                <h2 className="title text-center">Când folosești un credit personal</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-                    {useCases.map(({ icon: Icon, label, href }) => {
-                        const content = (
-                            <>
-                                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500">
-                                    <Icon size={22} />
-                                </span>
-                                <span className="text-sm font-medium text-white text-center leading-snug">{label}</span>
-                            </>
-                        );
-                        return href ? (
-                            <Link
-                                key={label}
-                                href={href}
-                                className="group flex flex-col items-center gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50 hover:border-white/15 hover:bg-black-600 transition-colors"
-                            >
-                                {content}
-                            </Link>
-                        ) : (
-                            <div
-                                key={label}
-                                className="flex flex-col items-center gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50"
-                            >
-                                {content}
-                            </div>
-                        );
-                    })}
-                </div>
-            </section>
+            <ServiceTileGrid heading="Când folosești un credit personal" items={useCases} />
 
             <CreditPageContent
                 eligibilityTitle="Condiții de bază"
@@ -148,28 +89,14 @@ export default function CreditNevoiPersonalePage() {
                     ],
                 }}
                 relatedLinks={[
-                    {
-                        href: "/credite/credit-pentru-reparatie",
-                        label: "Credit pentru reparație",
-                        desc: "Renovezi casa cu rate fixe și costuri clare.",
-                    },
-                    {
-                        href: "/credite/credit-pina-la-salariu",
-                        label: "Credit până la salariu",
-                        desc: "Sumă mică pentru urgențe, rambursare la salariu.",
-                    },
-                    {
-                        href: "/credite/credit-pentru-automobil",
-                        label: "Credit pentru automobil",
-                        desc: "Cumperi sau repari mașina cu finanțare rapidă.",
-                    },
+                    { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Renovezi casa cu rate fixe și costuri clare." },
+                    { href: "/credite/credit-pina-la-salariu", label: "Credit până la salariu", desc: "Sumă mică pentru urgențe, rambursare la salariu." },
+                    { href: "/credite/credit-pentru-automobil", label: "Credit pentru automobil", desc: "Cumperi sau repari mașina cu finanțare rapidă." },
                 ]}
             />
 
             <HowItWorks />
-
             <CreditFAQ items={personalFaqItems} />
-
             <WhyBento />
         </>
     );

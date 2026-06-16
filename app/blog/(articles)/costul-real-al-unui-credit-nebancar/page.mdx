@@ -1,0 +1,147 @@
+export const metadata = {
+    title: "Costul real al unui credit nebancar | Ideal Credit",
+    description:
+        "Dobânda nominală nu îți spune cât costă creditul. DAE da. Cum să citești o ofertă de credit nebancar și ce costuri să ceri transparent înainte să semnezi.",
+    alternates: { canonical: "https://idealcredit.md/blog/costul-real-al-unui-credit-nebancar" },
+    openGraph: {
+        title: "Costul real al unui credit nebancar - DAE explicat",
+        description: "Cum să citești o ofertă de credit și ce costuri contează cu adevărat.",
+        type: "article",
+    },
+};
+
+# Costul real al unui credit nebancar - ce înseamnă DAE și cum calculezi ce plătești
+
+Când compari două oferte de credit, primul număr pe care îl vezi e dobânda nominală. E și cel mai înșelător. Un creditor cu dobândă de 18% poate costa mai mult decât unul cu dobândă de 24% - dacă primul adaugă comisioane lunare, taxe de analiză și asigurări obligatorii.
+
+Singurul număr care permite o comparație corectă e DAE - Dobânda Anuală Efectivă. Acest articol explică ce include DAE, ce costuri pot apărea în afara lui și cum să calculezi efectiv cât vei plăti pentru un credit.
+
+---
+
+## Dobânda nominală vs. DAE - diferența concretă
+
+**Dobânda nominală** e procentul aplicat la suma împrumutată pentru calculul dobânzii. Nu include comisioanele, taxele sau alte costuri.
+
+**DAE (Dobânda Anuală Efectivă)** include dobânda nominală plus toate costurile obligatorii asociate creditului: comisioane de administrare, taxe de analiză, asigurări impuse de creditor. E singurul indicator standardizat legal care permite compararea reală a două oferte.
+
+Un exemplu cu două credite identice ca sumă și durată:
+
+<ComparisonTable
+  headers={["", "Creditor A", "Creditor B"]}
+  rows={[
+    ["Sumă", "80.000 MDL", "80.000 MDL"],
+    ["Durată", "36 luni", "36 luni"],
+    ["Dobândă nominală", "18%", "26%"],
+    ["Comision lunar de administrare", "0,6% / lună", "0%"],
+    ["Taxă de analiză dosar", "1.500 MDL", "0 MDL"],
+    ["DAE real", "~31%", "~26%"],
+    ["Total plătit", "~108.000 MDL", "~101.000 MDL"],
+  ]}
+  highlight={[5, 6]}
+/>
+
+Creditor A pare mai ieftin la prima vedere. Costă cu ~7.000 MDL mai mult pe durata creditului.
+
+---
+
+## Ce intră în DAE - lista completă
+
+DAE obligatoriu include:
+
+- **Dobânda** - calculată la soldul rămas (nu la suma inițială, dacă e credit cu rambursare în rate egale)
+- **Comisioane de acordare** - taxă unică la momentul acordării, calculată ca procent din sumă sau sumă fixă
+- **Comisioane de administrare** - lunare sau anuale, aplicate pe toată durata creditului
+- **Asigurări obligatorii** - dacă creditorul impune o asigurare de viață sau de risc ca și condiție a creditului
+
+**Ce nu intră în DAE**, dar poate apărea în contract:
+- Penalități pentru întârziere (nu sunt un cost garantat, dar există)
+- Taxe pentru rambursare anticipată (la unii creditori)
+- Costuri notariale pentru gaj imobiliar (dacă e cazul)
+
+<InfoBox>
+La Ideal Credit nu există comision de rambursare anticipată. Dacă vrei să plătești mai repede - plătești, fără penalizare. Verifică această clauză la orice creditor înainte să semnezi.
+</InfoBox>
+
+---
+
+## Cum se calculează rata lunară
+
+Pentru un credit cu rată fixă lunară (anuitate), formula e standardizată. Dar nu trebuie să o calculezi manual - orice creditor autorizat e obligat să îți furnizeze graficul complet de rambursare înainte de semnare.
+
+Ce trebuie să conțină graficul:
+- Numărul ratei
+- Data scadenței
+- Suma ratei (capital + dobândă)
+- Soldul rămas după fiecare plată
+
+Dacă un creditor nu poate sau nu vrea să îți dea graficul complet înainte de semnare, e un semnal de alarmă.
+
+**Exemplu concret** - credit de 50.000 MDL pe 24 de luni la DAE 24%:
+
+<ComparisonTable
+  headers={["Lună", "Rată lunară", "Din care dobândă", "Sold rămas"]}
+  rows={[
+    ["1", "2.723 MDL", "1.000 MDL", "48.277 MDL"],
+    ["6", "2.723 MDL", "856 MDL", "41.668 MDL"],
+    ["12", "2.723 MDL", "659 MDL", "32.698 MDL"],
+    ["18", "2.723 MDL", "444 MDL", "21.870 MDL"],
+    ["24", "2.723 MDL", "54 MDL", "0 MDL"],
+  ]}
+  highlight={[]}
+/>
+
+Observi că în primele rate, o parte mai mare e dobândă. Pe măsură ce soldul scade, și dobânda scade. Total plătit: ~65.352 MDL pentru un credit de 50.000 MDL - adică ~15.352 MDL cost total al creditului.
+
+---
+
+## Trei întrebări pe care să le pui oricărui creditor
+
+**1. Care e DAE-ul total, cu toate comisioanele incluse?**
+
+Nu dobânda nominală - DAE complet. Dacă răspunsul e vag sau creditorului îi ia timp să calculeze, înseamnă că oferta nu e transparentă.
+
+**2. Există comisioane lunare de administrare sau taxe de analiză?**
+
+Comisioanele mici lunare (0,3%–0,6% din sold) par neglijabile, dar pe 36 de luni adaugă mii de lei la costul total.
+
+**3. Pot rambursa anticipat fără penalizare?**
+
+Dacă da - ai flexibilitate. Dacă creditul merge bine și ai posibilitatea să închizi mai devreme, nu ar trebui să te coste extra.
+
+---
+
+## Costul total în funcție de durată - de ce contează să alegi bine
+
+O durată mai lungă înseamnă rată lunară mai mică, dar cost total mai mare. Nu e bine sau rău în sine - depinde de situația ta de lichiditate.
+
+<ComparisonTable
+  headers={["Durată", "Rată lunară", "Total plătit", "Cost credit"]}
+  rows={[
+    ["12 luni", "4.608 MDL", "55.296 MDL", "5.296 MDL"],
+    ["24 luni", "2.723 MDL", "65.352 MDL", "15.352 MDL"],
+    ["36 luni", "2.130 MDL", "76.680 MDL", "26.680 MDL"],
+    ["48 luni", "1.835 MDL", "88.080 MDL", "38.080 MDL"],
+  ]}
+  highlight={[1]}
+/>
+
+*Exemplu: 50.000 MDL la DAE 24%.*
+
+Un credit pe 12 luni costă de 5 ori mai puțin decât unul pe 48 de luni - dar rata lunară e de 2,5 ori mai mare. Dacă fluxul de numerar îți permite rata mai mare, durata mai scurtă e aproape întotdeauna mai avantajoasă financiar.
+
+---
+
+## Ce înseamnă transparența în practică
+
+Înainte să semnezi orice contract la Ideal Credit, primești:
+
+- Suma exactă pe care o primești în cont
+- Rata lunară fixă - nu se modifică pe toată durata contractului
+- DAE complet calculat, cu toate costurile incluse
+- Graficul complet rată cu rată
+
+Dacă ceva nu e clar, ai dreptul să ceri timp. Un consultant care te grăbește să semnezi nu lucrează în interesul tău.
+
+---
+
+Dacă vrei să calculezi concret costul unui credit în situația ta - suma, durata, rata lunară și total plătit - discutăm direct. Nu un calculator generic, ci o ofertă reală bazată pe profilul tău.

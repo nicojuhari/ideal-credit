@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import HowItWorks from "@/components/HowItWorks";
 import ServiceHero from "@/components/ServiceHero";
 import CreditPageContent from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import WhyBento from "@/components/WhyBento";
-import { TrendingUp, Building2, RefreshCw, Zap, ArrowRight } from "lucide-react";
+import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
+import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import { TrendingUp, Building2, RefreshCw, Zap } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
     description:
-        "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare. Până la 300.000 lei.",
+        "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau refinanțare. Decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
 };
 
@@ -43,78 +44,44 @@ const businessFaqItems: FaqItem[] = [
     },
 ];
 
-const useCases = [
+const useCases: ServiceFeatureItem[] = [
     {
         icon: TrendingUp,
         title: "Capital de lucru",
         desc: "Salarii, furnizori, stocuri - acoperi golurile din flux fără să oprești activitatea.",
-        href: "/credite/credit-capital-de-lucru",
+        link: { href: "/credite/credit-capital-de-lucru" },
     },
     {
         icon: Building2,
         title: "Investiții",
         desc: "Echipamente, utilaje, extindere spațiu, vehicule comerciale.",
-        href: "/credite/credit-investitional",
+        link: { href: "/credite/credit-investitional" },
     },
     {
         icon: RefreshCw,
         title: "Refinanțare",
         desc: "Consolidezi creditele existente într-un singur credit cu rată mai mică.",
-        href: "/credite/refinantare",
+        link: { href: "/credite/refinantare" },
     },
     {
         icon: Zap,
         title: "Start-up",
         desc: "Lansezi afacerea: înregistrare firmă, echipamente inițiale, stoc de pornire.",
-        href: "/cerere-de-credit-online",
+        link: { href: "/cerere-de-credit-online" },
     },
 ];
 
 export default function CreditAfaceriMiciPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(businessCreditSchema),
-                }}
-            />
-            {/* Hero */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
+
             <ServiceHero
-                title={
-                    <>
-                        Credit pentru
-                        <br />
-                        afaceri mici
-                    </>
-                }
-                subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Până la 300.000 lei, aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
+                title={<>Credit pentru<br />afaceri mici</>}
+                subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
             />
 
-            {/* Use-cases grid cu linkuri interne */}
-            <section className="container">
-                <h2 className="title text-center">Pentru ce poți folosi creditul</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {useCases.map(({ icon: Icon, title, desc, href }) => (
-                        <div key={title} className="flex flex-col gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50">
-                            <div className="flex items-center gap-3">
-                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
-                                    <Icon size={20} />
-                                </span>
-                                <h3 className="text-base font-semibold text-white">{title}</h3>
-                            </div>
-                            <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
-                            <Link
-                                href={href}
-                                title={`Află mai multe despre ${title.toLowerCase()}`}
-                                className="inline-flex items-center gap-1.5 text-sm text-brand-500 hover:text-brand-400 transition-colors font-medium mt-auto"
-                            >
-                                Află mai mult <ArrowRight size={14} />
-                            </Link>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <ServiceFeatureGrid heading="Pentru ce poți folosi creditul" items={useCases} cols={2} />
 
             <CreditPageContent
                 eligibilityTitle="Este pentru afacerea mea?"
@@ -140,28 +107,14 @@ export default function CreditAfaceriMiciPage() {
                     ],
                 }}
                 relatedLinks={[
-                    {
-                        href: "/credite/credit-capital-de-lucru",
-                        label: "Credit capital de lucru",
-                        desc: "Acoperi golurile de lichiditate fără să oprești activitatea.",
-                    },
-                    {
-                        href: "/credite/credit-investitional",
-                        label: "Credit investițional",
-                        desc: "Finanțezi echipamente sau extindere pe termen lung.",
-                    },
-                    {
-                        href: "/credite/refinantare",
-                        label: "Refinanțare",
-                        desc: "Consolidezi creditele existente într-un singur credit cu rată mai bună.",
-                    },
+                    { href: "/credite/credit-capital-de-lucru", label: "Credit capital de lucru", desc: "Acoperi golurile de lichiditate fără să oprești activitatea." },
+                    { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Finanțezi echipamente sau extindere pe termen lung." },
+                    { href: "/credite/refinantare", label: "Refinanțare", desc: "Consolidezi creditele existente într-un singur credit cu rată mai bună." },
                 ]}
             />
 
             <HowItWorks />
-
             <CreditFAQ items={businessFaqItems} />
-
             <WhyBento />
         </>
     );

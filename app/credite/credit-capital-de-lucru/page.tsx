@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import CreditPageContent from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import WhyBento from "@/components/WhyBento";
-import { Clock, Package, Users, Trophy, ArrowRight } from "lucide-react";
+import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
+import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import { Clock, Package, Users, Trophy } from "lucide-react";
 import { workingCapitalSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit Capital de Lucru pentru Afaceri | Ideal Credit Moldova",
     description:
-        "Credit capital de lucru pentru SRL și ÎI din Moldova. Acoperiți salarii, furnizori și stocuri - până la 300.000 lei, decizie în 1-2 zile lucrătoare.",
+        "Credit capital de lucru pentru SRL și ÎI din Moldova. Acoperiți salarii, furnizori și stocuri - decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-capital-de-lucru" },
 };
 
@@ -43,7 +44,7 @@ const workingCapitalFaqItems: FaqItem[] = [
     },
 ];
 
-const scenarios = [
+const scenarios: ServiceFeatureItem[] = [
     {
         icon: Clock,
         title: "Creanțe blocate",
@@ -69,41 +70,14 @@ const scenarios = [
 export default function CreditCapitalDeLucruPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(workingCapitalSchema),
-                }}
-            />
-            {/* Hero */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workingCapitalSchema) }} />
+
             <ServiceHero
-                title={
-                    <>
-                        Credit capital
-                        <br />
-                        de lucru
-                    </>
-                }
+                title={<>Credit capital<br />de lucru</>}
                 subtitle="Menții activitatea firmei când încasările întârzie. Fără birocrație, fără așteptări săptămâni întregi."
             />
 
-            {/* Scenarii */}
-            <section className="container">
-                <h2 className="title text-center">Când ai nevoie de capital de lucru</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {scenarios.map(({ icon: Icon, title, desc }) => (
-                        <div key={title} className="flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-black-600/50">
-                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500 mt-0.5">
-                                <Icon size={20} />
-                            </span>
-                            <div>
-                                <h3 className="text-base font-semibold text-white mb-1">{title}</h3>
-                                <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <ServiceFeatureGrid heading="Când ai nevoie de capital de lucru" items={scenarios} cols={2} />
 
             <CreditPageContent
                 eligibilityTitle="Condiții de eligibilitate"
@@ -129,30 +103,14 @@ export default function CreditCapitalDeLucruPage() {
                     ],
                 }}
                 relatedLinks={[
-                    {
-                        href: "/credite/credit-pentru-afaceri-mici",
-                        label: "Credit pentru afaceri mici",
-                        desc: "Toate tipurile de finanțare pentru antreprenori.",
-                    },
-                    {
-                        href: "/credite/credit-investitional",
-                        label: "Credit investițional",
-                        desc: "Finanțezi echipamente sau extinderi pe termen lung.",
-                    },
-                    {
-                        href: "/credite/refinantare",
-                        label: "Refinanțare",
-                        desc: "Consolidezi obligațiile existente într-un singur credit.",
-                    },
+                    { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Toate tipurile de finanțare pentru antreprenori." },
+                    { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Finanțezi echipamente sau extinderi pe termen lung." },
+                    { href: "/credite/refinantare", label: "Refinanțare", desc: "Consolidezi obligațiile existente într-un singur credit." },
                 ]}
             />
 
             <HowItWorks />
-
             <CreditFAQ items={workingCapitalFaqItems} />
-
-            {/* CTA */}
-
             <WhyBento />
         </>
     );

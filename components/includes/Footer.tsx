@@ -41,9 +41,12 @@ export default function Footer() {
                 <div className="col-span-2 lg:col-span-2 space-y-5">
                     <Link href="/" className="flex items-center gap-3">
                         <Logo className="w-8" />
-                        <span className="text-xl font-semibold">Ideal Credit</span>
+                        <div className="flex flex-col">
+                            <span className="text-xl font-semibold leading-tight">Ideal Credit</span>
+                            <span className="text-xs text-brand-500 font-medium tracking-wide">Credite pentru succes!</span>
+                        </div>
                     </Link>
-                    <p className="text-sm text-gray-500 max-w-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
+                    <p className="text-sm max-w-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
                     <div className="flex gap-4 items-center">
                         {[
                             {
@@ -80,11 +83,11 @@ export default function Footer() {
 
                 {/* Produse */}
                 <div>
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Produse</p>
+                    <p className="text-xs uppercase tracking-wider mb-4">Produse</p>
                     <ul className="space-y-2.5">
                         {productLinks.map((l) => (
                             <li key={l.href}>
-                                <Link href={l.href} className="text-sm text-gray-500 hover:text-brand-500 transition-colors">
+                                <Link href={l.href} className="text-sm hover:text-brand-500 transition-colors">
                                     {l.label}
                                 </Link>
                             </li>
@@ -94,11 +97,11 @@ export default function Footer() {
 
                 {/* Companie */}
                 <div>
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Companie</p>
+                    <p className="text-xs uppercase tracking-wider mb-4">Companie</p>
                     <ul className="space-y-2.5">
                         {companyLinks.map((l) => (
                             <li key={l.href}>
-                                <Link href={l.href} className="text-sm text-gray-500 hover:text-brand-500 transition-colors">
+                                <Link href={l.href} className="text-sm hover:text-brand-500 transition-colors">
                                     {l.label}
                                 </Link>
                             </li>
@@ -108,14 +111,14 @@ export default function Footer() {
 
                 {/* Legal */}
                 <div>
-                    <p className="text-xs uppercase tracking-wider text-gray-500 mb-4">Legal</p>
+                    <p className="text-xs uppercase tracking-wider mb-4">Legal</p>
                     <ul className="space-y-2.5">
                         {legalLinks.map((l) => (
                             <li key={l.href}>
                                 <Link
                                     href={l.href}
                                     rel={l.href === "/autoritatea-de-supraveghere" ? "nofollow" : undefined}
-                                    className={cn("text-sm text-gray-500 hover:text-brand-500 transition-colors", l?.className)}
+                                    className={cn("text-sm hover:text-brand-500 transition-colors", l?.className)}
                                 >
                                     {l.label}
                                 </Link>
@@ -133,11 +136,11 @@ export default function Footer() {
                             <MapPin size={18} className="text-green-500" />
                             {oficiu.title}
                         </div>
-                        <p className="text-gray-500 mt-2 leading-relaxed">
+                        <p className=" mt-2 leading-relaxed">
                             {oficiu.city}, {oficiu.street},<br />
                             {oficiu.addressNumbers}
                         </p>
-                        <p className="text-sm text-gray-500 mt-2">Luni - Vineri · 08:30 - 16:30</p>
+                        <p className="text-sm mt-2">Luni - Vineri · 08:30 - 16:30</p>
                         <a
                             href={`tel:${oficiu.mobile}`}
                             onClick={() => trackEvent("Contact")}
@@ -156,7 +159,7 @@ export default function Footer() {
                 <p className="mb-4 pl-6">
                     În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse limite cu privire la:
                 </p>
-                <ul className="list-outside list-disc ml-6 space-y-1.5 text-gray-500">
+                <ul className="list-outside list-disc ml-6 space-y-1.5">
                     <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
                     <li>
                         Toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere și orice alt tip de plată), cu
@@ -173,7 +176,7 @@ export default function Footer() {
             {/* Glossary */}
             <div className="container mt-12">
                 <p className="mb-6 text-xl text-center">Dicționar financiar</p>
-                <ul className="list-outside list-disc ml-6 space-y-2.5 text-gray-500">
+                <ul className="list-outside list-disc ml-6 space-y-2.5">
                     {GLOSSARY_LINKS.map((item) => (
                         <li key={item.name}>
                             <span className="font-bold">{item.name} - </span>
@@ -184,10 +187,9 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <div className="container mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+            <div className="container mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
                 <span>
-                    &copy; {new Date().getFullYear()} Organizația de Creditare Nebancară{" "}
-                    <strong className="text-gray-500">Ideal Credit</strong> SRL
+                    &copy; {new Date().getFullYear()} Organizația de Creditare Nebancară <strong className="">Ideal Credit</strong> SRL
                 </span>
                 <span>Toate drepturile rezervate.</span>
             </div>

@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
 import CreditPageContent from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
-import { Check, Cog, Leaf, Droplets, Sprout, TrendingUp, ArrowRight } from "lucide-react";
+import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
+import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import { Check, Cog, Leaf, Droplets, Sprout, TrendingUp } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
     description:
-        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei. Până la 300.000 lei.",
+        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-agricultura" },
 };
 
@@ -43,7 +44,7 @@ const agricFaqItems: FaqItem[] = [
     },
 ];
 
-const financingCategories = [
+const financingCategories: ServiceFeatureItem[] = [
     {
         icon: Cog,
         title: "Tehnică și utilaje",
@@ -79,61 +80,23 @@ const financingCategories = [
 export default function CreditAgriculturaPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(businessCreditSchema),
-                }}
-            />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
 
-            {/* Hero */}
             <ServiceHero
-                title={
-                    <>
-                        Credit pentru
-                        <br />
-                        agricultură
-                    </>
-                }
-                subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității, până la 300.000 lei."
+                title={<>Credit pentru<br />agricultură</>}
+                subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității."
             />
 
-            {/* Ce finanțezi */}
-            <section className="container">
-                <h2 className="title text-center">Ce poți finanța</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {financingCategories.map(({ icon: Icon, title, desc, link }) => (
-                        <div key={title} className="flex flex-col gap-3 p-5 rounded-xl border border-white/5 bg-black-600/50">
-                            <div className="flex items-center gap-3">
-                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
-                                    <Icon size={20} />
-                                </span>
-                                <h3 className="text-base font-semibold text-white">{title}</h3>
-                            </div>
-                            <p className="text-sm text-gray-500 leading-relaxed flex-1">{desc}</p>
-                            {link && (
-                                <Link
-                                    href={link.href}
-                                    className="inline-flex items-center gap-1.5 text-xs text-brand-500 hover:text-brand-400 transition-colors font-medium"
-                                >
-                                    {link.label} <ArrowRight size={12} />
-                                </Link>
-                            )}
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <ServiceFeatureGrid heading="Ce poți finanța" items={financingCategories} cols={3} />
 
-            {/* Specificul creditului agricol */}
             <section className="container">
                 <h2 className="title text-center">Adaptat la ritmul agriculturii</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Grafic de rambursare sezonier</h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">
+                        <h3 className="text-base font-semibold">Grafic de rambursare sezonier</h3>
+                        <p className="text-sm leading-relaxed">
                             Agricultura nu produce venituri uniform pe parcursul anului. Știm asta. Structurăm graficul de rambursare în
-                            funcție de ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și
-                            vânzare.
+                            funcție de ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
                         </p>
                         <ul className="space-y-2 mt-1">
                             {[
@@ -141,7 +104,7 @@ export default function CreditAgriculturaPage() {
                                 "Posibilitate de perioadă de grație până la recoltă",
                                 "Termen de până la 60 luni pentru investiții mari",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
+                                <li key={item} className="flex items-start gap-2 text-sm">
                                     <Check className="w-3.5 h-3.5 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -149,8 +112,8 @@ export default function CreditAgriculturaPage() {
                         </ul>
                     </div>
                     <div className="card flex flex-col gap-4">
-                        <h3 className="text-base font-semibold text-white">Cum analizăm activitatea agricolă</h3>
-                        <p className="text-sm text-gray-500 leading-relaxed">
+                        <h3 className="text-base font-semibold">Cum analizăm activitatea agricolă</h3>
+                        <p className="text-sm leading-relaxed">
                             Nu ne limităm la un salariu lunar fix. Analizăm imaginea completă a activității tale agricole.
                         </p>
                         <ul className="space-y-2 mt-1">
@@ -160,7 +123,7 @@ export default function CreditAgriculturaPage() {
                                 "Contracte de arendă sau titluri de proprietate",
                                 "Extrase bancare și fluxul de numerar anual",
                             ].map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
+                                <li key={item} className="flex items-start gap-2 text-sm">
                                     <Check className="w-3.5 h-3.5 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
                                     {item}
                                 </li>
@@ -195,30 +158,14 @@ export default function CreditAgriculturaPage() {
                     ],
                 }}
                 relatedLinks={[
-                    {
-                        href: "/credite/credit-pentru-afaceri-mici",
-                        label: "Credit pentru afaceri mici",
-                        desc: "Finanțare generală pentru orice activitate economică înregistrată.",
-                    },
-                    {
-                        href: "/credite/credit-investitional",
-                        label: "Credit investițional",
-                        desc: "Tehnica agricolă și echipamente pe termen lung.",
-                    },
-                    {
-                        href: "/credite/credit-capital-de-lucru",
-                        label: "Credit capital de lucru",
-                        desc: "Lichiditate sezonieră pentru semințe, îngrășăminte și forță de muncă.",
-                    },
+                    { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Finanțare generală pentru orice activitate economică înregistrată." },
+                    { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Tehnica agricolă și echipamente pe termen lung." },
+                    { href: "/credite/credit-capital-de-lucru", label: "Credit capital de lucru", desc: "Lichiditate sezonieră pentru semințe, îngrășăminte și forță de muncă." },
                 ]}
             />
 
             <HowItWorks />
-
             <CreditFAQ items={agricFaqItems} />
-
-            {/* CTA */}
-
             <WhyBento />
         </>
     );

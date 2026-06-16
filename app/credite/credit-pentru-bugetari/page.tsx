@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
 import CreditPageContent from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
-import { Check, Stethoscope, Shield, BadgeCheck, ArrowRight } from "lucide-react";
+import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
+import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import { Stethoscope, Shield, BadgeCheck } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Credite pentru Angajați la Stat în Moldova | Ideal Credit",
@@ -47,12 +48,6 @@ const bugetariLoanSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru angajați bugetari",
     description: "Credite pentru medici, militari, polițiști și alți angajați la stat din Moldova.",
-    amount: {
-        "@type": "MonetaryAmount",
-        currency: "MDL",
-        minValue: 10000,
-        maxValue: 300000,
-    },
     loanTerm: {
         "@type": "QuantitativeValue",
         unitText: "Months",
@@ -61,7 +56,7 @@ const bugetariLoanSchema = {
     },
 };
 
-const categories = [
+const categories: ServiceFeatureItem[] = [
     {
         icon: Stethoscope,
         title: "Medici și personal medical",
@@ -94,48 +89,14 @@ const categories = [
 export default function CreditBugetariPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(bugetariLoanSchema),
-                }}
-            />
-            {/* Hero */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bugetariLoanSchema) }} />
+
             <ServiceHero
-                title={
-                    <>
-                        Credite pentru
-                        <br />
-                        angajați la stat
-                    </>
-                }
+                title={<>Credite pentru<br />angajați la stat</>}
                 subtitle="Condiții adaptate pentru medici, militari, polițiști și alți angajați bugetari. Dobândă fixă, aprobare în 2-3 ore."
             />
 
-            {/* Categorii */}
-            <section className="container">
-                <h2 className="title text-center">Cine poate aplica</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {categories.map(({ icon: Icon, title, items }) => (
-                        <div key={title} className="flex flex-col gap-4 p-5 rounded-xl border border-white/5 bg-black-600/50">
-                            <div className="flex items-center gap-3">
-                                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
-                                    <Icon size={20} />
-                                </span>
-                                <h3 className="text-base font-semibold text-white">{title}</h3>
-                            </div>
-                            <ul className="space-y-2 flex-1">
-                                {items.map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                                        <Check className="w-3.5 h-3.5 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-            </section>
+            <ServiceFeatureGrid heading="Cine poate aplica" items={categories} cols={3} />
 
             <CreditPageContent
                 eligibilityTitle="Condiții generale"
@@ -161,30 +122,14 @@ export default function CreditBugetariPage() {
                     ],
                 }}
                 relatedLinks={[
-                    {
-                        href: "/credite/credit-pentru-medici",
-                        label: "Credit pentru medici",
-                        desc: "Condiții specifice pentru personalul medical.",
-                    },
-                    {
-                        href: "/credite/credit-pentru-militari",
-                        label: "Credit pentru militari",
-                        desc: "Condiții pentru angajații Ministerului Apărării.",
-                    },
-                    {
-                        href: "/credite/credit-pentru-politisti",
-                        label: "Credit pentru polițiști",
-                        desc: "Condiții pentru angajații și pensionarii MAI.",
-                    },
+                    { href: "/credite/credit-pentru-medici", label: "Credit pentru medici", desc: "Condiții specifice pentru personalul medical." },
+                    { href: "/credite/credit-pentru-militari", label: "Credit pentru militari", desc: "Condiții pentru angajații Ministerului Apărării." },
+                    { href: "/credite/credit-pentru-politisti", label: "Credit pentru polițiști", desc: "Condiții pentru angajații și pensionarii MAI." },
                 ]}
             />
 
             <HowItWorks />
-
             <CreditFAQ items={bugetariFaqItems} />
-
-            {/* CTA */}
-
             <WhyBento />
         </>
     );

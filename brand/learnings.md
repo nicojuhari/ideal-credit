@@ -1,21 +1,23 @@
-# Learnings Journal — Ideal Credit
+# Learnings Journal - Ideal Credit
+
 Last updated: 2026-05-18
 
 ## What Works
 
-*(Log findings here after campaigns, content, and outreach)*
+_(Log findings here after campaigns, content, and outreach)_
 
 ## What Doesn't Work
 
-*(Log failures here)*
+_(Log failures here)_
 
 ## Audience Insights
 
-*(Log observations about the Moldovan business credit audience)*
+_(Log observations about the Moldovan business credit audience)_
 
 ## Channel Performance
 
-*(Log what works on which platform)*
+_(Log what works on which platform)_
 
 ---
-*Append entries after each campaign or skill run. Include date, context, and the specific finding.*
+
+_Append entries after each campaign or skill run. Include date, context, and the specific finding._

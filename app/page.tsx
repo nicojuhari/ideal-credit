@@ -1,164 +1,196 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import HeroHome from "@/components/home/HeroHome";
-import Info from "@/components/ui/Info";
-import { Check } from "lucide-react";
+import { Briefcase, User, Check, ArrowRight, Clock } from "lucide-react";
 
-const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
-const PaymentMethods = dynamic(() => import("@/components/PaymentMethods"));
+import HeroHome from "@/components/home/HeroHome";
+import StatsBar from "@/components/home/StatsBar";
+import Info from "@/components/ui/Info";
+import { blogPosts } from "@/lib/blog-posts";
+
 const WhyBento = dynamic(() => import("@/components/WhyBento"));
-const RecenziiClient = dynamic(() => import("@/components/RecenziiClient"));
-const FAQ = dynamic(() => import("@/components/FAQ"));
-const BlogCards = dynamic(() => import("@/components/BlogCards"));
 const ServiciiList = dynamic(() => import("@/components/ServiciiList"));
+const RecenziiClient = dynamic(() => import("@/components/RecenziiClient"));
+const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
+const FAQ = dynamic(() => import("@/components/FAQ"));
+const PaymentMethods = dynamic(() => import("@/components/PaymentMethods"));
 
 import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCauseniSchema, howToSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credite Nebancare în Moldova | Ideal Credit",
-    description:
-        "Credite nebancare pentru afaceri și consum în Moldova. Dobândă fixă, fără comisioane ascunse. Decizie rapidă. Aplică online!",
-    alternates: { canonical: "https://idealcredit.md/" },
+ title:"Credite Nebancare în Moldova | Ideal Credit",
+ description:
+"Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse. Decizie în 1–3 ore.",
+ alternates: { canonical:"https://idealcredit.md/" },
 };
 
-async function getLatestBlogs() {
-    try {
-        const token = process.env.STORYBLOK_ACCESS_TOKEN;
-        const res = await fetch(
-            `https://api.storyblok.com/v2/cdn/stories?starts_with=blog&token=${token}&version=published&per_page=3&page=1`,
-            { next: { revalidate: 3600 } },
-        );
-        if (!res.ok) return [];
-        const data = await res.json();
-        return data.stories ?? [];
-    } catch {
-        return [];
-    }
-}
+const businessItems = [
+"SRL, ÎI, GȚ - toate formele juridice acceptate",
+"Fără plan de afaceri obligatoriu",
+"Extrase bancare minim 3 luni",
+"Decizie în 1–2 zile lucrătoare",
+];
 
-export default async function HomePage() {
-    const stories = await getLatestBlogs();
+const personalItems = [
+"Vârsta de la 23 de ani, venit stabil",
+"Buletin de identitate valabil",
+"Fără comisioane ascunse sau penalități",
+"Decizie în 2–3 ore",
+];
 
-    return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(financialServiceSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+export default function HomePage() {
+ const latestPosts = blogPosts.slice(0, 3);
 
-            {/* 1. Hero cu calculator */}
-            <HeroHome />
+ return (
+ <>
+ <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(financialServiceSchema) }} />
+ <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
+ <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
+ <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+ <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-            {/* 2. Ce oferim - segmentare afaceri / personal */}
-            <section className="container">
-                <h2 className="title text-center">Ce oferim</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    {/* Card afaceri */}
-                    <div className="card flex flex-col gap-5">
-                        <div>
-                            <h3 className="text-2xl font-medium mb-1">Credit pentru afaceri mici</h3>
-                            <p className="text-sm text-gray-500">Capital de lucru, investiții sau refinanțare.</p>
-                        </div>
-                        <ul className="space-y-2 flex-1">
-                            {[
-                                "Activitate economică înregistrată (SRL, ÎI, GȚ)",
-                                "Fără plan de afaceri obligatoriu",
-                                "Extrase bancare - minim 3 luni",
-                                "Decizie în 1-2 zile lucrătoare",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                        <Link
-                            href="/credite/credit-pentru-afaceri-mici"
-                            className="inline-flex items-center text-sm text-brand-500 hover:text-brand-400 transition-colors font-medium"
-                        >
-                            Află mai mult →
-                        </Link>
-                    </div>
+ {/* 1. Hero cu calculator */}
+ <HeroHome />
 
-                    {/* Card personal */}
-                    <div className="card flex flex-col gap-5">
-                        <div>
-                            <h3 className="text-2xl font-medium mb-1">Credit personal rapid</h3>
-                            <p className="text-sm text-gray-500">Pentru orice nevoie urgentă sau planificată.</p>
-                        </div>
-                        <ul className="space-y-2 flex-1">
-                            {[
-                                "Vârsta de la 23 de ani",
-                                "Sursă de venit stabilă",
-                                "Buletin de identitate valabil",
-                                "Decizie în 2-3 ore",
-                            ].map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-500">
-                                    <Check className="w-4 h-4 shrink-0 text-green-400 mt-0.5" strokeWidth={3} />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                        <Link
-                            href="/credite/credit-pentru-nevoi-personale"
-                            className="inline-flex items-center text-sm text-brand-500 hover:text-brand-400 transition-colors font-medium"
-                        >
-                            Află mai mult →
-                        </Link>
-                    </div>
-                </div>
-                <Info className="mt-6">
-                    La primul credit este obligatoriu un fidejusor (garant personal). Pentru sume mari sau venituri nestabile poate fi cerut
-                    suplimentar gaj imobil. Clienții reptați, fără întârzieri pot beneficia de condiții mai bune, fără fidejusor.
-                </Info>
-            </section>
+ {/* 2. Bandă cu cifre cheie */}
+ {/* <StatsBar /> */}
 
-            {/* 3. Cum functioneaza */}
-            <HowItWorks />
+ {/* 3. Segmentare afaceri / personal */}
+ <section className="container mt-18 md:mt-26">
+ <h2 className="title text-center">Alege soluția potrivită pentru tine</h2>
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+ {/* Card afaceri */}
+ <div className="relative flex flex-col gap-6 rounded-2xl border border-brand-500/20 bg-black-600/60 p-7 overflow-hidden">
+ <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-brand-500/70 via-brand-500/20 to-transparent" />
 
-            {/* 4. De ce Ideal Credit */}
-            <WhyBento />
+ <div className="flex items-start gap-4">
+ <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500">
+ <Briefcase size={22} />
+ </div>
+ <div>
+ <h3 className="text-xl font-medium text-white">Credit pentru afaceri</h3>
+ <p className="mt-1 text-sm leading-relaxed">
+ Capital de lucru, investiții, refinanțare - fără plan de afaceri obligatoriu.
+ </p>
+ </div>
+ </div>
 
-            {/* 5. Toate produsele */}
-            <ServiciiList />
+ <ul className="space-y-2.5 flex-1">
+ {businessItems.map((item) => (
+ <li key={item} className="flex items-start gap-2.5 text-sm">
+ <Check className="w-4 h-4 shrink-0 text-brand-500 mt-0.5" strokeWidth={3} />
+ {item}
+ </li>
+ ))}
+ </ul>
 
-            {/* 6. Recenzii clienti */}
-            <section className="container" id="recenzii">
-                <RecenziiClient />
-            </section>
+ <Link
+ href="/credite/credit-pentru-afaceri-mici"
+ className="inline-flex items-center gap-2 rounded-lg border border-brand-500/30 bg-brand-500/10 text-brand-500 hover:bg-brand-500/20 transition-colors px-5 py-2.5 text-sm font-medium w-fit"
+ >
+ Condiții pentru afaceri <ArrowRight size={15} />
+ </Link>
+ </div>
 
-            {/* 7. FAQ */}
-            <section className="container">
-                <h2 className="title text-center">Întrebări frecvente</h2>
-                <FAQ />
-            </section>
+ {/* Card personal */}
+ <div className="relative flex flex-col gap-6 rounded-2xl border border-green-500/20 bg-black-600/60 p-7 overflow-hidden">
+ <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-green-500/60 via-green-500/15 to-transparent" />
 
-            {/* 8. Metode de achitare */}
-            <section className="container">
-                <h2 className="title text-center">Metode de achitare a creditului</h2>
-                <PaymentMethods />
-            </section>
+ <div className="flex items-start gap-4">
+ <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-500/10 text-green-500">
+ <User size={22} />
+ </div>
+ <div>
+ <h3 className="text-xl font-medium text-white">Credit personal</h3>
+ <p className="mt-1 text-sm leading-relaxed">
+ Pentru orice nevoie urgentă sau planificată - cu condiții clare de la prima discuție.
+ </p>
+ </div>
+ </div>
 
-            {/* 9. Blog */}
-            {stories.length > 0 && (
-                <section className="container">
-                    <h2 className="title text-center">Blog</h2>
-                    <div className="space-y-8">
-                        <BlogCards stories={stories} />
-                        <div className="text-center">
-                            <Link
-                                href="/blog"
-                                title="Blog financiar"
-                                className="inline-flex items-center gap-2 border border-green-500/40 text-green-400 hover:bg-green-500/10 transition-colors px-5 py-2 rounded-md"
-                            >
-                                Vezi toate articolele →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-            )}
-        </>
-    );
+ <ul className="space-y-2.5 flex-1">
+ {personalItems.map((item) => (
+ <li key={item} className="flex items-start gap-2.5 text-sm">
+ <Check className="w-4 h-4 shrink-0 text-green-500 mt-0.5" strokeWidth={3} />
+ {item}
+ </li>
+ ))}
+ </ul>
+
+ <Link
+ href="/credite/credit-pentru-nevoi-personale"
+ className="inline-flex items-center gap-2 rounded-lg border border-green-500/30 bg-green-500/10 text-green-400 hover:bg-green-500/20 transition-colors px-5 py-2.5 text-sm font-medium w-fit"
+ >
+ Condiții credit personal <ArrowRight size={15} />
+ </Link>
+ </div>
+ </div>
+
+ <Info className="mt-5">
+ Primul credit se acordă cu garant. Clienții cu istoric bun nu mai au nevoie de garant la creditele următoare. Toate
+ costurile sunt prezentate înainte de semnare, fără surprize.
+ </Info>
+ </section>
+
+ {/* 4. De ce Ideal Credit */}
+ <WhyBento />
+
+ {/* 5. Toate produsele */}
+ <ServiciiList />
+
+ {/* 6. Recenzii clienți */}
+ <section className="container" id="recenzii">
+ <RecenziiClient />
+ </section>
+
+ {/* 7. Cum funcționează */}
+ <HowItWorks />
+
+ {/* 8. Blog */}
+ {latestPosts.length > 0 && (
+ <section className="container">
+ <h2 className="title text-center">Ghiduri practice</h2>
+ <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-8">
+ {latestPosts.map((post) => (
+ <Link
+ key={post.slug}
+ href={`/blog/${post.slug}`}
+ className="group flex flex-col gap-3 rounded-2xl border border-white/5 bg-black-600/60 p-6 hover:border-white/15 hover:bg-black-600 transition-colors duration-200"
+ >
+ <span className="inline-flex items-center gap-1 text-xs">
+ <Clock size={11} />
+ {post.readMinutes} min
+ </span>
+ <h3 className="text-sm font-medium text-white leading-snug group-hover:text-brand-500 transition-colors line-clamp-2">
+ {post.title}
+ </h3>
+ <p className="text-xs leading-relaxed line-clamp-2 flex-1">{post.description}</p>
+ <span className="text-xs text-brand-500 font-medium">Citește →</span>
+ </Link>
+ ))}
+ </div>
+ <div className="text-center">
+ <Link
+ href="/blog"
+ className="inline-flex items-center gap-2 border border-green-500/40 text-green-400 hover:bg-green-500/10 transition-colors px-5 py-2 rounded-md text-sm"
+ >
+ Toate ghidurile →
+ </Link>
+ </div>
+ </section>
+ )}
+
+ {/* 9. FAQ */}
+ <section className="container">
+ <h2 className="title text-center">Întrebări frecvente</h2>
+ <FAQ />
+ </section>
+
+ {/* 10. Metode de achitare */}
+ <section className="container">
+ <h2 className="title text-center">Metode de achitare a creditului</h2>
+ <PaymentMethods />
+ </section>
+ </>
+ );
 }
