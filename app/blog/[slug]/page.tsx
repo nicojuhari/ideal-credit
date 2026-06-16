@@ -4,5 +4,5 @@ import { notFound } from "next/navigation";
 // 1. Handled by individual static pages in app/blog/(articles)/
 // 2. Redirected to new slugs via next.config.ts
 export default function LegacyBlogPage() {
-    notFound();
+ notFound();
 }

@@ -193,13 +193,17 @@
 /* ─── Base styles ────────────────────────────────────────────────────────── */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 selection:bg-gray-500/20;
   }
   body {
-    @apply bg-black-800 text-white/90 font-sans;
+    @apply bg-black-800 text-gray-300 font-sans;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white;
   }
   section {
     @apply mt-28 mb-20 md:mt-42 md:mb-28;
@@ -233,7 +237,7 @@
 
   .card-title,
   .title {
-    @apply text-3xl md:text-4xl mb-10 md:mb-12 px-4 md:px-0 font-medium;
+    @apply text-3xl md:text-4xl mb-10 md:mb-12 px-4 md:px-0 font-medium text-white;
   }
 
   .card .card-title {
