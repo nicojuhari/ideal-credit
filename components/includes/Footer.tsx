@@ -41,7 +41,10 @@ export default function Footer() {
                 <div className="col-span-2 lg:col-span-2 space-y-5">
                     <Link href="/" className="flex items-center gap-3">
                         <Logo className="w-8" />
-                        <span className="text-xl font-semibold">Ideal Credit</span>
+                        <div className="flex flex-col">
+                            <span className="text-xl font-semibold leading-tight">Ideal Credit</span>
+                            <span className="text-xs text-brand-500 font-medium tracking-wide">Credite pentru succes!</span>
+                        </div>
                     </Link>
                     <p className="text-sm text-gray-500 max-w-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
                     <div className="flex gap-4 items-center">

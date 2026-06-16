@@ -148,8 +148,11 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-30 border-b border-white/5 backdrop-blur-xl h-14 md:h-16 bg-black-800/70">
             <div className="flex justify-between items-center gap-4 h-full container">
-                <Link href="/" title="Ideal Credit" className="flex items-center gap-2">
+                <Link href="/" title="Ideal Credit - Credite pentru succes!" className="flex items-center gap-2">
                     <Logo className="w-8 md:w-10" />
+                    <div className="hidden md:flex flex-col leading-tight">
+                        <span className="text-sm font-semibold text-white">Ideal Credit</span>
+                    </div>
                 </Link>
 
                 {/* Desktop nav */}

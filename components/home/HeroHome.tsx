@@ -7,7 +7,7 @@ import CalculatorCredit from "@/components/CalculatorCredit";
 
 export default function HeroHome() {
     return (
-        <div className="relative pt-10 md:pt-16 pb-10 md:pb-16">
+        <div className="relative pt-12 md:pt-20 pb-10 md:pb-16">
             {/* Backgrounds */}
             <div className="bg-squares -mt-px" />
             <div className="pointer-events-none absolute inset-0 -z-1 overflow-hidden" aria-hidden>
@@ -36,7 +36,9 @@ export default function HeroHome() {
                                     <Star size={12} fill="currentColor" /> 4.9
                                 </span>
                                 <span className="text-white/20">•</span>
-                                <span>Din 2010 — finanțare nebancară de încredere</span>
+                                <span>Din 2010</span>
+                                <span className="text-white/20">•</span>
+                                <span className="text-green-400 font-medium">Credite pentru succes!</span>
                             </motion.div>
                         </div>
 
@@ -46,9 +48,8 @@ export default function HeroHome() {
                             transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
                             className="mt-6 font-medium tracking-tight text-[48px] md:text-[64px] leading-[1.04] text-center md:text-left"
                         >
-                            Credite nebancare{" "}
-                            <span className="text-brand-gradient">de la 10.000</span>{" "}
-                            <span className="text-white">la 300.000 lei</span>
+                            Credite nebancare <span className="text-brand-gradient">pentru afaceri</span>{" "}
+                            <span className="text-white inline-flex">și consum</span>
                         </motion.h1>
 
                         <motion.p

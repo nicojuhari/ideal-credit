@@ -20,13 +20,12 @@ import { financialServiceSchema, localBusinessChisinauSchema, localBusinessCause
 export const metadata: Metadata = {
     title: "Credite Nebancare în Moldova | Ideal Credit",
     description:
-        "Credite nebancare de la 10.000 la 300.000 lei pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse. Decizie în 1-3 ore.",
+        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse. Decizie în 1–3 ore.",
     alternates: { canonical: "https://idealcredit.md/" },
 };
 
-
 const businessItems = [
-    "SRL, ÎI, GȚ — toate formele juridice acceptate",
+    "SRL, ÎI, GȚ - toate formele juridice acceptate",
     "Fără plan de afaceri obligatoriu",
     "Extrase bancare minim 3 luni",
     "Decizie în 1–2 zile lucrătoare",
@@ -54,13 +53,12 @@ export default function HomePage() {
             <HeroHome />
 
             {/* 2. Bandă cu cifre cheie */}
-            <StatsBar />
+            {/* <StatsBar /> */}
 
             {/* 3. Segmentare afaceri / personal */}
             <section className="container">
                 <h2 className="title text-center">Alege soluția potrivită pentru tine</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-
                     {/* Card afaceri */}
                     <div className="relative flex flex-col gap-6 rounded-2xl border border-brand-500/20 bg-black-600/60 p-7 overflow-hidden">
                         <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-brand-500/70 via-brand-500/20 to-transparent" />
@@ -72,13 +70,13 @@ export default function HomePage() {
                             <div>
                                 <h3 className="text-xl font-medium text-white">Credit pentru afaceri</h3>
                                 <p className="mt-1 text-sm text-gray-500 leading-relaxed">
-                                    Capital de lucru, investiții, refinanțare — fără plan de afaceri obligatoriu.
+                                    Capital de lucru, investiții, refinanțare - fără plan de afaceri obligatoriu.
                                 </p>
                             </div>
                         </div>
 
                         <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/25 bg-brand-500/5 px-4 py-2 w-fit">
-                            <span className="text-sm font-medium text-brand-500">Până la 300.000 MDL</span>
+                            <span className="text-sm font-medium text-brand-500">Finanțare flexibilă</span>
                             <span className="text-white/15">·</span>
                             <span className="text-xs text-gray-500">Decizie în 1–2 zile</span>
                         </div>
@@ -111,13 +109,13 @@ export default function HomePage() {
                             <div>
                                 <h3 className="text-xl font-medium text-white">Credit personal</h3>
                                 <p className="mt-1 text-sm text-gray-500 leading-relaxed">
-                                    Pentru orice nevoie urgentă sau planificată — cu condiții clare de la prima discuție.
+                                    Pentru orice nevoie urgentă sau planificată - cu condiții clare de la prima discuție.
                                 </p>
                             </div>
                         </div>
 
                         <div className="inline-flex items-center gap-2 rounded-full border border-green-500/25 bg-green-500/5 px-4 py-2 w-fit">
-                            <span className="text-sm font-medium text-green-400">Până la 300.000 MDL</span>
+                            <span className="text-sm font-medium text-green-400">Finanțare flexibilă</span>
                             <span className="text-white/15">·</span>
                             <span className="text-xs text-gray-500">Decizie în 2–3 ore</span>
                         </div>
@@ -141,8 +139,8 @@ export default function HomePage() {
                 </div>
 
                 <Info className="mt-5">
-                    La primul credit este obligatoriu un fidejusor (garant personal). Clienții cu istoric bun pot beneficia ulterior de condiții
-                    fără fidejusor. Toate costurile sunt prezentate înainte de semnarea contractului.
+                    La primul credit este obligatoriu un fidejusor (garant personal). Clienții cu istoric bun pot beneficia ulterior de
+                    condiții fără fidejusor. Toate costurile sunt prezentate înainte de semnarea contractului.
                 </Info>
             </section>
 

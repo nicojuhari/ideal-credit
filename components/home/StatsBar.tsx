@@ -4,22 +4,22 @@ const stats = [
     {
         value: `${yearsSinceFoundation}+`,
         label: "ani pe piață",
-        sub: "Din 2010",
-    },
-    {
-        value: "300.000",
-        label: "lei suma maximă",
-        sub: "De la 10.000 MDL",
+        sub: "Activi din 2010 în Moldova",
     },
     {
         value: "1–3h",
         label: "timp de decizie",
-        sub: "În programul de lucru",
+        sub: "Răspuns rapid în ziua depunerii",
     },
     {
         value: "0%",
         label: "penalități anticipate",
-        sub: "Dobândă fixă pe tot termenul",
+        sub: "Rambursezi anticipat fără costuri",
+    },
+    {
+        value: "Fixă",
+        label: "dobândă pe tot termenul",
+        sub: "Fără comisioane ascunse",
     },
 ];
 

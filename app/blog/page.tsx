@@ -4,7 +4,7 @@ import { blogPosts, type BlogPost } from "@/lib/blog-posts";
 import { ArrowRight, Clock, Briefcase, User, BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Blog — Ghiduri practice despre credite | Ideal Credit",
+    title: "Blog - Ghiduri practice despre credite | Ideal Credit",
     description:
         "Ghiduri practice pentru antreprenori și persoane fizice care evaluează un credit nebancar în Moldova. Informații clare, fără generalități.",
     alternates: { canonical: "https://idealcredit.md/blog" },
@@ -56,8 +56,8 @@ export default function BlogPage() {
             <div className="text-center mb-12">
                 <h1 className="title mb-3">Ghiduri practice</h1>
                 <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-                    Articole scrise pentru antreprenori și persoane fizice care evaluează un credit nebancar — nu educație financiară generală, ci
-                    răspunsuri la întrebările pe care le ai înainte să aplici.
+                    Articole scrise pentru antreprenori și persoane fizice care evaluează un credit nebancar - nu educație financiară
+                    generală, ci răspunsuri la întrebările pe care le ai înainte să aplici.
                 </p>
             </div>
 

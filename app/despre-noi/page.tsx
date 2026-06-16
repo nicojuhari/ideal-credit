@@ -33,7 +33,7 @@ export default function DespreNoiPage() {
                                 </Link>
                             </p>
                             <p>Suntem o organizație de creditare nebancară autorizată și supravegheată de CNPF.</p>
-                            <p className="text-brand-500 font-medium italic">&quot;Credite avantajoase pentru persoane serioase&quot;</p>
+                            <p className="text-brand-500 font-medium italic">&quot;Credite pentru succes!&quot;</p>
 
                             <h2 className="pt-6 text-2xl">Ce facem</h2>
                             <p>Oferim finanțare pentru cei care au nevoie de bani - fără birocrație inutilă și fără costuri ascunse.</p>
