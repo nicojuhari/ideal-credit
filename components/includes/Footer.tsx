@@ -18,6 +18,7 @@ const productLinks = [
 
 const companyLinks = [
     { href: "/despre-noi", label: "Despre noi" },
+    { href: "/calculator-credit", label: "Calculator credit" },
     { href: "/contacte", label: "Contacte" },
     { href: "/blog", label: "Blog" },
     { href: "/cerere-de-credit-online", label: "Cerere online" },
@@ -35,19 +36,16 @@ export default function Footer() {
 
     return (
         <footer className="relative border-t border-white/5 bg-black-700/40 pt-16 pb-10">
-            {/* Top: 4-col brand + nav groups */}
-            <div className="container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 pb-10 border-b border-white/5">
+            {/* Top: brand + nav groups */}
+            <div className="container flex flex-col md:flex-row gap-10">
                 {/* Brand column */}
-                <div className="col-span-2 lg:col-span-2 space-y-5">
-                    <Link href="/" className="flex items-center gap-3">
-                        <Logo className="w-8" />
-                        <div className="flex flex-col">
-                            <span className="text-xl font-semibold leading-tight">Ideal Credit</span>
-                            <span className="text-xs text-brand-500 font-medium tracking-wide">Credite pentru succes!</span>
-                        </div>
+                <div className="shrink-0 md:w-52 space-y-4">
+                    <Link href="/" className="flex items-center gap-2.5">
+                        <Logo className="w-7" />
+                        <span className="text-base font-semibold leading-tight">Ideal Credit</span>
                     </Link>
-                    <p className="text-sm max-w-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
-                    <div className="flex gap-4 items-center">
+                    <p className="text-xs leading-relaxed">Creditare nebancară pentru afaceri și consum în Moldova.</p>
+                    <div className="flex gap-3 items-center">
                         {[
                             {
                                 href: "https://www.instagram.com/idealcredit.md/",
@@ -71,9 +69,9 @@ export default function Footer() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 title={`Ideal Credit pe ${s.title}`}
-                                className="text-white hover:text-brand-500 hover:border-brand-500/40 transition-colors"
+                                className="text-white hover:text-white transition-colors"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="currentColor" viewBox="0 0 256 256">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 256 256">
                                     <path d={s.path} />
                                 </svg>
                             </a>
@@ -81,76 +79,104 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Produse */}
-                <div>
-                    <p className="text-xs uppercase tracking-wider mb-4">Produse</p>
-                    <ul className="space-y-2.5">
-                        {productLinks.map((l) => (
-                            <li key={l.href}>
-                                <Link href={l.href} className="text-sm hover:text-brand-500 transition-colors">
-                                    {l.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                {/* Nav columns */}
+                <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                    {/* Produse */}
+                    <div>
+                        <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3">Produse</p>
+                        <ul className="space-y-2">
+                            {productLinks.map((l) => (
+                                <li key={l.href}>
+                                    <Link href={l.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                                        {l.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                {/* Companie */}
-                <div>
-                    <p className="text-xs uppercase tracking-wider mb-4">Companie</p>
-                    <ul className="space-y-2.5">
-                        {companyLinks.map((l) => (
-                            <li key={l.href}>
-                                <Link href={l.href} className="text-sm hover:text-brand-500 transition-colors">
-                                    {l.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                    {/* Companie */}
+                    <div>
+                        <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3">Companie</p>
+                        <ul className="space-y-2">
+                            {companyLinks.map((l) => (
+                                <li key={l.href}>
+                                    <Link href={l.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                                        {l.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                {/* Legal */}
-                <div>
-                    <p className="text-xs uppercase tracking-wider mb-4">Legal</p>
-                    <ul className="space-y-2.5">
-                        {legalLinks.map((l) => (
-                            <li key={l.href}>
-                                <Link
-                                    href={l.href}
-                                    rel={l.href === "/autoritatea-de-supraveghere" ? "nofollow" : undefined}
-                                    className={cn("text-sm hover:text-brand-500 transition-colors", l?.className)}
-                                >
-                                    {l.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                    {/* Legal */}
+                    <div>
+                        <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3">Legal</p>
+                        <ul className="space-y-2">
+                            {legalLinks.map((l) => (
+                                <li key={l.href}>
+                                    <Link
+                                        href={l.href}
+                                        rel={l.href === "/autoritatea-de-supraveghere" ? "nofollow" : undefined}
+                                        className={cn("text-sm text-white/60 hover:text-white transition-colors", l?.className)}
+                                    >
+                                        {l.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             {/* Offices row */}
-            <div className="container py-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {OFFICES.map((oficiu) => (
-                    <div key={oficiu.id} className="rounded-xl border border-white/5 bg-black-600/60 p-5">
-                        <div className="flex items-center gap-2 font-medium text-white">
-                            <MapPin size={18} className="text-green-500" />
-                            {oficiu.title}
+            <div className="container py-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {OFFICES.map((oficiu) => {
+                    const city = oficiu.city.replace(/^(or\.|m\.)\s*/, "");
+                    return (
+                        <div key={oficiu.id} className="rounded-xl border border-white/8 bg-black-600/50 p-5 flex flex-col gap-4">
+                            {/* Header */}
+                            <div className="flex items-start justify-between gap-3">
+                                <div className="flex items-center gap-2.5">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-green-500/10">
+                                        <MapPin size={16} className="text-green-400" />
+                                    </span>
+                                    <div>
+                                        <p className="font-semibold text-white text-base leading-tight">{city}</p>
+                                        <p className="text-xs mt-0.5">{oficiu.title}</p>
+                                    </div>
+                                </div>
+                                <span className="text-xs bg-white/5 rounded-md px-2 py-1 whitespace-nowrap">Luni - Vineri</span>
+                            </div>
+
+                            {/* Address */}
+                            <div className="text-sm leading-relaxed pl-0.5">
+                                <p className="text-white/80">
+                                    {oficiu.street}, {oficiu.addressNumbers.split(",")[0]}
+                                </p>
+                                <p className="text-xs mt-0.5">
+                                    {oficiu.addressNumbers.split(",").slice(1).join(",").trim()} · 08:30 – 16:30
+                                </p>
+                                {oficiu.note && (
+                                    <p className="text-amber-400/70 text-xs mt-2 flex items-center gap-1.5">
+                                        <span className="inline-block w-1 h-1 rounded-full bg-amber-400/70 shrink-0" />
+                                        {oficiu.note}
+                                    </p>
+                                )}
+                            </div>
+
+                            {/* CTA */}
+                            <a
+                                href={`tel:${oficiu.mobile}`}
+                                onClick={() => trackEvent("Contact")}
+                                className="self-start inline-flex items-center gap-2 h-9 px-4 rounded-full border border-brand-500/20 bg-brand-500/8 text-brand-500 hover:border-brand-500/50 hover:bg-brand-500/15 transition-colors text-sm font-medium"
+                            >
+                                <Phone size={13} />
+                                {oficiu.mobileDisplay}
+                            </a>
                         </div>
-                        <p className=" mt-2 leading-relaxed">
-                            {oficiu.city}, {oficiu.street},<br />
-                            {oficiu.addressNumbers}
-                        </p>
-                        <p className="text-sm mt-2">Luni - Vineri · 08:30 - 16:30</p>
-                        <a
-                            href={`tel:${oficiu.mobile}`}
-                            onClick={() => trackEvent("Contact")}
-                            className="mt-4 inline-flex items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
-                        >
-                            <Phone size={14} />
-                            {oficiu.mobileDisplay}
-                        </a>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
             {/* Legal excerpt */}
