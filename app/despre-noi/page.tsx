@@ -201,15 +201,18 @@ export default function DespreNoiPage() {
                 <div className="container mt-4 md:mt-6">
                     <div className="card">
                         <h3 className="text-center title mb-8">Rapoarte</h3>
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col sm:flex-row gap-6">
+                            <a href="/raport-audit-2025.pdf" target="_blank" rel="noopener noreferrer" className="link">
+                                1. Raport de Audit 2025
+                            </a>
                             <a href="/raport-audit-2024.pdf" target="_blank" rel="noopener noreferrer" className="link">
-                                1. Raport de Audit 2024
+                                2. Raport de Audit 2024
                             </a>
                             <a href="/raport-audit-2023.pdf" target="_blank" rel="noopener noreferrer" className="link">
-                                2. Raport de Audit 2023
+                                3. Raport de Audit 2023
                             </a>
                             <a href="/raport-audit-2022.pdf" target="_blank" rel="noopener noreferrer" className="link">
-                                3. Raport de Audit 2022
+                                4. Raport de Audit 2022
                             </a>
                         </div>
                     </div>
