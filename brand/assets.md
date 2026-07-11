@@ -14,6 +14,11 @@ Last updated: 2026-05-18
 | documente-necesare-credit-afaceri-moldova | Blog Article  | 2026-06-03 | SEO / Blog     | draft    | How-to checklist, ~1,800 words, primary keyword: ce documente trebuie credit afaceri Moldova. File: app/blog/(articles)/documente-necesare-credit-afaceri-moldova/page.mdx |
 | ocn-vs-banca-credit-afaceri-moldova       | Blog Article  | 2026-06-03 | SEO / Blog     | draft    | Comparison article, ~2,200 words, primary keyword: OCN vs banca credit afaceri Moldova. File: app/blog/(articles)/ocn-vs-banca-credit-afaceri-moldova/page.mdx             |
 
+| social-media-strategy               | Strategy      | 2026-07-08 | Social Media   | active   | Revised: Moldova money/finance/business number-reveal content, not product marketing. Adapted from numbers-around-us format. Cadence updated to 2 short posts + 1 carousel/week; language bar set to 10-15yo readability, max one technical term/post. File: brand/social-media-strategy.md |
+| bnm-rata-de-baza                    | Social Post   | 2026-07-07 | Social Media   | draft    | Carousel, 6 slides. BNM rate hike to 7% + mortgage index effect. File: campaigns/social/2026-07-bnm-rata-de-baza.md |
+| remitente-diaspora-decembrie        | Social Post   | 2026-07-08 | Social Media   | draft    | Short single-image post. December 2025 = biggest remittance month (173.77M$ vs 138M$ avg). File: campaigns/social/2026-07-remitente-diaspora-decembrie.md |
+| social-design-system                | Strategy      | 2026-07-08 | Social Media   | active   | Visual spec for short/carousel posts - sizes, colors (site's black/orange tokens), Inter type scale, layout templates, no-AI-imagery rule. File: brand/social-design-system.md |
+
 ## Retired Assets
 
 | Name | Type | Retired | Notes |
