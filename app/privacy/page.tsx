@@ -79,7 +79,7 @@ export default function PrivacyPage() {
                     <br />
                     email: info@idealcredit.md
                     <br />
-                    tel: 079066566, 078805060
+                    tel: 079066566, 061252777
                 </div>
 
                 <p className="mt-8">Această Politică de Confidențialitate a fost actualizată ultima dată la 26.07.2024.</p>

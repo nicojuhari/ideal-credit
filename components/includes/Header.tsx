@@ -237,11 +237,11 @@ export default function Header() {
                 {/* Right cluster */}
                 <div className="hidden md:flex items-center gap-2">
                     <a
-                        href="tel:+37378805060"
+                        href="tel:+37361252777"
                         onClick={() => trackEvent("Contact")}
                         className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
                     >
-                        <Phone size={16} /> 078 80 50 60
+                        <Phone size={16} /> 0612 52 777
                     </a>
                 </div>
 
@@ -351,11 +351,11 @@ export default function Header() {
                             className="mt-auto mb-8 space-y-4 text-center px-4"
                         >
                             <a
-                                href="tel:+37378805060"
+                                href="tel:+37361252777"
                                 onClick={() => trackEvent("Contact")}
                                 className="w-full max-w-[320px] flex mx-auto justify-center items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
                             >
-                                <Phone size={16} /> 078 80 50 60
+                                <Phone size={16} /> 0612 52 777
                             </a>
                             <ButtonsCTA />
                         </motion.div>

@@ -16,8 +16,8 @@ export const OFFICES = [
         city: "m. Chișinău",
         street: "str. Ginta Latină",
         addressNumbers: "nr. 18, of. 5, MD-2044",
-        mobile: "+37378805060",
-        mobileDisplay: "078 80 50 60",
+        mobile: "+37361252777",
+        mobileDisplay: "0612 52 777",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.5126752925935!2d28.866588177004928!3d47.049792671144246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97cfa93379893%3A0x6b21737dc3080047!2sIdeal%20Credit%20Chi%C8%99in%C4%83u!5e0!3m2!1sen!2sat!4v1708098130151!5m2!1sen!2sat",
     },
 ];
