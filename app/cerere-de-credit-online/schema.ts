@@ -1,65 +1,79 @@
 import { z } from "zod";
 
 const numericString = (label: string) =>
- z
- .string()
- .min(1,`${label} este obligatoriu`)
- .refine((v) => !isNaN(Number(v)),`${label} trebuie să conțină doar cifre`);
+  z
+    .string()
+    .min(1, `${label} este obligatoriu`)
+    .refine((v) => !isNaN(Number(v)), `${label} trebuie să conțină doar cifre`);
 
 const optionalNumericString = (label: string) =>
- z
- .string()
- .refine((v) => v ==="" || !isNaN(Number(v)),`${label} trebuie să conțină doar cifre`);
+  z
+    .string()
+    .refine((v) => v === "" || !isNaN(Number(v)), `${label} trebuie să conțină doar cifre`);
+
+/** Moldova mobile: 9 digits, starts with 06 or 07 */
+export const MOLDOVA_MOBILE_REGEX = /^0[67]\d{7}$/;
+
+export const TERMEN_OPTIONS = ["6", "12", "16", "24", "36", "48"] as const;
+
+export const SCOP_OPTIONS = [
+  "Pentru nevoi personale",
+  "Pentru afaceri",
+  "Refinanțare",
+  "Procurare bun imobil",
+  "Altele",
+] as const;
 
 export const cerereSchema = z.object({
- // Step 1
- suma: numericString("Suma")
- .refine((v) => Number(v) >= 10000,"Suma minimă este 10.000 MDL")
- .refine((v) => Number(v) <= 300000,"Suma maximă este 300.000 MDL"),
- termen: numericString("Termenul")
- .refine((v) => Number(v) >= 6,"Termenul minim este 6 luni")
- .refine((v) => Number(v) <= 60,"Termenul maxim este 60 luni"),
- scopul_creditului: z.string().min(1,"Scopul creditului este obligatoriu"),
+  // Gates (asked first)
+  have_garant: z
+    .boolean({ error: "Selectați Da sau Nu" })
+    .refine((v) => v === true, "Este necesar cel puțin un fidejusor."),
+  in_oficiu: z
+    .boolean({ error: "Selectați Da sau Nu" })
+    .refine((v) => v === true, "Prezența în oficiu este obligatorie."),
 
- // Step 2
- nume: z.string().min(3,"Numele trebuie să conțină cel puțin 3 caractere"),
- prenume: z.string().min(3,"Prenumele trebuie să conțină cel puțin 3 caractere"),
- adresa_domiciliu: z.string().min(3,"Adresa de reședință este obligatorie"),
- telefon: z
- .string()
- .min(1,"Telefon este obligatoriu")
- .regex(/^\d{9}$/,"Telefonul trebuie să conțină 9 cifre"),
+  // Credit
+  suma: numericString("Suma")
+    .refine((v) => Number(v) >= 10000, "Suma minimă este 10.000 MDL")
+    .refine((v) => Number(v) <= 300000, "Suma maximă este 300.000 MDL"),
+  termen: z.enum(TERMEN_OPTIONS, { error: "Selectați termenul" }),
+  scopul_creditului: z.enum(SCOP_OPTIONS, { error: "Selectați scopul creditului" }),
 
- // Step 3
- venituri: optionalNumericString("Venitul"),
- datorii: optionalNumericString("Datoriile"),
- locul_de_munca: z
- .string()
- .min(3,"Locul de muncă trebuie să conțină cel puțin 3 caractere"),
- bunuri: z.array(z.string()).min(1,"Acest câmp este obligatoriu"),
+  // Personal
+  nume: z.string().min(3, "Numele trebuie să conțină cel puțin 3 caractere"),
+  prenume: z.string().min(3, "Prenumele trebuie să conțină cel puțin 3 caractere"),
+  adresa_domiciliu: z.string().min(3, "Adresa de reședință este obligatorie"),
+  telefon: z
+    .string()
+    .min(1, "Telefonul este obligatoriu")
+    .regex(MOLDOVA_MOBILE_REGEX, "Introduceți un număr mobil din Moldova (06xxxxxxx sau 07xxxxxxx)"),
 
- // Step 4
- terms: z.boolean().refine((v) => v === true,"Acceptați condițiile."),
- have_garant: z
- .boolean()
- .refine((v) => v === true,"Este necesar cel puțin un fidejusor."),
- in_oficiu: z
- .boolean()
- .refine((v) => v === true,"Prezența în oficiu este obligatorie."),
+  // Financial
+  venituri: optionalNumericString("Venitul"),
+  are_alte_credite: z.boolean({ error: "Selectați Da sau Nu" }),
+  locul_de_munca: z
+    .string()
+    .min(3, "Locul de muncă trebuie să conțină cel puțin 3 caractere"),
+  are_bunuri: z.boolean({ error: "Selectați Da sau Nu" }),
+
+  // Set true on submit (no checkbox)
+  terms: z.boolean().refine((v) => v === true, "Acceptați condițiile."),
 });
 
 export type CerereFormValues = z.input<typeof cerereSchema>;
 
-export const STEPS: { label: string; fields: (keyof CerereFormValues)[] }[] = [
- { label:"Date despre credit", fields: ["suma","termen","scopul_creditului"] },
- { label:"Date personale", fields: ["nume","prenume","adresa_domiciliu","telefon"] },
- { label:"Date financiare", fields: ["venituri","datorii","locul_de_munca","bunuri"] },
- { label:"Declarații", fields: ["terms","have_garant","in_oficiu"] },
-];
+export type StepKind = "gate" | "form" | "submit";
 
-export const BUNURI_OPTIONS = [
-"Casă sau Apartament",
-"Terenuri (agricole sau pentru construcție)",
-"Garaj, cameră în cămin, altele ...",
-"Nu am nimic",
+export const STEPS: {
+  label: string;
+  kind: StepKind;
+  fields: (keyof CerereFormValues)[];
+}[] = [
+  { label: "Fidejusor", kind: "gate", fields: ["have_garant"] },
+  { label: "Vizită în oficiu", kind: "gate", fields: ["in_oficiu"] },
+  { label: "Date despre credit", kind: "form", fields: ["suma", "termen", "scopul_creditului"] },
+  { label: "Date personale", kind: "form", fields: ["nume", "prenume", "adresa_domiciliu", "telefon"] },
+  { label: "Venit & credite", kind: "form", fields: ["venituri", "are_alte_credite", "locul_de_munca"] },
+  { label: "Bunuri & trimitere", kind: "submit", fields: ["are_bunuri"] },
 ];

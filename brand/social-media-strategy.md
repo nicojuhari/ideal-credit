@@ -1,6 +1,6 @@
 # Social Media Strategy - Ideal Credit
 
-Last updated: 2026-07-11
+Last updated: 2026-07-23
 
 **This supersedes the earlier draft of this file.** The previous version deliberately avoided
 credit/product content and ranged across general Moldovan economy topics (salary, telecom,
@@ -18,8 +18,9 @@ neutral channel.
 
 ## Objective
 
-Be the account Moldovan entrepreneurs and individuals follow to understand credit, loans, and
-money - and trust when they need financing. Every post should reinforce three feelings at once:
+Be the account Moldovan entrepreneurs and serious, business-minded individuals follow to
+understand credit, loans, and money - and trust when they need financing. Every post should
+reinforce three feelings at once:
 
 - **"They know what they're talking about"** - real numbers, real sources, real mechanisms.
 - **"I trust them"** - honest, plain-language, no hype, no fine print tricks.
@@ -29,18 +30,41 @@ money - and trust when they need financing. Every post should reinforce three fe
 Unlike the old strategy, product presence is not something to minimize - it's the point. Every
 post closes with the brand sign-off. Soft-to-direct promo lines are expected, not rationed.
 
+**Tone update (2026-07-23):** the feed had drifted too far toward dry, regulatory content -
+posts framed around another lender's fine or enforcement action read as "news about other
+credit companies," not as something a business owner wants to see. That's not who we're
+talking to. The audience is entrepreneurs and serious people who want to run a business and
+use credit properly - with logic and a clear scope, not people scrolling for enforcement
+gossip. The feed should feel **inspirational and attractive first**, informative second:
+success stories, money/business/credit facts, and statistics that show what credit makes
+possible when it's managed well. Regulation and straight news still belong on the page, but as
+an occasional post, not the default anchor of the week. See the reordered lanes and cadence
+below.
+
 ## What this content is
 
 **Pure finance content, on-topic every time: credit, loans, money, and investment.** Any
-format works as long as the subject is one of those four:
+format works as long as the subject is one of those four - but lead with the positive,
+inspirational end of that list, not the regulatory end:
 
-- **News** - a rate decision, a new regulation, a market shift - anything that just happened.
+- **Past success** - a real, sourced story of a business or person who used credit/financing
+  well and grew because of it (Moldovan or global, named and sourced wherever possible). Shows
+  the good part of credit: what becomes possible when it's used with logic and a clear plan.
+- **Money, business & credit facts / statistics** - a surprising, real number about money,
+  business growth, or lending (Moldovan or global) that makes the reader think differently -
+  not tied to a specific news event, just a fact worth knowing.
 - **Tips & tricks** - practical, honest guidance on borrowing, credit history, budgeting for a
   loan, what to check before signing.
-- **Past success** - a real, sourced story of a business or person who used credit/financing
-  well and grew because of it (Moldovan or global, named and sourced wherever possible).
-- **History** - where a financial instrument, institution, or mechanism came from.
+- **History & mechanisms** - where a financial instrument, institution, or mechanism came from,
+  or a well-known mechanism serious business people use with debt.
+- **News** - a rate decision, a new regulation, a market shift - anything that just happened.
+  Occasional, not weekly filler - use when something genuinely timely exists.
 - **Legal rules** - lending/consumer-protection law decoded into what it changes in practice.
+  Occasional. Frame around what a borrower can *do* with the rule (a right, an opportunity), not
+  around another lender getting fined or caught - that framing reads as "news about other
+  credit companies," not as content for a business owner. If the only available angle on a
+  regulation is "company X broke the rules," it's not a strong enough post on its own; pair it
+  with a positive angle or skip it that week.
 
 Moldova-specific or global - both are in scope, as long as the subject is credit, loans,
 finance, or investment. **No more general-interest content**: no internet/telecom, no salary
@@ -89,25 +113,41 @@ such term in the same post. If a post needs two technical terms explained, it's 
 
 ## Content Lanes (all credit/finance/money/investment, in priority order)
 
-1. **Credit & loan news** - BNM base rate moves and what they change for a loan payment, new
-   CNPF rules, new lending products in the Moldovan market, anything that just happened in
-   credit/lending.
-2. **Legal rules, decoded** - consumer-protection law, tax rules affecting credit or business
-   financing, CNPF/BNM regulatory changes - translated into "what this actually changes for
-   a borrower," never legal advice, just the mechanism made clear.
+Reordered 2026-07-23 to lead with inspirational and positive content; regulation/news moved
+down and made occasional rather than a weekly fixture. **Reach for lanes 1-4 first when
+drafting a batch.**
+
+1. **Past success** - a real business or person (Moldovan or global, named, sourced) who used
+   credit/financing as a tool and grew because of it. This is where Ideal Credit's own client
+   stories belong too, when we have a real, consented one. The clearest way to show credit's
+   good side: what it made possible when managed with logic and a clear scope.
+2. **Money, business & credit facts / statistics** - a surprising, real number about money,
+   business growth, wealth, or lending (Moldovan or global) that reframes how the reader thinks
+   about it. Doesn't need a news hook - an evergreen fact is enough if it's real and sourced.
 3. **Tips & tricks** - how credit history works, what DAE actually measures, questions to ask
    before signing, how to budget for a loan payment, documents that speed up approval. Practical,
    never generic ("save money" platitudes) - always something a reader didn't already know.
-4. **Past success** - a real business or person (Moldovan or global, named, sourced) who used
-   credit/financing as a tool and grew because of it. This is where Ideal Credit's own client
-   stories belong too, when we have a real, consented one.
-5. **History & mechanisms** - the origin of a financial instrument or institution, or a
-   well-known mechanism the wealthy use with debt (e.g. "buy, borrow, die"), Moldova or global.
-6. **Global finance & investment numbers** - a world credit/investment number, closed on what
+4. **History & mechanisms** - the origin of a financial instrument or institution, or a
+   well-known mechanism serious business people use with debt (e.g. "buy, borrow, die"),
+   Moldova or global.
+5. **Global finance & investment numbers** - a world credit/investment number, closed on what
    it means for someone in Moldova whenever a real connection exists.
+6. **Credit & loan news** - BNM base rate moves and what they change for a loan payment, new
+   lending products in the Moldovan market, anything that just happened in credit/lending.
+   Occasional - use when something is genuinely timely, not to fill a slot.
+7. **Legal rules, decoded** - consumer-protection law, tax rules affecting credit or business
+   financing, CNPF/BNM regulatory changes - translated into "what this actually changes for a
+   borrower" (a right, an opportunity), never legal advice. Occasional, and never anchored on
+   "a lender got fined/caught" - that framing reads as gossip about other credit companies, not
+   content for a business owner building something.
 
 Every lane requires the same test: is this a real, sourced fact or number, and does the post
 open the full picture rather than a cherry-picked slice?
+
+**Repeating topics:** the same underlying topic or story can come back every 2-3 months from a
+different angle (a different number, a different framing, a different closing line) - this
+isn't a strict no-repeat backlog. Moldova's credit/finance news flow is thin; recycling a strong
+topic with a fresh angle beats stretching for a weak new one.
 
 **Sourcing:** BNM (Banca Națională a Moldovei), CNPF, Ministerul Finanțelor, BNS for context
 figures, Eurostat/World Bank for global comparisons, credible business press for stories. Cite
@@ -117,17 +157,19 @@ the source in-post. No number or claim without a source.
 
 ## Research-First Workflow (before scripting a batch)
 
-1. What happened this week in Moldovan credit/lending/finance news (rate decisions, CNPF
-   updates, new products, statistics releases)
-2. What's coming in the next 2-4 weeks (BNM rate decision dates, fiscal deadlines relevant to
-   credit, sector reports)
-3. Anniversary angle - a financial/credit milestone from years past, reframed with today's
-   numbers
-4. Evergreen backlog from the content lanes above (tips, history, success stories) if 1-3
-   don't fill the week
+1. **Success stories and money/business/credit facts first** (lanes 1-2) - a real, sourced
+   story or statistic that shows credit or smart money management working. This is the default
+   starting point for a batch, not the fallback.
+2. Evergreen backlog from tips, history, and global-numbers lanes (3-5) to round out the week.
+3. What happened this week in Moldovan credit/lending/finance news, or what's coming in the
+   next 2-4 weeks (BNM rate decisions, CNPF updates, fiscal deadlines) - only pull this in when
+   it's genuinely timely and worth pushing ahead of an inspirational post, not by default.
+4. Anniversary angle - a financial/credit milestone from years past, reframed with today's
+   numbers.
 
-Timely posts get pushed harder by the algorithm and read as "this page is paying attention" -
-prioritize them over evergreen when both exist.
+Timely news still gets pushed harder by the algorithm and can jump the queue when it's real
+news - but it no longer anchors the week by default. Most weeks should lead with an
+inspirational or fact-based post, not a news/regulation post.
 
 ---
 
@@ -210,12 +252,13 @@ only.
 
 | Day | Lane | Notes |
 | --- | --- | --- |
-| Monday | Credit/loan news or legal rules decoded | Sets the week's "serious" tone |
-| Wednesday | Tips & tricks, or a past-success story | Practical value, most shareable slot |
+| Monday | Past success story, or a money/business/credit fact or statistic | Opens the week on an inspirational, attractive note |
+| Wednesday | Tips & tricks, or another success story | Practical value, most shareable slot |
 | Friday | History/mechanism, or a global finance number closed on Moldova relevance | Closes the week on the brand's actual domain |
 
-Days can shift to match real news (e.g. a BNM decision on a Tuesday) - the mix of lanes stays
-roughly fixed, but timeliness wins when there's real news to cover.
+News and legal-rules-decoded posts aren't assigned a fixed day - swap one in only when
+something genuinely timely exists, and don't let it replace more than one of the three slots in
+a given week. Days can also shift to match real news (e.g. a BNM decision on a Tuesday).
 
 ---
 
@@ -258,10 +301,12 @@ Matching image export files reuse the same slug: `NN-topic-slug_1.png` (see expo
 
 ## Audience & Fit
 
-Target: entrepreneurs, SME owners, and anyone in Moldova who needs or is curious about credit
-and financing. This content is now directly relevant to Ideal Credit's business - it should
-read as expert, not salesy: the expertise is what earns the trust that turns into an
-application.
+Target: entrepreneurs, SME owners, and serious business-minded people in Moldova who want to
+use credit properly - with logic and a clear scope, not on impulse. Not people looking for
+enforcement news about other lenders, and not a general-interest audience. This content is
+directly relevant to Ideal Credit's business - it should read as expert and inspirational, not
+salesy and not dry: the expertise and the positive proof (real success stories, real numbers)
+are what earn the trust that turns into an application.
 
 ---
 
