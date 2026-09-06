@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #100E0C; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #FF9A00; }
+  :focus-visible { outline: 2px solid #FF9A00; outline-offset: 3px; border-radius: 0; }
+  body { font-variant-numeric: tabular-nums; }
+  [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1); }
+  [data-reveal].in { opacity: 1; transform: none; }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 0; background: rgba(242,239,232,0.2); outline: none; margin: 0; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 0; background: #FF9A00; border: 5px solid #17140F; cursor: grab; transition: transform .15s ease; }
+  input[type=range]::-webkit-slider-thumb:active { transform: scale(1.12); }
+  input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 0; background: #FF9A00; border: 5px solid #17140F; cursor: grab; }
+</style>
+</helmet>
+<div style="font-family: Archivo, Helvetica, sans-serif; background: #100E0C; color: #F2EFE8">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(16,14,12,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(242,239,232,0.14)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px; height: 76px; display: flex; align-items: center; gap: 28px; flex-wrap: nowrap">
+      <a href="./Ideal Credit v4 - Home.dc.html" style="display: flex; align-items: center; gap: 10px">
+        <img src="./ideal-credit-logo.svg" alt="" style="height: 34px; width: auto; display: block" />
+        <span style="font-size: 19px; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap">Ideal Credit</span>
+      </a>
+      <nav style="display: flex; align-items: center; gap: 24px; font-size: 15px; color: #A39C8F; white-space: nowrap; flex: none">
+        <a href="./Ideal Credit v4 - Credit pentru afaceri mici.dc.html" style="color: #F2EFE8">Credite afaceri</a>
+        <span style="cursor: pointer" style-hover="color: #F2EFE8">Credite personale</span>
+        <span style="cursor: pointer" style-hover="color: #F2EFE8">Calculator</span>
+      </nav>
+      <div style="flex: 1; min-width: 12px"></div>
+      <div style="display: flex; align-items: center; gap: 20px; flex: none">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; white-space: nowrap">0612 52 777</span>
+        <span style="display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 0; white-space: nowrap; background: #F2EFE8; color: #100E0C; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .2s ease" style-hover="background: #FF9A00">Solicită credit</span>
+      </div>
+    </div>
+  </header>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 92px 40px 64px; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr); gap: 64px; align-items: start">
+    <div data-reveal="">
+      <div style="display: inline-flex; align-items: center; gap: 12px; height: 34px; padding: 0 16px; border: 1px solid rgba(242,239,232,0.2); border-radius: 0; white-space: nowrap; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #A39C8F">
+        <span style="width: 6px; height: 6px; border-radius: 0; background: #FF9A00"></span>OCN licențiată · din 2010
+      </div>
+      <h1 style="margin: 34px 0 0; font-size: clamp(38px, 5vw, 66px); line-height: 1.02; letter-spacing: -0.04em; font-weight: 600; text-wrap: balance">Capital pentru afacerea ta, cu cifrele pe masă.</h1>
+      <p style="margin: 28px 0 0; max-width: 460px; font-size: 19px; line-height: 1.6; color: #B3ACA0">Credit nebancar pentru SRL, ÎI și antreprenori din Moldova — și soluții pentru nevoi personale. Dobândă fixă, zero comisioane ascunse, decizie în 1–2 zile lucrătoare.</p>
+      <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px">
+        <span style="display: inline-flex; align-items: center; height: 56px; padding: 0 30px; border-radius: 0; white-space: nowrap; background: #F2EFE8; color: #100E0C; font-size: 17px; font-weight: 600; cursor: pointer; transition: background .2s ease" style-hover="background: #FF9A00" style-active="transform: translateY(1px)">Solicită credit pentru afacere</span>
+        <a href="./Ideal Credit v4 - Credit pentru afaceri mici.dc.html" style="display: inline-flex; align-items: center; height: 56px; padding: 0 30px; border-radius: 0; white-space: nowrap; border: 1px solid rgba(242,239,232,0.24); font-size: 17px; transition: border-color .2s ease" style-hover="border-color: #FF9A00">Condiții pentru afaceri</a>
+      </div>
+      <div style="margin-top: 44px; display: flex; align-items: center; gap: 18px; font-size: 14px; color: #A39C8F; flex-wrap: wrap">
+        <span style="display: inline-flex; align-items: center; gap: 8px"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: #FF9A00">4.9</span>rating Google</span>
+        <span style="width: 4px; height: 4px; border-radius: 0; background: rgba(242,239,232,0.34)"></span>
+        <span>Rambursare anticipată gratuită</span>
+        <span style="width: 4px; height: 4px; border-radius: 0; background: rgba(242,239,232,0.34)"></span>
+        <span>Supravegheat de CNPF</span>
+      </div>
+    </div>
+
+    <div data-reveal="" style="background: #17140F; border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 32px">
+      <div style="display: flex; align-items: baseline; justify-content: space-between">
+        <h2 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Calculator de credit</h2>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FF9A00">4% lunar</span>
+      </div>
+      <div style="margin-top: 34px">
+        <div style="display: flex; align-items: baseline; justify-content: space-between">
+          <span style="font-size: 14px; color: #A39C8F">Suma creditului</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 23px">{{ amountLabel }} MDL</span>
+        </div>
+        <input type="range" min="5000" max="500000" step="5000" value="{{ amount }}" onChange="{{ setAmount }}" style="margin-top: 16px" />
+        <div style="margin-top: 8px; display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A39C8F">
+          <span>5.000</span><span>500.000</span>
+        </div>
+      </div>
+      <div style="margin-top: 26px">
+        <div style="display: flex; align-items: baseline; justify-content: space-between">
+          <span style="font-size: 14px; color: #A39C8F">Termen</span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 23px">{{ term }} luni</span>
+        </div>
+        <input type="range" min="3" max="36" step="1" value="{{ term }}" onChange="{{ setTerm }}" style="margin-top: 16px" />
+        <div style="margin-top: 8px; display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A39C8F">
+          <span>3 luni</span><span>36 luni</span>
+        </div>
+      </div>
+      <div style="margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(242,239,232,0.14); border: 1px solid rgba(242,239,232,0.14); border-radius: 0; overflow: hidden">
+        <div style="background: #100E0C; padding: 20px">
+          <div style="font-size: 13px; color: #A39C8F">Prima rată</div>
+          <div style="margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 25px; color: #FF9A00">{{ firstLabel }}</div>
+        </div>
+        <div style="background: #100E0C; padding: 20px">
+          <div style="font-size: 13px; color: #A39C8F">Ultima rată</div>
+          <div style="margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 25px">{{ lastLabel }}</div>
+        </div>
+        <div style="background: #100E0C; padding: 20px">
+          <div style="font-size: 13px; color: #A39C8F">Cost total credit</div>
+          <div style="margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 25px">{{ costLabel }}</div>
+        </div>
+        <div style="background: #100E0C; padding: 20px">
+          <div style="font-size: 13px; color: #A39C8F">DAE</div>
+          <div style="margin-top: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 25px">{{ daeLabel }}</div>
+        </div>
+      </div>
+      <span style="margin-top: 22px; display: flex; align-items: center; justify-content: center; gap: 0.32em; height: 54px; border-radius: 0; white-space: nowrap; background: #F2EFE8; color: #100E0C; font-size: 17px; font-weight: 600; cursor: pointer; transition: background .2s ease" style-hover="background: #FF9A00">Solicită {{ amountLabel }} MDL</span>
+      <div style="margin-top: 14px; font-size: 13px; line-height: 1.5; color: #A39C8F">Calcul orientativ. Graficul de achitare și informația precontractuală se prezintă înainte de semnare.</div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="max-width: 1240px; margin: 0 auto; padding: 0 40px 96px">
+    <div style="border-top: 1px solid rgba(242,239,232,0.14); border-bottom: 1px solid rgba(242,239,232,0.14); padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #A39C8F; flex-wrap: wrap">
+      <span>Achitare online banking</span>
+      <span>VictoriaBank</span>
+      <span>Poșta Moldovei</span>
+      <span>Numerar în oficii</span>
+      <span>Rambursare anticipată gratuită</span>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 0 40px 112px">
+    <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px 48px">
+      <h2 style="margin: 0; max-width: 560px; font-size: 42px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600">Trei promisiuni,<br />fără asterisc.</h2>
+      <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.6; color: #A39C8F">Din 2010 finanțăm afaceri și familii din Moldova. Regulile sunt aceleași pentru toți clienții.</p>
+    </div>
+    <div style="margin-top: 44px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 20px">
+      <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 32px; display: flex; flex-direction: column; min-height: 300px; transition: border-color .25s ease" style-hover="border-color: rgba(255,154,0,0.5)">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #FF9A00">Transparență</span>
+        <h3 style="margin: 18px 0 0; font-size: 23px; letter-spacing: -0.025em; font-weight: 600">Toate costurile, înainte de semnare</h3>
+        <p style="margin: 12px 0 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #B3ACA0">Dobândă fixă, zero comisioane ascunse. Vezi rata, costul total și DAE în informația precontractuală.</p>
+        <div style="flex: 1"></div>
+        <div style="margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(242,239,232,0.14); border: 1px solid rgba(242,239,232,0.14); border-radius: 0; overflow: hidden">
+          <div style="background: #100E0C; padding: 14px 16px">
+            <div style="font-size: 12px; color: #A39C8F">Dobândă</div>
+            <div style="margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 18px">4% / lună</div>
+          </div>
+          <div style="background: #100E0C; padding: 14px 16px">
+            <div style="font-size: 12px; color: #A39C8F">Comisioane</div>
+            <div style="margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 18px; color: #FF9A00">0 MDL</div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 32px; display: flex; flex-direction: column; min-height: 300px; transition: border-color .25s ease" style-hover="border-color: rgba(255,154,0,0.5)">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #FF9A00">Viteză</span>
+        <h3 style="margin: 18px 0 0; font-size: 23px; letter-spacing: -0.025em; font-weight: 600">Răspuns înainte de prânz</h3>
+        <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #B3ACA0">Dosarul complet primit dimineața primește decizie în aceeași zi lucrătoare.</p>
+        <div style="flex: 1"></div>
+        <div style="margin-top: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 40px; letter-spacing: -0.03em">1–3 h</div>
+      </div>
+      <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 32px; display: flex; flex-direction: column; min-height: 300px; transition: border-color .25s ease" style-hover="border-color: rgba(255,154,0,0.5)">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #FF9A00">Flexibilitate</span>
+        <h3 style="margin: 18px 0 0; font-size: 23px; letter-spacing: -0.025em; font-weight: 600">Rambursare anticipată gratuită</h3>
+        <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #B3ACA0">Plătești dobânda doar pentru perioada folosită. Nicio penalitate.</p>
+        <div style="flex: 1"></div>
+        <div style="margin-top: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 40px; letter-spacing: -0.03em">0 %</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #1B1815; color: #F2EFE8">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 112px 40px">
+      <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px 48px">
+        <h2 style="margin: 0; max-width: 540px; font-size: 42px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600">Alege direcția.<br />Restul îl clarificăm noi.</h2>
+        <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.6; color: #A39C8F">Două trasee, aceleași reguli: costurile spuse din prima discuție și un răspuns în aceeași zi lucrătoare.</p>
+      </div>
+      <div style="margin-top: 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+        <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 36px; display: flex; flex-direction: column; min-height: 360px; transition: border-color .25s ease" style-hover="border-color: #FF9A00">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39C8F">01 / Afaceri</span>
+          <h3 style="margin: 22px 0 0; font-size: 28px; letter-spacing: -0.03em; font-weight: 600">Credit pentru afaceri</h3>
+          <p style="margin: 14px 0 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #A39C8F">Capital de lucru, investiții sau refinanțare — fără plan de afaceri obligatoriu.</p>
+          <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 12px; font-size: 15.5px">
+            <span>SRL, ÎI, GȚ — toate formele juridice</span>
+            <span>Extrase bancare de minim 3 luni</span>
+            <span>Decizie în 1–2 zile lucrătoare</span>
+          </div>
+          <div style="flex: 1"></div>
+          <a href="./Ideal Credit v4 - Credit pentru afaceri mici.dc.html" style="margin-top: 32px; align-self: flex-start; display: inline-flex; align-items: center; height: 50px; padding: 0 26px; border-radius: 0; white-space: nowrap; background: #F2EFE8; color: #100E0C; font-size: 16px; transition: background .2s ease" style-hover="background: #2A241E; color: #F2EFE8">Condiții pentru afaceri →</a>
+        </div>
+        <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 36px; display: flex; flex-direction: column; min-height: 360px; transition: border-color .25s ease" style-hover="border-color: #FF9A00">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39C8F">02 / Persoane fizice</span>
+          <h3 style="margin: 22px 0 0; font-size: 28px; letter-spacing: -0.03em; font-weight: 600">Credit personal</h3>
+          <p style="margin: 14px 0 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #A39C8F">Pentru o nevoie urgentă sau un plan pregătit, cu condiții clare de la început.</p>
+          <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 12px; font-size: 15.5px">
+            <span>De la 23 de ani, cu venit stabil</span>
+            <span>Doar buletinul de identitate valabil</span>
+            <span>Decizie în 2–3 ore</span>
+          </div>
+          <div style="flex: 1"></div>
+          <span style="margin-top: 32px; align-self: flex-start; display: inline-flex; align-items: center; height: 50px; padding: 0 26px; border-radius: 0; white-space: nowrap; border: 1px solid rgba(242,239,232,0.3); font-size: 16px; cursor: pointer; transition: border-color .2s ease" style-hover="border-color: #100E0C">Condiții credit personal →</span>
+        </div>
+      </div>
+      <div data-reveal="" style="margin-top: 20px; border-radius: 0; background: #241F1A; padding: 26px 34px; max-width: 900px; font-size: 15px; line-height: 1.6; color: #B3ACA0">Primul credit se acordă cu garant. Clienții cu istoric bun nu mai au nevoie de garant la creditele următoare — iar toate costurile sunt prezentate înainte de semnare.</div>
+
+      <div data-reveal="" style="margin-top: 104px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(242,239,232,0.14); border-top: 1px solid rgba(242,239,232,0.14); border-bottom: 1px solid rgba(242,239,232,0.14)">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="background: #1B1815; padding: 40px 24px">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 44px; letter-spacing: -0.03em">{{ s.v }}</div>
+            <div style="margin-top: 10px; font-size: 15px; color: #A39C8F">{{ s.l }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="margin-top: 104px">
+        <span data-reveal="" style="display: block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #A39C8F">Cum funcționează</span>
+        <div data-reveal="" style="margin-top: 36px; border-top: 1px solid rgba(242,239,232,0.14); border-bottom: 1px solid rgba(242,239,232,0.14); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(242,239,232,0.14)">
+          <div style="background: #1B1815; padding: 40px 32px 40px 0">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFB245">Pas 01</span>
+            <h3 style="margin: 18px 0 0; font-size: 24px; letter-spacing: -0.02em; font-weight: 600">Depui cererea</h3>
+            <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #A39C8F">Online, la telefon, pe Viber/WhatsApp sau într-unul din oficii.</p>
+          </div>
+          <div style="background: #1B1815; padding: 40px 32px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFB245">Pas 02</span>
+            <h3 style="margin: 18px 0 0; font-size: 24px; letter-spacing: -0.02em; font-weight: 600">Primești răspunsul</h3>
+            <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #A39C8F">În câteva ore în timpul programului, cu suma și rata exactă.</p>
+          </div>
+          <div style="background: #1B1815; padding: 40px 0 40px 32px">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #FFB245">Pas 03</span>
+            <h3 style="margin: 18px 0 0; font-size: 24px; letter-spacing: -0.02em; font-weight: 600">Semnezi și iei banii</h3>
+            <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #A39C8F">Contractul se semnează în oficiu, banii se eliberează imediat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 112px 40px">
+    <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px">
+      <h2 style="margin: 0; font-size: 42px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600">Toate produsele</h2>
+      <span style="font-size: 15px; color: #A39C8F">Zece produse, un singur proces de aprobare.</span>
+    </div>
+    <div style="margin-top: 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px">
+      <div data-reveal="">
+        <div style="padding-bottom: 16px; border-bottom: 1px solid rgba(242,239,232,0.14); font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #FF9A00">Pentru afaceri</div>
+        <sc-for list="{{ business }}" as="p" hint-placeholder-count="5">
+          <div style="display: flex; align-items: baseline; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(242,239,232,0.14); cursor: pointer; transition: padding-left .2s ease, background .2s ease" style-hover="padding-left: 10px; background: rgba(242,239,232,0.05)">
+            <span style="min-width: 180px; font-size: 19px; font-weight: 500; letter-spacing: -0.01em">{{ p.t }}</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #A39C8F">{{ p.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div data-reveal="">
+        <div style="padding-bottom: 16px; border-bottom: 1px solid rgba(242,239,232,0.14); font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #FF9A00">Pentru persoane fizice</div>
+        <sc-for list="{{ personal }}" as="p" hint-placeholder-count="5">
+          <div style="display: flex; align-items: baseline; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(242,239,232,0.14); cursor: pointer; transition: padding-left .2s ease, background .2s ease" style-hover="padding-left: 10px; background: rgba(242,239,232,0.05)">
+            <span style="min-width: 180px; font-size: 19px; font-weight: 500; letter-spacing: -0.01em">{{ p.t }}</span>
+            <span style="font-size: 15px; line-height: 1.5; color: #A39C8F">{{ p.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 0 40px 112px">
+    <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 64px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 64px; align-items: center">
+      <div>
+        <blockquote style="margin: 0; font-size: 30px; line-height: 1.32; letter-spacing: -0.025em; font-weight: 500">„Am modernizat magazinul în 3 luni. Proces simplu, dobândă fixă și oameni care explică fiecare cifră.”</blockquote>
+        <div style="margin-top: 30px; display: flex; align-items: center; gap: 14px">
+          <span style="width: 40px; height: 40px; border-radius: 0; border: 1px solid rgba(242,239,232,0.2); display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #B3ACA0">IC</span>
+          <div>
+            <div style="font-size: 15px; font-weight: 500">Ion C.</div>
+            <div style="margin-top: 3px; font-size: 14px; color: #A39C8F">Proprietar de magazin, Căușeni</div>
+          </div>
+        </div>
+      </div>
+      <div style="border-left: 1px solid rgba(242,239,232,0.14); padding-left: 44px; display: flex; flex-direction: column; gap: 24px">
+        <div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #D8D3C8">„Banca m-a refuzat, voi m-ați ajutat în 2 zile.”</div>
+          <div style="margin-top: 8px; font-size: 13px; color: #A39C8F">Victor · credit pentru automobil</div>
+        </div>
+        <div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #D8D3C8">„Am cumpărat utilaje în 2 zile și asta ne-a ajutat să creștem.”</div>
+          <div style="margin-top: 8px; font-size: 13px; color: #A39C8F">Ana · credit investițional</div>
+        </div>
+        <div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #D8D3C8">„Transparență totală, fără comisioane ascunse.”</div>
+          <div style="margin-top: 8px; font-size: 13px; color: #A39C8F">Maria · antreprenoare</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 0 40px 112px">
+    <div data-reveal="" style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px">
+      <h2 style="margin: 0; font-size: 42px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600">Ghiduri practice</h2>
+      <span style="font-size: 15px; color: #A39C8F; cursor: pointer">Toate ghidurile →</span>
+    </div>
+    <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+      <sc-for list="{{ guides }}" as="g" hint-placeholder-count="3">
+        <div data-reveal="" style="border: 1px solid rgba(242,239,232,0.14); border-radius: 0; padding: 30px; display: flex; flex-direction: column; min-height: 240px; cursor: pointer; transition: border-color .25s ease" style-hover="border-color: rgba(255,154,0,0.5)">
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #A39C8F">{{ g.min }}</span>
+          <h3 style="margin: 16px 0 0; font-size: 21px; line-height: 1.25; letter-spacing: -0.02em; font-weight: 500">{{ g.t }}</h3>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #A39C8F">{{ g.d }}</p>
+          <div style="flex: 1"></div>
+          <span style="margin-top: 22px; font-size: 15px; color: #FF9A00">Citește →</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="max-width: 1240px; margin: 0 auto; padding: 0 40px 112px; display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: 72px">
+    <div data-reveal="">
+      <h2 style="margin: 0; font-size: 42px; line-height: 1.05; letter-spacing: -0.035em; font-weight: 600">Întrebări<br />frecvente</h2>
+      <p style="margin: 20px 0 0; max-width: 280px; font-size: 16px; line-height: 1.6; color: #A39C8F">Nu găsești răspunsul? Scrie-ne și te ghidăm pas cu pas.</p>
+      <span style="margin-top: 24px; display: inline-flex; align-items: center; height: 50px; padding: 0 26px; border-radius: 0; white-space: nowrap; border: 1px solid rgba(242,239,232,0.24); font-size: 16px; cursor: pointer; transition: border-color .2s ease" style-hover="border-color: #FF9A00">Contactează-ne</span>
+    </div>
+    <div data-reveal="" style="border-top: 1px solid rgba(242,239,232,0.14)">
+      <sc-for list="{{ faq }}" as="f" hint-placeholder-count="6">
+        <div onClick="{{ f.toggle }}" style="padding: 26px 0; border-bottom: 1px solid rgba(242,239,232,0.14); cursor: pointer; transition: padding-left .2s ease" style-hover="padding-left: 8px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px">
+            <span style="font-size: 19px; font-weight: 500; letter-spacing: -0.01em">{{ f.q }}</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 19px; color: {{ f.signColor }}">{{ f.sign }}</span>
+          </div>
+          <sc-if value="{{ f.open }}">
+            <p style="margin: 14px 0 0; max-width: 620px; font-size: 16px; line-height: 1.65; color: #B3ACA0">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding: 0 40px 112px">
+    <div data-reveal="" style="max-width: 1240px; margin: 0 auto; border-radius: 0; background: #FF9A00; color: #100E0C; padding: 72px 64px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px 48px">
+      <div>
+        <h2 style="margin: 0; max-width: 620px; font-size: 46px; line-height: 1.04; letter-spacing: -0.04em; font-weight: 600">Spune-ne de cât ai nevoie. Restul e treaba noastră.</h2>
+        <p style="margin: 20px 0 0; max-width: 460px; font-size: 18px; line-height: 1.5; color: rgba(16,14,12,0.72)">Completezi cererea în 3 minute și primești răspunsul în aceeași zi lucrătoare.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+        <span style="display: inline-flex; align-items: center; height: 58px; padding: 0 32px; border-radius: 0; white-space: nowrap; background: #F2EFE8; color: #100E0C; font-size: 17px; font-weight: 500; cursor: pointer; transition: transform .2s ease" style-hover="transform: translateY(-2px); color: #F2EFE8">Cerere online</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; color: rgba(16,14,12,0.72)">sau 0612 52 777</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid rgba(242,239,232,0.14)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 56px 40px; display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: 40px">
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <img src="./ideal-credit-logo.svg" alt="" style="height: 30px; width: auto; display: block" />
+          <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.02em">Ideal Credit</span>
+        </div>
+        <p style="margin: 16px 0 0; max-width: 260px; font-size: 14px; line-height: 1.6; color: #A39C8F">Organizație de creditare nebancară. Credite pentru afaceri și consum în Moldova.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #A39C8F">
+        <span style="color: #F2EFE8; font-size: 13px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase">Produse</span>
+        <a href="./Ideal Credit v4 - Credit pentru afaceri mici.dc.html">Afaceri mici</a>
+        <span>Capital de lucru</span>
+        <span>Credit investițional</span>
+        <span>Refinanțare</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #A39C8F">
+        <span style="color: #F2EFE8; font-size: 13px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase">Companie</span>
+        <span>Despre noi</span>
+        <span>Calculator credit</span>
+        <span>Ghiduri</span>
+        <span>Contacte</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #A39C8F">
+        <span style="color: #F2EFE8; font-size: 13px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase">Oficii</span>
+        <span>Căușeni · str. M. Eminescu 17</span>
+        <span>Chișinău · str. Ginta Latină 18</span>
+        <span style="color: #F2EFE8; font-family: 'IBM Plex Mono', monospace">0612 52 777</span>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px 48px; font-size: 13px; color: #A39C8F">© 2026 OCN Ideal Credit SRL. Conform Legii nr. 202/2013, dobânda anuală nu depășește 50%.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const RATE = 0.04;
+const fmt = n => Math.round(n).toLocaleString('ro-RO');
+const STATS = [
+  { to: 16, suffix: '', l: 'ani de activitate' },
+  { to: 4.9, suffix: '', l: 'rating Google', dec: 1 },
+  { to: 10, suffix: '', l: 'produse de credit' },
+  { to: 0, suffix: '', l: 'comisioane ascunse' }
+];
+
+class Component extends DCLogic {
+  state = { amount: 100000, term: 12, open: 0 };
+
+  componentDidMount() {
+    const els = [...document.querySelectorAll('[data-reveal]')];
+    const show = el => el.classList.add('in');
+    const sweep = () => els.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const h = window.innerHeight || 800;
+      if (r.top < h * 0.95 && r.bottom > -40) show(el);
+    });
+    sweep();
+    if ('IntersectionObserver' in window) {
+      this.io = new IntersectionObserver(es => {
+        es.forEach(e => { if (e.isIntersecting) { show(e.target); this.io.unobserve(e.target); } });
+      }, { threshold: 0 });
+      els.forEach(el => this.io.observe(el));
+    }
+    this.onScroll = sweep;
+    window.addEventListener('scroll', sweep, { passive: true });
+    window.addEventListener('resize', sweep, { passive: true });
+    let node = document.querySelector('[data-reveal]');
+    this.scrollers = [];
+    while (node && node.parentElement) {
+      node = node.parentElement;
+      const ov = getComputedStyle(node).overflowY;
+      if (ov === 'auto' || ov === 'scroll') { node.addEventListener('scroll', sweep, { passive: true }); this.scrollers.push(node); }
+    }
+    this.failsafe = setTimeout(() => els.forEach(show), 900);
+  }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    clearTimeout(this.failsafe);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+    (this.scrollers || []).forEach(n => n.removeEventListener('scroll', this.onScroll));
+  }
+
+  renderVals() {
+    const { amount, term, open } = this.state;
+    const principal = amount / term;
+    const first = principal + amount * RATE;
+    const last = principal + principal * RATE;
+    const cost = amount * RATE * (term + 1) / 2;
+    const dae = (Math.pow(1 + RATE, 12) - 1) * 100;
+    const faqData = [
+      ['Ce sumă pot obține pentru afacerea mea?', 'Suma depinde de rulajul din extrasele bancare și de garanțiile disponibile. Pentru afaceri mici lucrăm de regulă între 20.000 și 500.000 MDL, iar limita exactă o stabilim după analiza dosarului.'],
+      ['Pot obține credit doar cu buletinul, fără gaj?', 'Da, pentru sume mai mici este suficient buletinul și un fidejusor. Gajul se solicită doar pentru sume mari sau venituri nestabile.'],
+      ['Dobânda este fixă sau flotantă?', 'Fixă pe toată durata contractului. Rata scade lunar, pentru că dobânda se calculează la soldul rămas.'],
+      ['Există comisioane ascunse?', 'Nu. Toate costurile — dobânda, taxele și eventualele penalități — sunt prezentate în informația precontractuală, înainte de semnare.'],
+      ['Pot rambursa creditul anticipat?', 'Da, gratuit și oricând. Plătești dobânda doar pentru perioada în care ai folosit efectiv banii.'],
+      ['Cât timp durează aprobarea?', 'Dosarul complet primit dimineața primește răspuns înainte de prânz. Pentru credite de afaceri, decizia finală vine în 1–2 zile lucrătoare.']
+    ];
+    return {
+      amount, term,
+      amountLabel: fmt(amount),
+      firstLabel: fmt(first),
+      lastLabel: fmt(last),
+      costLabel: fmt(cost),
+      daeLabel: dae.toFixed(1) + '%',
+      setAmount: e => this.setState({ amount: +e.target.value }),
+      setTerm: e => this.setState({ term: +e.target.value }),
+      stats: STATS.map(s => ({ v: s.to.toFixed(s.dec || 0) + s.suffix, l: s.l })),
+      guides: [
+        { min: '9 min', t: 'OCN sau bancă: ce să alegi pentru creditul de afacere', d: 'Când e mai bun fiecare, de ce diferă dobânzile și cum decizi fără să greșești.' },
+        { min: '8 min', t: 'Ce documente trebuie pentru un credit de afaceri', d: 'Lista completă de acte — și ce nu ți se va cere niciodată.' },
+        { min: '11 min', t: 'Cum obții credit la un OCN: ghid pas cu pas', d: 'De la prima discuție până la banii în cont, cu pași concreți și cifre reale.' }
+      ],
+      business: [
+        { t: 'Afaceri mici', d: 'Capital rapid pentru SRL, ÎI și antreprenori.' },
+        { t: 'Capital de lucru', d: 'Salarii, furnizori, stoc — flux fără întreruperi.' },
+        { t: 'Investițional', d: 'Echipamente, extindere spațiu, modernizare.' },
+        { t: 'Refinanțare', d: 'Consolidezi datoriile, reduci rata lunară.' },
+        { t: 'Agricol', d: 'Pentru fermieri și activități sezoniere.' }
+      ],
+      personal: [
+        { t: 'Nevoi personale', d: 'Pentru orice cheltuială planificată sau urgentă.' },
+        { t: 'Până la salariu', d: 'Sumă mică, rambursare la următorul salariu.' },
+        { t: 'Reparație', d: 'Renovarea locuinței cu rate fixe.' },
+        { t: 'Automobil', d: 'Finanțare pentru mașină nouă sau second-hand.' },
+        { t: 'Bugetari', d: 'Condiții speciale pentru medici, militari, polițiști.' }
+      ],
+      faq: faqData.map(([q, a], i) => ({
+        q, a,
+        open: open === i,
+        sign: open === i ? '−' : '+',
+        signColor: open === i ? '#FF9A00' : '#A39C8F',
+        toggle: () => this.setState({ open: open === i ? -1 : i })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

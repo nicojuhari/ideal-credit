@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import Header from "@/components/includes/Header";
-import Footer from "@/components/includes/Footer";
 
 const InterFont = Inter({ variable: "--font-sans", subsets: ["latin"] });
 
@@ -134,7 +132,7 @@ const IS_PROD = process.env.NODE_ENV === "production";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="ro-MD">
+        <html lang="ro">
             <head>
                 {/* Ahrefs analytics */}
                 <Script src="https://analytics.ahrefs.com/analytics.js" data-key="ECFm73uMp/FvsZWP8axloQ" strategy="afterInteractive" />
@@ -157,11 +155,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
                 <meta name="apple-mobile-web-app-title" content="Ideal Credit" />
             </head>
-            <body className={`${InterFont.variable} flex flex-col min-h-screen overflow-x-hidden`}>
-                <Header />
-                <main className="flex-auto">{children}</main>
-                <Footer />
-            </body>
+            <body className={`${InterFont.variable} flex flex-col min-h-screen overflow-x-hidden`}>{children}</body>
         </html>
     );
 }

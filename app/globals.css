@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "../design-system/tokens.css";
+@import "../design-system/base.css";
 
 /* ─── Marquee (testimonials) ─ defined at top level so @keyframes live in the global scope ─ */
 @keyframes marquee-x {

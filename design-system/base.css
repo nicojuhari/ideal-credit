@@ -1,0 +1,179 @@
+/*
+ * Ideal Credit v4 base layer. Everything is scoped under `.v4` (the wrapper
+ * rendered by app/(v4)/layout.tsx) so legacy routes are untouched.
+ * Only token references here — no raw colours (scripts/design-lint.mjs).
+ */
+
+/* Everything below lives in @layer base so Tailwind utilities can override it. */
+@layer base {
+/* Responsive rhythm variables: shell padding 40 → 24 → 20, sections 112 → 72 → 56. */
+.v4 {
+  --radius: 0;
+  --shell-x: 40px;
+  --section-y: 112px;
+  --section-y-follow: 96px;
+  --hero-top: 92px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  /* font-family comes from the `font-ui` utility on the wrapper (see app/(v4)/layout.tsx) */
+  font-size: 16px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 900px) {
+  .v4 {
+    --shell-x: 24px;
+    --section-y: 72px;
+    --section-y-follow: 64px;
+    --hero-top: 56px;
+  }
+}
+@media (max-width: 640px) {
+  .v4 {
+    --shell-x: 20px;
+    --section-y: 56px;
+    --section-y-follow: 48px;
+    --hero-top: 40px;
+  }
+}
+
+/* The body behind the v4 wrapper must match, or overscroll shows the legacy black. */
+body:has(> .v4) {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Undo legacy global rules that would leak into v4 pages. */
+.v4 section {
+  margin: 0;
+}
+.v4 h1,
+.v4 h2,
+.v4 h3,
+.v4 h4 {
+  color: inherit;
+  margin: 0;
+}
+.v4 p {
+  margin: 0;
+}
+.v4 a {
+  color: inherit;
+  text-decoration: none;
+}
+.v4 button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+}
+
+.v4 :focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 0;
+}
+
+/* Shell + section rhythm utilities (use these, never hand-roll padding). */
+@utility ds-shell {
+  max-width: var(--spacing-shell);
+  margin-inline: auto;
+  padding-inline: var(--shell-x);
+}
+@utility ds-section {
+  padding-block: var(--section-y);
+}
+@utility ds-section-b {
+  padding-bottom: var(--section-y);
+}
+@utility ds-section-follow-b {
+  padding-bottom: var(--section-y-follow);
+}
+@utility ds-hero-t {
+  padding-top: var(--hero-top);
+}
+@utility ds-shell-x {
+  padding-inline: var(--shell-x);
+}
+
+/* Range input: 4px square track, 22px square orange thumb with a 5px surface ring.
+   Unlayered on purpose: it must out-rank the legacy unlayered range rules in globals.css. */
+.v4 input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--color-line-chip);
+  outline: none;
+  cursor: pointer;
+}
+.v4 input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 0;
+  background: var(--color-brand);
+  border: 5px solid var(--color-surface);
+  cursor: grab;
+  transition: transform 0.15s ease;
+}
+.v4 input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 0;
+  background: var(--color-brand);
+  border: 5px solid var(--color-surface);
+  cursor: grab;
+  transition: transform 0.15s ease;
+}
+.v4 input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+  cursor: grabbing;
+}
+.v4 input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.12);
+}
+.v4 input[type="range"]:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 6px;
+}
+
+/*
+ * Scroll reveal — fail-safe by construction.
+ * The hidden state only exists when scripting is enabled (so no-JS users see
+ * everything) and only until Reveal marks the block as `in` (its own JS also
+ * unhides everything after ~900ms regardless). Reduced motion: no transform,
+ * no transition — content is simply there.
+ */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .v4 [data-reveal="pending"] {
+    opacity: 0;
+    transform: translateY(14px);
+    /* CSS-only fail-safe: even if hydration never happens, the block fades in at 1.2s. */
+    animation: ds-reveal-failsafe 0.6s var(--ease-reveal) 1.2s forwards;
+  }
+  .v4 [data-reveal] {
+    transition:
+      opacity 0.6s var(--ease-reveal),
+      transform 0.6s var(--ease-reveal);
+  }
+  .v4 [data-reveal="in"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ds-reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

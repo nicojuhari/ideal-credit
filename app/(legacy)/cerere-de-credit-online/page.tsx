@@ -234,6 +234,24 @@ export default function CerereOnlinePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Prefill from the v4 calculator CTAs: /cerere-de-credit-online?amount=100000&term=12
+  // Amount is clamped to the form's own limits; term snaps to the nearest offered option.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const amount = Number(params.get("amount"));
+    const term = Number(params.get("term"));
+    if (Number.isFinite(amount) && amount > 0) {
+      const clamped = Math.min(300000, Math.max(10000, Math.round(amount)));
+      setValue("suma", String(clamped));
+    }
+    if (Number.isFinite(term) && term > 0) {
+      const nearest = TERMEN_OPTIONS.reduce((best, opt) =>
+        Math.abs(Number(opt) - term) < Math.abs(Number(best) - term) ? opt : best,
+      );
+      setValue("termen", nearest);
+    }
+  }, [setValue]);
+
   // Clear field errors when entering a step (don't carry over)
   useEffect(() => {
     clearErrors();

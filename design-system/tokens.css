@@ -1,0 +1,185 @@
+/*
+ * Ideal Credit v4 design tokens — THE single source of truth.
+ * Registered in Tailwind's @theme so every value is available as a utility
+ * (bg-surface, text-text-2, border-line, text-h2, p-card, h-btn-lg, …).
+ *
+ * This is the only file in the v4 code base allowed to contain a raw hex or
+ * rgba colour. `npm run lint` fails on any other occurrence (scripts/design-lint.mjs).
+ *
+ * Rules: 11 colours, two hairline tones, --radius 0, no shadow token, no gradients.
+ */
+@theme {
+  /* ── Colour (README table) ─────────────────────────────────────────── */
+  --color-bg: #100e0c;          /* page background (warm near-black) */
+  --color-surface: #17140f;     /* raised surface — calculator panel */
+  --color-section: #1b1815;     /* alternating section bands */
+  --color-inset: #241f1a;       /* inset note blocks; hover fill on `section` cells */
+  --color-hover: #2a241e;       /* hover fill for solid ink buttons */
+  --color-text: #f2efe8;        /* primary text; primary ("paper") button fill */
+  --color-text-2: #b3aca0;      /* body text, secondary paragraphs */
+  --color-text-3: #a39c8f;      /* labels, meta, fine print — contrast floor for <16px */
+  --color-brand: #ff9a00;       /* orange: accents, key figures, CTA band */
+  --color-brand-light: #ffb245; /* orange for small type where brand is too dim */
+  --color-quote: #d8d3c8;       /* secondary pull-quote text */
+  --color-verdict-low: #8a8377; /* checklist verdict dot only (0–1 ticked). Never text. */
+
+  /* ── Hairlines — exactly two tones ─────────────────────────────────── */
+  --color-line: rgba(242, 239, 232, 0.14);        /* standard */
+  --color-line-strong: rgba(242, 239, 232, 0.24); /* emphasis / interactive border */
+  /* documented interaction values (same paper tone at other alphas) */
+  --color-line-chip: rgba(242, 239, 232, 0.2);     /* eyebrow chip border, slider track */
+  --color-line-control: rgba(242, 239, 232, 0.32); /* checkbox border (off) */
+  --color-line-dot: rgba(242, 239, 232, 0.34);     /* 4px separator squares */
+  --color-brand-border: rgba(255, 154, 0, 0.5);    /* card hover border */
+  --color-row-hover: rgba(242, 239, 232, 0.05);    /* list-row hover background */
+  --color-ink-muted: rgba(16, 14, 12, 0.72);       /* secondary ink on an orange fill */
+  --color-header: rgba(16, 14, 12, 0.92);          /* sticky header backdrop */
+
+  /* ── Type scale (role → size / line-height / tracking / weight) ────── */
+  --text-h1: clamp(38px, 5vw, 66px);
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.04em;
+  --text-h1--font-weight: 600;
+
+  --text-h1-service: clamp(38px, 4.8vw, 64px);
+  --text-h1-service--line-height: 1.02;
+  --text-h1-service--letter-spacing: -0.04em;
+  --text-h1-service--font-weight: 600;
+
+  --text-h2: 42px;
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.035em;
+  --text-h2--font-weight: 600;
+
+  --text-h2-cta: 46px;
+  --text-h2-cta--line-height: 1.04;
+  --text-h2-cta--letter-spacing: -0.04em;
+  --text-h2-cta--font-weight: 600;
+
+  --text-h3-product: 28px;
+  --text-h3-product--line-height: 1.15;
+  --text-h3-product--letter-spacing: -0.03em;
+  --text-h3-product--font-weight: 600;
+
+  --text-h3-check: 26px;
+  --text-h3-check--line-height: 1.15;
+  --text-h3-check--letter-spacing: -0.025em;
+  --text-h3-check--font-weight: 600;
+
+  --text-h3-card: 23px;
+  --text-h3-card--line-height: 1.2;
+  --text-h3-card--letter-spacing: -0.025em;
+  --text-h3-card--font-weight: 600;
+
+  --text-h3-step: 24px;
+  --text-h3-step--line-height: 1.2;
+  --text-h3-step--letter-spacing: -0.02em;
+  --text-h3-step--font-weight: 600;
+
+  --text-h3-row: 22px;
+  --text-h3-row--line-height: 1.2;
+  --text-h3-row--letter-spacing: -0.02em;
+  --text-h3-row--font-weight: 500;
+
+  --text-h3-guide: 21px;
+  --text-h3-guide--line-height: 1.25;
+  --text-h3-guide--letter-spacing: -0.02em;
+  --text-h3-guide--font-weight: 500;
+
+  --text-panel-title: 21px;
+  --text-panel-title--line-height: 1.2;
+  --text-panel-title--letter-spacing: -0.02em;
+  --text-panel-title--font-weight: 600;
+
+  --text-pullquote: 30px;
+  --text-pullquote--line-height: 1.32;
+  --text-pullquote--letter-spacing: -0.025em;
+  --text-pullquote--font-weight: 500;
+
+  --text-lead: 19px;
+  --text-lead--line-height: 1.6;
+
+  --text-body: 16px;
+  --text-body--line-height: 1.6;
+
+  --text-row-title: 19px;
+  --text-row-title--line-height: 1.3;
+  --text-row-title--letter-spacing: -0.01em;
+  --text-row-title--font-weight: 500;
+
+  --text-row: 17px;
+  --text-row--line-height: 1.5;
+
+  --text-small: 15px;
+  --text-small--line-height: 1.6;
+
+  --text-meta: 14px;
+  --text-meta--line-height: 1.5;
+
+  --text-fine: 13px;
+  --text-fine--line-height: 1.5;
+
+  --text-eyebrow: 12px;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.1em;
+
+  --text-strip: 12.5px;
+  --text-strip--line-height: 1.4;
+  --text-strip--letter-spacing: 0.06em;
+
+  --text-figure-xl: 44px;
+  --text-figure-xl--line-height: 1;
+  --text-figure-xl--letter-spacing: -0.03em;
+
+  --text-figure-lg: 40px;
+  --text-figure-lg--line-height: 1;
+  --text-figure-lg--letter-spacing: -0.03em;
+
+  --text-figure-md: 30px;
+  --text-figure-md--line-height: 1;
+  --text-figure-md--letter-spacing: -0.02em;
+
+  --text-figure: 25px;
+  --text-figure--line-height: 1.1;
+
+  --text-figure-sm: 23px;
+  --text-figure-sm--line-height: 1.1;
+
+  --text-figure-xs: 18px;
+  --text-figure-xs--line-height: 1.2;
+
+  /* ── Geometry ──────────────────────────────────────────────────────── */
+  --spacing-shell: 1240px;   /* content shell max-width */
+  --spacing-header: 76px;    /* header height */
+  --spacing-card: 32px;      /* dark cards, calculator */
+  --spacing-card-product: 36px;
+  --spacing-card-check: 34px;
+  --spacing-card-guide: 30px;
+  --spacing-btn-sm: 44px;    /* header button */
+  --spacing-btn: 50px;
+  --spacing-btn-md: 54px;    /* calculator submit */
+  --spacing-btn-lg: 56px;    /* hero buttons */
+  --spacing-btn-xl: 58px;    /* CTA band button */
+  --spacing-hit: 44px;       /* minimum hit target */
+
+  /* ── Breakpoints (min-width) used by the responsive rules ──────────── */
+  --breakpoint-ds-sm: 641px;  /* ≤640 → 1-up, shell 20px, rhythm 56px */
+  --breakpoint-ds-md: 901px;  /* ≤900 → 2-up, shell 24px, rhythm 72px */
+  --breakpoint-ds-lg: 981px;  /* <981 → single-column hero, nav collapses */
+
+  /* ── Motion ────────────────────────────────────────────────────────── */
+  --ease-reveal: cubic-bezier(0.2, 0.7, 0.3, 1);
+
+  /* No --radius-* and no --shadow-* tokens exist in this system on purpose. */
+}
+
+/*
+ * Families. `inline` because the next/font variables (--font-archivo,
+ * --font-plex-mono) live on the .v4 wrapper, not on :root — a non-inline
+ * theme token would resolve at :root and be invalid. Use the `font-ui` /
+ * `font-figure` utilities; never write a font-family by hand.
+ */
+@theme inline {
+  --font-ui: var(--font-archivo), Archivo, Helvetica, Arial, sans-serif;
+  --font-figure: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
