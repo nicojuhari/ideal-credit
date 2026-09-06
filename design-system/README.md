@@ -79,7 +79,7 @@ Documented interaction values (same paper tone at other alphas, or orange):
 
 | Role | Utility | Size / line-height / tracking / weight |
 |---|---|---|
-| Hero h1 (home) | `text-h1` | clamp(38px, 5vw, 66px) / 1.02 / -0.04em / 600 (+ `text-balance`) |
+| Hero h1 (home) | `text-h1` | clamp(44px, 6vw, 80px) / 1.02 / -0.04em / 600 (+ `text-balance`) |
 | Hero h1 (service) | `text-h1-service` | clamp(38px, 4.8vw, 64px) / 1.02 / -0.04em / 600 |
 | Section h2 | `text-h2` | 42 / 1.05 / -0.035em / 600 (34px ≤640) |
 | CTA band h2 | `text-h2-cta` | 46 / 1.04 / -0.04em / 600 |

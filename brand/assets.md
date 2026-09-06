@@ -22,6 +22,13 @@ Last updated: 2026-09-06
 | 2026-09-week-2                      | Social Post   | 2026-09-06 | Social Media   | scheduled | 01 John Paul DeJoria 700 $ (dark, 08.09) · 02 termen lung +20.500 MDL (light, 10.09). content.md + image.png per folder |
 | creative-kit                        | Strategy      | 2026-09-06 | Social Media   | active   | Visual DNA for social graphics: v4 tokens, Archivo + IBM Plex Mono, no imagery, template directions table. File: brand/creative-kit.md |
 | 2026-09-week-3                      | Social Post   | 2026-09-06 | Social Media   | scheduled | 01 Mike Markkula 170.000 $ Apple loan (dark, 15.09) · 02 rate egale vs descrescătoare 2.970 MDL (light, 17.09). Scheduled in Buffer on LinkedIn, Instagram, Facebook |
+| keyword-plan-2026-09                 | Strategy      | 2026-09-06 | SEO Foundation | active   | Full rebuild on Search Console data (6 mo, 1.000 queries). 5 pillars, business-first 70–80%, distressed queries excluded by owner decision. Previous plan archived at campaigns/keywords/keyword-plan-2026-05-18.md. File: brand/keyword-plan.md |
+| credit-pe-firma-sau-persoana-fizica  | Content Brief | 2026-09-06 | SEO / Blog     | planning | Comparison, DO FIRST. Blue-ocean: no page in Moldova covers the choice. File: campaigns/content-plan/credit-pe-firma-sau-persoana-fizica.md |
+| credit-srl-fara-gaj-fidejusor        | Content Brief | 2026-09-06 | SEO / Blog     | planning | Explainer + market table, DO FIRST. Anchor from business page FAQ. File: campaigns/content-plan/credit-srl-fara-gaj-fidejusor.md |
+| granturi-oda-vs-credit-2026          | Content Brief | 2026-09-06 | SEO / Blog     | planning | Timed guide, DO FIRST, publish Sept while ODA calls open; verify calendar on oda.md. File: campaigns/content-plan/granturi-oda-vs-credit-2026.md |
+| rate-egale-vs-descrescatoare         | Content Brief | 2026-09-06 | SEO / Blog     | planning | QUICK WIN, reuses verified numbers from 2026-09 week-3 post 02; SERP unchecked (~). File: campaigns/content-plan/rate-egale-vs-descrescatoare.md |
+| site-map-2026-09                     | Strategy      | 2026-09-06 | Site Rebuild   | active   | Target 18-URL structure, 16 removals with 301 targets, what product pages absorb from the deleted blog. Owner decisions: refinanțare and pînă la salariu deleted, personal = nevoi personale + auto, all 8 blog posts deleted. File: brand/site-map.md |
+| home-page-copy-v4                    | Landing Page  | 2026-09-06 | Site Rebuild   | draft    | Full home copy, simple Romanian, one idea per paragraph. Two hero options (owner's 'Credite pentru succes' vs recommended 'decizie luată de oameni'), 7 H1 variants, scorecard 50/70, 4 tests. File: campaigns/home-page/landing-page.md |
 
 ## Retired Assets
 

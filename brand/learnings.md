@@ -1,10 +1,10 @@
 # Learnings Journal - Ideal Credit
 
-Last updated: 2026-05-18
+Last updated: 2026-09-06
 
 ## What Works
 
-_(Log findings here after campaigns, content, and outreach)_
+- [2026-09-06] [/direct-response-copy] Home hero: owner chose H1 "Credite pentru succes" (Option A) over the specific/contrarian "Credit pentru afacerea ta. Cu o decizie luată de oameni." Preference: short, positive, growth-framed headline; the specificity (who, how much, how decided) goes in the lead line under it. Keep Option B for an A/B test.
 
 ## What Doesn't Work
 

@@ -49,7 +49,7 @@ const COLORS: Array<[string, string]> = [
 ];
 
 const TYPE: Array<[string, string, string]> = [
-    ["h1", "text-h1", "clamp(38, 5vw, 66) / 1.02 / -0.04em / 600"],
+    ["h1", "text-h1", "clamp(44, 6vw, 80) / 1.02 / -0.04em / 600"],
     ["h1-service", "text-h1-service", "clamp(38, 4.8vw, 64) / 1.02 / -0.04em / 600"],
     ["h2", "text-h2", "42 / 1.05 / -0.035em / 600"],
     ["h2-cta", "text-h2-cta", "46 / 1.04 / -0.04em / 600"],

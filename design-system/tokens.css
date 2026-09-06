@@ -36,7 +36,7 @@
   --color-header: rgba(16, 14, 12, 0.92);          /* sticky header backdrop */
 
   /* ── Type scale (role → size / line-height / tracking / weight) ────── */
-  --text-h1: clamp(38px, 5vw, 66px);
+  --text-h1: clamp(44px, 6vw, 80px);
   --text-h1--line-height: 1.02;
   --text-h1--letter-spacing: -0.04em;
   --text-h1--font-weight: 600;
