@@ -1,6 +1,6 @@
 # Asset Registry - Ideal Credit
 
-Last updated: 2026-05-18
+Last updated: 2026-09-06
 
 ## Active Assets
 
@@ -18,6 +18,10 @@ Last updated: 2026-05-18
 | bnm-rata-de-baza                    | Social Post   | 2026-07-07 | Social Media   | draft    | Carousel, 6 slides. BNM rate hike to 7% + mortgage index effect. File: campaigns/social/2026-07-bnm-rata-de-baza.md |
 | remitente-diaspora-decembrie        | Social Post   | 2026-07-08 | Social Media   | draft    | Short single-image post. December 2025 = biggest remittance month (173.77M$ vs 138M$ avg). File: campaigns/social/2026-07-remitente-diaspora-decembrie.md |
 | social-design-system                | Strategy      | 2026-07-08 | Social Media   | active   | Visual spec for short/carousel posts - sizes, colors (site's black/orange tokens), Inter type scale, layout templates, no-AI-imagery rule. File: brand/social-design-system.md |
+| social-templates-v4                 | Template      | 2026-09-06 | Social Media   | active   | Chosen "Panou de date" template in dark (Tue) + light (Thu) themes, posts.js + build.mjs export. Dir: campaigns/social/templates/ |
+| 2026-09-week-2                      | Social Post   | 2026-09-06 | Social Media   | scheduled | 01 John Paul DeJoria 700 $ (dark, 08.09) · 02 termen lung +20.500 MDL (light, 10.09). content.md + image.png per folder |
+| creative-kit                        | Strategy      | 2026-09-06 | Social Media   | active   | Visual DNA for social graphics: v4 tokens, Archivo + IBM Plex Mono, no imagery, template directions table. File: brand/creative-kit.md |
+| 2026-09-week-3                      | Social Post   | 2026-09-06 | Social Media   | scheduled | 01 Mike Markkula 170.000 $ Apple loan (dark, 15.09) · 02 rate egale vs descrescătoare 2.970 MDL (light, 17.09). Scheduled in Buffer on LinkedIn, Instagram, Facebook |
 
 ## Retired Assets
 

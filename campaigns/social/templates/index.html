@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Ideal Credit - social templates</title>
+<style>
+  body { margin: 0; background: #0a0908; color: #B3ACA0; font: 14px/1.5 Helvetica, Arial, sans-serif; padding: 32px; }
+  h1 { color: #F2EFE8; font-weight: 600; font-size: 20px; margin: 0 0 4px; }
+  p { margin: 0 0 24px; max-width: 900px; }
+  .row { display: grid; grid-template-columns: 220px repeat(2, 340px); gap: 20px; align-items: start; margin-bottom: 36px; }
+  .meta { padding-top: 8px; }
+  .meta b { color: #FF9A00; font-family: Menlo, monospace; font-size: 12px; letter-spacing: .08em; }
+  .meta h2 { color: #F2EFE8; font-size: 17px; margin: 6px 0 8px; font-weight: 600; }
+  .frame { width: 340px; height: 425px; overflow: hidden; border: 1px solid rgba(242,239,232,.14); }
+  .frame iframe { width: 1080px; height: 1350px; border: 0; transform: scale(0.3148); transform-origin: 0 0; pointer-events: none; }
+  .frame a { display: block; }
+  code { color: #F2EFE8; }
+</style>
+</head>
+<body>
+<h1>Ideal Credit - șabloane pentru postări (v4, dark/sharp)</h1>
+<p>Șablonul ales (v2 „Panou de date”) în cele două teme: dark pentru marți, light pentru joi. Fiecare coloană = o postare din posts.js. Deschide orice cadru la 1080×1350 ca să-l vezi la mărime reală. Export PNG: <code>node build.mjs</code>.</p>
+<div id="grid"></div>
+<script>
+  var T = [
+    ['dark.html', 'Dark · marți (Poveste reală)', 'Panou pe fundal #100E0C, cifra în IBM Plex Mono portocaliu, sursa în grila de jos.'],
+    ['light.html', 'Light · joi (Sfat practic)', 'Aceeași structură pe hârtie caldă, cerneală #100E0C, kicker portocaliu închis.']
+  ];
+  var g = document.getElementById('grid');
+  T.forEach(function (t) {
+    var row = document.createElement('div'); row.className = 'row';
+    row.innerHTML = '<div class="meta"><b>' + t[0] + '</b><h2>' + t[1] + '</h2>' + t[2] + '</div>' +
+      [0, 1].map(function (i) { return '<div class="frame"><a href="' + t[0] + '?post=' + i + '" target="_blank"><iframe src="' + t[0] + '?post=' + i + '"></iframe></a></div>'; }).join('');
+    g.appendChild(row);
+  });
+</script>
+</body>
+</html>

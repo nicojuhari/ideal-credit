@@ -1,6 +1,12 @@
 # Social Media Strategy - Ideal Credit
 
-Last updated: 2026-07-23
+Last updated: 2026-09-06
+
+**2026-08-03 refinement:** rich/self-made-people stories confirmed as part of the Past success
+lane (not a separate one) - the money mechanism has to be the point, not the wealth itself. Added
+an explicit "unseen-angle" test alongside the send-to-someone test: prefer topics whose specific
+number or mechanism most readers haven't seen framed that way, over restating a well-known fact.
+Language bar stays at 10-15 years old (not tightened further).
 
 **This supersedes the earlier draft of this file.** The previous version deliberately avoided
 credit/product content and ranged across general Moldovan economy topics (salary, telecom,
@@ -50,6 +56,10 @@ inspirational end of that list, not the regulatory end:
 - **Past success** - a real, sourced story of a business or person who used credit/financing
   well and grew because of it (Moldovan or global, named and sourced wherever possible). Shows
   the good part of credit: what becomes possible when it's used with logic and a clear plan.
+  This is also where profiles of rich/self-made people belong - not "look how rich they are,"
+  but the specific money or credit decision behind how they got there (a loan, a bet on debt, a
+  bootstrap choice). Rich-people content stays in this lane rather than becoming its own -
+  same bar: real, sourced, and it has to be the money mechanism, not just the wealth.
 - **Money, business & credit facts / statistics** - a surprising, real number about money,
   business growth, or lending (Moldovan or global) that makes the reader think differently -
   not tied to a specific news event, just a fact worth knowing.
@@ -98,6 +108,14 @@ otherwise the first comment does it for you).
 **Send-to-someone test** (apply before publishing every post): who would a reader send this to,
 and why? If you can't name a specific person and reason, the closing line is too generic -
 rewrite it.
+
+**Unseen-angle test** (apply before picking a topic): has this been posted a hundred times in
+the obvious way already? If the fact or story is well-known but the angle - the specific number,
+the specific mechanism, the part usually left out - isn't something most readers have actually
+seen framed this way, it passes. "Nike started small" is boring; "Nike's founder needed a $50
+loan from his dad to make the trip that started it" is the same story from the angle nobody
+shows. Prefer topics that teach something (a reader should finish knowing a fact or mechanism
+they didn't before) over topics that just restate something impressive.
 
 One number or story, one reframe, one landing per post. Simple words - the complexity lives in
 the number, not the sentence. Never use a term without explaining it in one clause. No
@@ -231,7 +249,15 @@ Ideal Credit - credite pentru succes!
 
 ---
 
-## Format & Cadence (3 posts/week, all single-image)
+## Format & Cadence (2 posts/week, all single-image)
+
+**Updated 2026-08-25:** cadence cut from 3 posts/week (Mon/Wed/Fri) to 2 posts/week, published
+Tuesday and Thursday. Tuesday keeps the "Past success" lane (the opening, inspirational slot
+that ran every single week under the old cadence); Thursday keeps "Tips & tricks" (the other
+lane that ran every week). Money/business facts, History & mechanisms, and Global finance
+numbers - previously the rotating third slot - are now occasional swap-ins on Thursday, same
+treatment the doc already gives News and Legal-rules-decoded: use when a topic in that lane is
+strong, don't force it weekly.
 
 **Static image only - no carousel, no video, for now.** Every post is one designed graphic.
 The carousel format is paused, not deleted - full spec kept in [[social-design-system]] in case
@@ -239,11 +265,13 @@ a story ever genuinely needs the multi-slide build-up back. Until then, every po
 its reveal in a single frame plus caption: one number or story, one line, one caption that does
 the rest of the work.
 
-**Short post (single image, 3x/week)** - big number or hook as the visual anchor, one short
-line of context under it, source credit small at the bottom. Nothing else goes in the frame -
-the image is the hook, not the whole post. The reveal, the comparison, and the "here's what
-that actually means" live in the caption text. Design spec (sizes, colors, fonts, layout):
-[[social-design-system]].
+**Short post (single image, 2x/week)** - a small kicker label above the number naming the
+content lane (e.g. "POVESTE REALĂ", "SFAT PRACTIC" - fixed mapping in
+[[social-design-system]], every post, no exceptions), then the big number or hook as the visual
+anchor, one short line of context under it, source credit small at the bottom. Nothing else
+goes in the frame - the image is the hook, not the whole post. The reveal, the comparison, and
+the "here's what that actually means" live in the caption text. Design spec (sizes, colors,
+fonts, layout): [[social-design-system]].
 
 One idea, minimal text, large type. The design carries "professional but simple" as much as the
 copy does - clean, not busy; a serious financial brand, not a meme page. No AI-generated images
@@ -252,36 +280,37 @@ only.
 
 | Day | Lane | Notes |
 | --- | --- | --- |
-| Monday | Past success story, or a money/business/credit fact or statistic | Opens the week on an inspirational, attractive note |
-| Wednesday | Tips & tricks, or another success story | Practical value, most shareable slot |
-| Friday | History/mechanism, or a global finance number closed on Moldova relevance | Closes the week on the brand's actual domain |
+| Tuesday | Past success story, or a money/business/credit fact or statistic | Opens the week on an inspirational, attractive note |
+| Thursday | Tips & tricks (default), occasionally swapped for History/mechanisms, a global finance number closed on Moldova relevance, News, or Legal-rules-decoded | Practical value by default; the occasional slot for the other lanes |
 
-News and legal-rules-decoded posts aren't assigned a fixed day - swap one in only when
-something genuinely timely exists, and don't let it replace more than one of the three slots in
-a given week. Days can also shift to match real news (e.g. a BNM decision on a Tuesday).
+History/mechanisms, Global finance numbers, News, and legal-rules-decoded posts aren't assigned
+a fixed week - swap one in on Thursday only when something genuinely strong or timely exists in
+that lane, without displacing Tips & tricks every week. Days can also shift to match real news
+(e.g. a BNM decision landing on a Tuesday).
 
 ---
 
 ## File Organization
 
-Posts live in `campaigns/social/YYYY-MM/week-N/NN-topic-slug.md` - month folder, then a
-week-number folder, then a two-digit sequence number so files sort in publish order within the
-week:
+**Updated 2026-09-06.** Every post is a folder holding exactly two files - the copy and the
+creative:
 
 ```
-campaigns/social/2026-07/week-2/01-bnm-rata-de-baza.md
-campaigns/social/2026-07/week-2/02-remitente-diaspora-decembrie.md
-campaigns/social/2026-07/week-2/03-dobanda-anuala-efectiva.md
-campaigns/social/2026-07/week-2/04-credit-istoric-cec.md
-campaigns/social/2026-07/week-2/05-averea-nu-se-vinde-se-imprumuta.md
+campaigns/social/2026-09/week-2/01/content.md
+campaigns/social/2026-09/week-2/01/image.png
+campaigns/social/2026-09/week-2/02/content.md
+campaigns/social/2026-09/week-2/02/image.png
 ```
 
-`week-N` counts Monday-Sunday spans within the calendar month, starting at 1 for whichever span
-the 1st of the month falls in (so a month that opens mid-week still starts at `week-1`). The
-two-digit prefix is publish order that week, not day-of-week.
+Month folder, then a week-number folder, then a two-digit post folder in publish order (`01` =
+Tuesday, `02` = Thursday). `week-N` counts Monday-Sunday spans within the calendar month,
+starting at 1 for whichever span the 1st falls in. `content.md` keeps the frontmatter, quality
+gate, in-frame text and caption; `image.png` is the 1080×1350 export built from
+`campaigns/social/templates/` (`node build.mjs`). Posts before September 2026 keep the older
+flat `NN-topic-slug.md` naming.
 
-Matching image export files reuse the same slug: `NN-topic-slug_1.png` (see export checklist in
-[[social-design-system]]).
+**Theme per slot:** `01` (Tuesday, Past success) is the **dark** template, `02` (Thursday, Tips
+& tricks) is the **light** one - fixed, so the feed alternates dark/light week after week.
 
 ## Quality Gates (check before publishing every post)
 
@@ -296,6 +325,8 @@ Matching image export files reuse the same slug: `NN-topic-slug_1.png` (see expo
 5. **Sourced and real** - no invented examples, no unsourced claims.
 6. **Sign-off present** - „Ideal Credit - credite pentru succes!" plus hashtags, every post, no
    exceptions.
+7. **Kicker present** - the lane-matched kicker label sits above the hero number, per
+   [[social-design-system]], every post, no exceptions.
 
 ---
 

@@ -1,6 +1,6 @@
 # Marketing Stack - Ideal Credit
 
-Last updated: 2026-05-18
+Last updated: 2026-09-06
 
 ## CMS
 
@@ -23,7 +23,7 @@ Last updated: 2026-05-18
 ## Paid Ads / Social
 
 - Facebook Pixel connected (tracking)
-- Social scheduling: ✗ not connected
+- **Buffer** ✓ connected (2026-09-06) - `BUFFER_API_KEY` in `.env.local`, GraphQL at api.buffer.com. Channels: LinkedIn "Ideal Credit", Instagram "idealcredit.md", Facebook "Ideal Credit". Script: `campaigns/social/templates/schedule.mjs`
 
 ## AI / Generation
 

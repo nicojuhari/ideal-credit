@@ -1,0 +1,7 @@
+# Marketing workspace - not part of the site build
+campaigns/
+brand/
+docs/
+
+# Agent config
+.claude/

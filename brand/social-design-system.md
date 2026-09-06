@@ -1,8 +1,18 @@
 ## Last Updated
 
-2026-07-08
+2026-09-06
 
 # Social Post Design System - Ideal Credit
+
+**2026-09-06 - v4 alignment (pending choice):** the website is being redesigned to the "v4 dark,
+sharp" system (warm near-black `#100E0C`, orange `#FF9A00`, Archivo + IBM Plex Mono, zero
+radius, zero shadows, hairlines only). The chosen template ("Panou de date", dark for Tuesday, light for
+Thursday) lives in `campaigns/social/templates/` (`dark.html`, `light.html`, `node build.mjs`
+to export). Locked values are in [[creative-kit]]; the Color System and Typography sections
+below still describe the old `#0b0b0b` / Inter spec and are superseded by it. File layout is now
+one folder per post (`content.md` + `image.png`) - see [[social-media-strategy]]. The logo mark
+is no longer placed in-frame; the `idealcredit.md` wordmark in the panel header replaces it (the
+Logo & Sign-off section below is superseded on that point).
 
 Visual spec for every short post and carousel described in
 [[social-media-strategy]]. Applies to Facebook, LinkedIn, and the Instagram
@@ -84,6 +94,7 @@ comes from weight and size, not from mixing typefaces.
 
 | Role | Weight | Size (on 1080x1350 canvas) | Notes |
 | --- | --- | --- | --- |
+| Kicker label | Bold / 700 | 24-28px | Uppercase, +3-4px letter-spacing, `brand-500`, small square/dot marker to its left. Sits above the hero number, every post - see Kicker Label section below |
 | Hero number (hook slide) | Bold / 700 | 180-260px | Dominates the frame - see Layout below |
 | Slide headline | Semibold / 600 | 64-80px | One line if possible, two max |
 | Body / context text | Regular / 400 | 40-48px | 2-3 short lines max per slide |
@@ -125,6 +136,8 @@ labels like "SURSĂ").
 ┌────────────────────────────────┐
 │  80px margin                    │
 │                                  │
+│  ■ KICKER LABEL                 │  ← brand-500, uppercase, small marker, per lane (see below)
+│                                  │
 │         HERO NUMBER             │  ← brand-500 or brand gradient, centered
 │                                  │     or left-aligned, 180-260px
 │      one line of context        │  ← white/gray-500, 40-48px, max 2 lines
@@ -135,7 +148,30 @@ labels like "SURSĂ").
 └────────────────────────────────┘
 ```
 
-One number, one context line, source, logo. Nothing else.
+Kicker, one number, one context line, source, logo. Nothing else.
+
+#### Kicker Label (every post, no exceptions)
+
+A short, uppercase label above the hero number that tells the reader what kind of post this is
+before the number lands - it also breaks up the empty space between the top margin and the
+hero number. Fixed wording per content lane, not freeform copy invented per post - consistency
+here is what makes it read as a system rather than decoration.
+
+| Lane (per [[social-media-strategy]]) | Kicker label |
+| --- | --- |
+| Past success | POVESTE REALĂ |
+| Money, business & credit facts / statistics | FAPT & CIFRĂ |
+| Tips & tricks | SFAT PRACTIC |
+| History & mechanisms | ISTORIE FINANCIARĂ |
+| Global finance & investment numbers | CIFRĂ GLOBALĂ |
+| Credit & loan news | ȘTIRE |
+| Legal rules, decoded | REGULĂ DECODATĂ |
+
+Style: `brand-500` (`#ff9a00`), Bold/700, 24-28px, uppercase, +3-4px letter-spacing, small
+square or dot marker immediately to its left (also `brand-500`). Position: top-left, inside the
+80px safe margin, directly above the hero number - same position on every post. Every post's
+`.md` file should record which lane it's in (already required in the frontmatter) and the kicker
+label follows automatically from that lane - no separate creative decision needed per post.
 
 **Text budget: hook + small part of the opening, nothing more.** The image
 carries just enough to stop the scroll and open the loop - the hero number
@@ -198,6 +234,8 @@ swipe-through completion.
 ## Do / Don't
 
 **DO:**
+- Include the kicker label above the hero number on every post, using the fixed lane-to-label
+  mapping above - no post skips it, no post invents new kicker wording
 - Keep every slide to one idea, one number, generous white space
 - Reuse the exact same source-citation and logo position across every post -
   repetition builds recognizability
@@ -207,6 +245,7 @@ swipe-through completion.
   norm
 
 **DON'T:**
+- No post without its kicker label, and no ad-hoc kicker wording outside the lane mapping above
 - No AI-generated images, illustrations, or "hero" scenes
 - No generic stock photography (handshakes, people pointing at laptops,
   smiling call-center models)

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<title>Ideal Credit post - dark</title>
+<style>
+  .canvas { padding: 72px; }
+  .panel {
+    flex: 1; display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--hair); padding: 56px;
+  }
+  .head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid var(--hair); }
+  .head .site { font-family: var(--mono); font-size: 24px; color: var(--text-3); letter-spacing: 0.02em; }
+  .hero-box { margin-top: 140px; }
+  .context { margin-top: 56px; color: var(--text-2); font-size: 44px; max-width: 800px; }
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1px; background: var(--hair); border: 1px solid var(--hair); }
+  .cell { background: var(--surface); padding: 28px 32px; min-height: 148px; display: flex; flex-direction: column; justify-content: space-between; }
+  .cell .k { font-family: var(--mono); font-size: 20px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
+  .cell .source { font-size: 22px; max-width: none; margin-top: 12px; color: var(--text-2); }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="panel">
+    <div class="head">
+      <div class="kicker" data-field="kicker"></div>
+      <div class="site">idealcredit.md</div>
+    </div>
+    <div class="hero-box"><div class="hero mono" data-field="hero" data-fit="shrink" data-max="220" data-min="100" data-fit-pad="60"></div></div>
+    <p class="context" data-field="context" data-suffix="..."></p>
+    <div class="spacer"></div>
+    <div class="grid">
+      <div class="cell"><div class="k">Sursă</div><div class="source" data-field="source" data-strip-prefix="Sursă: "></div></div>
+    </div>
+  </div>
+</div>
+<script src="posts.js"></script>
+<script src="template.js"></script>
+</body>
+</html>
