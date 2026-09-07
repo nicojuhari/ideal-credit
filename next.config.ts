@@ -9,19 +9,26 @@ const nextConfig: NextConfig = {
 
     async redirects() {
         return [
-            // ── existing product redirects ──────────────────────────────────
+            // ── legacy product URLs → current product pages ─────────────
             { source: "/credit-de-consum", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
             { source: "/credit-pentru-afaceri", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
             { source: "/credite/credit-pentru-afaceri", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
             { source: "/credit-pentru-afaceri-mici", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
             { source: "/credit-pentru-nevoi-personale", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
-            { source: "/credit-pina-la-salariu", destination: "/credite/credit-pina-la-salariu", permanent: true },
-            { source: "/credite/credit-pentru-medici", destination: "/credite/credit-pentru-bugetari", permanent: true },
-            { source: "/credite/credit-pentru-militari", destination: "/credite/credit-pentru-bugetari", permanent: true },
-            { source: "/credite/credit-pentru-politisti", destination: "/credite/credit-pentru-bugetari", permanent: true },
             { source: "/credit-capital-de-lucru", destination: "/credite/credit-capital-de-lucru", permanent: true },
             { source: "/credit-investitional", destination: "/credite/credit-investitional", permanent: true },
-            { source: "/refinantare", destination: "/credite/refinantare", permanent: true },
+            { source: "/index.html", destination: "/", permanent: true },
+
+            // ── products removed in the September 2026 rebuild (brand/site-map.md) ──
+            { source: "/refinantare", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
+            { source: "/credite/refinantare", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
+            { source: "/credit-pina-la-salariu", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
+            { source: "/credite/credit-pina-la-salariu", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
+            { source: "/credite/credit-pentru-bugetari", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
+            { source: "/credite/credit-pentru-reparatie", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
+            { source: "/credite/credit-pentru-medici", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
+            { source: "/credite/credit-pentru-militari", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
+            { source: "/credite/credit-pentru-politisti", destination: "/credite/credit-pentru-nevoi-personale", permanent: true },
 
             // ── blog: old Storyblok slugs → new static slugs ───────────────
             {

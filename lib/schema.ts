@@ -32,7 +32,7 @@ export const financialServiceSchema = {
     name: "Credite nebancare pentru afaceri și nevoi personale",
     telephone: "+37361252777",
     image: "https://idealcredit.md/ideal-credit-og.webp",
-    priceRange: "10000-300000 MDL",
+    priceRange: "10000-500000 MDL",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Ginta Latină, nr. 18, of. 5",
@@ -52,7 +52,7 @@ export const localBusinessChisinauSchema = {
     name: "Ideal Credit",
     legalName: 'Organizația de Creditare Nebancară"Ideal Credit" SRL',
     url: "https://idealcredit.md/",
-    priceRange: "10000-300000 MDL",
+    priceRange: "10000-500000 MDL",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Ginta Latină, nr. 18, of. 5",
@@ -86,7 +86,7 @@ export const localBusinessCauseniSchema = {
     name: "Ideal Credit",
     legalName: 'Organizația de Creditare Nebancară"Ideal Credit" SRL',
     url: "https://idealcredit.md/",
-    priceRange: "10000-300000 MDL",
+    priceRange: "10000-500000 MDL",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Mihai Eminescu, nr. 17, of. 47",
@@ -127,18 +127,18 @@ export const howToSchema = {
     step: [
         {
             "@type": "HowToStep",
-            name: "Completezi cererea",
-            text: "Online, la telefon, Viber, WhatsApp sau într-unul din oficiile noastre.",
+            name: "Discutăm",
+            text: "Ne suni sau ne scrii pe Viber sau WhatsApp. Ne spui de cât ai nevoie și pentru ce. Dacă nu se potrivește, îți spunem direct.",
         },
         {
             "@type": "HowToStep",
-            name: "Primești răspunsul",
-            text: "Echipa noastră va analiza cererea ta și îți vom comunica decizia în cel mai scurt timp.",
+            name: "Analizăm de la distanță",
+            text: "Trimiți documentele pe telefon sau pe email. Verificăm totul înainte de întâlnire. Primești răspunsul cu suma și rata exactă.",
         },
         {
             "@type": "HowToStep",
-            name: "Semnezi contractul și primești banii",
-            text: "Dacă decizia este pozitivă, semnezi contractul în oficiul nostru. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Pentru credite de afaceri, fondurile se virează prin transfer bancar.",
+            name: "Semnezi și iei banii",
+            text: "Vii la oficiu o singură dată, la semnare. Banii se eliberează în aceeași zi: numerar la oficiu sau pe card pentru persoane fizice, prin transfer bancar pentru firme.",
         },
     ],
 };
@@ -148,7 +148,7 @@ export const personalLoanSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru nevoi personale",
     description:
-        "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
+        "Credit personal pentru cheltuieli planificate: reparație, cheltuieli mari, angajați la stat. Dobândă fixă, rata scade lunar, fără comisioane ascunse.",
     amount: {
         "@type": "MonetaryAmount",
         value: 10000,
@@ -181,13 +181,13 @@ export const businessCreditSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
     name: "Credit pentru afaceri mici",
-    description: "Credit pentru afaceri mici - bani rapizi pentru dezvoltarea afacerilor.",
+    description: "Credit pentru SRL, ÎI și GȚ din Moldova: capital de lucru, investiții, agricultură. Fără plan de afaceri, de la 3–6 luni de activitate.",
     amount: {
         "@type": "MonetaryAmount",
-        value: 10000,
+        value: 150000,
         currency: "MDL",
-        minValue: 10000,
-        maxValue: 300000,
+        minValue: 20000,
+        maxValue: 500000,
     },
     interestRate: {
         "@type": "QuantitativeValue",
@@ -199,7 +199,7 @@ export const businessCreditSchema = {
         "@type": "QuantitativeValue",
         value: 12,
         unitText: "Months",
-        minValue: 12,
+        minValue: 6,
         maxValue: 60,
     },
 };
@@ -208,12 +208,12 @@ export const workingCapitalSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
     name: "Credit capital de lucru pentru afaceri",
-    description: "Credit nebancar pentru capital de lucru - salarii, furnizori, stocuri. Disponibil pentru SRL și ÎI din Moldova.",
+    description: "Credit pentru capital de lucru: salarii, furnizori, stocuri. Pentru SRL, ÎI și GȚ din Moldova.",
     amount: {
         "@type": "MonetaryAmount",
         currency: "MDL",
-        minValue: 10000,
-        maxValue: 400000,
+        minValue: 20000,
+        maxValue: 500000,
     },
     loanTerm: {
         "@type": "QuantitativeValue",
@@ -227,12 +227,12 @@ export const investitionalSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
     name: "Credit investițional pentru afaceri",
-    description: "Credit nebancar pentru investiții în afaceri din Moldova - echipamente, extindere, modernizare.",
+    description: "Credit pentru investiții în afaceri din Moldova: echipamente noi sau second-hand, spațiu, vehicule comerciale.",
     amount: {
         "@type": "MonetaryAmount",
         currency: "MDL",
-        minValue: 10000,
-        maxValue: 400000,
+        minValue: 20000,
+        maxValue: 500000,
     },
     loanTerm: {
         "@type": "QuantitativeValue",
@@ -242,16 +242,41 @@ export const investitionalSchema = {
     },
 };
 
-export const refinantareSchema = {
+export const agriculturalCreditSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
-    name: "Refinanțare credit în Moldova",
-    description: "Refinanțare credite nebancare și bancare pentru persoane fizice și juridice din Moldova.",
+    name: "Credit pentru agricultură",
+    description: "Credit agricol pentru gospodării țărănești, SRL și ÎI din Moldova: tehnică, inputuri, irigații, lucrări sezoniere. Grafic de plată adaptat recoltei.",
+    amount: {
+        "@type": "MonetaryAmount",
+        currency: "MDL",
+        minValue: 20000,
+        maxValue: 500000,
+    },
+    loanTerm: {
+        "@type": "QuantitativeValue",
+        unitText: "Months",
+        minValue: 6,
+        maxValue: 60,
+    },
+};
+
+export const autoLoanSchema = {
+    "@context": "https://schema.org",
+    "@type": "LoanOrCredit",
+    name: "Credit pentru automobil",
+    description: "Credit auto pentru mașină nouă sau second-hand, de la orice vânzător, fără gaj pe mașină. Pentru persoane fizice din Moldova.",
     amount: {
         "@type": "MonetaryAmount",
         currency: "MDL",
         minValue: 10000,
-        maxValue: 400000,
+        maxValue: 300000,
+    },
+    interestRate: {
+        "@type": "QuantitativeValue",
+        value: 4,
+        unitText: "%",
+        description: "Dobândă lunară fixă",
     },
     loanTerm: {
         "@type": "QuantitativeValue",

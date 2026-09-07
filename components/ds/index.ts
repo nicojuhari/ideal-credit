@@ -20,7 +20,7 @@ export { FaqAccordion, type FaqItem } from "./FaqAccordion";
 export { InsetNote } from "./InsetNote";
 export { CtaBand } from "./CtaBand";
 export { LoanCalculator, type LoanCalculatorProps } from "./LoanCalculator";
-export { EligibilityChecklist, verdictFor, DEFAULT_CHECKS } from "./EligibilityChecklist";
+export { EligibilityChecklist, verdictFor, DEFAULT_CHECKS, BUSINESS_VERDICTS, type VerdictSet } from "./EligibilityChecklist";
 export { Reveal } from "./Reveal";
 export { Breadcrumb, type Crumb } from "./Breadcrumb";
 export { TrustStrip } from "./TrustStrip";

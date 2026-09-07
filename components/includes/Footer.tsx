@@ -9,9 +9,8 @@ import { cn } from "@/lib/utils";
 
 const productLinks = [
     { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
-    { href: "/credite/credit-pina-la-salariu", label: "Până la salariu" },
     { href: "/credite/credit-pentru-automobil", label: "Automobil" },
-    { href: "/credite/credit-pentru-reparatie", label: "Reparație" },
+    { href: "/credite/credit-pentru-agricultura", label: "Agricultură" },
     { href: "/credite/credit-pentru-afaceri-mici", label: "Afaceri mici" },
     { href: "/credite", label: "Toate creditele" },
 ];

@@ -7,13 +7,16 @@ const PRODUCTS = [
     { href: "/credite/credit-pentru-afaceri-mici", label: "Afaceri mici" },
     { href: "/credite/credit-capital-de-lucru", label: "Capital de lucru" },
     { href: "/credite/credit-investitional", label: "Credit investițional" },
-    { href: "/credite/refinantare", label: "Refinanțare" },
+    { href: "/credite/credit-pentru-agricultura", label: "Credit agricol" },
+    { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
+    { href: "/credite/credit-pentru-automobil", label: "Automobil" },
 ];
 
 const COMPANY = [
+    { href: "/credite", label: "Toate creditele" },
     { href: "/despre-noi", label: "Despre noi" },
     { href: "/calculator-credit", label: "Calculator credit" },
-    { href: "/blog", label: "Ghiduri" },
+    { href: "/blog", label: "Blog" },
     { href: "/contacte", label: "Contacte" },
 ];
 

@@ -14,15 +14,21 @@ export const DEFAULT_CHECKS = [
     "Un fidejusor disponibil pentru primul credit",
 ];
 
+export type VerdictCopy = { title: string; text: string };
+export type VerdictSet = { qualify: VerdictCopy; probable: VerdictCopy; low: VerdictCopy };
+
+/** Business defaults; personal pages pass their own `verdicts`. */
+export const BUSINESS_VERDICTS: VerdictSet = {
+    qualify: { title: "Dosarul tău se califică", text: "Trimite extrasele și primești oferta cu rata exactă în 1–2 zile lucrătoare." },
+    probable: { title: "Probabil se poate", text: "Analizăm situația reală a afacerii, nu doar actele. Sună-ne și verificăm în câteva minute." },
+    low: { title: "Hai să discutăm", text: "Chiar dacă nu bifezi condițiile standard, îți spunem direct ce alternative există." },
+};
+
 /** 4 ticked → orange "se califică" · 2–3 → brand-light "probabil" · 0–1 → muted dot "hai să discutăm" */
-export function verdictFor(tickedCount: number): Verdict {
-    if (tickedCount >= 4) {
-        return { tone: "brand", title: "Dosarul tău se califică", text: "Trimite extrasele și primești oferta cu rata exactă în 1–2 zile lucrătoare." };
-    }
-    if (tickedCount >= 2) {
-        return { tone: "brand-light", title: "Probabil se poate", text: "Analizăm situația reală a afacerii, nu doar actele. Sună-ne și verificăm în câteva minute." };
-    }
-    return { tone: "low", title: "Hai să discutăm", text: "Chiar dacă nu bifezi condițiile standard, îți spunem direct ce alternative există." };
+export function verdictFor(tickedCount: number, verdicts: VerdictSet = BUSINESS_VERDICTS): Verdict {
+    if (tickedCount >= 4) return { tone: "brand", ...verdicts.qualify };
+    if (tickedCount >= 2) return { tone: "brand-light", ...verdicts.probable };
+    return { tone: "low", ...verdicts.low };
 }
 
 type Props = {
@@ -30,6 +36,8 @@ type Props = {
     title?: string;
     items?: string[];
     defaultTicked?: boolean[];
+    /** verdict copy per band — defaults to the business wording */
+    verdicts?: VerdictSet;
     className?: string;
 };
 
@@ -42,12 +50,13 @@ export function EligibilityChecklist({
     title = "Este pentru afacerea mea?",
     items = DEFAULT_CHECKS,
     defaultTicked = [true, true, true, false],
+    verdicts = BUSINESS_VERDICTS,
     className,
 }: Props) {
     const [ticked, setTicked] = useState<boolean[]>(() => items.map((_, i) => defaultTicked[i] ?? false));
     const id = useId();
     const count = ticked.filter(Boolean).length;
-    const verdict = verdictFor(count);
+    const verdict = verdictFor(count, verdicts);
     const dot = { brand: "bg-brand", "brand-light": "bg-brand-light", low: "bg-verdict-low" }[verdict.tone];
 
     return (

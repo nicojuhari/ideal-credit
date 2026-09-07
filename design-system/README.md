@@ -218,7 +218,9 @@ DAE       = ((1.04) ** 12 - 1) * 100            // 60,1 %
    `StepRows`, `FaqAccordion`, `CtaBand`, wrapping blocks in `Reveal`.
 3. Buttons are always `Button`. Labels and figures are always `EyebrowLabel` / `font-figure`.
 4. If a section needs state (calculator values shared with a CTA), lift it into a small client
-   component under `components/v4/` — see `HomeHero` and `BusinessHero`.
+   component under `components/v4/` — see `HomeHero` and `ProductHero` (every product page hero:
+   copy + stats + optional checklist on the left, sticky calculator on the right). Shared product
+   sections (process, FAQ, use-case grid, comparison table) live in `components/v4/product-shared.tsx`.
 5. **Never hand-roll a colour, a border, a radius, a shadow or a font-family.** If a value is
    missing, add it to `tokens.css` first, then use the utility.
 6. Run `npm run lint` and `npm test`; open `/design-system` when in doubt about a variant.
