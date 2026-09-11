@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Briefcase, TrendingUp, Building2, RefreshCw, Sprout, User, Wallet, Hammer, Car, BadgeCheck } from "lucide-react";
+import { Briefcase, Building2, Sprout, User, Hammer, Car } from "lucide-react";
 
 type Product = {
  href: string;
@@ -16,22 +16,10 @@ const businessProducts: Product[] = [
  icon: Briefcase,
  },
  {
- href:"/credite/credit-capital-de-lucru",
- label:"Capital de lucru",
- desc:"Salarii, furnizori, stoc - flux de numerar fără întreruperi.",
- icon: TrendingUp,
- },
- {
  href:"/credite/credit-investitional",
  label:"Credit investițional",
  desc:"Echipamente, extindere spațiu, modernizare utilaj.",
  icon: Building2,
- },
- {
- href:"/credite/refinantare",
- label:"Refinanțare",
- desc:"Consolidezi datoriile existente, reduci rata lunară.",
- icon: RefreshCw,
  },
  {
  href:"/credite/credit-pentru-agricultura",
@@ -49,12 +37,6 @@ const personalProducts: Product[] = [
  icon: User,
  },
  {
- href:"/credite/credit-pina-la-salariu",
- label:"Până la salariu",
- desc:"Sumă mică acoperită rapid, rambursare la următorul salariu.",
- icon: Wallet,
- },
- {
  href:"/credite/credit-pentru-reparatie",
  label:"Reparație / Renovare",
  desc:"Reparația locuinței cu rate fixe și costuri clare de la început.",
@@ -65,12 +47,6 @@ const personalProducts: Product[] = [
  label:"Automobil",
  desc:"Finanțare pentru automobil nou sau second-hand.",
  icon: Car,
- },
- {
- href:"/credite/credit-pentru-bugetari",
- label:"Bugetari",
- desc:"Condiții speciale pentru medici, militari și polițiști.",
- icon: BadgeCheck,
  },
 ];
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import CreditPageContent from "@/components/CreditPageContent";
+import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
@@ -141,14 +141,28 @@ export default function CreditAgriculturaPage() {
                 </div>
             </section>
 
-            <CreditPageContent
-                eligibilityTitle="Condiții de eligibilitate"
-                eligibleIf={[
+            <EligibilitySection
+                title="Condiții de eligibilitate"
+                items={[
                     "Activitate agricolă înregistrată (SRL, ÎI, GȚ)",
                     "Activitate demonstrabilă în ultimul sezon",
                     "Teren agricol în proprietate sau în arendă",
                     "Extrase bancare sau dovezi de vânzări agricole",
                 ]}
+            />
+
+            <HowItWorks />
+
+            <DescriptionSection
+                title="Credit agricol pentru fermieri și gospodării din Moldova"
+                paragraphs={[
+                    "Creditul agricol de la Ideal Credit este conceput pentru fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate în agricultură. Finanțăm tehnica agricolă, semințele, îngrășămintele, irigațiile, forța de muncă sezonieră și orice alt cost legat de producția agricolă.",
+                    "Cel mai important avantaj față de un credit standard este graficul de rambursare adaptat sezonului. Știm că încasările agricole vin în valuri - după recoltare și vânzare - nu lunar uniform. De aceea structurăm ratele în funcție de ciclul tău de producție, cu posibilitate de perioadă de grație în lunile de cheltuieli mari.",
+                    "Nu cerem plan de afaceri formal sau profit demonstrat. Evaluăm activitatea reală - suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare. Dacă ai activitate agricolă demonstrabilă, indiferent de forma juridică, putem discuta despre finanțare.",
+                ]}
+            />
+
+            <DocumentsSection
                 documents={[
                     "Buletin de identitate",
                     "Certificat de înregistrare (SRL/ÎI) sau legitimație gospodărie",
@@ -157,22 +171,13 @@ export default function CreditAgriculturaPage() {
                     "Actele bunului gajat (dacă este cazul)",
                 ]}
                 note="Graficul de rambursare este adaptat sezonului agricol - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare."
-                description={{
-                    title: "Credit agricol pentru fermieri și gospodării din Moldova",
-                    paragraphs: [
-                        "Creditul agricol de la Ideal Credit este conceput pentru fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate în agricultură. Finanțăm tehnica agricolă, semințele, îngrășămintele, irigațiile, forța de muncă sezonieră și orice alt cost legat de producția agricolă.",
-                        "Cel mai important avantaj față de un credit standard este graficul de rambursare adaptat sezonului. Știm că încasările agricole vin în valuri - după recoltare și vânzare - nu lunar uniform. De aceea structurăm ratele în funcție de ciclul tău de producție, cu posibilitate de perioadă de grație în lunile de cheltuieli mari.",
-                        "Nu cerem plan de afaceri formal sau profit demonstrat. Evaluăm activitatea reală - suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare. Dacă ai activitate agricolă demonstrabilă, indiferent de forma juridică, putem discuta despre finanțare.",
-                    ],
-                }}
                 relatedLinks={[
                     { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Finanțare generală pentru orice activitate economică înregistrată." },
                     { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Tehnica agricolă și echipamente pe termen lung." },
-                    { href: "/credite/credit-capital-de-lucru", label: "Credit capital de lucru", desc: "Lichiditate sezonieră pentru semințe, îngrășăminte și forță de muncă." },
+                    { href: "/credite/credit-pentru-afaceri-mici#capital-de-lucru", label: "Capital de lucru", desc: "Lichiditate sezonieră pentru semințe, îngrășăminte și forță de muncă." },
                 ]}
             />
 
-            <HowItWorks />
             <CreditFAQ items={agricFaqItems} />
             <WhyBento />
         </>

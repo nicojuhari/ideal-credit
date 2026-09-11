@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import CreditPageContent from "@/components/CreditPageContent";
+import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
@@ -59,14 +59,28 @@ export default function CreditAutomobilPage() {
  subtitle="Cumpără sau repară mașina fără complicații. Finanțare rapidă, condiții clare și dobândă fixă."
  />
 
- <CreditPageContent
- eligibilityTitle="Condiții de creditare"
- eligibleIf={[
+ <EligibilitySection
+ title="Condiții de creditare"
+ items={[
 "Vârsta între 23 și 55 de ani",
 "Venit confirmat și stabil",
 "Buletin de identitate valabil",
 "Fără restanțe mari la credite active",
  ]}
+ />
+
+ <HowItWorks />
+
+ <DescriptionSection
+ title="Credit auto în Moldova - cumpărare sau reparație"
+ paragraphs={[
+"Creditul pentru automobil de la Ideal Credit acoperă atât achiziția unei mașini noi sau second-hand, cât și reparațiile tehnice majore la mașina pe care o ai deja. Nu există restricții pe tipul vehiculului - finanțăm autoturisme, autoutilitare sau vehicule de lucru, de la persoane fizice sau dealeri.",
+"Spre deosebire de leasing, mașina îți aparține din prima zi. Nu există clauze de răscumpărare la final de contract, nu există restricții de kilometraj sau modificări interzise. Este un credit simplu - iei banii, cumperi sau repari mașina, plătești rate fixe lunare.",
+"Aprobăm în 2-3 ore fără să cerem ofertă de la dealer sau deviz de la service înainte de analiză. Dacă ai venit stabil și fără restanțe mari la alte credite, analizăm cererea ta direct. Dobânda este fixă pe toată durata contractului.",
+ ]}
+ />
+
+ <DocumentsSection
  documents={[
 "Buletin de identitate",
 "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
@@ -74,14 +88,6 @@ export default function CreditAutomobilPage() {
 "Actele proprietarului vânzător (pentru mașini second-hand)",
  ]}
  note="Spre deosebire de leasing, mașina este a ta din prima zi. Nicio restricție de utilizare sau clauze de răscumpărare."
- description={{
- title:"Credit auto în Moldova - cumpărare sau reparație",
- paragraphs: [
-"Creditul pentru automobil de la Ideal Credit acoperă atât achiziția unei mașini noi sau second-hand, cât și reparațiile tehnice majore la mașina pe care o ai deja. Nu există restricții pe tipul vehiculului - finanțăm autoturisme, autoutilitare sau vehicule de lucru, de la persoane fizice sau dealeri.",
-"Spre deosebire de leasing, mașina îți aparține din prima zi. Nu există clauze de răscumpărare la final de contract, nu există restricții de kilometraj sau modificări interzise. Este un credit simplu - iei banii, cumperi sau repari mașina, plătești rate fixe lunare.",
-"Aprobăm în 2-3 ore fără să cerem ofertă de la dealer sau deviz de la service înainte de analiză. Dacă ai venit stabil și fără restanțe mari la alte credite, analizăm cererea ta direct. Dobânda este fixă pe toată durata contractului.",
- ],
- }}
  relatedLinks={[
  {
  href:"/credite/credit-pentru-nevoi-personale",
@@ -95,8 +101,6 @@ export default function CreditAutomobilPage() {
  },
  ]}
  />
-
- <HowItWorks />
 
  <CreditFAQ items={faqItems} />
 

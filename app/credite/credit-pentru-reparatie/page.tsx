@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import CreditPageContent from "@/components/CreditPageContent";
+import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import { personalLoanSchema } from "@/lib/schema";
@@ -59,14 +59,28 @@ export default function CreditReparatiePage() {
  subtitle="Obține un credit pentru reparația casei sau apartamentului tău. Renovează-ți locuința acum cu rate fixe și costuri clare."
  />
 
- <CreditPageContent
- eligibilityTitle="Condiții de creditare"
- eligibleIf={[
+ <EligibilitySection
+ title="Condiții de creditare"
+ items={[
 "Vârsta între 23 și 55 de ani",
 "Venit confirmat și stabil",
 "Buletin de identitate valabil",
 "Locuință în proprietate sau în arendă (pentru lucrările planificate)",
  ]}
+ />
+
+ <HowItWorks />
+
+ <DescriptionSection
+ title="Credit pentru reparație casă sau apartament"
+ paragraphs={[
+"Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renova locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
+"Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar, și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
+"Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - analizăm situația ta reală, nu doar documentele de proprietate.",
+ ]}
+ />
+
+ <DocumentsSection
  documents={[
 "Buletin de identitate",
 "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
@@ -74,14 +88,6 @@ export default function CreditReparatiePage() {
 "Deviz estimativ de lucrări (opțional, ajută la determinarea sumei)",
  ]}
  note="Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
- description={{
- title:"Credit pentru reparație casă sau apartament",
- paragraphs: [
-"Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renova locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
-"Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar, și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
-"Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - analizăm situația ta reală, nu doar documentele de proprietate.",
- ],
- }}
  relatedLinks={[
  {
  href:"/credite/credit-pentru-nevoi-personale",
@@ -95,8 +101,6 @@ export default function CreditReparatiePage() {
  },
  ]}
  />
-
- <HowItWorks />
 
  <CreditFAQ items={faqItems} />
 

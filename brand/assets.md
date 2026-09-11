@@ -23,6 +23,12 @@ Last updated: 2026-09-06
 | creative-kit                        | Strategy      | 2026-09-06 | Social Media   | active   | Visual DNA for social graphics: v4 tokens, Archivo + IBM Plex Mono, no imagery, template directions table. File: brand/creative-kit.md |
 | 2026-09-week-3                      | Social Post   | 2026-09-06 | Social Media   | scheduled | 01 Mike Markkula 170.000 $ Apple loan (dark, 15.09) · 02 rate egale vs descrescătoare 2.970 MDL (light, 17.09). Scheduled in Buffer on LinkedIn, Instagram, Facebook |
 
+| keyword-plan                                       | Strategy      | 2026-09-11 | SEO Foundation | active   | Full rebuild on real GSC data (999 queries, 5,335 clicks). Added Personal pillar (was 100% business, 0% personal despite stated 70/30 split). Documents excluded distressed-borrower segment (42% of clicks, explicitly not targeted per owner decision). Replaces 2026-05-18 plan (archived at `campaigns/keywords/keyword-plan-2026-05-18.md`). |
+| credit-afaceri-fara-gaj-moldova                    | Content Brief | 2026-09-11 | SEO / Blog     | planning | Business, DO FIRST. No-collateral underwriting angle. |
+| finantare-causeni-regiune                          | Content Brief | 2026-09-11 | SEO / Blog     | planning | Business, QUICK WIN. Local landing page, Căușeni office. |
+| ghid-credit-personal-proiecte-planificate-moldova  | Content Brief | 2026-09-11 | SEO / Blog     | planning | Personal pillar flagship, DO FIRST. Planned-purchase framing, counter-positions vs "fără verificare" competitors. |
+| credit-auto-moldova-cum-alegi                      | Content Brief | 2026-09-11 | SEO / Blog     | planning | Personal, DO FIRST. Neutral credit-vs-leasing comparison. |
+
 ## Retired Assets
 
 | Name | Type | Retired | Notes |

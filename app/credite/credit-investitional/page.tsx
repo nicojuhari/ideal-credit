@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import CreditPageContent from "@/components/CreditPageContent";
+import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
@@ -99,38 +99,26 @@ export default function CreditInvestitionalPage() {
 
             <ServiceFeatureGrid heading="Ce poți finanța" items={financingCategories} cols={3} />
 
-            <CreditPageContent
-                eligibilityTitle="Condiții de eligibilitate"
-                eligibleIf={[
+            <EligibilitySection
+                title="Condiții de eligibilitate"
+                items={[
                     "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
                     "Activitate economică de cel puțin 6 luni",
                     "Investiția are legătură directă cu activitatea firmei",
                     "Extrase bancare cu rulaj constant",
                 ]}
-                documents={[
-                    "Buletin de identitate al administratorului",
-                    "Certificat de înregistrare (SRL/ÎI)",
-                    "Extrase bancare - ultimele 3-6 luni",
-                    "Ofertă sau factură proformă pentru bunul achiziționat (dacă există)",
-                    "Actele de proprietate (pentru gaj, dacă este cazul)",
-                ]}
-                note="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
-                description={{
-                    title: "Credit investițional pentru afaceri din Moldova",
-                    paragraphs: [
-                        "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
-                        "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
-                        "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Analizăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică și ai capacitate de rambursare demonstrabilă, discutăm.",
-                    ],
-                }}
-                relatedLinks={[
-                    { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Toate tipurile de finanțare pentru antreprenori." },
-                    { href: "/credite/credit-capital-de-lucru", label: "Credit capital de lucru", desc: "Lichiditate pentru operațiunile zilnice ale firmei." },
-                    { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare pentru tehnica agricolă și capital sezonier." },
-                ]}
             />
 
             <HowItWorks />
+
+            <DescriptionSection
+                title="Credit investițional pentru afaceri din Moldova"
+                paragraphs={[
+                    "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
+                    "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
+                    "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Analizăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică și ai capacitate de rambursare demonstrabilă, discutăm.",
+                ]}
+            />
 
             <section className="container">
                 <h2 className="title text-center">Credit investițional vs. leasing</h2>
@@ -155,6 +143,22 @@ export default function CreditInvestitionalPage() {
                     </table>
                 </div>
             </section>
+
+            <DocumentsSection
+                documents={[
+                    "Buletin de identitate al administratorului",
+                    "Certificat de înregistrare (SRL/ÎI)",
+                    "Extrase bancare - ultimele 3-6 luni",
+                    "Ofertă sau factură proformă pentru bunul achiziționat (dacă există)",
+                    "Actele de proprietate (pentru gaj, dacă este cazul)",
+                ]}
+                note="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
+                relatedLinks={[
+                    { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Toate tipurile de finanțare pentru antreprenori." },
+                    { href: "/credite/credit-pentru-afaceri-mici#capital-de-lucru", label: "Capital de lucru", desc: "Lichiditate pentru operațiunile zilnice ale firmei." },
+                    { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare pentru tehnica agricolă și capital sezonier." },
+                ]}
+            />
 
             <CreditFAQ items={investFaqItems} />
             <WhyBento />

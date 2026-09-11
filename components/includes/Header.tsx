@@ -14,12 +14,8 @@ import {
     Car,
     User,
     Hammer,
-    Wallet,
     ArrowRight,
-    TrendingUp,
     Building2,
-    RefreshCw,
-    BadgeCheck,
 } from "lucide-react";
 import Logo from "@/components/icons/Logo";
 import ButtonsCTA from "@/components/ui/ButtonsCTA";
@@ -40,22 +36,10 @@ const businessProducts: CreditItem[] = [
         icon: Briefcase,
     },
     {
-        href: "/credite/credit-capital-de-lucru",
-        label: "Capital de lucru",
-        desc: "Salarii, furnizori, stoc - flux de numerar stabil.",
-        icon: TrendingUp,
-    },
-    {
         href: "/credite/credit-investitional",
         label: "Credit investițional",
         desc: "Echipamente, extindere, modernizare.",
         icon: Building2,
-    },
-    {
-        href: "/credite/refinantare",
-        label: "Refinanțare",
-        desc: "Consolidezi datoriile, reduci rata lunară.",
-        icon: RefreshCw,
     },
     {
         href: "/credite/credit-pentru-agricultura",
@@ -73,12 +57,6 @@ const personalProducts: CreditItem[] = [
         icon: User,
     },
     {
-        href: "/credite/credit-pina-la-salariu",
-        label: "Până la salariu",
-        desc: "Sumă mică, rambursare rapidă.",
-        icon: Wallet,
-    },
-    {
         href: "/credite/credit-pentru-reparatie",
         label: "Reparație",
         desc: "Renovează locuința cu condiții clare.",
@@ -89,12 +67,6 @@ const personalProducts: CreditItem[] = [
         label: "Automobil",
         desc: "Finanțare pentru vehicul nou sau rulat.",
         icon: Car,
-    },
-    {
-        href: "/credite/credit-pentru-bugetari",
-        label: "Bugetari",
-        desc: "Condiții speciale pentru angajați la stat.",
-        icon: BadgeCheck,
     },
 ];
 

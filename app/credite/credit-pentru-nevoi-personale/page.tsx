@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero";
 import HowItWorks from "@/components/HowItWorks";
 import WhyBento from "@/components/WhyBento";
-import CreditPageContent from "@/components/CreditPageContent";
+import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
 import CreditFAQ from "@/components/CreditFAQ";
 import type { FaqItem } from "@/components/CreditFAQ";
 import ServiceTileGrid from "@/components/ui/ServiceTileGrid";
 import type { ServiceTileItem } from "@/components/ui/ServiceTileGrid";
-import { Home, Tv, Activity, Cake, Plane, Zap } from "lucide-react";
+import ChecklistCard from "@/components/ui/ChecklistCard";
+import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
+import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import { Home, Tv, Activity, Cake, Plane, RefreshCw, Stethoscope, Shield, BadgeCheck } from "lucide-react";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -50,6 +53,14 @@ const personalFaqItems: FaqItem[] = [
         question: "Pot rambursa creditul mai devreme?",
         answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată - nicio penalitate.",
     },
+    {
+        question: "Am mai multe credite active - le pot consolida într-unul singur?",
+        answer: "Da. Dacă plătești rate la 2 sau mai multe credite, analizăm situația și, dacă are sens financiar, le aduni într-o singură rată lunară, de obicei mai mică. Calculăm împreună înainte de orice decizie - dacă nu are sens pentru tine, îți spunem direct.",
+    },
+    {
+        question: "Există condiții speciale pentru bugetari (medici, militari, profesori)?",
+        answer: "Venitul stabil, garantat de stat, simplifică analiza dosarului. Documentele acceptate includ adeverința de salariu sau extrasul din sistemul de salarizare - condițiile exacte se stabilesc în funcție de venit și situația fiecărui solicitant.",
+    },
 ];
 
 const useCases: ServiceTileItem[] = [
@@ -58,7 +69,44 @@ const useCases: ServiceTileItem[] = [
     { icon: Activity, label: "Tratament medical", href: null },
     { icon: Cake, label: "Nuntă, botez, eveniment", href: null },
     { icon: Plane, label: "Vacanță planificată", href: null },
-    { icon: Zap, label: "Urgențe financiare", href: "/credite/credit-pina-la-salariu" },
+    { icon: RefreshCw, label: "Consolidare credite", href: "#consolidare" },
+];
+
+const bugetariCategories: ServiceFeatureItem[] = [
+    {
+        icon: Stethoscope,
+        title: "Medici și personal medical",
+        items: [
+            "Medici, asistenți medicali, farmaciști",
+            "Angajați ai spitalelor și policlinicilor de stat",
+            "Personal auxiliar din sistemul de sănătate",
+        ],
+    },
+    {
+        icon: Shield,
+        title: "Militari și polițiști",
+        items: [
+            "Ofițeri și subofițeri ai Armatei Naționale",
+            "Angajați ai Ministerului Afacerilor Interne",
+            "Personal al Serviciului de Protecție și Pază de Stat",
+        ],
+    },
+    {
+        icon: BadgeCheck,
+        title: "Alți angajați bugetari",
+        items: [
+            "Profesori, educatori, personal didactic",
+            "Funcționari publici și angajați ai administrației locale",
+            "Angajați ai instituțiilor de stat și autorităților publice",
+        ],
+    },
+];
+
+const worthConsolidatingItems = [
+    "Plătești rate la 2 sau mai multe credite și vrei să simplifici",
+    "Rata actuală consumă prea mult din venitul lunar",
+    "Dobânda actuală este mai mare decât ce poți obține acum",
+    "Vrei să eliberezi un garant de pe un contract mai vechi",
 ];
 
 export default function CreditNevoiPersonalePage() {
@@ -73,14 +121,41 @@ export default function CreditNevoiPersonalePage() {
 
             <ServiceTileGrid heading="Când folosești un credit personal" items={useCases} />
 
-            <CreditPageContent
-                eligibilityTitle="Condiții de bază"
-                eligibleIf={[
+            <EligibilitySection
+                title="Condiții de bază"
+                items={[
                     "Vârsta de la 23 de ani",
                     "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
                     "Buletin de identitate valabil",
                     "Capacitate de rambursare demonstrabilă",
                 ]}
+            />
+
+            <HowItWorks />
+
+            <DescriptionSection
+                title="Credit personal rapid în Moldova"
+                paragraphs={[
+                    "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
+                    "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) este obligatoriu. Pentru sume mari sau venituri nestabile poate fi cerut suplimentar gaj imobil.",
+                    "Clienții recurenți cu istoric bun de plată și venituri stabile pot beneficia de dobândă redusă și fără fidejusor. Aprobăm în 2-3 ore - dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Discutăm cerințele de garanție înainte de depunerea dosarului - fără surprize după semnare.",
+                ]}
+            />
+
+            <div id="consolidare">
+                <ChecklistCard
+                    heading="Ai mai multe credite active?"
+                    intro="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
+                    items={worthConsolidatingItems}
+                    centered
+                />
+            </div>
+
+            <div id="bugetari">
+                <ServiceFeatureGrid heading="Condiții speciale pentru bugetari" items={bugetariCategories} cols={3} />
+            </div>
+
+            <DocumentsSection
                 documents={[
                     "Buletin de identitate",
                     "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
@@ -88,22 +163,12 @@ export default function CreditNevoiPersonalePage() {
                     "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
                 ]}
                 note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
-                description={{
-                    title: "Credit personal rapid în Moldova",
-                    paragraphs: [
-                        "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
-                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) este obligatoriu. Pentru sume mari sau venituri nestabile poate fi cerut suplimentar gaj imobil.",
-                        "Clienții recurenți cu istoric bun de plată și venituri stabile pot beneficia de dobândă redusă și fără fidejusor. Aprobăm în 2-3 ore - dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Discutăm cerințele de garanție înainte de depunerea dosarului - fără surprize după semnare.",
-                    ],
-                }}
                 relatedLinks={[
                     { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Renovezi casa cu rate fixe și costuri clare." },
-                    { href: "/credite/credit-pina-la-salariu", label: "Credit până la salariu", desc: "Sumă mică pentru urgențe, rambursare la salariu." },
                     { href: "/credite/credit-pentru-automobil", label: "Credit pentru automobil", desc: "Cumperi sau repari mașina cu finanțare rapidă." },
                 ]}
             />
 
-            <HowItWorks />
             <CreditFAQ items={personalFaqItems} />
             <WhyBento />
         </>
