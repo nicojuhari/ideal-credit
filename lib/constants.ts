@@ -1,3 +1,6 @@
+// Monthly interest rate (%) used by the credit calculator (createGrafic/calcDAE).
+export const CALCULATOR_MONTHLY_RATE = 4;
+
 export const OFFICES = [
     {
         id: 1,

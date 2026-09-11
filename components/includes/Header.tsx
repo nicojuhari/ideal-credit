@@ -3,71 +3,25 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
-import {
-    Menu as List,
-    X,
-    Phone,
-    ChevronDown,
-    Briefcase,
-    Sprout,
-    Car,
-    User,
-    Hammer,
-    ArrowRight,
-    Building2,
-} from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu as List, X, Phone, ChevronDown, MessageCircle, PencilLine } from "lucide-react";
 import Logo from "@/components/icons/Logo";
-import ButtonsCTA from "@/components/ui/ButtonsCTA";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
+import Container from "@/components/ds/Container";
+import { ButtonPrimary } from "@/components/ds/Button";
 
-type CreditItem = {
-    href: string;
-    label: string;
-    desc: string;
-    icon: React.ComponentType<{ size?: number; className?: string }>;
-};
+type CreditItem = { href: string; label: string; desc: string };
 
 const businessProducts: CreditItem[] = [
-    {
-        href: "/credite/credit-pentru-afaceri-mici",
-        label: "Afaceri mici",
-        desc: "Capital rapid pentru SRL, ÎI și antreprenori.",
-        icon: Briefcase,
-    },
-    {
-        href: "/credite/credit-investitional",
-        label: "Credit investițional",
-        desc: "Echipamente, extindere, modernizare.",
-        icon: Building2,
-    },
-    {
-        href: "/credite/credit-pentru-agricultura",
-        label: "Agricultură",
-        desc: "Pentru fermieri și producători agricoli.",
-        icon: Sprout,
-    },
+    { href: "/credite/credit-pentru-afaceri-mici", label: "Afaceri mici", desc: "Capital rapid pentru SRL, ÎI și antreprenori." },
+    { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Echipamente, extindere, modernizare." },
+    { href: "/credite/credit-pentru-agricultura", label: "Agricultură", desc: "Pentru fermieri și producători agricoli." },
 ];
 
 const personalProducts: CreditItem[] = [
-    {
-        href: "/credite/credit-pentru-nevoi-personale",
-        label: "Nevoi personale",
-        desc: "Pentru orice scop, fără destinație fixă.",
-        icon: User,
-    },
-    {
-        href: "/credite/credit-pentru-reparatie",
-        label: "Reparație",
-        desc: "Renovează locuința cu condiții clare.",
-        icon: Hammer,
-    },
-    {
-        href: "/credite/credit-pentru-automobil",
-        label: "Automobil",
-        desc: "Finanțare pentru vehicul nou sau rulat.",
-        icon: Car,
-    },
+    { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale", desc: "Pentru orice scop, fără destinație fixă." },
+    { href: "/credite/credit-pentru-reparatie", label: "Reparație", desc: "Renovează locuința cu condiții clare." },
+    { href: "/credite/credit-pentru-automobil", label: "Automobil", desc: "Finanțare pentru vehicul nou sau rulat." },
 ];
 
 const simpleLinks = [
@@ -78,16 +32,10 @@ const simpleLinks = [
 ];
 
 function ProductLink({ item }: { item: CreditItem }) {
-    const Icon = item.icon;
     return (
-        <Link href={item.href} className="group flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500 group-hover:bg-brand-500/20 transition-colors">
-                <Icon size={18} />
-            </span>
-            <span className="flex flex-col min-w-0">
-                <span className="flex items-center gap-1.5 text-sm font-medium text-white">{item.label}</span>
-                <span className="text-xs leading-snug mt-0.5">{item.desc}</span>
-            </span>
+        <Link href={item.href} className="group flex flex-col gap-0.5 p-3 rounded-dc-control hover:bg-white/5 transition-colors">
+            <span className="text-sm font-semibold text-dc-text">{item.label}</span>
+            <span className="text-xs leading-snug text-dc-text-dim">{item.desc}</span>
         </Link>
     );
 }
@@ -95,12 +43,8 @@ function ProductLink({ item }: { item: CreditItem }) {
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [creditOpen, setCreditOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
     const { trackEvent } = useFacebookPixel();
-    const { scrollY } = useScroll();
-
-    useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 8));
 
     useEffect(() => {
         setTimeout(() => {
@@ -119,73 +63,60 @@ export default function Header() {
     };
 
     return (
-        <header className="sticky top-0 z-30 border-b border-white/5 backdrop-blur-xl h-14 md:h-16 bg-black-800/70">
-            <div className="flex justify-between items-center gap-4 h-full container">
-                <Link href="/" title="Ideal Credit - Credite pentru succes!" className="flex items-center gap-2">
-                    <Logo className="w-8 md:w-10" />
-                    <div className="hidden md:flex flex-col leading-tight">
-                        <span className="text-sm font-semibold text-white">Ideal Credit</span>
-                    </div>
+        <header className="dc sticky top-0 z-30 h-[68px] border-b border-dc-line bg-[rgba(11,11,12,.85)] backdrop-blur-[14px]">
+            <Container className="flex h-full items-center justify-between gap-4">
+                <Link href="/" title="Ideal Credit - Credite pentru succes!" className="flex items-center gap-2.5">
+                    <Logo className="w-[30px]" />
+                    <span className="text-[17px] font-extrabold tracking-[-.01em] text-dc-text">Ideal Credit</span>
                 </Link>
 
                 {/* Desktop nav */}
-                <nav className="items-center gap-1 hidden md:flex">
-                    {/* Credite dropdown */}
+                <nav className="hidden md:flex items-center gap-7">
                     <div className="relative" onMouseEnter={() => setCreditOpen(true)} onMouseLeave={() => setCreditOpen(false)}>
                         <button
                             type="button"
-                            className="flex items-center gap-1 px-3 py-2 rounded-full text-white hover:text-white transition-colors"
+                            className="flex items-center gap-1 text-sm font-medium text-dc-text-muted hover:text-dc-text transition-colors"
                             onClick={() => setCreditOpen((v) => !v)}
                             aria-expanded={creditOpen}
                         >
                             Credite
-                            <motion.span animate={{ rotate: creditOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
-                                <ChevronDown size={16} />
+                            <motion.span animate={{ rotate: creditOpen ? 180 : 0 }} transition={{ duration: 0.15 }}>
+                                <ChevronDown size={15} />
                             </motion.span>
                         </button>
 
                         <AnimatePresence>
                             {creditOpen && (
                                 <motion.div
-                                    initial={{ opacity: 0, y: 8 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 8 }}
-                                    transition={{ duration: 0.18, ease: "easeOut" }}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.12 }}
                                     className="absolute left-1/2 -translate-x-1/2 top-full pt-3"
                                 >
-                                    <div
-                                        className="w-170 rounded-xl border border-white/10 bg-black-600 backdrop-blur-xl shadow-glow"
-                                        style={{ boxShadow: "0 20px 60px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04)" }}
-                                    >
-                                        <div className="grid grid-cols-2 gap-0 p-3">
-                                            {/* Business column */}
-                                            <div className="pr-3 border-r border-white/5">
-                                                <div className="text-[10px] uppercase tracking-widest font-medium mb-1.5 px-3">
+                                    <div className="w-[560px] rounded-dc-card border border-dc-line bg-dc-surface">
+                                        <div className="grid grid-cols-2 p-3">
+                                            <div className="pr-3 border-r border-dc-line">
+                                                <p className="mb-1.5 px-3 text-[10px] font-semibold uppercase tracking-widest text-dc-text-dim">
                                                     Pentru afaceri
-                                                </div>
+                                                </p>
                                                 {businessProducts.map((p) => (
                                                     <ProductLink key={p.href} item={p} />
                                                 ))}
                                             </div>
-
-                                            {/* Personal column */}
                                             <div className="pl-3">
-                                                <div className="text-[10px] uppercase tracking-widest font-medium mb-1.5 px-3">
+                                                <p className="mb-1.5 px-3 text-[10px] font-semibold uppercase tracking-widest text-dc-text-dim">
                                                     Pentru persoane fizice
-                                                </div>
+                                                </p>
                                                 {personalProducts.map((p) => (
                                                     <ProductLink key={p.href} item={p} />
                                                 ))}
                                             </div>
                                         </div>
-
-                                        <div className="px-6 py-3 border-t border-white/5 flex items-center justify-between">
-                                            <span className="text-xs">Toate produsele de credit</span>
-                                            <Link
-                                                href="/credite"
-                                                className="flex items-center gap-1 text-sm text-brand-500 hover:text-brand-400 transition-colors"
-                                            >
-                                                Vezi toate <ArrowRight size={14} />
+                                        <div className="flex items-center justify-between border-t border-dc-line px-6 py-3">
+                                            <span className="text-xs text-dc-text-dim">Toate produsele de credit</span>
+                                            <Link href="/credite" className="text-sm font-medium text-dc-text hover:text-white">
+                                                Vezi toate →
                                             </Link>
                                         </div>
                                     </div>
@@ -199,7 +130,7 @@ export default function Header() {
                             key={link.href}
                             href={link.href}
                             title={link.label}
-                            className="px-3 py-2 rounded-full text-white hover:text-white transition-colors"
+                            className="text-sm font-medium text-dc-text-muted hover:text-dc-text transition-colors"
                         >
                             {link.label}
                         </Link>
@@ -207,27 +138,29 @@ export default function Header() {
                 </nav>
 
                 {/* Right cluster */}
-                <div className="hidden md:flex items-center gap-2">
+                <div className="hidden md:flex items-center gap-4">
                     <a
                         href="tel:+37361252777"
                         onClick={() => trackEvent("Contact")}
-                        className="inline-flex items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
+                        className="text-sm font-semibold text-dc-text hover:text-white transition-colors"
                     >
-                        <Phone size={16} /> 0612 52 777
+                        0612 52 777
                     </a>
+                    {/* <ButtonPrimary href="/cerere-de-credit-online" size="nav">
+                        Solicită un credit
+                    </ButtonPrimary> */}
                 </div>
 
                 {/* Mobile burger */}
-                <div className="flex md:hidden">
-                    <button
-                        onClick={toggleMenu}
-                        aria-label="Deschide meniu"
-                        className="p-2 bg-black-400 cursor-pointer rounded-full text-white"
-                    >
-                        <List size={20} />
-                    </button>
-                </div>
-            </div>
+                <button
+                    onClick={toggleMenu}
+                    aria-label="Deschide meniu"
+                    aria-expanded={menuOpen}
+                    className="flex md:hidden p-2 rounded-dc-control border border-dc-line text-dc-text"
+                >
+                    <List size={20} />
+                </button>
+            </Container>
 
             {/* Mobile fullscreen sheet */}
             <AnimatePresence>
@@ -237,100 +170,72 @@ export default function Header() {
                         initial={{ opacity: 0, x: "100%" }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "tween", duration: 0.25, ease: "easeInOut" }}
-                        className="fixed top-0 left-0 bg-black-800 w-full flex flex-col z-50 h-dvh overflow-y-auto"
+                        transition={{ type: "tween", duration: 0.2, ease: "easeInOut" }}
+                        className="fixed top-0 left-0 z-50 flex h-dvh w-full flex-col overflow-y-auto bg-dc-bg"
                     >
-                        <div className="flex items-center justify-between py-3 px-4 border-b border-white/5">
-                            <Link href="/" className="flex items-center gap-2" onClick={toggleMenu}>
-                                <Logo className="w-8" />
+                        <div className="flex items-center justify-between border-b border-dc-line px-6 py-4">
+                            <Link href="/" className="flex items-center gap-2.5" onClick={toggleMenu}>
+                                <Logo className="w-[30px]" />
+                                <span className="text-[17px] font-extrabold tracking-[-.01em] text-dc-text">Ideal Credit</span>
                             </Link>
-                            <button onClick={toggleMenu} aria-label="Închide meniu" className="p-2 rounded-full bg-black-400 text-white">
+                            <button
+                                onClick={toggleMenu}
+                                aria-label="Închide meniu"
+                                className="p-2 rounded-dc-control border border-dc-line text-dc-text"
+                            >
                                 <X size={20} />
                             </button>
                         </div>
 
-                        <div className="px-4 py-2">
-                            {/* Business section */}
-                            <div className="text-xs uppercase tracking-wider mt-4 mb-2 px-1">Pentru afaceri</div>
-                            <div className="grid grid-cols-1 gap-0.5">
-                                {businessProducts.map((p, i) => {
-                                    const Icon = p.icon;
-                                    return (
-                                        <motion.div
-                                            key={p.href}
-                                            initial={{ opacity: 0, x: 16 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: 0.03 + i * 0.025 }}
-                                        >
-                                            <Link href={p.href} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5">
-                                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
-                                                    <Icon size={18} />
-                                                </span>
-                                                <span className="flex items-center gap-1.5 text-base font-medium">{p.label}</span>
-                                            </Link>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
+                        <div className="px-6 py-2">
+                            <p className="mt-4 mb-1 px-1 text-xs uppercase tracking-wider text-dc-text-dim">Pentru afaceri</p>
+                            {businessProducts.map((p) => (
+                                <Link key={p.href} href={p.href} className="block p-3 rounded-dc-control hover:bg-white/5">
+                                    <span className="text-base font-medium text-dc-text">{p.label}</span>
+                                </Link>
+                            ))}
 
-                            {/* Personal section */}
-                            <div className="text-xs uppercase tracking-wider mt-5 mb-2 px-1">Pentru persoane fizice</div>
-                            <div className="grid grid-cols-1 gap-0.5">
-                                {personalProducts.map((p, i) => {
-                                    const Icon = p.icon;
-                                    return (
-                                        <motion.div
-                                            key={p.href}
-                                            initial={{ opacity: 0, x: 16 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: 0.15 + i * 0.025 }}
-                                        >
-                                            <Link href={p.href} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/5">
-                                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-brand-500">
-                                                    <Icon size={18} />
-                                                </span>
-                                                <span className="flex items-center gap-1.5 text-base font-medium">{p.label}</span>
-                                            </Link>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
+                            <p className="mt-5 mb-1 px-1 text-xs uppercase tracking-wider text-dc-text-dim">Pentru persoane fizice</p>
+                            {personalProducts.map((p) => (
+                                <Link key={p.href} href={p.href} className="block p-3 rounded-dc-control hover:bg-white/5">
+                                    <span className="text-base font-medium text-dc-text">{p.label}</span>
+                                </Link>
+                            ))}
 
-                            {/* Company links */}
-                            <div className="text-xs uppercase tracking-wider mt-5 mb-2 px-1">Companie</div>
-                            {simpleLinks.map((link, i) => (
-                                <motion.div
+                            <p className="mt-5 mb-1 px-1 text-xs uppercase tracking-wider text-dc-text-dim">Companie</p>
+                            {simpleLinks.map((link) => (
+                                <Link
                                     key={link.href}
-                                    initial={{ opacity: 0, x: 16 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.35 + i * 0.05 }}
+                                    href={link.href}
+                                    title={link.label}
+                                    className="block p-3 rounded-dc-control text-lg font-medium text-dc-text hover:bg-white/5"
                                 >
-                                    <Link
-                                        href={link.href}
-                                        title={link.label}
-                                        className="flex w-full font-medium text-lg p-3 rounded-xl hover:bg-white/5"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </motion.div>
+                                    {link.label}
+                                </Link>
                             ))}
                         </div>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4 }}
-                            className="mt-auto mb-8 space-y-4 text-center px-4"
-                        >
+                        <div className="mt-auto mb-8 space-y-3 px-6">
                             <a
                                 href="tel:+37361252777"
                                 onClick={() => trackEvent("Contact")}
-                                className="w-full max-w-[320px] flex mx-auto justify-center items-center gap-2 h-10 px-4 rounded-full border border-brand-500/10 bg-brand-500/5 text-brand-500 hover:text-brand-500 hover:border-brand-500/40 transition-colors text-base font-medium"
+                                className="flex h-11 w-full items-center justify-center gap-2 rounded-dc-control border border-dc-line-strong text-sm font-semibold text-dc-text"
                             >
                                 <Phone size={16} /> 0612 52 777
                             </a>
-                            <ButtonsCTA />
-                        </motion.div>
+                            <ButtonPrimary href="/cerere-de-credit-online" className="w-full">
+                                <PencilLine size={18} /> Cerere online
+                            </ButtonPrimary>
+                            <a
+                                href="https://wa.me/+37361252777"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => trackEvent("Contact")}
+                                className="flex h-11 w-full items-center justify-center gap-2 rounded-dc-control border border-dc-line-strong text-sm font-semibold text-dc-text"
+                            >
+                                <MessageCircle size={18} /> WhatsApp
+                            </a>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>

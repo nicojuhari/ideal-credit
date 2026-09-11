@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
 import Logo from "@/components/icons/Logo";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
-import { OFFICES, GLOSSARY_LINKS } from "@/lib/constants";
+import { OFFICES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Container from "@/components/ds/Container";
 
 const productLinks = [
     { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
@@ -27,197 +27,143 @@ const legalLinks = [
     { href: "/terms", label: "Termeni" },
     { href: "/cookies", label: "Cookies" },
     { href: "/privacy", label: "Confidențialitate" },
-    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere", className: "underline text-green-500" },
+    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere" },
+    { href: "/dictionar-financiar", label: "Dicționar financiar" },
 ];
+
+const socials = [
+    {
+        href: "https://www.instagram.com/idealcredit.md/",
+        title: "Instagram",
+        path: "M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z",
+    },
+    {
+        href: "https://www.facebook.com/idealcredit.md",
+        title: "Facebook",
+        path: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z",
+    },
+    {
+        href: "https://www.linkedin.com/company/idealcredit/",
+        title: "LinkedIn",
+        path: "M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z",
+    },
+];
+
+function FooterLinkGroup({ title, links }: { title: string; links: { href: string; label: string; className?: string }[] }) {
+    return (
+        <div>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-dc-text-dim">{title}</p>
+            <ul className="space-y-2.5">
+                {links.map((l) => (
+                    <li key={l.href}>
+                        <Link
+                            href={l.href}
+                            rel={l.href === "/autoritatea-de-supraveghere" ? "nofollow" : undefined}
+                            className={cn("text-sm text-dc-text-muted hover:text-white transition-colors", l.className)}
+                        >
+                            {l.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
 
 export default function Footer() {
     const { trackEvent } = useFacebookPixel();
 
     return (
-        <footer className="relative border-t border-white/5 bg-black-700/40 pt-16 pb-10">
-            {/* Top: brand + nav groups */}
-            <div className="container flex flex-col md:flex-row gap-10">
-                {/* Brand column */}
-                <div className="shrink-0 md:w-52 space-y-4">
-                    <Link href="/" className="flex items-center gap-2.5">
-                        <Logo className="w-7" />
-                        <span className="text-base font-semibold leading-tight">Ideal Credit</span>
-                    </Link>
-                    <p className="text-xs leading-relaxed">Credite nebancare pentru afaceri și consum în Moldova.</p>
-                    <div className="flex gap-3 items-center">
-                        {[
-                            {
-                                href: "https://www.instagram.com/idealcredit.md/",
-                                title: "Instagram",
-                                path: "M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z",
-                            },
-                            {
-                                href: "https://www.facebook.com/idealcredit.md",
-                                title: "Facebook",
-                                path: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z",
-                            },
-                            {
-                                href: "https://www.linkedin.com/company/idealcredit/",
-                                title: "LinkedIn",
-                                path: "M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z",
-                            },
-                        ].map((s) => (
-                            <a
-                                key={s.title}
-                                href={s.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                title={`Ideal Credit pe ${s.title}`}
-                                className="text-white hover:text-white transition-colors"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 256 256">
-                                    <path d={s.path} />
-                                </svg>
-                            </a>
-                        ))}
+        <footer className="dc border-t border-dc-line pt-20 pb-10">
+            <Container className="flex flex-col gap-16">
+                {/* Link grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10">
+                    <div className="col-span-2 min-w-[260px] space-y-4">
+                        <Link href="/" className="flex items-center gap-2.5">
+                            <Logo className="w-7" />
+                            <span className="text-base font-extrabold tracking-[-.01em] text-dc-text">Ideal Credit</span>
+                        </Link>
+                        <p className="text-sm text-dc-text-dim max-w-[280px]">Credite nebancare pentru afaceri și consum în Moldova.</p>
+                        <div className="flex gap-4 items-center">
+                            {socials.map((s) => (
+                                <a
+                                    key={s.title}
+                                    href={s.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title={`Ideal Credit pe ${s.title}`}
+                                    className="text-dc-text-muted hover:text-white transition-colors"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 256 256">
+                                        <path d={s.path} />
+                                    </svg>
+                                </a>
+                            ))}
+                        </div>
                     </div>
+
+                    <FooterLinkGroup title="Produse" links={productLinks} />
+                    <FooterLinkGroup title="Companie" links={companyLinks} />
+                    <FooterLinkGroup
+                        title="Legal"
+                        links={legalLinks.map((l) =>
+                            l.href === "/autoritatea-de-supraveghere" ? { ...l, className: "underline" } : l,
+                        )}
+                    />
                 </div>
 
-                {/* Nav columns */}
-                <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8">
-                    {/* Produse */}
-                    <div>
-                        <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3">Produse</p>
-                        <ul className="space-y-2">
-                            {productLinks.map((l) => (
-                                <li key={l.href}>
-                                    <Link href={l.href} className="text-sm text-white/60 hover:text-white transition-colors">
-                                        {l.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Companie */}
-                    <div>
-                        <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3">Companie</p>
-                        <ul className="space-y-2">
-                            {companyLinks.map((l) => (
-                                <li key={l.href}>
-                                    <Link href={l.href} className="text-sm text-white/60 hover:text-white transition-colors">
-                                        {l.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Legal */}
-                    <div>
-                        <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3">Legal</p>
-                        <ul className="space-y-2">
-                            {legalLinks.map((l) => (
-                                <li key={l.href}>
-                                    <Link
-                                        href={l.href}
-                                        rel={l.href === "/autoritatea-de-supraveghere" ? "nofollow" : undefined}
-                                        className={cn("text-sm text-white/60 hover:text-white transition-colors", l?.className)}
-                                    >
-                                        {l.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            {/* Offices row */}
-            <div className="container py-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-                {OFFICES.map((oficiu) => {
-                    const city = oficiu.city.replace(/^(or\.|m\.)\s*/, "");
-                    return (
-                        <div key={oficiu.id} className="rounded-xl border border-white/8 bg-black-600/50 p-5 flex flex-col gap-4">
-                            {/* Header */}
-                            <div className="flex items-start justify-between gap-3">
-                                <div className="flex items-center gap-2.5">
-                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-green-500/10">
-                                        <MapPin size={16} className="text-green-400" />
-                                    </span>
-                                    <div>
-                                        <p className="font-semibold text-white text-base leading-tight">{city}</p>
-                                        <p className="text-xs mt-0.5">{oficiu.title}</p>
-                                    </div>
-                                </div>
-                                <span className="text-xs bg-white/5 rounded-md px-2 py-1 whitespace-nowrap">Luni - Vineri</span>
+                {/* Offices */}
+                <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+                    {OFFICES.map((office) => (
+                        <div key={office.id} className="rounded-dc-card border border-dc-line bg-dc-surface p-6">
+                            <div className="flex items-baseline gap-2.5">
+                                <span className="text-[17px] font-bold text-dc-text">{office.city.replace(/^(or\.|m\.)\s*/, "")}</span>
+                                <span className="text-xs text-dc-text-dim">{office.title}</span>
                             </div>
-
-                            {/* Address */}
-                            <div className="text-sm leading-relaxed pl-0.5">
-                                <p className="text-white/80">
-                                    {oficiu.street}, {oficiu.addressNumbers.split(",")[0]}
-                                </p>
-                                <p className="text-xs mt-0.5">
-                                    {oficiu.addressNumbers.split(",").slice(1).join(",").trim()} · 08:30 – 16:30
-                                </p>
-                                {oficiu.note && (
-                                    <p className="text-amber-400/70 text-xs mt-2 flex items-center gap-1.5">
-                                        <span className="inline-block w-1 h-1 rounded-full bg-amber-400/70 shrink-0" />
-                                        {oficiu.note}
-                                    </p>
-                                )}
-                            </div>
-
-                            {/* CTA */}
+                            <p className="mt-3 text-sm text-dc-text-muted">
+                                {office.street}, {office.addressNumbers}
+                            </p>
+                            <p className="mt-1 text-xs text-dc-text-dim">Luni – Vineri · 08:30 – 16:30</p>
                             <a
-                                href={`tel:${oficiu.mobile}`}
+                                href={`tel:${office.mobile}`}
                                 onClick={() => trackEvent("Contact")}
-                                className="self-start inline-flex items-center gap-2 h-9 px-4 rounded-full border border-brand-500/20 bg-brand-500/8 text-brand-500 hover:border-brand-500/50 hover:bg-brand-500/15 transition-colors text-sm font-medium"
+                                className="mt-1.5 inline-block text-sm font-bold text-dc-text hover:text-white"
                             >
-                                <Phone size={13} />
-                                {oficiu.mobileDisplay}
+                                {office.mobileDisplay}
                             </a>
                         </div>
-                    );
-                })}
-            </div>
-
-            {/* Legal excerpt */}
-            <div className="container mt-12">
-                <p className="mb-6 text-xl text-center">Extras din lege</p>
-                <p className="mb-4 pl-6">
-                    În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse limite cu privire la:
-                </p>
-                <ul className="list-outside list-disc ml-6 space-y-1.5">
-                    <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
-                    <li>
-                        Toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere și orice alt tip de plată), cu
-                        excepția dobânzii, să nu depășească 0,04% /zi din valoarea totală a creditului pentru termenul de utilizare efectivă
-                        a creditului.
-                    </li>
-                    <li>
-                        Costul total al creditului (care include dobânzi, comisioane, taxe, penalități, dobânzi de întârziere și orice alt
-                        tip de plată) să nu fie mai mare decât valoarea debursată conform contractului (cu excepția contractelor ipotecare).
-                    </li>
-                </ul>
-            </div>
-
-            {/* Glossary */}
-            <div className="container mt-12">
-                <p className="mb-6 text-xl text-center">Dicționar financiar</p>
-                <ul className="list-outside list-disc ml-6 space-y-2.5">
-                    {GLOSSARY_LINKS.map((item) => (
-                        <li key={item.name}>
-                            <span className="font-bold">{item.name} - </span>
-                            {item.desc}
-                        </li>
                     ))}
-                </ul>
-            </div>
+                </div>
 
-            {/* Copyright */}
-            <div className="container mt-10 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
-                <span>
-                    &copy; {new Date().getFullYear()} Organizația de Creditare Nebancară <strong className="">Ideal Credit</strong> SRL
-                </span>
-                <span>Toate drepturile rezervate.</span>
-            </div>
+                {/* Extras din lege */}
+                <div className="border-t border-b border-dc-line py-8">
+                    <p className="mb-3 text-sm font-semibold text-dc-text">Extras din lege</p>
+                    <div className="text-sm text-dc-text-muted space-y-3">
+                        <p>În Legea nr. 202/2013 privind contractele de credit pentru consumatori, au fost impuse limite cu privire la:</p>
+                        <ul className="list-disc pl-5 space-y-1.5">
+                            <li>Rata maximală a dobânzii anuale specificate în contractul de credit să nu fie mai mare de 50%.</li>
+                            <li>
+                                Toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere și orice alt tip de
+                                plată), cu excepția dobânzii, să nu depășească 0,04% /zi din valoarea totală a creditului pentru termenul
+                                de utilizare efectivă a creditului.
+                            </li>
+                            <li>
+                                Costul total al creditului (care include dobânzi, comisioane, taxe, penalități, dobânzi de întârziere și
+                                orice alt tip de plată) să nu fie mai mare decât valoarea debursată conform contractului (cu excepția
+                                contractelor ipotecare).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* Copyright */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-dc-text-dim">
+                    <span>
+                        © {new Date().getFullYear()} Organizația de Creditare Nebancară <strong className="text-dc-text-muted">Ideal Credit</strong> SRL
+                    </span>
+                    <span>Toate drepturile rezervate.</span>
+                </div>
+            </Container>
         </footer>
     );
 }

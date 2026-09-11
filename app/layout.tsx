@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Manrope, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/includes/Header";
 import Footer from "@/components/includes/Footer";
 
 const InterFont = Inter({ variable: "--font-sans", subsets: ["latin"] });
+const ManropeFont = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
+const InstrumentSerifFont = Instrument_Serif({ variable: "--font-instrument-serif", subsets: ["latin"], weight: "400", style: "italic" });
 
 const siteDescription =
     "Oferim credite nebancare în Moldova pentru afaceri și persoane fizice. Dobândă fixă, condiții avantajoase, fără comisioane ascunse. Aplică online!";
@@ -157,7 +159,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
                 <meta name="apple-mobile-web-app-title" content="Ideal Credit" />
             </head>
-            <body className={`${InterFont.variable} flex flex-col min-h-screen overflow-x-hidden`}>
+            <body
+                className={`${InterFont.variable} ${ManropeFont.variable} ${InstrumentSerifFont.variable} flex flex-col min-h-screen overflow-x-hidden`}
+            >
                 <Header />
                 <main className="flex-auto">{children}</main>
                 <Footer />

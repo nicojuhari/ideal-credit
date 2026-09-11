@@ -25,6 +25,7 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/despre-noi", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contacte", priority: 0.7, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/dictionar-financiar", priority: 0.5, changeFrequency: "yearly" },
 
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   { path: "/cookies", priority: 0.3, changeFrequency: "yearly" },

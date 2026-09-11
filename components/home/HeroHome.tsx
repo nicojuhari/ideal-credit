@@ -1,69 +1,54 @@
-"use client";
+import { Star } from "lucide-react";
+import Container from "@/components/ds/Container";
+import Accent from "@/components/ds/Accent";
+import Calculator from "@/components/ds/Calculator";
+import { yearsSinceFoundation } from "@/lib/utils";
 
-import { motion } from "framer-motion";
-import CalculatorCredit from "@/components/CalculatorCredit";
-import TrustBadge from "@/components/ui/TrustBadge";
+const stats: { figure: React.ReactNode; label: string }[] = [
+    { figure: `${yearsSinceFoundation} ani`, label: "de experiență" },
+    { figure: "1–3 ore", label: "până la decizie" },
+    {
+        figure: (
+            <>
+                <Star size={18} className="text-dc-text" fill="currentColor" /> 4.9
+            </>
+        ),
+        label: "rating clienți",
+    },
+];
 
 export default function HeroHome() {
     return (
-        <div className="relative pt-11 md:pt-20 pb-10 md:pb-16">
-            {/* Backgrounds */}
-            <div className="bg-squares -mt-px" />
-            <div className="pointer-events-none absolute inset-0 -z-1 overflow-hidden" aria-hidden>
-                <div
-                    className="absolute left-[-10%] top-[-10%] h-112 w-md rounded-full opacity-[0.08] blur-[120px]"
-                    style={{ background: "radial-gradient(circle, #ff9a00 0%, transparent 70%)" }}
-                />
-                <div
-                    className="absolute right-[-10%] bottom-[-20%] h-128 w-lg rounded-full opacity-[0.06] blur-[140px]"
-                    style={{ background: "radial-gradient(circle, #ffb347 0%, transparent 70%)" }}
-                />
-            </div>
-
-            <div className="container">
-                <div className="grid lg:grid-cols-12 gap-10 gap-y-16 items-center">
+        <div className="dc-section dc-section--hero">
+            <Container>
+                <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-16 items-center">
                     {/* Left column */}
-                    <div className="lg:col-span-7">
-                        <div className="text-center md:text-left">
-                            <TrustBadge />
+                    <div className="flex flex-col gap-7">
+                        <h1 className="text-[64px] md:text-[96px] font-bold max-md:text-center leading-[1.04] tracking-[-.03em] text-dc-text">
+                            Credite pentru <Accent>succes.</Accent>
+                        </h1>
+
+                        <h2 className="max-w-[480px] text-[19px] leading-relaxed text-dc-text-muted max-md:text-center">
+                            Finanțăm afaceri și persoane fizice
+                            <br className="max-md:hidden" /> din Republica Moldova.
+                        </h2>
+
+                        <div className="flex flex-wrap gap-10 border-t border-dc-line pt-6 hidden">
+                            {stats.map((s) => (
+                                <div key={s.label}>
+                                    <p className="flex items-center gap-1 text-[22px] font-bold tracking-[-.02em] leading-[1.5] text-dc-text">
+                                        {s.figure}
+                                    </p>
+                                    <p className="text-[13px] text-dc-text-dim">{s.label}</p>
+                                </div>
+                            ))}
                         </div>
-
-                        <motion.h1
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }}
-                            className="mt-10 font-medium tracking-tight text-[52px] md:text-[64px] leading-[1.04] text-center md:text-left"
-                        >
-                            Credite nebancare <span className="text-brand-gradient">pentru afaceri</span>{" "}
-                            <span className="text-white inline-flex">și consum</span>
-                        </motion.h1>
-
-                        <motion.p
-                            initial={{ opacity: 0, y: 16 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
-                            className="mt-10 md:text-base font-light max-w-xl text-center md:text-left mx-auto md:mx-0"
-                        >
-                            Dobândă fixă și fără comisioane ascunse. <span className="max-sm:block">Răspuns în 1-3 ore.</span>
-                        </motion.p>
                     </div>
 
-                    {/* Right column - calculator */}
-                    <motion.div
-                        id="calculator"
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-                        className="lg:col-span-5 relative"
-                    >
-                        <div className="relative rounded-xl p-px bg-linear-to-br from-brand-500/50 via-brand-500/10 to-transparent">
-                            <div className="rounded-xl bg-black-600/90 backdrop-blur-xl shadow-glow">
-                                <CalculatorCredit />
-                            </div>
-                        </div>
-                    </motion.div>
+                    {/* Right column: calculator */}
+                    <Calculator />
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }
