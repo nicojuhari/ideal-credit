@@ -68,8 +68,7 @@ export default function Solutions() {
             </div>
 
             <p className="mt-5 max-w-[820px] text-sm text-dc-text-dim">
-                Primul credit se acordă cu garant. Clienții cu istoric bun nu mai au nevoie de garant la creditele următoare. Toate
-                costurile sunt prezentate înainte de semnare, fără surprize.
+                Primul credit se acordă cu garant. Clienții cu istoric bun nu mai au nevoie de garant la creditele următoare.
             </p>
         </Section>
     );

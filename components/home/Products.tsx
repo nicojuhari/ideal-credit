@@ -29,7 +29,7 @@ export default function Products() {
             <div className="grid gap-12" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
                 <div>
                     <h3 className="border-b border-dc-line pb-4 text-xs font-bold uppercase tracking-[.14em] text-dc-text-dim">
-                        Pentru afaceri
+                        Pentru persoane juridice
                     </h3>
                     {business.map((p) => (
                         <ListRow key={p.href} href={p.href} title={p.name} description={p.desc} />

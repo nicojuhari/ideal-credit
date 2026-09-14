@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import HowItWorks from "@/components/HowItWorks";
-import ServiceHero from "@/components/ServiceHero";
-import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
-import CreditFAQ from "@/components/CreditFAQ";
-import type { FaqItem } from "@/components/CreditFAQ";
-import WhyBento from "@/components/WhyBento";
-import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
-import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import Section from "@/components/ds/Section";
+import Accent from "@/components/ds/Accent";
+import ProductHero from "@/components/product/ProductHero";
+import FeatureCards from "@/components/product/FeatureCards";
+import type { FeatureCardItem } from "@/components/product/FeatureCards";
+import EligibilityCard from "@/components/product/EligibilityCard";
+import ProductDescription from "@/components/product/ProductDescription";
+import DocumentsBlock from "@/components/product/DocumentsBlock";
+import ProductFaq from "@/components/product/ProductFaq";
+import type { FaqItem } from "@/components/product/ProductFaq";
+import Process from "@/components/home/Process";
+import WhyUs from "@/components/home/WhyUs";
+import ClosingCta from "@/components/home/ClosingCta";
 import { TrendingUp, Building2, RefreshCw, Zap, Clock, Package, Users, Trophy } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 
@@ -64,7 +69,7 @@ const businessFaqItems: FaqItem[] = [
     },
 ];
 
-const useCases: ServiceFeatureItem[] = [
+const useCases: FeatureCardItem[] = [
     {
         icon: TrendingUp,
         title: "Capital de lucru",
@@ -90,7 +95,7 @@ const useCases: ServiceFeatureItem[] = [
     },
 ];
 
-const capitalDeLucruScenarios: ServiceFeatureItem[] = [
+const capitalDeLucruScenarios: FeatureCardItem[] = [
     {
         icon: Clock,
         title: "Creanțe blocate",
@@ -115,57 +120,72 @@ const capitalDeLucruScenarios: ServiceFeatureItem[] = [
 
 export default function CreditAfaceriMiciPage() {
     return (
-        <>
+        <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
 
-            <ServiceHero
-                title={<>Credit pentru<br />afaceri mici</>}
+            <ProductHero
+                title={<>Credit pentru afaceri mici</>}
                 subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
             />
 
-            <ServiceFeatureGrid heading="Pentru ce poți folosi creditul" items={useCases} cols={2} />
+            <Section
+                title={
+                    <>
+                        Pentru ce poți folosi <Accent>creditul</Accent>
+                    </>
+                }
+            >
+                <FeatureCards items={useCases} cols={2} />
+            </Section>
 
-            <EligibilitySection
-                title="Este pentru afacerea mea?"
-                items={[
-                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                    "Activitate economică de cel puțin 3-6 luni",
-                    "Ai nevoie de capital rapid, cu aprobare în 1-2 zile lucrătoare",
-                    "Cauți o analiză flexibilă, adaptată situației reale a afacerii",
-                ]}
-            />
+            <Section align="center" title={<>Este pentru afacerea <Accent>mea?</Accent></>}>
+                <EligibilityCard
+                    items={[
+                        "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                        "Activitate economică de cel puțin 3-6 luni",
+                        "Ai nevoie de capital rapid, cu aprobare în 1-2 zile lucrătoare",
+                        "Cauți o analiză flexibilă, adaptată situației reale a afacerii",
+                    ]}
+                />
+            </Section>
 
-            <HowItWorks />
+            <Process />
 
-            <DescriptionSection
-                title="Credit nebancar pentru afaceri mici în Moldova"
-                paragraphs={[
-                    "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile - nu doar documentele formale.",
-                    "Pentru a te califica, ai nevoie de o firmă înregistrată în Moldova, câteva luni de activitate demonstrabilă și extrase bancare cu rulaj activ. Nu cerem plan de afaceri, profit obligatoriu sau garanție imobiliară pentru sume mai mici. Creditul poate fi folosit pentru orice nevoie legată de afacere: capital de lucru, echipamente sau extindere.",
-                    "Luăm decizii în 1-2 zile lucrătoare. Dacă finanțarea nu este potrivită pentru situația ta, îți spunem direct - fără să îți pierzi timpul cu un dosar complet.",
-                ]}
-            />
+            <Section align="center" title={<>Credit nebancar pentru <Accent>afaceri mici</Accent> în Moldova</>}>
+                <ProductDescription
+                    paragraphs={[
+                        "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile - nu doar documentele formale.",
+                        "Pentru a te califica, ai nevoie de o firmă înregistrată în Moldova, câteva luni de activitate demonstrabilă și extrase bancare cu rulaj activ. Nu cerem plan de afaceri, profit obligatoriu sau garanție imobiliară pentru sume mai mici. Creditul poate fi folosit pentru orice nevoie legată de afacere: capital de lucru, echipamente sau extindere.",
+                        "Luăm decizii în 1-2 zile lucrătoare. Dacă finanțarea nu este potrivită pentru situația ta, îți spunem direct - fără să îți pierzi timpul cu un dosar complet.",
+                    ]}
+                />
+            </Section>
 
             <div id="capital-de-lucru">
-                <ServiceFeatureGrid heading="Capital de lucru: când ai nevoie" items={capitalDeLucruScenarios} cols={2} />
+                <Section title={<>Capital de lucru: <Accent>când</Accent> ai nevoie</>}>
+                    <FeatureCards items={capitalDeLucruScenarios} cols={2} />
+                </Section>
             </div>
 
-            <DocumentsSection
-                documents={[
-                    "Buletin de identitate al administratorului",
-                    "Certificat de înregistrare a firmei (SRL/ÎI)",
-                    "Extrase bancare - ultimele 3-6 luni",
-                    "Actele de proprietate (dacă se solicită gaj)",
-                ]}
-                note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu dosar solid pot obține creditul fără fidejusor."
-                relatedLinks={[
-                    { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Finanțezi echipamente sau extindere pe termen lung." },
-                    { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare adaptată sezonului pentru activitate agricolă." },
-                ]}
-            />
+            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
+                <DocumentsBlock
+                    documents={[
+                        "Buletin de identitate al administratorului",
+                        "Certificat de înregistrare a firmei (SRL/ÎI)",
+                        "Extrase bancare - ultimele 3-6 luni",
+                        "Actele de proprietate (dacă se solicită gaj)",
+                    ]}
+                    note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu dosar solid pot obține creditul fără fidejusor."
+                    relatedLinks={[
+                        { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Finanțezi echipamente sau extindere pe termen lung." },
+                        { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare adaptată sezonului pentru activitate agricolă." },
+                    ]}
+                />
+            </Section>
 
-            <CreditFAQ items={businessFaqItems} />
-            <WhyBento />
-        </>
+            <ProductFaq items={businessFaqItems} />
+            <WhyUs />
+            <ClosingCta />
+        </div>
     );
 }

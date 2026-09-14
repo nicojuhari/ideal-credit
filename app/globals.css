@@ -289,6 +289,20 @@
     pointer-events: none;
   }
 
+  /* ── dc redesign: faint grid background, layered behind a `relative` section ── */
+  .dc-bg-squares {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(to right, var(--color-dc-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-dc-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: top center;
+    -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 40%, transparent 100%);
+  }
+
   /* ── Brand gradient text / surfaces ── */
   .text-brand-gradient {
     background: var(--brand-gradient);
@@ -580,4 +594,47 @@ input[type=number] {
   outline: 2px solid var(--color-dc-accent);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Legal / prose pages — light-touch typography, no card restructuring */
+.dc-legal {
+  color: var(--color-dc-text-muted);
+  line-height: 1.7;
+}
+.dc-legal h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-dc-text);
+}
+.dc-legal p {
+  margin-bottom: 1rem;
+}
+.dc-legal ul,
+.dc-legal ol {
+  margin: 0.5rem 0 1.25rem;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dc-legal ul {
+  list-style: disc;
+}
+.dc-legal ol {
+  list-style: decimal;
+}
+.dc-legal strong {
+  color: var(--color-dc-text);
+  font-weight: 600;
+}
+.dc-legal a {
+  color: var(--color-dc-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.dc-legal a:hover {
+  color: var(--color-dc-text);
 }

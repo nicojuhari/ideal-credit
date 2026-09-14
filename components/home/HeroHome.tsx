@@ -19,7 +19,8 @@ const stats: { figure: React.ReactNode; label: string }[] = [
 
 export default function HeroHome() {
     return (
-        <div className="dc-section dc-section--hero">
+        <div className="relative isolate dc-section dc-section--hero">
+            <div className="dc-bg-squares" aria-hidden />
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-16 items-center">
                     {/* Left column */}

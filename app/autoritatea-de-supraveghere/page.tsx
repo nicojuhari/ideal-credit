@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
     title: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL",
@@ -9,51 +10,43 @@ export const metadata: Metadata = {
 
 export default function AutoritateaPage() {
     return (
-        <div className="container sm-container relative my-4 md:my-6">
-            <div className="card">
-                <div className="text-2xl text-center leading-relaxed mb-10">
-                    Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este{" "}
-                    <strong className="text-brand-500">Comisia Națională a Pieței Financiare.</strong>
-                </div>
+        <LegalLayout title="Autoritatea de supraveghere">
+            <p className="text-center text-lg text-dc-text">
+                Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este{" "}
+                <strong>Comisia Națională a Pieței Financiare.</strong>
+            </p>
 
-                <div className="text-lg text-center my-6">Contactele instituției</div>
-                <div className="flex flex-col gap-4">
-                    <div>
-                        Adresa de contact: <span className="font-bold">mun. Chișinău, bd. Ștefan cel Mare și Sfânt, nr. 77.</span>
-                    </div>
-                    <div>
-                        Pagina web:{" "}
-                        <a className="font-bold link" href="https://www.cnpf.md" target="_blank" rel="nofollow noreferrer">
-                            www.cnpf.md
-                        </a>
-                    </div>
-                    <div>
-                        E-mail: <span className="font-bold">office@cnpf.md</span>
-                    </div>
-                </div>
+            <h2>Contactele instituției</h2>
+            <p>
+                Adresa de contact: <strong>mun. Chișinău, bd. Ștefan cel Mare și Sfânt, nr. 77.</strong>
+                <br />
+                Pagina web:{" "}
+                <a href="https://www.cnpf.md" target="_blank" rel="nofollow noreferrer">
+                    www.cnpf.md
+                </a>
+                <br />
+                E-mail: <strong>office@cnpf.md</strong>
+            </p>
 
-                <div className="text-lg text-center my-6">Reclamațiile pot fi depuse</div>
-                <ul className="list-disc flex flex-col gap-4 my-6 list-inside">
-                    <li>
-                        prin e-mail (cu respectarea reglementărilor cu privire la forma electronică - cu aplicarea semnăturii electronice);
-                    </li>
-                    <li>prin intermediul oficiilor poștale;</li>
-                    <li>la sediul CNPF, în cutia poștală amplasată la intrare în sediul instituției;</li>
-                </ul>
+            <h2>Reclamațiile pot fi depuse</h2>
+            <ul>
+                <li>
+                    prin e-mail (cu respectarea reglementărilor cu privire la forma electronică - cu aplicarea semnăturii electronice);
+                </li>
+                <li>prin intermediul oficiilor poștale;</li>
+                <li>la sediul CNPF, în cutia poștală amplasată la intrare în sediul instituției;</li>
+            </ul>
 
-                <div className="my-12">
-                    <div className="flex flex-col items-center justify-center gap-4 mb-6">
-                        Telefonul consumatorului*{" "}
-                        <a className="text-brand-500 font-bold text-3xl" href="tel:+37322859595">
-                            (+373 22) 85 95 95
-                        </a>
-                    </div>
-                    <div className="italic text-sm">
-                        * Tariful către acest număr de apel va fi considerat apel cu tarif normal conform rețelei și tipului de abonament al
-                        inițiatorului.
-                    </div>
-                </div>
+            <div className="mt-10 flex flex-col items-center gap-2 rounded-dc-card border border-dc-line bg-dc-surface py-8 text-center">
+                <p className="text-sm text-dc-text-muted">Telefonul consumatorului*</p>
+                <a href="tel:+37322859595" className="text-3xl font-bold text-dc-accent">
+                    (+373 22) 85 95 95
+                </a>
+                <p className="mt-3 max-w-md px-6 text-xs italic text-dc-text-dim">
+                    * Tariful către acest număr de apel va fi considerat apel cu tarif normal conform rețelei și tipului de abonament al
+                    inițiatorului.
+                </p>
             </div>
-        </div>
+        </LegalLayout>
     );
 }

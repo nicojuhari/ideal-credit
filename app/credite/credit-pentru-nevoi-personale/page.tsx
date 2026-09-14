@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import ServiceHero from "@/components/ServiceHero";
-import HowItWorks from "@/components/HowItWorks";
-import WhyBento from "@/components/WhyBento";
-import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
-import CreditFAQ from "@/components/CreditFAQ";
-import type { FaqItem } from "@/components/CreditFAQ";
-import ServiceTileGrid from "@/components/ui/ServiceTileGrid";
-import type { ServiceTileItem } from "@/components/ui/ServiceTileGrid";
-import ChecklistCard from "@/components/ui/ChecklistCard";
-import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
-import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import Section from "@/components/ds/Section";
+import Accent from "@/components/ds/Accent";
+import ProductHero from "@/components/product/ProductHero";
+import TileCards from "@/components/product/TileCards";
+import type { TileItem } from "@/components/product/TileCards";
+import EligibilityCard from "@/components/product/EligibilityCard";
+import ProductDescription from "@/components/product/ProductDescription";
+import FeatureCards from "@/components/product/FeatureCards";
+import type { FeatureCardItem } from "@/components/product/FeatureCards";
+import DocumentsBlock from "@/components/product/DocumentsBlock";
+import ProductFaq from "@/components/product/ProductFaq";
+import type { FaqItem } from "@/components/product/ProductFaq";
+import Process from "@/components/home/Process";
+import WhyUs from "@/components/home/WhyUs";
+import ClosingCta from "@/components/home/ClosingCta";
 import { Home, Tv, Activity, Cake, Plane, RefreshCw, Stethoscope, Shield, BadgeCheck } from "lucide-react";
 import { personalLoanSchema } from "@/lib/schema";
 
@@ -63,16 +67,16 @@ const personalFaqItems: FaqItem[] = [
     },
 ];
 
-const useCases: ServiceTileItem[] = [
+const useCases: TileItem[] = [
     { icon: Home, label: "Renovare acasă", href: "/credite/credit-pentru-reparatie" },
-    { icon: Tv, label: "Electrocasnice, mobilă", href: null },
-    { icon: Activity, label: "Tratament medical", href: null },
-    { icon: Cake, label: "Nuntă, botez, eveniment", href: null },
-    { icon: Plane, label: "Vacanță planificată", href: null },
+    { icon: Tv, label: "Electrocasnice, mobilă" },
+    { icon: Activity, label: "Tratament medical" },
+    { icon: Cake, label: "Nuntă, botez, eveniment" },
+    { icon: Plane, label: "Vacanță planificată" },
     { icon: RefreshCw, label: "Consolidare credite", href: "#consolidare" },
 ];
 
-const bugetariCategories: ServiceFeatureItem[] = [
+const bugetariCategories: FeatureCardItem[] = [
     {
         icon: Stethoscope,
         title: "Medici și personal medical",
@@ -111,66 +115,75 @@ const worthConsolidatingItems = [
 
 export default function CreditNevoiPersonalePage() {
     return (
-        <>
+        <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
 
-            <ServiceHero
+            <ProductHero
                 title="Credit pentru nevoi personale"
                 subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
             />
 
-            <ServiceTileGrid heading="Când folosești un credit personal" items={useCases} />
+            <Section title={<>Când folosești un credit <Accent>personal</Accent></>}>
+                <TileCards items={useCases} />
+            </Section>
 
-            <EligibilitySection
-                title="Condiții de bază"
-                items={[
-                    "Vârsta de la 23 de ani",
-                    "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
-                    "Buletin de identitate valabil",
-                    "Capacitate de rambursare demonstrabilă",
-                ]}
-            />
+            <Section align="center" title={<>Condiții de <Accent>bază</Accent></>}>
+                <EligibilityCard
+                    items={[
+                        "Vârsta de la 23 de ani",
+                        "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
+                        "Buletin de identitate valabil",
+                        "Capacitate de rambursare demonstrabilă",
+                    ]}
+                />
+            </Section>
 
-            <HowItWorks />
+            <Process />
 
-            <DescriptionSection
-                title="Credit personal rapid în Moldova"
-                paragraphs={[
-                    "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
-                    "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) este obligatoriu. Pentru sume mari sau venituri nestabile poate fi cerut suplimentar gaj imobil.",
-                    "Clienții recurenți cu istoric bun de plată și venituri stabile pot beneficia de dobândă redusă și fără fidejusor. Aprobăm în 2-3 ore - dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Discutăm cerințele de garanție înainte de depunerea dosarului - fără surprize după semnare.",
-                ]}
-            />
+            <Section align="center" title={<>Credit personal rapid în <Accent>Moldova</Accent></>}>
+                <ProductDescription
+                    paragraphs={[
+                        "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
+                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) este obligatoriu. Pentru sume mari sau venituri nestabile poate fi cerut suplimentar gaj imobil.",
+                        "Clienții recurenți cu istoric bun de plată și venituri stabile pot beneficia de dobândă redusă și fără fidejusor. Aprobăm în 2-3 ore - dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Discutăm cerințele de garanție înainte de depunerea dosarului - fără surprize după semnare.",
+                    ]}
+                />
+            </Section>
 
             <div id="consolidare">
-                <ChecklistCard
-                    heading="Ai mai multe credite active?"
-                    intro="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
-                    items={worthConsolidatingItems}
-                    centered
-                />
+                <Section align="center" title={<>Ai mai multe credite <Accent>active?</Accent></>}>
+                    <EligibilityCard
+                        intro="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
+                        items={worthConsolidatingItems}
+                    />
+                </Section>
             </div>
 
             <div id="bugetari">
-                <ServiceFeatureGrid heading="Condiții speciale pentru bugetari" items={bugetariCategories} cols={3} />
+                <Section title={<>Condiții speciale pentru <Accent>bugetari</Accent></>}>
+                    <FeatureCards items={bugetariCategories} cols={3} />
+                </Section>
             </div>
 
-            <DocumentsSection
-                documents={[
-                    "Buletin de identitate",
-                    "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
-                    "Ultimele 3 extrase de cont bancar (recomandat)",
-                    "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
-                ]}
-                note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
-                relatedLinks={[
-                    { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Renovezi casa cu rate fixe și costuri clare." },
-                    { href: "/credite/credit-pentru-automobil", label: "Credit pentru automobil", desc: "Cumperi sau repari mașina cu finanțare rapidă." },
-                ]}
-            />
+            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
+                <DocumentsBlock
+                    documents={[
+                        "Buletin de identitate",
+                        "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
+                        "Ultimele 3 extrase de cont bancar (recomandat)",
+                        "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
+                    ]}
+                    note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
+                    relatedLinks={[
+                        { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Renovezi casa cu rate fixe și costuri clare." },
+                        { href: "/credite/credit-pentru-automobil", label: "Credit pentru automobil", desc: "Cumperi sau repari mașina cu finanțare rapidă." },
+                    ]}
+                />
+            </Section>
 
-            <CreditFAQ items={personalFaqItems} />
-            <WhyBento />
-        </>
+            <ProductFaq items={personalFaqItems} />
+            <WhyUs />
+            <ClosingCta />
+        </div>
     );
 }

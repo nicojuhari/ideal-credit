@@ -98,7 +98,7 @@ export default function Header() {
                                         <div className="grid grid-cols-2 p-3">
                                             <div className="pr-3 border-r border-dc-line">
                                                 <p className="mb-1.5 px-3 text-[10px] font-semibold uppercase tracking-widest text-dc-text-dim">
-                                                    Pentru afaceri
+                                                    Pentru persoane juridice
                                                 </p>
                                                 {businessProducts.map((p) => (
                                                     <ProductLink key={p.href} item={p} />
@@ -188,7 +188,7 @@ export default function Header() {
                         </div>
 
                         <div className="px-6 py-2">
-                            <p className="mt-4 mb-1 px-1 text-xs uppercase tracking-wider text-dc-text-dim">Pentru afaceri</p>
+                            <p className="mt-4 mb-1 px-1 text-xs uppercase tracking-wider text-dc-text-dim">Pentru persoane juridice</p>
                             {businessProducts.map((p) => (
                                 <Link key={p.href} href={p.href} className="block p-3 rounded-dc-control hover:bg-white/5">
                                     <span className="text-base font-medium text-dc-text">{p.label}</span>

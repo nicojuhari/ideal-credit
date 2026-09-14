@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import ServiceHero from "@/components/ServiceHero";
-import HowItWorks from "@/components/HowItWorks";
-import WhyBento from "@/components/WhyBento";
-import { EligibilitySection, DescriptionSection, DocumentsSection } from "@/components/CreditPageContent";
-import CreditFAQ from "@/components/CreditFAQ";
-import type { FaqItem } from "@/components/CreditFAQ";
-import ServiceFeatureGrid from "@/components/ui/ServiceFeatureGrid";
-import type { ServiceFeatureItem } from "@/components/ui/ServiceFeatureGrid";
+import Section from "@/components/ds/Section";
+import Accent from "@/components/ds/Accent";
+import ProductHero from "@/components/product/ProductHero";
+import FeatureCards from "@/components/product/FeatureCards";
+import type { FeatureCardItem } from "@/components/product/FeatureCards";
+import EligibilityCard from "@/components/product/EligibilityCard";
+import ProductDescription from "@/components/product/ProductDescription";
+import ComparisonTable from "@/components/product/ComparisonTable";
+import DocumentsBlock from "@/components/product/DocumentsBlock";
+import ProductFaq from "@/components/product/ProductFaq";
+import type { FaqItem } from "@/components/product/ProductFaq";
+import Process from "@/components/home/Process";
+import WhyUs from "@/components/home/WhyUs";
+import ClosingCta from "@/components/home/ClosingCta";
 import { Cog, Truck, Store, Monitor, Armchair } from "lucide-react";
 import { investitionalSchema } from "@/lib/schema";
 
@@ -52,7 +58,7 @@ const investFaqItems: FaqItem[] = [
     },
 ];
 
-const financingCategories: ServiceFeatureItem[] = [
+const financingCategories: FeatureCardItem[] = [
     {
         icon: Cog,
         title: "Echipamente și utilaje",
@@ -81,87 +87,74 @@ const financingCategories: ServiceFeatureItem[] = [
 ];
 
 const comparisonRows = [
-    { label: "Proprietatea bunului", OCN: "Imediată, din prima zi", leasing: "La finalul contractului" },
-    { label: "Flexibilitate bunuri", OCN: "Orice tip de bun", leasing: "Vehicule și echipamente specifice" },
-    { label: "Rambursare anticipată", OCN: "Gratuită", leasing: "Cu penalizări" },
-    { label: "Restricții de utilizare", OCN: "Nicio restricție", leasing: "Kilometraj, modificări interzise" },
+    { label: "Proprietatea bunului", ours: "Imediată, din prima zi", other: "La finalul contractului" },
+    { label: "Flexibilitate bunuri", ours: "Orice tip de bun", other: "Vehicule și echipamente specifice" },
+    { label: "Rambursare anticipată", ours: "Gratuită", other: "Cu penalizări" },
+    { label: "Restricții de utilizare", ours: "Nicio restricție", other: "Kilometraj, modificări interzise" },
 ];
 
 export default function CreditInvestitionalPage() {
     return (
-        <>
+        <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(investitionalSchema) }} />
 
-            <ServiceHero
-                title={<>Credit<br />investițional</>}
+            <ProductHero
+                title={<>Credit investițional</>}
                 subtitle="Cumperi echipamente, extinzi spațiul sau modernizezi linia de producție. Termen până la 60 luni, rată fixă, costuri clare."
             />
 
-            <ServiceFeatureGrid heading="Ce poți finanța" items={financingCategories} cols={3} />
+            <Section title={<>Ce poți <Accent>finanța</Accent></>}>
+                <FeatureCards items={financingCategories} cols={3} />
+            </Section>
 
-            <EligibilitySection
-                title="Condiții de eligibilitate"
-                items={[
-                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                    "Activitate economică de cel puțin 6 luni",
-                    "Investiția are legătură directă cu activitatea firmei",
-                    "Extrase bancare cu rulaj constant",
-                ]}
-            />
+            <Section align="center" title={<>Condiții de <Accent>eligibilitate</Accent></>}>
+                <EligibilityCard
+                    items={[
+                        "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                        "Activitate economică de cel puțin 6 luni",
+                        "Investiția are legătură directă cu activitatea firmei",
+                        "Extrase bancare cu rulaj constant",
+                    ]}
+                />
+            </Section>
 
-            <HowItWorks />
+            <Process />
 
-            <DescriptionSection
-                title="Credit investițional pentru afaceri din Moldova"
-                paragraphs={[
-                    "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
-                    "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
-                    "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Analizăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică și ai capacitate de rambursare demonstrabilă, discutăm.",
-                ]}
-            />
+            <Section align="center" title={<>Credit investițional pentru <Accent>afaceri</Accent> din Moldova</>}>
+                <ProductDescription
+                    paragraphs={[
+                        "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
+                        "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
+                        "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Analizăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică și ai capacitate de rambursare demonstrabilă, discutăm.",
+                    ]}
+                />
+            </Section>
 
-            <section className="container">
-                <h2 className="title text-center">Credit investițional vs. leasing</h2>
-                <div className="overflow-x-auto rounded-xl border border-white/8">
-                    <table className="w-full text-sm">
-                        <thead>
-                            <tr className="border-b border-white/8 bg-black-600/80">
-                                <th className="text-left px-5 py-3.5 font-medium w-2/5"></th>
-                                <th className="px-5 py-3.5 text-brand-500 font-semibold text-center">Ideal Credit</th>
-                                <th className="px-5 py-3.5 font-medium text-center">Leasing</th>
-                            </tr>
-                        </thead>
-                        <tbody className="bg-black-600/40">
-                            {comparisonRows.map((row, i) => (
-                                <tr key={row.label} className={i < comparisonRows.length - 1 ? "border-b border-white/8" : ""}>
-                                    <td className="px-5 py-4">{row.label}</td>
-                                    <td className="px-5 py-4 text-green-400 text-center font-medium">{row.OCN}</td>
-                                    <td className="px-5 py-4 text-center">{row.leasing}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+            <Section align="center" title={<>Credit investițional <Accent>vs.</Accent> leasing</>}>
+                <ComparisonTable oursLabel="Ideal Credit" otherLabel="Leasing" rows={comparisonRows} />
+            </Section>
 
-            <DocumentsSection
-                documents={[
-                    "Buletin de identitate al administratorului",
-                    "Certificat de înregistrare (SRL/ÎI)",
-                    "Extrase bancare - ultimele 3-6 luni",
-                    "Ofertă sau factură proformă pentru bunul achiziționat (dacă există)",
-                    "Actele de proprietate (pentru gaj, dacă este cazul)",
-                ]}
-                note="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
-                relatedLinks={[
-                    { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Toate tipurile de finanțare pentru antreprenori." },
-                    { href: "/credite/credit-pentru-afaceri-mici#capital-de-lucru", label: "Capital de lucru", desc: "Lichiditate pentru operațiunile zilnice ale firmei." },
-                    { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare pentru tehnica agricolă și capital sezonier." },
-                ]}
-            />
+            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
+                <DocumentsBlock
+                    documents={[
+                        "Buletin de identitate al administratorului",
+                        "Certificat de înregistrare (SRL/ÎI)",
+                        "Extrase bancare - ultimele 3-6 luni",
+                        "Ofertă sau factură proformă pentru bunul achiziționat (dacă există)",
+                        "Actele de proprietate (pentru gaj, dacă este cazul)",
+                    ]}
+                    note="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
+                    relatedLinks={[
+                        { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Toate tipurile de finanțare pentru antreprenori." },
+                        { href: "/credite/credit-pentru-afaceri-mici#capital-de-lucru", label: "Capital de lucru", desc: "Lichiditate pentru operațiunile zilnice ale firmei." },
+                        { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare pentru tehnica agricolă și capital sezonier." },
+                    ]}
+                />
+            </Section>
 
-            <CreditFAQ items={investFaqItems} />
-            <WhyBento />
-        </>
+            <ProductFaq items={investFaqItems} />
+            <WhyUs />
+            <ClosingCta />
+        </div>
     );
 }
