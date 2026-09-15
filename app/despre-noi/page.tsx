@@ -22,10 +22,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/despre-noi",
         title: "Despre noi | Ideal Credit - Companie de creditare",
         description:
             "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 
@@ -49,7 +49,7 @@ const servicii = [
         title: "Credite pentru afaceri",
         desc: "Finanțare pentru antreprenori și firme mici care vor să crească fără să aștepte proceduri bancare lungi.",
         items: ["Bani pentru stoc, utilaje sau modernizare", "Analiză rapidă a dosarului", "Soluții cu sau fără gaj, în funcție de sumă"],
-        href: "/credite/credit-pentru-afaceri-mici",
+        href: "/credite/credit-pentru-afaceri",
     },
     {
         title: "Consultanță financiară gratuită",

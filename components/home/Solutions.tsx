@@ -28,7 +28,7 @@ const solutions: Solution[] = [
             { label: "Decizie", value: "1–2 zile", proof: true },
         ],
         checklist: ["SRL, ÎI, GȚ - toate formele juridice acceptate", "Fără plan de afaceri obligatoriu", "Extrase bancare minim 3 luni"],
-        href: "/credite/credit-pentru-afaceri-mici",
+        href: "/credite/credit-pentru-afaceri",
     },
     {
         ordinal: "02",

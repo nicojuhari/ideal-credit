@@ -21,10 +21,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/",
         title: "Credite pentru Success în Moldova | Ideal Credit",
         description:
             "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, rapid și transparent.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

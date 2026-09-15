@@ -6,6 +6,15 @@ export const metadata: Metadata = {
     description:
         "Află cum colectăm, stocăm și protejăm datele tale personale conform legislației GDPR și normelor moldovenești. Drepturile tale ca utilizator Ideal Credit.",
     alternates: { canonical: "https://idealcredit.md/privacy" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        url: "https://idealcredit.md/privacy",
+        title: "Politica de Confidențialitate - OCN Ideal Credit SRL",
+        description:
+            "Află cum colectăm, stocăm și protejăm datele tale personale conform legislației GDPR și normelor moldovenești. Drepturile tale ca utilizator Ideal Credit.",
+    },
 };
 
 export default function PrivacyPage() {

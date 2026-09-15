@@ -17,18 +17,18 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
+    title: "Credit pentru Afaceri din Moldova | Ideal Credit",
     description:
-        "Credit pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare, dobândă fixă.",
-    alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
+        "Credit pentru afaceri din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare, dobândă fixă.",
+    alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
-        title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
+        url: "https://idealcredit.md/credite/credit-pentru-afaceri",
+        title: "Credit pentru Afaceri din Moldova | Ideal Credit",
         description:
-            "Credit pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare, dobândă fixă.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+            "Credit pentru afaceri din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare, dobândă fixă.",
     },
 };
 
@@ -112,7 +112,7 @@ const capitalDeLucruScenarios = [
     },
 ];
 
-export default function CreditAfaceriMiciPage() {
+export default function CreditAfaceriPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
@@ -122,7 +122,7 @@ export default function CreditAfaceriMiciPage() {
                 position={1}
                 title={
                     <>
-                        Credit pentru <Accent>afaceri</Accent> mici.
+                        Credit pentru <Accent>afaceri</Accent>.
                     </>
                 }
                 subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
@@ -171,7 +171,7 @@ export default function CreditAfaceriMiciPage() {
                 marker="Detalii"
                 title={
                     <>
-                        Credit nebancar pentru <Accent>afaceri mici</Accent> în Moldova
+                        Credit nebancar pentru <Accent>afaceri</Accent> în Moldova
                     </>
                 }
             >

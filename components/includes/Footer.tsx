@@ -8,11 +8,13 @@ import Container from "@/components/ds/Container";
 import Note from "@/components/ds/Note";
 
 const productLinks = [
-    { href: "/credite/credit-pentru-afaceri-mici", label: "Afaceri mici" },
+    { href: "/credite", label: "Toate creditele" },
+    { href: "/credite/credit-pentru-afaceri", label: "Afaceri" },
     { href: "/credite/credit-investitional", label: "Investițional" },
     { href: "/credite/credit-pentru-agricultura", label: "Agricultură" },
     { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
     { href: "/credite/credit-pentru-automobil", label: "Automobil" },
+    { href: "/credite/credit-pentru-reparatie", label: "Reparație" },
 ];
 
 const companyLinks = [
@@ -40,7 +42,11 @@ function FooterLinkGroup({ title, links }: { title: string; links: { href: strin
             <ul className="flex flex-col gap-[11px] text-[15px]">
                 {links.map((l) => (
                     <li key={l.href}>
-                        <Link href={l.href} className="text-dc-text-muted transition-colors duration-[120ms] hover:text-white">
+                        <Link
+                            title={l.label}
+                            href={l.href}
+                            className="text-dc-text-muted transition-colors duration-[120ms] hover:text-white"
+                        >
                             {l.label}
                         </Link>
                     </li>

@@ -17,10 +17,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/credite",
         title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
         description:
             "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Dobândă fixă, decizie rapidă.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   type: "website",
   locale: "ro_MD",
   siteName: "Ideal Credit",
+  url: "https://idealcredit.md/contacte",
   title: "Vorbim Direct | Contactele Ideal Credit",
   description:
 "Vorbim direct - sună, scrie pe WhatsApp sau lasă un mesaj. Telefon, email și adresele oficiilor Ideal Credit din Chișinău și Căușeni.",
-  images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
  },
 };
 

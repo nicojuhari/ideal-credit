@@ -1,9 +1,13 @@
 # Social post templates (v4 - "Panou de date")
 
-The chosen template, in two themes. Tokens from the v4 website redesign: warm near-black
-`#100E0C`, brand orange `#FF9A00`, Archivo for text, IBM Plex Mono for figures and labels, zero
-radius, zero shadows, hairlines only. Rules: `brand/social-design-system.md`,
-`brand/social-media-strategy.md`, `brand/creative-kit.md`.
+The chosen template, in two themes. Tokens pulled 1:1 from the shipped site (`app/globals.css`
+".dc" scope, 2026-09-11 dark redesign): near-black `#0b0b0b`, surface `#141414`, hairline
+`#212121`, brand orange `#FF9A00`, proof green `#86A873` for the eyebrow dot, Archivo for text,
+IBM Plex Mono for figures and labels, zero radius, zero shadows, hairlines only.
+2026-09-15 update: earlier revisions of this template were built to a warm near-black
+`#100E0C` palette anticipated before the redesign shipped - the site launched with a cooler,
+pure-neutral palette instead, so `base.css` was recolored to match what's actually live.
+Rules: `brand/social-design-system.md`, `brand/social-media-strategy.md`, `brand/creative-kit.md`.
 
 | File | What |
 | --- | --- |

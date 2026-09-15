@@ -6,6 +6,15 @@ export const metadata: Metadata = {
     description:
         "Citește condițiile contractuale ale OCN Ideal Credit SRL: drepturi, obligații, dobânzi, rambursare și informații legale pentru clienții noștri.",
     alternates: { canonical: "https://idealcredit.md/terms" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        url: "https://idealcredit.md/terms",
+        title: "Termeni și Condiții - OCN Ideal Credit SRL",
+        description:
+            "Citește condițiile contractuale ale OCN Ideal Credit SRL: drepturi, obligații, dobânzi, rambursare și informații legale pentru clienții noștri.",
+    },
 };
 
 export default function TermsPage() {

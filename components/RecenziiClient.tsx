@@ -10,7 +10,7 @@ const reviews = [
         text: "Am primit creditul în 24 de ore, fără bătăi de cap. Echipa a fost foarte profesionistă.",
     },
     {
-        category: "Afaceri mici",
+        category: "Afaceri",
         name: "Maria, antreprenoare",
         text: "Sunt recunoscătoare pentru transparență. Fără comisioane ascunse, dobânda a fost negociată și am putut investi în afacere.",
     },

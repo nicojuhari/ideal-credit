@@ -16,7 +16,7 @@ const STATIC_ROUTES: RouteConfig[] = [
 
   { path: "/credite", priority: 0.9, changeFrequency: "monthly" },
   { path: "/credite/credit-pentru-nevoi-personale", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/credite/credit-pentru-afaceri-mici", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/credite/credit-pentru-afaceri", priority: 0.9, changeFrequency: "monthly" },
   { path: "/credite/credit-investitional", priority: 0.9, changeFrequency: "monthly" },
   { path: "/credite/credit-pentru-agricultura", priority: 0.85, changeFrequency: "monthly" },
   { path: "/credite/credit-pentru-automobil", priority: 0.85, changeFrequency: "monthly" },

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
     description:
         "Cum folosim cookie-urile pe idealcredit.md: tipuri de cookies, servicii terțe (Google, Meta) și cum le poți controla sau dezactiva din browser.",
     alternates: { canonical: "https://idealcredit.md/cookies" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        url: "https://idealcredit.md/cookies",
+        title: "Politica de Cookies - OCN Ideal Credit SRL",
+        description:
+            "Cum folosim cookie-urile pe idealcredit.md: tipuri de cookies, servicii terțe (Google, Meta) și cum le poți controla sau dezactiva din browser.",
+    },
 };
 
 export default function CookiesPage() {

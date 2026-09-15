@@ -14,10 +14,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/dictionar-financiar",
         title: "Dicționar financiar | Ideal Credit",
         description:
             "Dicționarul financiar Ideal Credit explică pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

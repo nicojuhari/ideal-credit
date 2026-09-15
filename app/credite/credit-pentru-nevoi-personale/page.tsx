@@ -24,10 +24,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/credite/credit-pentru-nevoi-personale",
         title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
         description:
             "Credit pentru nevoi personale în Moldova - dobândă fixă, fără comisioane ascunse, decizie în 2-3 ore pentru orice nevoie. Aplică online!",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

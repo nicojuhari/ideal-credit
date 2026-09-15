@@ -25,10 +25,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/credite/credit-investitional",
         title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
         description:
             "Credit investițional pentru afaceri din Moldova - echipamente, extinderi și modernizări. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

@@ -180,8 +180,8 @@ export const personalLoanSchema = {
 export const businessCreditSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
-    name: "Credit pentru afaceri mici",
-    description: "Credit pentru afaceri mici - bani rapizi pentru dezvoltarea afacerilor.",
+    name: "Credit pentru afaceri",
+    description: "Credit pentru afaceri - bani rapizi pentru dezvoltarea afacerilor.",
     amount: {
         "@type": "MonetaryAmount",
         value: 10000,

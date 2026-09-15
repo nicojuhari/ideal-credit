@@ -13,10 +13,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/calculator-credit",
         title: "Calculator Credit Online | Ideal Credit",
         description:
             "Calculator credit online: calculează rata lunară, graficul de rambursare și costul total. Alege suma, termenul și tipul de rambursare potrivit.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

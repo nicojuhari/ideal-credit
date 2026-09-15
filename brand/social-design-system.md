@@ -1,18 +1,26 @@
 ## Last Updated
 
-2026-09-06
+2026-09-15
 
 # Social Post Design System - Ideal Credit
 
-**2026-09-06 - v4 alignment (pending choice):** the website is being redesigned to the "v4 dark,
-sharp" system (warm near-black `#100E0C`, orange `#FF9A00`, Archivo + IBM Plex Mono, zero
-radius, zero shadows, hairlines only). The chosen template ("Panou de date", dark for Tuesday, light for
-Thursday) lives in `campaigns/social/templates/` (`dark.html`, `light.html`, `node build.mjs`
-to export). Locked values are in [[creative-kit]]; the Color System and Typography sections
-below still describe the old `#0b0b0b` / Inter spec and are superseded by it. File layout is now
-one folder per post (`content.md` + `image.png`) - see [[social-media-strategy]]. The logo mark
-is no longer placed in-frame; the `idealcredit.md` wordmark in the panel header replaces it (the
+**2026-09-06 - v4 alignment:** the website was redesigned to a "v4 dark, sharp" system (orange
+`#FF9A00` accent, Archivo + IBM Plex Mono, zero radius, zero shadows, hairlines only). The
+chosen template ("Panou de date", dark for Tuesday, light for Thursday) lives in
+`campaigns/social/templates/` (`dark.html`, `light.html`, `node build.mjs` to export). Locked
+values are in [[creative-kit]]; the Color System and Typography sections below describe an
+older spec (`#0b0b0b` background / Inter) and are superseded by it. File layout is now one
+folder per post (`content.md` + `image.png`) - see [[social-media-strategy]]. The logo mark is
+no longer placed in-frame; the `idealcredit.md` wordmark in the panel header replaces it (the
 Logo & Sign-off section below is superseded on that point).
+
+**2026-09-15 correction:** the site actually shipped on 2026-09-11 with a cooler, pure-neutral
+palette, not the warm near-black `#100E0C` this doc anticipated on 2026-09-06 - live values are
+`#0b0b0b` bg / `#141414` surface / `#212121` hairlines, i.e. almost exactly the "old" spec the
+note above calls superseded. So for background/surface/hairline colors, trust the Color System
+table below again, not the 2026-09-06 note - only its Typography (Inter) is still outdated.
+`campaigns/social/templates/base.css` and [[creative-kit]] were both recolored to match on this
+date. The logo-in-frame and one-folder-per-post file-layout points from 2026-09-06 are still current.
 
 Visual spec for every short post and carousel described in
 [[social-media-strategy]]. Applies to Facebook, LinkedIn, and the Instagram

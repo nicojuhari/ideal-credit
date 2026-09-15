@@ -5,7 +5,7 @@ import NumberedRow from "@/components/ds/NumberedRow";
 const BASE = "/credite/";
 
 const products = [
-    { name: "Afaceri mici", desc: "Capital rapid pentru SRL, ÎI și antreprenori.", href: BASE + "credit-pentru-afaceri-mici" },
+    { name: "Afaceri", desc: "Capital rapid pentru SRL, ÎI și antreprenori.", href: BASE + "credit-pentru-afaceri" },
     { name: "Investițional", desc: "Echipamente, extindere spațiu, modernizare utilaj.", href: BASE + "credit-investitional" },
     { name: "Agricol", desc: "Pentru fermieri, producători și activități sezoniere.", href: BASE + "credit-pentru-agricultura" },
     { name: "Nevoi personale", desc: "Pentru orice cheltuială planificată sau urgentă.", href: BASE + "credit-pentru-nevoi-personale" },

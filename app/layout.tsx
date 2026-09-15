@@ -25,12 +25,7 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         type: "website",
         siteName: "Ideal Credit",
-        images: [
-            {
-                url: "/ideal-credit-og.webp",
-                alt: "Credite nebancare pentru afaceri și nevoi personale",
-            },
-        ],
+        url: "https://idealcredit.md/",
     },
     other: {
         "google-site-verification": "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0",

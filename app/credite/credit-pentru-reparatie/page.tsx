@@ -23,10 +23,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/credite/credit-pentru-reparatie",
         title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
         description:
             "Credit pentru reparație - casă sau apartament. Obține banii rapid, dobândă fixă și sume flexibile pentru renovare. Aplică online!",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

@@ -24,10 +24,10 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
+        url: "https://idealcredit.md/credite/credit-pentru-agricultura",
         title: "Credit pentru Agricultură în Moldova | Ideal Credit",
         description:
             "Credit pentru agricultură în Moldova - finanțăm tehnică agricolă, semințe, irigații și capital sezonier pentru fermieri, SRL și ÎI.",
-        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
 

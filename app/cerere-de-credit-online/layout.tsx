@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   type: "website",
   locale: "ro_MD",
   siteName: "Ideal Credit",
+  url: "https://idealcredit.md/cerere-de-credit-online",
   title: "Cerere de Credit Online | Aplică în 5 Minute | Ideal Credit",
   description:
 "Completează cererea de credit online în câteva minute. Evaluăm rapid și te contactăm în 2-3 ore. Fără vizite la birou, fără documente în avans.",
-  images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
  },
 };
 

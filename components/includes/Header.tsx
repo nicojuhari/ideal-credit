@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 type CreditItem = { href: string; label: string; desc: string };
 
 const businessProducts: CreditItem[] = [
-    { href: "/credite/credit-pentru-afaceri-mici", label: "Afaceri mici", desc: "Capital rapid pentru SRL, ÎI și antreprenori." },
+    { href: "/credite/credit-pentru-afaceri", label: "Afaceri", desc: "Capital rapid pentru SRL, ÎI și antreprenori." },
     { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Echipamente, extindere, modernizare." },
     { href: "/credite/credit-pentru-agricultura", label: "Agricultură", desc: "Pentru fermieri și producători agricoli." },
 ];
