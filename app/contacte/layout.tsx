@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import { localBusinessChisinauSchema, localBusinessCauseniSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
- title:"Contactele companiei de creditare Ideal Credit",
+ title:"Vorbim Direct | Contactele Ideal Credit",
  description:
-"Contactează Ideal Credit - telefon, email și adresele oficiilor din Chișinău și Căușeni. Răspundem rapid la orice întrebare despre credite.",
+"Vorbim direct - sună, scrie pe WhatsApp sau lasă un mesaj. Telefon, email și adresele oficiilor Ideal Credit din Chișinău și Căușeni.",
  alternates: { canonical:"https://idealcredit.md/contacte" },
  openGraph: {
   type: "website",
   locale: "ro_MD",
   siteName: "Ideal Credit",
-  title: "Contactele companiei de creditare Ideal Credit",
+  title: "Vorbim Direct | Contactele Ideal Credit",
   description:
-"Contactează Ideal Credit - telefon, email și adresele oficiilor din Chișinău și Căușeni. Răspundem rapid la orice întrebare despre credite.",
+"Vorbim direct - sună, scrie pe WhatsApp sau lasă un mesaj. Telefon, email și adresele oficiilor Ideal Credit din Chișinău și Căușeni.",
   images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
  },
 };

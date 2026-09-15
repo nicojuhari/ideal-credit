@@ -25,7 +25,7 @@ export default function ProductHero({
             <Container>
                 <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
                     <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                    {category} · <span className="font-dc-mono">{String(position).padStart(2, "0")}</span> din {total} produse
+                    {category} · <span className="font-dc-mono">{String(position).padStart(2, "0")}</span> din {total} soluții
                 </p>
                 <h1 className="mt-7 max-w-[1000px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
                     {title}

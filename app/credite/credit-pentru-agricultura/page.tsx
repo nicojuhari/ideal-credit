@@ -18,7 +18,7 @@ import { agriculturalLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
     description:
-        "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei.",
+        "Credit pentru agricultură în Moldova - finanțăm tehnică agricolă, semințe, irigații și capital sezonier pentru fermieri, SRL și ÎI.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-agricultura" },
     openGraph: {
         type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         title: "Credit pentru Agricultură în Moldova | Ideal Credit",
         description:
-            "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei.",
+            "Credit pentru agricultură în Moldova - finanțăm tehnică agricolă, semințe, irigații și capital sezonier pentru fermieri, SRL și ÎI.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };

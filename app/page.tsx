@@ -13,17 +13,17 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credite Nebancare în Moldova | Ideal Credit",
+    title: "Credite pentru succes - afaceri și nevoi personale | Ideal Credit",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, aplici online și primești răspuns rapid.",
+        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, decizie rapidă și aplicare online.",
     alternates: { canonical: "https://idealcredit.md/" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
-        title: "Credite Nebancare în Moldova | Ideal Credit",
+        title: "Credite pentru succes - afaceri și nevoi personale | Ideal Credit",
         description:
-            "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, aplici online și primești răspuns rapid.",
+            "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, decizie rapidă și aplicare online.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };

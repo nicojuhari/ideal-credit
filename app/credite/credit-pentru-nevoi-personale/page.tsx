@@ -18,7 +18,7 @@ import { personalLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
     description:
-        "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
+        "Credit pentru nevoi personale în Moldova - dobândă fixă, fără comisioane ascunse, decizie în 2-3 ore pentru orice nevoie. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
     openGraph: {
         type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
         description:
-            "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
+            "Credit pentru nevoi personale în Moldova - dobândă fixă, fără comisioane ascunse, decizie în 2-3 ore pentru orice nevoie. Aplică online!",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -196,7 +196,7 @@ export default function CreditNevoiPersonalePage() {
                         Ai mai multe credite <Accent>active?</Accent>
                     </>
                 }
-                description="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
+                description="Consolidarea nu este o soluție separată, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
                 items={worthConsolidatingItems}
             />
 

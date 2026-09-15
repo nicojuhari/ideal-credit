@@ -111,8 +111,8 @@ export default function ContactePage() {
                         Vorbim <Accent>direct.</Accent>
                     </h1>
                     <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Un telefon de cinci minute înlocuiește un formular de o oră. Sună, scrie sau treci pe la oficiu - răspundem în
-                        aceeași zi lucrătoare.
+                        Un telefon de cinci minute înlocuiește un formular de o oră. Sună, scrie pe WhatsApp sau lasă un mesaj - răspundem
+                        în aceeași zi lucrătoare. La birou vii doar cu programare, după prima discuție.
                     </p>
                 </Container>
             </div>
@@ -293,7 +293,7 @@ export default function ContactePage() {
                         <span className="font-dc-mono text-xs text-dc-text-muted">02</span>
                         <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">Reclamații</h3>
                         <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">
-                            Pretențiile se depun în scris la oricare oficiu sau la contact@idealcredit.md. Termen de răspuns: 15 zile.
+                            Pretențiile se depun în scris la oricare oficiu sau la info@idealcredit.md. Termen de răspuns: 15 zile.
                         </p>
                     </div>
                     <div className="dc-cell p-8">

@@ -16,7 +16,7 @@ import { yearsSinceFoundation } from "@/lib/utils";
 export const metadata: Metadata = {
     title: "Despre noi | Ideal Credit - Companie de creditare",
     description:
-        "Ideal Credit - instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
+        "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/despre-noi" },
     openGraph: {
         type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         title: "Despre noi | Ideal Credit - Companie de creditare",
         description:
-            "Ideal Credit - instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
+            "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -52,23 +52,26 @@ const servicii = [
         href: "/credite/credit-pentru-afaceri-mici",
     },
     {
-        title: "Refinanțare",
-        desc: "Ai credite scumpe la alte instituții? Le putem închide și le înlocuim cu o singură rată fixă și mai mică.",
-        items: ["O singură plată lunară", "Rată mai mică", "Mai mult confort financiar"],
-    },
-    {
         title: "Consultanță financiară gratuită",
-        desc: "Nu știi ce produs ți se potrivește? Venim cu o analiză gratuită a situației tale, fără obligații.",
-        items: ["Analizăm capacitatea ta de plată", "Îți propunem soluția potrivită", "Fără obligații"],
+        desc: "Nu știi ce soluție ți se potrivește, sau ai mai multe credite de simplificat? Venim cu o analiză gratuită a situației tale, fără obligații.",
+        items: ["Analizăm scopul și capacitatea ta de plată", "Îți propunem soluția potrivită", "Fără obligații"],
     },
 ];
 
 const principii = [
     { title: "Transparență totală", desc: "Îți arătăm toate costurile de la început. Nu există surprize la semnătură sau pe parcurs." },
+    {
+        title: "Scopul contează cel mai mult",
+        desc: "Înainte de acte, vrem să înțelegem pentru ce ai nevoie de bani și dacă planul tău are logică.",
+    },
     { title: "Aprobare rapidă", desc: "Nu pierzi săptămâni în așteptare. Analizăm dosarul tău și îți dăm un răspuns clar." },
     {
         title: "Flexibilitate reală",
         desc: "Analizăm situația ta individual, nu după un algoritm rigid. Dacă ai venituri stabile și capacitate de rambursare, găsim o soluție.",
+    },
+    {
+        title: "Un parteneriat, nu doar un credit",
+        desc: "Lucrăm cu clienți serioși, care își gestionează banii cu grijă sau vor să învețe. Găsim împreună soluția potrivită scopului tău.",
     },
     {
         title: `${yearsSinceFoundation} ani de încredere`,
@@ -81,10 +84,10 @@ const principii = [
 ];
 
 const proces = [
-    { title: "Completezi cererea", desc: "Online sau la birou, în câteva minute." },
-    { title: "Analizăm dosarul", desc: "Rapid, fără birocrație inutilă." },
+    { title: "Completezi cererea", desc: "Online, la telefon, WhatsApp sau email - fără drum la birou." },
+    { title: "Analizăm dosarul", desc: "Ne uităm la scopul creditului și la logica planului tău, nu doar la actele depuse." },
     { title: "Primești răspunsul", desc: "Clar și transparent." },
-    { title: "Semnezi contractul", desc: "Cu toate costurile vizibile." },
+    { title: "Semnezi contractul", desc: "La birou, prin programare - doar când răspunsul e deja „da”." },
     { title: "Primești banii", desc: "Și îți continui planurile." },
 ];
 

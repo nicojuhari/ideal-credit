@@ -17,14 +17,15 @@ import { autoLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Automobil în Moldova | Ideal Credit",
     description:
-        "Credit pentru cumpărarea sau repararea automobilului în Moldova. Dobândă fixă, fără restricții pe tipul mașinii. Decizie în 2-3 ore. Aplică online!",
+        "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, decizie în 2-3 ore. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-automobil" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         title: "Credit pentru Automobil în Moldova | Ideal Credit",
-        description: "Credit pentru cumpărarea sau repararea automobilului în Moldova. Dobândă fixă, fără restricții pe tipul mașinii. Decizie în 2-3 ore.",
+        description:
+            "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, decizie în 2-3 ore. Aplică online!",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };

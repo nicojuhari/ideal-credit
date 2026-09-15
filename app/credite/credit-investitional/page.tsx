@@ -19,7 +19,7 @@ import { investitionalSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
     description:
-        "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile lucrătoare.",
+        "Credit investițional pentru afaceri din Moldova - echipamente, extinderi și modernizări. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-investitional" },
     openGraph: {
         type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
         description:
-            "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile lucrătoare.",
+            "Credit investițional pentru afaceri din Moldova - echipamente, extinderi și modernizări. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };

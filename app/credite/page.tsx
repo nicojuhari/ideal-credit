@@ -9,17 +9,17 @@ import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
 
 export const metadata: Metadata = {
-    title: "Toate Produsele de Credit | Ideal Credit Moldova",
+    title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
     description:
-        "6 credite nebancare pentru afaceri și persoane fizice în Moldova: capital de lucru, investiții, agricultură, auto, reparație și nevoi personale.",
+        "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Dobândă fixă, decizie rapidă.",
     alternates: { canonical: "https://idealcredit.md/credite" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
-        title: "Toate Produsele de Credit | Ideal Credit Moldova",
+        title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
         description:
-            "6 credite nebancare pentru afaceri și persoane fizice în Moldova: capital de lucru, investiții, agricultură, auto, reparație și nevoi personale.",
+            "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Dobândă fixă, decizie rapidă.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -50,7 +50,7 @@ export default function CreditePage() {
                 <Container className="flex flex-col items-center gap-8 text-center">
                     <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
                         <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                        Registrul de produse · 6 credite
+                        Registrul de soluții · 6 credite
                     </p>
                     <h1 className="max-w-[900px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
                         Credite pentru <Accent>fiecare situație.</Accent>

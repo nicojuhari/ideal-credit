@@ -67,7 +67,7 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <FooterLinkGroup title="Produse" links={productLinks} />
+                    <FooterLinkGroup title="Soluții" links={productLinks} />
                     <FooterLinkGroup title="Companie" links={companyLinks} />
 
                     <div>

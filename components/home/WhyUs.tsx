@@ -4,6 +4,10 @@ import { yearsSinceFoundation } from "@/lib/utils";
 
 const rows = [
     {
+        title: "Analizăm scopul, nu doar dosarul",
+        body: "Ne interesează pentru ce ai nevoie de bani și dacă planul are logică - nu doar actele depuse.",
+    },
+    {
         title: "Condiții transparente",
         body: "Dobânzi fixe, zero comisioane ascunse - toate costurile înainte de semnare.",
     },

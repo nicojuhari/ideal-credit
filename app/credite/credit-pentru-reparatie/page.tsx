@@ -17,14 +17,15 @@ import { repairLoanSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
     description:
-        "Credit pentru reparația casei sau apartament. Obține banii rapid și renovează-ți locuința acum. Dobândă fixă și sume flexibile. Aplică online!",
+        "Credit pentru reparație - casă sau apartament. Obține banii rapid, dobândă fixă și sume flexibile pentru renovare. Aplică online!",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-reparatie" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
-        description: "Credit pentru reparația casei sau apartamentului. Obține banii rapid și renovează-ți locuința. Dobândă fixă și sume flexibile.",
+        description:
+            "Credit pentru reparație - casă sau apartament. Obține banii rapid, dobândă fixă și sume flexibile pentru renovare. Aplică online!",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };

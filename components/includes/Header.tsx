@@ -119,7 +119,7 @@ export default function Header() {
                                             </div>
                                         </div>
                                         <div className="flex items-center justify-between border-t border-dc-line px-6 py-3">
-                                            <span className="text-xs text-dc-text-muted">Toate produsele de credit</span>
+                                            <span className="text-xs text-dc-text-muted">Toate soluțiile de credit</span>
                                             <Link
                                                 href="/credite"
                                                 className="text-[15px] uppercase tracking-[.04em] text-dc-accent underline underline-offset-4"

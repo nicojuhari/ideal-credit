@@ -16,11 +16,11 @@ const products = [
 export default function Products() {
     return (
         <Section
-            id="produse"
-            marker="Produse"
+            id="solutii-toate"
+            marker="Soluții"
             title={
                 <>
-                    Registrul de <Accent>produse</Accent>
+                    Registrul de <Accent>soluții</Accent>
                 </>
             }
         >

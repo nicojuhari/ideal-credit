@@ -7,7 +7,7 @@ import CalculatorCreditPage from "./CalculatorCreditPage";
 export const metadata: Metadata = {
     title: "Calculator Credit Online | Ideal Credit",
     description:
-        "Calculează rata lunară, graficul de rambursare și costul total al creditului. Alege suma, termenul și tipul de rambursare potrivit pentru tine.",
+        "Calculator credit online: calculează rata lunară, graficul de rambursare și costul total. Alege suma, termenul și tipul de rambursare potrivit.",
     alternates: { canonical: "https://idealcredit.md/calculator-credit" },
     openGraph: {
         type: "website",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         title: "Calculator Credit Online | Ideal Credit",
         description:
-            "Calculează rata lunară, graficul de rambursare și costul total al creditului. Alege suma, termenul și tipul de rambursare potrivit pentru tine.",
+            "Calculator credit online: calculează rata lunară, graficul de rambursare și costul total. Alege suma, termenul și tipul de rambursare potrivit.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };

@@ -59,7 +59,7 @@ const organizationSchema = {
                     "@type": "ContactPoint",
                     telephone: "+37361252777",
                     contactType: "customer service",
-                    email: "contact@idealcredit.md",
+                    email: "info@idealcredit.md",
                     areaServed: "MD",
                     availableLanguage: "ro",
                 },

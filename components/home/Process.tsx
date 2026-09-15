@@ -22,7 +22,8 @@ export default function Process() {
                             Cum <Accent>funcționează</Accent>
                         </h2>
                         <p className="mt-4 text-[17px] leading-[1.6] text-dc-text-muted">
-                            Analiza se face înainte de întâlnire. Te chemăm în oficiu doar când suntem siguri că răspunsul e „da”.
+                            Analiza se face înainte de întâlnire - ne uităm mai întâi la scopul creditului și la logica planului tău. Te
+                            chemăm în oficiu doar când suntem siguri că răspunsul e „da”.
                         </p>
                     </div>
                     <Stack>

@@ -19,7 +19,7 @@ import { businessCreditSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
     description:
-        "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare.",
+        "Credit pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare, dobândă fixă.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-afaceri-mici" },
     openGraph: {
         type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
         description:
-            "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare.",
+            "Credit pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare, dobândă fixă.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -67,7 +67,7 @@ const businessFaqItems: FaqItem[] = [
     },
     {
         question: "Pot consolida mai multe credite de afaceri într-unul singur?",
-        answer: "Da - dacă ai mai multe credite active la instituții diferite, analizăm situația și, dacă are sens financiar, le aduni într-un singur credit cu o rată lunară mai mică. Nu este un produs separat, ci o opțiune discutată în cadrul consultației inițiale.",
+        answer: "Da - dacă ai mai multe credite active la instituții diferite, analizăm situația și, dacă are sens financiar, le aduni într-un singur credit cu o rată lunară mai mică. Nu este o soluție separată, ci o opțiune discutată în cadrul consultației inițiale.",
     },
     {
         question: "De ce e dobânda mai mare la un OCN decât la o bancă?",
@@ -88,7 +88,7 @@ const useCases = [
     { title: "Investiții", desc: "Echipamente, utilaje, extindere spațiu, vehicule comerciale." },
     {
         title: "Consolidare credite",
-        desc: "Aduni creditele de afaceri existente într-unul singur, cu o rată lunară mai mică - o opțiune analizată în cadrul consultației, nu un produs separat.",
+        desc: "Aduni creditele de afaceri existente într-unul singur, cu o rată lunară mai mică - o opțiune analizată în cadrul consultației, nu o soluție separată.",
     },
     { title: "Start-up", desc: "Lansezi afacerea: înregistrare firmă, echipamente inițiale, stoc de pornire." },
 ];
