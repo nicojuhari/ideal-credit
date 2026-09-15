@@ -5,7 +5,8 @@ import Note from "@/components/ds/Note";
 
 export const metadata: Metadata = {
     title: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL",
-    description: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este Comisia Națională a Pieței Financiare.",
+    description:
+        "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este Comisia Națională a Pieței Financiare. Aflați contactele și modalitățile de depunere a reclamațiilor.",
     alternates: { canonical: "https://idealcredit.md/autoritatea-de-supraveghere" },
     openGraph: {
         type: "website",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/autoritatea-de-supraveghere",
         title: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL",
-        description: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este Comisia Națională a Pieței Financiare.",
+        description:
+            "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este Comisia Națională a Pieței Financiare. Aflați contactele și modalitățile de depunere a reclamațiilor.",
     },
 };
 
@@ -21,8 +23,7 @@ export default function AutoritateaPage() {
     return (
         <LegalLayout title="Autoritatea de supraveghere">
             <p className="text-center text-lg text-dc-text">
-                Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este{" "}
-                <strong>Comisia Națională a Pieței Financiare.</strong>
+                Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este <strong>Comisia Națională a Pieței Financiare.</strong>
             </p>
 
             <h2>Contactele instituției</h2>
@@ -39,9 +40,7 @@ export default function AutoritateaPage() {
 
             <h2>Reclamațiile pot fi depuse</h2>
             <ul>
-                <li>
-                    prin e-mail (cu respectarea reglementărilor cu privire la forma electronică - cu aplicarea semnăturii electronice);
-                </li>
+                <li>prin e-mail (cu respectarea reglementărilor cu privire la forma electronică - cu aplicarea semnăturii electronice);</li>
                 <li>prin intermediul oficiilor poștale;</li>
                 <li>la sediul CNPF, în cutia poștală amplasată la intrare în sediul instituției;</li>
             </ul>

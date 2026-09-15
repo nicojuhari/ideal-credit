@@ -8,7 +8,7 @@ import { GLOSSARY_LINKS } from "@/lib/constants";
 export const metadata: Metadata = {
     title: "Dicționar financiar - termeni explicați simplu | Ideal Credit",
     description:
-        "Dicționarul financiar Ideal Credit explică pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
+        "Dicționarul financiar cu 18 termeni: credit, dobândă, DAE, contract de credit, garanție și alți termeni explicați simplu pentru moldoveni.",
     alternates: { canonical: "https://idealcredit.md/dictionar-financiar" },
     openGraph: {
         type: "website",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "https://idealcredit.md/dictionar-financiar",
         title: "Dicționar financiar - termeni explicați simplu | Ideal Credit",
         description:
-            "Dicționarul financiar Ideal Credit explică pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
+            "Dicționarul financiar cu 18 termeni: credit, dobândă, DAE, contract de credit, garanție și alți termeni explicați simplu pentru moldoveni.",
     },
 };
 

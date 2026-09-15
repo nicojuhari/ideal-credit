@@ -13,7 +13,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credite pentru Success în Moldova | Ideal Credit",
+    title: "Credite pentru Succes în Moldova | Ideal Credit",
     description:
         "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, rapid și transparent.",
     alternates: { canonical: "https://idealcredit.md/" },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/",
-        title: "Credite pentru Success în Moldova | Ideal Credit",
+        title: "Credite pentru Succes în Moldova | Ideal Credit",
         description:
             "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, rapid și transparent.",
     },
