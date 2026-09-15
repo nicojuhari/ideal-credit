@@ -8,18 +8,18 @@ format: single-image (short post)
 platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: cancelled
 cancelled-reason: >-
-  User call (2026-07-19): scor de credit 1-10 scale isn't well known/trusted
-  in Moldova yet - risk of readers doubting the number itself. Replaced by
-  02 and 03 in this same week folder.
+    User call (2026-07-19): scor de credit 1-10 scale isn't well known/trusted
+    in Moldova yet - risk of readers doubting the number itself. Replaced by
+    02 and 03 in this same week folder.
 ---
 
-# Post — Cifra pe care un creditor o vede înainte să-ți răspundă
+# Post - Cifra pe care un creditor o vede înainte să-ți răspundă
 
 ## Quality gate check
 
-- On-topic rule: yes — cum funcționează evaluarea de credit, direct util pentru cineva care
+- On-topic rule: yes - cum funcționează evaluarea de credit, direct util pentru cineva care
   vrea să aplice pentru un credit.
-- Full-picture rule: yes — explică ce e scorul, ce îl scade, și ce drept concret are
+- Full-picture rule: yes - explică ce e scorul, ce îl scade, și ce drept concret are
   consumatorul (raport gratuit anual) - nu doar „ai un scor," ci și ce poți face cu informația.
 - Send-to-someone test: cineva care tocmai a primit un refuz la un credit și nu știe de ce
   trimite asta unui prieten în aceeași situație - „uite ce se verifică de fapt."
@@ -45,7 +45,7 @@ scade scorul și dreptul la raportul gratuit se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Ai un scor de credit, chiar dacă nu l-ai văzut niciodată. E o cifră de la 1 la 10, calculată de
 Biroul de Credit - compania înființată în 2008 de bănci, care ține evidența istoricului tău de

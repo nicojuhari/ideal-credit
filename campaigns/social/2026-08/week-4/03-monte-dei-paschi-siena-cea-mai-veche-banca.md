@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — De 554 de ani, aceeași bancă italiană dă împrumuturi neîntrerupt
+# Post - De 554 de ani, aceeași bancă italiană dă împrumuturi neîntrerupt
 
 ## Quality gate check
 
-- On-topic rule: yes — istoria celei mai vechi bănci din lume aflate încă în funcțiune, cu scopul
+- On-topic rule: yes - istoria celei mai vechi bănci din lume aflate încă în funcțiune, cu scopul
   ei fondator legat direct de acces la credit.
-- Full-picture rule: yes — arată atât data fondării, cât și scopul real (ajutor pentru cei
+- Full-picture rule: yes - arată atât data fondării, cât și scopul real (ajutor pentru cei
   săraci, la dobândă minimă, nu profit pentru cei bogați) și continuitatea instituțională - nu
   doar „e o bancă veche", altfel un cititor atent ar întreba „dar de ce a fost fondată exact?".
 - Send-to-someone test: cineva căruia îi plac faptele „nu știam asta" trimite postarea unui
@@ -51,7 +51,7 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Scopul ca
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 554 de ani. Atât funcționează neîntrerupt Banca Monte dei Paschi di Siena, din Italia - cea mai
 veche bancă din lume aflată încă în activitate.

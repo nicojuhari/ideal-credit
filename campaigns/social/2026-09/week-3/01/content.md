@@ -12,13 +12,13 @@ image: image.png
 status: ready
 ---
 
-# Post — Toată lumea știe de garaj. Puțini știu de împrumutul de 170.000 $ care a scos Apple din el
+# Post - Toată lumea știe de garaj. Puțini știu de împrumutul de 170.000 $ care a scos Apple din el
 
 ## Quality gate check
 
-- On-topic rule: yes — un împrumut concret, cu sumă și an, ca instrument de pornire a unei
+- On-topic rule: yes - un împrumut concret, cu sumă și an, ca instrument de pornire a unei
   afaceri; scopul creditului e clar arătat (producție și vânzare, nu supraviețuire).
-- Full-picture rule: yes — arată atât garajul (partea știută) cât și mecanismul exact din spatele
+- Full-picture rule: yes - arată atât garajul (partea știută) cât și mecanismul exact din spatele
   primului pas real: 250.000 $ de la un singur om, din care 170.000 $ împrumut și 80.000 $
   investiție, plus faptul că Markkula a devenit al treilea acționar și a scris planul de afaceri -
   nu doar „doi tineri într-un garaj", altfel un cititor atent ar întreba „și cu ce bani au
@@ -59,7 +59,7 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Împărț
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Toată lumea știe povestea cu garajul. Puțini știu cum a ieșit Apple din el.
 

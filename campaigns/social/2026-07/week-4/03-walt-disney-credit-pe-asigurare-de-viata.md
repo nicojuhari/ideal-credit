@@ -9,13 +9,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cum a împrumutat Walt Disney bani ca să construiască Disneyland
+# Post - Cum a împrumutat Walt Disney bani ca să construiască Disneyland
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre folosirea inteligentă a creditului pentru a
+- On-topic rule: yes - o poveste reală despre folosirea inteligentă a creditului pentru a
   construi o afacere, exact lanul „Past success".
-- Full-picture rule: yes — nu se oprește la „a împrumutat $50.000", ci arată și de ce (băncile
+- Full-picture rule: yes - nu se oprește la „a împrumutat $50.000", ci arată și de ce (băncile
   au refuzat ideea), și ce a urmat (parteneriatul cu ABC-Paramount a adus finanțarea mare) -
   altfel un cititor atent ar întreba „dar cine a plătit de fapt parcul?"
 - Send-to-someone test: un antreprenor căruia banca i-a spus „nu" la o idee nouă trimite asta
@@ -46,7 +46,7 @@ refuzul băncilor, parteneriatul ABC și rezultatul - se mută integral în capt
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 La începutul anilor '50, Walt Disney avea o idee: un parc de distracții diferit de orice
 exista atunci. Băncile au refuzat s-o finanțeze - prea riscantă, prea scumpă, prea ieșită din

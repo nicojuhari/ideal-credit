@@ -12,13 +12,13 @@ image: image.png
 status: ready
 ---
 
-# Post — Rata lunară se înjumătățește, dar dobânda totală se dublează - la același împrumut
+# Post - Rata lunară se înjumătățește, dar dobânda totală se dublează - la același împrumut
 
 ## Quality gate check
 
-- On-topic rule: yes — arată direct cum termenul unui credit influențează costul lui total, cu
+- On-topic rule: yes - arată direct cum termenul unui credit influențează costul lui total, cu
   un calcul concret pe un împrumut.
-- Full-picture rule: yes — arată atât beneficiul termenului lung (rată lunară mult mai mică) cât
+- Full-picture rule: yes - arată atât beneficiul termenului lung (rată lunară mult mai mică) cât
   și costul lui real (dobândă totală mult mai mare), pe același împrumut și aceeași dobândă - nu
   doar „termen lung = rată mică", altfel un cititor atent ar întreba „dar la ce preț, per total?".
 - Send-to-someone test: cineva care compară două oferte de credit cu termene diferite trimite
@@ -53,7 +53,7 @@ explicația se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Un termen mai lung înseamnă mereu o rată lunară mai mică. Atât se vede la prima vedere. Ce nu se
 vede la fel de ușor e cât crește, per total, dobânda plătită - la exact același împrumut.

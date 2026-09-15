@@ -9,12 +9,12 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cât la sută din venitul tău poate merge, prin lege, spre rate
+# Post - Cât la sută din venitul tău poate merge, prin lege, spre rate
 
 ## Quality gate check
 
-- On-topic rule: yes — regulă BNM care schimbă direct cât poate împrumuta cineva.
-- Full-picture rule: yes — arată regula de bază (40%) și ambele excepții (55% pentru venituri
+- On-topic rule: yes - regulă BNM care schimbă direct cât poate împrumuta cineva.
+- Full-picture rule: yes - arată regula de bază (40%) și ambele excepții (55% pentru venituri
   mari, 30% pentru credit în altă valută decât venitul), nu doar cifra simplă care ar lăsa loc
   pentru „dar dacă câștig mult mai mult?" în comentarii.
 - Send-to-someone test: cineva care are deja un card sau un leasing activ și vrea să mai ia un
@@ -42,7 +42,7 @@ explicația despre venitul confirmat se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Din 19 iunie 2026, ai o limită legală clară: ratele lunare la toate creditele tale nu pot trece
 de 40% din venitul tău net confirmat. Regula vine de la BNM, prin Regulamentul nr. 60/2026

@@ -1,9 +1,9 @@
 ## Last Updated
 
-2026-09-11 (round 2) by owner decision — home page H1 locked to "Credite pentru
+2026-09-11 (round 2) by owner decision - home page H1 locked to "Credite pentru
 succes." (see `site-architecture.md`, Home Page H1 section). It's the existing
 `/despre-noi` tagline, not a new angle; filed under Angle 1 below.
-Previously: 2026-09-11 (round 1) by /positioning-angles — added the positioning
+Previously: 2026-09-11 (round 1) by /positioning-angles - added the positioning
 layer map for the site rebuild + editorial blog pivot. Core Philosophy and the
 Local Growth Partner angle are unchanged; see `site-architecture.md` for how they
 are expressed structurally. Before that: 2026-05-18 (original angle set + core
@@ -52,7 +52,7 @@ Headline direction: "Nu ești un dosar. Ești antreprenorul care vrea să mearg�
 Best for: SME owners in Moldova who have encountered or fear bank rejection; entrepreneurs who value local presence and human judgment over fully digital/faceless processes.
 
 **Home page H1 (locked 2026-09-11, round 2): "Credite pentru succes."** The existing
-`/despre-noi` tagline, promoted to the literal H1 — not a replacement for the
+`/despre-noi` tagline, promoted to the literal H1 - not a replacement for the
 headline direction above, which stays available for subheads/CTAs.
 
 ## Positioning Layer Map (2026-09-11)
@@ -60,12 +60,12 @@ headline direction above, which stays available for subheads/CTAs.
 The brand runs **one position expressed on four layers.** Each layer has a different
 job, so each carries a different angle. Conflating them is what breaks the rebuild.
 
-| Layer | Angle | Job |
-|---|---|---|
-| Hero / brand line | **The Local Growth Partner** (unchanged) | Sell the outcome — capital, speed, human judgment |
-| Service pages (`/credite/*`) | **Soluții, nu produse** | Organize by the client's situation, not by product name |
-| FAQ / proces / despre-noi | **Creditorul care spune și nu** (softened) | Honest qualification — analysis before the appointment |
-| Blog | **Biroul de Analiză** + numerate register | Earn the right to be believed |
+| Layer                        | Angle                                      | Job                                                     |
+| ---------------------------- | ------------------------------------------ | ------------------------------------------------------- |
+| Hero / brand line            | **The Local Growth Partner** (unchanged)   | Sell the outcome - capital, speed, human judgment       |
+| Service pages (`/credite/*`) | **Soluții, nu produse**                    | Organize by the client's situation, not by product name |
+| FAQ / proces / despre-noi    | **Creditorul care spune și nu** (softened) | Honest qualification - analysis before the appointment  |
+| Blog                         | **Biroul de Analiză** + numerate register  | Earn the right to be believed                           |
 
 ### Critical distinction
 
@@ -74,10 +74,10 @@ job, so each carries a different angle. Conflating them is what breaks the rebui
 An entrepreneur who needs 200,000 MDL for a truck before the season does not care
 that Ideal Credit publishes economic analysis. Putting it in the hero costs
 conversions. It belongs in the blog, in `despre-noi`, in social, and as a small
-"Analiză" module on the homepage linking to the latest piece — visible, not shouted.
+"Analiză" module on the homepage linking to the latest piece - visible, not shouted.
 
-What it *does* is answer the one question no testimonial can answer at Stage 3:
-*why should I believe your judgment is better than a bank's algorithm?* A lender who
+What it _does_ is answer the one question no testimonial can answer at Stage 3:
+_why should I believe your judgment is better than a bank's algorithm?_ A lender who
 can publicly read Moldova's numbers competently is a lender you trust to read your
 cash flow privately.
 
@@ -120,7 +120,7 @@ White space identified:
 
 ### Editorial landscape (added 2026-09-11)
 
-Analyzed: Microinvest blog ("Credite, educație financiară și istorii de succes" —
+Analyzed: Microinvest blog ("Credite, educație financiară și istorii de succes" -
 client stories, fraud-awareness tips, funding press releases), Fagura (investor and
 SME financing explainers), Prima Finanțare / Corporația de Finanțare Rurală (no
 editorial layer at all), Mogo / Credit365 / OK Credit (purely transactional, own the
@@ -132,11 +132,11 @@ BNS and the World Bank (raw data, no narrative).
 
 **The finding: no Moldovan lender publishes original analysis.** Credibility on
 economic numbers belongs to media and think-tanks; lenders publish brochures. The
-think-tanks have methodology but no skin in the game — Ideal Credit has the ledger.
+think-tanks have methodology but no skin in the game - Ideal Credit has the ledger.
 
 Additional white space:
 
-- Nobody sells by *situation* — every competitor site is a product menu
+- Nobody sells by _situation_ - every competitor site is a product menu
 - Nobody states who they are **not** for; the whole market signals unconditional yes
 - Nobody writes for a reader who can read a balance sheet
 
@@ -196,44 +196,43 @@ Why ★ The Local Growth Partner: The Moldovan OCN market is at Stage 3 - mechan
 - Căușeni office: regional anchor for entrepreneurs outside Chișinău who are underserved by all competitors
 - Primary audience language: Romanian (primary), Russian (secondary - urban Chișinău segment)
 
-
 ---
 
 ## Angles Explored 2026-09-11 (site rebuild + editorial pivot)
 
 Generated for the two-part rebuild. Angles 1-5 above remain valid; these address the
-two surfaces the original set had no expression for — a solutions-page architecture
+two surfaces the original set had no expression for - a solutions-page architecture
 and an editorial blog.
 
-### Angle 6: Biroul de Analiză (The Analyst's Desk) — selected, blog + brand thread
+### Angle 6: Biroul de Analiză (The Analyst's Desk) - selected, blog + brand thread
 
 - Statement: Ideal Credit is the lender that publishes the numbers behind Moldova's economy - because reading numbers properly is the same skill it applies to your file.
 - Psychology: The blog stops being a traffic tax and becomes visible proof of the mechanism. Closes the Stage-3 believability gap that no testimonial can close.
 - Headline: "Citim cifrele Moldovei. Apoi citim cifrele afacerii tale."
 - Scope: blog position + light brand thread (despre-noi, social, homepage module). NOT hero copy.
 
-### Angle 7: Soluții, nu produse (Situation-First Architecture) — selected, service layer
+### Angle 7: Soluții, nu produse (Situation-First Architecture) - selected, service layer
 
 - Statement: You don't arrive needing a "credit investițional." You arrive needing to buy a truck before the season. Ideal Credit organizes itself around situations, not product names.
 - Psychology: Product menus force clients to self-diagnose, and most self-diagnose wrong and bounce. Situation-first pages mirror how the problem actually arrives, and operationalize "problem solver first" in the site's IA itself.
 - Headline: "Spune-ne ce vrei să faci. Noi spunem cum se finanțează."
 - Scope: `/credite/*` page structure and the `ServiceFeatureGrid` "pentru ce poți folosi" block.
 
-### Angle 8: Creditorul care spune și nu (The Qualified Few) — selected, softened
+### Angle 8: Creditorul care spune și nu (The Qualified Few) - selected, softened
 
 - Statement: Ideal Credit turns people down - openly, with a reason - and that is precisely why a yes from Ideal Credit means something.
 - Psychology: Converts the "fără refuz" exit from a traffic sacrifice into a positioning weapon. In a market where every competitor signals unconditional yes, owning selectivity is the loudest available signal of seriousness.
 - Headline: "Nu spunem «da» oricui. De asta «da»-ul nostru contează."
 - Scope: FAQ, proces, despre-noi. **Must be delivered warmly** - the brand already has one cold line flagged. Frame as thorough analysis, never as gatekeeping.
 
-### Angle 9: De partea cealaltă a mesei (The Insider's Ledger) — held
+### Angle 9: De partea cealaltă a mesei (The Insider's Ledger) - held
 
 - Statement: Ideal Credit sees what statistics can't - real cash flows of real Moldovan businesses, month by month - and writes from inside that view.
 - Psychology: Expert-Grup has methodology; Ideal Credit has the ledger. Unfalsifiable authority no think-tank can replicate.
 - Headline: "Ce vedem noi, când se uită toți la statistici."
 - Status: held - strong editorial device rather than a standalone angle. Use it as the in-body proprietary data point inside Biroul de Analiză articles. Requires aggregate data that is legally publishable.
 
-### Angle 10: Pentru cei care înțeleg cifrele (The Numerate Peer) — selected as register
+### Angle 10: Pentru cei care înțeleg cifrele (The Numerate Peer) - selected as register
 
 - Statement: Ideal Credit writes for people who read a balance sheet - no explainers, no condescension, no "ce este un credit."
 - Psychology: Flatters the reader by refusing to over-explain and self-selects the target client profile. Repels the distressed segment without ever mentioning it.

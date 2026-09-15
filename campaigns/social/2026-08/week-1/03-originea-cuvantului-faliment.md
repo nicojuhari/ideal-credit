@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cuvântul „bancă" și cuvântul „faliment" au aceeași origine
+# Post - Cuvântul „bancă" și cuvântul „faliment" au aceeași origine
 
 ## Quality gate check
 
-- On-topic rule: yes — originea unui mecanism/termen financiar folosit zilnic (bancă, faliment),
+- On-topic rule: yes - originea unui mecanism/termen financiar folosit zilnic (bancă, faliment),
   direct din istoria banilor.
-- Full-picture rule: yes — arată atât originea cuvântului „bancă" cât și a cuvântului „faliment"
+- Full-picture rule: yes - arată atât originea cuvântului „bancă" cât și a cuvântului „faliment"
   și legătura dintre ele, nu doar unul izolat - altfel un cititor atent ar întreba „dar de ce se
   cheamă și banca la fel?".
 - Send-to-someone test: cineva căruia îi plac faptele „nu știam asta" trimite postarea unui
@@ -48,7 +48,7 @@ cămătarii, masa spartă, legătura cu „faliment" - se mută integral în cap
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 În Italia, acum aproape 600 de ani, cămătarii nu aveau clădiri - lucrau la piață, la o masă de
 lemn numită „banca". Acolo schimbau bani și dădeau împrumuturi.

@@ -9,13 +9,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Luna în care diaspora trimite cei mai mulți bani acasă
+# Post - Luna în care diaspora trimite cei mai mulți bani acasă
 
 ## Quality gate check
 
-- On-topic rule: yes — a money/finance number (remittance flows), closed on a real credit-
+- On-topic rule: yes - a money/finance number (remittance flows), closed on a real credit-
   relevant takeaway (timing gap between when money is needed and when it arrives).
-- Full-picture rule: yes — dă și cifra lunii record, și media lunară, ca cititorul să vadă
+- Full-picture rule: yes - dă și cifra lunii record, și media lunară, ca cititorul să vadă
   diferența reală, nu doar un număr izolat.
 - Send-to-someone test: cineva cu părinți/frați plecați la muncă îl trimite unei rude din
   diasporă - „uite, se vede și în statistici ce faceți voi de sărbători."
@@ -40,14 +40,15 @@ detaliul ăsta se mută integral în text, per regula din [[social-design-system
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 173 milioane de dolari - atât au trimis acasă moldovenii plecați la muncă în străinătate, într-o
 singură lună din 2025.
 
 Luna? Decembrie. Cu aproape 26% peste media lunară a anului (138 milioane $). Nu e întâmplător
+
 - e luna sărbătorilor, a cadourilor mari și, pentru multe familii, a reparațiilor sau
-cumpărăturilor amânate peste an.
+  cumpărăturilor amânate peste an.
 
 Partea practică: banii diasporei nu ajung mereu exact când e nevoie de ei - un cadou de Crăciun,
 o urgență medicală sau o renovare pot apărea înainte ca transferul să ajungă. Pentru acele

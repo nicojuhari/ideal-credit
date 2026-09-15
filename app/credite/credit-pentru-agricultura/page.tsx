@@ -25,7 +25,8 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         title: "Credit pentru Agricultură în Moldova | Ideal Credit",
-        description: "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei.",
+        description:
+            "Credit agricol pentru fermieri, SRL și ÎI din Moldova. Finanțăm tehnica agricolă, semințe, irigații și capital sezonier. Grafic adaptat recoltei.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -127,7 +128,7 @@ export default function CreditAgriculturaPage() {
                         <h3 className="text-xl tracking-[-.025em] text-dc-text">Grafic de rambursare sezonier</h3>
                         <p className="mt-3 text-[15px] leading-[1.55] text-dc-text-muted">
                             Agricultura nu produce venituri uniform pe parcursul anului. Structurăm graficul de rambursare în funcție de
-                            ciclul tău de producție — rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
+                            ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
                         </p>
                         <ul className="mt-5 flex flex-col gap-3">
                             {scheduleItems.map((item, i) => (
@@ -176,7 +177,14 @@ export default function CreditAgriculturaPage() {
 
             <Calculator />
 
-            <Section align="center" title={<>Credit agricol pentru <Accent>fermieri</Accent> din Moldova</>}>
+            <Section
+                align="center"
+                title={
+                    <>
+                        Credit agricol pentru <Accent>fermieri</Accent> din Moldova
+                    </>
+                }
+            >
                 <ProductDescription
                     paragraphs={[
                         "Creditul agricol de la Ideal Credit este conceput pentru fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate în agricultură. Finanțăm tehnica agricolă, semințele, îngrășămintele, irigațiile, forța de muncă sezonieră și orice alt cost legat de producția agricolă.",

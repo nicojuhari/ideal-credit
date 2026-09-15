@@ -5,7 +5,12 @@ import Accent from "@/components/ds/Accent";
 const BASE = "/credite/";
 
 const products = [
-    { name: "Afaceri mici", desc: "Capital rapid pentru SRL, ÎI și antreprenori.", who: "Juridice", href: BASE + "credit-pentru-afaceri-mici" },
+    {
+        name: "Afaceri mici",
+        desc: "Capital rapid pentru SRL, ÎI și antreprenori.",
+        who: "Juridice",
+        href: BASE + "credit-pentru-afaceri-mici",
+    },
     {
         name: "Investițional",
         desc: "Echipamente, extindere spațiu, modernizare utilaj.",
@@ -55,7 +60,6 @@ export default function Products() {
                         <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
                         <span className="text-xl font-semibold tracking-[-.025em] text-dc-text">{p.name}</span>
                         <span className="text-[15px] leading-[1.55] text-dc-text-muted">{p.desc}</span>
-                        <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">{p.who} →</span>
                     </Link>
                 ))}
             </div>

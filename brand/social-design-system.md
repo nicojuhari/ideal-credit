@@ -28,19 +28,20 @@ page and not a stock-photo ad.
 **No AI-generated imagery. No generic/stock "business people shaking hands"
 photos. No decorative nonsense pictures.** If a frame needs an image, it's
 either a real, licensed photo (Moldovan context, un-staged) or it's typography
-+ data on a clean background. When in doubt, leave it as typography - a
-well-set number on a clean background always outperforms a filler image here.
+
+- data on a clean background. When in doubt, leave it as typography - a
+  well-set number on a clean background always outperforms a filler image here.
 
 ---
 
 ## Canvas Sizes
 
-| Use | Size | Notes |
-| --- | --- | --- |
-| Short post (single image) | 1080 x 1350 px (4:5) | Feed-native on both FB and IG, most vertical real estate in-feed |
-| Carousel slide | 1080 x 1350 px (4:5) | Same size for every slide in the set - never mix aspect ratios within one carousel |
-| LinkedIn repost | Same 1080 x 1350 export | No separate LinkedIn crop needed - the format works natively there too |
-| Safe margin | 80px on all sides | Nothing but the background touches the edge; text/numbers never sit closer than 80px to any edge |
+| Use                       | Size                    | Notes                                                                                            |
+| ------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------ |
+| Short post (single image) | 1080 x 1350 px (4:5)    | Feed-native on both FB and IG, most vertical real estate in-feed                                 |
+| Carousel slide            | 1080 x 1350 px (4:5)    | Same size for every slide in the set - never mix aspect ratios within one carousel               |
+| LinkedIn repost           | Same 1080 x 1350 export | No separate LinkedIn crop needed - the format works natively there too                           |
+| Safe margin               | 80px on all sides       | Nothing but the background touches the edge; text/numbers never sit closer than 80px to any edge |
 
 ---
 
@@ -51,34 +52,34 @@ content and the website read as one brand, not two.
 
 **Backgrounds (pick one per post, stay consistent within a carousel):**
 
-| Token | Hex | Use |
-| --- | --- | --- |
-| `black-800` (primary) | `#0b0b0b` | Default post background - matches site background exactly |
-| `black-600` (card) | `#111111` | Slightly lifted surface, e.g. a boxed stat or quote block |
-| `black-400` (raised) | `#212121` | Sparingly, for a contrast panel inside a slide (e.g. source citation strip) |
+| Token                 | Hex       | Use                                                                         |
+| --------------------- | --------- | --------------------------------------------------------------------------- |
+| `black-800` (primary) | `#0b0b0b` | Default post background - matches site background exactly                   |
+| `black-600` (card)    | `#111111` | Slightly lifted surface, e.g. a boxed stat or quote block                   |
+| `black-400` (raised)  | `#212121` | Sparingly, for a contrast panel inside a slide (e.g. source citation strip) |
 
 **Brand accent (the number/hook color):**
 
-| Token | Hex | Use |
-| --- | --- | --- |
-| `brand-500` | `#ff9a00` | The hero number on hook slides, key stat callouts, source-slide accent line |
+| Token          | Hex                                                              | Use                                                                                     |
+| -------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `brand-500`    | `#ff9a00`                                                        | The hero number on hook slides, key stat callouts, source-slide accent line             |
 | Brand gradient | `linear-gradient(135deg, #ffb347 0%, #ff9a00 50%, #ff6a00 100%)` | Optional on the hook number only, for the carousel's opening slide - never on body text |
 
 **Text:**
 
-| Token | Hex | Use |
-| --- | --- | --- |
-| White | `#fafafa` | Headlines, hero numbers, high-emphasis text |
-| `gray-500` | `#aaaaaa` | Body copy, context lines |
-| `gray-700` | `#818181` | Source citation, fine print, slide numbers |
+| Token      | Hex       | Use                                         |
+| ---------- | --------- | ------------------------------------------- |
+| White      | `#fafafa` | Headlines, hero numbers, high-emphasis text |
+| `gray-500` | `#aaaaaa` | Body copy, context lines                    |
+| `gray-700` | `#818181` | Source citation, fine print, slide numbers  |
 
 **Secondary accents (use rarely, only when a post needs to contrast two data
 points - e.g. rate up vs. rate down, credit vs. deposit):**
 
-| Token | Hex | Use |
-| --- | --- | --- |
-| `green-500` | `#6c8f58` | Positive/favorable number in a two-number comparison |
-| `blue-500` | `#567aa1` | Neutral second data point, or a LinkedIn-leaning slide that wants a cooler accent |
+| Token       | Hex       | Use                                                                               |
+| ----------- | --------- | --------------------------------------------------------------------------------- |
+| `green-500` | `#6c8f58` | Positive/favorable number in a two-number comparison                              |
+| `blue-500`  | `#567aa1` | Neutral second data point, or a LinkedIn-leaning slide that wants a cooler accent |
 
 **Rule:** one background tone + brand orange + white/gray text is the default
 for 95% of posts. Green/blue only appear when a post is explicitly comparing
@@ -92,15 +93,15 @@ two numbers and needs to visually separate them.
 `--font-sans`). No secondary display font. Consistency across every slide
 comes from weight and size, not from mixing typefaces.
 
-| Role | Weight | Size (on 1080x1350 canvas) | Notes |
-| --- | --- | --- | --- |
-| Kicker label | Bold / 700 | 24-28px | Uppercase, +3-4px letter-spacing, `brand-500`, small square/dot marker to its left. Sits above the hero number, every post - see Kicker Label section below |
-| Hero number (hook slide) | Bold / 700 | 180-260px | Dominates the frame - see Layout below |
-| Slide headline | Semibold / 600 | 64-80px | One line if possible, two max |
-| Body / context text | Regular / 400 | 40-48px | 2-3 short lines max per slide |
-| Landing line (closing slide) | Medium / 500 | 52-64px | Slightly heavier than body - it's the line people screenshot |
-| Source citation | Regular / 400 | 26-30px | Always `gray-700`, always same position |
-| Slide counter (carousel only, e.g. "2/6") | Regular / 400 | 24px | Top or bottom corner, `gray-700`, optional but recommended for carousel completion rate |
+| Role                                      | Weight         | Size (on 1080x1350 canvas) | Notes                                                                                                                                                       |
+| ----------------------------------------- | -------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kicker label                              | Bold / 700     | 24-28px                    | Uppercase, +3-4px letter-spacing, `brand-500`, small square/dot marker to its left. Sits above the hero number, every post - see Kicker Label section below |
+| Hero number (hook slide)                  | Bold / 700     | 180-260px                  | Dominates the frame - see Layout below                                                                                                                      |
+| Slide headline                            | Semibold / 600 | 64-80px                    | One line if possible, two max                                                                                                                               |
+| Body / context text                       | Regular / 400  | 40-48px                    | 2-3 short lines max per slide                                                                                                                               |
+| Landing line (closing slide)              | Medium / 500   | 52-64px                    | Slightly heavier than body - it's the line people screenshot                                                                                                |
+| Source citation                           | Regular / 400  | 26-30px                    | Always `gray-700`, always same position                                                                                                                     |
+| Slide counter (carousel only, e.g. "2/6") | Regular / 400  | 24px                       | Top or bottom corner, `gray-700`, optional but recommended for carousel completion rate                                                                     |
 
 Line height: 1.15 for numbers/headlines, 1.4 for body text. Letter-spacing:
 default (no tracking tricks, no all-caps body text - caps only for very short
@@ -157,15 +158,15 @@ before the number lands - it also breaks up the empty space between the top marg
 hero number. Fixed wording per content lane, not freeform copy invented per post - consistency
 here is what makes it read as a system rather than decoration.
 
-| Lane (per [[social-media-strategy]]) | Kicker label |
-| --- | --- |
-| Past success | POVESTE REALĂ |
-| Money, business & credit facts / statistics | FAPT & CIFRĂ |
-| Tips & tricks | SFAT PRACTIC |
-| History & mechanisms | ISTORIE FINANCIARĂ |
-| Global finance & investment numbers | CIFRĂ GLOBALĂ |
-| Credit & loan news | ȘTIRE |
-| Legal rules, decoded | REGULĂ DECODATĂ |
+| Lane (per [[social-media-strategy]])        | Kicker label       |
+| ------------------------------------------- | ------------------ |
+| Past success                                | POVESTE REALĂ      |
+| Money, business & credit facts / statistics | FAPT & CIFRĂ       |
+| Tips & tricks                               | SFAT PRACTIC       |
+| History & mechanisms                        | ISTORIE FINANCIARĂ |
+| Global finance & investment numbers         | CIFRĂ GLOBALĂ      |
+| Credit & loan news                          | ȘTIRE              |
+| Legal rules, decoded                        | REGULĂ DECODATĂ    |
 
 Style: `brand-500` (`#ff9a00`), Bold/700, 24-28px, uppercase, +3-4px letter-spacing, small
 square or dot marker immediately to its left (also `brand-500`). Position: top-left, inside the
@@ -187,7 +188,7 @@ If a number genuinely needs a second data point to make sense in-frame (not
 just to add depth), it's a two-column split (number left, number right,
 divider between) - never added text below the first number.
 
-### Carousel (6-slide default) — PAUSED, not in current rotation
+### Carousel (6-slide default) - PAUSED, not in current rotation
 
 Per [[social-media-strategy]], carousels are paused - every post is single-image for now.
 Spec kept here so the format can be switched back on later without rebuilding it from
@@ -234,6 +235,7 @@ swipe-through completion.
 ## Do / Don't
 
 **DO:**
+
 - Include the kicker label above the hero number on every post, using the fixed lane-to-label
   mapping above - no post skips it, no post invents new kicker wording
 - Keep every slide to one idea, one number, generous white space
@@ -245,6 +247,7 @@ swipe-through completion.
   norm
 
 **DON'T:**
+
 - No post without its kicker label, and no ad-hoc kicker wording outside the lane mapping above
 - No AI-generated images, illustrations, or "hero" scenes
 - No generic stock photography (handshakes, people pointing at laptops,

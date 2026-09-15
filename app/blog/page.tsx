@@ -30,7 +30,7 @@ export default function BlogPage() {
                         Ghiduri <Accent>practice.</Accent>
                     </h1>
                     <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Articole scrise pentru antreprenori și persoane fizice care evaluează un credit nebancar — nu educație financiară
+                        Articole scrise pentru antreprenori și persoane fizice care evaluează un credit nebancar - nu educație financiară
                         generală, ci răspunsuri la întrebările pe care le ai înainte să aplici.
                     </p>
                 </Container>
@@ -53,7 +53,11 @@ export default function BlogPage() {
                                         {categoryLabel[post.category]}
                                     </span>
                                     <span className="font-dc-mono text-xs text-dc-text-muted">
-                                        {new Date(post.date).toLocaleDateString("ro-RO", { day: "2-digit", month: "short", year: "numeric" })}
+                                        {new Date(post.date).toLocaleDateString("ro-RO", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric",
+                                        })}
                                     </span>
                                 </Link>
                             ))}

@@ -12,13 +12,13 @@ image: image.png
 status: ready
 ---
 
-# Post — Aceeași sumă, aceeași dobândă, același termen - și totuși un grafic te costă cu 2.970 MDL mai mult
+# Post - Aceeași sumă, aceeași dobândă, același termen - și totuși un grafic te costă cu 2.970 MDL mai mult
 
 ## Quality gate check
 
-- On-topic rule: yes — un mecanism concret din orice contract de credit (felul în care sunt
+- On-topic rule: yes - un mecanism concret din orice contract de credit (felul în care sunt
   împărțite ratele), cu calcul verificabil pe un împrumut.
-- Full-picture rule: yes — arată atât avantajul ratelor descrescătoare (dobândă totală mai mică)
+- Full-picture rule: yes - arată atât avantajul ratelor descrescătoare (dobândă totală mai mică)
   cât și prețul lui real (primele rate sunt mai mari, deci trebuie să încapă în buget de la
   început) - nu doar „descrescător = mai ieftin", altfel un cititor atent ar întreba „dar de ce
   nu aleg toți așa?".
@@ -56,7 +56,7 @@ lor și explicația se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Două oferte de credit pot avea exact aceeași sumă, aceeași dobândă și același termen - și
 totuși una te costă mai mult. Diferența e în graficul de rambursare: felul în care sunt

@@ -6,7 +6,7 @@ import { yearsSinceFoundation } from "@/lib/utils";
 
 const stats = [
     { figure: `${yearsSinceFoundation}`, label: "ani pe piață" },
-    { figure: "0", label: "comisioane" },
+    { figure: "0", label: "comisioane", proof: true },
     { figure: "4,9", label: "rating clienți" },
     { figure: "10 000", label: "MDL sumă minimă" },
 ];
@@ -34,7 +34,7 @@ export default function HeroHome() {
                     <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
                         {stats.map((s) => (
                             <div key={s.label} className="dc-cell p-7">
-                                <Figure size="lg" proof className="block">
+                                <Figure size="lg" proof={s.proof} className="block">
                                     {s.figure}
                                 </Figure>
                                 <p className="mt-1.5 text-xs uppercase tracking-[.1em] text-dc-text-muted">{s.label}</p>

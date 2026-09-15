@@ -10,12 +10,12 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Rata de bază BNM la 7%
+# Post - Rata de bază BNM la 7%
 
 ## Quality gate check
 
-- On-topic rule: yes — direct effect of a BNM decision on the cost of credit.
-- Full-picture rule: yes — shows both why the hike happened (inflation) and its direct
+- On-topic rule: yes - direct effect of a BNM decision on the cost of credit.
+- Full-picture rule: yes - shows both why the hike happened (inflation) and its direct
   cost-side effect (mortgages/credit), not just one side.
 - Send-to-someone test: someone with a variable-rate mortgage or business loan sends this
   to another person in the same situation - "did you know this is why your payment went up."
@@ -40,7 +40,7 @@ dobânda la overnight/depozite și indicele ipotecar se mută integral în capti
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Rata de bază a BNM a urcat la 7% pe 18 iunie. Majoritatea o citesc ca pe o măsură împotriva
 scumpirilor - și este: inflația era 6,76% în mai, peste ținta BNM de 5%, iar banca centrală a

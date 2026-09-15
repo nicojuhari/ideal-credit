@@ -25,7 +25,8 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
-        description: "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
+        description:
+            "Credit personal rapid în Moldova - dobândă fixă, fără comisioane ascunse. Decizie în 2-3 ore pentru orice nevoie personală.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -77,15 +78,27 @@ const useCases = [
 const bugetariCategories = [
     {
         title: "Medici și personal medical",
-        items: ["Medici, asistenți medicali, farmaciști", "Angajați ai spitalelor și policlinicilor de stat", "Personal auxiliar din sistemul de sănătate"],
+        items: [
+            "Medici, asistenți medicali, farmaciști",
+            "Angajați ai spitalelor și policlinicilor de stat",
+            "Personal auxiliar din sistemul de sănătate",
+        ],
     },
     {
         title: "Militari și polițiști",
-        items: ["Ofițeri și subofițeri ai Armatei Naționale", "Angajați ai Ministerului Afacerilor Interne", "Personal al Serviciului de Protecție și Pază de Stat"],
+        items: [
+            "Ofițeri și subofițeri ai Armatei Naționale",
+            "Angajați ai Ministerului Afacerilor Interne",
+            "Personal al Serviciului de Protecție și Pază de Stat",
+        ],
     },
     {
         title: "Alți angajați bugetari",
-        items: ["Profesori, educatori, personal didactic", "Funcționari publici și angajați ai administrației locale", "Angajați ai instituțiilor de stat și autorităților publice"],
+        items: [
+            "Profesori, educatori, personal didactic",
+            "Funcționari publici și angajați ai administrației locale",
+            "Angajați ai instituțiilor de stat și autorităților publice",
+        ],
     },
 ];
 
@@ -139,12 +152,24 @@ export default function CreditNevoiPersonalePage() {
                         Condiții de <Accent>bază</Accent>
                     </>
                 }
-                items={["Vârsta de la 23 de ani", "Sursă de venit stabilă (angajat, pensionar, antreprenor)", "Buletin de identitate valabil", "Capacitate de rambursare demonstrabilă"]}
+                items={[
+                    "Vârsta de la 23 de ani",
+                    "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
+                    "Buletin de identitate valabil",
+                    "Capacitate de rambursare demonstrabilă",
+                ]}
             />
 
             <Calculator />
 
-            <Section align="center" title={<>Credit personal rapid în <Accent>Moldova</Accent></>}>
+            <Section
+                align="center"
+                title={
+                    <>
+                        Credit personal rapid în <Accent>Moldova</Accent>
+                    </>
+                }
+            >
                 <ProductDescription
                     paragraphs={[
                         "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
@@ -162,7 +187,7 @@ export default function CreditNevoiPersonalePage() {
                         Ai mai multe credite <Accent>active?</Accent>
                     </>
                 }
-                description="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației — merită analizat-o dacă:"
+                description="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
                 items={worthConsolidatingItems}
             />
 

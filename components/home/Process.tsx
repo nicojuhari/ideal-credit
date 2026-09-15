@@ -4,7 +4,7 @@ import Stack from "@/components/ds/Stack";
 
 const steps = [
     { title: "Discuție la telefon", body: "O conversație reală, nu un formular. Înțelegem situația completă." },
-    { title: "Analiză la distanță", body: "Documentele se verifică prin e-mail, WhatsApp sau Viber — fără drumuri." },
+    { title: "Analiză la distanță", body: "Documentele se verifică prin e-mail, WhatsApp sau Viber - fără drumuri." },
     { title: "Semnătură în oficiu", body: "Întâlnirea confirmă, nu decide. Primești banii în aceeași zi." },
 ];
 

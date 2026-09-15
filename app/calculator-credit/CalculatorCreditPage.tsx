@@ -138,9 +138,9 @@ export default function CalculatorCreditPage() {
     return (
         <div className="pb-24">
             <Container>
-                <div className="grid items-start gap-6 lg:grid-cols-[400px_1fr]">
+                <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[400px_1fr]">
                     {/* ── Inputs ── */}
-                    <div className="dc-cell flex flex-col gap-7 p-8">
+                    <div className="dc-cell flex min-w-0 flex-col gap-7 p-8">
                         {/* Suma */}
                         <div>
                             <div className="mb-3.5 flex items-baseline justify-between gap-4">
@@ -206,8 +206,10 @@ export default function CalculatorCreditPage() {
                                         key={t}
                                         onClick={() => setType(t)}
                                         className={cn(
-                                            "px-4 py-3 text-[15px] font-semibold transition-colors duration-[120ms]",
-                                            type === t ? "bg-dc-accent text-dc-on-accent" : "bg-dc-surface text-dc-text-muted hover:text-dc-text",
+                                            "min-w-0 px-4 py-3 text-[15px] font-semibold transition-colors duration-[120ms]",
+                                            type === t
+                                                ? "bg-dc-accent text-dc-on-accent"
+                                                : "bg-dc-surface text-dc-text-muted hover:text-dc-text",
                                         )}
                                     >
                                         {t === "anuitate" ? "Anuitate" : "Principal egal"}
@@ -221,11 +223,11 @@ export default function CalculatorCreditPage() {
 
                         {/* Grace period + Rate */}
                         <div className="grid grid-cols-2 gap-5">
-                            <div>
+                            <div className="min-w-0">
                                 <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">
                                     Perioadă de grație
                                 </label>
-                                <select value={grace} onChange={(e) => setGrace(Number(e.target.value))}>
+                                <select value={grace} onChange={(e) => setGrace(Number(e.target.value))} className="w-full min-w-0">
                                     {[0, 1, 2, 3, 4, 5, 6].map((v) => (
                                         <option key={v} value={v} className="bg-dc-surface">
                                             {v === 0 ? "Fără" : `${v} ${v === 1 ? "lună" : "luni"}`}
@@ -233,12 +235,12 @@ export default function CalculatorCreditPage() {
                                     ))}
                                 </select>
                             </div>
-                            <div>
+                            <div className="min-w-0">
                                 <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Dobândă lunară</label>
-                                <div className="flex items-center gap-2.5">
+                                <div className="flex min-w-0 items-center gap-2.5">
                                     <input
                                         type="number"
-                                        className="input-calculator font-dc-mono"
+                                        className="input-calculator min-w-0 font-dc-mono"
                                         value={rate}
                                         min={0.5}
                                         max={15}
@@ -255,16 +257,16 @@ export default function CalculatorCreditPage() {
 
                         {grace > 0 && (
                             <Note className="-mt-4">
-                                În primele {grace} {grace === 1 ? "lună" : "luni"} plătești doar dobânda. Principalul se amortizează în
-                                cele {termen - grace} luni rămase.
+                                În primele {grace} {grace === 1 ? "lună" : "luni"} plătești doar dobânda. Principalul se amortizează în cele{" "}
+                                {termen - grace} luni rămase.
                             </Note>
                         )}
                     </div>
 
                     {/* ── Results ── */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex min-w-0 flex-col gap-6">
                         {/* 4 stat cells */}
-                        <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+                        <div className="grid grid-cols-2">
                             <div className="dc-cell min-w-0 p-7">
                                 <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
                                     {isFixed ? "Rată lunară" : "Prima rată"}
@@ -314,7 +316,7 @@ export default function CalculatorCreditPage() {
                         </div>
 
                         {/* Amortization table */}
-                        <div className="dc-cell overflow-hidden">
+                        <div className="dc-cell min-w-0 overflow-hidden">
                             <div className="flex items-center justify-between border-b border-dc-line px-6 py-4">
                                 <span className="text-[15px] font-medium text-dc-text">Grafic de rambursare</span>
                                 <span className="font-dc-mono text-xs text-dc-text-muted">{schedule.length} rate</span>
@@ -335,7 +337,10 @@ export default function CalculatorCreditPage() {
                                         {visibleRows.map((r) => (
                                             <tr
                                                 key={r.month}
-                                                className={cn("font-dc-mono", r.principal === 0 ? "text-dc-text-muted" : "text-dc-text-muted hover:bg-dc-surface")}
+                                                className={cn(
+                                                    "font-dc-mono",
+                                                    r.principal === 0 ? "text-dc-text-muted" : "text-dc-text-muted hover:bg-dc-surface",
+                                                )}
                                             >
                                                 <td className="px-6 py-3">{r.month}</td>
                                                 <td className="px-6 py-3">{r.date}</td>
@@ -343,7 +348,9 @@ export default function CalculatorCreditPage() {
                                                     {Math.round(r.payment).toLocaleString("ro-RO").replace(/\./g, " ")}
                                                 </td>
                                                 <td className="px-6 py-3 text-right">
-                                                    {r.principal ? Math.round(r.principal).toLocaleString("ro-RO").replace(/\./g, " ") : "—"}
+                                                    {r.principal
+                                                        ? Math.round(r.principal).toLocaleString("ro-RO").replace(/\./g, " ")
+                                                        : "-"}
                                                 </td>
                                                 <td className="px-6 py-3 text-right text-dc-accent">
                                                     {Math.round(r.interest).toLocaleString("ro-RO").replace(/\./g, " ")}

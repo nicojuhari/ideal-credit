@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — 2 tipuri de rată la un credit - doar unul dintre ele nu se schimbă niciodată
+# Post - 2 tipuri de rată la un credit - doar unul dintre ele nu se schimbă niciodată
 
 ## Quality gate check
 
-- On-topic rule: yes — explică un mecanism direct din contractul de credit, cu impact real
+- On-topic rule: yes - explică un mecanism direct din contractul de credit, cu impact real
   asupra ratei lunare pe toată durata împrumutului.
-- Full-picture rule: yes — arată ambele variante și compromisul real al fiecăreia (fixă =
+- Full-picture rule: yes - arată ambele variante și compromisul real al fiecăreia (fixă =
   predictibilă, dar pornește de obicei ceva mai sus; variabilă = poate porni mai jos, dar se
   poate scumpi) - nu doar „alege fixă, e mai sigură", altfel un cititor atent ar întreba „dar
   dacă dobânzile scad?".
@@ -49,7 +49,7 @@ compromisul lor real se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Orice credit are unul din două tipuri de rată a dobânzii - și diferența contează mai mult decât
 pare la semnare:

@@ -1,4 +1,6 @@
+import { Star } from "lucide-react";
 import Container from "@/components/ds/Container";
+import Accent from "@/components/ds/Accent";
 import Figure from "@/components/ds/Figure";
 
 const reviews = [
@@ -24,12 +26,18 @@ export default function RecenziiClient() {
         <div className="dc-section">
             <Container>
                 <figure className="max-w-[900px]">
-                    <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
-                        <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                        Recenzii · <Figure size="ordinal" proof>4,9 / 5</Figure>
+                    <p className="flex items-center gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                        <span className="mt-[1px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                        Recenzii ·{" "}
+                        <span className="inline-flex items-center gap-1.5 text-dc-proof">
+                            <Star size={12} strokeWidth={2.5} className="shrink-0 fill-dc-proof" aria-hidden />
+                            <Figure size="ordinal" proof>
+                                4,9 / 5
+                            </Figure>
+                        </span>
                     </p>
-                    <p className="mt-7 text-[clamp(34px,4vw,50px)] font-semibold leading-[1.16] tracking-[-.03em] text-dc-text">
-                        „Banca m-a refuzat, dar voi m-ați ajutat în 2 zile să cumpăr mașina dorită.”
+                    <p className="mt-7 text-balance text-[clamp(34px,4vw,50px)] font-semibold leading-[1.16] tracking-[-.03em] text-dc-text">
+                        „Banca m-a refuzat, dar voi m-ați ajutat <Accent>în 2 zile</Accent> să cumpăr mașina dorită.”
                     </p>
                     <figcaption className="mt-6 text-xs tracking-[.06em] text-dc-text-muted">— VICTOR</figcaption>
                 </figure>

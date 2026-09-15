@@ -10,15 +10,15 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — A treia încercare a lui Milton Hershey a pornit dintr-un împrumut garantat cu o casă
+# Post - A treia încercare a lui Milton Hershey a pornit dintr-un împrumut garantat cu o casă
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre un împrumut bancar, garantat de o terță persoană cu
+- On-topic rule: yes - o poveste reală despre un împrumut bancar, garantat de o terță persoană cu
   propria locuință, care a pornit o afacere de succes după două eșecuri.
-- Full-picture rule: yes — arată eșecurile anterioare, riscul real asumat de mătușa lui
+- Full-picture rule: yes - arată eșecurile anterioare, riscul real asumat de mătușa lui
   (posibilitatea de a-și pierde casa), termenul strict de rambursare și rezultatul pe termen lung
-  - nu doar „a împrumutat bani și a ieșit bine."
+    - nu doar „a împrumutat bani și a ieșit bine."
 - Send-to-someone test: cineva care a eșuat deja o dată sau de două ori cu o afacere trimite asta
   unui prieten descurajat - „nici Hershey n-a reușit din prima, dar cineva a crezut destul în el
   cât să-și pună casa garanție."
@@ -51,7 +51,7 @@ vânzarea din 1900 pentru 1 milion $ se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 700 de dolari. Atât a împrumutat Milton Hershey de la o bancă locală, în 1886, ca să pornească
 Lancaster Caramel Company - a treia lui încercare, după două afaceri de dulciuri eșuate în New

@@ -499,7 +499,7 @@ input[type=number] {
   @apply text-xl font-semibold mb-2 mt-12;
 }
 
-/* ─── "dc" design system scope — "Registrul", see DESIGN-SYSTEM.md ──────────
+/* ─── "dc" design system scope - "Registrul", see DESIGN-SYSTEM.md ──────────
    Applied to the homepage wrapper + Header + Footer only. Keeps the redesign's
    type/tokens from leaking onto pages that haven't been migrated yet. ── */
 .dc {
@@ -527,7 +527,7 @@ input[type=number] {
   text-decoration: none;
 }
 
-/* Accent word — one per heading, always last */
+/* Accent word - one per heading, always last */
 .dc-accent {
   font-family: var(--font-dc-serif), serif;
   font-style: italic;
@@ -545,14 +545,14 @@ input[type=number] {
   white-space: nowrap;
 }
 
-/* Container — fixed 24px gutter below max-width, no padding */
+/* Container - fixed 24px gutter below max-width, no padding */
 .ic-container {
   width: calc(100% - 3rem);
   max-width: 1180px;
   margin-inline: auto;
 }
 
-/* Rhythm — 96/96, hero and CTA deviate per spec */
+/* Rhythm - 96/96, hero and CTA deviate per spec */
 .dc-section {
   border-top: 1px solid var(--color-dc-line);
   padding-block: 96px;
@@ -590,17 +590,17 @@ input[type=number] {
   background: var(--color-dc-line);
   border: 1px solid var(--color-dc-line);
 }
-.dc-stack > * {
+.dc-stack>* {
   background: var(--color-dc-surface);
 }
 
-/* Cell (pattern A) — zero-gap grid, shared hairline via outline */
+/* Cell (pattern A) - zero-gap grid, shared hairline via outline */
 .dc-cell {
   background: var(--color-dc-surface);
   outline: 1px solid var(--color-dc-line);
 }
 
-/* Range slider — square thumb, 2px track */
+/* Range slider - square thumb, 2px track */
 .dc input[type="range"].dc-slider {
   -webkit-appearance: none;
   appearance: none;
@@ -659,7 +659,7 @@ input[type=number] {
   opacity: 1;
 }
 
-/* Legal / prose pages — light-touch typography, no card restructuring */
+/* Legal / prose pages - light-touch typography, no card restructuring */
 .dc-legal {
   color: var(--color-dc-text-muted);
   line-height: 1.7;

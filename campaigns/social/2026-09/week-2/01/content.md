@@ -12,13 +12,13 @@ image: image.png
 status: ready
 ---
 
-# Post — Locuia în mașină și a împrumutat 700 de dolari - azi compania lui face peste 900 mil. $/an
+# Post - Locuia în mașină și a împrumutat 700 de dolari - azi compania lui face peste 900 mil. $/an
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre un împrumut concret care a pornit o afacere, cu
+- On-topic rule: yes - o poveste reală despre un împrumut concret care a pornit o afacere, cu
   scopul creditului ca instrument de acces clar arătat.
-- Full-picture rule: yes — arată atât punctul de plecare real (fără casă, locuind în mașină) cât
+- Full-picture rule: yes - arată atât punctul de plecare real (fără casă, locuind în mașină) cât
   și mecanismul exact (împrumut de 700$, folosit ca să pornească fabricarea și vânzarea către
   saloane) și rezultatul pe termen lung - nu doar „a pornit de la puțin", altfel un cititor atent
   ar întreba „dar cu ce bani a pornit efectiv?".
@@ -53,7 +53,7 @@ traiectoria completă se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 700 de dolari. Atât a împrumutat John Paul DeJoria în 1980, într-o perioadă în care nu avea casă
 și dormea într-un Rolls-Royce vechi de 20 de ani, cumpărat cu mult înainte să ajungă fără venit.

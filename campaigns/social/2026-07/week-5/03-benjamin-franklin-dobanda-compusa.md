@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Ce se întâmplă cu un împrumut lăsat să crească 200 de ani
+# Post - Ce se întâmplă cu un împrumut lăsat să crească 200 de ani
 
 ## Quality gate check
 
-- On-topic rule: yes — un mecanism de creditare real (împrumuturi la dobândă către meșteșugari
+- On-topic rule: yes - un mecanism de creditare real (împrumuturi la dobândă către meșteșugari
   tineri) și efectul dobânzii compuse pe termen lung.
-- Full-picture rule: yes — arată suma inițială, mecanismul exact (împrumuturi la 5% către
+- Full-picture rule: yes - arată suma inițială, mecanismul exact (împrumuturi la 5% către
   tineri meșteșugari căsătoriți), ce s-a întâmplat la jumătatea perioadei (100 de ani) și
   rezultatul final (200 de ani) pentru ambele orașe, nu doar cifra finală izolată.
 - Send-to-someone test: cineva care crede că „dobânda compusă e doar teorie de manual" trimite
@@ -55,7 +55,7 @@ integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 În 1790, Benjamin Franklin a lăsat prin testament câte 1.000 de lire sterline (aproximativ
 2.000 de dolari la cursul vremii) orașelor Boston și Philadelphia. Condiția: banii nu stăteau

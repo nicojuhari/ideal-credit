@@ -112,7 +112,7 @@ export default function ContactePage() {
                         Vorbim <Accent>direct.</Accent>
                     </h1>
                     <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Un telefon de cinci minute înlocuiește un formular de o oră. Sună, scrie sau treci pe la oficiu — răspundem în
+                        Un telefon de cinci minute înlocuiește un formular de o oră. Sună, scrie sau treci pe la oficiu - răspundem în
                         aceeași zi lucrătoare.
                     </p>
                 </Container>
@@ -126,9 +126,7 @@ export default function ContactePage() {
                                 <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
                                     <span className="font-dc-mono">{String(i + 1).padStart(2, "0")}</span> · {office.title}
                                 </p>
-                                <h2 className="text-[28px] tracking-[-.03em] text-dc-text">
-                                    {office.city.replace(/^(or\.|m\.)\s*/, "")}
-                                </h2>
+                                <h2 className="text-[28px] tracking-[-.03em] text-dc-text">{office.city.replace(/^(or\.|m\.)\s*/, "")}</h2>
                                 <p className="text-[17px] leading-[1.6] text-dc-text-muted">
                                     {office.street}
                                     <br />
@@ -169,7 +167,7 @@ export default function ContactePage() {
                                 Alege cum ne <Accent>scrii</Accent>
                             </h2>
                             <p className="mt-4 text-[17px] leading-[1.6] text-dc-text-muted">
-                                Documentele se verifică la distanță. Trimite extrasele pe canalul care îți convine — nu e nevoie să vii la
+                                Documentele se verifică la distanță. Trimite extrasele pe canalul care îți convine - nu e nevoie să vii la
                                 oficiu pentru analiză.
                             </p>
                         </div>
@@ -289,7 +287,7 @@ export default function ContactePage() {
                         <span className="font-dc-mono text-xs text-dc-text-muted">01</span>
                         <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">Program de lucru</h3>
                         <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">
-                            Luni–Vineri, 08:30–16:30. Sâmbătă și duminică — închis. Cererile online se depun oricând.
+                            Luni–Vineri, 08:30–16:30. Sâmbătă și duminică - închis. Cererile online se depun oricând.
                         </p>
                     </div>
                     <div className="dc-cell p-8">

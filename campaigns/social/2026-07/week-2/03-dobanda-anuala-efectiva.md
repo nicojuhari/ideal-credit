@@ -8,12 +8,12 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cifra pe care trebuie s-o compari, nu dobânda
+# Post - Cifra pe care trebuie s-o compari, nu dobânda
 
 ## Quality gate check
 
-- On-topic rule: yes — how to actually compare loan offers; direct credit literacy content.
-- Full-picture rule: yes — explains both what DAE includes and why the nominal rate alone can
+- On-topic rule: yes - how to actually compare loan offers; direct credit literacy content.
+- Full-picture rule: yes - explains both what DAE includes and why the nominal rate alone can
   mislead, plus the separate legal cost cap for small/short loans.
 - Send-to-someone test: cineva care tocmai compară două oferte de credit îl trimite unui
   prieten care face aceeași căutare - „uite la ce cifră să te uiți de fapt."
@@ -40,7 +40,7 @@ plafonul legal de cost se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Când compari două oferte de credit, dobânda afișată cu litere mari nu e cifra care contează cel
 mai mult. Cifra e DAE - dobânda anuală efectivă.

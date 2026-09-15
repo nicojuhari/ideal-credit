@@ -9,13 +9,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cel mai mare retailer din lume a pornit de la un împrumut de la socru
+# Post - Cel mai mare retailer din lume a pornit de la un împrumut de la socru
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre folosirea unui credit, cu plan clar de
+- On-topic rule: yes - o poveste reală despre folosirea unui credit, cu plan clar de
   rambursare, ca să pornească o afacere.
-- Full-picture rule: yes — arată suma împrumutată, suma proprie, planul de rambursare (30 de
+- Full-picture rule: yes - arată suma împrumutată, suma proprie, planul de rambursare (30 de
   luni, respectat) și rezultatul pe termen lung - nu doar „a luat un credit și a reușit," ci
   structura exactă a deciziei.
 - Send-to-someone test: cineva care vrea să pornească o afacere dar ezită să ia un credit,
@@ -45,7 +45,7 @@ proprie, planul de rambursare, rezultatul pe termen lung - se mută integral în
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 20.000 de dolari - suma pe care Sam Walton a împrumutat-o de la socrul lui, Leland Robson, în
 1945, ca să cumpere primul lui magazin: un Ben Franklin, în Newport, Arkansas.

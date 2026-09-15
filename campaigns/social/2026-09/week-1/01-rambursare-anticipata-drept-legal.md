@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Poți achita orice credit mai devreme, prin lege - iar ce poate cere creditorul e limitat la 1%
+# Post - Poți achita orice credit mai devreme, prin lege - iar ce poate cere creditorul e limitat la 1%
 
 ## Quality gate check
 
-- On-topic rule: yes — un drept legal concret pe care mulți debitori nu știu că îl au, direct
+- On-topic rule: yes - un drept legal concret pe care mulți debitori nu știu că îl au, direct
   legat de contractele de credit.
-- Full-picture rule: yes — arată atât dreptul (poți plăti oricând, integral sau parțial, cu
+- Full-picture rule: yes - arată atât dreptul (poți plăti oricând, integral sau parțial, cu
   reducerea costului total) cât și limita reală a compensației pe care creditorul are voie s-o
   ceară - nu doar „poți plăti mai devreme", altfel un cititor atent ar întreba „dar nu mă
   penalizează creditorul pentru asta?".
@@ -52,7 +52,7 @@ anticipată și plafoanele complete se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Mulți cred că, dacă vor să achite un credit mai devreme, banca poate să le ceară o penalizare
 oricât de mare - sau că, pur și simplu, „nu ai voie." Nu e adevărat. Legea spune altceva.

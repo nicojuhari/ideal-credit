@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Coco Chanel a deschis primul ei magazin cu bani împrumutați, nu cu bani proprii
+# Post - Coco Chanel a deschis primul ei magazin cu bani împrumutați, nu cu bani proprii
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre un împrumut bancar folosit ca să pornească o
+- On-topic rule: yes - o poveste reală despre un împrumut bancar folosit ca să pornească o
   afacere, cu susținere/garanție din partea unui terț, și achitat integral din profit.
-- Full-picture rule: yes — arată sursa banilor (împrumut bancar, cu susținerea lui Arthur „Boy"
+- Full-picture rule: yes - arată sursa banilor (împrumut bancar, cu susținerea lui Arthur „Boy"
   Capel și Étienne Balsan), motivul pentru care afacerea a crescut (nu doar norocul), și momentul
   concret în care a fost achitat integral - nu doar „a avut noroc că cineva a plătit-o."
 - Send-to-someone test: cineva care crede că „un brand mare a pornit mereu cu bani proprii sau cu
@@ -50,11 +50,11 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Susținer
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 1910. Coco Chanel deschide un mic magazin de pălării la Paris, la numărul 21, rue Cambon. Banii
-nu erau ai ei - a pornit cu un împrumut bancar, susținut financiar de Arthur „Boy" Capel și
-Étienne Balsan.
+      nu erau ai ei - a pornit cu un împrumut bancar, susținut financiar de Arthur „Boy" Capel și
+      Étienne Balsan.
 
 Afacerea nu a crescut peste noapte. A crescut pentru că a funcționat: o actriță cunoscută a
 purtat una din pălăriile ei într-o piesă de teatru, clienta s-a extins, iar Chanel a deschis un

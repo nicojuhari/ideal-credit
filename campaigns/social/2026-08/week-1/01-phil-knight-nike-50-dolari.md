@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Împrumutul de familie din spatele celui mai mare brand sportiv din lume
+# Post - Împrumutul de familie din spatele celui mai mare brand sportiv din lume
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre un împrumut mic, folosit cu un scop clar, care a
+- On-topic rule: yes - o poveste reală despre un împrumut mic, folosit cu un scop clar, care a
   pornit o afacere.
-- Full-picture rule: yes — arată suma exactă, la ce a fost folosită (călătoria în Japonia care a
+- Full-picture rule: yes - arată suma exactă, la ce a fost folosită (călătoria în Japonia care a
   deschis parteneriatul cu Onitsuka Tiger), capitalul formal ulterior ($500 de fiecare
   fondator) și rezultatul pe termen lung - nu doar „a împrumutat 50 de dolari și a ieșit Nike."
 - Send-to-someone test: cineva care crede că „am nevoie de mult capital ca să pornesc ceva"
@@ -49,7 +49,7 @@ capitalul formal de 500 de dolari și evoluția spre Nike se mută integral în 
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 50 de dolari - atât a împrumutat Phil Knight de la tatăl lui, în 1964, ca să-și acopere costurile
 unei călătorii în Japonia. Acolo a convins compania Onitsuka Tiger să-i dea dreptul de a le

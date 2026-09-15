@@ -8,12 +8,12 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Ce faci dacă crezi că un credit nebancar te-a costat prea mult
+# Post - Ce faci dacă crezi că un credit nebancar te-a costat prea mult
 
 ## Quality gate check
 
-- On-topic rule: yes — consumer-protection regulation directly about non-bank credit.
-- Full-picture rule: yes — arată atât ce a făcut CNPF, cât și ce înseamnă concret pentru un
+- On-topic rule: yes - consumer-protection regulation directly about non-bank credit.
+- Full-picture rule: yes - arată atât ce a făcut CNPF, cât și ce înseamnă concret pentru un
   împrumutat (dreptul de a contesta, cine supraveghează piața).
 - Send-to-someone test: cineva care are un credit nebancar activ, sau se gândește să ia unul,
   îl trimite unui prieten în aceeași situație - „uite cine verifică de fapt contractele astea."
@@ -42,7 +42,7 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Explicaț
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 195 de milioane de lei - atât a recuperat CNPF pentru consumatori în 2025, după ce a dispus
 revizuirea a peste 3.000 de contracte de credit la organizații de creditare nebancară.

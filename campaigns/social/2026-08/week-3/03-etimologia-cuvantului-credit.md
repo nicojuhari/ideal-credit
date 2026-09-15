@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — De unde vine cuvântul „credit" - și de ce sensul lui original încă e adevărat azi
+# Post - De unde vine cuvântul „credit" - și de ce sensul lui original încă e adevărat azi
 
 ## Quality gate check
 
-- On-topic rule: yes — originea unui cuvânt financiar folosit zilnic, direct din istoria banilor
+- On-topic rule: yes - originea unui cuvânt financiar folosit zilnic, direct din istoria banilor
   și a creditării.
-- Full-picture rule: yes — arată tot lanțul (latină → italiană → franceză → engleză) și sensul
+- Full-picture rule: yes - arată tot lanțul (latină → italiană → franceză → engleză) și sensul
   original („încredere", nu „bani"), nu doar o etimologie ruptă de context - altfel un cititor
   atent ar întreba „dar de unde știm asta exact?".
 - Send-to-someone test: cineva căruia îi plac faptele „nu știam asta" trimite postarea unui
@@ -25,8 +25,7 @@ status: draft
 - Sourced: etimologia documentată de Etymonline - cuvântul englez „credit" intră în engleză în
   anii 1540, cu sensul „încredere, credință", din franceza „crédit" (secolul XV), din italiana
   „credito", din latina „creditum" („un împrumut, un lucru încredințat cuiva"), participiul trecut
-  al verbului „credere" („a crede, a avea încredere"). Sensul comercial actual apare abia pe la
-  1570. Rădăcina proto-indo-europeană a lui „credere" înseamnă literal „a-ți pune inima [în ceva]".
+  al verbului „credere" („a crede, a avea încredere"). Sensul comercial actual apare abia pe la 1570. Rădăcina proto-indo-europeană a lui „credere" înseamnă literal „a-ți pune inima [în ceva]".
   No invented figures.
 - Language check: „proto-indo-europeană" - singurul termen mai tehnic, explicat direct în text.
 - Sign-off present: yes.
@@ -49,7 +48,7 @@ franceză-engleză și sensul comercial ulterior se mută integral în caption.)
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Cuvântul „credit" a intrat în limba engleză prin anii 1540 - și, la început, n-avea nicio
 legătură directă cu banii. Însemna „încredere, credință".

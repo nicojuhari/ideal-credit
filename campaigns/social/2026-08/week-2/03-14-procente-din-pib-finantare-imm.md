@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cât de mari sunt, de fapt, afacerile mici din Moldova care nu găsesc finanțare
+# Post - Cât de mari sunt, de fapt, afacerile mici din Moldova care nu găsesc finanțare
 
 ## Quality gate check
 
-- On-topic rule: yes — statistică oficială despre deficitul de finanțare al afacerilor mici și
+- On-topic rule: yes - statistică oficială despre deficitul de finanțare al afacerilor mici și
   mijlocii din Moldova, direct legată de piața de credit.
-- Full-picture rule: yes — arată atât cifra totală (14% din PIB) cât și componenta specifică
+- Full-picture rule: yes - arată atât cifra totală (14% din PIB) cât și componenta specifică
   pentru afacerile conduse de femei (20% din acel deficit), plus cauza principală (acces
   limitat + cost ridicat al creditului) - nu doar un procent izolat fără context.
 - Send-to-someone test: un antreprenor care crede „doar afacerea mea are probleme să obțină
@@ -51,7 +51,7 @@ afacerile conduse de femei și cauzele deficitului se mută integral în caption
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 14% din PIB-ul Moldovei (Produsul Intern Brut - toată valoarea produsă de țară într-un an).
 Atât reprezintă, conform IFC (International Finance Corporation, parte a Grupului Băncii

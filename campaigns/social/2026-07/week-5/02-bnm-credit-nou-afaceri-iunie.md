@@ -9,13 +9,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Cine ia, de fapt, cele mai multe credite noi în Moldova
+# Post - Cine ia, de fapt, cele mai multe credite noi în Moldova
 
 ## Quality gate check
 
-- On-topic rule: yes — statistică oficială BNM despre structura creditării, direct despre cine
+- On-topic rule: yes - statistică oficială BNM despre structura creditării, direct despre cine
   folosește creditul și cum.
-- Full-picture rule: yes — arată atât procentul afacerilor cât și suma totală lunară, ca
+- Full-picture rule: yes - arată atât procentul afacerilor cât și suma totală lunară, ca
   reperul să aibă context, nu doar un procent izolat.
 - Send-to-someone test: un antreprenor care ezită să ia un credit, crezând că „așa ceva nu e
   pentru afaceri mici," trimite asta unui alt antreprenor - „uite, majoritatea creditelor noi
@@ -42,7 +42,7 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Suma tota
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 65,2% - atât din creditele noi acordate de bănci în Moldova, în iunie 2026, au mers către
 afaceri. Restul de 34,8% - către persoane fizice. Așa arată datele oficiale ale BNM (Banca

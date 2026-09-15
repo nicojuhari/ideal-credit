@@ -2,7 +2,7 @@ import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import Figure from "@/components/ds/Figure";
 import Note from "@/components/ds/Note";
-import { ButtonPrimary } from "@/components/ds/Button";
+import { ButtonText } from "@/components/ds/Button";
 
 type Spec = { label: string; value: string; proof?: boolean };
 
@@ -22,13 +22,13 @@ const solutions: Solution[] = [
         ordinal: "01",
         category: "Persoane juridice",
         title: "Credit pentru afaceri",
-        intro: "Capital de lucru, investiții, refinanțare — fără plan de afaceri obligatoriu.",
+        intro: "Capital de lucru, investiții, refinanțare - fără plan de afaceri obligatoriu.",
         specs: [
             { label: "Sumă de la", value: "50 000 MDL" },
             { label: "Termen", value: "12–60 luni" },
             { label: "Decizie", value: "1–2 zile", proof: true },
         ],
-        checklist: ["SRL, ÎI, GȚ — toate formele juridice acceptate", "Fără plan de afaceri obligatoriu", "Extrase bancare minim 3 luni"],
+        checklist: ["SRL, ÎI, GȚ - toate formele juridice acceptate", "Fără plan de afaceri obligatoriu", "Extrase bancare minim 3 luni"],
         cta: "Condiții pentru afaceri",
         href: "/credite/credit-pentru-afaceri-mici",
     },
@@ -36,7 +36,7 @@ const solutions: Solution[] = [
         ordinal: "02",
         category: "Persoane fizice",
         title: "Credit personal",
-        intro: "Pentru orice nevoie urgentă sau planificată — cu condiții clare de la prima discuție.",
+        intro: "Pentru orice nevoie urgentă sau planificată - cu condiții clare de la prima discuție.",
         specs: [
             { label: "Sumă de la", value: "10 000 MDL" },
             { label: "Termen", value: "12–48 luni" },
@@ -60,13 +60,13 @@ function SolutionBlock({ solution }: { solution: Solution }) {
                 </p>
                 <h3 className="mt-3.5 text-[28px] tracking-[-.03em] text-dc-text">{solution.title}</h3>
                 <p className="mt-3 text-[17px] leading-[1.6] text-dc-text-muted">{solution.intro}</p>
-                <ButtonPrimary href={solution.href} size="inline" className="mt-7">
-                    {solution.cta}
-                </ButtonPrimary>
+                <ButtonText href={solution.href} className="mt-6 block">
+                    {solution.cta} →
+                </ButtonText>
             </div>
 
-            <div className="flex min-w-0 flex-col gap-px border border-dc-line bg-dc-line">
-                <div className="flex flex-col gap-px">
+            <div className="flex min-w-0 flex-col gap-6">
+                <div className="flex flex-col gap-px border border-dc-line bg-dc-line">
                     {solution.specs.map((spec) => (
                         <div key={spec.label} className="flex items-baseline justify-between gap-4 bg-dc-surface px-5 py-4">
                             <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">{spec.label}</span>
@@ -76,12 +76,9 @@ function SolutionBlock({ solution }: { solution: Solution }) {
                         </div>
                     ))}
                 </div>
-                <ul className="flex flex-col gap-px">
+                <ul className="flex flex-col gap-3">
                     {solution.checklist.map((item, i) => (
-                        <li
-                            key={item}
-                            className="flex items-baseline gap-3.5 bg-dc-surface px-5 py-4 text-[15px] leading-[1.5] text-dc-text-muted"
-                        >
+                        <li key={item} className="flex items-baseline gap-3.5 text-[15px] leading-[1.5] text-dc-text-muted">
                             <span className="shrink-0 font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
                             {item}
                         </li>
@@ -99,7 +96,7 @@ export default function Solutions() {
             marker="Soluții, nu produse"
             title={
                 <>
-                    Spune-ne ce vrei să <Accent>faci.</Accent>
+                    Care este <Accent>scopul </Accent> tău?
                 </>
             }
         >

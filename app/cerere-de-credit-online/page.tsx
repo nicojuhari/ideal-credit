@@ -30,12 +30,7 @@ const defaultValues: CerereFormValues = {
     terms: true,
 };
 
-function ChoiceButton({
-    selected,
-    children,
-    className,
-    ...props
-}: { selected: boolean } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
+function ChoiceButton({ selected, children, className, ...props }: { selected: boolean } & React.ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
         <button
             type="button"
@@ -127,7 +122,7 @@ function PhoneDigits({ value, onChange, showError }: { value: string; onChange: 
                 })}
             </div>
             <FieldDescription className="text-xs text-dc-text-muted">
-                9 cifre — începe cu <strong className="text-dc-text">06</strong> sau <strong className="text-dc-text">07</strong>
+                9 cifre - începe cu <strong className="text-dc-text">06</strong> sau <strong className="text-dc-text">07</strong>
             </FieldDescription>
         </div>
     );
@@ -152,7 +147,17 @@ export default function CerereOnlinePage() {
         reValidateMode: "onChange",
     });
 
-    const { register, control, handleSubmit, watch, trigger, reset, setValue, clearErrors, formState: { errors, isSubmitting } } = form;
+    const {
+        register,
+        control,
+        handleSubmit,
+        watch,
+        trigger,
+        reset,
+        setValue,
+        clearErrors,
+        formState: { errors, isSubmitting },
+    } = form;
 
     const stepAttempted = !!attemptedSteps[step];
 
@@ -291,8 +296,8 @@ export default function CerereOnlinePage() {
                             </p>
                         ) : (
                             <p className="text-[15px] leading-[1.55] text-dc-text-muted">
-                                Contractul se semnează <strong className="text-dc-text">doar în oficiu</strong>. Dacă nu poți veni, nu
-                                putem continua online.
+                                Contractul se semnează <strong className="text-dc-text">doar în oficiu</strong>. Dacă nu poți veni, nu putem
+                                continua online.
                             </p>
                         )}
                         <div className="mt-2 flex flex-col items-center gap-4">
@@ -310,7 +315,10 @@ export default function CerereOnlinePage() {
                             >
                                 Revin și aleg din nou
                             </ButtonSecondary>
-                            <a href="tel:+37361252777" className="text-[15px] text-dc-text-muted underline underline-offset-4 hover:text-white">
+                            <a
+                                href="tel:+37361252777"
+                                className="text-[15px] text-dc-text-muted underline underline-offset-4 hover:text-white"
+                            >
                                 Sau sună-ne: 0612 52 777
                             </a>
                         </div>
@@ -359,7 +367,9 @@ export default function CerereOnlinePage() {
                                                 render={({ field }) => (
                                                     <Field className="mt-6 gap-3">
                                                         <YesNoChoice value={field.value} onChange={field.onChange} />
-                                                        {errMsg("have_garant") && <FieldError className={errorClass}>{errMsg("have_garant")}</FieldError>}
+                                                        {errMsg("have_garant") && (
+                                                            <FieldError className={errorClass}>{errMsg("have_garant")}</FieldError>
+                                                        )}
                                                     </Field>
                                                 )}
                                             />
@@ -381,7 +391,9 @@ export default function CerereOnlinePage() {
                                                 render={({ field }) => (
                                                     <Field className="mt-6 gap-3">
                                                         <YesNoChoice value={field.value} onChange={field.onChange} />
-                                                        {errMsg("in_oficiu") && <FieldError className={errorClass}>{errMsg("in_oficiu")}</FieldError>}
+                                                        {errMsg("in_oficiu") && (
+                                                            <FieldError className={errorClass}>{errMsg("in_oficiu")}</FieldError>
+                                                        )}
                                                     </Field>
                                                 )}
                                             />
@@ -408,7 +420,9 @@ export default function CerereOnlinePage() {
                                                     className="font-dc-mono"
                                                     {...register("suma")}
                                                 />
-                                                <FieldDescription className="text-xs text-dc-text-muted">10 000 – 300 000 lei</FieldDescription>
+                                                <FieldDescription className="text-xs text-dc-text-muted">
+                                                    10 000 – 300 000 lei
+                                                </FieldDescription>
                                                 {errMsg("suma") && <FieldError className={errorClass}>{errMsg("suma")}</FieldError>}
                                             </Field>
 
@@ -418,7 +432,12 @@ export default function CerereOnlinePage() {
                                                     control={control}
                                                     name="termen"
                                                     render={({ field }) => (
-                                                        <OptionGrid options={TERMEN_OPTIONS} value={field.value} onChange={field.onChange} columns={3} />
+                                                        <OptionGrid
+                                                            options={TERMEN_OPTIONS}
+                                                            value={field.value}
+                                                            onChange={field.onChange}
+                                                            columns={3}
+                                                        />
                                                     )}
                                                 />
                                                 {errMsg("termen") && <FieldError className={errorClass}>{errMsg("termen")}</FieldError>}
@@ -482,7 +501,11 @@ export default function CerereOnlinePage() {
                                                     control={control}
                                                     name="telefon"
                                                     render={({ field }) => (
-                                                        <PhoneDigits value={field.value} onChange={field.onChange} showError={!!showErr("telefon")} />
+                                                        <PhoneDigits
+                                                            value={field.value}
+                                                            onChange={field.onChange}
+                                                            showError={!!showErr("telefon")}
+                                                        />
                                                     )}
                                                 />
                                                 {errMsg("telefon") && <FieldError className={errorClass}>{errMsg("telefon")}</FieldError>}
@@ -508,7 +531,9 @@ export default function CerereOnlinePage() {
                                                     className="font-dc-mono"
                                                     {...register("venituri")}
                                                 />
-                                                <FieldDescription className="text-xs text-dc-text-muted">Oficial sau confirmat</FieldDescription>
+                                                <FieldDescription className="text-xs text-dc-text-muted">
+                                                    Oficial sau confirmat
+                                                </FieldDescription>
                                                 {errMsg("venituri") && <FieldError className={errorClass}>{errMsg("venituri")}</FieldError>}
                                             </Field>
 
@@ -520,18 +545,28 @@ export default function CerereOnlinePage() {
                                                     render={({ field }) => <YesNoChoice value={field.value} onChange={field.onChange} />}
                                                 />
                                                 <FieldDescription className="text-xs text-dc-text-muted">
-                                                    Bănci, OCN, leasing — orice credit activ
+                                                    Bănci, OCN, leasing - orice credit activ
                                                 </FieldDescription>
-                                                {errMsg("are_alte_credite") && <FieldError className={errorClass}>{errMsg("are_alte_credite")}</FieldError>}
+                                                {errMsg("are_alte_credite") && (
+                                                    <FieldError className={errorClass}>{errMsg("are_alte_credite")}</FieldError>
+                                                )}
                                             </Field>
 
                                             <Field data-invalid={showErr("locul_de_munca")} className="gap-2.5">
                                                 <FieldLabel htmlFor="locul_de_munca" className={labelClass}>
                                                     Locul de muncă
                                                 </FieldLabel>
-                                                <input id="locul_de_munca" aria-invalid={showErr("locul_de_munca")} {...register("locul_de_munca")} />
-                                                <FieldDescription className="text-xs text-dc-text-muted">Compania și funcția</FieldDescription>
-                                                {errMsg("locul_de_munca") && <FieldError className={errorClass}>{errMsg("locul_de_munca")}</FieldError>}
+                                                <input
+                                                    id="locul_de_munca"
+                                                    aria-invalid={showErr("locul_de_munca")}
+                                                    {...register("locul_de_munca")}
+                                                />
+                                                <FieldDescription className="text-xs text-dc-text-muted">
+                                                    Compania și funcția
+                                                </FieldDescription>
+                                                {errMsg("locul_de_munca") && (
+                                                    <FieldError className={errorClass}>{errMsg("locul_de_munca")}</FieldError>
+                                                )}
                                             </Field>
                                         </FieldGroup>
                                     </FieldSet>
@@ -552,14 +587,16 @@ export default function CerereOnlinePage() {
                                                 <FieldDescription className="text-xs text-dc-text-muted">
                                                     Casă, apartament, teren, garaj, cameră în cămin
                                                 </FieldDescription>
-                                                {errMsg("are_bunuri") && <FieldError className={errorClass}>{errMsg("are_bunuri")}</FieldError>}
+                                                {errMsg("are_bunuri") && (
+                                                    <FieldError className={errorClass}>{errMsg("are_bunuri")}</FieldError>
+                                                )}
                                             </Field>
                                         </FieldGroup>
 
                                         <p className="mt-8 text-xs leading-[1.7] text-dc-text-muted">
                                             Trimițând cererea, confirmi că: (1) este o cerere preventivă, fără caracter obligatoriu; (2)
-                                            Ideal Credit SRL nu este obligată să motiveze un eventual refuz; (3) vei oferi fidejusor și
-                                            vei veni în oficiu pentru semnare.
+                                            Ideal Credit SRL nu este obligată să motiveze un eventual refuz; (3) vei oferi fidejusor și vei
+                                            veni în oficiu pentru semnare.
                                         </p>
                                     </FieldSet>
                                 )}
@@ -573,7 +610,12 @@ export default function CerereOnlinePage() {
                                 </ButtonSecondary>
                             )}
                             {current.kind !== "submit" ? (
-                                <ButtonPrimary type="button" onClick={nextStep} disabled={gateBlocked} className="ml-auto disabled:opacity-40">
+                                <ButtonPrimary
+                                    type="button"
+                                    onClick={nextStep}
+                                    disabled={gateBlocked}
+                                    className="ml-auto disabled:opacity-40"
+                                >
                                     Continuă
                                 </ButtonPrimary>
                             ) : (
@@ -597,7 +639,11 @@ export default function CerereOnlinePage() {
                             <DialogTitle className="mt-1">Cerere trimisă cu succes!</DialogTitle>
                         </DialogHeader>
                         <p className="text-[15px] leading-[1.55] text-dc-text-muted">
-                            Revenim cu un apel în cel mult <Figure size="ordinal" proof>3 ore</Figure> (Luni - Vineri).
+                            Revenim cu un apel în cel mult{" "}
+                            <Figure size="ordinal" proof>
+                                3 ore
+                            </Figure>{" "}
+                            (Luni - Vineri).
                         </p>
                     </DialogContent>
                 </Dialog>

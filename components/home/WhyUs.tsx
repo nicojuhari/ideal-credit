@@ -5,11 +5,11 @@ import { yearsSinceFoundation } from "@/lib/utils";
 const rows = [
     {
         title: "Condiții transparente",
-        body: "Dobânzi fixe, zero comisioane ascunse — toate costurile înainte de semnare.",
+        body: "Dobânzi fixe, zero comisioane ascunse - toate costurile înainte de semnare.",
     },
     {
         title: "Decizie rapidă",
-        body: "Dosarul complet primit dimineața — răspunsul îl ai înainte de prânz.",
+        body: "Dosarul complet primit dimineața - răspunsul îl ai înainte de prânz.",
     },
     {
         title: "Rambursare anticipată gratuită",

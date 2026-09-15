@@ -196,7 +196,7 @@ export default function CreditAfaceriMiciPage() {
                 items={[
                     { title: "Buletin de identitate al administratorului", note: "Obligatoriu" },
                     { title: "Certificat de înregistrare a firmei", note: "SRL / ÎI / GȚ" },
-                    { title: "Extrase bancare — ultimele 3-6 luni", note: "Obligatoriu" },
+                    { title: "Extrase bancare - ultimele 3-6 luni", note: "Obligatoriu" },
                     { title: "Actele de proprietate", note: "Doar dacă se solicită gaj" },
                 ]}
                 footnote="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu dosar solid pot obține creditul fără fidejusor."

@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — 5 lucruri la care se uită orice creditor înainte să aprobe un credit
+# Post - 5 lucruri la care se uită orice creditor înainte să aprobe un credit
 
 ## Quality gate check
 
-- On-topic rule: yes — explică mecanismul real prin care un creditor evaluează o cerere de
+- On-topic rule: yes - explică mecanismul real prin care un creditor evaluează o cerere de
   credit, sfat practic direct aplicabil.
-- Full-picture rule: yes — arată toate cele 5 criterii, nu doar unul (ex. doar scorul de
+- Full-picture rule: yes - arată toate cele 5 criterii, nu doar unul (ex. doar scorul de
   credit), și precizează că se evaluează împreună, nu izolat - altfel un cititor atent ar
   întreba „dar dacă am doar unul dintre ele?"
 - Send-to-someone test: cineva care se pregătește să ceară un credit pentru prima dată trimite
@@ -48,7 +48,7 @@ dintre cele 5 criterii se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Mulți cred că un credit se aprobă sau se respinge pe baza unui singur lucru: scorul de credit.
 În realitate, băncile și creditorii folosesc de zeci de ani un cadru cu 5 criterii, cunoscut ca

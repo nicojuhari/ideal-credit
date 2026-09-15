@@ -20,7 +20,10 @@ export const metadata: Metadata = {
 };
 
 const ceFacem = [
-    { title: "Antreprenori și proprietari de afaceri", desc: "Capital de lucru, utilaje, stoc sau extindere — fără plan de afaceri obligatoriu." },
+    {
+        title: "Antreprenori și proprietari de afaceri",
+        desc: "Capital de lucru, utilaje, stoc sau extindere - fără plan de afaceri obligatoriu.",
+    },
     { title: "Persoane fizice", desc: "Renovări, cumpărături mari, sănătate sau educație, cu rate fixe de la prima discuție." },
     { title: "Clienți refuzați de bănci", desc: "Analiză flexibilă, adaptată situației reale, nu unui scor automat." },
 ];
@@ -57,8 +60,14 @@ const principii = [
         title: "Flexibilitate reală",
         desc: "Analizăm situația ta individual, nu după un algoritm rigid. Dacă ai venituri stabile și capacitate de rambursare, găsim o soluție.",
     },
-    { title: `${yearsSinceFoundation} ani de încredere`, desc: "Mii de clienți au obținut finanțare prin noi. Facem ce spunem și spunem ce facem." },
-    { title: "Acoperire națională", desc: "Birouri în Căușeni și Chișinău, dar lucrăm cu clienți din toată Moldova prin platforma noastră online." },
+    {
+        title: `${yearsSinceFoundation} ani de încredere`,
+        desc: "Mii de clienți au obținut finanțare prin noi. Facem ce spunem și spunem ce facem.",
+    },
+    {
+        title: "Acoperire națională",
+        desc: "Birouri în Căușeni și Chișinău, dar lucrăm cu clienți din toată Moldova prin platforma noastră online.",
+    },
 ];
 
 const proces = [
@@ -70,7 +79,12 @@ const proces = [
 ];
 
 const documente = [
-    { label: "Regulament privind cadrul de administrare", group: "Regulamente", meta: "PDF", href: "/regulament-cadrul-de-administrare.pdf" },
+    {
+        label: "Regulament privind cadrul de administrare",
+        group: "Regulamente",
+        meta: "PDF",
+        href: "/regulament-cadrul-de-administrare.pdf",
+    },
     { label: "Regulament privind prestarea serviciilor", group: "Regulamente", meta: "PDF", href: "/regulament-prestarea-serviciilor.pdf" },
     {
         label: "Regulament privind soluționarea pretențiilor",
@@ -154,7 +168,7 @@ export default function DespreNoiPage() {
                         <p className="mt-7 text-[clamp(34px,4vw,50px)] font-semibold leading-[1.16] tracking-[-.03em] text-dc-text">
                             Facem ce spunem și spunem ce facem. Dacă finanțarea nu are sens pentru tine, o spunem înainte să depui dosarul.
                         </p>
-                        <figcaption className="mt-6 text-xs tracking-[.06em] text-dc-text-muted">— ECHIPA IDEAL CREDIT</figcaption>
+                        <figcaption className="mt-6 text-xs tracking-[.06em] text-dc-text-muted">- ECHIPA IDEAL CREDIT</figcaption>
                     </figure>
                 </Container>
             </div>

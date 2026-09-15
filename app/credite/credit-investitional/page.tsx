@@ -26,7 +26,8 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         title: "Credit Investițional pentru Afaceri în Moldova | Ideal Credit",
-        description: "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile lucrătoare.",
+        description:
+            "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile lucrătoare.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -126,7 +127,14 @@ export default function CreditInvestitionalPage() {
 
             <Calculator />
 
-            <Section align="center" title={<>Credit investițional pentru <Accent>afaceri</Accent> din Moldova</>}>
+            <Section
+                align="center"
+                title={
+                    <>
+                        Credit investițional pentru <Accent>afaceri</Accent> din Moldova
+                    </>
+                }
+            >
                 <ProductDescription
                     paragraphs={[
                         "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
@@ -136,7 +144,14 @@ export default function CreditInvestitionalPage() {
                 />
             </Section>
 
-            <Section align="center" title={<>Credit investițional <Accent>vs. leasing</Accent></>}>
+            <Section
+                align="center"
+                title={
+                    <>
+                        Credit investițional <Accent>vs. leasing</Accent>
+                    </>
+                }
+            >
                 <ComparisonRows oursLabel="Ideal Credit" otherLabel="Leasing" rows={comparisonRows} />
             </Section>
 
@@ -153,7 +168,7 @@ export default function CreditInvestitionalPage() {
                 items={[
                     { title: "Buletin de identitate al administratorului", note: "Obligatoriu" },
                     { title: "Certificat de înregistrare (SRL/ÎI)", note: "Obligatoriu" },
-                    { title: "Extrase bancare — ultimele 3-6 luni", note: "Obligatoriu" },
+                    { title: "Extrase bancare - ultimele 3-6 luni", note: "Obligatoriu" },
                     { title: "Ofertă sau factură proformă pentru bun", note: "Dacă există" },
                     { title: "Actele de proprietate", note: "Pentru gaj, dacă e cazul" },
                 ]}

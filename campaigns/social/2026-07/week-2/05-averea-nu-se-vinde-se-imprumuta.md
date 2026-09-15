@@ -10,12 +10,12 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — De ce cei mai bogați oameni din lume se împrumută, deși au bani
+# Post - De ce cei mai bogați oameni din lume se împrumută, deși au bani
 
 ## Quality gate check
 
-- On-topic rule: yes — credit as a financial mechanism, history/investment angle.
-- Full-picture rule: yes — arată atât mecanismul popular („buy, borrow, die" - se împrumută
+- On-topic rule: yes - credit as a financial mechanism, history/investment angle.
+- Full-picture rule: yes - arată atât mecanismul popular („buy, borrow, die" - se împrumută
   cu acțiunile drept garanție, ca să nu vândă și să nu plătească impozit pe câștig), cât și
   nuanța din cercetări recente (împrumuturile sunt de fapt o parte mică din venit; marea
   strategie e pur și simplu să nu vândă). Fără nuanța asta, primul comentariu ar fi „păi nu
@@ -45,7 +45,7 @@ borrow, die" și explicația completă se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Ai auzit probabil ideea: miliardarii nu-și vând niciodată acțiunile - se împrumută cu ele drept
 garanție, ca să nu plătească impozit pe câștig. Se numește „buy, borrow, die": cumperi active,

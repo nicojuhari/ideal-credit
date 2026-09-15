@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Dacă cineva te roagă să-i „garantezi" un credit, întreabă întâi ce rol semnezi de fapt
+# Post - Dacă cineva te roagă să-i „garantezi" un credit, întreabă întâi ce rol semnezi de fapt
 
 ## Quality gate check
 
-- On-topic rule: yes — explică diferența dintre două roluri reale, frecvent confundate, pe care
+- On-topic rule: yes - explică diferența dintre două roluri reale, frecvent confundate, pe care
   cineva le poate semna într-un contract de credit al altcuiva.
-- Full-picture rule: yes — arată clar când intervine răspunderea fiecărui rol (co-debitorul e
+- Full-picture rule: yes - arată clar când intervine răspunderea fiecărui rol (co-debitorul e
   parte din prima zi, girantul doar dacă debitorul principal nu mai plătește) și ce risc
   concret își asumă fiecare - nu doar „amândouă înseamnă că ești responsabil", altfel un cititor
   atent ar întreba „dar care e diferența reală?".
@@ -49,7 +49,7 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Diferenț
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 „Poți să-mi fii garant la un credit?" - o întrebare pe care mulți o aud de la un prieten sau o
 rudă, fără să știe exact ce semnează. Sunt două roluri diferite, cu riscuri diferite.

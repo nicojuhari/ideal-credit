@@ -9,13 +9,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Poți lua credit de afaceri chiar dacă nu ai destule garanții
+# Post - Poți lua credit de afaceri chiar dacă nu ai destule garanții
 
 ## Quality gate check
 
-- On-topic rule: yes — un mecanism concret de finanțare pentru afaceri, exact domeniul Ideal
+- On-topic rule: yes - un mecanism concret de finanțare pentru afaceri, exact domeniul Ideal
   Credit.
-- Full-picture rule: yes — spune procentul de garantare, comisionul anual, plaja de sumă, ce
+- Full-picture rule: yes - spune procentul de garantare, comisionul anual, plaja de sumă, ce
   acoperă (investiții și cheltuieli curente) și cum se accesează - nu doar „există un program",
   ci ce înseamnă concret și cât costă.
 - Send-to-someone test: un antreprenor căruia banca i-a cerut garanții pe care nu le are
@@ -47,7 +47,7 @@ sumă și cum se accesează se mută integral în caption.)_
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 Dacă ești antreprenor și nu ai destule garanții proprii pentru un credit de afaceri, asta nu
 mai înseamnă automat refuz. Din 1 aprilie 2026, ODA (Organizația pentru Dezvoltarea
@@ -58,6 +58,7 @@ Costă 1% pe an, aplicat la soldul garanției, iar intervalul acoperit e larg: d
 20.000.000 lei. Se aplică atât pentru investiții (echipamente, digitalizare, extindere pe
 export, eficiență energetică), cât și pentru cheltuieli curente (materie primă, promovare,
 capital de lucru). Accesul se face direct prin banca parteneră, la momentul cererii de credit
+
 - fără dosar separat depus la ODA.
 
 Fondul de garantare administrat de ODA are deja un istoric: doar în 2025 a eliberat 537 de
@@ -67,8 +68,7 @@ credite pentru IMM-uri.
 La Ideal Credit știm cum să structurăm un dosar de credit ca să folosească această garanție -
 util exact atunci când ai o afacere solidă, dar nu suficiente garanții proprii.
 
-Sursă: ODA - Organizația pentru Dezvoltarea Antreprenoriatului, comunicat oficial, 1 aprilie
-2026.
+Sursă: ODA - Organizația pentru Dezvoltarea Antreprenoriatului, comunicat oficial, 1 aprilie 2026.
 
 Ideal Credit - credite pentru succes!
 

@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Băncile l-au refuzat. Așa a finanțat Ray Kroc primii ani ai McDonald's
+# Post - Băncile l-au refuzat. Așa a finanțat Ray Kroc primii ani ai McDonald's
 
 ## Quality gate check
 
-- On-topic rule: yes — o poveste reală despre finanțare alternativă (împrumut pe propria poliță
+- On-topic rule: yes - o poveste reală despre finanțare alternativă (împrumut pe propria poliță
   de asigurare de viață) când creditul bancar clasic a fost refuzat.
-- Full-picture rule: yes — arată refuzul băncilor, sursa reală de bani (poliță de asigurare de
+- Full-picture rule: yes - arată refuzul băncilor, sursa reală de bani (poliță de asigurare de
   viață, apoi împrumut de la companii de asigurări pentru răscumpărarea de la frații McDonald),
   și costul real pe termen lung (14 milioane $, nu doar prețul inițial de 2,7 milioane $) - nu
   doar „a pornit de la zero și a ieșit un gigant."
@@ -54,7 +54,7 @@ poliță de asigurare de viață - și cifrele răscumpărării de la frații Mc
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 8 ani - atât a lucrat Ray Kroc, fondatorul McDonald's așa cum îl știm azi, fără să-și ia salariu.
 Băncile îi refuzaseră finanțare. Ca să plătească primii angajați și să lanseze campania cu Ronald

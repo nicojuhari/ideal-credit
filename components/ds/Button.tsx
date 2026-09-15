@@ -65,7 +65,7 @@ export function ButtonSecondary({ href, className, children, ...rest }: BaseProp
 
 export function ButtonText({ href, className, children }: LinkProps) {
     return (
-        <Link href={href} className={cn("text-[15px] uppercase tracking-[.04em] text-dc-accent underline underline-offset-4", className)}>
+        <Link href={href} className={cn("text-[15px] uppercase tracking-[.04em] text-dc-muted underline underline-offset-4", className)}>
             {children}
         </Link>
     );

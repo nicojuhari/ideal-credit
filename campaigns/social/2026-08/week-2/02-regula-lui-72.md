@@ -10,13 +10,13 @@ platforms: Facebook, LinkedIn, Instagram (same caption everywhere)
 status: draft
 ---
 
-# Post — Împarte 72 la dobândă și afli în câți ani se dublează banii
+# Post - Împarte 72 la dobândă și afli în câți ani se dublează banii
 
 ## Quality gate check
 
-- On-topic rule: yes — un instrument practic, folosit real în finanțe, pentru a înțelege dobânda
+- On-topic rule: yes - un instrument practic, folosit real în finanțe, pentru a înțelege dobânda
   compusă la economii, investiții sau credite.
-- Full-picture rule: yes — arată formula, exemple concrete la rate diferite și limita ei (cea mai
+- Full-picture rule: yes - arată formula, exemple concrete la rate diferite și limita ei (cea mai
   precisă între 6-10%), nu doar „împarte la 72" fără context - altfel un cititor atent ar
   întreba „dar merge la orice dobândă?".
 - Send-to-someone test: cineva care compară două oferte de economii sau investiții trimite asta
@@ -47,10 +47,10 @@ _(Hook + o singură linie de deschidere, per [[social-design-system]]. Exemplele
 
 ---
 
-## Caption (single version, LinkedIn register — used on all platforms)
+## Caption (single version, LinkedIn register - used on all platforms)
 
 72. Un singur număr, o singură împărțire - și afli în câți ani se dublează orice sumă de bani
-pusă la dobândă compusă (dobânda care se adaugă la sumă și, la rândul ei, produce altă dobândă).
+    pusă la dobândă compusă (dobânda care se adaugă la sumă și, la rândul ei, produce altă dobândă).
 
 Formula: 72 împărțit la rata anuală a dobânzii = anii necesari ca banii să se dubleze.
 
