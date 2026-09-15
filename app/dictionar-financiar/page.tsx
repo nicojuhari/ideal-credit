@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
+import Stack from "@/components/ds/Stack";
 import { GLOSSARY_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -15,25 +16,34 @@ export default function DictionarFinanciarPage() {
         <div className="dc bg-dc-bg">
             <div className="dc-section dc-section--hero">
                 <Container>
-                    <h1 className="text-[40px] md:text-[64px] font-bold leading-[1.04] tracking-[-.03em] text-dc-text">
-                        Dicționar <Accent>financiar</Accent>
+                    <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                        <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                        <span className="font-dc-mono">{String(GLOSSARY_LINKS.length).padStart(2, "0")}</span> termeni
+                    </p>
+                    <h1 className="mt-7 max-w-[1000px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
+                        Dicționar <Accent>financiar.</Accent>
                     </h1>
-                    <p className="mt-5 max-w-[640px] text-[19px] leading-relaxed text-dc-text-muted">
+                    <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
                         Termenii financiari și de creditare cei mai des întâlniți, explicați pe înțelesul tuturor.
                     </p>
                 </Container>
             </div>
 
-            <div className="dc-section">
+            <div className="pb-24">
                 <Container>
-                    <div className="grid gap-x-10 gap-y-8" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
-                        {GLOSSARY_LINKS.map((item) => (
-                            <div key={item.name} className="border-t border-dc-line pt-5">
-                                <h2 className="text-[17px] font-bold text-dc-text">{item.name}</h2>
-                                <p className="mt-1.5 text-sm leading-relaxed text-dc-text-muted">{item.desc}</p>
+                    <Stack>
+                        {GLOSSARY_LINKS.map((item, i) => (
+                            <div
+                                key={item.name}
+                                className="grid items-baseline gap-7 p-8"
+                                style={{ gridTemplateColumns: "44px minmax(0,1fr) minmax(0,1.5fr)" }}
+                            >
+                                <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                                <h2 className="text-xl tracking-[-.025em] text-dc-text">{item.name}</h2>
+                                <p className="text-[17px] leading-[1.6] text-dc-text-muted">{item.desc}</p>
                             </div>
                         ))}
-                    </div>
+                    </Stack>
                 </Container>
             </div>
         </div>

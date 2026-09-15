@@ -1,34 +1,39 @@
-import { Star } from "lucide-react";
 import Container from "@/components/ds/Container";
-import Calculator from "@/components/ds/Calculator";
+import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
 
-export default function ProductHero({ title, subtitle }: { title: React.ReactNode; subtitle: string }) {
+type Cta = { label: string; href: string };
+
+export default function ProductHero({
+    category,
+    position,
+    total = 6,
+    title,
+    subtitle,
+    primaryCta,
+    secondaryCta,
+}: {
+    category: string;
+    position: number;
+    total?: number;
+    title: React.ReactNode;
+    subtitle: string;
+    primaryCta: Cta;
+    secondaryCta: Cta;
+}) {
     return (
-        <div className="relative isolate dc-section dc-section--hero">
-            <div className="dc-bg-squares" aria-hidden />
+        <div className="dc-section dc-section--hero">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-16 items-center">
-                    <div className="flex flex-col gap-6">
-                        <div className="flex items-center gap-2 text-sm text-dc-text-dim max-md:justify-center">
-                            <span className="flex items-center gap-1 text-dc-text">
-                                <Star size={14} className="text-dc-accent" fill="currentColor" /> 4.9
-                            </span>
-                            <span aria-hidden>·</span>
-                            <span>Din 2010</span>
-                            <span aria-hidden>·</span>
-                            <span>Credite pentru succes!</span>
-                        </div>
-
-                        <h1 className="text-[44px] md:text-[64px] font-bold max-md:text-center leading-[1.05] tracking-[-.03em] text-dc-text">
-                            {title}
-                        </h1>
-
-                        <p className="max-w-[480px] text-[19px] leading-relaxed text-dc-text-muted max-md:text-center max-md:mx-auto">
-                            {subtitle}
-                        </p>
-                    </div>
-
-                    <Calculator />
+                <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                    <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                    {category} · <span className="font-dc-mono">{String(position).padStart(2, "0")}</span> din {total} produse
+                </p>
+                <h1 className="mt-7 max-w-[1000px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
+                    {title}
+                </h1>
+                <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">{subtitle}</p>
+                <div className="mt-8 flex flex-wrap gap-3.5">
+                    <ButtonPrimary href={primaryCta.href}>{primaryCta.label}</ButtonPrimary>
+                    <ButtonSecondary href={secondaryCta.href}>{secondaryCta.label}</ButtonSecondary>
                 </div>
             </Container>
         </div>

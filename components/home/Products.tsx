@@ -1,48 +1,63 @@
+import Link from "next/link";
 import Section from "@/components/ds/Section";
-import ListRow from "@/components/ds/ListRow";
 import Accent from "@/components/ds/Accent";
 
 const BASE = "/credite/";
 
-const business = [
-    { name: "Afaceri mici", desc: "Capital rapid pentru SRL, ÎI și antreprenori.", href: BASE + "credit-pentru-afaceri-mici" },
-    { name: "Credit investițional", desc: "Echipamente, extindere spațiu, modernizare utilaj.", href: BASE + "credit-investitional" },
-    { name: "Credit agricol", desc: "Pentru fermieri, producători și activități agricole sezoniere.", href: BASE + "credit-pentru-agricultura" },
-];
-
-const personal = [
-    { name: "Nevoi personale", desc: "Pentru orice cheltuială planificată sau urgentă.", href: BASE + "credit-pentru-nevoi-personale" },
-    { name: "Reparație / Renovare", desc: "Reparația locuinței cu rate fixe și costuri clare de la început.", href: BASE + "credit-pentru-reparatie" },
-    { name: "Automobil", desc: "Finanțare pentru automobil nou sau second-hand.", href: BASE + "credit-pentru-automobil" },
+const products = [
+    { name: "Afaceri mici", desc: "Capital rapid pentru SRL, ÎI și antreprenori.", who: "Juridice", href: BASE + "credit-pentru-afaceri-mici" },
+    {
+        name: "Investițional",
+        desc: "Echipamente, extindere spațiu, modernizare utilaj.",
+        who: "Juridice",
+        href: BASE + "credit-investitional",
+    },
+    {
+        name: "Agricol",
+        desc: "Pentru fermieri, producători și activități sezoniere.",
+        who: "Juridice",
+        href: BASE + "credit-pentru-agricultura",
+    },
+    {
+        name: "Nevoi personale",
+        desc: "Pentru orice cheltuială planificată sau urgentă.",
+        who: "Fizice",
+        href: BASE + "credit-pentru-nevoi-personale",
+    },
+    {
+        name: "Reparație / Renovare",
+        desc: "Reparația locuinței cu rate fixe și costuri clare.",
+        who: "Fizice",
+        href: BASE + "credit-pentru-reparatie",
+    },
+    { name: "Automobil", desc: "Finanțare pentru automobil nou sau second-hand.", who: "Fizice", href: BASE + "credit-pentru-automobil" },
 ];
 
 export default function Products() {
     return (
         <Section
             id="produse"
+            marker="Produse"
             title={
                 <>
-                    Toate <Accent>produsele</Accent> de credit
+                    Registrul de <Accent>produse</Accent>
                 </>
             }
         >
-            <div className="grid gap-12" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
-                <div>
-                    <h3 className="border-b border-dc-line pb-4 text-xs font-bold uppercase tracking-[.14em] text-dc-text-dim">
-                        Pentru persoane juridice
-                    </h3>
-                    {business.map((p) => (
-                        <ListRow key={p.href} href={p.href} title={p.name} description={p.desc} />
-                    ))}
-                </div>
-                <div>
-                    <h3 className="border-b border-dc-line pb-4 text-xs font-bold uppercase tracking-[.14em] text-dc-text-dim">
-                        Pentru persoane fizice
-                    </h3>
-                    {personal.map((p) => (
-                        <ListRow key={p.href} href={p.href} title={p.name} description={p.desc} />
-                    ))}
-                </div>
+            <div className="border-t border-dc-line">
+                {products.map((p, i) => (
+                    <Link
+                        key={p.href}
+                        href={p.href}
+                        className="grid items-center gap-7 border-b border-dc-line px-8 py-7 transition-colors hover:bg-dc-surface"
+                        style={{ gridTemplateColumns: "44px minmax(0,1.1fr) minmax(0,1.4fr) auto" }}
+                    >
+                        <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                        <span className="text-xl font-semibold tracking-[-.025em] text-dc-text">{p.name}</span>
+                        <span className="text-[15px] leading-[1.55] text-dc-text-muted">{p.desc}</span>
+                        <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">{p.who} →</span>
+                    </Link>
+                ))}
             </div>
         </Section>
     );

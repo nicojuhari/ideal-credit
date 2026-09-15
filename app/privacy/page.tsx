@@ -79,7 +79,7 @@ export default function PrivacyPage() {
                 <br />
                 email: info@idealcredit.md
                 <br />
-                tel: 079066566, 061252777
+                tel: 068270101, 061252777
             </p>
         </LegalLayout>
     );

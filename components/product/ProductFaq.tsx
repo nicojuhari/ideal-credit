@@ -1,11 +1,30 @@
+"use client";
+
+import { useState } from "react";
 import Container from "@/components/ds/Container";
+import Stack from "@/components/ds/Stack";
 import Accent from "@/components/ds/Accent";
-import { ButtonSecondary } from "@/components/ds/Button";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { ButtonText } from "@/components/ds/Button";
 
 export type FaqItem = { question: string; answer: string };
 
-export default function ProductFaq({ items, id = "faq" }: { items: FaqItem[]; id?: string }) {
+export default function ProductFaq({
+    items,
+    marker = "Întrebări",
+    title = (
+        <>
+            Întrebări <Accent>frecvente</Accent>
+        </>
+    ),
+    id = "faq",
+}: {
+    items: FaqItem[];
+    marker?: string;
+    title?: React.ReactNode;
+    id?: string;
+}) {
+    const [open, setOpen] = useState(0);
+
     const schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -17,38 +36,48 @@ export default function ProductFaq({ items, id = "faq" }: { items: FaqItem[]; id
     };
 
     return (
-        <section className="dc-section" id={id}>
+        <div className="dc-section" id={id}>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
             <Container>
-                <div className="grid gap-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
-                    <div className="max-w-[420px] self-start md:sticky md:top-24">
-                        <div className="flex flex-col gap-3.5">
-                            <h2 className="text-[28px] md:text-[40px] font-bold leading-[1.1] tracking-[-.025em] text-dc-text">
-                                Întrebări <Accent>frecvente</Accent>
-                            </h2>
-                            <p className="text-dc-text-muted leading-relaxed">
-                                Nu găsești răspunsul? Scrie-ne, îți răspundem într-un timp scurt.
-                            </p>
-                        </div>
-                        <ButtonSecondary href="/contacte" className="mt-6">
-                            Contactează-ne
-                        </ButtonSecondary>
+                <div className="flex flex-wrap items-end justify-between gap-10">
+                    <div>
+                        <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                            <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                            {marker}
+                        </p>
+                        <h2 className="mt-5 text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text">
+                            {title}
+                        </h2>
                     </div>
-
-                    <Accordion className="w-full">
-                        {items.map((item, i) => (
-                            <AccordionItem key={item.question} value={`faq-${i}`} className="border-dc-line">
-                                <AccordionTrigger className="py-[18px] text-base font-medium text-dc-text hover:no-underline hover:text-white">
-                                    {item.question}
-                                </AccordionTrigger>
-                                <AccordionContent className="pb-[18px] text-sm leading-relaxed text-dc-text-muted">
-                                    {item.answer}
-                                </AccordionContent>
-                            </AccordionItem>
-                        ))}
-                    </Accordion>
+                    <ButtonText href="/contacte">Scrie-ne →</ButtonText>
                 </div>
+
+                <Stack className="mt-14">
+                    {items.map((item, i) => {
+                        const isOpen = open === i;
+                        return (
+                            <div key={item.question}>
+                                <button
+                                    type="button"
+                                    onClick={() => setOpen(isOpen ? -1 : i)}
+                                    aria-expanded={isOpen}
+                                    className="grid w-full items-center gap-5 px-8 py-[26px] text-left text-dc-text"
+                                    style={{ gridTemplateColumns: "44px 1fr 20px" }}
+                                >
+                                    <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                                    <span className="text-xl font-medium">{item.question}</span>
+                                    <span className="font-dc-mono text-right text-dc-text">{isOpen ? "−" : "+"}</span>
+                                </button>
+                                {isOpen && (
+                                    <p className="max-w-[820px] pb-7 pr-8 pl-24 text-[17px] leading-[1.7] text-dc-text-muted">
+                                        {item.answer}
+                                    </p>
+                                )}
+                            </div>
+                        );
+                    })}
+                </Stack>
             </Container>
-        </section>
+        </div>
     );
 }

@@ -11,7 +11,7 @@ import { ButtonPrimary } from "./Button";
 const SUM_MIN = 10000;
 const SUM_MAX = 300000;
 const SUM_STEP = 1000;
-const TERM_MIN = 6;
+const TERM_MIN = 12;
 const TERM_MAX = 60;
 const TERM_STEP = 1;
 
@@ -36,7 +36,10 @@ export default function Calculator() {
 
     const dae = useMemo(() => (grafic?.length ? calcDAE(grafic, sum) : 0), [grafic, sum]);
 
-    const totalCost = useMemo(() => (grafic?.length ? grafic.reduce((acc: number, row: GraficRow) => acc + row.dobinda_rata, 0) : 0), [grafic]);
+    const totalCost = useMemo(
+        () => (grafic?.length ? grafic.reduce((acc: number, row: GraficRow) => acc + row.dobinda_rata, 0) : 0),
+        [grafic],
+    );
 
     const firstPayment = grafic?.[0] ? grafic[0].credit_rata + grafic[0].dobinda_rata : 0;
 
@@ -118,7 +121,7 @@ export default function Calculator() {
             <Dialog>
                 <DialogTrigger
                     onClick={() => firePixelOnce()}
-                    className="mx-auto block text-center text-[13px] text-dc-text-dim underline underline-offset-[3px] hover:text-dc-text-muted"
+                    className="mx-auto block text-center text-xs text-dc-text-dim underline underline-offset-[3px] hover:text-dc-text-muted"
                 >
                     Graficul de achitare și Informația precontractuală
                 </DialogTrigger>

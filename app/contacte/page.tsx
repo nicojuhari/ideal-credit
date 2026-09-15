@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, Mail, Check } from "lucide-react";
 import Container from "@/components/ds/Container";
-import Card from "@/components/ds/Card";
+import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
+import Figure from "@/components/ds/Figure";
+import Stack from "@/components/ds/Stack";
+import Note from "@/components/ds/Note";
 import { ButtonPrimary } from "@/components/ds/Button";
 import ClosingCta from "@/components/home/ClosingCta";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
@@ -35,17 +37,21 @@ function validatePhone(phone: string) {
     return /^\d{9}$/.test(phone.replace(/\s/g, ""));
 }
 
-const inputClasses =
-    "w-full rounded-dc-control border border-dc-line bg-transparent px-3.5 py-2.5 text-sm text-dc-text placeholder:text-dc-text-dim focus:outline-none focus:border-dc-line-hover transition-colors";
+const chisinau = OFFICES.find((o) => o.city.includes("Chișinău"))!;
+const causeni = OFFICES.find((o) => o.city.includes("Căușeni"))!;
+
+const channels = [
+    { label: "Telefon Chișinău", value: chisinau.mobileDisplay, href: `tel:${chisinau.mobile}` },
+    { label: "Telefon Căușeni", value: causeni.mobileDisplay, href: `tel:${causeni.mobile}` },
+    { label: "Administrator", value: "079 06 65 66", href: "tel:+37379066566" },
+    { label: "WhatsApp / Viber", value: chisinau.mobileDisplay, href: "https://wa.me/+37361252777" },
+    { label: "E-mail general", value: "contact@idealcredit.md", href: "mailto:contact@idealcredit.md" },
+    { label: "E-mail afaceri", value: "info@idealcredit.md", href: "mailto:info@idealcredit.md" },
+];
 
 export default function ContactePage() {
     const { trackEvent } = useFacebookPixel();
-    const [formData, setFormData] = useState<FormData>({
-        nume: "",
-        email: "",
-        telefon: "",
-        mesaj: "",
-    });
+    const [formData, setFormData] = useState<FormData>({ nume: "", email: "", telefon: "", mesaj: "" });
     const [errors, setErrors] = useState<FormErrors>({});
     const [loading, setLoading] = useState(false);
     const [sent, setSent] = useState(false);
@@ -96,146 +102,49 @@ export default function ContactePage() {
 
     return (
         <div className="dc bg-dc-bg">
-            <div className="relative isolate dc-section dc-section--hero">
-                <div className="dc-bg-squares" aria-hidden />
+            <div className="dc-section dc-section--hero">
                 <Container>
-                    <div className="mx-auto flex max-w-[640px] flex-col items-center gap-5 text-center">
-                        <h1 className="text-[44px] md:text-[64px] font-bold leading-[1.05] tracking-[-.03em] text-dc-text">
-                            <Accent>Contacte</Accent>
-                        </h1>
-                        <p className="text-[19px] leading-relaxed text-dc-text-muted">
-                            Scrie-ne, sună-ne sau treci pe la unul din oficii. Îți răspundem rapid.
-                        </p>
-                    </div>
+                    <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                        <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                        Contacte · Luni–Vineri <span className="font-dc-mono text-dc-proof">08:30–16:30</span>
+                    </p>
+                    <h1 className="mt-7 max-w-[1000px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
+                        Vorbim <Accent>direct.</Accent>
+                    </h1>
+                    <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
+                        Un telefon de cinci minute înlocuiește un formular de o oră. Sună, scrie sau treci pe la oficiu — răspundem în
+                        aceeași zi lucrătoare.
+                    </p>
                 </Container>
             </div>
 
-            <div className="dc-section">
+            <div className="pb-24">
                 <Container>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <Card className="justify-center gap-6">
-                            <h2 className="text-[19px] font-bold text-dc-text">Scrie-ne sau sună-ne</h2>
-                            <div className="flex flex-col gap-4">
-                                <a
-                                    href="tel:+37361252777"
-                                    onClick={() => trackEvent("Contact")}
-                                    className="flex items-center gap-3 text-dc-text hover:text-white"
-                                >
-                                    <Phone size={18} className="shrink-0 text-dc-accent" />
-                                    <span>
-                                        <span className="text-dc-text-dim">(+373)</span> 612 52 777
-                                    </span>
-                                </a>
-                                <a
-                                    href="tel:+37379066566"
-                                    onClick={() => trackEvent("Contact")}
-                                    className="flex items-center gap-3 text-dc-text hover:text-white"
-                                >
-                                    <Phone size={18} className="shrink-0 text-dc-accent" />
-                                    <span>
-                                        <span className="text-dc-text-dim">(+373)</span> 790 66 5 66
-                                    </span>
-                                </a>
-                                <a
-                                    href="mailto:info@idealcredit.md"
-                                    onClick={() => trackEvent("Contact")}
-                                    className="flex items-center gap-3 text-dc-text hover:text-white"
-                                >
-                                    <Mail size={18} className="shrink-0 text-dc-accent" />
-                                    info@idealcredit.md
-                                </a>
-                            </div>
-                        </Card>
-
-                        <Card className="relative overflow-hidden gap-5">
-                            <h2 className="text-[19px] font-bold text-dc-text">Scrie-ne direct</h2>
-                            {sent ? (
-                                <div className="flex flex-col items-center justify-center gap-3 py-16 text-center">
-                                    <Check size={40} className="text-dc-accent" />
-                                    <p className="text-lg text-dc-text">
-                                        Mulțumim pentru mesaj.
-                                        <br />
-                                        Vă contactăm în curând!
-                                    </p>
-                                </div>
-                            ) : (
-                                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                                    <div>
-                                        <label className="mb-1.5 block text-sm text-dc-text-muted">Nume</label>
-                                        <input
-                                            type="text"
-                                            value={formData.nume}
-                                            onChange={(e) => setFormData((p) => ({ ...p, nume: e.target.value }))}
-                                            className={inputClasses}
-                                        />
-                                        {errors.nume && <p className="mt-1 text-xs text-red-400">{errors.nume}</p>}
-                                    </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div>
-                                            <label className="mb-1.5 block text-sm text-dc-text-muted">Email</label>
-                                            <input
-                                                type="email"
-                                                value={formData.email}
-                                                onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
-                                                className={inputClasses}
-                                            />
-                                            {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
-                                        </div>
-                                        <div>
-                                            <label className="mb-1.5 block text-sm text-dc-text-muted">Mobil</label>
-                                            <input
-                                                type="tel"
-                                                value={formData.telefon}
-                                                onChange={(e) => setFormData((p) => ({ ...p, telefon: e.target.value }))}
-                                                className={inputClasses}
-                                            />
-                                            {errors.telefon && <p className="mt-1 text-xs text-red-400">{errors.telefon}</p>}
-                                        </div>
-                                    </div>
-                                    {errors.general && <p className="text-xs text-red-400">{errors.general}</p>}
-                                    <div>
-                                        <label className="mb-1.5 block text-sm text-dc-text-muted">Mesaj</label>
-                                        <textarea
-                                            rows={4}
-                                            value={formData.mesaj}
-                                            onChange={(e) => setFormData((p) => ({ ...p, mesaj: e.target.value }))}
-                                            className={`${inputClasses} resize-none`}
-                                        />
-                                        {errors.mesaj && <p className="mt-1 text-xs text-red-400">{errors.mesaj}</p>}
-                                    </div>
-                                    <ButtonPrimary type="submit" disabled={loading} className="self-end disabled:opacity-60">
-                                        {loading ? "Se trimite..." : "Trimite"}
-                                    </ButtonPrimary>
-                                </form>
-                            )}
-                        </Card>
-                    </div>
-                </Container>
-            </div>
-
-            <div className="dc-section">
-                <div id="adresa-oficiilor" className="-translate-y-24" />
-                <Container>
-                    <h2 className="mb-10 text-[28px] md:text-[40px] font-bold leading-[1.1] tracking-[-.025em] text-dc-text">
-                        Adresa <Accent>oficiilor</Accent>
-                    </h2>
-                    <div className="grid gap-8" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
-                        {OFFICES.map((office) => (
-                            <div key={office.id} className="rounded-dc-card border border-dc-line bg-dc-surface p-6">
-                                <div className="flex items-baseline gap-2.5">
-                                    <span className="text-[17px] font-bold text-dc-text">{office.title}</span>
-                                </div>
-                                <p className="mt-2 text-sm text-dc-text-muted">{office.city}</p>
-                                <p className="text-sm text-dc-text-muted">
-                                    {office.street} {office.addressNumbers}
+                    <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
+                        {OFFICES.map((office, i) => (
+                            <div key={office.id} className="dc-cell flex flex-col gap-6 p-10">
+                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                    <span className="font-dc-mono">{String(i + 1).padStart(2, "0")}</span> · {office.title}
                                 </p>
-                                <p className="mt-1 text-xs text-dc-text-dim">Luni – Vineri · 08:30 – 16:30</p>
-                                {office.note && <p className="mt-2 text-xs italic text-dc-text-dim">{office.note}</p>}
+                                <h2 className="text-[28px] tracking-[-.03em] text-dc-text">
+                                    {office.city.replace(/^(or\.|m\.)\s*/, "")}
+                                </h2>
+                                <p className="text-[17px] leading-[1.6] text-dc-text-muted">
+                                    {office.street}
+                                    <br />
+                                    {office.addressNumbers}
+                                </p>
+                                <a
+                                    href={`tel:${office.mobile}`}
+                                    onClick={() => trackEvent("Contact")}
+                                    className="dc-num text-[19px] tracking-[-.02em] text-dc-text transition-colors duration-[120ms] hover:text-white"
+                                >
+                                    {office.mobileDisplay}
+                                </a>
                                 <iframe
                                     src={office.map}
                                     width="100%"
-                                    height="260"
-                                    className="mt-4 rounded-dc-control"
+                                    height="220"
                                     style={{ border: 0 }}
                                     allowFullScreen
                                     loading="lazy"
@@ -247,6 +156,158 @@ export default function ContactePage() {
                     </div>
                 </Container>
             </div>
+
+            <div className="dc-section">
+                <Container>
+                    <div className="grid items-start gap-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
+                        <div>
+                            <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                                <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                                Canale
+                            </p>
+                            <h2 className="mt-5 text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text">
+                                Alege cum ne <Accent>scrii</Accent>
+                            </h2>
+                            <p className="mt-4 text-[17px] leading-[1.6] text-dc-text-muted">
+                                Documentele se verifică la distanță. Trimite extrasele pe canalul care îți convine — nu e nevoie să vii la
+                                oficiu pentru analiză.
+                            </p>
+                        </div>
+                        <Stack>
+                            {channels.map((c) => (
+                                <a
+                                    key={c.label}
+                                    href={c.href}
+                                    onClick={() => trackEvent("Contact")}
+                                    className="flex flex-wrap items-baseline justify-between gap-4 px-6 py-5 transition-colors duration-[120ms] hover:bg-[#1a1a1a]"
+                                >
+                                    <span className="shrink-0 text-xs uppercase tracking-[.1em] text-dc-text-muted">{c.label}</span>
+                                    <Figure size="md">{c.value}</Figure>
+                                </a>
+                            ))}
+                        </Stack>
+                    </div>
+                </Container>
+            </div>
+
+            <div className="dc-section">
+                <Container>
+                    <div className="grid items-start gap-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
+                        <div>
+                            <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                                <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                                Formular
+                            </p>
+                            <h2 className="mt-5 text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text">
+                                Scrie-ne o <Accent>întrebare</Accent>
+                            </h2>
+                            <p className="mt-4 text-[17px] leading-[1.6] text-dc-text-muted">
+                                Pentru o cerere de credit completă, folosește formularul de cerere online. Aici răspundem la întrebări.
+                            </p>
+                            <Note className="mt-7 max-w-[340px]">
+                                Datele tale sunt prelucrate conform politicii de confidențialitate. Nu le transmitem terților.
+                            </Note>
+                        </div>
+
+                        {sent ? (
+                            <div className="dc-cell flex flex-col items-center justify-center gap-3 p-16 text-center">
+                                <p className="text-[19px] text-dc-text">
+                                    Mulțumim pentru mesaj.
+                                    <br />
+                                    Vă contactăm în curând!
+                                </p>
+                            </div>
+                        ) : (
+                            <form onSubmit={handleSubmit} className="flex min-w-0 flex-col gap-6">
+                                <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+                                    <div>
+                                        <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Nume</label>
+                                        <input
+                                            type="text"
+                                            placeholder="Ion Popescu"
+                                            value={formData.nume}
+                                            onChange={(e) => setFormData((p) => ({ ...p, nume: e.target.value }))}
+                                        />
+                                        {errors.nume && <p className="mt-2 text-xs text-dc-accent">{errors.nume}</p>}
+                                    </div>
+                                    <div>
+                                        <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Telefon</label>
+                                        <input
+                                            type="tel"
+                                            placeholder="060 00 00 00"
+                                            className="font-dc-mono"
+                                            value={formData.telefon}
+                                            onChange={(e) => setFormData((p) => ({ ...p, telefon: e.target.value }))}
+                                        />
+                                        {errors.telefon && <p className="mt-2 text-xs text-dc-accent">{errors.telefon}</p>}
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Email</label>
+                                    <input
+                                        type="email"
+                                        placeholder="ion@exemplu.md"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
+                                    />
+                                    {errors.email && <p className="mt-2 text-xs text-dc-accent">{errors.email}</p>}
+                                </div>
+                                {errors.general && <p className="text-xs text-dc-accent">{errors.general}</p>}
+                                <div>
+                                    <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Mesaj</label>
+                                    <textarea
+                                        rows={5}
+                                        placeholder="Descrie pe scurt situația ta."
+                                        className="resize-y"
+                                        value={formData.mesaj}
+                                        onChange={(e) => setFormData((p) => ({ ...p, mesaj: e.target.value }))}
+                                    />
+                                    {errors.mesaj && <p className="mt-2 text-xs text-dc-accent">{errors.mesaj}</p>}
+                                </div>
+                                <div className="flex flex-wrap items-center gap-5">
+                                    <ButtonPrimary type="submit" disabled={loading} className="disabled:opacity-60">
+                                        {loading ? "Se trimite..." : "Trimite mesajul"}
+                                    </ButtonPrimary>
+                                    <span className="font-dc-mono text-xs text-dc-text-muted">RĂSPUNS ÎN 1 ZI LUCRĂTOARE</span>
+                                </div>
+                            </form>
+                        )}
+                    </div>
+                </Container>
+            </div>
+
+            <Section
+                marker="Program"
+                title={
+                    <>
+                        Ore de <Accent>lucru</Accent>
+                    </>
+                }
+            >
+                <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+                    <div className="dc-cell p-8">
+                        <span className="font-dc-mono text-xs text-dc-text-muted">01</span>
+                        <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">Program de lucru</h3>
+                        <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">
+                            Luni–Vineri, 08:30–16:30. Sâmbătă și duminică — închis. Cererile online se depun oricând.
+                        </p>
+                    </div>
+                    <div className="dc-cell p-8">
+                        <span className="font-dc-mono text-xs text-dc-text-muted">02</span>
+                        <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">Reclamații</h3>
+                        <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">
+                            Pretențiile se depun în scris la oricare oficiu sau la contact@idealcredit.md. Termen de răspuns: 15 zile.
+                        </p>
+                    </div>
+                    <div className="dc-cell p-8">
+                        <span className="font-dc-mono text-xs text-dc-text-muted">03</span>
+                        <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">Autoritatea de supraveghere</h3>
+                        <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">
+                            Comisia Națională a Pieței Financiare supraveghează activitatea OCN „Ideal Credit” SRL.
+                        </p>
+                    </div>
+                </div>
+            </Section>
 
             <ClosingCta />
         </div>

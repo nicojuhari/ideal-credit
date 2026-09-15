@@ -137,21 +137,22 @@
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
 
-  /* ── "dc" (design craft / redesign) tokens ── scoped to .dc, see "Ideal Credit — dark premium fintech redesign" spec */
-  --color-dc-bg: #0b0b0c;
-  --color-dc-surface: #131315;
-  --color-dc-text: #f4f4f2;
-  --color-dc-text-muted: #a1a1a6;
-  --color-dc-text-dim: #6b6b70;
-  --color-dc-line: rgba(255, 255, 255, 0.08);
-  --color-dc-line-strong: rgba(255, 255, 255, 0.16);
-  --color-dc-line-hover: rgba(255, 255, 255, 0.4);
+  /* ── "dc" (Registrul design system) tokens ── scoped to .dc, see DESIGN-SYSTEM.md */
+  --color-dc-bg: #0b0b0b;
+  --color-dc-surface: #141414;
+  --color-dc-line: #212121;
+  --color-dc-line-hover: #333333;
+  --color-dc-text: #f7f7f7;
+  --color-dc-text-muted: #aaaaaa;
   --color-dc-accent: #ff9a00;
+  --color-dc-proof: #86a873;
+  --color-dc-on-accent: #0b0b0b;
 
-  --radius-dc-card: 16px;
-  --radius-dc-control: 10px;
+  --radius-dc-card: 0px;
+  --radius-dc-control: 0px;
 
-  --font-dc-sans: var(--font-manrope);
+  --font-dc-sans: var(--font-archivo);
+  --font-dc-mono: var(--font-ibm-plex-mono);
   --font-dc-serif: var(--font-instrument-serif);
 }
 
@@ -498,115 +499,177 @@ input[type=number] {
   @apply text-xl font-semibold mb-2 mt-12;
 }
 
-/* ─── "dc" design system scope ───────────────────────────────────────────────
+/* ─── "dc" design system scope — "Registrul", see DESIGN-SYSTEM.md ──────────
    Applied to the homepage wrapper + Header + Footer only. Keeps the redesign's
    type/tokens from leaking onto pages that haven't been migrated yet. ── */
 .dc {
   font-family: var(--font-dc-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  background: var(--color-dc-bg);
   color: var(--color-dc-text);
 }
-
-/* .dc h1,
-.dc h2,
-.dc h3,
-.dc h4 {
-  text-wrap: balance;
-} */
-
+.dc * {
+  font-variant-numeric: tabular-nums;
+}
 .dc p {
   text-wrap: pretty;
 }
-
-/* Neutralize the legacy `section { margin: ... }` base rule inside the dc scope;
-   the Section primitive owns its own rhythm via padding. */
-.dc section {
-  margin: 0;
+.dc h1,
+.dc h2,
+.dc h3 {
+  font-weight: 600;
 }
-
+.dc ul {
+  list-style: none;
+}
 .dc a {
-  color: var(--color-dc-text);
   text-decoration: none;
 }
-.dc a:hover {
-  color: #ffffff;
+
+/* Accent word — one per heading, always last */
+.dc-accent {
+  font-family: var(--font-dc-serif), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: 0;
+  color: var(--color-dc-accent);
 }
 
+/* Numbers */
+.dc-num {
+  font-family: var(--font-dc-mono), monospace;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Container — fixed 24px gutter below max-width, no padding */
+.ic-container {
+  width: calc(100% - 3rem);
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+/* Rhythm — 96/96, hero and CTA deviate per spec */
 .dc-section {
   border-top: 1px solid var(--color-dc-line);
-  padding-block: 112px;
+  padding-block: 96px;
 }
 .dc-section--hero {
-  padding-block: 96px 112px;
+  padding-block: 120px 104px;
   border-top: none;
+}
+.dc-section--cta {
+  padding-block: 110px;
+}
+.dc-section--footer {
+  padding-block: 72px 40px;
 }
 @media (max-width: 899px) {
   .dc-section {
-    padding-block: 80px;
+    padding-block: 72px;
   }
   .dc-section--hero {
-    padding-block: 64px 80px;
+    padding-block: 80px 72px;
+  }
+  .dc-section--cta {
+    padding-block: 80px;
+  }
+  .dc-section--footer {
+    padding-block: 56px 32px;
   }
 }
 
-/* Range slider — Suma / Termen controls in the calculator */
+/* Hairline stack (pattern B) */
+.dc-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-dc-line);
+  border: 1px solid var(--color-dc-line);
+}
+.dc-stack > * {
+  background: var(--color-dc-surface);
+}
+
+/* Cell (pattern A) — zero-gap grid, shared hairline via outline */
+.dc-cell {
+  background: var(--color-dc-surface);
+  outline: 1px solid var(--color-dc-line);
+}
+
+/* Range slider — square thumb, 2px track */
 .dc input[type="range"].dc-slider {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 3px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.14);
+  height: 2px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.24);
   outline: none;
   cursor: pointer;
 }
 .dc input[type="range"].dc-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 0;
   background: var(--color-dc-text);
-  border: 5px solid var(--color-dc-surface);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
-  cursor: pointer;
+  cursor: ew-resize;
 }
 .dc input[type="range"].dc-slider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 0;
   background: var(--color-dc-text);
-  border: 5px solid var(--color-dc-surface);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  border: none;
-}
-.dc input[type="range"].dc-slider:focus-visible {
-  outline: 2px solid var(--color-dc-accent);
-  outline-offset: 4px;
+  cursor: ew-resize;
 }
 
-/* Keyboard-visible focus ring, scoped to the dc system */
+/* Focus */
 .dc a:focus-visible,
 .dc button:focus-visible,
-.dc [tabindex]:focus-visible {
+.dc [tabindex]:focus-visible,
+.dc input:focus-visible,
+.dc select:focus-visible,
+.dc textarea:focus-visible {
   outline: 2px solid var(--color-dc-accent);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 0;
+}
+
+/* Forms */
+.dc input:not([type="range"]),
+.dc textarea,
+.dc select {
+  background: var(--color-dc-surface);
+  border: 1px solid var(--color-dc-line);
+  border-radius: 0;
+  padding: 14px 16px;
+  font-size: 17px;
+  color: var(--color-dc-text);
+  width: 100%;
+}
+.dc ::placeholder {
+  color: var(--color-dc-text-muted);
+  opacity: 1;
 }
 
 /* Legal / prose pages — light-touch typography, no card restructuring */
 .dc-legal {
   color: var(--color-dc-text-muted);
   line-height: 1.7;
+  font-size: 15px;
 }
 .dc-legal h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
+  margin: 2.5rem 0 0.75rem;
   font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   color: var(--color-dc-text);
 }
 .dc-legal p {

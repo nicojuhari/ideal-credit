@@ -46,7 +46,7 @@ export default function PreContractContent({
                         </tr>
                         <tr>
                             <td>Nr. Telefon</td>
-                            <td>079066566, 061252777</td>
+                            <td>068270101, 061252777</td>
                         </tr>
                         <tr>
                             <td>Adresa de Email</td>

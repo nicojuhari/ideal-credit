@@ -1,41 +1,44 @@
-import Link from "next/link";
 import Container from "./Container";
 import { cn } from "@/lib/utils";
 
 type SectionProps = {
     id?: string;
+    marker?: string;
     title: React.ReactNode;
     description?: React.ReactNode;
-    trailing?: { href: string; label: string };
     align?: "left" | "center";
-    children: React.ReactNode;
+    children?: React.ReactNode;
     className?: string;
 };
 
-export default function Section({ id, title, description, trailing, align = "left", children, className }: SectionProps) {
+export default function Section({ id, marker, title, description, align = "left", children, className }: SectionProps) {
     const centered = align === "center";
 
     return (
         <section id={id} className={cn("dc-section", className)}>
             <Container>
-                <div
-                    className={cn(
-                        "flex flex-wrap items-end justify-between gap-6",
-                        centered && "flex-col items-center text-center",
+                <div className={cn("flex flex-col", centered && "items-center text-center")}>
+                    {marker && (
+                        <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                            <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                            {marker}
+                        </p>
                     )}
-                >
-                    <div className={cn("flex flex-col gap-3.5", centered ? "max-w-[720px] items-center" : "max-w-[640px]")}>
-                        <h2 className="text-[28px] md:text-[40px] font-bold leading-[1.1] tracking-[-.025em] text-dc-text">{title}</h2>
-                        {description && <p className="text-dc-text-muted text-base leading-relaxed">{description}</p>}
-                    </div>
-                    {trailing && (
-                        <Link href={trailing.href} className="shrink-0 text-sm font-medium text-dc-text hover:text-white">
-                            {trailing.label} →
-                        </Link>
+                    <h2
+                        className={cn(
+                            "text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text",
+                            marker && "mt-5",
+                            centered && "max-w-[720px]",
+                        )}
+                    >
+                        {title}
+                    </h2>
+                    {description && (
+                        <p className="mt-4 max-w-[640px] text-[17px] leading-[1.6] text-dc-text-muted">{description}</p>
                     )}
                 </div>
 
-                <div className="mt-14">{children}</div>
+                {children && <div className="mt-14">{children}</div>}
             </Container>
         </section>
     );

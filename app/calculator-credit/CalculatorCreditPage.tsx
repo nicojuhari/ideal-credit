@@ -3,13 +3,15 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import Container from "@/components/ds/Container";
+import Figure from "@/components/ds/Figure";
+import Note from "@/components/ds/Note";
 import { ButtonPrimary } from "@/components/ds/Button";
+import { cn } from "@/lib/utils";
 
 const SUM_MIN = 10_000;
 const SUM_MAX = 300_000;
-const TERM_MIN = 6;
+const TERM_MIN = 12;
 const TERM_MAX = 60;
 
 type RepaymentType = "anuitate" | "principal-egal";
@@ -68,43 +70,14 @@ function buildSchedule(principal: number, months: number, rate: number, type: Re
 
 function AnimatedNumber({ value }: { value: number }) {
     const mv = useMotionValue(value);
-    const display = useTransform(mv, (v) => Math.round(v).toLocaleString("ro-RO"));
+    const display = useTransform(mv, (v) => Math.round(v).toLocaleString("ro-RO").replace(/\./g, " "));
 
     useEffect(() => {
         const c = animate(mv, value, { duration: 0.4, ease: "easeOut" });
         return c.stop;
     }, [value, mv]);
 
-    return <motion.span className="tabular-nums">{display}</motion.span>;
-}
-
-function GradientSlider({
-    id,
-    value,
-    min,
-    max,
-    step,
-    onChange,
-}: {
-    id: string;
-    value: number;
-    min: number;
-    max: number;
-    step: number;
-    onChange: (v: number) => void;
-}) {
-    return (
-        <input
-            id={id}
-            type="range"
-            value={value}
-            min={min}
-            max={max}
-            step={step}
-            onChange={(e) => onChange(Number(e.target.value))}
-            className="dc-slider"
-        />
-    );
+    return <motion.span>{display}</motion.span>;
 }
 
 function BalanceChart({ schedule, principal }: { schedule: Row[]; principal: number }) {
@@ -118,17 +91,9 @@ function BalanceChart({ schedule, principal }: { schedule: Row[]; principal: num
     const y = (b: number) => (H - (b / principal) * H).toFixed(1);
 
     const line = points.map((p, i) => `${i === 0 ? "M" : "L"}${x(p.m)},${y(p.b)}`).join(" ");
-    const area = `${line} L${W},${H} L0,${H} Z`;
 
     return (
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full" preserveAspectRatio="none" aria-hidden>
-            <defs>
-                <linearGradient id="balance-fill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#ff9a00" stopOpacity="0.25" />
-                    <stop offset="100%" stopColor="#ff9a00" stopOpacity="0.02" />
-                </linearGradient>
-            </defs>
-            <path d={area} fill="url(#balance-fill)" />
             <path d={line} stroke="#ff9a00" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     );
@@ -171,264 +136,266 @@ export default function CalculatorCreditPage() {
     const visibleRows = tableOpen ? schedule : schedule.slice(0, PREVIEW_ROWS);
 
     return (
-        <Container className="pb-16 md:pb-20">
-            <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 items-start">
-                {/* ── Inputs ── */}
-                <div className="rounded-dc-card border border-dc-line bg-dc-surface p-6 space-y-6">
-                    {/* Suma */}
-                    <div>
-                        <div className="flex items-center justify-between mb-2">
-                            <label htmlFor="suma-range" className="text-sm text-dc-text-muted">
-                                Suma creditului
-                            </label>
-                            <div className="flex items-center gap-1.5 text-dc-text">
-                                <span className="input-calculator text-xl text-dc-text">{suma.toLocaleString("ro-RO")}</span>
-                                <span className="text-sm text-dc-text-dim">MDL</span>
-                            </div>
-                        </div>
-                        <GradientSlider id="suma-range" value={suma} min={SUM_MIN} max={SUM_MAX} step={500} onChange={setSuma} />
-                        <div className="flex justify-between text-xs text-dc-text-dim mt-1.5">
-                            <span>10.000</span>
-                            <span>300.000</span>
-                        </div>
-                    </div>
-
-                    {/* Termen */}
-                    <div>
-                        <div className="flex items-center justify-between mb-2">
-                            <label htmlFor="termen-range" className="text-sm text-dc-text-muted">
-                                Termen
-                            </label>
-                            <div className="flex items-center gap-1.5 text-dc-text">
-                                <span className="input-calculator text-xl text-dc-text">{termen}</span>
-                                <span className="text-sm text-dc-text-dim">luni</span>
-                            </div>
-                        </div>
-                        <GradientSlider id="termen-range" value={termen} min={TERM_MIN} max={TERM_MAX} step={1} onChange={setTermen} />
-                        <div className="flex justify-between text-xs text-dc-text-dim mt-1.5">
-                            <span>6 luni</span>
-                            <span>60 luni</span>
-                        </div>
-                    </div>
-
-                    {/* Repayment type */}
-                    <div>
-                        <p className="text-sm text-dc-text-muted mb-2">Tip rambursare</p>
-                        <div className="grid grid-cols-2 gap-2">
-                            {(["anuitate", "principal-egal"] as const).map((t) => (
-                                <button
-                                    key={t}
-                                    onClick={() => setType(t)}
-                                    className={`rounded-dc-control py-2 px-3 text-sm font-medium transition-all duration-200 ${
-                                        type === t
-                                            ? "bg-dc-accent text-[#0b0b0c]"
-                                            : "border border-dc-line text-dc-text-muted hover:text-dc-text"
-                                    }`}
-                                >
-                                    {t === "anuitate" ? "Anuitate" : "Principal egal"}
-                                </button>
-                            ))}
-                        </div>
-                        <p className="text-xs text-dc-text-dim mt-2 leading-relaxed">
-                            {isFixed ? "Rate egale pe toată durata creditului" : "Ratele scad lunar - plătești mai puțin spre final"}
-                        </p>
-                    </div>
-
-                    {/* Grace period + Rate */}
-                    <div className="grid grid-cols-2 gap-4">
+        <div className="pb-24">
+            <Container>
+                <div className="grid items-start gap-6 lg:grid-cols-[400px_1fr]">
+                    {/* ── Inputs ── */}
+                    <div className="dc-cell flex flex-col gap-7 p-8">
+                        {/* Suma */}
                         <div>
-                            <label className="text-sm text-dc-text-muted block mb-2">Perioadă de grație</label>
-                            <select
-                                value={grace}
-                                onChange={(e) => setGrace(Number(e.target.value))}
-                                className="w-full bg-transparent border border-dc-line rounded-dc-control px-3 py-2 text-sm text-dc-text focus:outline-none focus:border-dc-line-hover"
-                            >
-                                {[0, 1, 2, 3, 4, 5, 6].map((v) => (
-                                    <option key={v} value={v} className="bg-dc-surface">
-                                        {v === 0 ? "Fără" : `${v} ${v === 1 ? "lună" : "luni"}`}
-                                    </option>
+                            <div className="mb-3.5 flex items-baseline justify-between gap-4">
+                                <label htmlFor="suma-range" className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                    Suma creditului
+                                </label>
+                                <Figure size="md">{suma.toLocaleString("ro-RO").replace(/\./g, " ")} MDL</Figure>
+                            </div>
+                            <input
+                                id="suma-range"
+                                type="range"
+                                className="dc-slider"
+                                min={SUM_MIN}
+                                max={SUM_MAX}
+                                step={500}
+                                value={suma}
+                                onChange={(e) => setSuma(Number(e.target.value))}
+                            />
+                            <div className="mt-2.5 flex justify-between">
+                                <Figure size="ordinal" className="text-dc-text-muted">
+                                    10 000
+                                </Figure>
+                                <Figure size="ordinal" className="text-dc-text-muted">
+                                    300 000
+                                </Figure>
+                            </div>
+                        </div>
+
+                        {/* Termen */}
+                        <div>
+                            <div className="mb-3.5 flex items-baseline justify-between gap-4">
+                                <label htmlFor="termen-range" className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                    Termen
+                                </label>
+                                <Figure size="md">{termen} LUNI</Figure>
+                            </div>
+                            <input
+                                id="termen-range"
+                                type="range"
+                                className="dc-slider"
+                                min={TERM_MIN}
+                                max={TERM_MAX}
+                                step={1}
+                                value={termen}
+                                onChange={(e) => setTermen(Number(e.target.value))}
+                            />
+                            <div className="mt-2.5 flex justify-between">
+                                <Figure size="ordinal" className="text-dc-text-muted">
+                                    {TERM_MIN} luni
+                                </Figure>
+                                <Figure size="ordinal" className="text-dc-text-muted">
+                                    {TERM_MAX} luni
+                                </Figure>
+                            </div>
+                        </div>
+
+                        {/* Repayment type */}
+                        <div>
+                            <p className="mb-3.5 text-xs uppercase tracking-[.1em] text-dc-text-muted">Tip rambursare</p>
+                            <div className="grid grid-cols-2 gap-px bg-dc-line">
+                                {(["anuitate", "principal-egal"] as const).map((t) => (
+                                    <button
+                                        key={t}
+                                        onClick={() => setType(t)}
+                                        className={cn(
+                                            "px-4 py-3 text-[15px] font-semibold transition-colors duration-[120ms]",
+                                            type === t ? "bg-dc-accent text-dc-on-accent" : "bg-dc-surface text-dc-text-muted hover:text-dc-text",
+                                        )}
+                                    >
+                                        {t === "anuitate" ? "Anuitate" : "Principal egal"}
+                                    </button>
                                 ))}
-                            </select>
-                        </div>
-                        <div>
-                            <label className="text-sm text-dc-text-muted block mb-2">Dobândă lunară</label>
-                            <div className="flex items-center gap-1.5">
-                                <input
-                                    type="number"
-                                    value={rate}
-                                    min={0.5}
-                                    max={15}
-                                    step={0.1}
-                                    onChange={(e) => {
-                                        const v = parseFloat(e.target.value);
-                                        if (!isNaN(v) && v >= 0.5 && v <= 15) setRate(v);
-                                    }}
-                                    className="w-full bg-transparent border border-dc-line rounded-dc-control px-3 py-2 text-sm text-dc-text focus:outline-none focus:border-dc-line-hover"
-                                />
-                                <span className="text-sm text-dc-text-dim shrink-0">%</span>
                             </div>
-                        </div>
-                    </div>
-
-                    {grace > 0 && (
-                        <p className="text-xs text-dc-text-dim leading-relaxed -mt-2">
-                            În primele {grace} {grace === 1 ? "lună" : "luni"} plătești doar dobânda. Principalul se amortizează în cele{" "}
-                            {termen - grace} luni rămase.
-                        </p>
-                    )}
-                </div>
-
-                {/* ── Results ── */}
-                <div className="space-y-4">
-                    {/* 4 stat cards */}
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="rounded-dc-card border border-dc-accent/30 bg-dc-surface px-4 py-4">
-                            <div className="text-[11px] uppercase tracking-wider text-dc-text-dim">
-                                {isFixed ? "Rată lunară" : "Prima rată"}
-                            </div>
-                            <div className="mt-1 text-2xl md:text-3xl font-semibold text-dc-accent">
-                                <AnimatedNumber value={firstPayment} />
-                                <span className="text-sm font-normal text-dc-text-dim ml-1">MDL</span>
-                            </div>
-                            {!isFixed && (
-                                <div className="text-xs text-dc-text-dim mt-1">
-                                    Ultima: {Math.round(lastPayment).toLocaleString("ro-RO")} MDL
-                                </div>
-                            )}
+                            <p className="mt-3 text-xs leading-[1.7] text-dc-text-muted">
+                                {isFixed ? "Rate egale pe toată durata creditului" : "Ratele scad lunar - plătești mai puțin spre final"}
+                            </p>
                         </div>
 
-                        <div className="rounded-dc-card border border-dc-line bg-dc-surface px-4 py-4">
-                            <div className="text-[11px] uppercase tracking-wider text-dc-text-dim">Total plătit</div>
-                            <div className="mt-1 text-2xl md:text-3xl font-semibold text-dc-text">
-                                <AnimatedNumber value={totalPaid} />
-                                <span className="text-sm font-normal text-dc-text-dim ml-1">MDL</span>
-                            </div>
-                        </div>
-
-                        <div className="rounded-dc-card border border-dc-line bg-dc-surface px-4 py-4">
-                            <div className="text-[11px] uppercase tracking-wider text-dc-text-dim">Dobândă totală</div>
-                            <div className="mt-1 text-2xl md:text-3xl font-semibold text-dc-text">
-                                <AnimatedNumber value={totalInterest} />
-                                <span className="text-sm font-normal text-dc-text-dim ml-1">MDL</span>
-                            </div>
-                        </div>
-
-                        <div className="rounded-dc-card border border-dc-line bg-dc-surface px-4 py-4">
-                            <div className="text-[11px] uppercase tracking-wider text-dc-text-dim">DAE</div>
-                            <div className="mt-1 text-2xl md:text-3xl font-semibold text-dc-text">
-                                {dae}
-                                <span className="text-sm font-normal text-dc-text-dim ml-1">%/an</span>
-                            </div>
-                            <div className="text-[11px] text-dc-text-dim mt-0.5">Dobândă anuală efectivă</div>
-                        </div>
-                    </div>
-
-                    {/* Balance chart */}
-                    <div className="rounded-dc-card bg-dc-surface border border-dc-line px-4 pt-4 pb-3">
-                        <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs text-dc-text-dim">Sold rămas în timp</span>
-                            <span className="text-xs text-dc-text-dim">{termen} luni</span>
-                        </div>
-                        <BalanceChart schedule={schedule} principal={suma} />
-                        <div className="flex justify-between text-[10px] text-dc-text-dim mt-1">
-                            <span>Lună 1</span>
-                            <span>Lună {Math.ceil(termen / 2)}</span>
-                            <span>Lună {termen}</span>
-                        </div>
-                    </div>
-
-                    {/* Amortization table */}
-                    <div className="rounded-dc-card bg-dc-surface border border-dc-line overflow-hidden">
-                        <div className="px-4 py-3 border-b border-dc-line flex items-center justify-between">
-                            <span className="text-sm font-medium text-dc-text">Grafic de rambursare</span>
-                            <span className="text-xs text-dc-text-dim">{schedule.length} rate</span>
-                        </div>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-xs">
-                                <thead>
-                                    <tr className="text-dc-text-dim border-b border-dc-line">
-                                        <th className="text-left px-4 py-2.5 font-normal">#</th>
-                                        <th className="text-left px-4 py-2.5 font-normal">Data</th>
-                                        <th className="text-right px-4 py-2.5 font-normal">Plată</th>
-                                        <th className="text-right px-4 py-2.5 font-normal">Principal</th>
-                                        <th className="text-right px-4 py-2.5 font-normal">Dobândă</th>
-                                        <th className="text-right px-4 py-2.5 font-normal">Sold</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-dc-line">
-                                    {visibleRows.map((r) => (
-                                        <tr
-                                            key={r.month}
-                                            className={r.principal === 0 ? "text-dc-text-dim" : "text-dc-text-muted hover:bg-white/[.03]"}
-                                        >
-                                            <td className="px-4 py-2.5">{r.month}</td>
-                                            <td className="px-4 py-2.5">{r.date}</td>
-                                            <td className="px-4 py-2.5 text-right font-semibold text-dc-text tabular-nums">
-                                                {Math.round(r.payment).toLocaleString("ro-RO")}
-                                            </td>
-                                            <td className="px-4 py-2.5 text-right tabular-nums">
-                                                {r.principal ? Math.round(r.principal).toLocaleString("ro-RO") : "-"}
-                                            </td>
-                                            <td className="px-4 py-2.5 text-right tabular-nums text-dc-accent/80">
-                                                {Math.round(r.interest).toLocaleString("ro-RO")}
-                                            </td>
-                                            <td className="px-4 py-2.5 text-right tabular-nums">
-                                                {Math.round(r.balance).toLocaleString("ro-RO")}
-                                            </td>
-                                        </tr>
+                        {/* Grace period + Rate */}
+                        <div className="grid grid-cols-2 gap-5">
+                            <div>
+                                <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                    Perioadă de grație
+                                </label>
+                                <select value={grace} onChange={(e) => setGrace(Number(e.target.value))}>
+                                    {[0, 1, 2, 3, 4, 5, 6].map((v) => (
+                                        <option key={v} value={v} className="bg-dc-surface">
+                                            {v === 0 ? "Fără" : `${v} ${v === 1 ? "lună" : "luni"}`}
+                                        </option>
                                     ))}
-                                </tbody>
-                                {tableOpen && (
-                                    <tfoot>
-                                        <tr className="border-t border-dc-line-strong text-dc-text-dim font-medium">
-                                            <td className="px-4 py-2.5" colSpan={2}>
-                                                Total
-                                            </td>
-                                            <td className="px-4 py-2.5 text-right text-dc-text tabular-nums">
-                                                {Math.round(totalPaid).toLocaleString("ro-RO")}
-                                            </td>
-                                            <td className="px-4 py-2.5 text-right tabular-nums">{suma.toLocaleString("ro-RO")}</td>
-                                            <td className="px-4 py-2.5 text-right tabular-nums text-dc-accent/80">
-                                                {Math.round(totalInterest).toLocaleString("ro-RO")}
-                                            </td>
-                                            <td className="px-4 py-2.5 text-right tabular-nums">0</td>
-                                        </tr>
-                                    </tfoot>
-                                )}
-                            </table>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Dobândă lunară</label>
+                                <div className="flex items-center gap-2.5">
+                                    <input
+                                        type="number"
+                                        className="input-calculator font-dc-mono"
+                                        value={rate}
+                                        min={0.5}
+                                        max={15}
+                                        step={0.1}
+                                        onChange={(e) => {
+                                            const v = parseFloat(e.target.value);
+                                            if (!isNaN(v) && v >= 0.5 && v <= 15) setRate(v);
+                                        }}
+                                    />
+                                    <span className="shrink-0 text-[15px] text-dc-text-muted">%</span>
+                                </div>
+                            </div>
                         </div>
-                        {schedule.length > PREVIEW_ROWS && (
-                            <button
-                                onClick={() => setTableOpen(!tableOpen)}
-                                className="w-full px-4 py-3 text-xs text-dc-text-dim hover:text-dc-text border-t border-dc-line flex items-center justify-center gap-1.5 transition-colors"
-                            >
-                                {tableOpen ? (
-                                    <>
-                                        <ChevronUp size={14} />
-                                        Restrânge graficul
-                                    </>
-                                ) : (
-                                    <>
-                                        <ChevronDown size={14} />
-                                        Arată toate cele {schedule.length} rate
-                                    </>
-                                )}
-                            </button>
+
+                        {grace > 0 && (
+                            <Note className="-mt-4">
+                                În primele {grace} {grace === 1 ? "lună" : "luni"} plătești doar dobânda. Principalul se amortizează în
+                                cele {termen - grace} luni rămase.
+                            </Note>
                         )}
                     </div>
 
-                    {/* CTA */}
-                    <div className="rounded-dc-card border border-dc-line bg-dc-surface px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                        <div>
-                            <p className="text-sm font-medium text-dc-text">Vrei acest credit?</p>
-                            <p className="text-xs text-dc-text-dim mt-0.5">Completează cererea online în 5 minute.</p>
+                    {/* ── Results ── */}
+                    <div className="flex flex-col gap-6">
+                        {/* 4 stat cells */}
+                        <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+                            <div className="dc-cell min-w-0 p-7">
+                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                    {isFixed ? "Rată lunară" : "Prima rată"}
+                                </p>
+                                <Figure size="xl" proof className="mt-2.5 block">
+                                    <AnimatedNumber value={firstPayment} />
+                                </Figure>
+                                <p className="mt-2 text-xs text-dc-text-muted">
+                                    MDL{!isFixed && ` · ultima ${Math.round(lastPayment).toLocaleString("ro-RO").replace(/\./g, " ")}`}
+                                </p>
+                            </div>
+                            <div className="dc-cell min-w-0 p-7">
+                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Total plătit</p>
+                                <Figure size="xl" className="mt-2.5 block">
+                                    <AnimatedNumber value={totalPaid} />
+                                </Figure>
+                                <p className="mt-2 text-xs text-dc-text-muted">MDL</p>
+                            </div>
+                            <div className="dc-cell min-w-0 p-7">
+                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Dobândă totală</p>
+                                <Figure size="xl" className="mt-2.5 block">
+                                    <AnimatedNumber value={totalInterest} />
+                                </Figure>
+                                <p className="mt-2 text-xs text-dc-text-muted">MDL</p>
+                            </div>
+                            <div className="dc-cell min-w-0 p-7">
+                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">DAE</p>
+                                <Figure size="xl" className="mt-2.5 block">
+                                    {dae}
+                                </Figure>
+                                <p className="mt-2 text-xs text-dc-text-muted">% ANUAL EFECTIV</p>
+                            </div>
                         </div>
-                        <ButtonPrimary href="/cerere-de-credit-online" className="whitespace-nowrap">
-                            Aplică acum <ArrowRight size={16} />
-                        </ButtonPrimary>
+
+                        {/* Balance chart */}
+                        <div className="dc-cell px-6 pt-6 pb-5">
+                            <div className="mb-3 flex items-center justify-between">
+                                <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Sold rămas în timp</span>
+                                <span className="font-dc-mono text-xs text-dc-text-muted">{termen} luni</span>
+                            </div>
+                            <BalanceChart schedule={schedule} principal={suma} />
+                            <div className="mt-2 flex justify-between font-dc-mono text-xs text-dc-text-muted">
+                                <span>Lună 1</span>
+                                <span>Lună {Math.ceil(termen / 2)}</span>
+                                <span>Lună {termen}</span>
+                            </div>
+                        </div>
+
+                        {/* Amortization table */}
+                        <div className="dc-cell overflow-hidden">
+                            <div className="flex items-center justify-between border-b border-dc-line px-6 py-4">
+                                <span className="text-[15px] font-medium text-dc-text">Grafic de rambursare</span>
+                                <span className="font-dc-mono text-xs text-dc-text-muted">{schedule.length} rate</span>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-xs">
+                                    <thead>
+                                        <tr className="border-b border-dc-line text-dc-text-muted">
+                                            <th className="px-6 py-3 text-left font-normal uppercase tracking-[.1em]">#</th>
+                                            <th className="px-6 py-3 text-left font-normal uppercase tracking-[.1em]">Data</th>
+                                            <th className="px-6 py-3 text-right font-normal uppercase tracking-[.1em]">Plată</th>
+                                            <th className="px-6 py-3 text-right font-normal uppercase tracking-[.1em]">Principal</th>
+                                            <th className="px-6 py-3 text-right font-normal uppercase tracking-[.1em]">Dobândă</th>
+                                            <th className="px-6 py-3 text-right font-normal uppercase tracking-[.1em]">Sold</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-dc-line">
+                                        {visibleRows.map((r) => (
+                                            <tr
+                                                key={r.month}
+                                                className={cn("font-dc-mono", r.principal === 0 ? "text-dc-text-muted" : "text-dc-text-muted hover:bg-dc-surface")}
+                                            >
+                                                <td className="px-6 py-3">{r.month}</td>
+                                                <td className="px-6 py-3">{r.date}</td>
+                                                <td className="px-6 py-3 text-right font-medium text-dc-text">
+                                                    {Math.round(r.payment).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                </td>
+                                                <td className="px-6 py-3 text-right">
+                                                    {r.principal ? Math.round(r.principal).toLocaleString("ro-RO").replace(/\./g, " ") : "—"}
+                                                </td>
+                                                <td className="px-6 py-3 text-right text-dc-accent">
+                                                    {Math.round(r.interest).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                </td>
+                                                <td className="px-6 py-3 text-right">
+                                                    {Math.round(r.balance).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                    {tableOpen && (
+                                        <tfoot>
+                                            <tr className="border-t border-dc-line font-dc-mono font-medium text-dc-text-muted">
+                                                <td className="px-6 py-3" colSpan={2}>
+                                                    Total
+                                                </td>
+                                                <td className="px-6 py-3 text-right text-dc-text">
+                                                    {Math.round(totalPaid).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                </td>
+                                                <td className="px-6 py-3 text-right">{suma.toLocaleString("ro-RO").replace(/\./g, " ")}</td>
+                                                <td className="px-6 py-3 text-right text-dc-accent">
+                                                    {Math.round(totalInterest).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                </td>
+                                                <td className="px-6 py-3 text-right">0</td>
+                                            </tr>
+                                        </tfoot>
+                                    )}
+                                </table>
+                            </div>
+                            {schedule.length > PREVIEW_ROWS && (
+                                <button
+                                    onClick={() => setTableOpen(!tableOpen)}
+                                    className="flex w-full items-center justify-center gap-1.5 border-t border-dc-line px-6 py-4 text-xs uppercase tracking-[.1em] text-dc-text-muted transition-colors duration-[120ms] hover:text-dc-text"
+                                >
+                                    {tableOpen ? "Restrânge graficul" : `Arată toate cele ${schedule.length} rate`}
+                                </button>
+                            )}
+                        </div>
+
+                        {/* CTA */}
+                        <div className="dc-cell flex flex-col items-start justify-between gap-5 px-8 py-7 sm:flex-row sm:items-center">
+                            <div>
+                                <p className="text-[17px] font-medium text-dc-text">Vrei acest credit?</p>
+                                <p className="mt-1 text-xs text-dc-text-muted">Completează cererea online în 5 minute.</p>
+                            </div>
+                            <ButtonPrimary href="/cerere-de-credit-online" className="whitespace-nowrap">
+                                Aplică acum →
+                            </ButtonPrimary>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </div>
     );
 }

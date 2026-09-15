@@ -14,16 +14,16 @@ export default function ListRow({ href, title, description, compact, className }
         <Link
             href={href}
             className={cn(
-                "group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-dc-line",
-                compact ? "py-[18px]" : "py-5",
+                "group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-dc-line px-5 transition-colors hover:bg-dc-surface",
+                compact ? "py-4" : "py-7",
                 className,
             )}
         >
             <span className="min-w-0">
-                <span className="block text-base font-semibold text-dc-text transition-colors group-hover:text-white">{title}</span>
-                {description && <span className="mt-0.5 block text-sm text-dc-text-dim">{description}</span>}
+                <span className="block text-xl font-semibold tracking-[-.025em] text-dc-text">{title}</span>
+                {description && <span className="mt-1.5 block text-[17px] leading-[1.6] text-dc-text-muted">{description}</span>}
             </span>
-            <span className="text-dc-text-dim transition-colors group-hover:text-white" aria-hidden>
+            <span className="text-dc-text-muted transition-colors group-hover:text-dc-text" aria-hidden>
                 →
             </span>
         </Link>

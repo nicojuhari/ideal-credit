@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Briefcase, User, HeartHandshake, RefreshCw, MessageCircle } from "lucide-react";
+import Link from "next/link";
 import Container from "@/components/ds/Container";
 import Section from "@/components/ds/Section";
-import Card from "@/components/ds/Card";
 import Accent from "@/components/ds/Accent";
-import FeatureCards from "@/components/product/FeatureCards";
-import type { FeatureCardItem } from "@/components/product/FeatureCards";
+import Figure from "@/components/ds/Figure";
+import SpecStrip from "@/components/product/SpecStrip";
+import OrdinalRows from "@/components/product/OrdinalRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
 import ClosingCta from "@/components/home/ClosingCta";
@@ -19,82 +19,76 @@ export const metadata: Metadata = {
     alternates: { canonical: "https://idealcredit.md/despre-noi" },
 };
 
-const ceFacem: FeatureCardItem[] = [
-    {
-        icon: Briefcase,
-        title: "Antreprenori și proprietari de afaceri",
-        desc: "Capital de lucru, utilaje, stoc sau extindere.",
-    },
-    {
-        icon: User,
-        title: "Persoane fizice",
-        desc: "Renovări, cumpărături mari, sănătate sau educație.",
-    },
-    {
-        icon: HeartHandshake,
-        title: "Clienți refuzați de bănci",
-        desc: "Oferim o analiză flexibilă, adaptată situației tale reale.",
-    },
+const ceFacem = [
+    { title: "Antreprenori și proprietari de afaceri", desc: "Capital de lucru, utilaje, stoc sau extindere — fără plan de afaceri obligatoriu." },
+    { title: "Persoane fizice", desc: "Renovări, cumpărături mari, sănătate sau educație, cu rate fixe de la prima discuție." },
+    { title: "Clienți refuzați de bănci", desc: "Analiză flexibilă, adaptată situației reale, nu unui scor automat." },
 ];
 
-const servicii: FeatureCardItem[] = [
+const servicii = [
     {
-        icon: User,
         title: "Credite pentru persoane fizice",
         desc: "Finanțare pentru renovări, electrocasnice, mașini, cheltuieli medicale sau orice altă nevoie urgentă.",
         items: ["Aprobare rapidă", "Fără costuri ascunse", "Suma și rata adaptate la venitul tău"],
-        link: { href: "/credite/credit-pentru-nevoi-personale" },
+        href: "/credite/credit-pentru-nevoi-personale",
     },
     {
-        icon: Briefcase,
         title: "Credite pentru afaceri",
         desc: "Finanțare pentru antreprenori și firme mici care vor să crească fără să aștepte proceduri bancare lungi.",
         items: ["Bani pentru stoc, utilaje sau modernizare", "Analiză rapidă a dosarului", "Soluții cu sau fără gaj, în funcție de sumă"],
-        link: { href: "/credite/credit-pentru-afaceri-mici" },
+        href: "/credite/credit-pentru-afaceri-mici",
     },
     {
-        icon: RefreshCw,
         title: "Refinanțare",
         desc: "Ai credite scumpe la alte instituții? Le putem închide și le înlocuim cu o singură rată fixă și mai mică.",
         items: ["O singură plată lunară", "Rată mai mică", "Mai mult confort financiar"],
     },
     {
-        icon: MessageCircle,
         title: "Consultanță financiară gratuită",
         desc: "Nu știi ce produs ți se potrivește? Venim cu o analiză gratuită a situației tale, fără obligații.",
         items: ["Analizăm capacitatea ta de plată", "Îți propunem soluția potrivită", "Fără obligații"],
     },
 ];
 
-const deCe = [
-    {
-        title: "Transparență totală",
-        body: "Îți arătăm toate costurile de la început. Nu există surprize la semnătură sau pe parcurs.",
-    },
-    {
-        title: "Aprobare rapidă",
-        body: "Nu pierzi săptămâni în așteptare. Analizăm dosarul tău și îți dăm un răspuns clar.",
-    },
+const principii = [
+    { title: "Transparență totală", desc: "Îți arătăm toate costurile de la început. Nu există surprize la semnătură sau pe parcurs." },
+    { title: "Aprobare rapidă", desc: "Nu pierzi săptămâni în așteptare. Analizăm dosarul tău și îți dăm un răspuns clar." },
     {
         title: "Flexibilitate reală",
-        body: "Analizăm situația ta individual, nu după un algoritm rigid. Dacă ai venituri stabile și capacitate de rambursare, găsim o soluție.",
+        desc: "Analizăm situația ta individual, nu după un algoritm rigid. Dacă ai venituri stabile și capacitate de rambursare, găsim o soluție.",
     },
-    {
-        title: `${yearsSinceFoundation} ani de încredere`,
-        body: "Mii de clienți au obținut finanțare prin noi. Facem ce spunem și spunem ce facem.",
-    },
-    {
-        title: "Acoperire națională",
-        body: "Birouri în Căușeni și Chișinău, dar lucrăm cu clienți din toată Moldova prin platforma noastră online.",
-    },
+    { title: `${yearsSinceFoundation} ani de încredere`, desc: "Mii de clienți au obținut finanțare prin noi. Facem ce spunem și spunem ce facem." },
+    { title: "Acoperire națională", desc: "Birouri în Căușeni și Chișinău, dar lucrăm cu clienți din toată Moldova prin platforma noastră online." },
 ];
 
 const proces = [
-    { title: "Completezi cererea", body: "Online sau la birou, în câteva minute." },
-    { title: "Analizăm dosarul", body: "Rapid, fără birocrație inutilă." },
-    { title: "Primești răspunsul", body: "Clar și transparent." },
-    { title: "Semnezi contractul", body: "Cu toate costurile vizibile." },
-    { title: "Primești banii", body: "Și îți continui planurile." },
+    { title: "Completezi cererea", desc: "Online sau la birou, în câteva minute." },
+    { title: "Analizăm dosarul", desc: "Rapid, fără birocrație inutilă." },
+    { title: "Primești răspunsul", desc: "Clar și transparent." },
+    { title: "Semnezi contractul", desc: "Cu toate costurile vizibile." },
+    { title: "Primești banii", desc: "Și îți continui planurile." },
+];
+
+const documente = [
+    { label: "Regulament privind cadrul de administrare", group: "Regulamente", meta: "PDF", href: "/regulament-cadrul-de-administrare.pdf" },
+    { label: "Regulament privind prestarea serviciilor", group: "Regulamente", meta: "PDF", href: "/regulament-prestarea-serviciilor.pdf" },
+    {
+        label: "Regulament privind soluționarea pretențiilor",
+        group: "Regulamente",
+        meta: "PDF",
+        href: "/regulament-solutionarea-pretentiilor.pdf",
+    },
+    { label: "Raport de audit 2025", group: "Rapoarte", meta: "2025", href: "/raport-audit-2025.pdf" },
+    { label: "Raport de audit 2024", group: "Rapoarte", meta: "2024", href: "/raport-audit-2024.pdf" },
+    { label: "Raport de audit 2023", group: "Rapoarte", meta: "2023", href: "/raport-audit-2023.pdf" },
+    { label: "Raport de audit 2022", group: "Rapoarte", meta: "2022", href: "/raport-audit-2022.pdf" },
+    { label: "Certificat de înregistrare", group: "Constituire", meta: "PDF", href: "/ideal-credit-certificat-de-inregistrare.pdf" },
+    {
+        label: "Extras din Registrul OCN autorizate",
+        group: "Constituire",
+        meta: "PDF",
+        href: "/ideal-credit-extras-registrul-organizatiilor-de-creditare-nebancare-autorizate.pdf",
+    },
 ];
 
 const faqItems: FaqItem[] = [
@@ -120,124 +114,159 @@ const faqItems: FaqItem[] = [
     },
 ];
 
-const regulamente = [
-    { href: "/regulament-cadrul-de-administrare.pdf", label: "Regulament privind cadrul de administrare" },
-    { href: "/regulament-prestarea-serviciilor.pdf", label: "Regulament privind prestarea serviciilor în cardul OCN Ideal Credit SRL" },
-    {
-        href: "/regulament-solutionarea-pretentiilor.pdf",
-        label: "Regulament privind mecanismele de soluționare a pretențiilor clienților în cardul OCN Ideal Credit SRL",
-    },
-];
-
-const rapoarte = [
-    { href: "/raport-audit-2025.pdf", label: "Raport de Audit 2025" },
-    { href: "/raport-audit-2024.pdf", label: "Raport de Audit 2024" },
-    { href: "/raport-audit-2023.pdf", label: "Raport de Audit 2023" },
-    { href: "/raport-audit-2022.pdf", label: "Raport de Audit 2022" },
-];
-
-const documenteConstituire = [
-    { href: "/ideal-credit-certificat-de-inregistrare.pdf", label: "Certificat de înregistrare" },
-    {
-        href: "/ideal-credit-extras-registrul-organizatiilor-de-creditare-nebancare-autorizate.pdf",
-        label: "Extras din Registrul organizațiilor de creditare nebancară autorizate",
-    },
-];
-
-function DocsCard({ title, links }: { title: string; links: { href: string; label: string }[] }) {
-    return (
-        <Card className="gap-4">
-            <h3 className="text-[17px] font-bold text-dc-text">{title}</h3>
-            <div className="flex flex-col gap-3">
-                {links.map((l) => (
-                    <a
-                        key={l.href}
-                        href={l.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-dc-text-muted underline underline-offset-[3px] hover:text-dc-text"
-                    >
-                        {l.label}
-                    </a>
-                ))}
-            </div>
-        </Card>
-    );
-}
-
 export default function DespreNoiPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
 
-            <div className="relative isolate dc-section dc-section--hero">
-                <div className="dc-bg-squares" aria-hidden />
+            <div className="dc-section dc-section--hero">
                 <Container>
-                    <div className="mx-auto flex max-w-[720px] flex-col items-center gap-6 text-center">
-                        <h1 className="text-[44px] md:text-[64px] font-bold leading-[1.05] tracking-[-.03em] text-dc-text">
-                            Despre <Accent>noi</Accent>
-                        </h1>
-                        <p className="text-[19px] leading-relaxed text-dc-text-muted">
-                            Ideal Credit este o instituție financiară nebancară cu sediul central în Căușeni și sucursală în Chișinău. De
-                            peste {yearsSinceFoundation} de ani ajutăm oameni și afaceri din Moldova să acceseze credite clare, corecte și
-                            rapide. Suntem o organizație de creditare nebancară autorizată și supravegheată de CNPF.
+                    <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                        <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                        OCN „Ideal Credit” SRL · autorizată CNPF
+                    </p>
+                    <h1 className="mt-7 max-w-[1000px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
+                        Despre <Accent>noi.</Accent>
+                    </h1>
+                    <p className="mt-7 max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
+                        Organizație de creditare nebancară cu sediul în Căușeni și sucursală în Chișinău. De {yearsSinceFoundation} ani
+                        finanțăm oameni și afaceri din toată Moldova.
+                    </p>
+                </Container>
+            </div>
+            <SpecStrip
+                specs={[
+                    { value: "2010", label: "anul fondării", proof: true },
+                    { value: String(yearsSinceFoundation), label: "ani pe piață", proof: true },
+                    { value: "2", label: "oficii · toată Moldova", proof: true },
+                    { value: "4,9", label: "rating clienți", proof: true },
+                ]}
+            />
+
+            <div className="dc-section">
+                <Container>
+                    <figure className="max-w-[900px]">
+                        <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                            <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                            Promisiunea
                         </p>
-                        <p className="font-dc-serif italic text-xl text-dc-accent">&quot;Credite pentru succes!&quot;</p>
-                    </div>
+                        <p className="mt-7 text-[clamp(34px,4vw,50px)] font-semibold leading-[1.16] tracking-[-.03em] text-dc-text">
+                            Facem ce spunem și spunem ce facem. Dacă finanțarea nu are sens pentru tine, o spunem înainte să depui dosarul.
+                        </p>
+                        <figcaption className="mt-6 text-xs tracking-[.06em] text-dc-text-muted">— ECHIPA IDEAL CREDIT</figcaption>
+                    </figure>
                 </Container>
             </div>
 
-            <Section title={<>Ce <Accent>facem</Accent></>} description="Oferim finanțare pentru cei care au nevoie de bani - fără birocrație inutilă și fără costuri ascunse.">
-                <FeatureCards items={ceFacem} cols={3} />
-            </Section>
+            <OrdinalRows
+                marker="Pentru cine"
+                title={
+                    <>
+                        Ce <Accent>facem</Accent>
+                    </>
+                }
+                items={ceFacem}
+            />
 
-            <Section title={<>Serviciile <Accent>noastre</Accent></>}>
-                <FeatureCards items={servicii} cols={2} />
-            </Section>
-
-            <Section title={<>De ce <Accent>Ideal Credit</Accent></>}>
-                <div>
-                    {deCe.map((row, i) => (
-                        <div
-                            key={row.title}
-                            className="grid gap-4 border-t border-dc-line py-7 last:border-b"
-                            style={{ gridTemplateColumns: "40px 1fr" }}
-                        >
-                            <span className="text-[13px] font-semibold text-dc-text-dim">{String(i + 1).padStart(2, "0")}</span>
-                            <div>
-                                <h3 className="text-[19px] font-bold text-dc-text">{row.title}</h3>
-                                <p className="mt-1 text-dc-text-muted leading-relaxed">{row.body}</p>
-                            </div>
+            <Section
+                marker="Servicii"
+                title={
+                    <>
+                        Serviciile <Accent>noastre</Accent>
+                    </>
+                }
+            >
+                <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+                    {servicii.map((s, i) => (
+                        <div key={s.title} className="dc-cell flex flex-col p-8">
+                            <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                            <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">{s.title}</h3>
+                            <p className="mt-2.5 text-[15px] leading-[1.55] text-dc-text-muted">{s.desc}</p>
+                            <ul className="mt-5 flex flex-col gap-2">
+                                {s.items.map((item) => (
+                                    <li key={item} className="text-[15px] leading-[1.5] text-dc-text-muted">
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                            {s.href && (
+                                <Link
+                                    href={s.href}
+                                    className="mt-6 text-[15px] uppercase tracking-[.04em] text-dc-accent underline underline-offset-4"
+                                >
+                                    Vezi condițiile →
+                                </Link>
+                            )}
                         </div>
                     ))}
                 </div>
             </Section>
 
-            <Section title={<>Cum funcționează <Accent>procesul</Accent></>}>
-                <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
-                    {proces.map((step, i) => (
-                        <Card key={step.title} className="gap-6">
-                            <span className="text-[13px] font-semibold text-dc-text-dim">{String(i + 1).padStart(2, "0")}</span>
-                            <div>
-                                <h3 className="mb-1.5 text-base font-bold text-dc-text">{step.title}</h3>
-                                <p className="text-sm text-dc-text-muted leading-relaxed">{step.body}</p>
-                            </div>
-                        </Card>
-                    ))}
-                </div>
-            </Section>
+            <OrdinalRows
+                marker="Principii"
+                title={
+                    <>
+                        De ce <Accent>Ideal Credit</Accent>
+                    </>
+                }
+                items={principii}
+            />
 
-            <ProductFaq items={faqItems} />
+            <OrdinalRows
+                marker="Procesul"
+                title={
+                    <>
+                        Cinci pași până la <Accent>bani</Accent>
+                    </>
+                }
+                items={proces}
+            />
+
+            <div className="dc-section">
+                <Container>
+                    <div className="flex flex-wrap items-end justify-between gap-8">
+                        <div>
+                            <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                                <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                                Registru public
+                            </p>
+                            <h2 className="mt-5 text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text">
+                                Regulamente și <Accent>documente</Accent>
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="mt-14 border-t border-dc-line">
+                        {documente.map((doc, i) => (
+                            <a
+                                key={doc.href}
+                                href={doc.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="grid items-baseline gap-7 border-b border-dc-line px-8 py-6 transition-colors duration-[120ms] hover:bg-dc-surface"
+                                style={{ gridTemplateColumns: "44px minmax(0,1.6fr) minmax(0,.7fr) auto" }}
+                            >
+                                <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                                <span className="text-[17px] font-medium leading-[1.5] text-dc-text">{doc.label}</span>
+                                <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">{doc.group}</span>
+                                <Figure size="ordinal" className="text-dc-text-muted">
+                                    {doc.meta} →
+                                </Figure>
+                            </a>
+                        ))}
+                    </div>
+                </Container>
+            </div>
+
+            <ProductFaq
+                title={
+                    <>
+                        Întrebări <Accent>frecvente</Accent>
+                    </>
+                }
+                items={faqItems}
+            />
             <ClosingCta />
-
-            <Section title={<>Regulamente și <Accent>documente</Accent></>}>
-                <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
-                    <DocsCard title="Regulamente interne" links={regulamente} />
-                    <DocsCard title="Rapoarte" links={rapoarte} />
-                    <DocsCard title="Documente de constituire" links={documenteConstituire} />
-                </div>
-            </Section>
         </div>
     );
 }

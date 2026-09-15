@@ -1,55 +1,48 @@
-import { Star } from "lucide-react";
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
-import Calculator from "@/components/ds/Calculator";
+import Figure from "@/components/ds/Figure";
+import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
 import { yearsSinceFoundation } from "@/lib/utils";
 
-const stats: { figure: React.ReactNode; label: string }[] = [
-    { figure: `${yearsSinceFoundation} ani`, label: "de experiență" },
-    { figure: "1–3 ore", label: "până la decizie" },
-    {
-        figure: (
-            <>
-                <Star size={18} className="text-dc-text" fill="currentColor" /> 4.9
-            </>
-        ),
-        label: "rating clienți",
-    },
+const stats = [
+    { figure: `${yearsSinceFoundation}`, label: "ani pe piață" },
+    { figure: "0", label: "comisioane" },
+    { figure: "4,9", label: "rating clienți" },
+    { figure: "10 000", label: "MDL sumă minimă" },
 ];
 
 export default function HeroHome() {
     return (
-        <div className="relative isolate dc-section dc-section--hero">
-            <div className="dc-bg-squares" aria-hidden />
-            <Container>
-                <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] gap-16 items-center">
-                    {/* Left column */}
-                    <div className="flex flex-col gap-7">
-                        <h1 className="text-[64px] md:text-[96px] font-bold max-md:text-center leading-[1.04] tracking-[-.03em] text-dc-text">
-                            Credite pentru <Accent>succes.</Accent>
-                        </h1>
-
-                        <h2 className="max-w-[480px] text-[19px] leading-relaxed text-dc-text-muted max-md:text-center">
-                            Finanțăm afaceri și persoane fizice
-                            <br className="max-md:hidden" /> din Republica Moldova.
-                        </h2>
-
-                        <div className="flex flex-wrap gap-10 border-t border-dc-line pt-6 hidden">
-                            {stats.map((s) => (
-                                <div key={s.label}>
-                                    <p className="flex items-center gap-1 text-[22px] font-bold tracking-[-.02em] leading-[1.5] text-dc-text">
-                                        {s.figure}
-                                    </p>
-                                    <p className="text-[13px] text-dc-text-dim">{s.label}</p>
-                                </div>
-                            ))}
-                        </div>
+        <>
+            <div className="dc-section dc-section--hero">
+                <Container className="flex flex-col items-center gap-8 text-center">
+                    <h1 className="max-w-[1000px] text-[clamp(64px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
+                        Credite pentru <Accent>succes.</Accent>
+                    </h1>
+                    <p className="max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
+                        Finanțăm afaceri și persoane fizice din Moldova cu credite rapide, flexibile și transparente.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-3.5">
+                        <ButtonPrimary href="/cerere-de-credit-online">Solicită un credit</ButtonPrimary>
+                        <ButtonSecondary href="#calculator">Calculează rata</ButtonSecondary>
                     </div>
+                </Container>
+            </div>
 
-                    {/* Right column: calculator */}
-                    <Calculator />
-                </div>
-            </Container>
-        </div>
+            <div className="pb-24">
+                <Container>
+                    <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
+                        {stats.map((s) => (
+                            <div key={s.label} className="dc-cell p-7">
+                                <Figure size="lg" proof className="block">
+                                    {s.figure}
+                                </Figure>
+                                <p className="mt-1.5 text-xs uppercase tracking-[.1em] text-dc-text-muted">{s.label}</p>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </div>
+        </>
     );
 }

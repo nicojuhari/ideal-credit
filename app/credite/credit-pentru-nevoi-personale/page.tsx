@@ -2,19 +2,17 @@ import type { Metadata } from "next";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import ProductHero from "@/components/product/ProductHero";
-import TileCards from "@/components/product/TileCards";
-import type { TileItem } from "@/components/product/TileCards";
-import EligibilityCard from "@/components/product/EligibilityCard";
+import SpecStrip from "@/components/product/SpecStrip";
+import LabelGrid from "@/components/product/LabelGrid";
+import EligibilityRows from "@/components/product/EligibilityRows";
 import ProductDescription from "@/components/product/ProductDescription";
-import FeatureCards from "@/components/product/FeatureCards";
-import type { FeatureCardItem } from "@/components/product/FeatureCards";
-import DocumentsBlock from "@/components/product/DocumentsBlock";
+import DocumentRows from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
+import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { Home, Tv, Activity, Cake, Plane, RefreshCw, Stethoscope, Shield, BadgeCheck } from "lucide-react";
 import { personalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -67,42 +65,27 @@ const personalFaqItems: FaqItem[] = [
     },
 ];
 
-const useCases: TileItem[] = [
-    { icon: Home, label: "Renovare acasă", href: "/credite/credit-pentru-reparatie" },
-    { icon: Tv, label: "Electrocasnice, mobilă" },
-    { icon: Activity, label: "Tratament medical" },
-    { icon: Cake, label: "Nuntă, botez, eveniment" },
-    { icon: Plane, label: "Vacanță planificată" },
-    { icon: RefreshCw, label: "Consolidare credite", href: "#consolidare" },
+const useCases = [
+    { label: "Renovare acasă", href: "/credite/credit-pentru-reparatie" },
+    { label: "Electrocasnice, mobilă" },
+    { label: "Tratament medical" },
+    { label: "Nuntă, botez, eveniment" },
+    { label: "Vacanță planificată" },
+    { label: "Consolidare credite", href: "#consolidare" },
 ];
 
-const bugetariCategories: FeatureCardItem[] = [
+const bugetariCategories = [
     {
-        icon: Stethoscope,
         title: "Medici și personal medical",
-        items: [
-            "Medici, asistenți medicali, farmaciști",
-            "Angajați ai spitalelor și policlinicilor de stat",
-            "Personal auxiliar din sistemul de sănătate",
-        ],
+        items: ["Medici, asistenți medicali, farmaciști", "Angajați ai spitalelor și policlinicilor de stat", "Personal auxiliar din sistemul de sănătate"],
     },
     {
-        icon: Shield,
         title: "Militari și polițiști",
-        items: [
-            "Ofițeri și subofițeri ai Armatei Naționale",
-            "Angajați ai Ministerului Afacerilor Interne",
-            "Personal al Serviciului de Protecție și Pază de Stat",
-        ],
+        items: ["Ofițeri și subofițeri ai Armatei Naționale", "Angajați ai Ministerului Afacerilor Interne", "Personal al Serviciului de Protecție și Pază de Stat"],
     },
     {
-        icon: BadgeCheck,
         title: "Alți angajați bugetari",
-        items: [
-            "Profesori, educatori, personal didactic",
-            "Funcționari publici și angajați ai administrației locale",
-            "Angajați ai instituțiilor de stat și autorităților publice",
-        ],
+        items: ["Profesori, educatori, personal didactic", "Funcționari publici și angajați ai administrației locale", "Angajați ai instituțiilor de stat și autorităților publice"],
     },
 ];
 
@@ -119,26 +102,47 @@ export default function CreditNevoiPersonalePage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
 
             <ProductHero
-                title="Credit pentru nevoi personale"
+                category="Persoane fizice"
+                position={4}
+                title={
+                    <>
+                        Credit pentru nevoi <Accent>personale.</Accent>
+                    </>
+                }
                 subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
+                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
+                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
+            />
+            <SpecStrip
+                specs={[
+                    { value: "10 000", label: "MDL sumă minimă" },
+                    { value: "12–48", label: "luni termen" },
+                    { value: "2–3 ore", label: "până la decizie", proof: true },
+                    { value: "4 %", label: "dobândă fixă / lună" },
+                ]}
             />
 
-            <Section title={<>Când folosești un credit <Accent>personal</Accent></>}>
-                <TileCards items={useCases} />
-            </Section>
+            <LabelGrid
+                marker="Destinații"
+                title={
+                    <>
+                        Când folosești un credit <Accent>personal</Accent>
+                    </>
+                }
+                items={useCases}
+            />
 
-            <Section align="center" title={<>Condiții de <Accent>bază</Accent></>}>
-                <EligibilityCard
-                    items={[
-                        "Vârsta de la 23 de ani",
-                        "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
-                        "Buletin de identitate valabil",
-                        "Capacitate de rambursare demonstrabilă",
-                    ]}
-                />
-            </Section>
+            <EligibilityRows
+                marker="Eligibilitate"
+                title={
+                    <>
+                        Condiții de <Accent>bază</Accent>
+                    </>
+                }
+                items={["Vârsta de la 23 de ani", "Sursă de venit stabilă (angajat, pensionar, antreprenor)", "Buletin de identitate valabil", "Capacitate de rambursare demonstrabilă"]}
+            />
 
-            <Process />
+            <Calculator />
 
             <Section align="center" title={<>Credit personal rapid în <Accent>Moldova</Accent></>}>
                 <ProductDescription
@@ -150,38 +154,71 @@ export default function CreditNevoiPersonalePage() {
                 />
             </Section>
 
-            <div id="consolidare">
-                <Section align="center" title={<>Ai mai multe credite <Accent>active?</Accent></>}>
-                    <EligibilityCard
-                        intro="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
-                        items={worthConsolidatingItems}
-                    />
-                </Section>
-            </div>
+            <EligibilityRows
+                id="consolidare"
+                marker="Consolidare"
+                title={
+                    <>
+                        Ai mai multe credite <Accent>active?</Accent>
+                    </>
+                }
+                description="Consolidarea nu este un produs separat, ci o opțiune discutată în cadrul consultației — merită analizat-o dacă:"
+                items={worthConsolidatingItems}
+            />
 
-            <div id="bugetari">
-                <Section title={<>Condiții speciale pentru <Accent>bugetari</Accent></>}>
-                    <FeatureCards items={bugetariCategories} cols={3} />
-                </Section>
-            </div>
-
-            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
-                <DocumentsBlock
-                    documents={[
-                        "Buletin de identitate",
-                        "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
-                        "Ultimele 3 extrase de cont bancar (recomandat)",
-                        "Actele fidejusorului sau ale bunului gajat (dacă este cazul)",
-                    ]}
-                    note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
-                    relatedLinks={[
-                        { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Renovezi casa cu rate fixe și costuri clare." },
-                        { href: "/credite/credit-pentru-automobil", label: "Credit pentru automobil", desc: "Cumperi sau repari mașina cu finanțare rapidă." },
-                    ]}
-                />
+            <Section
+                id="bugetari"
+                marker="Bugetari"
+                title={
+                    <>
+                        Condiții speciale pentru <Accent>bugetari</Accent>
+                    </>
+                }
+            >
+                <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+                    {bugetariCategories.map((cat, i) => (
+                        <div key={cat.title} className="dc-cell p-8">
+                            <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                            <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">{cat.title}</h3>
+                            <ul className="mt-4 flex flex-col gap-2.5">
+                                {cat.items.map((item) => (
+                                    <li key={item} className="text-[15px] leading-[1.5] text-dc-text-muted">
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </Section>
 
-            <ProductFaq items={personalFaqItems} />
+            <Process />
+
+            <DocumentRows
+                id="documente"
+                marker="Dosar"
+                title={
+                    <>
+                        Documente <Accent>necesare</Accent>
+                    </>
+                }
+                items={[
+                    { title: "Buletin de identitate", note: "Obligatoriu" },
+                    { title: "Confirmare a veniturilor", note: "Adeverință / extras / BIC" },
+                    { title: "Ultimele 3 extrase de cont bancar", note: "Recomandat" },
+                    { title: "Actele fidejusorului sau ale bunului gajat", note: "Dacă e cazul" },
+                ]}
+                footnote="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
+            />
+
+            <ProductFaq
+                title={
+                    <>
+                        Întrebări despre creditul <Accent>personal</Accent>
+                    </>
+                }
+                items={personalFaqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>

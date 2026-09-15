@@ -1,22 +1,49 @@
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
-import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
+import Figure from "@/components/ds/Figure";
+import { OFFICES } from "@/lib/constants";
+
+const chisinau = OFFICES.find((o) => o.city.includes("Chișinău"))!;
+const causeni = OFFICES.find((o) => o.city.includes("Căușeni"))!;
 
 export default function ClosingCta() {
     return (
-        <section className="dc-section">
+        <div className="dc-section dc-section--cta">
             <Container>
-                <div className="flex flex-col items-center gap-7 text-center">
-                    <h2 className="max-w-[720px] text-[32px] md:text-[56px] font-bold leading-[1.05] tracking-[-.03em] text-dc-text">
-                        Gata să <Accent>aplici ?</Accent>
-                    </h2>
-                    <p className="text-dc-text-muted">Decizie în 1-3 ore, în timpul programului de lucru.</p>
-                    <div className="flex flex-wrap items-center justify-center gap-4">
-                        <ButtonPrimary href="/cerere-de-credit-online">Cerere online</ButtonPrimary>
-                        <ButtonSecondary href="tel:+37361252777">0612 52 777</ButtonSecondary>
+                <div className="grid items-center gap-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
+                    <div>
+                        <h2 className="text-[clamp(42px,6vw,72px)] font-semibold leading-[.98] tracking-[-.042em] text-dc-text">
+                            Gata să <Accent>aplici?</Accent>
+                        </h2>
+                        <p className="mt-5 max-w-[480px] text-[19px] leading-[1.55] text-dc-text-muted">
+                            Decizie rapidă, în timpul programului de lucru. Dacă nu are sens pentru tine, o spunem direct.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                        <a
+                            href="/cerere-de-credit-online"
+                            className="flex items-center justify-between gap-5 bg-dc-accent px-8 py-[26px] text-dc-on-accent"
+                        >
+                            <span className="text-[19px] font-semibold">Cerere online</span>
+                            <Figure size="ordinal">5 MIN →</Figure>
+                        </a>
+                        <a
+                            href={`tel:${chisinau.mobile}`}
+                            className="flex items-center justify-between gap-5 border border-dc-line px-8 py-[26px] text-dc-text"
+                        >
+                            <Figure size="md">{chisinau.mobileDisplay}</Figure>
+                            <span className="text-xs text-dc-text-muted">CHIȘINĂU →</span>
+                        </a>
+                        <a
+                            href={`tel:${causeni.mobile}`}
+                            className="flex items-center justify-between gap-5 border border-dc-line px-8 py-[26px] text-dc-text"
+                        >
+                            <Figure size="md">{causeni.mobileDisplay}</Figure>
+                            <span className="text-xs text-dc-text-muted">CĂUȘENI →</span>
+                        </a>
                     </div>
                 </div>
             </Container>
-        </section>
+        </div>
     );
 }

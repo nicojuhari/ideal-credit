@@ -1,53 +1,47 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Container from "@/components/ds/Container";
+import Accent from "@/components/ds/Accent";
+import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
 
 export default function ArticleLayout({ children }: { children: React.ReactNode }) {
- return (
- <div className="py-8 md:py-12">
- <div className="container sm-container">
- {/* Back link */}
- <Link
- href="/blog"
- className="inline-flex items-center gap-1.5 text-sm hover:text-white transition-colors mb-8"
- >
- ← Înapoi la blog
- </Link>
+    return (
+        <div className="dc bg-dc-bg dc-section dc-section--hero">
+            <Container>
+                <div className="mx-auto max-w-[720px]">
+                    <Link
+                        href="/blog"
+                        className="text-[15px] text-dc-text-muted underline underline-offset-4 transition-colors duration-[120ms] hover:text-white"
+                    >
+                        ← Înapoi la blog
+                    </Link>
 
- {/* Article content */}
- <article>{children}</article>
+                    <article className="dc-legal mt-10">{children}</article>
 
- {/* Consultation CTA */}
- <div className="mt-12 rounded-2xl border border-brand-500/20 bg-black-600/60 p-7 relative overflow-hidden">
- <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-brand-500/60 via-brand-500/20 to-transparent" />
- <p className="text-xs uppercase tracking-widest font-medium mb-3">Ideal Credit</p>
- <h2 className="text-xl md:text-2xl font-medium text-white mb-2">Ai o întrebare despre situația ta concretă?</h2>
- <p className=" text-sm leading-relaxed mb-6 max-w-xl">
- Articolele explică principii generale. Situația ta poate fi diferită. Consultăm gratuit - fără angajamente, fără
- presiuni. Dacă există o soluție potrivită pentru tine, o găsim împreună.
- </p>
- <div className="flex flex-wrap gap-3">
- <Link
- href="/cerere-de-credit-online"
- className="inline-flex items-center gap-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-black font-medium px-5 py-2.5 text-sm transition-colors"
- >
- Aplică online <ArrowRight size={15} />
- </Link>
- <Link
- href="/contacte"
- className="inline-flex items-center gap-2 rounded-lg border border-white/15 hover:border-white/30 text-white hover:bg-white/5 font-medium px-5 py-2.5 text-sm transition-colors"
- >
- Contactează-ne
- </Link>
- </div>
- </div>
+                    <div className="mt-14 border border-dc-line p-8">
+                        <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Ideal Credit</p>
+                        <h2 className="mt-4 text-2xl tracking-[-.02em] text-dc-text">
+                            Ai o întrebare despre situația ta <Accent>concretă?</Accent>
+                        </h2>
+                        <p className="mt-3 max-w-xl text-[17px] leading-[1.6] text-dc-text-muted">
+                            Articolele explică principii generale. Situația ta poate fi diferită. Consultăm gratuit - fără angajamente,
+                            fără presiuni. Dacă există o soluție potrivită pentru tine, o găsim împreună.
+                        </p>
+                        <div className="mt-6 flex flex-wrap gap-3.5">
+                            <ButtonPrimary href="/cerere-de-credit-online">Aplică online</ButtonPrimary>
+                            <ButtonSecondary href="/contacte">Contactează-ne</ButtonSecondary>
+                        </div>
+                    </div>
 
- {/* Bottom back link */}
- <div className="mt-8 pt-6 border-t border-white/5">
- <Link href="/blog" className="text-sm hover:text-white transition-colors">
- ← Toate articolele
- </Link>
- </div>
- </div>
- </div>
- );
+                    <div className="mt-10 border-t border-dc-line pt-6">
+                        <Link
+                            href="/blog"
+                            className="text-[15px] text-dc-text-muted underline underline-offset-4 transition-colors duration-[120ms] hover:text-white"
+                        >
+                            ← Toate articolele
+                        </Link>
+                    </div>
+                </div>
+            </Container>
+        </div>
+    );
 }

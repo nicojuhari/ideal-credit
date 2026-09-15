@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import ProductHero from "@/components/product/ProductHero";
-import EligibilityCard from "@/components/product/EligibilityCard";
+import SpecStrip from "@/components/product/SpecStrip";
+import EligibilityRows from "@/components/product/EligibilityRows";
 import ProductDescription from "@/components/product/ProductDescription";
-import DocumentsBlock from "@/components/product/DocumentsBlock";
+import DocumentRows from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
+import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
@@ -60,22 +62,42 @@ export default function CreditReparatiePage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
 
             <ProductHero
-                title={<>Credit pentru reparație</>}
+                category="Persoane fizice"
+                position={6}
+                title={
+                    <>
+                        Credit pentru <Accent>reparație.</Accent>
+                    </>
+                }
                 subtitle="Obține un credit pentru reparația casei sau apartamentului tău. Renovează-ți locuința acum cu rate fixe și costuri clare."
+                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
+                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
+            />
+            <SpecStrip
+                specs={[
+                    { value: "10 000", label: "MDL sumă minimă" },
+                    { value: "12–48", label: "luni termen" },
+                    { value: "2–3 ore", label: "până la decizie", proof: true },
+                    { value: "4 %", label: "dobândă fixă / lună" },
+                ]}
             />
 
-            <Section align="center" title={<>Condiții de <Accent>creditare</Accent></>}>
-                <EligibilityCard
-                    items={[
-                        "Vârsta între 23 și 55 de ani",
-                        "Venit confirmat și stabil",
-                        "Buletin de identitate valabil",
-                        "Locuință în proprietate sau în arendă (pentru lucrările planificate)",
-                    ]}
-                />
-            </Section>
+            <EligibilityRows
+                marker="Eligibilitate"
+                title={
+                    <>
+                        Condiții de <Accent>creditare</Accent>
+                    </>
+                }
+                items={[
+                    "Vârsta între 23 și 55 de ani",
+                    "Venit confirmat și stabil",
+                    "Buletin de identitate valabil",
+                    "Locuință în proprietate sau în arendă (pentru lucrările planificate)",
+                ]}
+            />
 
-            <Process />
+            <Calculator />
 
             <Section align="center" title={<>Credit pentru reparație casă sau <Accent>apartament</Accent></>}>
                 <ProductDescription
@@ -87,23 +109,33 @@ export default function CreditReparatiePage() {
                 />
             </Section>
 
-            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
-                <DocumentsBlock
-                    documents={[
-                        "Buletin de identitate",
-                        "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
-                        "Actele imobilului (dacă se solicită gaj)",
-                        "Deviz estimativ de lucrări (opțional, ajută la determinarea sumei)",
-                    ]}
-                    note="Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
-                    relatedLinks={[
-                        { href: "/credite/credit-pentru-nevoi-personale", label: "Credit pentru nevoi personale", desc: "Credit flexibil pentru orice cheltuială." },
-                        { href: "/credite/credit-pentru-automobil", label: "Credit pentru automobil", desc: "Finanțezi cumpărarea sau repararea mașinii." },
-                    ]}
-                />
-            </Section>
+            <Process />
 
-            <ProductFaq items={faqItems} />
+            <DocumentRows
+                id="documente"
+                marker="Dosar"
+                title={
+                    <>
+                        Documente <Accent>necesare</Accent>
+                    </>
+                }
+                items={[
+                    { title: "Buletin de identitate", note: "Obligatoriu" },
+                    { title: "Confirmare a veniturilor", note: "Adeverință / extras / BIC" },
+                    { title: "Actele imobilului", note: "Dacă se solicită gaj" },
+                    { title: "Deviz estimativ de lucrări", note: "Opțional" },
+                ]}
+                footnote="Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
+            />
+
+            <ProductFaq
+                title={
+                    <>
+                        Întrebări despre creditul de <Accent>reparație</Accent>
+                    </>
+                }
+                items={faqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>

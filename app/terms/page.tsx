@@ -123,7 +123,7 @@ export default function TermsPage() {
                 <br />
                 E-mail: info@idealcredit.md
                 <br />
-                Telefon: 0790 66 5 66, 0612 52 777
+                Telefon: 068 27 01 01, 0612 52 777
             </p>
         </LegalLayout>
     );

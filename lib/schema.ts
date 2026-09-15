@@ -32,7 +32,7 @@ export const financialServiceSchema = {
     name: "Credite nebancare pentru afaceri și nevoi personale",
     telephone: "+37361252777",
     image: "https://idealcredit.md/ideal-credit-og.webp",
-    priceRange: "10000-300000 MDL",
+    priceRange: "10000-500000 MDL",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Ginta Latină, nr. 18, of. 5",
@@ -52,7 +52,7 @@ export const localBusinessChisinauSchema = {
     name: "Ideal Credit",
     legalName: 'Organizația de Creditare Nebancară"Ideal Credit" SRL',
     url: "https://idealcredit.md/",
-    priceRange: "10000-300000 MDL",
+    priceRange: "10000-500000 MDL",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Ginta Latină, nr. 18, of. 5",
@@ -86,7 +86,7 @@ export const localBusinessCauseniSchema = {
     name: "Ideal Credit",
     legalName: 'Organizația de Creditare Nebancară"Ideal Credit" SRL',
     url: "https://idealcredit.md/",
-    priceRange: "10000-300000 MDL",
+    priceRange: "10000-500000 MDL",
     address: {
         "@type": "PostalAddress",
         streetAddress: "Mihai Eminescu, nr. 17, of. 47",
@@ -95,7 +95,7 @@ export const localBusinessCauseniSchema = {
         postalCode: "MD-4304",
         addressCountry: "MD",
     },
-    telephone: "+37379066566",
+    telephone: "+37368270101",
     openingHoursSpecification: [
         {
             "@type": "OpeningHoursSpecification",

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
+import Figure from "@/components/ds/Figure";
+import Note from "@/components/ds/Note";
 
 export const metadata: Metadata = {
     title: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL",
@@ -37,15 +39,15 @@ export default function AutoritateaPage() {
                 <li>la sediul CNPF, în cutia poștală amplasată la intrare în sediul instituției;</li>
             </ul>
 
-            <div className="mt-10 flex flex-col items-center gap-2 rounded-dc-card border border-dc-line bg-dc-surface py-8 text-center">
-                <p className="text-sm text-dc-text-muted">Telefonul consumatorului*</p>
-                <a href="tel:+37322859595" className="text-3xl font-bold text-dc-accent">
-                    (+373 22) 85 95 95
+            <div className="mt-10 flex flex-col items-center gap-3 border border-dc-line bg-dc-surface py-10 text-center">
+                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Telefonul consumatorului*</p>
+                <a href="tel:+37322859595">
+                    <Figure size="lg">(+373 22) 85 95 95</Figure>
                 </a>
-                <p className="mt-3 max-w-md px-6 text-xs italic text-dc-text-dim">
+                <Note className="mt-2 max-w-md px-6">
                     * Tariful către acest număr de apel va fi considerat apel cu tarif normal conform rețelei și tipului de abonament al
                     inițiatorului.
-                </p>
+                </Note>
             </div>
         </LegalLayout>
     );

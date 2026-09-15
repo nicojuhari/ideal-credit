@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 
 import HeroHome from "@/components/home/HeroHome";
 import Solutions from "@/components/home/Solutions";
+import Calculator from "@/components/home/Calculator";
 import WhyUs from "@/components/home/WhyUs";
 import Products from "@/components/home/Products";
 import Process from "@/components/home/Process";
 import RecenziiClient from "@/components/RecenziiClient";
 import Faq from "@/components/home/Faq";
-import PaymentMethods from "@/components/PaymentMethods";
 import ClosingCta from "@/components/home/ClosingCta";
 
 import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
@@ -15,7 +15,7 @@ import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credite Nebancare în Moldova | Ideal Credit",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse. Decizie în 1–3 ore.",
+        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse. Decizie rapidă.",
     alternates: { canonical: "https://idealcredit.md/" },
 };
 
@@ -28,12 +28,12 @@ export default function HomePage() {
 
             <HeroHome />
             <Solutions />
+            <Calculator />
             <WhyUs />
             <Products />
             <Process />
             <RecenziiClient />
             <Faq />
-            <PaymentMethods />
             <ClosingCta />
         </div>
     );

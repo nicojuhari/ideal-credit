@@ -8,8 +8,8 @@ export const OFFICES = [
         city: "or. Căușeni",
         street: "str. Mihai Eminescu",
         addressNumbers: "nr. 17, of. 47, MD-4304",
-        mobile: "+37379066566",
-        mobileDisplay: "079 06 65 66",
+        mobile: "+37368270101",
+        mobileDisplay: "068 27 01 01",
         note: null as string | null,
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1070.8698170211678!2d29.40806812052061!3d46.641495352200025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c9ace138f629b3%3A0xac0504d023064a9d!2sIdeal%20Credit%20C%C4%83u%C8%99eni!5e0!3m2!1sen!2sat!4v1708097806741!5m2!1sen!2sat",
     },
@@ -32,7 +32,7 @@ export const FAQ_ITEMS = [
     },
     {
         question: "Ce sumă pot obține pentru afacerea mea?",
-        answer: "Suma minimă este 10.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client - nu există un plafon fix. Analizăm dosarul în 1-3 ore și comunicăm suma aprobată.",
+        answer: "Suma minimă este 50.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client. Analizăm dosarul rapid și comunicăm suma aprobată.",
     },
     {
         question: "Ce documente sunt necesare pentru un credit de afacere?",
@@ -44,7 +44,7 @@ export const FAQ_ITEMS = [
     },
     {
         question: "Cât timp durează aprobarea?",
-        answer: "În general, răspundem în 1-3 ore pentru cererile complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
+        answer: "Decizia este rapidă pentru cererile complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
     },
     {
         question: "Dobânda este fixă sau flotantă?",
@@ -76,7 +76,7 @@ export const FAQ_ITEMS = [
     },
     {
         question: "Care este suma maximă pe care o pot obține?",
-        answer: "Suma minimă este 10.000 lei. Suma maximă nu este fixă - depinde de venit, garanțiile disponibile și situația fiecărui client. Analizăm individual și comunicăm suma accesibilă după prima discuție.",
+        answer: "Suma minimă este de la 10.000 lei pentru persoane fizice și de la 50.000 lei pentru afaceri. Suma maximă depinde de venit, garanțiile disponibile și situația fiecărui client. Analizăm individual și comunicăm suma accesibilă după prima discuție.",
     },
 ];
 

@@ -1,42 +1,94 @@
-import { Check } from "lucide-react";
 import Section from "@/components/ds/Section";
-import Card from "@/components/ds/Card";
 import Accent from "@/components/ds/Accent";
-import { ButtonSecondary } from "@/components/ds/Button";
+import Figure from "@/components/ds/Figure";
+import Note from "@/components/ds/Note";
+import { ButtonPrimary } from "@/components/ds/Button";
 
-const businessItems = [
-    "SRL, ÎI, GȚ — toate formele juridice acceptate",
-    "Fără plan de afaceri obligatoriu",
-    "Extrase bancare minim 3 luni",
-    "Decizie în 1–2 zile lucrătoare",
+type Spec = { label: string; value: string; proof?: boolean };
+
+type Solution = {
+    ordinal: string;
+    category: string;
+    title: string;
+    intro: string;
+    specs: Spec[];
+    checklist: string[];
+    cta: string;
+    href: string;
+};
+
+const solutions: Solution[] = [
+    {
+        ordinal: "01",
+        category: "Persoane juridice",
+        title: "Credit pentru afaceri",
+        intro: "Capital de lucru, investiții, refinanțare — fără plan de afaceri obligatoriu.",
+        specs: [
+            { label: "Sumă de la", value: "50 000 MDL" },
+            { label: "Termen", value: "12–60 luni" },
+            { label: "Decizie", value: "1–2 zile", proof: true },
+        ],
+        checklist: ["SRL, ÎI, GȚ — toate formele juridice acceptate", "Fără plan de afaceri obligatoriu", "Extrase bancare minim 3 luni"],
+        cta: "Condiții pentru afaceri",
+        href: "/credite/credit-pentru-afaceri-mici",
+    },
+    {
+        ordinal: "02",
+        category: "Persoane fizice",
+        title: "Credit personal",
+        intro: "Pentru orice nevoie urgentă sau planificată — cu condiții clare de la prima discuție.",
+        specs: [
+            { label: "Sumă de la", value: "10 000 MDL" },
+            { label: "Termen", value: "12–48 luni" },
+            { label: "Decizie", value: "2–3 ore", proof: true },
+        ],
+        checklist: ["Vârsta de la 23 de ani, venit stabil", "Buletin de identitate valabil", "Fără comisioane ascunse sau penalități"],
+        cta: "Condiții credit personal",
+        href: "/credite/credit-pentru-nevoi-personale",
+    },
 ];
 
-const personalItems = [
-    "Vârsta de la 23 de ani, venit stabil",
-    "Buletin de identitate valabil",
-    "Fără comisioane ascunse sau penalități",
-    "Decizie în 2–3 ore",
-];
-
-function ChecklistCard({ title, intro, items, href, cta }: { title: string; intro: string; items: string[]; href: string; cta: string }) {
+function SolutionBlock({ solution }: { solution: Solution }) {
     return (
-        <Card className="gap-6 p-8">
+        <div
+            className="grid gap-12 bg-dc-bg p-[clamp(24px,4vw,44px)]"
+            style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}
+        >
             <div>
-                <h3 className="text-[22px] font-bold tracking-[-.02em] leading-[1.5] text-dc-text">{title}</h3>
-                <p className="mt-1 text-dc-text-muted">{intro}</p>
+                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                    <span className="font-dc-mono">{solution.ordinal}</span> · {solution.category}
+                </p>
+                <h3 className="mt-3.5 text-[28px] tracking-[-.03em] text-dc-text">{solution.title}</h3>
+                <p className="mt-3 text-[17px] leading-[1.6] text-dc-text-muted">{solution.intro}</p>
+                <ButtonPrimary href={solution.href} size="inline" className="mt-7">
+                    {solution.cta}
+                </ButtonPrimary>
             </div>
-            <ul className="flex flex-col gap-3">
-                {items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-[15px] text-dc-text-muted">
-                        <Check size={18} className="mt-0.5 shrink-0 text-dc-text" strokeWidth={2.5} />
-                        {item}
-                    </li>
-                ))}
-            </ul>
-            <ButtonSecondary href={href} className="mt-auto self-start">
-                {cta}
-            </ButtonSecondary>
-        </Card>
+
+            <div className="flex min-w-0 flex-col gap-px border border-dc-line bg-dc-line">
+                <div className="flex flex-col gap-px">
+                    {solution.specs.map((spec) => (
+                        <div key={spec.label} className="flex items-baseline justify-between gap-4 bg-dc-surface px-5 py-4">
+                            <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">{spec.label}</span>
+                            <Figure size="md" proof={spec.proof}>
+                                {spec.value}
+                            </Figure>
+                        </div>
+                    ))}
+                </div>
+                <ul className="flex flex-col gap-px">
+                    {solution.checklist.map((item, i) => (
+                        <li
+                            key={item}
+                            className="flex items-baseline gap-3.5 bg-dc-surface px-5 py-4 text-[15px] leading-[1.5] text-dc-text-muted"
+                        >
+                            <span className="shrink-0 font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
     );
 }
 
@@ -44,32 +96,21 @@ export default function Solutions() {
     return (
         <Section
             id="solutii"
+            marker="Soluții, nu produse"
             title={
                 <>
-                    Alege soluția <Accent>potrivită</Accent> pentru tine
+                    Spune-ne ce vrei să <Accent>faci.</Accent>
                 </>
             }
         >
-            <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
-                <ChecklistCard
-                    title="Credit pentru afaceri"
-                    intro="Capital de lucru, investiții, refinanțare — fără plan de afaceri obligatoriu."
-                    items={businessItems}
-                    href="/credite/credit-pentru-afaceri-mici"
-                    cta="Condiții pentru afaceri"
-                />
-                <ChecklistCard
-                    title="Credit personal"
-                    intro="Pentru orice nevoie urgentă sau planificată — cu condiții clare de la prima discuție."
-                    items={personalItems}
-                    href="/credite/credit-pentru-nevoi-personale"
-                    cta="Condiții credit personal"
-                />
+            <div className="flex flex-col gap-px border border-dc-line bg-dc-line">
+                {solutions.map((s) => (
+                    <SolutionBlock key={s.title} solution={s} />
+                ))}
             </div>
-
-            <p className="mt-5 max-w-[820px] text-sm text-dc-text-dim">
+            <Note className="pt-3">
                 Primul credit se acordă cu garant. Clienții cu istoric bun nu mai au nevoie de garant la creditele următoare.
-            </p>
+            </Note>
         </Section>
     );
 }

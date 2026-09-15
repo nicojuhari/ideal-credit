@@ -37,26 +37,35 @@ const hubFaqItems: FaqItem[] = [
 export default function CreditePage() {
     return (
         <div className="dc bg-dc-bg">
-            <div className="relative isolate dc-section dc-section--hero">
-                <div className="dc-bg-squares" aria-hidden />
-                <Container>
-                    <div className="flex flex-col items-center gap-7 text-center">
-                        <h1 className="text-[56px] md:text-[88px] font-bold leading-[1.02] tracking-[-.03em] text-dc-text">
-                            <Accent>Credite</Accent>
-                        </h1>
-                        <p className="max-w-xl text-[19px] leading-relaxed text-dc-text-muted">
-                            Finanțare pentru afaceri și persoane fizice. Dobândă fixă, costuri clare, decizie rapidă.
-                        </p>
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <ButtonPrimary href="/cerere-de-credit-online">Cerere online</ButtonPrimary>
-                            <ButtonSecondary href="/contacte">Contactează-ne</ButtonSecondary>
-                        </div>
+            <div className="dc-section dc-section--hero">
+                <Container className="flex flex-col items-center gap-8 text-center">
+                    <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
+                        <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+                        Registrul de produse · 6 credite
+                    </p>
+                    <h1 className="max-w-[900px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
+                        Credite pentru <Accent>fiecare situație.</Accent>
+                    </h1>
+                    <p className="max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
+                        Finanțare pentru afaceri și persoane fizice. Dobândă fixă, costuri clare, decizie rapidă.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-3.5">
+                        <ButtonPrimary href="/cerere-de-credit-online">Cerere online</ButtonPrimary>
+                        <ButtonSecondary href="/contacte">Contactează-ne</ButtonSecondary>
                     </div>
                 </Container>
             </div>
 
             <Products />
-            <ProductFaq items={hubFaqItems} />
+            <ProductFaq
+                marker="Întrebări"
+                title={
+                    <>
+                        Întrebări despre <Accent>credite</Accent>
+                    </>
+                }
+                items={hubFaqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>

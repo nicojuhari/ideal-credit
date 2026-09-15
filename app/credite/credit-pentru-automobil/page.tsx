@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import ProductHero from "@/components/product/ProductHero";
-import EligibilityCard from "@/components/product/EligibilityCard";
+import SpecStrip from "@/components/product/SpecStrip";
+import EligibilityRows from "@/components/product/EligibilityRows";
 import ProductDescription from "@/components/product/ProductDescription";
-import DocumentsBlock from "@/components/product/DocumentsBlock";
+import DocumentRows from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
+import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
@@ -60,22 +62,37 @@ export default function CreditAutomobilPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
 
             <ProductHero
-                title={<>Credit pentru automobil</>}
+                category="Persoane fizice"
+                position={5}
+                title={
+                    <>
+                        Credit pentru <Accent>automobil.</Accent>
+                    </>
+                }
                 subtitle="Cumpără sau repară mașina fără complicații. Finanțare rapidă, condiții clare și dobândă fixă."
+                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
+                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
+            />
+            <SpecStrip
+                specs={[
+                    { value: "10 000", label: "MDL sumă minimă" },
+                    { value: "12–48", label: "luni termen" },
+                    { value: "2–3 ore", label: "până la decizie", proof: true },
+                    { value: "4 %", label: "dobândă fixă / lună" },
+                ]}
             />
 
-            <Section align="center" title={<>Condiții de <Accent>creditare</Accent></>}>
-                <EligibilityCard
-                    items={[
-                        "Vârsta între 23 și 55 de ani",
-                        "Venit confirmat și stabil",
-                        "Buletin de identitate valabil",
-                        "Fără restanțe mari la credite active",
-                    ]}
-                />
-            </Section>
+            <EligibilityRows
+                marker="Eligibilitate"
+                title={
+                    <>
+                        Condiții de <Accent>creditare</Accent>
+                    </>
+                }
+                items={["Vârsta între 23 și 55 de ani", "Venit confirmat și stabil", "Buletin de identitate valabil", "Fără restanțe mari la credite active"]}
+            />
 
-            <Process />
+            <Calculator />
 
             <Section align="center" title={<>Credit auto în Moldova - cumpărare sau <Accent>reparație</Accent></>}>
                 <ProductDescription
@@ -87,23 +104,33 @@ export default function CreditAutomobilPage() {
                 />
             </Section>
 
-            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
-                <DocumentsBlock
-                    documents={[
-                        "Buletin de identitate",
-                        "Document de confirmare a veniturilor (adeverință, extras de card, verificare BIC etc.)",
-                        "Actul tehnic al autovehiculului (dacă există)",
-                        "Actele proprietarului vânzător (pentru mașini second-hand)",
-                    ]}
-                    note="Spre deosebire de leasing, mașina este a ta din prima zi. Nicio restricție de utilizare sau clauze de răscumpărare."
-                    relatedLinks={[
-                        { href: "/credite/credit-pentru-nevoi-personale", label: "Credit pentru nevoi personale", desc: "Credit flexibil pentru orice cheltuială personală." },
-                        { href: "/credite/credit-pentru-reparatie", label: "Credit pentru reparație", desc: "Finanțezi renovarea casei cu rate fixe." },
-                    ]}
-                />
-            </Section>
+            <Process />
 
-            <ProductFaq items={faqItems} />
+            <DocumentRows
+                id="documente"
+                marker="Dosar"
+                title={
+                    <>
+                        Documente <Accent>necesare</Accent>
+                    </>
+                }
+                items={[
+                    { title: "Buletin de identitate", note: "Obligatoriu" },
+                    { title: "Confirmare a veniturilor", note: "Adeverință / extras / BIC" },
+                    { title: "Actul tehnic al autovehiculului", note: "Dacă există" },
+                    { title: "Actele proprietarului vânzător", note: "Pentru second-hand" },
+                ]}
+                footnote="Spre deosebire de leasing, mașina este a ta din prima zi. Nicio restricție de utilizare sau clauze de răscumpărare."
+            />
+
+            <ProductFaq
+                title={
+                    <>
+                        Întrebări despre creditul <Accent>auto</Accent>
+                    </>
+                }
+                items={faqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>

@@ -1,4 +1,4 @@
-import Container from "@/components/ds/Container";
+import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -13,41 +13,30 @@ const rows = [
     },
     {
         title: "Rambursare anticipată gratuită",
-        body: "Plătești dobânda doar pentru perioada folosită. Nicio penalitate la achitare înainte de termen.",
+        body: "Plătești dobânda doar pentru perioada folosită. Nicio penalitate.",
     },
 ];
 
 export default function WhyUs() {
     return (
-        <section className="dc-section" id="de-ce-noi">
-            <Container>
-                <div className="grid gap-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
-                    <div className="flex flex-col gap-3.5 max-w-[420px]">
-                        <h2 className="text-[28px] md:text-[40px] font-bold leading-[1.1] tracking-[-.025em] text-dc-text">
-                            {yearsSinceFoundation} ani de finanțare de <Accent>încredere</Accent>
-                        </h2>
-                        <p className="text-dc-text-muted leading-relaxed">
-                            Din 2010 — finanțare nebancară pentru persoane fizice și afaceri din Moldova.
-                        </p>
+        <Section
+            id="de-ce-noi"
+            marker="De ce noi"
+            title={
+                <>
+                    {yearsSinceFoundation} ani de finanțare de <Accent>încredere</Accent>
+                </>
+            }
+        >
+            <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+                {rows.map((row, i) => (
+                    <div key={row.title} className="dc-cell p-8">
+                        <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
+                        <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">{row.title}</h3>
+                        <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">{row.body}</p>
                     </div>
-
-                    <div>
-                        {rows.map((row, i) => (
-                            <div
-                                key={row.title}
-                                className="grid gap-4 border-t border-dc-line py-7 last:border-b"
-                                style={{ gridTemplateColumns: "40px 1fr" }}
-                            >
-                                <span className="text-[13px] font-semibold text-dc-text-dim">{String(i + 1).padStart(2, "0")}</span>
-                                <div>
-                                    <h3 className="text-[19px] font-bold text-dc-text">{row.title}</h3>
-                                    <p className="mt-1 text-dc-text-muted leading-relaxed">{row.body}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </Container>
-        </section>
+                ))}
+            </div>
+        </Section>
     );
 }

@@ -1,7 +1,11 @@
 export { default as Container } from "./Container";
 export { default as Section } from "./Section";
 export { default as Card } from "./Card";
+export { default as Cell } from "./Cell";
+export { default as Stack } from "./Stack";
+export { default as Figure } from "./Figure";
+export { default as Note } from "./Note";
 export { default as Accent } from "./Accent";
 export { default as ListRow } from "./ListRow";
 export { default as Calculator } from "./Calculator";
-export { ButtonPrimary, ButtonSecondary } from "./Button";
+export { ButtonPrimary, ButtonSecondary, ButtonText, LinkQuiet } from "./Button";

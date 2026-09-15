@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import ProductHero from "@/components/product/ProductHero";
-import FeatureCards from "@/components/product/FeatureCards";
-import type { FeatureCardItem } from "@/components/product/FeatureCards";
-import EligibilityCard from "@/components/product/EligibilityCard";
+import SpecStrip from "@/components/product/SpecStrip";
+import OrdinalRows from "@/components/product/OrdinalRows";
+import EligibilityRows from "@/components/product/EligibilityRows";
 import ProductDescription from "@/components/product/ProductDescription";
-import DocumentsBlock from "@/components/product/DocumentsBlock";
+import CardGrid from "@/components/product/CardGrid";
+import DocumentRows from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
+import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { TrendingUp, Building2, RefreshCw, Zap, Clock, Package, Users, Trophy } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         title: "Credit pentru Afaceri Mici din Moldova | Ideal Credit",
-        description: "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare.",
+        description:
+            "Credit nebancar pentru afaceri mici din Moldova - capital de lucru, investiții sau extindere. Decizie în 1-2 zile lucrătoare.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
     },
 };
@@ -61,7 +63,7 @@ const businessFaqItems: FaqItem[] = [
     },
     {
         question: "Ce termen de rambursare este recomandat pentru capital de lucru?",
-        answer: "6-24 luni în general. Adaptăm termenul la ciclul tău de încasări - dacă clienții tăi plătesc la 60 de zile, structurăm creditul în consecință.",
+        answer: "12-24 luni în general. Adaptăm termenul la ciclul tău de încasări - dacă clienții tăi plătesc la 60 de zile, structurăm creditul în consecință.",
     },
     {
         question: "Pot consolida mai multe credite de afaceri într-unul singur?",
@@ -69,50 +71,30 @@ const businessFaqItems: FaqItem[] = [
     },
 ];
 
-const useCases: FeatureCardItem[] = [
+const useCases = [
+    { title: "Capital de lucru", desc: "Salarii, furnizori, stocuri - acoperi golurile din flux fără să oprești activitatea." },
+    { title: "Investiții", desc: "Echipamente, utilaje, extindere spațiu, vehicule comerciale." },
     {
-        icon: TrendingUp,
-        title: "Capital de lucru",
-        desc: "Salarii, furnizori, stocuri - acoperi golurile din flux fără să oprești activitatea.",
-        link: { href: "#capital-de-lucru", label: "Vezi mai jos" },
-    },
-    {
-        icon: Building2,
-        title: "Investiții",
-        desc: "Echipamente, utilaje, extindere spațiu, vehicule comerciale.",
-        link: { href: "/credite/credit-investitional" },
-    },
-    {
-        icon: RefreshCw,
         title: "Consolidare credite",
         desc: "Aduni creditele de afaceri existente într-unul singur, cu o rată lunară mai mică - o opțiune analizată în cadrul consultației, nu un produs separat.",
     },
-    {
-        icon: Zap,
-        title: "Start-up",
-        desc: "Lansezi afacerea: înregistrare firmă, echipamente inițiale, stoc de pornire.",
-        link: { href: "/cerere-de-credit-online" },
-    },
+    { title: "Start-up", desc: "Lansezi afacerea: înregistrare firmă, echipamente inițiale, stoc de pornire." },
 ];
 
-const capitalDeLucruScenarios: FeatureCardItem[] = [
+const capitalDeLucruScenarios = [
     {
-        icon: Clock,
         title: "Creanțe blocate",
         desc: "Ai livrat marfa, clientul plătește în 60 de zile. Furnizorii cer bani azi. Continuăm producția fără să aștepți.",
     },
     {
-        icon: Package,
         title: "Sezon aglomerat",
         desc: "Urmează sezonul de vârf, ai nevoie de stoc dublu, dar banii sunt blocați în creanțe. Pregătești depozitul la timp.",
     },
     {
-        icon: Users,
         title: "Angajări noi",
         desc: "Ai angajați noi dar primii clienți plătesc abia luna viitoare. Acoperi salariile fără presiune pe flux.",
     },
     {
-        icon: Trophy,
         title: "Contract mare",
         desc: "Ai câștigat un contract important dar ai nevoie de resurse să-l onorezi. Folosești ocazia fără să o ratezi.",
     },
@@ -124,34 +106,63 @@ export default function CreditAfaceriMiciPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
 
             <ProductHero
-                title={<>Credit pentru afaceri mici</>}
+                category="Persoane juridice"
+                position={1}
+                title={
+                    <>
+                        Credit pentru <Accent>afaceri</Accent> mici.
+                    </>
+                }
                 subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
+                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
+                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
+            />
+            <SpecStrip
+                specs={[
+                    { value: "50 000", label: "MDL sumă minimă" },
+                    { value: "12–60", label: "luni termen" },
+                    { value: "1–2 zile", label: "până la decizie", proof: true },
+                    { value: "4 %", label: "dobândă fixă / lună" },
+                ]}
             />
 
-            <Section
+            <OrdinalRows
+                marker="Destinații"
                 title={
                     <>
                         Pentru ce poți folosi <Accent>creditul</Accent>
                     </>
                 }
+                items={useCases}
+            />
+
+            <EligibilityRows
+                marker="Eligibilitate"
+                title={
+                    <>
+                        Este pentru afacerea <Accent>mea?</Accent>
+                    </>
+                }
+                description="Patru condiții. Dacă le bifezi pe toate, dosarul tău trece la analiză în aceeași zi."
+                note="Nu cerem plan de afaceri, profit obligatoriu sau gaj imobiliar pentru sume mici."
+                items={[
+                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Activitate economică de cel puțin 3-6 luni",
+                    "Ai nevoie de capital rapid, cu aprobare în 1-2 zile lucrătoare",
+                    "Cauți o analiză flexibilă, adaptată situației reale a afacerii",
+                ]}
+            />
+
+            <Calculator />
+
+            <Section
+                align="center"
+                title={
+                    <>
+                        Credit nebancar pentru <Accent>afaceri mici</Accent> în Moldova
+                    </>
+                }
             >
-                <FeatureCards items={useCases} cols={2} />
-            </Section>
-
-            <Section align="center" title={<>Este pentru afacerea <Accent>mea?</Accent></>}>
-                <EligibilityCard
-                    items={[
-                        "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                        "Activitate economică de cel puțin 3-6 luni",
-                        "Ai nevoie de capital rapid, cu aprobare în 1-2 zile lucrătoare",
-                        "Cauți o analiză flexibilă, adaptată situației reale a afacerii",
-                    ]}
-                />
-            </Section>
-
-            <Process />
-
-            <Section align="center" title={<>Credit nebancar pentru <Accent>afaceri mici</Accent> în Moldova</>}>
                 <ProductDescription
                     paragraphs={[
                         "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile - nu doar documentele formale.",
@@ -161,29 +172,45 @@ export default function CreditAfaceriMiciPage() {
                 />
             </Section>
 
-            <div id="capital-de-lucru">
-                <Section title={<>Capital de lucru: <Accent>când</Accent> ai nevoie</>}>
-                    <FeatureCards items={capitalDeLucruScenarios} cols={2} />
-                </Section>
-            </div>
+            <CardGrid
+                id="capital-de-lucru"
+                marker="Capital de lucru"
+                title={
+                    <>
+                        Patru situații în care sună <Accent>telefonul</Accent>
+                    </>
+                }
+                items={capitalDeLucruScenarios}
+            />
 
-            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
-                <DocumentsBlock
-                    documents={[
-                        "Buletin de identitate al administratorului",
-                        "Certificat de înregistrare a firmei (SRL/ÎI)",
-                        "Extrase bancare - ultimele 3-6 luni",
-                        "Actele de proprietate (dacă se solicită gaj)",
-                    ]}
-                    note="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu dosar solid pot obține creditul fără fidejusor."
-                    relatedLinks={[
-                        { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Finanțezi echipamente sau extindere pe termen lung." },
-                        { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare adaptată sezonului pentru activitate agricolă." },
-                    ]}
-                />
-            </Section>
+            <Process />
 
-            <ProductFaq items={businessFaqItems} />
+            <DocumentRows
+                id="documente"
+                marker="Dosar"
+                title={
+                    <>
+                        Documente <Accent>necesare</Accent>
+                    </>
+                }
+                items={[
+                    { title: "Buletin de identitate al administratorului", note: "Obligatoriu" },
+                    { title: "Certificat de înregistrare a firmei", note: "SRL / ÎI / GȚ" },
+                    { title: "Extrase bancare — ultimele 3-6 luni", note: "Obligatoriu" },
+                    { title: "Actele de proprietate", note: "Doar dacă se solicită gaj" },
+                ]}
+                footnote="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții recurenți cu dosar solid pot obține creditul fără fidejusor."
+            />
+
+            <ProductFaq
+                marker="Întrebări"
+                title={
+                    <>
+                        Întrebări despre credite de <Accent>afaceri</Accent>
+                    </>
+                }
+                items={businessFaqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>

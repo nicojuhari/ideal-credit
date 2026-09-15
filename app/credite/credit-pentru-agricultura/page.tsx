@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import Card from "@/components/ds/Card";
 import ProductHero from "@/components/product/ProductHero";
-import FeatureCards from "@/components/product/FeatureCards";
-import type { FeatureCardItem } from "@/components/product/FeatureCards";
-import EligibilityCard from "@/components/product/EligibilityCard";
+import SpecStrip from "@/components/product/SpecStrip";
+import OrdinalRows from "@/components/product/OrdinalRows";
+import EligibilityRows from "@/components/product/EligibilityRows";
 import ProductDescription from "@/components/product/ProductDescription";
-import DocumentsBlock from "@/components/product/DocumentsBlock";
+import DocumentRows from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
+import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { Cog, Leaf, Droplets, Sprout, TrendingUp } from "lucide-react";
 import { businessCreditSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -59,33 +57,12 @@ const agricFaqItems: FaqItem[] = [
     },
 ];
 
-const financingCategories: FeatureCardItem[] = [
-    {
-        icon: Cog,
-        title: "Tehnică și utilaje",
-        desc: "Tractoare, combine, remorci, pluguri, semănători, echipamente de recoltare.",
-        link: { href: "/credite/credit-investitional", label: "Vezi credit investițional" },
-    },
-    {
-        icon: Sprout,
-        title: "Semințe și inputuri",
-        desc: "Semințe certificate, îngrășăminte, pesticide, fungicide - tot ce ai nevoie pentru sezon.",
-    },
-    {
-        icon: Droplets,
-        title: "Irigații",
-        desc: "Sisteme de irigații prin picurare, aspersoare, pompe, infrastructură de udare.",
-    },
-    {
-        icon: Leaf,
-        title: "Lucrări agricole",
-        desc: "Arat, semănat, tratamente fitosanitare, recoltare - acoperi costurile înainte de încasări.",
-    },
-    {
-        icon: TrendingUp,
-        title: "Capital de lucru sezonier",
-        desc: "Salarii muncitori sezonieri, transport, depozitare, combustibil, costuri operative.",
-    },
+const financingCategories = [
+    { title: "Tehnică și utilaje", desc: "Tractoare, combine, remorci, pluguri, semănători, echipamente de recoltare." },
+    { title: "Semințe și inputuri", desc: "Semințe certificate, îngrășăminte, pesticide, fungicide - tot ce ai nevoie pentru sezon." },
+    { title: "Irigații", desc: "Sisteme de irigații prin picurare, aspersoare, pompe, infrastructură de udare." },
+    { title: "Lucrări agricole", desc: "Arat, semănat, tratamente fitosanitare, recoltare - acoperi costurile înainte de încasări." },
+    { title: "Capital de lucru sezonier", desc: "Salarii muncitori sezonieri, transport, depozitare, combustibil, costuri operative." },
 ];
 
 const scheduleItems = [
@@ -107,60 +84,97 @@ export default function CreditAgriculturaPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
 
             <ProductHero
-                title={<>Credit pentru agricultură</>}
+                category="Persoane juridice"
+                position={3}
+                title={
+                    <>
+                        Credit pentru <Accent>agricultură.</Accent>
+                    </>
+                }
                 subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității."
+                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
+                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
+            />
+            <SpecStrip
+                specs={[
+                    { value: "50 000", label: "MDL sumă minimă" },
+                    { value: "12–60", label: "luni termen" },
+                    { value: "1–2 zile", label: "până la decizie", proof: true },
+                    { value: "4 %", label: "dobândă fixă / lună" },
+                ]}
             />
 
-            <Section title={<>Ce poți <Accent>finanța</Accent></>}>
-                <FeatureCards items={financingCategories} cols={3} />
-            </Section>
+            <OrdinalRows
+                marker="Destinații"
+                title={
+                    <>
+                        Ce poți <Accent>finanța</Accent>
+                    </>
+                }
+                items={financingCategories}
+            />
 
-            <Section title={<>Adaptat la ritmul <Accent>agriculturii</Accent></>}>
-                <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
-                    <Card className="gap-4">
-                        <h3 className="text-[17px] font-bold text-dc-text">Grafic de rambursare sezonier</h3>
-                        <p className="text-sm leading-relaxed text-dc-text-muted">
-                            Agricultura nu produce venituri uniform pe parcursul anului. Știm asta. Structurăm graficul de rambursare în
-                            funcție de ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
+            <Section
+                marker="Sezonalitate"
+                title={
+                    <>
+                        Adaptat la ritmul <Accent>agriculturii</Accent>
+                    </>
+                }
+            >
+                <div className="flex flex-col gap-px border border-dc-line bg-dc-line md:grid md:grid-cols-2">
+                    <div className="bg-dc-bg p-8">
+                        <h3 className="text-xl tracking-[-.025em] text-dc-text">Grafic de rambursare sezonier</h3>
+                        <p className="mt-3 text-[15px] leading-[1.55] text-dc-text-muted">
+                            Agricultura nu produce venituri uniform pe parcursul anului. Structurăm graficul de rambursare în funcție de
+                            ciclul tău de producție — rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
                         </p>
-                        <ul className="flex flex-col gap-2.5">
-                            {scheduleItems.map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-dc-text-muted">
-                                    <Check size={15} className="mt-0.5 shrink-0 text-dc-accent" strokeWidth={2.5} />
+                        <ul className="mt-5 flex flex-col gap-3">
+                            {scheduleItems.map((item, i) => (
+                                <li key={item} className="flex items-baseline gap-3.5 text-[15px] leading-[1.5] text-dc-text-muted">
+                                    <span className="shrink-0 font-dc-mono text-xs text-dc-text-muted">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
                                     {item}
                                 </li>
                             ))}
                         </ul>
-                    </Card>
-                    <Card className="gap-4">
-                        <h3 className="text-[17px] font-bold text-dc-text">Cum analizăm activitatea agricolă</h3>
-                        <p className="text-sm leading-relaxed text-dc-text-muted">
+                    </div>
+                    <div className="bg-dc-bg p-8">
+                        <h3 className="text-xl tracking-[-.025em] text-dc-text">Cum analizăm activitatea agricolă</h3>
+                        <p className="mt-3 text-[15px] leading-[1.55] text-dc-text-muted">
                             Nu ne limităm la un salariu lunar fix. Analizăm imaginea completă a activității tale agricole.
                         </p>
-                        <ul className="flex flex-col gap-2.5">
-                            {analysisItems.map((item) => (
-                                <li key={item} className="flex items-start gap-2.5 text-sm text-dc-text-muted">
-                                    <Check size={15} className="mt-0.5 shrink-0 text-dc-accent" strokeWidth={2.5} />
+                        <ul className="mt-5 flex flex-col gap-3">
+                            {analysisItems.map((item, i) => (
+                                <li key={item} className="flex items-baseline gap-3.5 text-[15px] leading-[1.5] text-dc-text-muted">
+                                    <span className="shrink-0 font-dc-mono text-xs text-dc-text-muted">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
                                     {item}
                                 </li>
                             ))}
                         </ul>
-                    </Card>
+                    </div>
                 </div>
             </Section>
 
-            <Section align="center" title={<>Condiții de <Accent>eligibilitate</Accent></>}>
-                <EligibilityCard
-                    items={[
-                        "Activitate agricolă înregistrată (SRL, ÎI, GȚ)",
-                        "Activitate demonstrabilă în ultimul sezon",
-                        "Teren agricol în proprietate sau în arendă",
-                        "Extrase bancare sau dovezi de vânzări agricole",
-                    ]}
-                />
-            </Section>
+            <EligibilityRows
+                marker="Eligibilitate"
+                title={
+                    <>
+                        Condiții de <Accent>eligibilitate</Accent>
+                    </>
+                }
+                items={[
+                    "Activitate agricolă înregistrată (SRL, ÎI, GȚ)",
+                    "Activitate demonstrabilă în ultimul sezon",
+                    "Teren agricol în proprietate sau în arendă",
+                    "Extrase bancare sau dovezi de vânzări agricole",
+                ]}
+            />
 
-            <Process />
+            <Calculator />
 
             <Section align="center" title={<>Credit agricol pentru <Accent>fermieri</Accent> din Moldova</>}>
                 <ProductDescription
@@ -172,25 +186,34 @@ export default function CreditAgriculturaPage() {
                 />
             </Section>
 
-            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
-                <DocumentsBlock
-                    documents={[
-                        "Buletin de identitate",
-                        "Certificat de înregistrare (SRL/ÎI) sau legitimație gospodărie",
-                        "Documente teren agricol (proprietate sau arendă)",
-                        "Extrase bancare sau acte de vânzare a producției",
-                        "Actele bunului gajat (dacă este cazul)",
-                    ]}
-                    note="Graficul de rambursare este adaptat sezonului agricol - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare."
-                    relatedLinks={[
-                        { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Finanțare generală pentru orice activitate economică înregistrată." },
-                        { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Tehnica agricolă și echipamente pe termen lung." },
-                        { href: "/credite/credit-pentru-afaceri-mici#capital-de-lucru", label: "Capital de lucru", desc: "Lichiditate sezonieră pentru semințe, îngrășăminte și forță de muncă." },
-                    ]}
-                />
-            </Section>
+            <Process />
 
-            <ProductFaq items={agricFaqItems} />
+            <DocumentRows
+                id="documente"
+                marker="Dosar"
+                title={
+                    <>
+                        Documente <Accent>necesare</Accent>
+                    </>
+                }
+                items={[
+                    { title: "Buletin de identitate", note: "Obligatoriu" },
+                    { title: "Certificat de înregistrare sau legitimație gospodărie", note: "SRL / ÎI" },
+                    { title: "Documente teren agricol", note: "Proprietate sau arendă" },
+                    { title: "Extrase bancare sau acte de vânzare a producției", note: "Obligatoriu" },
+                    { title: "Actele bunului gajat", note: "Dacă e cazul" },
+                ]}
+                footnote="Graficul de rambursare este adaptat sezonului agricol - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare."
+            />
+
+            <ProductFaq
+                title={
+                    <>
+                        Întrebări despre creditul <Accent>agricol</Accent>
+                    </>
+                }
+                items={agricFaqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>

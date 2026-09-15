@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import ProductHero from "@/components/product/ProductHero";
-import FeatureCards from "@/components/product/FeatureCards";
-import type { FeatureCardItem } from "@/components/product/FeatureCards";
-import EligibilityCard from "@/components/product/EligibilityCard";
+import SpecStrip from "@/components/product/SpecStrip";
+import OrdinalRows from "@/components/product/OrdinalRows";
+import EligibilityRows from "@/components/product/EligibilityRows";
 import ProductDescription from "@/components/product/ProductDescription";
-import ComparisonTable from "@/components/product/ComparisonTable";
-import DocumentsBlock from "@/components/product/DocumentsBlock";
+import ComparisonRows from "@/components/product/ComparisonRows";
+import DocumentRows from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
+import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { Cog, Truck, Store, Monitor, Armchair } from "lucide-react";
 import { investitionalSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -58,32 +58,12 @@ const investFaqItems: FaqItem[] = [
     },
 ];
 
-const financingCategories: FeatureCardItem[] = [
-    {
-        icon: Cog,
-        title: "Echipamente și utilaje",
-        desc: "Mașini industriale, linii de producție, tehnica agricolă, echipamente de prelucrare.",
-    },
-    {
-        icon: Truck,
-        title: "Vehicule comerciale",
-        desc: "Autoutilitare, camioane, vehicule de lucru, transport marfă.",
-    },
-    {
-        icon: Store,
-        title: "Renovare spațiu comercial",
-        desc: "Birouri, depozite, magazine, restaurante, hoteluri - modernizare sau extindere.",
-    },
-    {
-        icon: Monitor,
-        title: "Tehnologie și IT",
-        desc: "Sisteme informatice, software specializat, echipamente de comunicații.",
-    },
-    {
-        icon: Armchair,
-        title: "Mobilier și dotări",
-        desc: "Dotarea completă a spațiilor: hoteluri, restaurante, birouri, saloane.",
-    },
+const financingCategories = [
+    { title: "Echipamente și utilaje", desc: "Mașini industriale, linii de producție, tehnica agricolă, echipamente de prelucrare." },
+    { title: "Vehicule comerciale", desc: "Autoutilitare, camioane, vehicule de lucru, transport marfă." },
+    { title: "Renovare spațiu comercial", desc: "Birouri, depozite, magazine, restaurante, hoteluri - modernizare sau extindere." },
+    { title: "Tehnologie și IT", desc: "Sisteme informatice, software specializat, echipamente de comunicații." },
+    { title: "Mobilier și dotări", desc: "Dotarea completă a spațiilor: hoteluri, restaurante, birouri, saloane." },
 ];
 
 const comparisonRows = [
@@ -99,26 +79,52 @@ export default function CreditInvestitionalPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(investitionalSchema) }} />
 
             <ProductHero
-                title={<>Credit investițional</>}
+                category="Persoane juridice"
+                position={2}
+                title={
+                    <>
+                        Credit <Accent>investițional.</Accent>
+                    </>
+                }
                 subtitle="Cumperi echipamente, extinzi spațiul sau modernizezi linia de producție. Termen până la 60 luni, rată fixă, costuri clare."
+                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
+                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
+            />
+            <SpecStrip
+                specs={[
+                    { value: "50 000", label: "MDL sumă minimă" },
+                    { value: "12–60", label: "luni termen" },
+                    { value: "1–2 zile", label: "până la decizie", proof: true },
+                    { value: "4 %", label: "dobândă fixă / lună" },
+                ]}
             />
 
-            <Section title={<>Ce poți <Accent>finanța</Accent></>}>
-                <FeatureCards items={financingCategories} cols={3} />
-            </Section>
+            <OrdinalRows
+                marker="Destinații"
+                title={
+                    <>
+                        Ce poți <Accent>finanța</Accent>
+                    </>
+                }
+                items={financingCategories}
+            />
 
-            <Section align="center" title={<>Condiții de <Accent>eligibilitate</Accent></>}>
-                <EligibilityCard
-                    items={[
-                        "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
-                        "Activitate economică de cel puțin 6 luni",
-                        "Investiția are legătură directă cu activitatea firmei",
-                        "Extrase bancare cu rulaj constant",
-                    ]}
-                />
-            </Section>
+            <EligibilityRows
+                marker="Eligibilitate"
+                title={
+                    <>
+                        Condiții de <Accent>eligibilitate</Accent>
+                    </>
+                }
+                items={[
+                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Activitate economică de cel puțin 6 luni",
+                    "Investiția are legătură directă cu activitatea firmei",
+                    "Extrase bancare cu rulaj constant",
+                ]}
+            />
 
-            <Process />
+            <Calculator />
 
             <Section align="center" title={<>Credit investițional pentru <Accent>afaceri</Accent> din Moldova</>}>
                 <ProductDescription
@@ -130,29 +136,38 @@ export default function CreditInvestitionalPage() {
                 />
             </Section>
 
-            <Section align="center" title={<>Credit investițional <Accent>vs.</Accent> leasing</>}>
-                <ComparisonTable oursLabel="Ideal Credit" otherLabel="Leasing" rows={comparisonRows} />
+            <Section align="center" title={<>Credit investițional <Accent>vs. leasing</Accent></>}>
+                <ComparisonRows oursLabel="Ideal Credit" otherLabel="Leasing" rows={comparisonRows} />
             </Section>
 
-            <Section align="center" title={<>Documente <Accent>necesare</Accent></>} id="documente">
-                <DocumentsBlock
-                    documents={[
-                        "Buletin de identitate al administratorului",
-                        "Certificat de înregistrare (SRL/ÎI)",
-                        "Extrase bancare - ultimele 3-6 luni",
-                        "Ofertă sau factură proformă pentru bunul achiziționat (dacă există)",
-                        "Actele de proprietate (pentru gaj, dacă este cazul)",
-                    ]}
-                    note="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
-                    relatedLinks={[
-                        { href: "/credite/credit-pentru-afaceri-mici", label: "Credit pentru afaceri mici", desc: "Toate tipurile de finanțare pentru antreprenori." },
-                        { href: "/credite/credit-pentru-afaceri-mici#capital-de-lucru", label: "Capital de lucru", desc: "Lichiditate pentru operațiunile zilnice ale firmei." },
-                        { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură", desc: "Finanțare pentru tehnica agricolă și capital sezonier." },
-                    ]}
-                />
-            </Section>
+            <Process />
 
-            <ProductFaq items={investFaqItems} />
+            <DocumentRows
+                id="documente"
+                marker="Dosar"
+                title={
+                    <>
+                        Documente <Accent>necesare</Accent>
+                    </>
+                }
+                items={[
+                    { title: "Buletin de identitate al administratorului", note: "Obligatoriu" },
+                    { title: "Certificat de înregistrare (SRL/ÎI)", note: "Obligatoriu" },
+                    { title: "Extrase bancare — ultimele 3-6 luni", note: "Obligatoriu" },
+                    { title: "Ofertă sau factură proformă pentru bun", note: "Dacă există" },
+                    { title: "Actele de proprietate", note: "Pentru gaj, dacă e cazul" },
+                ]}
+                footnote="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
+            />
+
+            <ProductFaq
+                title={
+                    <>
+                        Întrebări despre creditul <Accent>investițional</Accent>
+                    </>
+                }
+                items={investFaqItems}
+            />
             <WhyUs />
             <ClosingCta />
         </div>
