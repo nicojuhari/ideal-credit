@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 const personalFaqItems: FaqItem[] = [
     {
-        question: "Pot obține credit dacă am istoricul de credit negativ?",
+        question: "Pot obține credit dacă am un istoric de credit negativ?",
         answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează cel mai mult comportamentul din ultimele 12 luni și capacitatea actuală de rambursare - un incident vechi urmat de plăți la timp cântărește mult mai puțin decât întârzieri recente. Un fidejusor cu profil solid poate echilibra un dosar mai slab.",
     },
     {
@@ -42,7 +42,7 @@ const personalFaqItems: FaqItem[] = [
     },
     {
         question: "Trebuie neapărat adeverință de salariu?",
-        answer: "Nu neapărat. Acceptăm orice formă de confirmare a veniturilor - adeverință de salariu, extras de card, pensie, activitate independentă sau verificare BIC. Discutăm ce ai disponibil înainte de a cere documente.",
+        answer: "Nu neapărat. Acceptăm orice formă de confirmare a veniturilor - adeverință de salariu, extras de card, pensie, activitate independentă sau verificare BIC (Biroul Istoriilor de Credit). Discutăm ce ai disponibil înainte de a cere documente.",
     },
     {
         question: "Pot lua un nou credit dacă am deja unul activ?",
@@ -163,7 +163,7 @@ export default function CreditNevoiPersonalePage() {
             <Calculator />
 
             <Section
-                align="center"
+                marker="Detalii"
                 title={
                     <>
                         Credit personal rapid în <Accent>Moldova</Accent>
@@ -171,10 +171,19 @@ export default function CreditNevoiPersonalePage() {
                 }
             >
                 <ProductDescription
-                    paragraphs={[
-                        "Creditul pentru nevoi personale de la Ideal Credit este o finanțare flexibilă, fără destinație impusă. Banii sunt ai tăi - îi folosești pentru renovarea casei, un tratament medical, un eveniment de familie sau orice altă nevoie personală. Nu trebuie să justifici destinația.",
-                        "Condiția principală este un venit stabil și un buletin de identitate valabil. Nu aplicăm comisioane de analiză sau deschidere. Dobânda este fixă pe toată durata creditului - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) este obligatoriu. Pentru sume mari sau venituri nestabile poate fi cerut suplimentar gaj imobil.",
-                        "Clienții recurenți cu istoric bun de plată și venituri stabile pot beneficia de dobândă redusă și fără fidejusor. Aprobăm în 2-3 ore - dacă situația ta este clară, banii pot fi disponibili în aceeași zi. Discutăm cerințele de garanție înainte de depunerea dosarului - fără surprize după semnare.",
+                    items={[
+                        {
+                            title: "Fără destinație impusă",
+                            text: "Banii sunt ai tăi - renovare, tratament medical, eveniment de familie sau orice altă nevoie. Nu trebuie să justifici pentru ce îi folosești.",
+                        },
+                        {
+                            title: "Ce cerem",
+                            text: "Venit stabil și buletin de identitate valabil. Fără comisioane de analiză sau deschidere. Dobânda e fixă - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) e obligatoriu.",
+                        },
+                        {
+                            title: "Cât durează",
+                            text: "Aprobăm în 2-3 ore, bani disponibili în aceeași zi dacă situația ta e clară. Clienți cu istoric bun de plată pot obține dobândă mai mică și fără fidejusor la creditele următoare.",
+                        },
                     ]}
                 />
             </Section>

@@ -17,7 +17,7 @@ import ClosingCta from "@/components/home/ClosingCta";
 import { investitionalSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credit Investițional pentru Afaceri în Moldova | Ideal Credit",
+    title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
     description:
         "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile lucrătoare.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-investitional" },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
-        title: "Credit Investițional pentru Afaceri în Moldova | Ideal Credit",
+        title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
         description:
             "Finanțăm echipamente, extinderi și modernizări pentru afaceri din Moldova. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile lucrătoare.",
         images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
@@ -55,7 +55,7 @@ const investFaqItems: FaqItem[] = [
     },
     {
         question: "Pot combina creditul investițional cu capital de lucru?",
-        answer: "Analizăm situația totală a firmei și structurăm soluția adecvată. În unele cazuri, finanțăm ambele nevoi prin același dosar.",
+        answer: "Da, de multe ori. Analizăm suma totală de care ai nevoie pentru echipament și pentru capital de lucru, și dacă are sens financiar, finanțăm ambele prin același dosar, cu o singură rată lunară.",
     },
 ];
 
@@ -118,17 +118,17 @@ export default function CreditInvestitionalPage() {
                     </>
                 }
                 items={[
-                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Firmă înregistrată în Moldova (SRL, ÎI sau gospodărie țărănească)",
                     "Activitate economică de cel puțin 6 luni",
                     "Investiția are legătură directă cu activitatea firmei",
-                    "Extrase bancare cu rulaj constant",
+                    "Extrase bancare cu mișcare de bani constantă",
                 ]}
             />
 
             <Calculator />
 
             <Section
-                align="center"
+                marker="Detalii"
                 title={
                     <>
                         Credit investițional pentru <Accent>afaceri</Accent> din Moldova
@@ -136,10 +136,19 @@ export default function CreditInvestitionalPage() {
                 }
             >
                 <ProductDescription
-                    paragraphs={[
-                        "Creditul investițional este destinat achizițiilor care ajută firma să crească pe termen mediu și lung - echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, bunul este al tău din prima zi și nu există restricții de utilizare sau clauze de răscumpărare.",
-                        "Termenul de rambursare ajunge până la 60 de luni, ceea ce reduce semnificativ rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar al firmei. Dobânda este fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
-                        "Nu cerem plan de afaceri detaliat sau factură finalizată înainte de aprobare. Analizăm firma pe baza extraselor bancare și a activității curente. Dacă investiția are legătură cu activitatea ta economică și ai capacitate de rambursare demonstrabilă, discutăm.",
+                    items={[
+                        {
+                            title: "Bunul e al tău din prima zi",
+                            text: "Echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, nu există restricții de utilizare sau clauze de răscumpărare.",
+                        },
+                        {
+                            title: "Termen până la 60 de luni",
+                            text: "Reduce rata lunară și e mai ușor de gestionat pentru bugetul firmei. Dobânda e fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
+                        },
+                        {
+                            title: "Ce analizăm",
+                            text: "Extrasele bancare și activitatea curentă a firmei - nu un plan de afaceri detaliat sau o factură finalizată. Dacă investiția are legătură cu afacerea ta și poți rambursa, discutăm.",
+                        },
                     ]}
                 />
             </Section>
@@ -169,7 +178,7 @@ export default function CreditInvestitionalPage() {
                     { title: "Buletin de identitate al administratorului", note: "Obligatoriu" },
                     { title: "Certificat de înregistrare (SRL/ÎI)", note: "Obligatoriu" },
                     { title: "Extrase bancare - ultimele 3-6 luni", note: "Obligatoriu" },
-                    { title: "Ofertă sau factură proformă pentru bun", note: "Dacă există" },
+                    { title: "Ofertă sau factură preliminară pentru bun", note: "Dacă există" },
                     { title: "Actele de proprietate", note: "Pentru gaj, dacă e cazul" },
                 ]}
                 footnote="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."

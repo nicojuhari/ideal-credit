@@ -43,10 +43,9 @@ const causeni = OFFICES.find((o) => o.city.includes("Căușeni"))!;
 const channels = [
     { label: "Telefon Chișinău", value: chisinau.mobileDisplay, href: `tel:${chisinau.mobile}` },
     { label: "Telefon Căușeni", value: causeni.mobileDisplay, href: `tel:${causeni.mobile}` },
-    { label: "Administrator", value: "079 06 65 66", href: "tel:+37379066566" },
+    { label: "Administrator", value: "0790 66 5 66", href: "tel:+37379066566" },
     { label: "WhatsApp / Viber", value: chisinau.mobileDisplay, href: "https://wa.me/+37361252777" },
-    { label: "E-mail general", value: "contact@idealcredit.md", href: "mailto:contact@idealcredit.md" },
-    { label: "E-mail afaceri", value: "info@idealcredit.md", href: "mailto:info@idealcredit.md" },
+    { label: "E-mail", value: "info @ idealcredit.md", href: "mailto:info@idealcredit.md" },
 ];
 
 export default function ContactePage() {

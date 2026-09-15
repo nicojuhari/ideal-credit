@@ -39,11 +39,11 @@ const businessFaqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă firma mea are mai puțin de un an de activitate?",
-        answer: "Analizăm individual. Contează mai mult extrasele bancare și rulajul lunar decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate cu flux demonstrabil.",
+        answer: "Analizăm individual. Contează mai mult extrasele bancare și activitatea lunară a contului decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate cu flux demonstrabil.",
     },
     {
         question: "Poate primi credit o firmă cu pierderi pe ultimul an?",
-        answer: "Analizăm situația curentă a firmei, nu doar bilanțul anual. Dacă activitatea este stabilă acum și extrasele bancare arată rulaj activ, discutăm.",
+        answer: "Analizăm situația curentă a firmei, nu doar rezultatul financiar din anul trecut. Dacă activitatea este stabilă acum și extrasele bancare arată bani care intră și ies constant, discutăm.",
     },
     {
         question: "Pot obține finanțare pentru mai multe nevoi simultan?",
@@ -71,7 +71,7 @@ const businessFaqItems: FaqItem[] = [
     },
     {
         question: "De ce e dobânda mai mare la un OCN decât la o bancă?",
-        answer: "Băncile atrag bani din depozite, la costuri mici. Noi ne finanțăm din capital propriu și linii de credit, la costuri mai mari - și acceptăm un profil de risc mai flexibil (firme mai noi, fără gaj). Diferența de dobândă reflectă exact asta: viteza și accesul au un cost. Dacă ai timp, 2+ ani de activitate și gaj imobiliar disponibil, o bancă poate fi mai ieftină pentru sume mari.",
+        answer: "Noi suntem un OCN (organizație de creditare nebancară) - nu o bancă. Băncile atrag bani din depozite, la costuri mici. Noi ne finanțăm din capital propriu și linii de credit, la costuri mai mari - și acceptăm un profil de risc mai flexibil (firme mai noi, fără gaj). Diferența de dobândă reflectă exact asta: viteza și accesul au un cost. Dacă ai timp, 2+ ani de activitate și gaj imobiliar disponibil, o bancă poate fi mai ieftină pentru sume mari.",
     },
     {
         question: "Ce documente în plus dacă SRL-ul are mai mulți asociați?",
@@ -158,7 +158,7 @@ export default function CreditAfaceriMiciPage() {
                 description="Patru condiții. Dacă le bifezi pe toate, dosarul tău trece la analiză în aceeași zi."
                 note="Nu cerem plan de afaceri, profit obligatoriu sau gaj imobiliar pentru sume mici."
                 items={[
-                    "Firmă înregistrată în Moldova (SRL, ÎI, GȚ)",
+                    "Firmă înregistrată în Moldova (SRL, ÎI sau gospodărie țărănească)",
                     "Activitate economică de cel puțin 3-6 luni",
                     "Ai nevoie de capital rapid, cu aprobare în 1-2 zile lucrătoare",
                     "Cauți o analiză flexibilă, adaptată situației reale a afacerii",
@@ -168,7 +168,7 @@ export default function CreditAfaceriMiciPage() {
             <Calculator />
 
             <Section
-                align="center"
+                marker="Detalii"
                 title={
                     <>
                         Credit nebancar pentru <Accent>afaceri mici</Accent> în Moldova
@@ -176,10 +176,19 @@ export default function CreditAfaceriMiciPage() {
                 }
             >
                 <ProductDescription
-                    paragraphs={[
-                        "Ideal Credit finanțează firme mici și mijlocii care au nevoie de bani rapizi pentru a-și continua sau extinde activitatea. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile - nu doar documentele formale.",
-                        "Pentru a te califica, ai nevoie de o firmă înregistrată în Moldova, câteva luni de activitate demonstrabilă și extrase bancare cu rulaj activ. Nu cerem plan de afaceri, profit obligatoriu sau garanție imobiliară pentru sume mai mici. Creditul poate fi folosit pentru orice nevoie legată de afacere: capital de lucru, echipamente sau extindere.",
-                        "Luăm decizii în 1-2 zile lucrătoare. Dacă finanțarea nu este potrivită pentru situația ta, îți spunem direct - fără să îți pierzi timpul cu un dosar complet.",
+                    items={[
+                        {
+                            title: "Cum analizăm dosarul",
+                            text: "Ne uităm la afacerea reală - banii care intră și ies din cont, activitatea curentă, garanțiile disponibile. Nu doar actele formale.",
+                        },
+                        {
+                            title: "Cine se califică",
+                            text: "Firmă înregistrată în Moldova, câteva luni de activitate și extrase bancare cu mișcare de bani constantă. Fără plan de afaceri, fără profit obligatoriu, fără garanție imobiliară pentru sume mici.",
+                        },
+                        {
+                            title: "Decizia",
+                            text: "1-2 zile lucrătoare. Dacă finanțarea nu ți se potrivește, îți spunem direct - fără să pierzi timpul cu un dosar complet.",
+                        },
                     ]}
                 />
             </Section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
 import Stack from "@/components/ds/Stack";
+import NumberedRow from "@/components/ds/NumberedRow";
 import { GLOSSARY_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -9,6 +10,15 @@ export const metadata: Metadata = {
     description:
         "Termeni financiari și de creditare explicați pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
     alternates: { canonical: "https://idealcredit.md/dictionar-financiar" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Dicționar financiar | Ideal Credit",
+        description:
+            "Termeni financiari și de creditare explicați pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 export default function DictionarFinanciarPage() {
@@ -33,15 +43,14 @@ export default function DictionarFinanciarPage() {
                 <Container>
                     <Stack>
                         {GLOSSARY_LINKS.map((item, i) => (
-                            <div
+                            <NumberedRow
                                 key={item.name}
-                                className="grid items-baseline gap-7 p-8"
-                                style={{ gridTemplateColumns: "44px minmax(0,1fr) minmax(0,1.5fr)" }}
-                            >
-                                <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
-                                <h2 className="text-xl tracking-[-.025em] text-dc-text">{item.name}</h2>
-                                <p className="text-[17px] leading-[1.6] text-dc-text-muted">{item.desc}</p>
-                            </div>
+                                index={i}
+                                title={item.name}
+                                desc={item.desc}
+                                titleAs="h2"
+                                gridCols="44px minmax(0,1fr) minmax(0,1.5fr)"
+                            />
                         ))}
                     </Stack>
                 </Container>

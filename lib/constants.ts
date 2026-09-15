@@ -26,33 +26,47 @@ export const OFFICES = [
 ];
 
 export const FAQ_ITEMS = [
+    // ── top 6: shown on homepage (Faq.tsx uses FAQ_ITEMS.slice(0, 6)) - ordered by value ──
     {
-        question: "Pot obține credit pentru afacere chiar dacă am un profil mai puțin standard?",
-        answer: "Da. Analizăm situația reală a afacerii tale - rulajul din extrase, activitatea curentă, garanțiile disponibile. Nu ne limităm la un scor de credit sau la criterii rigide.",
-    },
-    {
-        question: "Ce sumă pot obține pentru afacerea mea?",
-        answer: "Suma minimă este 50.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client. Analizăm dosarul rapid și comunicăm suma aprobată.",
-    },
-    {
-        question: "Ce documente sunt necesare pentru un credit de afacere?",
-        answer: "Actele de înregistrare ale firmei (SRL/ÎI), extrase bancare pentru ultimele 3 luni și evidența contabilă de bază. Nu cerem plan de afaceri detaliat.",
+        question: "Ce tipuri de garanții acceptați?",
+        answer: "Există două tipuri: fidejusiunea (garanție personală - o persoană care garantează cu venitul său) și gajul imobiliar (locuință sau teren). La primul credit, fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
     },
     {
         question: "Pot obține credit doar cu buletinul, fără gaj?",
         answer: "Da. La primul credit solicităm întotdeauna un fidejusor (garant personal) - acesta nu este opțional. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau dacă venitul nu este stabil.",
     },
     {
-        question: "Cât timp durează aprobarea?",
-        answer: "Decizia este rapidă pentru cererile complete depuse în programul de lucru. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
+        question: "Care este suma minimă și maximă pe care o pot obține?",
+        answer: "Suma minimă este de la 10.000 lei pentru persoane fizice și de la 50.000 lei pentru afaceri. Suma maximă depinde de venit, garanțiile disponibile și situația fiecărui client. Analizăm individual și comunicăm suma accesibilă după prima discuție.",
     },
     {
-        question: "Dobânda este fixă sau flotantă?",
-        answer: "Dobânda este fixă pe toată durata contractului. Știi exact cât plătești lunar de la prima rată până la ultima - suma nu se schimbă.",
+        question: "Cât timp durează aprobarea?",
+        answer: "Pentru cererile complete depuse în programul de lucru: 2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
     },
     {
         question: "Există comisioane ascunse?",
-        answer: "Nu. Toate costurile - dobânda, DAE, penalitățile posibile - sunt prezentate înainte de semnare. Ce citești în contract, aia plătești.",
+        answer: "Nu. Toate costurile - dobânda, DAE (costul total anual) și penalitățile posibile - sunt prezentate înainte de semnare. Ce citești în contract, aia plătești.",
+    },
+    {
+        question: "Pot obține credit fără fidejusor (garant)?",
+        answer: "Da, dacă ești client existent cu un istoric bun de plăți, fără întârzieri, și cu venituri stabile dovedite. Clienții recurenți cu dosar solid pot beneficia de condiții mai avantajoase - inclusiv dobândă mai mică și fără fidejusor obligatoriu. La primul credit, fidejusorul rămâne obligatoriu.",
+    },
+    // ── restul: doar în JSON-LD (schema.ts foloseşte toată lista) ──
+    {
+        question: "Ce sumă pot obține pentru afacerea mea?",
+        answer: "Suma minimă este 50.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client. Analizăm dosarul rapid și comunicăm suma aprobată.",
+    },
+    {
+        question: "Ce documente sunt necesare pentru un credit de afaceri?",
+        answer: "Actele de înregistrare ale firmei (SRL/ÎI), extrase bancare pentru ultimele 3 luni și evidența contabilă de bază. Nu cerem plan de afaceri detaliat.",
+    },
+    {
+        question: "Pot obține credit pentru afacere chiar dacă situația mea nu e perfectă?",
+        answer: "Da. Analizăm situația reală a afacerii tale - banii care intră și ies din cont, activitatea curentă, garanțiile disponibile. Nu ne limităm la un scor de credit sau la reguli fixe.",
+    },
+    {
+        question: "Dobânda este fixă sau se schimbă în timp?",
+        answer: "Dobânda este fixă pe toată durata contractului. Știi exact cât plătești lunar de la prima rată până la ultima - suma nu se schimbă.",
     },
     {
         question: "Pot rambursa creditul anticipat?",
@@ -65,18 +79,6 @@ export const FAQ_ITEMS = [
     {
         question: "Pot refinanța un credit existent?",
         answer: "Da. Preluăm credite de la alte instituții financiare. Analizăm dacă refinanțarea are sens financiar pentru tine și prezentăm calculul înainte de decizie.",
-    },
-    {
-        question: "Ce tipuri de garanții acceptați?",
-        answer: "Există două tipuri: fidejusiunea (garanție personală - o persoană care garantează cu venitul său) și gajul imobiliar (locuință sau teren). La primul credit, fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
-    },
-    {
-        question: "Pot obține credit fără fidejusor (garant)?",
-        answer: "Da, dacă ești client existent cu un istoric bun de plăți, fără întârzieri, și cu venituri stabile dovedite. Clienții recurenți cu dosar solid pot beneficia de condiții mai avantajoase - inclusiv reducere de dobândă și fără obligativitatea fidejusorului. La primul credit, fidejusorul rămâne obligatoriu.",
-    },
-    {
-        question: "Care este suma maximă pe care o pot obține?",
-        answer: "Suma minimă este de la 10.000 lei pentru persoane fizice și de la 50.000 lei pentru afaceri. Suma maximă depinde de venit, garanțiile disponibile și situația fiecărui client. Analizăm individual și comunicăm suma accesibilă după prima discuție.",
     },
 ];
 

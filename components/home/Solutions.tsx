@@ -1,8 +1,8 @@
+import Link from "next/link";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
 import Figure from "@/components/ds/Figure";
 import Note from "@/components/ds/Note";
-import { ButtonText } from "@/components/ds/Button";
 
 type Spec = { label: string; value: string; proof?: boolean };
 
@@ -13,7 +13,6 @@ type Solution = {
     intro: string;
     specs: Spec[];
     checklist: string[];
-    cta: string;
     href: string;
 };
 
@@ -29,7 +28,6 @@ const solutions: Solution[] = [
             { label: "Decizie", value: "1–2 zile", proof: true },
         ],
         checklist: ["SRL, ÎI, GȚ - toate formele juridice acceptate", "Fără plan de afaceri obligatoriu", "Extrase bancare minim 3 luni"],
-        cta: "Condiții pentru afaceri",
         href: "/credite/credit-pentru-afaceri-mici",
     },
     {
@@ -43,7 +41,6 @@ const solutions: Solution[] = [
             { label: "Decizie", value: "2–3 ore", proof: true },
         ],
         checklist: ["Vârsta de la 23 de ani, venit stabil", "Buletin de identitate valabil", "Fără comisioane ascunse sau penalități"],
-        cta: "Condiții credit personal",
         href: "/credite/credit-pentru-nevoi-personale",
     },
 ];
@@ -58,11 +55,12 @@ function SolutionBlock({ solution }: { solution: Solution }) {
                 <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
                     <span className="font-dc-mono">{solution.ordinal}</span> · {solution.category}
                 </p>
-                <h3 className="mt-3.5 text-[28px] tracking-[-.03em] text-dc-text">{solution.title}</h3>
+                <h3 className="mt-3.5 text-[28px] tracking-[-.03em]">
+                    <Link href={solution.href} className="text-dc-text transition-colors hover:text-dc-accent">
+                        {solution.title}
+                    </Link>
+                </h3>
                 <p className="mt-3 text-[17px] leading-[1.6] text-dc-text-muted">{solution.intro}</p>
-                <ButtonText href={solution.href} className="mt-6 block">
-                    {solution.cta} →
-                </ButtonText>
             </div>
 
             <div className="flex min-w-0 flex-col gap-6">

@@ -204,6 +204,81 @@ export const businessCreditSchema = {
     },
 };
 
+export const agriculturalLoanSchema = {
+    "@context": "https://schema.org",
+    "@type": "LoanOrCredit",
+    name: "Credit pentru agricultură",
+    description: "Credit agricol pentru fermieri, SRL și ÎI din Moldova - tehnică agricolă, semințe, irigații și capital sezonier.",
+    amount: {
+        "@type": "MonetaryAmount",
+        currency: "MDL",
+        minValue: 50000,
+        maxValue: 500000,
+    },
+    interestRate: {
+        "@type": "QuantitativeValue",
+        value: 4,
+        unitText: "%",
+        description: "Dobândă lunară fixă",
+    },
+    loanTerm: {
+        "@type": "QuantitativeValue",
+        unitText: "Months",
+        minValue: 12,
+        maxValue: 60,
+    },
+};
+
+export const autoLoanSchema = {
+    "@context": "https://schema.org",
+    "@type": "LoanOrCredit",
+    name: "Credit pentru automobil",
+    description: "Credit pentru cumpărarea sau repararea unui automobil în Moldova, fără restricții pe tipul mașinii.",
+    amount: {
+        "@type": "MonetaryAmount",
+        currency: "MDL",
+        minValue: 10000,
+        maxValue: 300000,
+    },
+    interestRate: {
+        "@type": "QuantitativeValue",
+        value: 4,
+        unitText: "%",
+        description: "Dobândă lunară fixă",
+    },
+    loanTerm: {
+        "@type": "QuantitativeValue",
+        unitText: "Months",
+        minValue: 12,
+        maxValue: 48,
+    },
+};
+
+export const repairLoanSchema = {
+    "@context": "https://schema.org",
+    "@type": "LoanOrCredit",
+    name: "Credit pentru reparație",
+    description: "Credit pentru reparația sau renovarea casei ori apartamentului, cu dobândă fixă și sume flexibile.",
+    amount: {
+        "@type": "MonetaryAmount",
+        currency: "MDL",
+        minValue: 10000,
+        maxValue: 300000,
+    },
+    interestRate: {
+        "@type": "QuantitativeValue",
+        value: 4,
+        unitText: "%",
+        description: "Dobândă lunară fixă",
+    },
+    loanTerm: {
+        "@type": "QuantitativeValue",
+        unitText: "Months",
+        minValue: 12,
+        maxValue: 48,
+    },
+};
+
 export const investitionalSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",

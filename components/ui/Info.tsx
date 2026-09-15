@@ -1,12 +1,10 @@
-import { Lightbulb } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function Info({ children, className }: { children: React.ReactNode; className?: string }) {
- return (
- <div
- className={`flex gap-2.5 p-2 px-3 rounded-lg text-blue-400 items-center border border-blue-400/50 justify-center ${className ??""}`}
- >
- <Lightbulb className="w-6 h-6 shrink-0" />
- <span className="text-sm">{children}</span>
- </div>
- );
+    return (
+        <div className={cn("flex items-start gap-3 border border-dc-line bg-dc-surface px-5 py-4", className)}>
+            <span className="mt-[6px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
+            <span className="text-[13px] leading-[1.6] text-dc-text-muted">{children}</span>
+        </div>
+    );
 }

@@ -7,7 +7,8 @@ import Container from "@/components/ds/Container";
 import Figure from "@/components/ds/Figure";
 import Note from "@/components/ds/Note";
 import { ButtonPrimary } from "@/components/ds/Button";
-import { cn } from "@/lib/utils";
+import { cn, formatDateRo } from "@/lib/utils";
+import { addMonths } from "ideal-credit";
 
 const SUM_MIN = 10_000;
 const SUM_MAX = 300_000;
@@ -29,12 +30,8 @@ function buildSchedule(principal: number, months: number, rate: number, type: Re
     const r = rate / 100;
     const rows: Row[] = [];
     let balance = principal;
-    const now = new Date();
 
-    const getDate = (offset: number) => {
-        const d = new Date(now.getFullYear(), now.getMonth() + offset, 1);
-        return d.toLocaleDateString("ro-RO", { month: "short", year: "2-digit" });
-    };
+    const getDate = (offset: number) => formatDateRo(addMonths(offset));
 
     // Grace period - interest only, balance unchanged
     for (let i = 1; i <= grace; i++) {

@@ -8,7 +8,7 @@ const stats = [
     { figure: `${yearsSinceFoundation}`, label: "ani pe piață" },
     { figure: "0", label: "comisioane", proof: true },
     { figure: "4,9", label: "rating clienți" },
-    { figure: "10 000", label: "MDL sumă minimă" },
+    { figure: "10 000", label: "MDL sumă minimă · personal" },
 ];
 
 export default function HeroHome() {
@@ -20,7 +20,7 @@ export default function HeroHome() {
                         Credite pentru <Accent>succes.</Accent>
                     </h1>
                     <p className="max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Finanțăm afaceri și persoane fizice din Moldova cu credite rapide, flexibile și transparente.
+                        Finanțăm afaceri și persoane fizice din Moldova, rapid și transparent.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3.5">
                         <ButtonPrimary href="/cerere-de-credit-online">Solicită un credit</ButtonPrimary>

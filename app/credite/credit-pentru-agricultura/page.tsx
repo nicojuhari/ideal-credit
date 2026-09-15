@@ -13,7 +13,7 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { businessCreditSchema } from "@/lib/schema";
+import { agriculturalLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
@@ -49,7 +49,7 @@ const agricFaqItems: FaqItem[] = [
         answer: "Da. Tractoare, combine, remorci, sisteme de irigații - finanțăm echipamentele direct prin creditul agricol sau prin creditul investițional, în funcție de suma și termenul dorit.",
     },
     {
-        question: "Pot accesa creditul dacă arend terenul, nu îl dețin?",
+        question: "Pot accesa creditul dacă arendez terenul, nu îl dețin?",
         answer: "Da, contractul de arendă este suficient ca dovadă a activității. Analizăm capacitatea de producție și istoricul agricol, nu doar proprietatea terenului.",
     },
     {
@@ -82,7 +82,7 @@ const analysisItems = [
 export default function CreditAgriculturaPage() {
     return (
         <div className="dc bg-dc-bg">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(agriculturalLoanSchema) }} />
 
             <ProductHero
                 category="Persoane juridice"
@@ -168,7 +168,7 @@ export default function CreditAgriculturaPage() {
                     </>
                 }
                 items={[
-                    "Activitate agricolă înregistrată (SRL, ÎI, GȚ)",
+                    "Activitate agricolă înregistrată (SRL, ÎI sau gospodărie țărănească)",
                     "Activitate demonstrabilă în ultimul sezon",
                     "Teren agricol în proprietate sau în arendă",
                     "Extrase bancare sau dovezi de vânzări agricole",
@@ -178,7 +178,7 @@ export default function CreditAgriculturaPage() {
             <Calculator />
 
             <Section
-                align="center"
+                marker="Detalii"
                 title={
                     <>
                         Credit agricol pentru <Accent>fermieri</Accent> din Moldova
@@ -186,10 +186,19 @@ export default function CreditAgriculturaPage() {
                 }
             >
                 <ProductDescription
-                    paragraphs={[
-                        "Creditul agricol de la Ideal Credit este conceput pentru fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate în agricultură. Finanțăm tehnica agricolă, semințele, îngrășămintele, irigațiile, forța de muncă sezonieră și orice alt cost legat de producția agricolă.",
-                        "Cel mai important avantaj față de un credit standard este graficul de rambursare adaptat sezonului. Știm că încasările agricole vin în valuri - după recoltare și vânzare - nu lunar uniform. De aceea structurăm ratele în funcție de ciclul tău de producție, cu posibilitate de perioadă de grație în lunile de cheltuieli mari.",
-                        "Nu cerem plan de afaceri formal sau profit demonstrat. Evaluăm activitatea reală - suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare. Dacă ai activitate agricolă demonstrabilă, indiferent de forma juridică, putem discuta despre finanțare.",
+                    items={[
+                        {
+                            title: "Pentru cine e",
+                            text: "Fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate agricolă. Finanțăm tehnica agricolă, semințe, îngrășăminte, irigații, forța de muncă sezonieră și alte costuri de producție.",
+                        },
+                        {
+                            title: "Grafic adaptat sezonului",
+                            text: "Încasările agricole vin după recoltare, nu lunar. Structurăm ratele în funcție de ciclul tău de producție, cu posibilitate de perioadă de grație în lunile cu cheltuieli mari.",
+                        },
+                        {
+                            title: "Ce evaluăm",
+                            text: "Suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare - nu un plan de afaceri formal sau profit deja demonstrat.",
+                        },
                     ]}
                 />
             </Section>

@@ -12,7 +12,7 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { personalLoanSchema } from "@/lib/schema";
+import { repairLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
@@ -59,7 +59,7 @@ const faqItems: FaqItem[] = [
 export default function CreditReparatiePage() {
     return (
         <div className="dc bg-dc-bg">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(repairLoanSchema) }} />
 
             <ProductHero
                 category="Persoane fizice"
@@ -89,22 +89,26 @@ export default function CreditReparatiePage() {
                         Condiții de <Accent>creditare</Accent>
                     </>
                 }
-                items={[
-                    "Vârsta între 23 și 55 de ani",
-                    "Venit confirmat și stabil",
-                    "Buletin de identitate valabil",
-                    "Locuință în proprietate sau în arendă (pentru lucrările planificate)",
-                ]}
+                items={["Vârsta între 23 și 55 de ani", "Venit confirmat și stabil", "Buletin de identitate valabil"]}
             />
 
             <Calculator />
 
-            <Section align="center" title={<>Credit pentru reparație casă sau <Accent>apartament</Accent></>}>
+            <Section marker="Detalii" title={<>Credit pentru reparație casă sau <Accent>apartament</Accent></>}>
                 <ProductDescription
-                    paragraphs={[
-                        "Creditul pentru reparație de la Ideal Credit îți oferă banii necesari pentru a renova locuința fără să aștepți ani să strângi economii. Poți finanța orice fel de lucrare - instalații electrice sau sanitare, zugrăveli și finisaje, schimb de ferestre și uși, parchet, mobilier sau dotări pentru spațiul renovat.",
-                        "Nu cerem devize sau facturi obligatorii înainte de aprobare. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar, și îi folosești cum și când ai nevoie - plătești materiale, meșteri sau ambele. Dobânda este fixă, rata lunară nu se schimbă pe toată durata contractului.",
-                        "Garanția nu este obligatorie pentru sume mai mici. Dacă ai venit stabil și capacitate de rambursare demonstrabilă, aprobăm în 2-3 ore. Nu trebuie să fii proprietar al imobilului pentru a aplica - analizăm situația ta reală, nu doar documentele de proprietate.",
+                    items={[
+                        {
+                            title: "Orice lucrare de renovare",
+                            text: "Instalații electrice sau sanitare, zugrăveli și finisaje, ferestre și uși, parchet, mobilier sau dotări. Fără să aștepți ani să strângi banii.",
+                        },
+                        {
+                            title: "Fără devize obligatorii",
+                            text: "Banii vin numerar la birou sau în cont, îi folosești cum ai nevoie - materiale, meșteri sau ambele. Dobânda e fixă, rata nu se schimbă.",
+                        },
+                        {
+                            title: "Nu trebuie să fii proprietar",
+                            text: "La primul credit, fidejusorul e obligatoriu; gajul imobiliar doar pentru sume mari sau venituri nestabile. Analizăm situația ta reală, nu actele de proprietate.",
+                        },
                     ]}
                 />
             </Section>

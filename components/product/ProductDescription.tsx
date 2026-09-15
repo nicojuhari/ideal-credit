@@ -1,11 +1,14 @@
-export default function ProductDescription({ paragraphs }: { paragraphs: string[] }) {
+import Stack from "@/components/ds/Stack";
+import NumberedRow from "@/components/ds/NumberedRow";
+
+export type ProductDescriptionItem = { title: string; text: string };
+
+export default function ProductDescription({ items }: { items: ProductDescriptionItem[] }) {
     return (
-        <div className="mx-auto flex max-w-[720px] flex-col gap-5">
-            {paragraphs.map((p, i) => (
-                <p key={i} className="text-[17px] leading-[1.6] text-dc-text-muted">
-                    {p}
-                </p>
+        <Stack>
+            {items.map((item, i) => (
+                <NumberedRow key={item.title} index={i} title={item.title} desc={item.text} />
             ))}
-        </div>
+        </Stack>
     );
 }

@@ -63,7 +63,7 @@ export default function Footer() {
                             <span className="text-[15px] font-medium text-dc-text">Ideal Credit</span>
                         </Link>
                         <p className="max-w-[280px] text-[15px] leading-[1.6] text-dc-text-muted">
-                            Organizația de Creditare Nebancară „Ideal Credit” SRL. Credite pentru afaceri și consum în Moldova.
+                            Credite pentru succes în afaceri și nevoi personale.
                         </p>
                     </div>
 
@@ -98,11 +98,16 @@ export default function Footer() {
                 </div>
 
                 <div className="border border-dc-line px-8 py-7">
-                    <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Extras din lege</p>
+                    <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Extras din legea nr. 202/2013:</p>
                     <Note className="mt-3 max-w-[900px]">
-                        Legea nr. 202/2013: rata maximală a dobânzii anuale specificate în contract nu poate depăși 50%; toate celelalte
-                        plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere) nu pot depăși 0,04%/zi din valoarea totală a
-                        creditului; costul total al creditului nu poate depăși valoarea debursată (cu excepția contractelor ipotecare).
+                        <ol className="space-y-1 !list-disc list-inside text-xs">
+                            <li>rata maximală a dobânzii anuale specificate în contract nu poate depăși 50%</li>
+                            <li>
+                                toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere) nu pot depăși 0,04%/zi
+                                din valoarea totală a creditului
+                            </li>
+                            <li>costul total al creditului nu poate depăși valoarea debursată (cu excepția contractelor ipotecare)</li>
+                        </ol>
                     </Note>
                 </div>
 

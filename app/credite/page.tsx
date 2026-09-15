@@ -11,8 +11,17 @@ import ClosingCta from "@/components/home/ClosingCta";
 export const metadata: Metadata = {
     title: "Toate Produsele de Credit | Ideal Credit Moldova",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice în Moldova. Capital de lucru, investiții, refinanțare, credit personal - dobândă fixă, decizie rapidă.",
+        "6 credite nebancare pentru afaceri și persoane fizice în Moldova: capital de lucru, investiții, agricultură, auto, reparație și nevoi personale.",
     alternates: { canonical: "https://idealcredit.md/credite" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Toate Produsele de Credit | Ideal Credit Moldova",
+        description:
+            "6 credite nebancare pentru afaceri și persoane fizice în Moldova: capital de lucru, investiții, agricultură, auto, reparație și nevoi personale.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const hubFaqItems: FaqItem[] = [

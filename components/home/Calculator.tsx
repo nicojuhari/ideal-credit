@@ -141,7 +141,7 @@ export default function Calculator() {
                             <Figure size="xl" className="mt-2.5 block" aria-live="polite">
                                 {dae.toLocaleString("ro-RO", { maximumFractionDigits: 1 })}
                             </Figure>
-                            <p className="mt-2 text-xs text-dc-text-muted">% ANUAL EFECTIV</p>
+                            <p className="mt-2 text-xs text-dc-text-muted">% anual, cu toate costurile incluse</p>
                         </div>
                         <div className="dc-cell col-span-2 min-w-0 p-5 sm:p-7 lg:col-span-1">
                             <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Cost total</p>

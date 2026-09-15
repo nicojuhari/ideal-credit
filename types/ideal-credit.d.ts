@@ -12,4 +12,6 @@ declare module"ideal-credit" {
  }): GraficRow[];
 
  export function calcDAE(grafic: GraficRow[], sum: number): number;
+
+ export function addMonths(months: number, startDate?: string | Date): number;
 }

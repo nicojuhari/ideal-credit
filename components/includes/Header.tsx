@@ -187,7 +187,7 @@ export default function Header() {
                         transition={{ type: "tween", duration: 0.2, ease: "easeInOut" }}
                         className="fixed top-0 left-0 z-50 flex h-dvh w-full flex-col overflow-y-auto bg-dc-bg"
                     >
-                        <div className="flex items-center justify-between border-b border-dc-line px-6 py-4">
+                        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-dc-line bg-dc-bg px-6 py-4">
                             <Link href="/" className="flex items-center gap-[11px]" onClick={toggleMenu}>
                                 <Logo className="w-9" />
                                 <span className="text-[15px] font-medium tracking-[-.01em] text-dc-text">Ideal Credit</span>

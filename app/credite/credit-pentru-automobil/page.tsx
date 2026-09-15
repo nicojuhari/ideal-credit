@@ -12,7 +12,7 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { personalLoanSchema } from "@/lib/schema";
+import { autoLoanSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Credit pentru Automobil în Moldova | Ideal Credit",
@@ -59,7 +59,7 @@ const faqItems: FaqItem[] = [
 export default function CreditAutomobilPage() {
     return (
         <div className="dc bg-dc-bg">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(autoLoanSchema) }} />
 
             <ProductHero
                 category="Persoane fizice"
@@ -94,12 +94,21 @@ export default function CreditAutomobilPage() {
 
             <Calculator />
 
-            <Section align="center" title={<>Credit auto în Moldova - cumpărare sau <Accent>reparație</Accent></>}>
+            <Section marker="Detalii" title={<>Credit auto în Moldova - cumpărare sau <Accent>reparație</Accent></>}>
                 <ProductDescription
-                    paragraphs={[
-                        "Creditul pentru automobil de la Ideal Credit acoperă atât achiziția unei mașini noi sau second-hand, cât și reparațiile tehnice majore la mașina pe care o ai deja. Nu există restricții pe tipul vehiculului - finanțăm autoturisme, autoutilitare sau vehicule de lucru, de la persoane fizice sau dealeri.",
-                        "Spre deosebire de leasing, mașina îți aparține din prima zi. Nu există clauze de răscumpărare la final de contract, nu există restricții de kilometraj sau modificări interzise. Este un credit simplu - iei banii, cumperi sau repari mașina, plătești rate fixe lunare.",
-                        "Aprobăm în 2-3 ore fără să cerem ofertă de la dealer sau deviz de la service înainte de analiză. Dacă ai venit stabil și fără restanțe mari la alte credite, analizăm cererea ta direct. Dobânda este fixă pe toată durata contractului.",
+                    items={[
+                        {
+                            title: "Cumpărare sau reparație",
+                            text: "Mașină nouă, second-hand sau reparații majore la mașina ta. Fără restricții pe tipul vehiculului - de la persoane fizice sau dealeri.",
+                        },
+                        {
+                            title: "Mașina e a ta din prima zi",
+                            text: "Spre deosebire de leasing, fără clauze de răscumpărare, fără restricții de kilometraj sau modificări interzise. Iei banii, cumperi sau repari, plătești rate fixe.",
+                        },
+                        {
+                            title: "Cât durează",
+                            text: "Aprobăm în 2-3 ore, fără ofertă de la dealer sau deviz de la service în avans. Ai nevoie de venit stabil și fără restanțe mari la alte credite.",
+                        },
                     ]}
                 />
             </Section>

@@ -3,9 +3,10 @@ import Link from "next/link";
 import Container from "@/components/ds/Container";
 import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import Figure from "@/components/ds/Figure";
 import SpecStrip from "@/components/product/SpecStrip";
 import OrdinalRows from "@/components/product/OrdinalRows";
+import DocumentRows from "@/components/product/DocumentRows";
+import type { DocumentItem } from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
 import ClosingCta from "@/components/home/ClosingCta";
@@ -17,6 +18,15 @@ export const metadata: Metadata = {
     description:
         "Ideal Credit - instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/despre-noi" },
+    openGraph: {
+        type: "website",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        title: "Despre noi | Ideal Credit - Companie de creditare",
+        description:
+            "Ideal Credit - instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
+        images: [{ url: "https://idealcredit.md/ideal-credit-og.webp", alt: "Credite nebancare pentru afaceri și nevoi personale" }],
+    },
 };
 
 const ceFacem = [
@@ -78,27 +88,27 @@ const proces = [
     { title: "Primești banii", desc: "Și îți continui planurile." },
 ];
 
-const documente = [
+const documente: DocumentItem[] = [
     {
-        label: "Regulament privind cadrul de administrare",
+        title: "Regulament privind cadrul de administrare",
         group: "Regulamente",
         meta: "PDF",
         href: "/regulament-cadrul-de-administrare.pdf",
     },
-    { label: "Regulament privind prestarea serviciilor", group: "Regulamente", meta: "PDF", href: "/regulament-prestarea-serviciilor.pdf" },
+    { title: "Regulament privind prestarea serviciilor", group: "Regulamente", meta: "PDF", href: "/regulament-prestarea-serviciilor.pdf" },
     {
-        label: "Regulament privind soluționarea pretențiilor",
+        title: "Regulament privind soluționarea pretențiilor",
         group: "Regulamente",
         meta: "PDF",
         href: "/regulament-solutionarea-pretentiilor.pdf",
     },
-    { label: "Raport de audit 2025", group: "Rapoarte", meta: "2025", href: "/raport-audit-2025.pdf" },
-    { label: "Raport de audit 2024", group: "Rapoarte", meta: "2024", href: "/raport-audit-2024.pdf" },
-    { label: "Raport de audit 2023", group: "Rapoarte", meta: "2023", href: "/raport-audit-2023.pdf" },
-    { label: "Raport de audit 2022", group: "Rapoarte", meta: "2022", href: "/raport-audit-2022.pdf" },
-    { label: "Certificat de înregistrare", group: "Constituire", meta: "PDF", href: "/ideal-credit-certificat-de-inregistrare.pdf" },
+    { title: "Raport de audit 2025", group: "Rapoarte", meta: "2025", href: "/raport-audit-2025.pdf" },
+    { title: "Raport de audit 2024", group: "Rapoarte", meta: "2024", href: "/raport-audit-2024.pdf" },
+    { title: "Raport de audit 2023", group: "Rapoarte", meta: "2023", href: "/raport-audit-2023.pdf" },
+    { title: "Raport de audit 2022", group: "Rapoarte", meta: "2022", href: "/raport-audit-2022.pdf" },
+    { title: "Certificat de înregistrare", group: "Constituire", meta: "PDF", href: "/ideal-credit-certificat-de-inregistrare.pdf" },
     {
-        label: "Extras din Registrul OCN autorizate",
+        title: "Extras din Registrul OCN autorizate",
         group: "Constituire",
         meta: "PDF",
         href: "/ideal-credit-extras-registrul-organizatiilor-de-creditare-nebancare-autorizate.pdf",
@@ -237,40 +247,15 @@ export default function DespreNoiPage() {
                 items={proces}
             />
 
-            <div className="dc-section">
-                <Container>
-                    <div className="flex flex-wrap items-end justify-between gap-8">
-                        <div>
-                            <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
-                                <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                                Registru public
-                            </p>
-                            <h2 className="mt-5 text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text">
-                                Regulamente și <Accent>documente</Accent>
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="mt-14 border-t border-dc-line">
-                        {documente.map((doc, i) => (
-                            <a
-                                key={doc.href}
-                                href={doc.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="grid items-baseline gap-7 border-b border-dc-line px-8 py-6 transition-colors duration-[120ms] hover:bg-dc-surface"
-                                style={{ gridTemplateColumns: "44px minmax(0,1.6fr) minmax(0,.7fr) auto" }}
-                            >
-                                <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
-                                <span className="text-[17px] font-medium leading-[1.5] text-dc-text">{doc.label}</span>
-                                <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">{doc.group}</span>
-                                <Figure size="ordinal" className="text-dc-text-muted">
-                                    {doc.meta} →
-                                </Figure>
-                            </a>
-                        ))}
-                    </div>
-                </Container>
-            </div>
+            <DocumentRows
+                marker="Registru public"
+                title={
+                    <>
+                        Regulamente și <Accent>documente</Accent>
+                    </>
+                }
+                items={documente}
+            />
 
             <ProductFaq
                 title={
