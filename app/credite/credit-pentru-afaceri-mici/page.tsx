@@ -69,6 +69,18 @@ const businessFaqItems: FaqItem[] = [
         question: "Pot consolida mai multe credite de afaceri într-unul singur?",
         answer: "Da - dacă ai mai multe credite active la instituții diferite, analizăm situația și, dacă are sens financiar, le aduni într-un singur credit cu o rată lunară mai mică. Nu este un produs separat, ci o opțiune discutată în cadrul consultației inițiale.",
     },
+    {
+        question: "De ce e dobânda mai mare la un OCN decât la o bancă?",
+        answer: "Băncile atrag bani din depozite, la costuri mici. Noi ne finanțăm din capital propriu și linii de credit, la costuri mai mari - și acceptăm un profil de risc mai flexibil (firme mai noi, fără gaj). Diferența de dobândă reflectă exact asta: viteza și accesul au un cost. Dacă ai timp, 2+ ani de activitate și gaj imobiliar disponibil, o bancă poate fi mai ieftină pentru sume mari.",
+    },
+    {
+        question: "Ce documente în plus dacă SRL-ul are mai mulți asociați?",
+        answer: "Se adaugă Hotărârea Adunării Generale a Asociaților privind contractarea creditului - un document intern, semnat de toți asociații, fără notar. Dacă nu știi cum arată, îți arătăm un model.",
+    },
+    {
+        question: "Cât de vechi pot fi documentele din dosar?",
+        answer: "Extrasul din Registrul de Stat nu trebuie să aibă mai mult de 30 de zile. Extrasele bancare și declarațiile fiscale trebuie să fie recente (ultimele 3-6, respectiv 6-12 luni) - nu neapărat de azi, dar să reflecte situația curentă a firmei.",
+    },
 ];
 
 const useCases = [

@@ -24,7 +24,6 @@ const STATIC_ROUTES: RouteConfig[] = [
 
   { path: "/despre-noi", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contacte", priority: 0.7, changeFrequency: "monthly" },
-  { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
   { path: "/dictionar-financiar", priority: 0.5, changeFrequency: "yearly" },
 
   { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
@@ -32,33 +31,13 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/terms", priority: 0.3, changeFrequency: "yearly" },
 ];
 
-const BLOG_SLUGS = [
-  "costul-real-al-unui-credit-nebancar",
-  "credit-cu-buletinul-ce-cere-ideal-credit",
-  "credit-rapid-decizie-in-ore",
-  "cum-alegi-credit-nebancar-pentru-afaceri",
-  "documente-necesare-credit-afaceri-moldova",
-  "ghid-credit-afaceri-ocn-moldova",
-  "istoricul-de-credit-si-sansele-tale",
-  "ocn-vs-banca-credit-afaceri-moldova",
-];
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map(({ path, priority, changeFrequency }) => ({
+  return STATIC_ROUTES.map(({ path, priority, changeFrequency }) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
     changeFrequency,
     priority,
   }));
-
-  const blogEntries: MetadataRoute.Sitemap = BLOG_SLUGS.map((slug) => ({
-    url: `${BASE_URL}/blog/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  return [...staticEntries, ...blogEntries];
 }

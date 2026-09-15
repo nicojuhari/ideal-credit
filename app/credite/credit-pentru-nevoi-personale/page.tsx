@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const personalFaqItems: FaqItem[] = [
     {
         question: "Pot obține credit dacă am istoricul de credit negativ?",
-        answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează situația actuală - venit stabil, capacitate de rambursare și comportamentul recent.",
+        answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează cel mai mult comportamentul din ultimele 12 luni și capacitatea actuală de rambursare - un incident vechi urmat de plăți la timp cântărește mult mai puțin decât întârzieri recente. Un fidejusor cu profil solid poate echilibra un dosar mai slab.",
     },
     {
         question: "Cât pot împrumuta fără garanții?",

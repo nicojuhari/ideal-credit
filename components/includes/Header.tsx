@@ -28,7 +28,6 @@ const personalProducts: CreditItem[] = [
 const simpleLinks = [
     { href: "/calculator-credit", label: "Calculator" },
     { href: "/despre-noi", label: "Despre noi" },
-    { href: "/blog", label: "Blog" },
     { href: "/contacte", label: "Contacte" },
 ];
 

@@ -1,10 +1,6 @@
 import type { NextConfig } from "next";
-import createMDX from "@next/mdx";
-
-const withMDX = createMDX({});
 
 const nextConfig: NextConfig = {
-    pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
     trailingSlash: false,
 
     async redirects() {
@@ -27,43 +23,72 @@ const nextConfig: NextConfig = {
             { source: "/refinantare", destination: "/credite/credit-pentru-nevoi-personale#consolidare", permanent: true },
             { source: "/credite/refinantare", destination: "/credite/credit-pentru-nevoi-personale#consolidare", permanent: true },
 
-            // ── blog: old Storyblok slugs → new static slugs ───────────────
+            // ── blog: retired section, all slugs → closest product/info page ──
+            { source: "/blog", destination: "/credite", permanent: true },
             {
                 source: "/blog/cum-sa-alegi-cel-mai-bun-credit-nebancar-pentru-afaceri",
-                destination: "/blog/cum-alegi-credit-nebancar-pentru-afaceri",
+                destination: "/credite/credit-pentru-afaceri-mici",
+                permanent: true,
+            },
+            {
+                source: "/blog/cum-alegi-credit-nebancar-pentru-afaceri",
+                destination: "/credite/credit-pentru-afaceri-mici",
                 permanent: true,
             },
             {
                 source: "/blog/istoria-de-credit-si-impactul-asupra-finantelor-tale",
-                destination: "/blog/istoricul-de-credit-si-sansele-tale",
+                destination: "/credite/credit-pentru-nevoi-personale",
                 permanent: true,
             },
             {
                 source: "/blog/scorul-de-credit-si-de-ce-conteaza",
-                destination: "/blog/istoricul-de-credit-si-sansele-tale",
+                destination: "/credite/credit-pentru-nevoi-personale",
+                permanent: true,
+            },
+            {
+                source: "/blog/istoricul-de-credit-si-sansele-tale",
+                destination: "/credite/credit-pentru-nevoi-personale",
                 permanent: true,
             },
             {
                 source: "/blog/credite-doar-cu-buletinul-mituri-vs-realitate",
-                destination: "/blog/credit-cu-buletinul-ce-cere-ideal-credit",
+                destination: "/credite/credit-pentru-nevoi-personale",
+                permanent: true,
+            },
+            {
+                source: "/blog/credit-cu-buletinul-ce-cere-ideal-credit",
+                destination: "/credite/credit-pentru-nevoi-personale",
                 permanent: true,
             },
             {
                 source: "/blog/ce-este-un-credit-rapid-si-cand-avem-nevoie-de-el",
-                destination: "/blog/credit-rapid-decizie-in-ore",
+                destination: "/despre-noi",
                 permanent: true,
             },
+            { source: "/blog/credit-rapid-decizie-in-ore", destination: "/despre-noi", permanent: true },
             {
                 source: "/blog/dobanda-si-care-sunt-costurile-reale-ale-unui-credit",
-                destination: "/blog/costul-real-al-unui-credit-nebancar",
+                destination: "/calculator-credit",
                 permanent: true,
             },
-            // ── blog: deleted posts → blog listing ─────────────────────────
-            { source: "/blog/istoria-aparitiei-banilor-si-rolul-lor-in-dezvoltarea-economica", destination: "/blog", permanent: true },
-            { source: "/blog/de-la-imprumuturi-in-antichitate-la-finantarea-moderna", destination: "/blog", permanent: true },
-            { source: "/blog/ce-se-intampla-daca-nu-poti-rambursa-un-credit", destination: "/blog", permanent: true },
+            { source: "/blog/costul-real-al-unui-credit-nebancar", destination: "/calculator-credit", permanent: true },
+            { source: "/blog/ocn-vs-banca-credit-afaceri-moldova", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
+            {
+                source: "/blog/documente-necesare-credit-afaceri-moldova",
+                destination: "/credite/credit-pentru-afaceri-mici",
+                permanent: true,
+            },
+            { source: "/blog/ghid-credit-afaceri-ocn-moldova", destination: "/credite/credit-pentru-afaceri-mici", permanent: true },
+            // ── blog: deleted posts (no direct successor) → credite hub ────
+            {
+                source: "/blog/istoria-aparitiei-banilor-si-rolul-lor-in-dezvoltarea-economica",
+                destination: "/credite",
+                permanent: true,
+            },
+            { source: "/blog/de-la-imprumuturi-in-antichitate-la-finantarea-moderna", destination: "/credite", permanent: true },
+            { source: "/blog/ce-se-intampla-daca-nu-poti-rambursa-un-credit", destination: "/credite", permanent: true },
         ];
     },
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;
