@@ -6,7 +6,6 @@ import Note from "@/components/ds/Note";
 export const metadata: Metadata = {
     title: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL",
     description: "Autoritatea de supraveghere a O.C.N. Ideal Credit SRL este Comisia Națională a Pieței Financiare.",
-    robots: { index: false, follow: false },
     alternates: { canonical: "https://idealcredit.md/autoritatea-de-supraveghere" },
     openGraph: {
         type: "website",

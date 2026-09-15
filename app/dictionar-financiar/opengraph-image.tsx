@@ -6,8 +6,8 @@ export const alt = "Dicționar financiar - Ideal Credit";
 
 export default async function Image() {
     return renderOgImage({
-        title: "Dicționar financiar.",
-        accent: "financiar.",
+        title: "Dicționar financiar",
+        accent: "financiar",
         subtitle: "Termenii financiari și de creditare cei mai des întâlniți, explicați pe înțelesul tuturor.",
     });
 }

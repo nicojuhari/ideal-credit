@@ -23,13 +23,13 @@ const companyLinks = [
     { href: "/dictionar-financiar", label: "Dicționar financiar" },
     { href: "/contacte", label: "Contacte" },
     { href: "/cerere-de-credit-online", label: "Cerere online" },
+    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere" },
 ];
 
 const legalLinks = [
     { href: "/terms", label: "Termeni" },
     { href: "/privacy", label: "Confidențialitate" },
     { href: "/cookies", label: "Cookies" },
-    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere", rel: "nofollow" },
 ];
 
 const chisinau = OFFICES.find((o) => o.city.includes("Chișinău"))!;
@@ -124,7 +124,6 @@ export default function Footer() {
                             <Link
                                 key={l.href}
                                 href={l.href}
-                                rel={l.rel}
                                 className="text-dc-text-muted transition-colors duration-[120ms] hover:text-white"
                             >
                                 {l.label}

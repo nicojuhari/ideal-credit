@@ -14,7 +14,7 @@ import { localBusinessChisinauSchema, localBusinessCauseniSchema } from "@/lib/s
 import { yearsSinceFoundation } from "@/lib/utils";
 
 export const metadata: Metadata = {
-    title: "Despre noi | Ideal Credit - Companie de creditare",
+    title: "Despre Ideal Credit | 16 ani de creditare în Moldova",
     description:
         "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/despre-noi" },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/despre-noi",
-        title: "Despre noi | Ideal Credit - Companie de creditare",
+        title: "Despre Ideal Credit | 16 ani de creditare în Moldova",
         description:
             "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
     },

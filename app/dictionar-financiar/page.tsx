@@ -6,7 +6,7 @@ import NumberedRow from "@/components/ds/NumberedRow";
 import { GLOSSARY_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-    title: "Dicționar financiar | Ideal Credit",
+    title: "Dicționar financiar - termeni explicați simplu | Ideal Credit",
     description:
         "Dicționarul financiar Ideal Credit explică pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
     alternates: { canonical: "https://idealcredit.md/dictionar-financiar" },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/dictionar-financiar",
-        title: "Dicționar financiar | Ideal Credit",
+        title: "Dicționar financiar - termeni explicați simplu | Ideal Credit",
         description:
             "Dicționarul financiar Ideal Credit explică pe înțelesul tuturor: credit, dobândă, DAE, garanție, fidejusiune și alți 13 termeni.",
     },
