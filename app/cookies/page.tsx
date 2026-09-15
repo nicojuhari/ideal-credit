@@ -27,7 +27,7 @@ export default function CookiesPage() {
                     OCN Ideal Credit SRL
                 </>
             }
-            updated="Această Politică de Cookies a fost actualizată ultima dată la 26.09.2024."
+            updated="Această Politică de Cookies a fost actualizată ultima dată la 15.09.2026."
         >
             <p>
                 Această Politică de Cookies explică modul în care OCN Ideal Credit SRL (&quot;noi&quot;, &quot;nouă&quot; sau
@@ -62,7 +62,11 @@ export default function CookiesPage() {
             <p>Utilizăm servicii de la terțe părți care pot seta cookies:</p>
             <ol>
                 <li>
-                    <strong>Google Analytics:</strong> Analizăm modul în care vizitatorii folosesc site-ul nostru.
+                    <strong>Ahrefs Analytics:</strong> Analizăm modul în care vizitatorii folosesc site-ul nostru.
+                </li>
+                <li>
+                    <strong>Hotjar:</strong> Înregistrări de sesiune și hărți de click, pentru a înțelege cum este folosit site-ul și a
+                    îmbunătăți experiența utilizatorilor.
                 </li>
                 <li>
                     <strong>Meta (Facebook):</strong> Utilizăm pixeli Meta pentru a măsura eficacitatea reclamelor.
