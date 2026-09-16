@@ -15,6 +15,12 @@ export const blogPosts: BlogPost[] = [
         dek: "Turcia, Egiptul și chiar statele baltice din zona euro au dobânzi mai mari sau comparabile. Piața mică, nu bogăția țării, decide prețul creditului.",
         date: "2026-09-16",
     },
+    {
+        slug: "firme-mici-nu-iau-credit-de-la-banca",
+        title: "Nouă din zece firme mici nu iau credit de la bancă.",
+        dek: "Băncile finanțează doar 6% din investițiile firmelor mici din Moldova. Restul vine din altă parte - iar partea nebancară din spate e mai mare decât pare.",
+        date: "2026-09-17",
+    },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
