@@ -75,13 +75,13 @@ Per owner decision (2026-09-06), the following are **explicitly out of scope** f
 
 | Cluster                                          | Priority                                                                                                                            | Intent        | Content Type                 | Status                                                                                             |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------------------- | -------------------------------------------------------------------------------------------------- |
-| Cum obții credit afaceri la OCN Moldova (ghid)   | DONE                                                                                                                                | Informational | Pillar Guide                 | **published** - `app/blog/(articles)/ghid-credit-afaceri-ocn-moldova`                              |
-| Ce documente trebuie credit afaceri Moldova      | DONE                                                                                                                                | Informational | How-to                       | **published** - `app/blog/(articles)/documente-necesare-credit-afaceri-moldova`                    |
+| Cum obții credit afaceri la OCN Moldova (ghid)   | DONE                                                                                                                                | Informational | Pillar Guide                 | content absorbed into `/credite/credit-pentru-afaceri-mici` (never a standalone blog page)         |
+| Ce documente trebuie credit afaceri Moldova      | DONE                                                                                                                                | Informational | How-to                       | content absorbed into `/credite/credit-pentru-afaceri-mici` (never a standalone blog page)         |
 | Credit afaceri fără gaj Moldova                  | Section + FAQ on `credit-pentru-afaceri-mici` - **not a standalone page** (owner decision, 2026-09-11 round 2/3)                    | Commercial    | On-page section, not content | superseded - see `site-architecture.md`                                                            |
 | Credit pentru extindere afacere                  | DO SECOND                                                                                                                           | Commercial    | Blog/Guide                   | planned                                                                                            |
 | Credit capital circulant Moldova                 | Section + FAQ on `credit-pentru-afaceri-mici` - **not a standalone page** (owner decision, 2026-09-11 round 4: "it's part of this") | Commercial    | On-page section, not content | superseded - folded into `credit-pentru-afaceri-mici#capital-de-lucru`, see `site-architecture.md` |
 | Credit investițional utilaje echipamente Moldova | DO THIRD                                                                                                                            | Commercial    | Blog/Guide                   | planned (page exists: `app/credite/credit-investitional`)                                          |
-| Bancă vs OCN pentru credit afaceri Moldova       | DONE                                                                                                                                | Informational | Comparison                   | **published** - `app/blog/(articles)/ocn-vs-banca-credit-afaceri-moldova`                          |
+| Bancă vs OCN pentru credit afaceri Moldova       | DONE                                                                                                                                | Informational | Comparison                   | content absorbed into `/credite/credit-pentru-afaceri-mici` (never a standalone blog page)         |
 
 ---
 
@@ -91,7 +91,7 @@ Per owner decision (2026-09-06), the following are **explicitly out of scope** f
 
 | Cluster                                              | Priority      | Intent        | Content Type       | Status          |
 | ---------------------------------------------------- | ------------- | ------------- | ------------------ | --------------- |
-| Finanțare pentru antreprenori din Căușeni și regiune | **QUICK WIN** | Commercial    | Local Landing Page | brief generated |
+| Finanțare pentru antreprenori din Căușeni și regiune | **QUICK WIN** | Commercial    | Local Landing Page | backlog (brief deleted in 2026-09-16 blog reset) |
 | Ghid finanțare afaceri mici Moldova 2026             | DO SECOND     | Informational | Pillar Guide       | planned         |
 | Cum să crești afacerea cu credit OCN                 | DO SECOND     | Informational | Blog Article       | planned         |
 | Credit pentru femei antreprenoare Moldova            | DO THIRD      | Commercial    | Blog/Guide         | planned         |
@@ -207,6 +207,10 @@ Unchanged from May 2026 (still current - see archived plan for full detail):
 
 ---
 
+## 90-Day Content Calendar — RETIRED 2026-09-16
+
+**This calendar and the briefs it links to are retired.** The blog was repositioned from decision-intent, keyword-popularity-driven articles to an independent business/finance knowledge hub selected by topic interest, not query volume. See the new direction once written. The calendar below is kept for historical record only; none of the linked `./campaigns/content-plan/*.md` briefs exist anymore.
+
 ## 90-Day Content Calendar (target mix: ~75% business / ~25% personal)
 
 ### Month 1
@@ -256,17 +260,19 @@ Unchanged from May 2026 (still current - see archived plan for full detail):
 
 ---
 
-## Content Briefs Generated
+## Content Briefs Generated — RETIRED 2026-09-16
 
-| Brief                                                | Path                                                                            | Segment  | Priority  | Status                                                                                                                            |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------- | -------- | --------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Ghid complet: credit afaceri OCN Moldova             | `./campaigns/content-plan/ghid-credit-afaceri-ocn-moldova.md`                   | Business | DO FIRST  | **published**                                                                                                                     |
-| Ce documente trebuie pentru credit de afaceri        | `./campaigns/content-plan/documente-necesare-credit-afaceri-moldova.md`         | Business | DO FIRST  | **published**                                                                                                                     |
-| OCN vs bancă: ce să alegi pentru credit afaceri      | `./campaigns/content-plan/ocn-vs-banca-credit-afaceri-moldova.md`               | Business | DO SECOND | **published**                                                                                                                     |
-| Credit afaceri fără gaj Moldova                      | `./campaigns/content-plan/credit-afaceri-fara-gaj-moldova.md`                   | Business | n/a       | **superseded** - merges into a section + FAQ on `credit-pentru-afaceri-mici`, not built as a standalone page/article (2026-09-11) |
-| Finanțare pentru antreprenori din Căușeni și regiune | `./campaigns/content-plan/finantare-causeni-regiune.md`                         | Business | QUICK WIN | planning (new)                                                                                                                    |
-| Ghid: credit pentru proiecte personale planificate   | `./campaigns/content-plan/ghid-credit-personal-proiecte-planificate-moldova.md` | Personal | DO FIRST  | planning (new)                                                                                                                    |
-| Credit auto Moldova: cum alegi finanțarea potrivită  | `./campaigns/content-plan/credit-auto-moldova-cum-alegi.md`                     | Personal | DO FIRST  | planning (new)                                                                                                                    |
+All briefs below were deleted as part of the blog reset (2026-09-16). Three had already had their research absorbed into product-page sections rather than shipping as standalone blog articles; the rest were unbuilt backlog under the old keyword-popularity model. Table kept for historical record only — none of these paths exist anymore.
+
+| Brief                                                | Segment  | Priority  | Status                                                                                                 |
+| ----------------------------------------------------- | -------- | --------- | ------------------------------------------------------------------------------------------------------ |
+| Ghid complet: credit afaceri OCN Moldova             | Business | DO FIRST  | content absorbed into `/credite/credit-pentru-afaceri-mici` blocks 1-7; brief deleted                   |
+| Ce documente trebuie pentru credit de afaceri        | Business | DO FIRST  | content absorbed into `/credite/credit-pentru-afaceri-mici` block 6; brief deleted                      |
+| OCN vs bancă: ce să alegi pentru credit afaceri      | Business | DO SECOND | content absorbed into `/credite/credit-pentru-afaceri-mici` block 5 + `/credite` index; brief deleted   |
+| Credit afaceri fără gaj Moldova                      | Business | n/a       | content absorbed into a section + FAQ on `credit-pentru-afaceri-mici` (2026-09-11); brief deleted       |
+| Finanțare pentru antreprenori din Căușeni și regiune | Business | QUICK WIN | never built; brief deleted                                                                              |
+| Ghid: credit pentru proiecte personale planificate   | Personal | DO FIRST  | never built; brief deleted                                                                              |
+| Credit auto Moldova: cum alegi finanțarea potrivită  | Personal | DO FIRST  | never built; brief deleted                                                                              |
 
 ---
 

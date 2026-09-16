@@ -309,15 +309,11 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
             "donts": ["No hashtag spam", "No 'excited to announce' openers", "No promotional-first content without value"]
         },
         "blog": {
-            "tone_shift": "Teacher mode - same warm directness, but more thorough. Explains concepts fully.",
-            "format_preferences": "Headers, numbered steps, bullets, real examples from Moldovan business contexts. Short paragraphs even at length.",
-            "length": "1200-2500 words",
-            "dos": [
-                "Use the loan calculator as a content anchor",
-                "Answer real questions entrepreneurs have (DAE, grafic de rambursare)",
-                "Link to related content and to the application form"
-            ],
-            "donts": ["No keyword stuffing", "No jargon without explanation", "No generic 'in conclusion' closers"]
+            "tone_shift": "RETIRED 2026-09-16 - superseded by brand/blog-editorial-strategy.md (Dincolo de Cifre). Blog is now a standalone editorial identity, not a site content type: numerate-peer register (6-7/10 sophistication vs site's 2/10), no product mentions in body, no application-form links, no explaining standard financial vocabulary. See the strategy doc for the full register rule and workflow.",
+            "format_preferences": "See brand/blog-editorial-strategy.md",
+            "length": "See brand/blog-editorial-strategy.md",
+            "dos": ["See brand/blog-editorial-strategy.md"],
+            "donts": ["See brand/blog-editorial-strategy.md"]
         },
         "landing_page": {
             "tone_shift": "Most direct and benefit-first - calm urgency, not high pressure. Still warm.",

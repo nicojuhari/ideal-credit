@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
     trailingSlash: false,
+    pageExtensions: ["ts", "tsx", "mdx"],
+    // Rust MDX compiler (Turbopack-compatible) with native GFM support -
+    // remark-gfm can't be used here since its plugin functions aren't
+    // serializable across the Turbopack loader boundary.
+    experimental: {
+        mdxRs: { mdxType: "gfm" },
+    },
 
     async redirects() {
         return [
@@ -23,8 +31,9 @@ const nextConfig: NextConfig = {
             { source: "/refinantare", destination: "/credite/credit-pentru-nevoi-personale#consolidare", permanent: true },
             { source: "/credite/refinantare", destination: "/credite/credit-pentru-nevoi-personale#consolidare", permanent: true },
 
-            // ── blog: retired section, all slugs → closest product/info page ──
-            { source: "/blog", destination: "/credite", permanent: true },
+            // ── blog: old retired-era slugs → closest product/info page ──────
+            // NOTE: bare "/blog" redirect removed 2026-09-16 - /blog is a live
+            // route again (Dincolo de Cifre, brand/blog-editorial-strategy.md).
             {
                 source: "/blog/cum-sa-alegi-cel-mai-bun-credit-nebancar-pentru-afaceri",
                 destination: "/credite/credit-pentru-afaceri",
@@ -91,4 +100,6 @@ const nextConfig: NextConfig = {
     },
 };
 
-export default nextConfig;
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);

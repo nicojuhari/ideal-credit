@@ -204,7 +204,13 @@ Generated for the two-part rebuild. Angles 1-5 above remain valid; these address
 two surfaces the original set had no expression for - a solutions-page architecture
 and an editorial blog.
 
-### Angle 6: Biroul de Analiză (The Analyst's Desk) - selected, blog + brand thread
+### Angle 6: Biroul de Analiză (The Analyst's Desk) - superseded 2026-09-16
+
+**Superseded by "Dincolo de Cifre"** - see `brand/blog-editorial-strategy.md`.
+Same underlying mechanism (credibility through publishing real numbers/analysis),
+broader name and broader audience (business owners, other finance companies,
+government, students - not entrepreneur-only). The reasoning below still holds;
+only the identity/name changed.
 
 - Statement: Ideal Credit is the lender that publishes the numbers behind Moldova's economy - because reading numbers properly is the same skill it applies to your file.
 - Psychology: The blog stops being a traffic tax and becomes visible proof of the mechanism. Closes the Stage-3 believability gap that no testimonial can close.
@@ -232,7 +238,13 @@ and an editorial blog.
 - Headline: "Ce vedem noi, când se uită toți la statistici."
 - Status: held - strong editorial device rather than a standalone angle. Use it as the in-body proprietary data point inside Biroul de Analiză articles. Requires aggregate data that is legally publishable.
 
-### Angle 10: Pentru cei care înțeleg cifrele (The Numerate Peer) - selected as register
+### Angle 10: Pentru cei care înțeleg cifrele (The Numerate Peer) - selected as register, refined 2026-09-16
+
+**Refinement (2026-09-16):** "no explainers" means no explaining standard
+financial vocabulary (DAE, what a credit is) - it does not mean the writing
+stays surface-level. The register still unpacks complex mechanisms, situations,
+and transactions - especially ones whose real story most readers don't see -
+in plain, clear sentences. See `brand/blog-editorial-strategy.md`.
 
 - Statement: Ideal Credit writes for people who read a balance sheet - no explainers, no condescension, no "ce este un credit."
 - Psychology: Flatters the reader by refusing to over-explain and self-selects the target client profile. Repels the distressed segment without ever mentioning it.

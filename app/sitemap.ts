@@ -22,6 +22,9 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/credite/credit-pentru-automobil", priority: 0.85, changeFrequency: "monthly" },
   { path: "/credite/credit-pentru-reparatie", priority: 0.85, changeFrequency: "monthly" },
 
+  { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/blog/dobanzi-mari-nu-doar-moldova", priority: 0.6, changeFrequency: "yearly" },
+
   { path: "/despre-noi", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contacte", priority: 0.7, changeFrequency: "monthly" },
   { path: "/dictionar-financiar", priority: 0.5, changeFrequency: "yearly" },

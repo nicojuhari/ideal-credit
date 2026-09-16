@@ -21,6 +21,7 @@ const companyLinks = [
     { href: "/despre-noi", label: "Despre noi" },
     { href: "/calculator-credit", label: "Calculator" },
     { href: "/dictionar-financiar", label: "Dicționar financiar" },
+    { href: "/blog", label: "Dincolo de Cifre" },
     { href: "/contacte", label: "Contacte" },
     { href: "/cerere-de-credit-online", label: "Cerere online" },
     { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere" },
