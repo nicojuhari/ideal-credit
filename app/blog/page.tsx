@@ -4,10 +4,10 @@ import Container from "@/components/ds/Container";
 import { blogPosts } from "@/lib/blog-posts";
 import { formatDateRo } from "@/lib/utils";
 
-const title = "Dincolo de Cifre - bani, afaceri și economie | Ideal Credit";
+const title = "Dincolo de Cifre - Articole despre finanțe și afaceri";
 const description =
-    "Analize despre business, finanțe și investiții, din Moldova și din lume - cifre reale, nu explicații de manual.";
-
+    "Articole despre finanțe și afaceri: sfaturi practice, explicații clare și povești reale, ca să iei decizii financiare mai bune.";
+const subtitle = "Articole despre finanțe și afaceri";
 const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -42,6 +42,7 @@ export default function BlogPage() {
                         <h1 className="text-[clamp(34px,5vw,56px)] font-semibold leading-[1.05] tracking-[-.035em] text-dc-text">
                             Dincolo de <span className="font-dc-serif italic font-normal text-dc-accent">Cifre</span>
                         </h1>
+                        <p className="mt-2 text-[17px] leading-[1.6] text-dc-text-muted">{subtitle}</p>
                     </div>
                 </Container>
             </div>

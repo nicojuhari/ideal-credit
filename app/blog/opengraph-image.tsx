@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Dincolo de Cifre.",
         accent: "Cifre.",
-        subtitle: "Analize despre business, finanțe și investiții, din Moldova și din lume.",
+        subtitle: "Articole despre finanțe și afaceri",
     });
 }
