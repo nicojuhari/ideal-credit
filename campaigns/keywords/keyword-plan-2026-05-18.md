@@ -6,7 +6,7 @@
 
 ## Business Context
 
-- Offer: Non-bank business credits (70–80% of portfolio) and personal credits (20–30%), 10,000–300,000 MDL, processed at offices in Căușeni and Chișinău
+- Offer: Non-bank business credits (70-80% of portfolio) and personal credits (20-30%), 10,000-300,000 MDL, processed at offices in Căușeni and Chișinău
 - Audience: Moldovan entrepreneurs and small business owners (primary); self-employed individuals and personal credit seekers (secondary)
 - Goal: Organic leads - entrepreneurs ready to apply or evaluate their options
 - Positioning: "The Local Growth Partner" - fast credit + local human judgment + entrepreneur identity framing
@@ -204,51 +204,51 @@ Data quality: LIVE - all keyword data validated against real 2026 SERPs
 
 ### Month 1 - Foundation: Own the "how to get a business credit" territory
 
-- **Week 1–2:** Ghid complet: Cum obții credit pentru afacere la un OCN în Moldova
+- **Week 1-2:** Ghid complet: Cum obții credit pentru afacere la un OCN în Moldova
   → Target: "cum obtin credit afacere Moldova," "credit afaceri OCN Moldova," "credit pentru afaceri Moldova"
-  → Type: Pillar guide (2,500–3,500 words) - blog
+  → Type: Pillar guide (2,500-3,500 words) - blog
   → Brief: `./campaigns/content-plan/ghid-credit-afaceri-ocn-moldova.md`
 
 - **Week 3:** Ce documente trebuie pentru un credit de afaceri în Moldova
   → Target: "ce documente credit afaceri Moldova," "dosar credit afaceri"
-  → Type: How-to article (1,500–2,000 words) - blog
+  → Type: How-to article (1,500-2,000 words) - blog
   → Brief: `./campaigns/content-plan/documente-necesare-credit-afaceri-moldova.md`
 
 - **Week 4:** Credit pentru afaceri în Căușeni și raionul Căușeni (local landing page or blog)
   → Target: "credit afaceri Căușeni," "finantare afaceri Căușeni Moldova"
-  → Type: Local landing page / blog (1,000–1,500 words)
+  → Type: Local landing page / blog (1,000-1,500 words)
   → Brief: to be generated in Tier 2
 
 ### Month 2 - Authority: Financial education + comparison content
 
-- **Week 5–6:** OCN vs bancă: ce să alegi când vrei credit pentru afacere
+- **Week 5-6:** OCN vs bancă: ce să alegi când vrei credit pentru afacere
   → Target: "OCN vs banca credit afaceri," "avantaje credit nebancar Moldova"
-  → Type: Comparison article (2,000–2,500 words) - blog
+  → Type: Comparison article (2,000-2,500 words) - blog
   → Brief: `./campaigns/content-plan/ocn-vs-banca-credit-afaceri-moldova.md`
 
 - **Week 7:** Ce este DAE și cum îl citești înainte să semnezi un contract de credit
   → Target: "DAE credit afaceri Moldova," "dobanda anuala efectiva explicatie"
-  → Type: Educational blog (1,500–2,000 words)
+  → Type: Educational blog (1,500-2,000 words)
   → Brief: to be generated in Tier 2
 
 - **Week 8:** Credit afaceri fără gaj: cum funcționează și cine se califică
   → Target: "credit afaceri fara gaj Moldova," "credit fara garantie imobiliara Moldova"
-  → Type: Blog article / mini landing page (1,500–2,000 words)
+  → Type: Blog article / mini landing page (1,500-2,000 words)
   → Brief: to be generated in Tier 2
 
 ### Month 3 - Depth: Sector content + calculator-anchored pieces
 
-- **Week 9–10:** Credit pentru afaceri în comerț: cum finanțezi stocul și extinderea
+- **Week 9-10:** Credit pentru afaceri în comerț: cum finanțezi stocul și extinderea
   → Target: "credit comert Moldova," "finantare stoc marfa Moldova"
-  → Type: Blog sector guide (1,500–2,000 words)
+  → Type: Blog sector guide (1,500-2,000 words)
 
 - **Week 11:** Cum calculezi rata lunară la un credit de afaceri (cu calculator)
   → Target: "calculator credit afaceri Moldova," "rata lunara credit afaceri"
-  → Type: Blog + calculator embed (1,000–1,500 words)
+  → Type: Blog + calculator embed (1,000-1,500 words)
 
 - **Week 12:** Credit pentru agricultori și producători: ce oferă OCN-urile vs bănci
   → Target: "credit agricultura Moldova OCN," "finantare fermieri mici Moldova"
-  → Type: Blog sector guide (1,500–2,000 words)
+  → Type: Blog sector guide (1,500-2,000 words)
 
 ---
 

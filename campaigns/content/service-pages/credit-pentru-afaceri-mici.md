@@ -35,7 +35,7 @@ Secondary (as sections, not pages): `credit afaceri fără gaj`, `credit pentru 
 > # Credit pentru afaceri mici
 >
 > Finanțăm SRL-uri, ÎI și gospodării țărănești din toată Moldova.
-> **10.000 – 300.000 MDL**, decizie în 1–2 zile lucrătoare, fără plan de afaceri
+> **10.000 - 300.000 MDL**, decizie în 1-2 zile lucrătoare, fără plan de afaceri
 > și fără gaj imobiliar la sumele mici.
 >
 > `[ Calculează rata ]` `[ Discutăm ]`
@@ -69,7 +69,7 @@ _(situations, not product names - this is the "soluții, nu produse" angle in pr
 **Da, dacă:**
 
 - Firma e înregistrată în Moldova (SRL, ÎI, GȚ)
-- Ai cel puțin 3–6 luni de activitate economică demonstrabilă
+- Ai cel puțin 3-6 luni de activitate economică demonstrabilă
 - Extrasele bancare arată rulaj activ
 - Ai nevoie de o decizie în zile, nu în săptămâni
 
@@ -160,24 +160,24 @@ Creditor A pare mai ieftin. Costă cu ~7.000 MDL mai mult.
 
 | Criteriu            | Bancă                                 | OCN                                           |
 | ------------------- | ------------------------------------- | --------------------------------------------- |
-| Timp de aprobare    | 5–15 zile lucrătoare                  | 1–3 zile lucrătoare                           |
+| Timp de aprobare    | 5-15 zile lucrătoare                  | 1-3 zile lucrătoare                           |
 | Dosar necesar       | Extins - notarial, rapoarte, garanții | Simplificat - extrase, declarații, activitate |
 | Gaj imobiliar       | Adesea obligatoriu                    | Nu întotdeauna necesar                        |
-| **DAE (cost real)** | **Mai mic - de regulă 8–20%**         | **Mai mare - de regulă 25–60%**               |
+| **DAE (cost real)** | **Mai mic - de regulă 8-20%**         | **Mai mare - de regulă 25-60%**               |
 | Evaluare            | Scoring automat, criterii fixe        | Evaluare umană, caz cu caz                    |
-| Vechime afacere     | De obicei minim 1–2 ani               | Mai flexibil                                  |
-| Sume                | De la câteva mii la milioane MDL      | De regulă 10.000–300.000 MDL                  |
+| Vechime afacere     | De obicei minim 1-2 ani               | Mai flexibil                                  |
+| Sume                | De la câteva mii la milioane MDL      | De regulă 10.000-300.000 MDL                  |
 
 **Mergi la bancă dacă** ai timp, ai 2+ ani de rapoarte clare, ai gaj imobiliar pe care
 ești dispus să îl angajezi, sau suma depășește 500.000 MDL. Dacă te califici la o linie
 preferențială - „373", ODA, BERD - profită: e mai ieftin decât orice credit comercial.
 
-**Mergi la un OCN dacă** ai nevoie de bani în 1–3 zile, nu ai sau nu vrei să angajezi
+**Mergi la un OCN dacă** ai nevoie de bani în 1-3 zile, nu ai sau nu vrei să angajezi
 gaj imobiliar, afacerea e mai nouă, sau suma e între 10.000 și 300.000 MDL.
 
 ### De ce e dobânda mai mare la un OCN - răspunsul sincer
 
-Băncile atrag bani din depozite la 3–7% pe an. Un OCN nu are acces la depozite: se
+Băncile atrag bani din depozite la 3-7% pe an. Un OCN nu are acces la depozite: se
 finanțează din capital propriu, linii de credit sau investitori - la costuri mai mari.
 La asta se adaugă un profil de risc mai flexibil și un proces mai rapid. Ambele costă.
 
@@ -211,8 +211,8 @@ case for going to a bank instead. Do not soften it._
 
 **Financiare**
 
-- Extrase de cont bancar pe ultimele 3–6 luni
-- Declarații fiscale pe ultimele 6–12 luni
+- Extrase de cont bancar pe ultimele 3-6 luni
+- Declarații fiscale pe ultimele 6-12 luni
 
 **Dovadă de activitate**
 
@@ -233,7 +233,7 @@ WhatsApp sau Viber. Originalele se verifică o singură dată, la semnare.
 
 - **Ipotecă imobiliară** - pentru sume mici și activitate demonstrabilă, un fidejusor e suficient
 - **Dosar notarial** - nu cerem acte legalizate pentru dosarul standard
-- **Plan de afaceri de 40 de pagini** - fără proiecții pe 3–5 ani
+- **Plan de afaceri de 40 de pagini** - fără proiecții pe 3-5 ani
 - **Audit financiar extern** - raportul contabil intern sau declarațiile fiscale ajung
 - **Ani de relație bancară** - evaluăm afacerea ta direct
 - **Evaluare imobiliară costisitoare**
@@ -252,7 +252,7 @@ states it. Keep it on every service page._
 **Component:** `CreditFAQ` (+ FAQPage schema)
 
 1. **Pot obține credit pentru SRL fără gaj?** - La primul credit, fidejusorul (de obicei administratorul) e obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau fluxuri nestabile. Pentru sume de până la câteva zeci de mii de MDL, fidejusorul e de regulă suficient.
-2. **Ce se întâmplă dacă firma are sub un an de activitate?** - Analizăm individual. Contează mai mult extrasele bancare și rulajul lunar decât vechimea exactă. Am finanțat firme cu 4–6 luni de activitate și flux demonstrabil.
+2. **Ce se întâmplă dacă firma are sub un an de activitate?** - Analizăm individual. Contează mai mult extrasele bancare și rulajul lunar decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate și flux demonstrabil.
 3. **Poate primi credit o firmă cu pierderi pe ultimul an?** - Analizăm situația curentă, nu doar bilanțul anual. Dacă activitatea e stabilă acum și extrasele arată rulaj activ, discutăm.
 4. **Pot lua credit pentru extinderea afacerii - punct nou sau spațiu mai mare?** - Da. Ai nevoie suplimentar de contractul de locațiune pentru noul spațiu (sau pre-contractul) ori actul de proprietate.
 5. **Contează istoricul meu personal de credit pentru un credit de firmă?** - Contează, dar nu decide singur. Ne uităm în primul rând la extrasele firmei și activitatea comercială curentă.
@@ -282,5 +282,5 @@ separately.
 - No `/faq` page (owner decision, 2026-09-11 round 2). Block 7 footer should link to `/#faq` (home page general FAQ) instead of a dedicated FAQ page - swap the "mai multe întrebări" link target when this is built.
 - `/credite/refinantare` is retired (owner decision, 2026-09-11 round 3) - the "Consolidare credite" row in Block 1 no longer links out; it's described as an option surfaced in-consultation, not a separate product/page.
 - Section anchors needed for the redirect table: `#de-ce-ocn`, `#documente`
-- Verify the DAE range "25–60%" still matches current Ideal Credit pricing before publishing
+- Verify the DAE range "25-60%" still matches current Ideal Credit pricing before publishing
 - The 18% / 24% / 30% profile table from `istoricul-de-credit` was **not** carried over - it was written for personal credit and would need business-specific figures. Decide whether to rebuild it with real business data or drop it.

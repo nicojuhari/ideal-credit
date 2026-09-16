@@ -20,7 +20,7 @@ Comparison Article - balanced in structure, persuasive in angle. Uses the "trust
 
 ## Target Word Count
 
-2,000–2,500 words
+2,000-2,500 words
 
 ## SERP Snapshot
 
@@ -46,7 +46,7 @@ Content gap to exploit: No well-structured, honest, high-quality comparison exis
 
 **H1:** OCN sau bancă: ce să alegi când ai nevoie de credit pentru afacere în Moldova
 
-**Intro (150–200 words):**
+**Intro (150-200 words):**
 Ai hotărât că ai nevoie de finanțare. Acum vine întrebarea mai grea: te duci la bancă sau la un OCN? Ambele opțiuni există, ambele au condiții diferite, și decizia corectă depinde de situația afacerii tale. Acest articol îți explică diferențele - fără jargon și fără să te vândă unui singur produs.
 
 **H2: Ce este o organizație de creditare nebancară (OCN)?**
@@ -62,27 +62,27 @@ Table format - very scannable:
 
 | Criteriu               | Bancă                                       | OCN                              |
 | ---------------------- | ------------------------------------------- | -------------------------------- |
-| Viteza de aprobare     | 5–15 zile lucrătoare                        | 1–3 zile lucrătoare              |
+| Viteza de aprobare     | 5-15 zile lucrătoare                        | 1-3 zile lucrătoare              |
 | Documente necesare     | Dosar extins (notarial, garanții, rapoarte) | Dosar simplificat                |
 | Gaj imobiliar          | De obicei necesar                           | Nu e necesar (pentru sumele OCN) |
-| Dobânda anuală         | Mai mică (5–15% DAE)                        | Mai mare (20–50%+ DAE)           |
+| Dobânda anuală         | Mai mică (5-15% DAE)                        | Mai mare (20-50%+ DAE)           |
 | Flexibilitate evaluare | Algoritm + criterii fixe                    | Evaluare umană, caz cu caz       |
-| Istoricul afacerii     | Minim 1–2 ani de regulă                     | Start-up-uri acceptate mai des   |
+| Istoricul afacerii     | Minim 1-2 ani de regulă                     | Start-up-uri acceptate mai des   |
 | Relație personală      | Rar                                         | Da - cu consultantul de la birou |
 
 **H2: Când este mai bine să mergi la o bancă?**
 Honest section - builds credibility by not being one-sided:
 
 - Ai afacere stabilă cu 2+ ani de activitate și rapoarte financiare clare
-- Ai timp (procesul durează 2–4 săptămâni)
+- Ai timp (procesul durează 2-4 săptămâni)
 - Ai gaj imobiliar disponibil
-- Suma e mare (peste 500,000–1,000,000 MDL) și dobânda contează decisiv
+- Suma e mare (peste 500,000-1,000,000 MDL) și dobânda contează decisiv
 - Ai acces la programul "373" sau alte linii preferențiale
 
 **H2: Când este mai bine să mergi la un OCN?**
 This is the persuasion core - but earned through the balanced framing above:
 
-- Ai nevoie de bani rapid (în 1–3 zile)
+- Ai nevoie de bani rapid (în 1-3 zile)
 - Nu ai gaj imobiliar sau nu vrei să îl angajezi
 - Afacerea ta e mai nouă sau nu are 2 ani de rapoarte perfecte
 - Suma e între 10,000 și 300,000 MDL
@@ -107,11 +107,11 @@ Brief educational section, link to dedicated DAE article:
 **H2: Ce oferă Ideal Credit concret**
 Not a pitch - a factual, transparent description:
 
-- Sume: 10,000–300,000 MDL
+- Sume: 10,000-300,000 MDL
 - Termen: până la 60 de luni
 - Dobândă fixă, fără comisioane ascunse
 - Birouri în Căușeni și Chișinău
-- Decizie în 1–2 zile lucrătoare
+- Decizie în 1-2 zile lucrătoare
 - Cerere online: idealcredit.md
 
 **H2: Cum decizi?**

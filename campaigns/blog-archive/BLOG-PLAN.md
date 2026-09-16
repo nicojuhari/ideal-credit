@@ -55,7 +55,7 @@ mdx-components.tsx                      ← custom MDX components (CTA box, Info
 | 1   | `cum-alegi-credit-nebancar-pentru-afaceri` | Cum alegi un credit nebancar pentru afacere - ghid practic                 | cum-sa-alegi-cel-mai-bun-credit-nebancar-pentru-afaceri | HIGH (5m26s dwell) |
 | 2   | `istoricul-de-credit-si-sansele-tale`      | Istoricul de credit: cum îți afectează șansele la un credit nebancar       | istoria-de-credit-si-impactul-asupra-finantelor-tale    | MEDIUM (4m23s)     |
 | 3   | `credit-cu-buletinul-ce-cere-ideal-credit` | Credit cu buletinul - ce se cere și ce nu, la Ideal Credit                 | credite-doar-cu-buletinul-mituri-vs-realitate           | MEDIUM             |
-| 4   | `credit-rapid-decizie-in-ore`              | Decizie în 1–3 ore: cum funcționează procesul de creditare la Ideal Credit | ce-este-un-credit-rapid-si-cand-avem-nevoie-de-el       | MEDIUM             |
+| 4   | `credit-rapid-decizie-in-ore`              | Decizie în 1-3 ore: cum funcționează procesul de creditare la Ideal Credit | ce-este-un-credit-rapid-si-cand-avem-nevoie-de-el       | MEDIUM             |
 | 5   | `costul-real-al-unui-credit-nebancar`      | Costul real al unui credit nebancar - dobândă, DAE, ce plătești lunar      | dobanda-si-care-sunt-costurile-reale-ale-unui-credit    | MEDIUM             |
 
 ---

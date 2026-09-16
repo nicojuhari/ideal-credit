@@ -13,7 +13,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { agriculturalLoanSchema } from "@/lib/schema";
+import { agriculturalLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+    { name: "Credit pentru agricultură", url: "https://idealcredit.md/credite/credit-pentru-agricultura" },
+]);
 
 export const metadata: Metadata = {
     title: "Credit pentru Agricultură în Moldova | Ideal Credit",
@@ -83,6 +89,7 @@ export default function CreditAgriculturaPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(agriculturalLoanSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <ProductHero
                 category="Persoane juridice"
@@ -99,8 +106,8 @@ export default function CreditAgriculturaPage() {
             <SpecStrip
                 specs={[
                     { value: "50 000", label: "MDL sumă minimă" },
-                    { value: "12–60", label: "luni termen" },
-                    { value: "1–2 zile", label: "până la decizie", proof: true },
+                    { value: "12-60", label: "luni termen" },
+                    { value: "1-2 zile", label: "până la decizie", proof: true },
                     { value: "4 %", label: "dobândă fixă / lună" },
                 ]}
             />

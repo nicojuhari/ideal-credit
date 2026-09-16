@@ -13,7 +13,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { personalLoanSchema } from "@/lib/schema";
+import { personalLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+    { name: "Credit pentru nevoi personale", url: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
+]);
 
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
@@ -113,6 +119,7 @@ export default function CreditNevoiPersonalePage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <ProductHero
                 category="Persoane fizice"
@@ -129,8 +136,8 @@ export default function CreditNevoiPersonalePage() {
             <SpecStrip
                 specs={[
                     { value: "10 000", label: "MDL sumă minimă" },
-                    { value: "12–48", label: "luni termen" },
-                    { value: "2–3 ore", label: "până la decizie", proof: true },
+                    { value: "12-48", label: "luni termen" },
+                    { value: "2-3 ore", label: "până la decizie", proof: true },
                     { value: "4 %", label: "dobândă fixă / lună" },
                 ]}
             />

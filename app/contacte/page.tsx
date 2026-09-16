@@ -105,7 +105,7 @@ export default function ContactePage() {
                 <Container>
                     <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
                         <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                        Contacte · Luni–Vineri <span className="font-dc-mono text-dc-proof">08:30–16:30</span>
+                        Contacte · Luni-Vineri <span className="font-dc-mono text-dc-proof">08:30-16:30</span>
                     </p>
                     <h1 className="mt-7 max-w-[1000px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
                         Vorbim <Accent>direct.</Accent>
@@ -286,7 +286,7 @@ export default function ContactePage() {
                         <span className="font-dc-mono text-xs text-dc-text-muted">01</span>
                         <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">Program de lucru</h3>
                         <p className="mt-2.5 text-[17px] leading-[1.6] text-dc-text-muted">
-                            Luni–Vineri, 08:30–16:30. Sâmbătă și duminică - închis. Cererile online se depun oricând.
+                            Luni-Vineri, 08:30-16:30. Sâmbătă și duminică - închis. Cererile online se depun oricând.
                         </p>
                     </div>
                     <div className="dc-cell p-8">

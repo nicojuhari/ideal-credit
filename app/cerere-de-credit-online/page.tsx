@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useForm, Controller, type FieldPath } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm, Controller, type FieldPath, type Resolver } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -10,7 +9,8 @@ import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegen
 import Container from "@/components/ds/Container";
 import Figure from "@/components/ds/Figure";
 import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
-import { cerereSchema, type CerereFormValues, STEPS, TERMEN_OPTIONS, SCOP_OPTIONS, MOLDOVA_MOBILE_REGEX } from "./schema";
+import type { CerereFormValues } from "./schema";
+import { STEPS, TERMEN_OPTIONS, SCOP_OPTIONS, MOLDOVA_MOBILE_REGEX } from "./constants";
 import { cn } from "@/lib/utils";
 
 const defaultValues: CerereFormValues = {
@@ -140,8 +140,20 @@ export default function CerereOnlinePage() {
     /** Errors shown only after Continuă/Trimite on that specific step */
     const [attemptedSteps, setAttemptedSteps] = useState<Record<number, boolean>>({});
 
+    /** Validation schema is fetched lazily so the first paintable step doesn't wait on zod. */
+    const [resolver, setResolver] = useState<Resolver<CerereFormValues> | undefined>(undefined);
+    useEffect(() => {
+        let cancelled = false;
+        Promise.all([import("./schema"), import("@hookform/resolvers/zod")]).then(([{ cerereSchema }, { zodResolver }]) => {
+            if (!cancelled) setResolver(() => zodResolver(cerereSchema));
+        });
+        return () => {
+            cancelled = true;
+        };
+    }, []);
+
     const form = useForm<CerereFormValues>({
-        resolver: zodResolver(cerereSchema),
+        resolver,
         defaultValues,
         mode: "onSubmit",
         reValidateMode: "onChange",
@@ -421,7 +433,7 @@ export default function CerereOnlinePage() {
                                                     {...register("suma")}
                                                 />
                                                 <FieldDescription className="text-xs text-dc-text-muted">
-                                                    10 000 – 300 000 lei
+                                                    10 000 - 300 000 lei
                                                 </FieldDescription>
                                                 {errMsg("suma") && <FieldError className={errorClass}>{errMsg("suma")}</FieldError>}
                                             </Field>

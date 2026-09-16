@@ -14,7 +14,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { investitionalSchema } from "@/lib/schema";
+import { investitionalSchema, buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+    { name: "Credit investițional", url: "https://idealcredit.md/credite/credit-investitional" },
+]);
 
 export const metadata: Metadata = {
     title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
@@ -78,6 +84,7 @@ export default function CreditInvestitionalPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(investitionalSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <ProductHero
                 category="Persoane juridice"
@@ -94,8 +101,8 @@ export default function CreditInvestitionalPage() {
             <SpecStrip
                 specs={[
                     { value: "50 000", label: "MDL sumă minimă" },
-                    { value: "12–60", label: "luni termen" },
-                    { value: "1–2 zile", label: "până la decizie", proof: true },
+                    { value: "12-60", label: "luni termen" },
+                    { value: "1-2 zile", label: "până la decizie", proof: true },
                     { value: "4 %", label: "dobândă fixă / lună" },
                 ]}
             />

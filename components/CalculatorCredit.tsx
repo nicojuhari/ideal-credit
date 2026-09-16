@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useMemo, useRef, useCallback, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { createGrafic, calcDAE, type GraficRow } from "ideal-credit";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
-import PreContractContent from "./PreContractContent";
 import MainCTA from "./ui/MainCTA";
+
+const PreContractDialog = dynamic(() => import("@/components/home/PreContractDialog"), { ssr: false });
 
 const SUM_MIN = 10000;
 const SUM_MAX = 300000;
@@ -181,26 +182,27 @@ export default function CalculatorCredit() {
                 </div>
             </div>
             <MainCTA className="mt-6" />
-            <Dialog open={showModal} onOpenChange={setShowModal}>
-                <DialogTrigger
-                    onClick={() => firePixelOnce()}
-                    className="text-blue-400 mx-auto hover:text-blue-200 underline text-xs underline-offset-2 transition-colors mt-4 md:mt-6 mb-2 text-center block"
-                >
-                    Graficul de achitare și Informația preContractuală
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
-                    <DialogHeader>
-                        <DialogTitle>Informația preContractuală</DialogTitle>
-                    </DialogHeader>
-                    <PreContractContent
-                        creditSuma={creditSuma}
-                        creditTermen={creditTermen}
-                        dae={dae}
-                        graficCalculat={graficCalculat}
-                        dobindaTotal={dobindaTotal}
-                    />
-                </DialogContent>
-            </Dialog>
+            <button
+                type="button"
+                onClick={() => {
+                    firePixelOnce();
+                    setShowModal(true);
+                }}
+                className="text-blue-400 mx-auto hover:text-blue-200 underline text-xs underline-offset-2 transition-colors mt-4 md:mt-6 mb-2 text-center block"
+            >
+                Graficul de achitare și Informația preContractuală
+            </button>
+            {showModal && (
+                <PreContractDialog
+                    open={showModal}
+                    onOpenChange={setShowModal}
+                    sum={creditSuma}
+                    term={creditTermen}
+                    dae={dae}
+                    grafic={graficCalculat}
+                    totalCost={dobindaTotal}
+                />
+            )}
         </div>
     );
 }

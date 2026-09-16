@@ -1,4 +1,26 @@
-import { FAQ_ITEMS } from "@/lib/constants";
+import { createGrafic, calcDAE } from "ideal-credit";
+import { FAQ_ITEMS, CALCULATOR_MONTHLY_RATE } from "@/lib/constants";
+
+const ORGANIZATION_ID = "https://idealcredit.md/#organization";
+
+/** DAE for a representative sum/term, computed the same way as the on-site calculator. */
+function computeDae(sum: number, termMonths: number, monthlyRate: number = CALCULATOR_MONTHLY_RATE) {
+    const grafic = createGrafic({ sum, period: termMonths, interest: monthlyRate });
+    return grafic.length ? Number(calcDAE(grafic, sum)) : 0;
+}
+
+export function buildBreadcrumbSchema(items: { name: string; url: string }[]) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((item, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: item.name,
+            item: item.url,
+        })),
+    };
+}
 
 export const faqSchema = {
     "@context": "https://schema.org",
@@ -149,6 +171,7 @@ export const personalLoanSchema = {
     name: "Credit pentru nevoi personale",
     description:
         "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
+    provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
         value: 10000,
@@ -164,7 +187,7 @@ export const personalLoanSchema = {
     },
     annualPercentageRate: {
         "@type": "QuantitativeValue",
-        value: 60.83,
+        value: computeDae(10000, 6),
         unitText: "%",
         description: "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului.",
     },
@@ -182,6 +205,7 @@ export const businessCreditSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru afaceri",
     description: "Credit pentru afaceri - bani rapizi pentru dezvoltarea afacerilor.",
+    provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
         value: 10000,
@@ -194,6 +218,12 @@ export const businessCreditSchema = {
         value: 4,
         unitText: "%",
         description: "Dobândă lunară fixă",
+    },
+    annualPercentageRate: {
+        "@type": "QuantitativeValue",
+        value: computeDae(10000, 12),
+        unitText: "%",
+        description: "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului.",
     },
     loanTerm: {
         "@type": "QuantitativeValue",
@@ -209,8 +239,10 @@ export const agriculturalLoanSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru agricultură",
     description: "Credit agricol pentru fermieri, SRL și ÎI din Moldova - tehnică agricolă, semințe, irigații și capital sezonier.",
+    provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
+        value: 50000,
         currency: "MDL",
         minValue: 50000,
         maxValue: 500000,
@@ -221,8 +253,15 @@ export const agriculturalLoanSchema = {
         unitText: "%",
         description: "Dobândă lunară fixă",
     },
+    annualPercentageRate: {
+        "@type": "QuantitativeValue",
+        value: computeDae(50000, 12),
+        unitText: "%",
+        description: "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului.",
+    },
     loanTerm: {
         "@type": "QuantitativeValue",
+        value: 12,
         unitText: "Months",
         minValue: 12,
         maxValue: 60,
@@ -234,8 +273,10 @@ export const autoLoanSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru automobil",
     description: "Credit pentru cumpărarea sau repararea unui automobil în Moldova, fără restricții pe tipul mașinii.",
+    provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
+        value: 10000,
         currency: "MDL",
         minValue: 10000,
         maxValue: 300000,
@@ -246,8 +287,15 @@ export const autoLoanSchema = {
         unitText: "%",
         description: "Dobândă lunară fixă",
     },
+    annualPercentageRate: {
+        "@type": "QuantitativeValue",
+        value: computeDae(10000, 12),
+        unitText: "%",
+        description: "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului.",
+    },
     loanTerm: {
         "@type": "QuantitativeValue",
+        value: 12,
         unitText: "Months",
         minValue: 12,
         maxValue: 48,
@@ -259,8 +307,10 @@ export const repairLoanSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru reparație",
     description: "Credit pentru reparația sau renovarea casei ori apartamentului, cu dobândă fixă și sume flexibile.",
+    provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
+        value: 10000,
         currency: "MDL",
         minValue: 10000,
         maxValue: 300000,
@@ -271,8 +321,15 @@ export const repairLoanSchema = {
         unitText: "%",
         description: "Dobândă lunară fixă",
     },
+    annualPercentageRate: {
+        "@type": "QuantitativeValue",
+        value: computeDae(10000, 12),
+        unitText: "%",
+        description: "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului.",
+    },
     loanTerm: {
         "@type": "QuantitativeValue",
+        value: 12,
         unitText: "Months",
         minValue: 12,
         maxValue: 48,
@@ -284,14 +341,29 @@ export const investitionalSchema = {
     "@type": "LoanOrCredit",
     name: "Credit investițional pentru afaceri",
     description: "Credit nebancar pentru investiții în afaceri din Moldova - echipamente, extindere, modernizare.",
+    provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
+        value: 10000,
         currency: "MDL",
         minValue: 10000,
         maxValue: 400000,
     },
+    interestRate: {
+        "@type": "QuantitativeValue",
+        value: 4,
+        unitText: "%",
+        description: "Dobândă lunară fixă",
+    },
+    annualPercentageRate: {
+        "@type": "QuantitativeValue",
+        value: computeDae(10000, 12),
+        unitText: "%",
+        description: "Dobânda anuală efectivă (DAE), incluzând toate costurile aferente creditului.",
+    },
     loanTerm: {
         "@type": "QuantitativeValue",
+        value: 12,
         unitText: "Months",
         minValue: 12,
         maxValue: 60,

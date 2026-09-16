@@ -7,6 +7,12 @@ import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
+import { buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+]);
 
 export const metadata: Metadata = {
     title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
@@ -46,6 +52,7 @@ const hubFaqItems: FaqItem[] = [
 export default function CreditePage() {
     return (
         <div className="dc bg-dc-bg">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="dc-section dc-section--hero">
                 <Container className="flex flex-col items-center gap-8 text-center">
                     <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">

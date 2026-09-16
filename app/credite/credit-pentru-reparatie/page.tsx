@@ -12,7 +12,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { repairLoanSchema } from "@/lib/schema";
+import { repairLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+    { name: "Credit pentru reparație", url: "https://idealcredit.md/credite/credit-pentru-reparatie" },
+]);
 
 export const metadata: Metadata = {
     title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
@@ -61,6 +67,7 @@ export default function CreditReparatiePage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(repairLoanSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <ProductHero
                 category="Persoane fizice"
@@ -77,8 +84,8 @@ export default function CreditReparatiePage() {
             <SpecStrip
                 specs={[
                     { value: "10 000", label: "MDL sumă minimă" },
-                    { value: "12–48", label: "luni termen" },
-                    { value: "2–3 ore", label: "până la decizie", proof: true },
+                    { value: "12-48", label: "luni termen" },
+                    { value: "2-3 ore", label: "până la decizie", proof: true },
                     { value: "4 %", label: "dobândă fixă / lună" },
                 ]}
             />
@@ -95,7 +102,14 @@ export default function CreditReparatiePage() {
 
             <Calculator />
 
-            <Section marker="Detalii" title={<>Credit pentru reparație casă sau <Accent>apartament</Accent></>}>
+            <Section
+                marker="Detalii"
+                title={
+                    <>
+                        Credit pentru reparație casă sau <Accent>apartament</Accent>
+                    </>
+                }
+            >
                 <ProductDescription
                     items={[
                         {

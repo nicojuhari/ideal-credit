@@ -24,8 +24,8 @@ const solutions: Solution[] = [
         intro: "Capital de lucru, investiții, refinanțare - fără plan de afaceri obligatoriu.",
         specs: [
             { label: "Sumă de la", value: "50 000 MDL" },
-            { label: "Termen", value: "12–60 luni" },
-            { label: "Decizie", value: "1–2 zile", proof: true },
+            { label: "Termen", value: "12-60 luni" },
+            { label: "Decizie", value: "1-2 zile", proof: true },
         ],
         checklist: ["SRL, ÎI, GȚ - toate formele juridice acceptate", "Fără plan de afaceri obligatoriu", "Extrase bancare minim 3 luni"],
         href: "/credite/credit-pentru-afaceri",
@@ -37,8 +37,8 @@ const solutions: Solution[] = [
         intro: "Pentru orice nevoie urgentă sau planificată - cu condiții clare de la prima discuție.",
         specs: [
             { label: "Sumă de la", value: "10 000 MDL" },
-            { label: "Termen", value: "12–48 luni" },
-            { label: "Decizie", value: "2–3 ore", proof: true },
+            { label: "Termen", value: "12-48 luni" },
+            { label: "Decizie", value: "2-3 ore", proof: true },
         ],
         checklist: ["Vârsta de la 23 de ani, venit stabil", "Buletin de identitate valabil", "Fără comisioane ascunse sau penalități"],
         href: "/credite/credit-pentru-nevoi-personale",

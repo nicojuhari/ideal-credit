@@ -106,9 +106,9 @@ Points are never shown to the user.
 
 | #   | Question                               | Options + Points                                            |
 | --- | -------------------------------------- | ----------------------------------------------------------- |
-| B1  | Care este venitul tău lunar net?       | < 5.000 MDL: 0 / 5–15k: 5 / 15–40k: 10 / > 40k: 15          |
-| B2  | Câți bani ai nevoie?                   | 10–50k: 10 / 50–150k: 8 / 150–300k: 5                       |
-| B3  | Alte rate lunare la credite existente? | Nu am: 10 / Sub 20% din venit: 8 / 20–40%: 4 / Peste 40%: 0 |
+| B1  | Care este venitul tău lunar net?       | < 5.000 MDL: 0 / 5-15k: 5 / 15-40k: 10 / > 40k: 15          |
+| B2  | Câți bani ai nevoie?                   | 10-50k: 10 / 50-150k: 8 / 150-300k: 5                       |
+| B3  | Alte rate lunare la credite existente? | Nu am: 10 / Sub 20% din venit: 8 / 20-40%: 4 / Peste 40%: 0 |
 
 **Silent DTI check:** After B1 + B2, compute implied monthly payment at 4%/mo over 24 months.
 If payment > 40% of declared income → cap Group B score at 50% of its max, regardless of answers.
@@ -120,7 +120,7 @@ Show soft nudge: _"Suma solicitată pare mare față de venit - consideră o sum
 | --- | ------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | C1  | Scopul creditului                           | Investiție / renovare / echipament: 10 / Nevoi personale: 8 / Refinanțare: 6 / Nu știu exact: 2 |
 | C2  | Poți veni la oficiu (Chișinău sau Căușeni)? | Da: 10 / Pot aranja: 5 / Nu: 0                                                                  |
-| C3  | De cât timp ai venitul actual?              | 3+ ani: 10 / 1–3 ani: 7 / 6–12 luni: 4 / < 6 luni: 1                                            |
+| C3  | De cât timp ai venitul actual?              | 3+ ani: 10 / 1-3 ani: 7 / 6-12 luni: 4 / < 6 luni: 1                                            |
 
 **Group D - Trust signals (bonus)**
 
@@ -159,7 +159,7 @@ Semnale de încredere      ██████░░░░  ~
 One specific sentence naming the main blocker (e.g., _"Rata creditelor existente depășește 40% din venit."_)
 CTA: `Sună-ne să discutăm: 069 xxx xxx`
 
-**Near-fail (55–69%)** - two additional options shown below the fail screen:
+**Near-fail (55-69%)** - two additional options shown below the fail screen:
 
 - `Recalculează cu fidejusor →` - sets D2 = "Da", recalculates score instantly, shows new result
 - `Lasă numărul tău - te contactăm când ești pregătit` - optional phone capture field for warm lead follow-up
@@ -218,7 +218,7 @@ ROI                 = (Σ monthly_net_gain / total_credit_cost) × 100%
 | Condition                           | Verdict                    | Color  |
 | ----------------------------------- | -------------------------- | ------ |
 | ROI > 50% AND break-even ≤ month 18 | Rentabil                   | Green  |
-| ROI 10–50% OR break-even > 18       | Marginal - merită discutat | Yellow |
+| ROI 10-50% OR break-even > 18       | Marginal - merită discutat | Yellow |
 | ROI < 10% OR negative               | Riscant                    | Red    |
 
 **Display:** Verdict card + 3 key numbers (rată lunară / câștig net/lună / break-even luna N) + expandable month-by-month table.
@@ -237,18 +237,18 @@ ROI                 = (Σ monthly_net_gain / total_credit_cost) × 100%
 
 | Field              | Range / Default                                        |
 | ------------------ | ------------------------------------------------------ |
-| Suma               | 10,000–300,000 MDL (slider + input)                    |
+| Suma               | 10,000-300,000 MDL (slider + input)                    |
 | Rata dobânzii      | 4%/lună default (editable - for comparison with banks) |
-| Termen             | 6–60 luni (slider + input)                             |
+| Termen             | 6-60 luni (slider + input)                             |
 | Tip rambursare     | Anuitate / Principal egal (toggle)                     |
-| Perioadă de grație | 0–6 luni (optional)                                    |
+| Perioadă de grație | 0-6 luni (optional)                                    |
 
 No commission fields (confirmed 0%).
 
 ### Outputs
 
 ```
-Plată lunară        = PMT fixed (anuitate) or range X–Y MDL (principal egal)
+Plată lunară        = PMT fixed (anuitate) or range X-Y MDL (principal egal)
 Total plătit        = Σ all payments
 Dobândă totală      = total plătit − principal
 DAE                 = (1.04)^12 − 1 ≈ 60.1%  [fixed when rate = 4%/mo]

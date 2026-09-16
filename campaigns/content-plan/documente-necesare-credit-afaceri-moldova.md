@@ -20,7 +20,7 @@ How-To Article - practical, scannable, checklist-friendly. This type of content 
 
 ## Target Word Count
 
-1,500–2,000 words
+1,500-2,000 words
 
 ## SERP Snapshot
 
@@ -46,7 +46,7 @@ Content gap to exploit: No article specifically compares what a bank requires vs
 
 **H1:** Ce documente trebuie pentru un credit de afaceri în Moldova (și ce nu ți se va cere)
 
-**Intro (100–150 words):**
+**Intro (100-150 words):**
 Mulți antreprenori amână cererea de credit pentru că nu știu ce acte să pregătească - sau se tem că lista e prea lungă. În realitate, la un OCN procesul este mult mai simplu decât la o bancă. Iată ce trebuie să ai pregătit și ce poți lăsa acasă.
 
 **H2: Lista documentelor de bază (ce ai nevoie în aproape orice caz)**
@@ -55,7 +55,7 @@ Format: clean bulleted checklist, scannable
 - Buletin de identitate (administrator / asociat)
 - Extras din Registrul de Stat al persoanelor juridice (RGPO) - actualizat
 - Certificat de înregistrare fiscală
-- Extrase bancare ale firmei (ultimele 3–6 luni)
+- Extrase bancare ale firmei (ultimele 3-6 luni)
 - Raport financiar (bilanț) pentru ultimul an fiscal
 - Dovadă activitate: contracte cu furnizori/clienți, facturi recente, chitanțe
 
@@ -86,7 +86,7 @@ Short practical section:
 
 - Extrasul RGPO: nu mai vechi de 30 de zile în general
 - Raportul financiar: pentru ultimul an fiscal complet (sau ultimul trimestru dacă disponibil)
-- Extrasele bancare: ultimele 3–6 luni (nu este nevoie de ani întregi de istoricul)
+- Extrasele bancare: ultimele 3-6 luni (nu este nevoie de ani întregi de istoricul)
 
 **H2: Ce se întâmplă dacă nu ai toate documentele?**
 Reassuring, practical: Apply anyway. The team at Ideal Credit will tell you exactly what else is needed after reviewing your initial file. Don't wait until everything is "perfect." The online pre-application asks for basic info only - the full document list is discussed with the team.

@@ -58,9 +58,9 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
 
 ## Rhythm & Structure
 
-**Sentences:** Mix of medium (10–15 words) and short punchy statements (4–8 words). Short sentences carry key claims. Medium sentences do the explaining. Avoid long complex sentences with multiple clauses.
+**Sentences:** Mix of medium (10-15 words) and short punchy statements (4-8 words). Short sentences carry key claims. Medium sentences do the explaining. Avoid long complex sentences with multiple clauses.
 
-**Paragraphs:** Short - 2–3 sentences maximum for body copy. Hero and social content: 1–2 sentences per thought block. Blog content can run slightly longer (3–4 sentences) but keeps breaks frequent.
+**Paragraphs:** Short - 2-3 sentences maximum for body copy. Hero and social content: 1-2 sentences per thought block. Blog content can run slightly longer (3-4 sentences) but keeps breaks frequent.
 
 **Openings:** Start with the reader's situation or a concrete result - not with "Bine ați venit la Ideal Credit." Open with the problem being solved or the outcome being achieved. Questions work well as openers only if they're specific ("Ai nevoie de capital să extinzi afacerea înainte de sezon?").
 
@@ -84,11 +84,11 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
 
 | Platform     | Tone Shift                                                                 | Structure                                                                                             | Length                                    |
 | ------------ | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Email        | Warmest - direct, specific, almost like a note from the office             | Short paragraphs, one clear CTA, personal sign-off                                                    | 120–250 words                             |
-| Facebook     | Relatable and local - real business situations, local context              | Hook line + 2–3 lines + CTA. Occasional photo context.                                                | 80–150 words                              |
-| LinkedIn     | More professional, expertise-forward, targets business owners and partners | Insight or tip leads, not promotion-first. Line breaks.                                               | 100–200 words                             |
-| Blog/SEO     | Same voice but more thorough - teacher mode, full explanations             | Headers, bullets, numbered steps, real examples. Still no jargon without explanation.                 | 1200–2500 words                           |
-| Landing Page | Most direct, benefit-first, calm urgency - not high-pressure               | Short sentences, clear benefit blocks, single CTA per section, trust signals (office addresses, team) | Hero: 20–40 words; sections: 50–100 words |
+| Email        | Warmest - direct, specific, almost like a note from the office             | Short paragraphs, one clear CTA, personal sign-off                                                    | 120-250 words                             |
+| Facebook     | Relatable and local - real business situations, local context              | Hook line + 2-3 lines + CTA. Occasional photo context.                                                | 80-150 words                              |
+| LinkedIn     | More professional, expertise-forward, targets business owners and partners | Insight or tip leads, not promotion-first. Line breaks.                                               | 100-200 words                             |
+| Blog/SEO     | Same voice but more thorough - teacher mode, full explanations             | Headers, bullets, numbered steps, real examples. Still no jargon without explanation.                 | 1200-2500 words                           |
+| Landing Page | Most direct, benefit-first, calm urgency - not high-pressure               | Short sentences, clear benefit blocks, single CTA per section, trust signals (office addresses, team) | Hero: 20-40 words; sections: 50-100 words |
 | WhatsApp/SMS | Most stripped-down - human, brief, action-oriented                         | One or two sentences max. Clear next step.                                                            | Under 160 characters ideal                |
 
 ## Example Phrases
@@ -197,7 +197,7 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
             },
             { "term": "echipa Ideal Credit", "context": "Human team framing - not 'compania noastră' or 'instituția'" },
             { "term": "în Moldova", "context": "Local grounding - use to signal we understand the local context" },
-            { "term": "sumă + specific MDL range", "context": "Always anchor credit talk to real numbers (10,000–300,000 MDL)" }
+            { "term": "sumă + specific MDL range", "context": "Always anchor credit talk to real numbers (10,000-300,000 MDL)" }
         ],
         "avoid": [
             {
@@ -275,8 +275,8 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
     "platform_adaptations": {
         "email": {
             "tone_shift": "Warmest - direct, specific, almost like a note from someone at the office",
-            "format_preferences": "Short paragraphs (1–3 sentences), one clear CTA, personal sign-off from team member",
-            "length": "120–250 words",
+            "format_preferences": "Short paragraphs (1-3 sentences), one clear CTA, personal sign-off from team member",
+            "length": "120-250 words",
             "dos": [
                 "Use specific numbers and scenarios",
                 "Address the reader as tu",
@@ -287,8 +287,8 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
         },
         "facebook": {
             "tone_shift": "Most relatable - local context, real business situations, community feel",
-            "format_preferences": "Hook line + 2–3 lines of context + CTA. Use visuals of real offices or team when possible.",
-            "length": "80–150 words",
+            "format_preferences": "Hook line + 2-3 lines of context + CTA. Use visuals of real offices or team when possible.",
+            "length": "80-150 words",
             "dos": [
                 "Reference local Moldovan context",
                 "Use specific MDL amounts",
@@ -300,7 +300,7 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
         "linkedin": {
             "tone_shift": "More professional and expertise-forward - targets business owners, accountants, partners",
             "format_preferences": "Insight or business tip leads (not promotion-first). Line breaks between every thought. Hook in first two lines.",
-            "length": "100–200 words",
+            "length": "100-200 words",
             "dos": [
                 "Lead with a business insight, not an offer",
                 "Share practical tips about business finance in Moldova",
@@ -311,7 +311,7 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
         "blog": {
             "tone_shift": "Teacher mode - same warm directness, but more thorough. Explains concepts fully.",
             "format_preferences": "Headers, numbered steps, bullets, real examples from Moldovan business contexts. Short paragraphs even at length.",
-            "length": "1200–2500 words",
+            "length": "1200-2500 words",
             "dos": [
                 "Use the loan calculator as a content anchor",
                 "Answer real questions entrepreneurs have (DAE, grafic de rambursare)",
@@ -322,7 +322,7 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
         "landing_page": {
             "tone_shift": "Most direct and benefit-first - calm urgency, not high pressure. Still warm.",
             "format_preferences": "Short sentences. Benefit-driven headlines. Trust signals (office addresses, team, MDL ranges). Single CTA per section.",
-            "length": "Hero: 20–40 words; feature sections: 50–100 words; full page: 600–1500 words",
+            "length": "Hero: 20-40 words; feature sections: 50-100 words; full page: 600-1500 words",
             "dos": [
                 "Lead with the outcome the reader wants",
                 "Include the calculator as interactive proof",
@@ -335,7 +335,7 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
     "audience_awareness": {
         "sophistication_level": "mixed",
         "jargon_tolerance": "light",
-        "reading_level": "Plain Romanian - grade 8–10 comprehension target. Assumes business literacy, not finance literacy.",
+        "reading_level": "Plain Romanian - grade 8-10 comprehension target. Assumes business literacy, not finance literacy.",
         "notes": "Primary: Romanian-speaking Moldovan entrepreneurs and small business owners. Secondary: Russian-speaking segment in Chișinău and urban areas. Both audiences are practical, time-pressed, and skeptical of financial institution promises. They've dealt with Moldovan bureaucracy and respond to concrete, specific communication. Trust is built through local references, real numbers, and human accessibility."
     },
     "signature_phrases": [

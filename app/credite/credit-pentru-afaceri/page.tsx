@@ -14,7 +14,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { businessCreditSchema } from "@/lib/schema";
+import { businessCreditSchema, buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+    { name: "Credit pentru afaceri", url: "https://idealcredit.md/credite/credit-pentru-afaceri" },
+]);
 
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri din Moldova | Ideal Credit",
@@ -116,13 +122,14 @@ export default function CreditAfaceriPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <ProductHero
                 category="Persoane juridice"
                 position={1}
                 title={
                     <>
-                        Credit pentru <Accent>afaceri</Accent>.
+                        Credit pentru <Accent>afaceri.</Accent>
                     </>
                 }
                 subtitle="Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Aprobare în 1-2 zile lucrătoare, fără birocrație excesivă."
@@ -132,8 +139,8 @@ export default function CreditAfaceriPage() {
             <SpecStrip
                 specs={[
                     { value: "50 000", label: "MDL sumă minimă" },
-                    { value: "12–60", label: "luni termen" },
-                    { value: "1–2 zile", label: "până la decizie", proof: true },
+                    { value: "12-60", label: "luni termen" },
+                    { value: "1-2 zile", label: "până la decizie", proof: true },
                     { value: "4 %", label: "dobândă fixă / lună" },
                 ]}
             />

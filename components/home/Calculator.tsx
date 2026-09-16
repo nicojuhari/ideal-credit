@@ -1,16 +1,17 @@
 "use client";
 
 import { useCallback, useMemo, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { createGrafic, calcDAE, type GraficRow } from "ideal-credit";
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
 import Figure from "@/components/ds/Figure";
 import Note from "@/components/ds/Note";
 import { ButtonPrimary } from "@/components/ds/Button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
-import PreContractContent from "@/components/PreContractContent";
 import { CALCULATOR_MONTHLY_RATE } from "@/lib/constants";
+
+const PreContractDialog = dynamic(() => import("@/components/home/PreContractDialog"), { ssr: false });
 
 const SUM_MIN = 10000;
 const SUM_MAX = 300000;
@@ -26,6 +27,7 @@ function fmt(n: number) {
 export default function Calculator() {
     const [sum, setSum] = useState(120000);
     const [term, setTerm] = useState(36);
+    const [precontractOpen, setPrecontractOpen] = useState(false);
     const pixelFired = useRef(false);
     const { trackEvent } = useFacebookPixel();
 
@@ -155,26 +157,27 @@ export default function Calculator() {
                     {/* CTA */}
                     <div className="flex flex-wrap items-center gap-5">
                         <ButtonPrimary href="/cerere-de-credit-online">Solicită un credit</ButtonPrimary>
-                        <Dialog>
-                            <DialogTrigger
-                                onClick={() => firePixelOnce()}
-                                className="text-sm text-dc-text underline underline-offset-4 transition-colors hover:text-white"
-                            >
-                                Informația precontractuală
-                            </DialogTrigger>
-                            <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden">
-                                <DialogHeader>
-                                    <DialogTitle>Informația preContractuală</DialogTitle>
-                                </DialogHeader>
-                                <PreContractContent
-                                    creditSuma={sum}
-                                    creditTermen={term}
-                                    dae={dae}
-                                    graficCalculat={grafic}
-                                    dobindaTotal={totalCost}
-                                />
-                            </DialogContent>
-                        </Dialog>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                firePixelOnce();
+                                setPrecontractOpen(true);
+                            }}
+                            className="text-sm text-dc-text underline underline-offset-4 transition-colors hover:text-white"
+                        >
+                            Informația precontractuală
+                        </button>
+                        {precontractOpen && (
+                            <PreContractDialog
+                                open={precontractOpen}
+                                onOpenChange={setPrecontractOpen}
+                                sum={sum}
+                                term={term}
+                                dae={dae}
+                                grafic={grafic}
+                                totalCost={totalCost}
+                            />
+                        )}
                     </div>
                 </div>
                 <Note className="mt-5 max-w-[820px]">

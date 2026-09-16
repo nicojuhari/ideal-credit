@@ -103,10 +103,12 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border border-dc-line px-8 py-7">
-                    <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Extras din legea nr. 202/2013:</p>
-                    <Note className="mt-3 max-w-[900px]">
-                        <ol className="space-y-1 !list-disc list-inside text-xs">
+                <div className="border border-dc-line px-6 py-8">
+                    <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                        Noi respectăm ce spune legea, în special legea nr. 202/2013:
+                    </p>
+                    <Note className="mt-4 max-w-[900px]">
+                        <ol className="space-y-1.5 !list-disc list-inside text-xs">
                             <li>rata maximală a dobânzii anuale specificate în contract nu poate depăși 50%</li>
                             <li>
                                 toate celelalte plăți aferente (comisioane, taxe, penalități, dobânzi de întârziere) nu pot depăși 0,04%/zi

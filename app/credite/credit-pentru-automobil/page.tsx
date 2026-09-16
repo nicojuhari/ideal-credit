@@ -12,7 +12,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { autoLoanSchema } from "@/lib/schema";
+import { autoLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Acasă", url: "https://idealcredit.md/" },
+    { name: "Credite", url: "https://idealcredit.md/credite" },
+    { name: "Credit pentru automobil", url: "https://idealcredit.md/credite/credit-pentru-automobil" },
+]);
 
 export const metadata: Metadata = {
     title: "Credit pentru Automobil în Moldova | Ideal Credit",
@@ -61,6 +67,7 @@ export default function CreditAutomobilPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(autoLoanSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
             <ProductHero
                 category="Persoane fizice"
@@ -77,8 +84,8 @@ export default function CreditAutomobilPage() {
             <SpecStrip
                 specs={[
                     { value: "10 000", label: "MDL sumă minimă" },
-                    { value: "12–48", label: "luni termen" },
-                    { value: "2–3 ore", label: "până la decizie", proof: true },
+                    { value: "12-48", label: "luni termen" },
+                    { value: "2-3 ore", label: "până la decizie", proof: true },
                     { value: "4 %", label: "dobândă fixă / lună" },
                 ]}
             />
@@ -90,12 +97,24 @@ export default function CreditAutomobilPage() {
                         Condiții de <Accent>creditare</Accent>
                     </>
                 }
-                items={["Vârsta între 23 și 55 de ani", "Venit confirmat și stabil", "Buletin de identitate valabil", "Fără restanțe mari la credite active"]}
+                items={[
+                    "Vârsta între 23 și 55 de ani",
+                    "Venit confirmat și stabil",
+                    "Buletin de identitate valabil",
+                    "Fără restanțe mari la credite active",
+                ]}
             />
 
             <Calculator />
 
-            <Section marker="Detalii" title={<>Credit auto în Moldova - cumpărare sau <Accent>reparație</Accent></>}>
+            <Section
+                marker="Detalii"
+                title={
+                    <>
+                        Credit auto în Moldova - cumpărare sau <Accent>reparație</Accent>
+                    </>
+                }
+            >
                 <ProductDescription
                     items={[
                         {

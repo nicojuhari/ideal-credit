@@ -20,7 +20,7 @@ Pillar Guide - the most comprehensive, practical guide to getting a business cre
 
 ## Target Word Count
 
-2,500–3,500 words
+2,500-3,500 words
 
 ## SERP Snapshot
 
@@ -46,7 +46,7 @@ Content gap to exploit: No article in Romanian exists that walks an entrepreneur
 
 **H1:** Cum obții credit pentru afacere la un OCN în Moldova: ghid pas cu pas
 
-**Intro (150–200 words):**
+**Intro (150-200 words):**
 Open with the entrepreneur's reality - they need capital to grow, buy stock, buy equipment, or stabilize cash flow. Banks feel complicated or say no. This guide shows exactly how the process works at an OCN (non-bank credit organization), specifically for business owners in Moldova.
 
 **H2: Ce este un OCN și de ce îl aleg antreprenorii moldoveni?**
@@ -74,7 +74,7 @@ Open with the entrepreneur's reality - they need capital to grow, buy stock, buy
 
 - Explain the online pre-application (cerere online la idealcredit.md)
 - What happens after: a call or email from the team to discuss next steps
-- Realistic timeline: typically 1–2 business days for a decision with a complete file
+- Realistic timeline: typically 1-2 business days for a decision with a complete file
 
 **H2: Pasul 4 - Discuția cu echipa**
 

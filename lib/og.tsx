@@ -102,13 +102,13 @@ export async function renderOgImage({ eyebrowLabel, eyebrowPosition, eyebrowTota
                         style={{
                             display: "flex",
                             flexWrap: "wrap",
-                            columnGap: 16,
-                            fontSize: 72,
+                            columnGap: 18,
+                            fontSize: 104,
                             fontWeight: 600,
-                            letterSpacing: "-0.03em",
-                            lineHeight: 1.04,
+                            letterSpacing: "-0.035em",
+                            lineHeight: 1.02,
                             color: COLOR.text,
-                            maxWidth: 1000,
+                            maxWidth: 1032,
                         }}
                     >
                         <span>{before.trim()}</span>
@@ -120,7 +120,7 @@ export async function renderOgImage({ eyebrowLabel, eyebrowPosition, eyebrowTota
                         {after.trim() && <span>{after.trim()}</span>}
                     </div>
                     {subtitle && (
-                        <div style={{ display: "flex", marginTop: 26, fontSize: 26, fontWeight: 400, lineHeight: 1.5, color: COLOR.muted, maxWidth: 760 }}>
+                        <div style={{ display: "flex", marginTop: 30, fontSize: 30, fontWeight: 400, lineHeight: 1.5, color: COLOR.muted, maxWidth: 820 }}>
                             {subtitle}
                         </div>
                     )}

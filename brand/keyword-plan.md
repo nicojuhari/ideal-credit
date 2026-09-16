@@ -6,8 +6,8 @@
 
 ## Business Context
 
-- Offer: Non-bank credits (OCN), 10,000–300,000 MDL, processed at offices in Căușeni and Chișinău
-- Allocation directive (2026-09-11): **70–80% business credit content, 20–30% personal credit content** - personal scoped to planned purchases only (auto, reparație/renovare, nevoi personale majore), never distressed-borrower framing
+- Offer: Non-bank credits (OCN), 10,000-300,000 MDL, processed at offices in Căușeni and Chișinău
+- Allocation directive (2026-09-11): **70-80% business credit content, 20-30% personal credit content** - personal scoped to planned purchases only (auto, reparație/renovare, nevoi personale majore), never distressed-borrower framing
 - Audience: Moldovan entrepreneurs and small business owners (primary, 70-80% of content); individuals financing a planned purchase or project - car, home repair, a major personal expense (secondary, 20-30% of content)
 - Goal: Organic leads matching the lender's actual target client - not the traffic the site currently attracts (see "Current Traffic Reality" below)
 - Positioning: "The Local Growth Partner" / financial problem-solver first, credit provider second - fast capital + human judgment + local offices, never "instant cash, no questions asked"
@@ -211,38 +211,38 @@ Unchanged from May 2026 (still current - see archived plan for full detail):
 
 ### Month 1
 
-- ~~**Week 1–2 (Business):** Credit afaceri fără gaj Moldova~~ - **cancelled as a content-calendar item** (owner decision, 2026-09-11 round 2/3). Not a blog article or mini landing page: the target terms ("credit afaceri fara gaj Moldova," "credit fara garantie imobiliara Moldova") are served as a section + FAQ entries on `/credite/credit-pentru-afaceri-mici` instead. The research in `./campaigns/content-plan/credit-afaceri-fara-gaj-moldova.md` (PAA, SERP gap, outline) is still usable as source material for that section - just not as a standalone URL.
+- ~~**Week 1-2 (Business):** Credit afaceri fără gaj Moldova~~ - **cancelled as a content-calendar item** (owner decision, 2026-09-11 round 2/3). Not a blog article or mini landing page: the target terms ("credit afaceri fara gaj Moldova," "credit fara garantie imobiliara Moldova") are served as a section + FAQ entries on `/credite/credit-pentru-afaceri-mici` instead. The research in `./campaigns/content-plan/credit-afaceri-fara-gaj-moldova.md` (PAA, SERP gap, outline) is still usable as source material for that section - just not as a standalone URL.
 
 - **Week 3 (Business, quick win):** Finanțare pentru antreprenori din Căușeni și regiune
   → Target: "credit afaceri Căușeni," "finanțare afaceri Căușeni Moldova"
-  → Type: Local landing page (1,000–1,500 words)
+  → Type: Local landing page (1,000-1,500 words)
   → Brief: `./campaigns/content-plan/finantare-causeni-regiune.md`
 
 - **Week 4 (Personal):** Ghid: credit pentru proiecte personale planificate
   → Target: "credit personal Moldova," "credit auto Moldova," "credit reparatie Moldova"
-  → Type: Pillar guide (2,000–2,500 words)
+  → Type: Pillar guide (2,000-2,500 words)
   → Brief: `./campaigns/content-plan/ghid-credit-personal-proiecte-planificate-moldova.md`
 
 ### Month 2
 
-- **Week 5–6 (Business):** Ce este DAE și cum îl citești înainte să semnezi
+- **Week 5-6 (Business):** Ce este DAE și cum îl citești înainte să semnezi
   → Target: "DAE credit afaceri Moldova," "dobanda anuala efectiva explicatie"
-  → Type: Educational blog (1,500–2,000 words)
+  → Type: Educational blog (1,500-2,000 words)
 
 - **Week 7 (Personal):** Credit auto Moldova: cum alegi finanțarea potrivită
   → Target: "credit auto Moldova," "credit masina fara girant"
-  → Type: Blog article (1,500–2,000 words)
+  → Type: Blog article (1,500-2,000 words)
   → Brief: `./campaigns/content-plan/credit-auto-moldova-cum-alegi.md`
 
 - **Week 8 (Business):** Ghid finanțare afaceri mici Moldova 2026
   → Target: "finanțare afaceri mici Moldova," "credit pentru antreprenori Moldova"
-  → Type: Pillar guide (2,500–3,000 words)
+  → Type: Pillar guide (2,500-3,000 words)
 
 ### Month 3
 
-- **Week 9–10 (Business):** Credit pentru afaceri în comerț: cum finanțezi stocul și extinderea
+- **Week 9-10 (Business):** Credit pentru afaceri în comerț: cum finanțezi stocul și extinderea
   → Target: "credit comert Moldova," "finantare stoc marfa Moldova"
-  → Type: Blog sector guide (1,500–2,000 words)
+  → Type: Blog sector guide (1,500-2,000 words)
 
 - **Week 11 (Personal):** Credit pentru reparație și renovare: cum planifici bugetul
   → Target: "credit reparatie casa Moldova," "credit renovare Moldova"
@@ -250,7 +250,7 @@ Unchanged from May 2026 (still current - see archived plan for full detail):
 
 - **Week 12 (Business):** Credit pentru agricultori și producători mici
   → Target: "credit agricultura Moldova OCN," "finantare fermieri mici Moldova"
-  → Type: Blog sector guide (1,500–2,000 words)
+  → Type: Blog sector guide (1,500-2,000 words)
 
 **Mix check:** 6 business pieces + 2 already-published business pieces = 8 business / 3 personal across the full pipeline shown here ≈ 73%/27% - within the 70-80/20-30 target.
 
@@ -284,7 +284,7 @@ Unchanged from May 2026 (still current - see archived plan for full detail):
 
 ### Business (retained from May 2026 - see archived plan `campaigns/keywords/keyword-plan-2026-05-18.md` for full 6-Circles breakdown and PAA list)
 
-Unchanged. Circles 1–6 and PAA list carry forward as-is.
+Unchanged. Circles 1-6 and PAA list carry forward as-is.
 
 ### Personal (new, 2026-09-11)
 

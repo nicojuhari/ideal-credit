@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { Menu as List, X, Phone, ChevronDown, MessageCircle, PencilLine } from "lucide-react";
 import Logo from "@/components/icons/Logo";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
@@ -14,15 +13,39 @@ import { cn } from "@/lib/utils";
 type CreditItem = { href: string; label: string; desc: string };
 
 const businessProducts: CreditItem[] = [
-    { href: "/credite/credit-pentru-afaceri", label: "Afaceri", desc: "Capital rapid pentru SRL, ÎI și antreprenori." },
-    { href: "/credite/credit-investitional", label: "Credit investițional", desc: "Echipamente, extindere, modernizare." },
-    { href: "/credite/credit-pentru-agricultura", label: "Agricultură", desc: "Pentru fermieri și producători agricoli." },
+    {
+        href: "/credite/credit-pentru-afaceri",
+        label: "Afaceri",
+        desc: "Capital rapid pentru SRL, ÎI și antreprenori.",
+    },
+    {
+        href: "/credite/credit-investitional",
+        label: "Credit investițional",
+        desc: "Echipamente, extindere, modernizare.",
+    },
+    {
+        href: "/credite/credit-pentru-agricultura",
+        label: "Agricultură",
+        desc: "Pentru fermieri și producători agricoli.",
+    },
 ];
 
 const personalProducts: CreditItem[] = [
-    { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale", desc: "Pentru orice scop, fără destinație fixă." },
-    { href: "/credite/credit-pentru-reparatie", label: "Reparație", desc: "Renovează locuința cu condiții clare." },
-    { href: "/credite/credit-pentru-automobil", label: "Automobil", desc: "Finanțare pentru vehicul nou sau rulat." },
+    {
+        href: "/credite/credit-pentru-nevoi-personale",
+        label: "Nevoi personale",
+        desc: "Pentru orice scop, fără destinație fixă.",
+    },
+    {
+        href: "/credite/credit-pentru-reparatie",
+        label: "Reparație",
+        desc: "Renovează locuința cu condiții clare.",
+    },
+    {
+        href: "/credite/credit-pentru-automobil",
+        label: "Automobil",
+        desc: "Finanțare pentru vehicul nou sau rulat.",
+    },
 ];
 
 const simpleLinks = [
@@ -85,52 +108,48 @@ export default function Header() {
                             aria-expanded={creditOpen}
                         >
                             Credite
-                            <motion.span animate={{ rotate: creditOpen ? 180 : 0 }} transition={{ duration: 0.15 }}>
+                            <span className={cn("transition-transform duration-150", creditOpen && "rotate-180")}>
                                 <ChevronDown size={14} />
-                            </motion.span>
+                            </span>
                         </button>
 
-                        <AnimatePresence>
-                            {creditOpen && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.12 }}
-                                    className="absolute left-1/2 top-full -translate-x-1/2 pt-3"
-                                >
-                                    <div className="w-[560px] border border-dc-line bg-dc-surface">
-                                        <div className="grid grid-cols-2 p-3">
-                                            <div className="border-r border-dc-line pr-3">
-                                                <p className="mb-1.5 px-3 text-[11px] uppercase tracking-[.1em] text-dc-text-muted">
-                                                    Pentru persoane juridice
-                                                </p>
-                                                {businessProducts.map((p) => (
-                                                    <ProductLink key={p.href} item={p} />
-                                                ))}
-                                            </div>
-                                            <div className="pl-3">
-                                                <p className="mb-1.5 px-3 text-[11px] uppercase tracking-[.1em] text-dc-text-muted">
-                                                    Pentru persoane fizice
-                                                </p>
-                                                {personalProducts.map((p) => (
-                                                    <ProductLink key={p.href} item={p} />
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center justify-between border-t border-dc-line px-6 py-3">
-                                            <span className="text-xs text-dc-text-muted">Toate soluțiile de credit</span>
-                                            <Link
-                                                href="/credite"
-                                                className="text-[15px] uppercase tracking-[.04em] text-dc-accent underline underline-offset-4"
-                                            >
-                                                Vezi toate →
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </motion.div>
+                        <div
+                            inert={!creditOpen}
+                            className={cn(
+                                "absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150",
+                                creditOpen && "opacity-100",
                             )}
-                        </AnimatePresence>
+                        >
+                            <div className="w-[560px] border border-dc-line bg-dc-surface">
+                                <div className="grid grid-cols-2 p-3">
+                                    <div className="border-r border-dc-line pr-3">
+                                        <p className="mb-1.5 px-3 text-[11px] uppercase tracking-[.1em] text-dc-text-muted">
+                                            Pentru persoane juridice
+                                        </p>
+                                        {businessProducts.map((p) => (
+                                            <ProductLink key={p.href} item={p} />
+                                        ))}
+                                    </div>
+                                    <div className="pl-3">
+                                        <p className="mb-1.5 px-3 text-[11px] uppercase tracking-[.1em] text-dc-text-muted">
+                                            Pentru persoane fizice
+                                        </p>
+                                        {personalProducts.map((p) => (
+                                            <ProductLink key={p.href} item={p} />
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-between border-t border-dc-line px-6 py-3">
+                                    <span className="text-xs text-dc-text-muted">Toate soluțiile de credit</span>
+                                    <Link
+                                        href="/credite"
+                                        className="text-[15px] uppercase tracking-[.04em] text-dc-accent underline underline-offset-4"
+                                    >
+                                        Vezi toate →
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {simpleLinks.map((link) => {
@@ -177,78 +196,79 @@ export default function Header() {
             </Container>
 
             {/* Mobile fullscreen sheet */}
-            <AnimatePresence>
-                {menuOpen && (
-                    <motion.div
-                        key="mobile-menu"
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "tween", duration: 0.2, ease: "easeInOut" }}
-                        className="fixed top-0 left-0 z-50 flex h-dvh w-full flex-col overflow-y-auto bg-dc-bg"
-                    >
-                        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-dc-line bg-dc-bg px-6 py-4">
-                            <Link href="/" className="flex items-center gap-[11px]" onClick={toggleMenu}>
-                                <Logo className="w-9" />
-                                <span className="text-[15px] font-medium tracking-[-.01em] text-dc-text">Ideal Credit</span>
-                            </Link>
-                            <button onClick={toggleMenu} aria-label="Închide meniu" className="border border-dc-line p-2 text-dc-text">
-                                <X size={20} />
-                            </button>
-                        </div>
-
-                        <div className="px-6 py-2">
-                            <p className="mt-4 mb-1 px-1 text-xs uppercase tracking-[.1em] text-dc-text-muted">Pentru persoane juridice</p>
-                            {businessProducts.map((p) => (
-                                <Link key={p.href} href={p.href} className="block p-3 hover:bg-white/5">
-                                    <span className="text-base font-medium text-dc-text">{p.label}</span>
-                                </Link>
-                            ))}
-
-                            <p className="mt-5 mb-1 px-1 text-xs uppercase tracking-[.1em] text-dc-text-muted">Pentru persoane fizice</p>
-                            {personalProducts.map((p) => (
-                                <Link key={p.href} href={p.href} className="block p-3 hover:bg-white/5">
-                                    <span className="text-base font-medium text-dc-text">{p.label}</span>
-                                </Link>
-                            ))}
-
-                            <p className="mt-5 mb-1 px-1 text-xs uppercase tracking-[.1em] text-dc-text-muted">Companie</p>
-                            {simpleLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    title={link.label}
-                                    className="block p-3 text-lg font-medium text-dc-text hover:bg-white/5"
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                        </div>
-
-                        <div className="mt-auto mb-8 space-y-3 px-6">
-                            <a
-                                href="tel:+37361252777"
-                                onClick={() => trackEvent("Contact")}
-                                className="flex h-11 w-full items-center justify-center gap-2 border border-dc-line text-[15px] font-semibold text-dc-text"
-                            >
-                                <Phone size={16} /> 0612 52 777
-                            </a>
-                            <ButtonPrimary href="/cerere-de-credit-online" className="w-full">
-                                <PencilLine size={18} /> Cerere online
-                            </ButtonPrimary>
-                            <a
-                                href="https://wa.me/+37361252777"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => trackEvent("Contact")}
-                                className="flex h-11 w-full items-center justify-center gap-2 border border-dc-line text-[15px] font-semibold text-dc-text"
-                            >
-                                <MessageCircle size={18} /> WhatsApp
-                            </a>
-                        </div>
-                    </motion.div>
+            <div
+                inert={!menuOpen}
+                className={cn(
+                    "fixed top-0 left-0 z-50 flex h-dvh w-full translate-x-full flex-col overflow-y-auto bg-dc-bg opacity-0 transition-[opacity,transform] duration-200 ease-in-out",
+                    menuOpen && "translate-x-0 opacity-100",
                 )}
-            </AnimatePresence>
+            >
+                <div className="sticky top-0 z-10 flex items-center justify-between border-b border-dc-line bg-dc-bg px-6 py-4">
+                    <Link
+                        href="/"
+                        title="Ideal Credit - Credite pentru succes!"
+                        className="flex items-center gap-[11px]"
+                        onClick={toggleMenu}
+                    >
+                        <Logo className="w-9" />
+                        <span className="text-base font-medium tracking-[-.01em] text-dc-text">Ideal Credit</span>
+                    </Link>
+
+                    <button onClick={toggleMenu} aria-label="Închide meniu" className="border border-dc-line p-2 text-dc-text">
+                        <X size={20} />
+                    </button>
+                </div>
+
+                <div className="px-6 py-2">
+                    <p className="mt-4 mb-1 px-1 text-xs uppercase tracking-[.1em] text-dc-text-muted">Pentru persoane juridice</p>
+                    {businessProducts.map((p) => (
+                        <Link key={p.href} href={p.href} className="block p-3 hover:bg-white/5">
+                            <span className="text-base font-medium text-dc-text">{p.label}</span>
+                        </Link>
+                    ))}
+
+                    <p className="mt-5 mb-1 px-1 text-xs uppercase tracking-[.1em] text-dc-text-muted">Pentru persoane fizice</p>
+                    {personalProducts.map((p) => (
+                        <Link key={p.href} href={p.href} className="block p-3 hover:bg-white/5">
+                            <span className="text-base font-medium text-dc-text">{p.label}</span>
+                        </Link>
+                    ))}
+
+                    <p className="mt-5 mb-1 px-1 text-xs uppercase tracking-[.1em] text-dc-text-muted">Companie</p>
+                    {simpleLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            title={link.label}
+                            className="block p-3 text-lg font-medium text-dc-text hover:bg-white/5"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+
+                <div className="mt-auto mb-8 space-y-3 px-6">
+                    <a
+                        href="tel:+37361252777"
+                        onClick={() => trackEvent("Contact")}
+                        className="flex h-11 w-full items-center justify-center gap-2 border border-dc-line text-[15px] font-semibold text-dc-text"
+                    >
+                        <Phone size={16} /> 0612 52 777
+                    </a>
+                    <ButtonPrimary href="/cerere-de-credit-online" className="w-full">
+                        <PencilLine size={18} /> Cerere online
+                    </ButtonPrimary>
+                    <a
+                        href="https://wa.me/+37361252777"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackEvent("Contact")}
+                        className="flex h-11 w-full items-center justify-center gap-2 border border-dc-line text-[15px] font-semibold text-dc-text"
+                    >
+                        <MessageCircle size={18} /> WhatsApp
+                    </a>
+                </div>
+            </div>
         </header>
     );
 }
