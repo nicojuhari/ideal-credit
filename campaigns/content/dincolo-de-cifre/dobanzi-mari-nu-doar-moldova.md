@@ -18,8 +18,8 @@ Ratele de mai jos sunt dobânzi medii la credite pentru companii, pe cea mai rec
 | România | ~7,5% | BNR, martie 2026 |
 | Estonia / Letonia | ~5,3% | Bănci centrale naționale, ianuarie 2026 |
 | Media zonei euro | ~3,3-3,7% | BCE, statistici bancare, ianuarie-aprilie 2026 |
-| Malta | ~1,9% | BCE, iunie 2025 |
 | Japonia | ~2,9% | Banca Japoniei, februarie 2026 |
+| Malta | ~1,9% | BCE, iunie 2025 |
 
 Cifra Moldovei de mai sus e media sectorului **bancar**. Ideal Credit nu e o bancă, ci o organizație de creditare nebancară (OCN), iar dobânzile nebancare sunt structural mai mari decât media bancară, în orice țară.
 
@@ -31,7 +31,9 @@ Dacă privești doar extremele - Turcia la 40%, Malta la 1,9% - pare o poveste s
 
 Estonia și Letonia sunt state UE, folosesc euro, au economii stabile. Și totuși au fost, în 2025, cele mai scumpe țări din întreaga zonă euro la creditarea companiilor - mai scumpe decât Grecia sau Portugalia.
 
-Dacă explicația ar fi „țară bogată = credit ieftin,” statele baltice n-ar trebui să fie acolo. Dobânda nu urmărește bogăția unei țări. Urmărește altceva.
+Dacă explicația ar fi „țară bogată = credit ieftin”, statele baltice n-ar trebui să fie acolo.
+
+Dobânda nu urmărește bogăția unei țări. Urmărește altceva.
 
 ## Ce urmărește, de fapt
 
@@ -45,13 +47,13 @@ Patru factori explică majoritatea diferenței - niciunul nu ține de cât de �
 
 **Concurența.** O piață cu puțini jucători relevanți lasă loc unor marje mai mari. O piață aglomerată le comprimă.
 
-Toți patru explică de ce Moldova e sus pe listă. Și toți patru, în combinații diferite, explică de ce statele baltice sunt sus pe listă - din motive diferite de ale noastre.
+Toți patru explică de ce Moldova e sus pe listă. Și toți patru, în combinații diferite, explică de ce statele baltice sunt sus pe listă - dar din alte motive decât la noi.
 
 ## Ce rol are banca centrală
 
 Fiecare țară are o bancă centrală care fixează o rată de bază - BNM în Moldova, BNR în România, BCE în zona euro. E rata la care se împrumută chiar băncile.
 
-Orice creditor pune propria marjă peste rata asta. Când banca centrală o urcă, dobânzile din piață urcă în pas, de obicei în câteva luni.
+Orice creditor pune propria marjă peste rata asta. Când banca centrală o urcă, dobânzile din piață urcă și ele, de obicei în câteva luni.
 
 De asta rata BNM a urcat de la 5% la 7% în 2026, iar dobânda medie la credite pentru afaceri a ajuns la 9,5%. Banca centrală nu fixează dobânda ta direct - fixează costul de bază pe care toți creditorii îl transmit mai departe.
 
@@ -59,11 +61,11 @@ Motivul reglementării: rata de bază e principalul instrument prin care o banc�
 
 ## Ce ar face-o mai mică
 
-O scădere a ratei de bază ieftinește creditul temporar. Nu schimbă însă niciunul dintre cei patru factori structurali de mai sus.
+O scădere a ratei de bază ieftinește temporar creditul. Nu schimbă însă niciunul dintre cei patru factori structurali de mai sus.
 
-Ca dobânzile din Moldova să scadă durabil, ar trebui să se schimbe piața însăși: acces mai larg la finanțare angro ieftină, o piață de capital locală mai adâncă, o executare a garanțiilor mai rapidă, mai mulți creditori serioși care se bat pe același client.
+Ca dobânzile din Moldova să scadă pe termen lung, ar trebui să se schimbe piața însăși: acces mai larg la finanțare angro ieftină, o piață de capital locală mai dezvoltată, o executare a garanțiilor mai rapidă, mai mulți creditori serioși care se bat pentru același client.
 
-Fiecare dintre acestea reduce, punctual, unul dintre cei patru factori. Împreună, ar apropia Moldova de rândul din mijlocul tabelului - nu de Malta, dar nici de Turcia.
+Fiecare dintre acestea reduce, pe rând, unul dintre cei patru factori. Împreună, ar apropia Moldova de rândul din mijlocul tabelului - nu de Malta, dar nici de Turcia.
 
 ---
 

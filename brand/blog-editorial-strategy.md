@@ -67,6 +67,30 @@ The precise rule (2026-09-16 clarification):
 This replaces the stale `blog` entry in `voice-profile.md` (the old "teacher
 mode... links to the application form" guidance belongs to the retired model).
 
+**Human, not literal (added 2026-09-17).** Write the way people in Moldova
+actually talk about money and business, not a stiff, literal-translation
+register. Grammatically correct, never slang for its own sake, but idiomatic
+over bureaucratic — a natural phrase a smart person would actually say beats
+a technically-precise one that reads like it was assembled word-by-word.
+Caught in article 1: "creditori serioși care se bat **pe** același client"
+read as confusing when parsed literally (fight *on top of* the client).
+The fix kept the natural, colloquial "se bat" (lenders fighting over
+customers is exactly how a Moldovan business owner would put it) and only
+swapped the preposition — "se bat **pentru** același client" — rather than
+retreating to a flatter, more formal alternative like "concurează pentru
+aceiași clienți." When a phrase reads unclear, prefer the smallest fix that
+keeps the human register over rewriting into safer, blander formal Romanian.
+
+Also caught in article 1, same root cause — words that are technically
+correct Romanian but not words people around here actually reach for in
+this context: **"durabil"** (a rate drop "scade durabil") replaced with
+**"pe termen lung"**; **"mai adâncă"** (a "deeper" capital market — a
+literal translation of the English finance term "market depth") replaced
+with **"mai dezvoltată"** / **"puțin dezvoltată."** Same test applies every
+time: would a Moldovan business owner or analyst actually say this word in
+conversation, or only encounter it in a translated report? If the latter,
+find the word they'd actually use.
+
 ## Design & typography (added 2026-09-16, after reviewing article 1 live)
 
 - **No repeated branding chrome.** The blog doesn't restate "Dincolo de Cifre"
@@ -105,6 +129,19 @@ generic blog-imagery this identity is defined against (same reasoning as the
 the site uses) already covers the social-share thumbnail need. If a future
 article's actual subject calls for a real photo (an interview, a specific
 place), decide it case by case — this isn't a standing template requirement.
+
+## Social promo (added 2026-09-16)
+
+Every article ships with a companion social post - **one unified caption for
+LinkedIn and Facebook**, same register as the "linkedin" tone in
+`voice-profile.md` (professional, expertise-forward, leads with the insight
+not "new blog post!"). Hashtags only if they fit naturally, not required.
+
+Stored as an MDX comment (`{/* ... */}`) at the bottom of the article's own
+`page.mdx`, right after `<ClosingNote>` - not a separate file in
+`campaigns/social/`. Keeps the promo copy next to the piece it promotes,
+ready to copy into Buffer when scheduling. No custom image needed: the link
+preview uses the article's own `opengraph-image.tsx` automatically.
 
 ## Discoverability (added 2026-09-16)
 
@@ -157,9 +194,9 @@ The only filter. A topic is approved if all three are true:
 No volume target. Quality over quantity is the explicit goal — this is not a
 publishing-cadence content calendar, it's a slow, deliberate publication.
 
-## Workflow — one topic at a time, four gates
+## Workflow — one topic at a time, five gates
 
-Every article goes through four sequential approvals before it's written.
+Every article goes through five sequential approvals before it's published.
 Nothing skips ahead. Never batch multiple topics through the pipeline at once.
 
 1. **Topic pitch** — I bring one topic, checked against the gate above, with a
@@ -171,12 +208,30 @@ Nothing skips ahead. Never batch multiple topics through the pipeline at once.
    send back for more digging.
 3. **Structure** — title + subtitle/section outline, shown before any prose is
    written. You approve or revise the structure.
-4. **Draft** — full article, written to the register above. 5-10% soft
-   promotion max (zero product mentions in body; one closing-module
-   connection to Ideal Credit, one link — per `site-architecture.md`
-   "soft-promotion rule"). Refined 2026-09-16: keep the closing module to a
-   single sentence, not the 2-3 originally specified - matches the "1-2
-   sentence paragraph" rule above and reads as quieter, less like ad copy.
+4. **Draft** — full article, written using the `direct-response-copy` skill
+   (Romanian output, register per this doc, not the skill's default
+   internet-native sales voice). 5-10% soft promotion max (zero product
+   mentions in body; one closing-module connection to Ideal Credit, one link —
+   per `site-architecture.md` "soft-promotion rule"). Refined 2026-09-16: keep
+   the closing module to a single sentence, not the 2-3 originally specified -
+   matches the "1-2 sentence paragraph" rule above and reads as quieter, less
+   like ad copy.
+5. **Audit** — added 2026-09-16, mandatory, runs every time after the draft
+   is written, before it's marked ready to publish. Re-read the piece with
+   fresh eyes against these four checks:
+   - **Easy reading** — every paragraph is 1-2 sentences (see Design &
+     typography above); no sentence so dense with clauses that a reader has
+     to re-read it.
+   - **Clear message** — each section answers the question its heading asks;
+     no claim left vague when a specific number or source is available.
+   - **Valued, not padded** — every sentence earns its place; cut anything
+     that restates a point already made.
+   - **No spam or nonsense** — no AI-cliché filler ("e important de
+     menționat," "practic," empty transitions), no mismatched punctuation or
+     typos, no inconsistent data ordering between a table and its chart.
+   Fix what's found directly in the draft. This is a full pass, not a
+   skim — it caught real issues in article 1 (a stray 3-sentence paragraph,
+   a mismatched quotation mark, a table row out of the chart's sort order).
 
 ## Open items carried from earlier work (still valid, unchanged by this doc)
 

@@ -26,7 +26,7 @@ export default function RateBarChart({
 }) {
     return (
         <figure className="not-prose my-8 border border-dc-line bg-dc-surface p-4 md:p-6">
-            <div style={{ height: data.length * 44 + 24 }}>
+            <div className="[&_*]:outline-none" style={{ height: data.length * 44 + 24 }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={data} layout="vertical" margin={{ top: 4, right: 28, bottom: 4, left: 0 }} barCategoryGap={10}>
                         <CartesianGrid horizontal={false} stroke="var(--color-dc-line)" />
@@ -55,8 +55,10 @@ export default function RateBarChart({
                                 fontFamily: "var(--font-dc-mono)",
                                 color: "var(--color-dc-text)",
                             }}
+                            labelStyle={{ color: "var(--color-dc-text)", marginBottom: 2 }}
+                            itemStyle={{ color: "var(--color-dc-text)" }}
+                            separator=""
                             formatter={(value) => [`${value}${unit}`, ""]}
-                            labelFormatter={() => ""}
                         />
                         <Bar dataKey="value" radius={0} maxBarSize={20}>
                             {data.map((entry) => (

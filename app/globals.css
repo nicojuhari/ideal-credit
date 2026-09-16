@@ -663,7 +663,7 @@ input[type=number] {
 .dc-legal {
   color: var(--color-dc-text-muted);
   line-height: 1.7;
-  font-size: 15px;
+  font-size: 16px;
 }
 .dc-legal h2 {
   margin: 2.5rem 0 0.75rem;
