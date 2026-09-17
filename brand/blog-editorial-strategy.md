@@ -229,9 +229,67 @@ Nothing skips ahead. Never batch multiple topics through the pipeline at once.
    - **No spam or nonsense** — no AI-cliché filler ("e important de
      menționat," "practic," empty transitions), no mismatched punctuation or
      typos, no inconsistent data ordering between a table and its chart.
+   - **SEO metadata length** — added 2026-09-17. Run `npm run check:blog`
+     and fix anything it flags before publishing (see "SEO metadata length"
+     below for the limits and why).
+   - **Body length** — added 2026-09-17. Same `npm run check:blog` run
+     checks word count too (see "Body length" below). A thin result means
+     go back and find more real substance, not pad existing sentences.
    Fix what's found directly in the draft. This is a full pass, not a
    skim — it caught real issues in article 1 (a stray 3-sentence paragraph,
    a mismatched quotation mark, a table row out of the chart's sort order).
+   Article 3 caught a different kind: two real but easily-confused numbers
+   (60,000 homeowners vs. ~40,000 loans - a loan can have two co-owners)
+   introduced without reconciling them, which reads as an inconsistency even
+   though both figures are correct. When two related numbers for the same
+   fact appear in an article, reconcile them in the same sentence the first
+   time the second one shows up - don't just cite each in isolation and trust
+   the reader to work out why they differ.
+
+## SEO metadata length (added 2026-09-17)
+
+The on-page H1 and dek (`post.title` / `post.dek` in `lib/blog-posts.ts`) are
+reader-facing and stay as long as the headline needs. The `<title>` tag and
+meta description in each article's `export const metadata` block are a
+**separate, shorter pair written for the SERP snippet** - they were drifting
+out of sync with no check catching it (article 3's first draft: a 72-char
+title and a 190-char description, both well past what Google displays before
+truncating).
+
+Limits (character count, used as a proxy for Google's actual pixel-width
+truncation):
+
+- **Title** (including the fixed `" | Dincolo de Cifre"` suffix): ≤ 60
+  characters.
+- **Description**: 120-156 characters. Under 120 reads thin; over 156 risks
+  mid-sentence truncation in the search result.
+
+Run `npm run check:blog` (script: `scripts/check-blog.mjs`) as part of the
+Audit gate, before an article is marked ready to publish. It reads every
+`app/blog/(articles)/*/page.mdx`, checks the top-level `title` and
+`description` against these limits, and exits non-zero if any article fails -
+safe to wire into a pre-publish check later if that becomes useful.
+
+## Body length (added 2026-09-17)
+
+Target **800-1000 words**. Floor: **700 words** - below that, don't pad
+existing sentences to hit the number. A short article is a symptom, not the
+problem: it usually means the topic didn't have enough real substance, or the
+draft only explored one dimension of it and stopped. Go back to the Topic
+Gate's "Complete" check and the Research gate - find the angle, the
+comparison, the mechanism, or the story that was missing - rather than
+stretching what's already there.
+
+The same `npm run check:blog` run reports word count (reader-facing text
+only - imports, the metadata block, JSX/chart data, and the social-promo
+comment are excluded from the count) alongside the metadata-length check.
+
+Audit (2026-09-17) of the first three articles against this floor: article 3
+(`dobanda-negativa-danemarca`, 770 words) is close, a real paragraph short.
+Articles 1 and 2 (636 and 573 words) are meaningfully under - both were
+data-recitation pieces that stopped at illustrating one dimension of their
+topic instead of answering the topic's full set of real reader questions;
+see the per-article notes wherever this gets addressed.
 
 ## Open items carried from earlier work (still valid, unchanged by this doc)
 

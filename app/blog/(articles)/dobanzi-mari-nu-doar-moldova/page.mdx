@@ -2,6 +2,8 @@ import ArticleHeader from "@/components/blog/ArticleHeader";
 import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
+import Highlight from "@/components/blog/Highlight";
+import Caption from "@/components/blog/Caption";
 import { getBlogPost } from "@/lib/blog-posts";
 
 export const metadata = {
@@ -31,6 +33,8 @@ export const post = getBlogPost("dobanzi-mari-nu-doar-moldova");
 
 <ArticleHeader title={post.title} dek={post.dek} date={post.date} />
 
+<Highlight>Estonia și Letonia - state UE, cu euro, cu economii stabile - au fost, în 2025, mai scumpe la credit pentru companii decât Grecia sau Portugalia.</Highlight>
+
 ## Cifrele
 
 Ratele de mai jos sunt dobânzi medii la credite pentru companii, pe cea mai recentă perioadă disponibilă.
@@ -50,18 +54,7 @@ Ratele de mai jos sunt dobânzi medii la credite pentru companii, pe cea mai rec
   ]}
 />
 
-| Piață | Dobândă | Sursă |
-| --- | --- | --- |
-| Turcia | ~40% | Banca Centrală a Turciei, martie 2026 |
-| Egipt | ~21,3% | Banca Centrală a Egiptului, ianuarie 2026 |
-| Moldova (sector bancar) | ~9,5% | BNM, august 2026 |
-| România | ~7,5% | BNR, martie 2026 |
-| Estonia / Letonia | ~5,3% | Bănci centrale naționale, ianuarie 2026 |
-| Media zonei euro | ~3,3-3,7% | BCE, statistici bancare, ianuarie-aprilie 2026 |
-| Japonia | ~2,9% | Banca Japoniei, februarie 2026 |
-| Malta | ~1,9% | BCE, iunie 2025 |
-
-Cifra Moldovei de mai sus e media sectorului **bancar**. Ideal Credit nu e o bancă, ci o organizație de creditare nebancară (OCN), iar dobânzile nebancare sunt structural mai mari decât media bancară, în orice țară.
+Cifra Moldovei de mai sus e media sectorului **bancar**. Ideal Credit nu e o bancă, ci o organizație de creditare nebancară (OCN), iar dobânzile nebancare sunt structural mai mari decât media bancară, în orice țară - legea permite, în Moldova, o dobândă anuală de până la 50% la un credit în lei, de peste cinci ori peste media bancară de 9,5%.
 
 Motivul ține de model de afaceri, nu de lăcomie: un OCN se finanțează din capital propriu sau împrumutat, nu din depozite ieftine, și lucrează des cu clienți pe care banca i-a refuzat deja.
 
@@ -79,13 +72,13 @@ Dobânda nu urmărește bogăția unei țări. Urmărește altceva.
 
 Patru factori explică majoritatea diferenței - niciunul nu ține de cât de „dezvoltată” e o economie.
 
-**Mărimea pieței.** O piață mică (Moldova, dar și Estonia sau Letonia) n-are acces la același volum de depozite ieftine sau la aceleași piețe de finanțare angro ca o economie de 80 de milioane de oameni. Costul la care creditorul își procură banii se transmite direct în dobânda ta.
+**Mărimea pieței.** O piață mică (Moldova, dar și Estonia sau Letonia) n-are acces la același volum de depozite ieftine sau la aceleași piețe de finanțare angro ca o economie de 80 de milioane de oameni. Toți banii din sistemul financiar moldovenesc - numerar, depozite, active bancare - reprezintă doar 52,4% din PIB, potrivit Băncii Mondiale. Costul la care creditorul își procură banii se transmite direct în dobânda ta.
 
-**Riscul de țară și de monedă.** Leul nu e euro. Orice creditor care se expune pe monedă locală într-o economie mică include, în preț, riscul unei devalorizări.
+**Riscul de țară și de monedă.** Leul nu e euro. Orice creditor care se expune pe monedă locală într-o economie mică include, în preț, riscul unei devalorizări. S&P Global evaluează Moldova cu ratingul BB-/B - sub pragul de „investment grade”, alături de Armenia, Albania sau Macedonia de Nord - rating reconfirmat, cu perspectivă stabilă, în aprilie 2026. Fiecare treaptă sub acel prag se traduce direct în costul la care se împrumută toată economia.
 
-**Executarea garanțiilor.** Cât de rapid recuperează un creditor banii dacă un client nu plătește - prin instanță, prin registre de garanții - influențează direct dobânda. Sisteme judiciare lente scumpesc creditul, indiferent de PIB.
+**Executarea garanțiilor.** Cât de rapid recuperează un creditor banii dacă un client nu plătește - prin instanță, prin registre de garanții - influențează direct dobânda. În ultimul raport „Doing Business” al Băncii Mondiale (2020, ultimul publicat), recuperarea unei datorii prin instanțele din Moldova dura, în medie, 2,8 ani, iar creditorul recupera doar 32 de bani la fiecare dolar din datorie. Sisteme judiciare lente scumpesc creditul, indiferent de PIB.
 
-**Concurența.** O piață cu puțini jucători relevanți lasă loc unor marje mai mari. O piață aglomerată le comprimă.
+**Concurența.** O piață cu puțini jucători relevanți lasă loc unor marje mai mari. Moldova are doar 10 bănci licențiate, iar primele trei dețin majoritatea activelor din sistem. O piață aglomerată le comprimă.
 
 Toți patru explică de ce Moldova e sus pe listă. Și toți patru, în combinații diferite, explică de ce statele baltice sunt sus pe listă - dar din alte motive decât la noi.
 
@@ -110,6 +103,10 @@ Fiecare dintre acestea reduce, pe rând, unul dintre cei patru factori. Împreun
 <ClosingNote href="/credite">
   La Ideal Credit lucrăm zilnic cu exact acest mecanism, pentru fiecare afacere în parte.
 </ClosingNote>
+
+<Caption as="div" className="mt-6">
+  Notă: cifrele despre cei patru factori structurali vin din surse diferite și din perioade diferite - plafonul legal DAE și numărul băncilor licențiate sunt curente (2026), ratingul S&P e reconfirmat în aprilie 2026, iar cifra despre executarea garanțiilor vine din ultimul raport „Doing Business” al Băncii Mondiale (2020, ultimul publicat înainte ca raportul să fie întrerupt). Le folosim ca ilustrare a mecanismului, nu ca fotografie exactă a situației de azi.
+</Caption>
 
 {/*
   SOCIAL PROMO - LinkedIn + Facebook (one caption, both platforms)

@@ -21,6 +21,12 @@ export const blogPosts: BlogPost[] = [
         dek: "Băncile finanțează doar 6% din investițiile firmelor mici din Moldova. Restul vine din altă parte - iar partea nebancară din spate e mai mare decât pare.",
         date: "2026-09-17",
     },
+    {
+        slug: "dobanda-negativa-danemarca",
+        title: "O bancă daneză a plătit oamenii să ia credit ipotecar.",
+        dek: "În 2019, Jyske Bank oferea credite pe 10 ani cu dobândă de minus 0,5%. Aproape nimeni n-a primit bani gratis - iar azi tot mai există 40.000 de credite din acea perioadă cu dobândă negativă.",
+        date: "2026-09-17",
+    },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

@@ -9,7 +9,7 @@ export default function Caption({
     className,
     children,
 }: {
-    as?: "p" | "figcaption";
+    as?: "p" | "figcaption" | "div";
     className?: string;
     children: React.ReactNode;
 }) {

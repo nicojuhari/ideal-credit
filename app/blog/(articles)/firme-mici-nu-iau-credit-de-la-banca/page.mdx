@@ -3,10 +3,11 @@ import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
 import Caption from "@/components/blog/Caption";
+import Highlight from "@/components/blog/Highlight";
 import { getBlogPost } from "@/lib/blog-posts";
 
 export const metadata = {
-    title: "Nouă din zece firme mici nu iau credit de la bancă | Dincolo de Cifre",
+    title: "Nouă din zece firme mici nu iau credit | Dincolo de Cifre",
     description:
         "Băncile finanțează doar 6% din investițiile firmelor mici din Moldova. Restul vine din altă parte - iar partea nebancară din spate e mai mare decât pare.",
     alternates: { canonical: "https://idealcredit.md/blog/firme-mici-nu-iau-credit-de-la-banca" },
@@ -15,7 +16,7 @@ export const metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/blog/firme-mici-nu-iau-credit-de-la-banca",
-        title: "Nouă din zece firme mici nu iau credit de la bancă | Dincolo de Cifre",
+        title: "Nouă din zece firme mici nu iau credit | Dincolo de Cifre",
         description:
             "Băncile finanțează doar 6% din investițiile firmelor mici din Moldova. Restul vine din altă parte - iar partea nebancară din spate e mai mare decât pare.",
     },
@@ -31,6 +32,8 @@ export const post = getBlogPost("firme-mici-nu-iau-credit-de-la-banca");
 />
 
 <ArticleHeader title={post.title} dek={post.dek} date={post.date} />
+
+<Highlight>Firmele mijlocii se bazează pe fonduri proprii în proporție de doar 71,7% - mai puțin decât firmele mici (91%) sau cele mari (83%).</Highlight>
 
 ## Cifrele
 
@@ -58,17 +61,33 @@ Firmele medii ies din tipar: se bazează cel mai puțin pe bani proprii dintre t
 
 Firmele mari, cu acces mai bun la piețele de capital, revin la un nivel apropiat de-al firmelor mici.
 
+## Nu e un tipar doar moldovenesc
+
+O comparație globală arată dacă 91% e ceva neobișnuit, sau doar normalitatea oricărei firme mici, oriunde în lume.
+
+Potrivit unei cercetări a Băncii Mondiale, pe date din 48 de țări, firmele își finanțează în medie doar circa 40% din investiții din surse externe. Restul, peste 60%, vine tot din bani proprii.
+
+Firmele mici se bazează, peste tot, și mai mult pe fonduri proprii decât firmele mari - tiparul se repetă global, nu doar la noi.
+
+Dar 91,2% rămâne mult peste acel tipar. O firmă mică obișnuită, în lume, ajunge la circa 60% autofinanțare - nu la 91%.
+
+Diferența nu e că firma mică moldovenească se bazează pe bani proprii. E cât de subțire a rămas partea externă, față de tiparul global.
+
 ## De ce ocolesc firmele mici băncile
 
 O bancă cere garanții solide și situații financiare clare înainte să dea un credit. O firmă mică, abia la început sau fără o contabilitate impecabilă, rareori le are pe amândouă.
 
 Nu e o chestiune de voință - e o chestiune de ce poate arăta, pe hârtie, o firmă mică.
 
+Tiparul se repetă global: potrivit acelorași cercetări ale Băncii Mondiale, firmele mici folosesc finanțare bancară semnificativ mai puțin decât cele mari, indiferent de țară. Nu pentru că n-ar vrea credit, ci pentru că rareori pot arăta ce cere o bancă.
+
 ## Cine umple golul, de fapt
 
 Restul de circa 9% care chiar ajunge la un creditor extern se împarte între doi jucători foarte diferiți: furnizorii, prin marfă dată pe credit, și sectorul de creditare nebancară.
 
 Sectorul de creditare nebancară (OCN) funcționează diferit de o bancă: nu ia depozite, ci se finanțează din capital propriu sau împrumutat. Și lucrează des cu firme pe care o bancă le-a refuzat deja sau nici nu le-a luat în calcul.
+
+Dobânda e mai mare decât la o bancă - legea permite până la 50% pe an pentru un credit în lei. Dar pentru o firmă deja refuzată de bancă, alternativa asta chiar există.
 
 Cât de mare e, de fapt, acest sector? La finalul lunii octombrie 2025, băncile aveau în portofoliu circa 55 de miliarde de lei în credite pentru companii.
 
@@ -90,8 +109,8 @@ Pentru firma mică ce nu se califică la bancă, sectorul nebancar rămâne cea 
   La Ideal Credit vedem zilnic exact acest tipar - firme mici, respinse sau ignorate de bancă, care au totuși nevoie reală de finanțare.
 </ClosingNote>
 
-<Caption className="mt-6">
-  Notă: datele despre sursele de finanțare ale firmelor mici (secțiunea „Cifrele”) sunt verificate direct din raportul Enterprise Surveys al Băncii Mondiale, Moldova 2024. Cifrele despre piața bancară și sectorul de creditare nebancară vin din presa economică, nu direct de la BNM sau CNPF, și e posibil să amestece creditele pentru companii cu cele pentru persoane fizice - le tratăm ca estimări, nu ca cifre exacte.
+<Caption as="div" className="mt-6">
+  Notă: datele despre sursele de finanțare ale firmelor mici (secțiunea „Cifrele”) sunt verificate direct din raportul Enterprise Surveys al Băncii Mondiale, Moldova 2024. Comparația globală (secțiunea „Nu e un tipar doar moldovenesc”) vine dintr-o analiză a Băncii Mondiale pe date agregate din 48 de țări, nu dintr-o comparație țară-cu-țară - o tratăm ca reper general, nu ca echivalentul exact al cifrei Moldovei. Cifrele despre piața bancară și sectorul de creditare nebancară vin din presa economică, nu direct de la BNM sau CNPF, și e posibil să amestece creditele pentru companii cu cele pentru persoane fizice - le tratăm ca estimări, nu ca cifre exacte.
 </Caption>
 
 {/*
