@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-posts";
 
 const BASE_URL = "https://idealcredit.md";
 
@@ -23,7 +24,6 @@ const STATIC_ROUTES: RouteConfig[] = [
   { path: "/credite/credit-pentru-reparatie", priority: 0.85, changeFrequency: "monthly" },
 
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
-  { path: "/blog/dobanzi-mari-nu-doar-moldova", priority: 0.6, changeFrequency: "yearly" },
 
   { path: "/despre-noi", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contacte", priority: 0.7, changeFrequency: "monthly" },
@@ -38,10 +38,19 @@ const STATIC_ROUTES: RouteConfig[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return STATIC_ROUTES.map(({ path, priority, changeFrequency }) => ({
+  const staticEntries = STATIC_ROUTES.map(({ path, priority, changeFrequency }) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
     changeFrequency,
     priority,
   }));
+
+  const blogEntries = blogPosts.map(({ slug, date }) => ({
+    url: `${BASE_URL}/blog/${slug}`,
+    lastModified: new Date(date),
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...blogEntries];
 }
