@@ -91,6 +91,48 @@ time: would a Moldovan business owner or analyst actually say this word in
 conversation, or only encounter it in a translated report? If the latter,
 find the word they'd actually use.
 
+## Narrative craft (added 2026-09-18)
+
+The register rules above (numerate peer, no Finance 101) say how *sophisticated*
+the writing is. This section says how *readable* it is — the difference
+between info and info-art: a piece someone finishes, learns something real
+from, and wants to share, versus a correct but flat recitation of facts.
+Source: analysis of a Romanian journalist/interviewer's social storytelling
+style, adapted for a numerate finance audience — his craft, not his standards
+(he paraphrases quotes and invents color for texture; Dincolo de Cifre never
+does either — see "Comparison integrity" and the sourcing standard implicit
+throughout this doc).
+
+Four techniques, checked at Structure (gate 3) and Audit (gate 5):
+
+- **Cold open on a scene, not a topic.** Never start with "acest articol
+  discută..." or a definition. Open on a concrete moment, number, or fact that
+  the reader can picture — article 3's `<Highlight>` ("Pe hârtie, dobânda era
+  negativă. Aproape nimeni n-a primit, de fapt, bani gratis.") is the model:
+  the topic emerges from the scene instead of being announced before it.
+- **Curiosity gap.** Withhold the payoff fact or number for a beat and let the
+  piece earn it, rather than stating the conclusion in the first paragraph.
+  This cannot override the Topic Gate's "Complete" check or the Audit's "Clear
+  message" check — every section still has to answer the question its heading
+  asks by the time the reader gets there. The gap is about pacing within a
+  section, not about leaving the reader's real question unanswered.
+- **Contrarian frame, backed by data.** State the common assumption, then flip
+  it with the real number or mechanism ("dobânda era negativă — dar aproape
+  nimeni n-a primit bani gratis" is already this shape). Never state the
+  contrarian framing without the data to back it in the same breath — that's
+  the line between a hook and clickbait.
+- **Human stake.** Somewhere in the piece, ground the mechanism in what it
+  means for a real business, borrower, or case — even anonymized/aggregate
+  (this is what Angle 9, "De partea cealaltă a mesei," already exists for).
+  A piece that only ever discusses rates and percentages in the abstract is
+  missing this even if every number is correct.
+
+What does **not** transfer from the source style: reconstructed/paraphrased
+dialogue, invented sensory detail, a repeated sign-off catchphrase, or
+rhetorical questions used as filler rather than at a genuine section pivot.
+Those work for a social storytelling voice; they'd read as unsourced padding
+against the blog's numerate, source-precise standard.
+
 ## Design & typography (added 2026-09-16, after reviewing article 1 live)
 
 - **No repeated branding chrome.** The blog doesn't restate "Dincolo de Cifre"
