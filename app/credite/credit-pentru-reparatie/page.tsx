@@ -12,13 +12,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { repairLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { repairLoanSchema } from "@/lib/schema";
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
     { name: "Credite", url: "https://idealcredit.md/credite" },
     { name: "Credit pentru reparație", url: "https://idealcredit.md/credite/credit-pentru-reparatie" },
-]);
+];
 
 export const metadata: Metadata = {
     title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
@@ -71,9 +71,8 @@ export default function CreditReparatiePage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(repairLoanSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
             <ProductHero
+                breadcrumb={breadcrumbItems}
                 category="Persoane fizice"
                 position={6}
                 title={

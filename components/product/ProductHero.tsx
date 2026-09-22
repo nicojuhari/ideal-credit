@@ -1,9 +1,11 @@
 import Container from "@/components/ds/Container";
+import Breadcrumb from "@/components/ds/Breadcrumb";
 import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
 
 type Cta = { label: string; href: string };
 
 export default function ProductHero({
+    breadcrumb,
     category,
     position,
     total = 6,
@@ -12,6 +14,7 @@ export default function ProductHero({
     primaryCta,
     secondaryCta,
 }: {
+    breadcrumb?: { name: string; url: string }[];
     category: string;
     position: number;
     total?: number;
@@ -23,6 +26,7 @@ export default function ProductHero({
     return (
         <div className="dc-section dc-section--hero">
             <Container>
+                {breadcrumb && <Breadcrumb items={breadcrumb} />}
                 <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
                     <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
                     {category} · <span className="font-dc-mono">{String(position).padStart(2, "0")}</span> din {total} soluții

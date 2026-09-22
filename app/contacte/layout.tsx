@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { localBusinessChisinauSchema, localBusinessCauseniSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
     title: "Contacte Ideal Credit | Telefon, Email și Adrese",
@@ -18,11 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContacteLayout({ children }: { children: React.ReactNode }) {
-    return (
-        <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
-            {children}
-        </>
-    );
+    return <>{children}</>;
 }

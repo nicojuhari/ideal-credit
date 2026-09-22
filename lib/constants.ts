@@ -1,6 +1,16 @@
 // Monthly interest rate (%) used by the credit calculator (createGrafic/calcDAE).
 export const CALCULATOR_MONTHLY_RATE = 4;
 
+export const SITE_DESCRIPTION =
+    "Credite pentru succes în Moldova: finanțare nebancară pentru afaceri și persoane fizice. Analizăm scopul și situația ta, ca să-ți spunem dacă creditul chiar te ajută - dobândă fixă, fără comisioane ascunse.";
+
+// Byline used on "Dincolo de Cifre" blog articles - single source for both the visible byline and the Article schema author.
+export const ARTICLE_AUTHOR = {
+    name: "Nicolae Cojuhari",
+    jobTitle: "Co-fondator, Ideal Credit",
+    description: "Licențiat în finanțe",
+};
+
 export const OFFICES = [
     {
         id: 1,

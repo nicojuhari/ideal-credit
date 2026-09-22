@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /*.pdf$
-Disallow: /cdn-cgi/*
-
-Sitemap: https://idealcredit.md/sitemap.xml

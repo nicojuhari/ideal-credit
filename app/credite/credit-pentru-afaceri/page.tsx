@@ -14,13 +14,14 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { businessCreditSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { businessCreditSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
     { name: "Credite", url: "https://idealcredit.md/credite" },
     { name: "Credit pentru afaceri", url: "https://idealcredit.md/credite/credit-pentru-afaceri" },
-]);
+];
 
 export const metadata: Metadata = {
     title: "Credit pentru Afaceri din Moldova | Ideal Credit",
@@ -45,7 +46,7 @@ const businessFaqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă finanțarea nu are sens pentru afacerea mea?",
-        answer: "Îți spunem la telefon, înainte să depui dosarul. Cu 16 ani de experiență, recunoaștem repede când o sumă sau o structură nu se potrivesc afacerii tale - și recomandăm o variantă mai mică, un termen diferit, sau spunem direct că nu e momentul.",
+        answer: `Îți spunem la telefon, înainte să depui dosarul. Cu ${yearsSinceFoundation} ani de experiență, recunoaștem repede când o sumă sau o structură nu se potrivesc afacerii tale - și recomandăm o variantă mai mică, un termen diferit, sau spunem direct că nu e momentul.`,
     },
     {
         question: "Ce se întâmplă dacă firma mea are mai puțin de un an de activitate?",
@@ -126,9 +127,8 @@ export default function CreditAfaceriPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessCreditSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
             <ProductHero
+                breadcrumb={breadcrumbItems}
                 category="Persoane juridice"
                 position={1}
                 title={

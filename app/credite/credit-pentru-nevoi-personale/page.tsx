@@ -13,13 +13,14 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { personalLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { personalLoanSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
     { name: "Credite", url: "https://idealcredit.md/credite" },
     { name: "Credit pentru nevoi personale", url: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
-]);
+];
 
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
@@ -44,7 +45,7 @@ const personalFaqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă suma cerută nu mi se potrivește?",
-        answer: "Îți spunem sincer, la telefon, înainte de dosarul complet. Cu 16 ani de experiență, recunoaștem când o sumă e prea mare pentru capacitatea ta de rambursare - și recomandăm o sumă potrivită sau o altă structură, nu doar un refuz fără explicație.",
+        answer: `Îți spunem sincer, la telefon, înainte de dosarul complet. Cu ${yearsSinceFoundation} ani de experiență, recunoaștem când o sumă e prea mare pentru capacitatea ta de rambursare - și recomandăm o sumă potrivită sau o altă structură, nu doar un refuz fără explicație.`,
     },
     {
         question: "Cât pot împrumuta fără garanții?",
@@ -123,9 +124,8 @@ export default function CreditNevoiPersonalePage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
             <ProductHero
+                breadcrumb={breadcrumbItems}
                 category="Persoane fizice"
                 position={4}
                 title={

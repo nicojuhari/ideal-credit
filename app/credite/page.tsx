@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
+import Breadcrumb from "@/components/ds/Breadcrumb";
 import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
 import Products from "@/components/home/Products";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { buildBreadcrumbSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
     { name: "Credite", url: "https://idealcredit.md/credite" },
-]);
+];
 
 export const metadata: Metadata = {
     title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
@@ -49,16 +50,16 @@ const hubFaqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă nicio soluție nu mi se potrivește chiar?",
-        answer: "Îți spunem la prima discuție telefonică. Cu 16 ani de experiență, recunoaștem repede când o sumă, un termen sau chiar momentul nu sunt potrivite - și recomandăm sincer alternativa care chiar are sens, sau spunem direct că nu e cazul acum.",
+        answer: `Îți spunem la prima discuție telefonică. Cu ${yearsSinceFoundation} ani de experiență, recunoaștem repede când o sumă, un termen sau chiar momentul nu sunt potrivite - și recomandăm sincer alternativa care chiar are sens, sau spunem direct că nu e cazul acum.`,
     },
 ];
 
 export default function CreditePage() {
     return (
         <div className="dc bg-dc-bg">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             <div className="dc-section dc-section--hero">
                 <Container className="flex flex-col items-center gap-8 text-center">
+                    <Breadcrumb items={breadcrumbItems} />
                     <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
                         <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
                         Registrul de soluții · 6 credite

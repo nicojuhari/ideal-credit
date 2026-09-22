@@ -4,14 +4,13 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/includes/Header";
 import Footer from "@/components/includes/Footer";
+import { organizationSchema } from "@/lib/schema";
+import { SITE_DESCRIPTION } from "@/lib/constants";
 
 const InterFont = Inter({ variable: "--font-sans", subsets: ["latin"] });
 const ArchivoFont = Archivo({ variable: "--font-archivo", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const IBMPlexMonoFont = IBM_Plex_Mono({ variable: "--font-ibm-plex-mono", subsets: ["latin"], weight: ["400", "500"] });
 const InstrumentSerifFont = Instrument_Serif({ variable: "--font-instrument-serif", subsets: ["latin"], weight: "400", style: "italic" });
-
-const siteDescription =
-    "Credite nebancare în Moldova pentru afaceri și persoane fizice. Analizăm situația ta și îți spunem dacă finanțarea chiar te ajută - dobândă fixă, fără comisioane ascunse.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://idealcredit.md"),
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
         default: "Credite Nebancare în Moldova | Ideal Credit",
         template: "%s",
     },
-    description: siteDescription,
+    description: SITE_DESCRIPTION,
     keywords: "credite nebancare, credit md, credit pentru afaceri, credit pentru nevoi personale, credit Chișinău Moldova",
     openGraph: {
         locale: "ro_MD",
@@ -27,103 +26,12 @@ export const metadata: Metadata = {
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/",
     },
+    twitter: {
+        card: "summary_large_image",
+    },
     other: {
         "google-site-verification": "xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0",
     },
-};
-
-const organizationSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "WebSite",
-            "@id": "https://idealcredit.md/#website",
-            name: "Ideal Credit",
-            url: "https://idealcredit.md/",
-        },
-        {
-            "@type": "Organization",
-            "@id": "https://idealcredit.md/#organization",
-            name: "Ideal Credit",
-            legalName: 'Organizația de Creditare Nebancară "Ideal Credit" SRL',
-            url: "https://idealcredit.md/",
-            logo: "https://idealcredit.md/ideal-credit-logo.svg",
-            description: siteDescription,
-            contactPoint: [
-                {
-                    "@type": "ContactPoint",
-                    telephone: "+37361252777",
-                    contactType: "customer service",
-                    email: "info@idealcredit.md",
-                    areaServed: "MD",
-                    availableLanguage: "ro",
-                },
-                {
-                    "@type": "ContactPoint",
-                    telephone: "+37368270101",
-                    contactType: "customer service",
-                    email: "info@idealcredit.md",
-                    areaServed: "MD",
-                    availableLanguage: "ro",
-                },
-            ],
-            sameAs: [
-                "https://www.facebook.com/idealcredit.md",
-                "https://www.instagram.com/idealcredit.md",
-                "https://www.linkedin.com/company/idealcredit",
-            ],
-        },
-        {
-            "@type": ["LocalBusiness", "FinancialService"],
-            "@id": "https://idealcredit.md/#chisinau",
-            name: "Ideal Credit Chișinău",
-            parentOrganization: { "@id": "https://idealcredit.md/#organization" },
-            url: "https://idealcredit.md/",
-            address: {
-                "@type": "PostalAddress",
-                streetAddress: "Ginta Latină, nr. 18, of. 5",
-                addressLocality: "Chișinău",
-                postalCode: "MD-2044",
-                addressCountry: "MD",
-            },
-            telephone: "+37361252777",
-            openingHoursSpecification: [
-                {
-                    "@type": "OpeningHoursSpecification",
-                    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    opens: "08:30",
-                    closes: "16:30",
-                },
-            ],
-            hasMap: "https://maps.app.goo.gl/EYxf2NnK3ScynGH79",
-            image: "https://idealcredit.md/ideal-credit-logo.svg",
-        },
-        {
-            "@type": ["LocalBusiness", "FinancialService"],
-            "@id": "https://idealcredit.md/#causeni",
-            name: "Ideal Credit Căușeni",
-            parentOrganization: { "@id": "https://idealcredit.md/#organization" },
-            url: "https://idealcredit.md/",
-            address: {
-                "@type": "PostalAddress",
-                streetAddress: "Mihai Eminescu, nr. 17, of. 47",
-                addressLocality: "Căușeni",
-                postalCode: "MD-4304",
-                addressCountry: "MD",
-            },
-            telephone: "+37368270101",
-            openingHoursSpecification: [
-                {
-                    "@type": "OpeningHoursSpecification",
-                    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    opens: "08:30",
-                    closes: "16:30",
-                },
-            ],
-            hasMap: "https://maps.app.goo.gl/T7nCkvKXGKLFKU3Z9",
-            image: "https://idealcredit.md/ideal-credit-logo.svg",
-        },
-    ],
 };
 
 const FB_PIXEL_ID = "2254113158275780";

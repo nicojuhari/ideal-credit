@@ -10,22 +10,22 @@ import type { DocumentItem } from "@/components/product/DocumentRows";
 import ProductFaq from "@/components/product/ProductFaq";
 import type { FaqItem } from "@/components/product/ProductFaq";
 import ClosingCta from "@/components/home/ClosingCta";
-import { localBusinessChisinauSchema, localBusinessCauseniSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
+const title = `Despre Ideal Credit | ${yearsSinceFoundation} ani de creditare în Moldova`;
+const description = `Despre noi: instituție financiară nebancară cu peste ${yearsSinceFoundation} ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.`;
+
 export const metadata: Metadata = {
-    title: "Despre Ideal Credit | 16 ani de creditare în Moldova",
-    description:
-        "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
+    title,
+    description,
     alternates: { canonical: "https://idealcredit.md/despre-noi" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/despre-noi",
-        title: "Despre Ideal Credit | 16 ani de creditare în Moldova",
-        description:
-            "Despre noi: instituție financiară nebancară cu peste 16 ani în Moldova. Credite pentru persoane fizice și afaceri, dobândă fixă, fără comisioane ascunse.",
+        title,
+        description,
     },
 };
 
@@ -128,7 +128,7 @@ const faqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă finanțarea nu are sens pentru mine?",
-        answer: "Îți spunem la telefon, înainte să depui dosarul. Cu 16 ani de experiență, recunoaștem repede când o sumă sau o situație nu se potrivesc - și recomandăm o variantă mai potrivită sau spunem direct că nu e momentul.",
+        answer: `Îți spunem la telefon, înainte să depui dosarul. Cu ${yearsSinceFoundation} ani de experiență, recunoaștem repede când o sumă sau o situație nu se potrivesc - și recomandăm o variantă mai potrivită sau spunem direct că nu e momentul.`,
     },
     {
         question: "Cât de repede primesc banii?",
@@ -151,9 +151,6 @@ const faqItems: FaqItem[] = [
 export default function DespreNoiPage() {
     return (
         <div className="dc bg-dc-bg">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessChisinauSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessCauseniSchema) }} />
-
             <div className="dc-section dc-section--hero">
                 <Container>
                     <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">

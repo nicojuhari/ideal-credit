@@ -14,13 +14,14 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { investitionalSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { investitionalSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
     { name: "Credite", url: "https://idealcredit.md/credite" },
     { name: "Credit investițional", url: "https://idealcredit.md/credite/credit-investitional" },
-]);
+];
 
 export const metadata: Metadata = {
     title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
@@ -45,7 +46,7 @@ const investFaqItems: FaqItem[] = [
     },
     {
         question: "Ce se întâmplă dacă investiția nu are sens financiar acum?",
-        answer: "Îți spunem direct, înainte de dosar. Cu 16 ani analizând ce funcționează pentru afaceri din Moldova, recunoaștem când o investiție e prematură - și recomandăm fie o sumă mai mică, fie să aștepți un sezon mai potrivit.",
+        answer: `Îți spunem direct, înainte de dosar. Cu ${yearsSinceFoundation} ani analizând ce funcționează pentru afaceri din Moldova, recunoaștem când o investiție e prematură - și recomandăm fie o sumă mai mică, fie să aștepți un sezon mai potrivit.`,
     },
     {
         question: "Care este termenul maxim pentru un credit investițional?",
@@ -88,9 +89,8 @@ export default function CreditInvestitionalPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(investitionalSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
             <ProductHero
+                breadcrumb={breadcrumbItems}
                 category="Persoane juridice"
                 position={2}
                 title={

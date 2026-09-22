@@ -12,13 +12,13 @@ import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
 import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
-import { autoLoanSchema, buildBreadcrumbSchema } from "@/lib/schema";
+import { autoLoanSchema } from "@/lib/schema";
 
-const breadcrumbSchema = buildBreadcrumbSchema([
+const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
     { name: "Credite", url: "https://idealcredit.md/credite" },
     { name: "Credit pentru automobil", url: "https://idealcredit.md/credite/credit-pentru-automobil" },
-]);
+];
 
 export const metadata: Metadata = {
     title: "Credit pentru Automobil în Moldova | Ideal Credit",
@@ -71,9 +71,8 @@ export default function CreditAutomobilPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(autoLoanSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-
             <ProductHero
+                breadcrumb={breadcrumbItems}
                 category="Persoane fizice"
                 position={5}
                 title={
