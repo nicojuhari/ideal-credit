@@ -42,13 +42,13 @@ const servicii = [
     {
         title: "Credite pentru persoane fizice",
         desc: "Finanțare pentru renovări, electrocasnice, mașini, cheltuieli medicale sau orice altă nevoie urgentă.",
-        items: ["Aprobare rapidă", "Fără costuri ascunse", "Suma și rata adaptate la venitul tău"],
+        items: ["Analizăm scopul, nu doar actele", "Fără costuri ascunse", "Suma și rata adaptate la venitul tău"],
         href: "/credite/credit-pentru-nevoi-personale",
     },
     {
         title: "Credite pentru afaceri",
         desc: "Finanțare pentru antreprenori și firme mici care vor să crească fără să aștepte proceduri bancare lungi.",
-        items: ["Bani pentru stoc, utilaje sau modernizare", "Analiză rapidă a dosarului", "Soluții cu sau fără gaj, în funcție de sumă"],
+        items: ["Bani pentru stoc, utilaje sau modernizare", "Analiză onestă, înainte de dosar", "Soluții cu sau fără gaj, în funcție de sumă"],
         href: "/credite/credit-pentru-afaceri",
     },
     {
@@ -62,9 +62,12 @@ const principii = [
     { title: "Transparență totală", desc: "Îți arătăm toate costurile de la început. Nu există surprize la semnătură sau pe parcurs." },
     {
         title: "Scopul contează cel mai mult",
-        desc: "Înainte de acte, vrem să înțelegem pentru ce ai nevoie de bani și dacă planul tău are logică.",
+        desc: "Vrem să înțelegem pentru ce ai nevoie de bani și dacă planul tău are logică - analizăm scopul și situația ta, ca să luăm decizia corectă.",
     },
-    { title: "Aprobare rapidă", desc: "Nu pierzi săptămâni în așteptare. Analizăm dosarul tău și îți dăm un răspuns clar." },
+    {
+        title: "Răspuns rapid, oricare ar fi",
+        desc: "Nu pierzi săptămâni în așteptare - și dacă răspunsul e nu, îl primești la fel de repede ca un da.",
+    },
     {
         title: "Flexibilitate reală",
         desc: "Analizăm situația ta individual, nu după un algoritm rigid. Dacă ai venituri stabile și capacitate de rambursare, găsim o soluție.",
@@ -86,7 +89,7 @@ const principii = [
 const proces = [
     { title: "Completezi cererea", desc: "Online, la telefon, WhatsApp sau email - fără drum la birou." },
     { title: "Analizăm dosarul", desc: "Ne uităm la scopul creditului și la logica planului tău, nu doar la actele depuse." },
-    { title: "Primești răspunsul", desc: "Clar și transparent." },
+    { title: "Primești răspunsul", desc: "Clar și sincer - chiar și când răspunsul e nu." },
     { title: "Semnezi contractul", desc: "La birou, prin programare - doar când răspunsul e deja „da”." },
     { title: "Primești banii", desc: "Și îți continui planurile." },
 ];
@@ -122,6 +125,10 @@ const faqItems: FaqItem[] = [
     {
         question: "Am nevoie de garant sau gaj?",
         answer: "La primul credit, fidejusorul (garant personal) este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
+    },
+    {
+        question: "Ce se întâmplă dacă finanțarea nu are sens pentru mine?",
+        answer: "Îți spunem la telefon, înainte să depui dosarul. Cu 16 ani de experiență, recunoaștem repede când o sumă sau o situație nu se potrivesc - și recomandăm o variantă mai potrivită sau spunem direct că nu e momentul.",
     },
     {
         question: "Cât de repede primesc banii?",

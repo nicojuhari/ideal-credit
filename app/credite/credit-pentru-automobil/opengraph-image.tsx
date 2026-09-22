@@ -11,6 +11,6 @@ export default async function Image() {
         eyebrowTotal: 6,
         title: "Credit pentru automobil.",
         accent: "automobil.",
-        subtitle: "Cumpără sau repară mașina fără complicații. Finanțare rapidă, dobândă fixă.",
+        subtitle: "Cumpără sau repară mașina fără complicații. Analizăm scopul și situația ta, pentru un răspuns onest.",
     });
 }

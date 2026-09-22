@@ -23,7 +23,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 export const metadata: Metadata = {
     title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
     description:
-        "Credit pentru reparație - casă sau apartament. Obține banii rapid, dobândă fixă și sume flexibile pentru renovare. Aplică online!",
+        "Credit pentru reparație - casă sau apartament, cu dobândă fixă și sume flexibile. Analizăm scopul și situația ta, pentru o decizie corectă.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-reparatie" },
     openGraph: {
         type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "https://idealcredit.md/credite/credit-pentru-reparatie",
         title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
         description:
-            "Credit pentru reparație - casă sau apartament. Obține banii rapid, dobândă fixă și sume flexibile pentru renovare. Aplică online!",
+            "Credit pentru reparație - casă sau apartament, cu dobândă fixă și sume flexibile. Analizăm scopul și situația ta, pentru o decizie corectă.",
     },
 };
 
@@ -40,6 +40,10 @@ const faqItems: FaqItem[] = [
     {
         question: "Trebuie să prezint facturi de la constructor sau devize înainte de aprobare?",
         answer: "Nu. Nu cerem devize sau facturi obligatorii pentru a aproba creditul. Dacă le ai, pot ajuta la stabilirea sumei, dar nu sunt o condiție. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar.",
+    },
+    {
+        question: "Ce se întâmplă dacă suma cerută nu se potrivește bugetului meu?",
+        answer: "Îți spunem sincer, înainte de dosar. Dacă rata propusă ar fi prea mare pentru venitul tău, recomandăm o sumă mai mică sau un termen mai lung, ca renovarea să nu-ți pună presiune pe buget.",
     },
     {
         question: "Pot folosi banii pentru orice lucrare de renovare?",
@@ -122,7 +126,7 @@ export default function CreditReparatiePage() {
                         },
                         {
                             title: "Nu trebuie să fii proprietar",
-                            text: "La primul credit, fidejusorul e obligatoriu; gajul imobiliar doar pentru sume mari sau venituri nestabile. Analizăm situația ta reală, nu actele de proprietate.",
+                            text: "La primul credit, fidejusorul e obligatoriu; gajul imobiliar doar pentru sume mari sau venituri nestabile. Analizăm situația ta reală, nu actele de proprietate - și, dacă suma nu are sens pentru veniturile tale, recomandăm o sumă potrivită, nu una care îți pune presiune pe buget.",
                         },
                     ]}
                 />

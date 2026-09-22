@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Credite pentru fiecare situație.",
         accent: "fiecare situație.",
-        subtitle: "Finanțare pentru afaceri și persoane fizice. Dobândă fixă, costuri clare, decizie rapidă.",
+        subtitle: "Finanțare pentru afaceri și persoane fizice. Analizăm situația ta și îți spunem dacă are sens.",
     });
 }

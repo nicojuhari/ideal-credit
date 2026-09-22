@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Cerere de credit online.",
         accent: "online.",
-        subtitle: "Completezi în câteva minute. Răspuns rapid, fără birocrație excesivă.",
+        subtitle: "Completezi în câteva minute - și afli sincer dacă are sens, înainte de dosar.",
     });
 }

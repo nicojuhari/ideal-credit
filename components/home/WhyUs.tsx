@@ -4,10 +4,6 @@ import { yearsSinceFoundation } from "@/lib/utils";
 
 const rows = [
     {
-        title: "Analizăm scopul, nu doar dosarul",
-        body: "Ne interesează pentru ce ai nevoie de bani și dacă planul are logică - nu doar actele depuse.",
-    },
-    {
         title: "Condiții transparente",
         body: "Dobânzi fixe, zero comisioane ascunse - toate costurile înainte de semnare.",
     },
@@ -28,9 +24,10 @@ export default function WhyUs() {
             marker="De ce noi"
             title={
                 <>
-                    {yearsSinceFoundation} ani de finanțare de <Accent>încredere</Accent>
+                    {yearsSinceFoundation} ani. Aceeași <Accent>întrebare.</Accent>
                 </>
             }
+            description="Are sens pentru tine? Analizăm scopul, nu doar dosarul - și spunem sincer când răspunsul e nu."
         >
             <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
                 {rows.map((row, i) => (

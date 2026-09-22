@@ -65,7 +65,7 @@ export const financialServiceSchema = {
     },
     areaServed: { "@type": "State", name: "Republica Moldova" },
     description:
-        "Ideal Credit oferă soluții financiare rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, destinate atât antreprenorilor pentru dezvoltarea afacerilor, cât și persoanelor fizice pentru nevoi personale, pe întreg teritoriul Republicii Moldova.",
+        "Ideal Credit analizează situația fiecărui client înainte de a recomanda o finanțare - dobânzi fixe, fără comisioane ascunse, pentru antreprenori și persoane fizice din Republica Moldova.",
 };
 
 export const localBusinessChisinauSchema = {
@@ -170,7 +170,7 @@ export const personalLoanSchema = {
     "@type": "LoanOrCredit",
     name: "Credit pentru nevoi personale",
     description:
-        "Credite rapide, transparente, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
+        "Credite analizate individual, cu dobânzi fixe și fără comisioane ascunse, adaptate nevoilor personale ale clienților din Republica Moldova.",
     provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",
@@ -204,7 +204,7 @@ export const businessCreditSchema = {
     "@context": "https://schema.org",
     "@type": "LoanOrCredit",
     name: "Credit pentru afaceri",
-    description: "Credit pentru afaceri - bani rapizi pentru dezvoltarea afacerilor.",
+    description: "Credit pentru afaceri - analizăm scopul, nu doar dosarul, pentru dezvoltarea afacerilor.",
     provider: { "@id": ORGANIZATION_ID },
     amount: {
         "@type": "MonetaryAmount",

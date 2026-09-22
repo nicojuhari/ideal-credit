@@ -44,6 +44,10 @@ const investFaqItems: FaqItem[] = [
         answer: "Da, nu suntem limitați la categorii specifice. Finanțăm mașini industriale, tehnica agricolă, echipamente horeca, sisteme IT, vehicule comerciale și altele.",
     },
     {
+        question: "Ce se întâmplă dacă investiția nu are sens financiar acum?",
+        answer: "Îți spunem direct, înainte de dosar. Cu 16 ani analizând ce funcționează pentru afaceri din Moldova, recunoaștem când o investiție e prematură - și recomandăm fie o sumă mai mică, fie să aștepți un sezon mai potrivit.",
+    },
+    {
         question: "Care este termenul maxim pentru un credit investițional?",
         answer: "Până la 60 luni (5 ani). Termenul mai lung reduce rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar.",
     },
@@ -154,7 +158,7 @@ export default function CreditInvestitionalPage() {
                         },
                         {
                             title: "Ce analizăm",
-                            text: "Extrasele bancare și activitatea curentă a firmei - nu un plan de afaceri detaliat sau o factură finalizată. Dacă investiția are legătură cu afacerea ta și poți rambursa, discutăm.",
+                            text: "Extrasele bancare și activitatea curentă a firmei - nu un plan de afaceri detaliat sau o factură finalizată. Analizăm scopul investiției și situația firmei, ca să luăm decizia corectă - chiar dacă asta înseamnă o sumă mai mică sau un refuz.",
                         },
                     ]}
                 />

@@ -44,6 +44,10 @@ const businessFaqItems: FaqItem[] = [
         answer: "La primul credit, fidejusorul (garant personal - de obicei administratorul firmei) este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau fluxuri financiare nestabile.",
     },
     {
+        question: "Ce se întâmplă dacă finanțarea nu are sens pentru afacerea mea?",
+        answer: "Îți spunem la telefon, înainte să depui dosarul. Cu 16 ani de experiență, recunoaștem repede când o sumă sau o structură nu se potrivesc afacerii tale - și recomandăm o variantă mai mică, un termen diferit, sau spunem direct că nu e momentul.",
+    },
+    {
         question: "Ce se întâmplă dacă firma mea are mai puțin de un an de activitate?",
         answer: "Analizăm individual. Contează mai mult extrasele bancare și activitatea lunară a contului decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate cu flux demonstrabil.",
     },

@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Credite pentru succes.",
         accent: "succes.",
-        subtitle: "Finanțăm afaceri și persoane fizice din Moldova, rapid și transparent.",
+        subtitle: "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută.",
     });
 }

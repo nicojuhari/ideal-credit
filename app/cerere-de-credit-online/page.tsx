@@ -606,9 +606,10 @@ export default function CerereOnlinePage() {
                                         </FieldGroup>
 
                                         <p className="mt-8 text-xs leading-[1.7] text-dc-text-muted">
-                                            Trimițând cererea, confirmi că: (1) este o cerere preventivă, fără caracter obligatoriu; (2)
-                                            Ideal Credit SRL nu este obligată să motiveze un eventual refuz; (3) vei oferi fidejusor și vei
-                                            veni în oficiu pentru semnare.
+                                            Trimițând cererea, confirmi că: (1) este o cerere preliminară, fără caracter obligatoriu pentru
+                                            nicio parte; (2) îți spunem sincer rezultatul analizei - dacă suma sau situația ta nu se
+                                            potrivesc, afli asta înainte de dosarul complet, nu după; (3) vei oferi fidejusor și vei veni în
+                                            oficiu pentru semnare.
                                         </p>
                                     </FieldSet>
                                 )}
@@ -672,7 +673,7 @@ export default function CerereOnlinePage() {
                             <DialogTitle className="mt-1">Nu am putut trimite cererea</DialogTitle>
                         </DialogHeader>
                         <p className="text-[15px] leading-[1.55] text-dc-text-muted">
-                            Vă rugăm să verificați datele introduse și să încercați din nou.
+                            Verifică datele introduse și încearcă din nou.
                         </p>
                     </DialogContent>
                 </Dialog>

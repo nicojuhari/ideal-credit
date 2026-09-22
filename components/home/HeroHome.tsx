@@ -19,11 +19,11 @@ export default function HeroHome() {
                     <h1 className="max-w-[1000px] text-[clamp(64px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
                         Credite pentru <Accent>succes.</Accent>
                     </h1>
-                    <p className="max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Finanțăm afaceri și persoane fizice din Moldova, rapid și transparent.
+                    <p className="max-w-[480px] text-[19px] leading-[1.55] text-dc-text-muted">
+                        Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3.5">
-                        <ButtonPrimary href="/cerere-de-credit-online">Solicită un credit</ButtonPrimary>
+                        <ButtonPrimary href="/contacte">Discutăm situația ta</ButtonPrimary>
                         <ButtonSecondary href="#calculator">Calculează rata</ButtonSecondary>
                     </div>
                 </Container>

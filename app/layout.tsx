@@ -11,7 +11,7 @@ const IBMPlexMonoFont = IBM_Plex_Mono({ variable: "--font-ibm-plex-mono", subset
 const InstrumentSerifFont = Instrument_Serif({ variable: "--font-instrument-serif", subsets: ["latin"], weight: "400", style: "italic" });
 
 const siteDescription =
-    "Oferim credite nebancare în Moldova pentru afaceri și persoane fizice. Dobândă fixă, condiții avantajoase, fără comisioane ascunse.";
+    "Credite nebancare în Moldova pentru afaceri și persoane fizice. Analizăm situația ta și îți spunem dacă finanțarea chiar te ajută - dobândă fixă, fără comisioane ascunse.";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://idealcredit.md"),

@@ -23,7 +23,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 export const metadata: Metadata = {
     title: "Credit pentru Automobil în Moldova | Ideal Credit",
     description:
-        "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, decizie în 2-3 ore. Aplică online!",
+        "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, analizăm scopul și situația ta.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-automobil" },
     openGraph: {
         type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "https://idealcredit.md/credite/credit-pentru-automobil",
         title: "Credit pentru Automobil în Moldova | Ideal Credit",
         description:
-            "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, decizie în 2-3 ore. Aplică online!",
+            "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, analizăm scopul și situația ta.",
     },
 };
 
@@ -40,6 +40,10 @@ const faqItems: FaqItem[] = [
     {
         question: "Pot cumpăra o mașină second-hand cu acest credit?",
         answer: "Da. Finanțăm atât mașini noi cât și second-hand, de la persoane fizice sau dealeri. Nu există restricții pe vârsta sau tipul vehiculului - analizăm capacitatea ta de rambursare, nu mașina.",
+    },
+    {
+        question: "Ce se întâmplă dacă suma cerută nu se potrivește veniturilor mele?",
+        answer: "Îți spunem la telefon, înainte de dosar. Dacă rata lunară ar fi prea mare pentru venitul tău, recomandăm o sumă mai mică sau un termen mai lung - nu aprobăm o rată pe care n-o poți susține.",
     },
     {
         question: "Mașina devine proprietatea mea din prima zi?",
@@ -77,7 +81,7 @@ export default function CreditAutomobilPage() {
                         Credit pentru <Accent>automobil.</Accent>
                     </>
                 }
-                subtitle="Cumpără sau repară mașina fără complicații. Finanțare rapidă, condiții clare și dobândă fixă."
+                subtitle="Cumpără sau repară mașina fără complicații. Analizăm scopul și situația ta, pentru condiții clare și un răspuns onest."
                 primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
                 secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
             />
@@ -127,7 +131,7 @@ export default function CreditAutomobilPage() {
                         },
                         {
                             title: "Cât durează",
-                            text: "Aprobăm în 2-3 ore, fără ofertă de la dealer sau deviz de la service în avans. Ai nevoie de venit stabil și fără restanțe mari la alte credite.",
+                            text: "Aprobăm în 2-3 ore, fără ofertă de la dealer sau deviz de la service în avans. Dacă rata nu se potrivește veniturilor tale, găsim împreună o sumă potrivită - nu aprobăm o rată pe care n-o poți susține.",
                         },
                     ]}
                 />

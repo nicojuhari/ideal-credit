@@ -54,7 +54,7 @@ export const FAQ_ITEMS = [
     // ── restul: doar în JSON-LD (schema.ts foloseşte toată lista) ──
     {
         question: "Ce sumă pot obține pentru afacerea mea?",
-        answer: "Suma minimă este 50.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client. Analizăm dosarul rapid și comunicăm suma aprobată.",
+        answer: "Suma minimă este 50.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client. Analizăm dosarul și comunicăm sincer suma aprobată.",
     },
     {
         question: "Ce documente sunt necesare pentru un credit de afaceri?",

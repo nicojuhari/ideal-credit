@@ -1,6 +1,7 @@
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
 import Stack from "@/components/ds/Stack";
+import { yearsSinceFoundation } from "@/lib/utils";
 
 const steps = [
     { title: "Discuție la telefon", body: "O conversație reală, nu un formular. Înțelegem situația completă." },
@@ -22,8 +23,9 @@ export default function Process() {
                             Cum <Accent>funcționează</Accent>
                         </h2>
                         <p className="mt-4 text-[17px] leading-[1.6] text-dc-text-muted">
-                            Analiza se face înainte de întâlnire - ne uităm mai întâi la scopul creditului și la logica planului tău. Te
-                            chemăm în oficiu doar când suntem siguri că răspunsul e „da”.
+                            Analiza se face înainte de întâlnire - ne uităm mai întâi la scopul creditului și la logica planului tău, cu{" "}
+                            {yearsSinceFoundation} ani de experiență în spate. Te chemăm în oficiu doar când răspunsul e deja „da”. Dacă nu
+                            are sens, îți spunem la telefon - fără drumuri degeaba.
                         </p>
                     </div>
                     <Stack>

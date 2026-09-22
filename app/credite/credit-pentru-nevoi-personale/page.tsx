@@ -24,7 +24,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 export const metadata: Metadata = {
     title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
     description:
-        "Credit pentru nevoi personale în Moldova - dobândă fixă, fără comisioane ascunse, decizie în 2-3 ore pentru orice nevoie. Aplică online!",
+        "Credit pentru nevoi personale în Moldova - analizăm situația ta și îți spunem dacă are sens. Dobândă fixă, fără comisioane ascunse.",
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
     openGraph: {
         type: "website",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: "https://idealcredit.md/credite/credit-pentru-nevoi-personale",
         title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
         description:
-            "Credit pentru nevoi personale în Moldova - dobândă fixă, fără comisioane ascunse, decizie în 2-3 ore pentru orice nevoie. Aplică online!",
+            "Credit pentru nevoi personale în Moldova - analizăm situația ta și îți spunem dacă are sens. Dobândă fixă, fără comisioane ascunse.",
     },
 };
 
@@ -41,6 +41,10 @@ const personalFaqItems: FaqItem[] = [
     {
         question: "Pot obține credit dacă am un istoric de credit negativ?",
         answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează cel mai mult comportamentul din ultimele 12 luni și capacitatea actuală de rambursare - un incident vechi urmat de plăți la timp cântărește mult mai puțin decât întârzieri recente. Un fidejusor cu profil solid poate echilibra un dosar mai slab.",
+    },
+    {
+        question: "Ce se întâmplă dacă suma cerută nu mi se potrivește?",
+        answer: "Îți spunem sincer, la telefon, înainte de dosarul complet. Cu 16 ani de experiență, recunoaștem când o sumă e prea mare pentru capacitatea ta de rambursare - și recomandăm o sumă potrivită sau o altă structură, nu doar un refuz fără explicație.",
     },
     {
         question: "Cât pot împrumuta fără garanții?",
@@ -173,7 +177,7 @@ export default function CreditNevoiPersonalePage() {
                 marker="Detalii"
                 title={
                     <>
-                        Credit personal rapid în <Accent>Moldova</Accent>
+                        Credit personal pentru orice nevoie, din <Accent>Moldova</Accent>
                     </>
                 }
             >
@@ -189,7 +193,7 @@ export default function CreditNevoiPersonalePage() {
                         },
                         {
                             title: "Cât durează",
-                            text: "Aprobăm în 2-3 ore, bani disponibili în aceeași zi dacă situația ta e clară. Clienți cu istoric bun de plată pot obține dobândă mai mică și fără fidejusor la creditele următoare.",
+                            text: "Aprobăm în 2-3 ore dacă situația ta e clară - și, dacă nu e, îți spunem înainte să completezi dosarul. Clienți cu istoric bun de plată pot obține dobândă mai mică și fără fidejusor la creditele următoare.",
                         },
                     ]}
                 />

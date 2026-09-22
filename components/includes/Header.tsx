@@ -16,7 +16,7 @@ const businessProducts: CreditItem[] = [
     {
         href: "/credite/credit-pentru-afaceri",
         label: "Afaceri",
-        desc: "Capital rapid pentru SRL, ÎI și antreprenori.",
+        desc: "Capital pentru SRL, ÎI și antreprenori.",
     },
     {
         href: "/credite/credit-investitional",

@@ -17,7 +17,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 export const metadata: Metadata = {
     title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
     description:
-        "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Dobândă fixă, decizie rapidă.",
+        "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Analizăm situația ta și îți spunem dacă are sens.",
     alternates: { canonical: "https://idealcredit.md/credite" },
     openGraph: {
         type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: "https://idealcredit.md/credite",
         title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
         description:
-            "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Dobândă fixă, decizie rapidă.",
+            "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Analizăm situația ta și îți spunem dacă are sens.",
     },
 };
 
@@ -47,6 +47,10 @@ const hubFaqItems: FaqItem[] = [
         question: "Pot obține credit dacă am un profil mai puțin standard?",
         answer: "Da. Analizăm situația reală, nu doar un scor de credit. Luăm în considerare istoricul de activitate, fluxul de numerar și capacitatea actuală de rambursare.",
     },
+    {
+        question: "Ce se întâmplă dacă nicio soluție nu mi se potrivește chiar?",
+        answer: "Îți spunem la prima discuție telefonică. Cu 16 ani de experiență, recunoaștem repede când o sumă, un termen sau chiar momentul nu sunt potrivite - și recomandăm sincer alternativa care chiar are sens, sau spunem direct că nu e cazul acum.",
+    },
 ];
 
 export default function CreditePage() {
@@ -63,11 +67,11 @@ export default function CreditePage() {
                         Credite pentru <Accent>fiecare situație.</Accent>
                     </h1>
                     <p className="max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Finanțare pentru afaceri și persoane fizice. Dobândă fixă, costuri clare, decizie rapidă.
+                        Finanțare pentru afaceri și persoane fizice. Analizăm situația ta și îți spunem dacă are sens.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3.5">
-                        <ButtonPrimary href="/cerere-de-credit-online">Cerere online</ButtonPrimary>
-                        <ButtonSecondary href="/contacte">Contactează-ne</ButtonSecondary>
+                        <ButtonPrimary href="/contacte">Discutăm situația ta</ButtonPrimary>
+                        <ButtonSecondary href="/cerere-de-credit-online">Cerere online</ButtonSecondary>
                     </div>
                 </Container>
             </div>

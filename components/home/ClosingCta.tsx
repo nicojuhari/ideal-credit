@@ -13,7 +13,7 @@ export default function ClosingCta() {
                 <div className="grid items-center gap-16" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
                     <div>
                         <h2 className="text-[clamp(42px,6vw,72px)] font-semibold leading-[.98] tracking-[-.042em] text-dc-text">
-                            Gata să <Accent>aplici?</Accent>
+                            Gata să <Accent>discutăm?</Accent>
                         </h2>
                         <p className="mt-5 max-w-[480px] text-[19px] leading-[1.55] text-dc-text-muted">
                             Decizie rapidă, în timpul programului de lucru. Dacă nu are sens pentru tine, o spunem direct.
@@ -21,18 +21,11 @@ export default function ClosingCta() {
                     </div>
                     <div className="flex flex-col gap-3">
                         <a
-                            href="/cerere-de-credit-online"
+                            href={`tel:${chisinau.mobile}`}
                             className="flex items-center justify-between gap-5 bg-dc-accent px-8 py-[26px] text-dc-on-accent"
                         >
-                            <span className="text-[19px] font-semibold">Cerere online</span>
-                            <Figure size="ordinal">5 MIN →</Figure>
-                        </a>
-                        <a
-                            href={`tel:${chisinau.mobile}`}
-                            className="flex items-center justify-between gap-5 border border-dc-line px-8 py-[26px] text-dc-text"
-                        >
                             <Figure size="md">{chisinau.mobileDisplay}</Figure>
-                            <span className="text-xs text-dc-text-muted">CHIȘINĂU →</span>
+                            <span className="text-xs">CHIȘINĂU →</span>
                         </a>
                         <a
                             href={`tel:${causeni.mobile}`}
@@ -40,6 +33,15 @@ export default function ClosingCta() {
                         >
                             <Figure size="md">{causeni.mobileDisplay}</Figure>
                             <span className="text-xs text-dc-text-muted">CĂUȘENI →</span>
+                        </a>
+                        <a
+                            href="/cerere-de-credit-online"
+                            className="flex items-center justify-between gap-5 border border-dc-line px-8 py-[26px] text-dc-text"
+                        >
+                            <span className="text-[19px] font-semibold">Cerere online</span>
+                            <Figure size="ordinal" className="text-dc-text-muted">
+                                5 MIN →
+                            </Figure>
                         </a>
                     </div>
                 </div>

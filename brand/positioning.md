@@ -1,12 +1,18 @@
 ## Last Updated
 
-2026-09-11 (round 2) by owner decision - home page H1 locked to "Credite pentru
-succes." (see `site-architecture.md`, Home Page H1 section). It's the existing
-`/despre-noi` tagline, not a new angle; filed under Angle 1 below.
-Previously: 2026-09-11 (round 1) by /positioning-angles - added the positioning
-layer map for the site rebuild + editorial blog pivot. Core Philosophy and the
-Local Growth Partner angle are unchanged; see `site-architecture.md` for how they
-are expressed structurally. Before that: 2026-05-18 (original angle set + core
+2026-09-22 by /unique-value-strategy - **Primary Positioning superseded.** The
+"Local Growth Partner" headline statement (Angle 1) is replaced by the strategy in
+`brand/strategy.md`: the honest pre-application verdict, backed by 16 years of
+pattern-recognition. Core Philosophy, the four-layer positioning map, the
+competitive landscape, and the rest of the angle catalogue below are unchanged -
+they're the evidence base the new strategy is built from. See `brand/strategy.md`
+for the full argument, stress-test scorecard, and execution kit; this file keeps
+the angle history and the layer map current.
+Previously: 2026-09-11 (round 2) by owner decision - home page H1 locked to
+"Credite pentru succes." (see `site-architecture.md`, Home Page H1 section). It's
+the existing `/despre-noi` tagline, not a new angle. 2026-09-11 (round 1) by
+/positioning-angles - added the positioning layer map for the site rebuild +
+editorial blog pivot. Before that: 2026-05-18 (original angle set + core
 philosophy).
 
 ## Core Philosophy
@@ -45,15 +51,31 @@ This model means: the rejection rate at the signing stage is extremely low. That
 
 ## Primary Positioning
 
-Angle: The Local Growth Partner
+**Superseded 2026-09-22 - see `brand/strategy.md` for the current strategy and
+full argument.** Kept below for reference; do not draft new copy from this
+statement.
+
+Angle: The Local Growth Partner (superseded - see Angle 11 below)
 Statement: Ideal Credit is the financing partner that treats Moldovan entrepreneurs as business builders - not loan applicants - giving them fast capital with human judgment, no bank bureaucracy, and a real person at a real office who knows the local terrain.
 Psychology: Entrepreneurs who've been rejected by banks or buried in documentation feel unseen and mistrusted. Ideal Credit wins by seeing them fully - as capable people with real businesses - while delivering on speed and simplicity that no competitor pairs with this depth of human trust.
 Headline direction: "Nu ești un dosar. Ești antreprenorul care vrea să meargă mai departe."
 Best for: SME owners in Moldova who have encountered or fear bank rejection; entrepreneurs who value local presence and human judgment over fully digital/faceless processes.
 
-**Home page H1 (locked 2026-09-11, round 2): "Credite pentru succes."** The existing
-`/despre-noi` tagline, promoted to the literal H1 - not a replacement for the
-headline direction above, which stays available for subheads/CTAs.
+---
+
+**Current strategy (2026-09-22):**
+
+Angle: Succesul înainte de semnătură (Success Before the Signature)
+Statement: Ideal Credit is the only non-bank lender in Moldova that analyzes your goal and financial situation first - not just your file - to give you a correct answer on whether this credit will actually get you the result you want - based on 16 years of watching which businesses and goals succeed and which don't - even when the honest answer is less money, a different structure, or no credit at all.
+Psychology: Entrepreneurs and households either fear an unexplained bank rejection or distrust a too-easy "yes" from a lender with nothing to lose. Ideal Credit wins by being the one lender willing to cost itself a sale to tell the truth first - which makes its eventual "yes" worth something no competitor's approval can match.
+Headline direction: "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută."
+Best for: entrepreneurs and households who want a real answer, not just a fast one - all funnel stages, especially anyone who has been burned by an unexplained bank "no" or is wary of an unconditional OCN "yes."
+
+**Home page H1 (locked 2026-09-11, round 2): "Credite pentru succes."** Unchanged
+by this update - the new strategy gives this existing tagline a literal meaning
+for the first time (success is checked before the signature, not assumed after)
+rather than replacing it. See `brand/strategy.md` for the subhead pairing that
+makes this explicit.
 
 ## Positioning Layer Map (2026-09-11)
 
@@ -62,7 +84,7 @@ job, so each carries a different angle. Conflating them is what breaks the rebui
 
 | Layer                        | Angle                                      | Job                                                     |
 | ---------------------------- | ------------------------------------------ | ------------------------------------------------------- |
-| Hero / brand line            | **The Local Growth Partner** (unchanged)   | Sell the outcome - capital, speed, human judgment       |
+| Hero / brand line            | **Succesul înainte de semnătură** (2026-09-22, was Local Growth Partner) | Sell the outcome - we analyze your goal and financial situation first, backed by 16 years of pattern-recognition |
 | Service pages (`/credite/*`) | **Soluții, nu produse**                    | Organize by the client's situation, not by product name |
 | FAQ / proces / despre-noi    | **Creditorul care spune și nu** (softened) | Honest qualification - analysis before the appointment  |
 | Blog                         | **Biroul de Analiză** + numerate register  | Earn the right to be believed                           |
@@ -142,7 +164,16 @@ Additional white space:
 
 ## All Angles Explored
 
-### Angle 1: The Local Growth Partner (selected - ★ recommended)
+### Angle 1: The Local Growth Partner - superseded 2026-09-22
+
+**Superseded by "Succesul înainte de semnătură"** - see Angle 11 below and
+`brand/strategy.md`. Stress-tested and found real but weakly worded: it blended a
+saturated category claim ("fast") with an unfalsifiable one ("genuine local
+knowledge"), while the business's actual unique mechanism - the honest
+pre-application verdict, backed by 16 years of pattern-recognition - sat one
+paragraph away in Core Philosophy, unused as the headline. The underlying
+evidence (two offices, local trust, human judgment) still supports the new angle;
+only the sentence and what it leads with changed.
 
 - Statement: Ideal Credit is the only non-bank lender in Moldova that pairs fast business credit with genuine local knowledge - treating entrepreneurs as business builders, not loan files.
 - Psychology: Moldovan entrepreneurs feel dismissed by banks and overlooked by faceless digital lenders. This angle validates their identity as capable builders and positions Ideal Credit as the rare partner that sees them fully.
@@ -182,7 +213,20 @@ Additional white space:
 
 ## Recommended Angle Rationale
 
-Why ★ The Local Growth Partner: The Moldovan OCN market is at Stage 3 - mechanism required. Every competitor claims speed, simplicity, and no collateral. The white space is emotional and identity-driven: nobody is validating the Moldovan entrepreneur as a builder, and nobody is pairing trust with local human judgment as a mechanism. This angle works at every stage of the funnel, aligns perfectly with the voice profile (trusted local advisor, growth-oriented framing), and directly addresses the documented market reality - 90% of Moldovan small businesses rely on internal funding because banks and impersonal OCNs have failed to earn their trust. Ideal Credit's two physical offices and 15+ year track record are unique proof points that make this angle believable in a way no digital competitor can replicate.
+**Current (2026-09-22): Why ★ Succesul înainte de semnătură.** Every competitor in
+the Moldovan OCN market is structured to say yes, fast and often - their business
+models reward origination volume, not honest evaluation. Ideal Credit already
+operates differently: a real person compares each request against 16 years of
+pattern-recognition before any file is opened, and says so even when the honest
+answer costs the sale (the retired refinanțare page is this mechanism already in
+action - see `brand/strategy.md`). No competitor's incentive structure allows it to
+copy this without hurting its own revenue, which is what makes it a genuine "only,"
+not a "better." It also finally gives the locked home page H1, "Credite pentru
+succes," a literal meaning instead of leaving it as a slogan anyone could sign.
+Full stress-test scorecard in `brand/strategy.md`.
+
+**Historical (2026-05-18 - 2026-09-22): Why ★ The Local Growth Partner** (superseded):
+The Moldovan OCN market is at Stage 3 - mechanism required. Every competitor claims speed, simplicity, and no collateral. The white space is emotional and identity-driven: nobody is validating the Moldovan entrepreneur as a builder, and nobody is pairing trust with local human judgment as a mechanism. This angle works at every stage of the funnel, aligns perfectly with the voice profile (trusted local advisor, growth-oriented framing), and directly addresses the documented market reality - 90% of Moldovan small businesses rely on internal funding because banks and impersonal OCNs have failed to earn their trust. Ideal Credit's two physical offices and 15+ year track record are unique proof points that make this angle believable in a way no digital competitor can replicate.
 
 ---
 
@@ -250,6 +294,14 @@ in plain, clear sentences. See `brand/blog-editorial-strategy.md`.
 - Psychology: Flatters the reader by refusing to over-explain and self-selects the target client profile. Repels the distressed segment without ever mentioning it.
 - Headline: "Scriem pentru cei care se uită la cifre înainte să se uite la rată."
 - Scope: blog **register**, not a site-wide angle - too narrow for the homepage, which must still serve the 20-30% personal-credit pillar.
+
+### Angle 11: Succesul înainte de semnătură (Success Before the Signature) - selected 2026-09-22, refined 2026-09-22 (round 2)
+
+- Statement: Ideal Credit is the only non-bank lender in Moldova that analyzes your goal and financial situation first - not just your file - to give you a correct answer on whether this credit will actually get you the result you want - based on 16 years of watching which businesses and goals succeed and which don't - even when the honest answer is less money, a different structure, or no credit at all.
+- Psychology: The market's real gap isn't access to money, it's a trustworthy answer to "should I take this money, this way, for this goal" - something no origination-incentivized competitor's business model rewards asking. Being willing to cost itself a sale to answer honestly is what makes Ideal Credit's eventual "yes" worth more than a fast or unconditional one.
+- Headline: "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută." (round 2 - the original "înainte să aplici" framing was dropped: it implied a temporal line between "applying" and "not applying" that doesn't hold up, since any analysis already requires the client's information. The mechanism is now framed by what gets analyzed - goal + financial situation, not just the file - and why - a correct decision, not by a before/after claim.)
+- Scope: hero/brand line (replaces Angle 1), and gives the locked home page H1 ("Credite pentru succes.") a literal meaning for the first time.
+- Full argument, delivery plan, and stress-test scorecard: `brand/strategy.md`.
 
 ### Open dependency
 

@@ -43,6 +43,10 @@ const agricFaqItems: FaqItem[] = [
         answer: "Da. Înțelegem că veniturile agricole sunt concentrate în anumite perioade ale anului. Structurăm graficul de rambursare în funcție de ciclul tău de producție și recoltare.",
     },
     {
+        question: "Ce se întâmplă dacă recolta sau sezonul nu justifică suma cerută?",
+        answer: "Îți spunem înainte de dosar, nu după recoltă. Analizăm suprafața, istoricul de producție și fluxul real - și, dacă suma nu se susține din activitatea agricolă, recomandăm o sumă mai mică sau un alt grafic, nu doar un refuz.",
+    },
+    {
         question: "Există perioadă de grație pentru creditul agricol?",
         answer: "Analizăm posibilitatea unei perioade de grație în funcție de cultură și ciclul de producție. Dacă recolta e în toamnă, discutăm un grafic adaptat - nu o rată fixă lunară care nu ține cont de sezonalitate.",
     },
@@ -204,7 +208,7 @@ export default function CreditAgriculturaPage() {
                         },
                         {
                             title: "Ce evaluăm",
-                            text: "Suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare - nu un plan de afaceri formal sau profit deja demonstrat.",
+                            text: "Suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare - nu un plan de afaceri formal sau profit deja demonstrat. Analizăm sezonul tău concret, ca să propunem un grafic care chiar se potrivește - nu unul standard.",
                         },
                     ]}
                 />

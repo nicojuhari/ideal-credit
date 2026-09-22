@@ -1,6 +1,11 @@
 ## Last Updated
 
-2026-05-18 by /brand-voice
+2026-09-22 by /unique-value-strategy - added vocabulary and example phrases for
+the current strategy ("Succesul înainte de semnătură" - the honest pre-application
+verdict, backed by 16 years of pattern-recognition; see `brand/strategy.md`). Tone,
+sophistication level, and every other section below are unchanged - this strategy
+is delivered in the same voice, not a new one.
+Previously: 2026-05-18 by /brand-voice (original profile).
 
 # Ideal Credit Voice Profile
 
@@ -39,6 +44,9 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
 - „biroul nostru din Căușeni / Chișinău" - local anchoring, humanizes the brand
 - „echipa Ideal Credit" - human team, not faceless institution
 - „în Moldova" - local pride, not global brand language
+- „are sens" / „nu are sens" - the core strategic frame: whether the credit fits the reader's actual goal, not just whether they qualify
+- „analizăm scopul și situația ta" - names the mechanism directly: what gets analyzed, not a before/after claim
+- „16 ani" - the pattern-recognition proof point; anchor claims about judgment to this, not to adjectives
 
 **Words/phrases to AVOID:**
 
@@ -51,6 +59,7 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
 - „Noi suntem pasionați de..." - empty opener
 - Any variation of „soluție completă" / „one-stop-shop" - sounds generic
 - „împrumut" without context - has a slightly informal/negative connotation; prefer „credit"
+- „garantat" / „succes garantat" / „sigur 100%" - the strategy is honest judgment, not guaranteed outcomes; overpromising here directly undercuts the mechanism's credibility
 
 **Jargon level:** Light - use standard financial terms (DAE, dobândă, grafic de rambursare) but always with a plain-language anchor nearby. Never assume the reader knows what DAE means without context.
 
@@ -100,6 +109,8 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
 - „Nu ești doar un dosar la ghișeu. Ești antreprenorul care vrea să meargă mai departe."
 - „Știm cum arată o afacere în Moldova. Tocmai de aceea vorbim direct."
 - „Calculează suma, vino la birou, primești răspuns."
+- „Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută."
+- „16 ani analizăm ce funcționează cu adevărat - și îți spunem sincer dacă are sens."
 
 **Off-brand (doesn't sound like us):**
 
@@ -139,8 +150,8 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
 ```json
 {
     "brand_name": "Ideal Credit",
-    "last_updated": "2026-05-18",
-    "updated_by": "/brand-voice",
+    "last_updated": "2026-09-22",
+    "updated_by": "/unique-value-strategy",
     "tone": {
         "summary": "A trusted local advisor who speaks plainly, respects the reader's intelligence, and frames credit as a tool for business growth - not just borrowing.",
         "spectrum": [
@@ -197,7 +208,13 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
             },
             { "term": "echipa Ideal Credit", "context": "Human team framing - not 'compania noastră' or 'instituția'" },
             { "term": "în Moldova", "context": "Local grounding - use to signal we understand the local context" },
-            { "term": "sumă + specific MDL range", "context": "Always anchor credit talk to real numbers (10,000-300,000 MDL)" }
+            { "term": "sumă + specific MDL range", "context": "Always anchor credit talk to real numbers (10,000-300,000 MDL)" },
+            {
+                "term": "are sens / nu are sens",
+                "context": "Core strategic frame - whether the credit fits the reader's actual goal, not just eligibility"
+            },
+            { "term": "analizăm scopul și situația ta", "context": "Names the mechanism directly - what gets analyzed, not a before/after claim" },
+            { "term": "16 ani", "context": "Pattern-recognition proof point - anchor judgment claims here, not to adjectives" }
         ],
         "avoid": [
             {
@@ -227,6 +244,11 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
                 "term": "soluție completă / one-stop-shop",
                 "reason": "Generic, means nothing to reader",
                 "alternative": "tot ce ai nevoie pentru [specific goal]"
+            },
+            {
+                "term": "garantat / succes garantat / sigur 100%",
+                "reason": "The strategy is honest judgment, not a guaranteed outcome - overpromising undercuts the mechanism's credibility",
+                "alternative": "analizăm situația ta și îți spunem sincer dacă are sens"
             }
         ]
     },
@@ -252,6 +274,11 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
                 "text": "Calculează suma, vino la birou, primești răspuns.",
                 "source": "CTA / process description",
                 "why": "Three short steps, plain language, action-oriented, no fluff"
+            },
+            {
+                "text": "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută.",
+                "source": "Homepage subhead, brand/strategy.md",
+                "why": "States what gets analyzed (goal + financial situation) and why (a correct answer) instead of an adjective like 'trustworthy' or a shaky before/after claim"
             }
         ],
         "off_brand": [
@@ -335,10 +362,17 @@ Ideal Credit sounds like the knowledgeable local businessman you actually trust 
         "notes": "Primary: Romanian-speaking Moldovan entrepreneurs and small business owners. Secondary: Russian-speaking segment in Chișinău and urban areas. Both audiences are practical, time-pressed, and skeptical of financial institution promises. They've dealt with Moldovan bureaucracy and respond to concrete, specific communication. Trust is built through local references, real numbers, and human accessibility."
     },
     "signature_phrases": [
+        {
+            "phrase": "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută",
+            "usage": "Core message of the current strategy (brand/strategy.md) - lead with this over speed/simplicity claims wherever the strategy itself is being communicated"
+        },
         { "phrase": "fără birocrație bancară", "usage": "Headlines and benefit lists when differentiating from banks" },
         { "phrase": "vino la biroul nostru", "usage": "CTA that humanizes the process - an invitation, not a command" },
         { "phrase": "credit pentru afacerea ta", "usage": "Product framing for business-owner audience - personalizes the offering" },
-        { "phrase": "simplu, rapid, local", "usage": "Summary differentiator for social bios, meta descriptions, elevator pitch moments" },
+        {
+            "phrase": "simplu, rapid, local",
+            "usage": "Supporting differentiator for social bios, meta descriptions - keep as secondary, not the lead, since 'rapid' is a category-wide claim (see brand/strategy.md)"
+        },
         { "phrase": "calculează și vino", "usage": "Two-step CTA anchoring the calculator tool to an in-person visit" }
     ]
 }

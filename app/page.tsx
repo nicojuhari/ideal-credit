@@ -15,7 +15,7 @@ import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
     title: "Credite pentru Succes în Moldova | Ideal Credit",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, rapid și transparent.",
+        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Analizăm scopul și situația ta, ca să-ți spunem dacă creditul chiar te ajută.",
     alternates: { canonical: "https://idealcredit.md/" },
     openGraph: {
         type: "website",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "https://idealcredit.md/",
         title: "Credite pentru Succes în Moldova | Ideal Credit",
         description:
-            "Credite nebancare pentru afaceri și persoane fizice din Moldova. Dobândă fixă, fără comisioane ascunse, rapid și transparent.",
+            "Credite nebancare pentru afaceri și persoane fizice din Moldova. Analizăm scopul și situația ta, ca să-ți spunem dacă creditul chiar te ajută.",
     },
 };
 
