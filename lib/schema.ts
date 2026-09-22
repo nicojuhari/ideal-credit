@@ -140,11 +140,6 @@ export const organizationSchema = {
                 },
             ],
             areaServed: { "@type": "State", name: "Republica Moldova" },
-            aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "10",
-            },
             hasMap: "https://maps.app.goo.gl/RJjkrwDCnhbeY66q8",
             image: "https://idealcredit.md/ideal-credit-logo.svg",
         },
@@ -173,11 +168,6 @@ export const organizationSchema = {
                 },
             ],
             areaServed: { "@type": "State", name: "Republica Moldova" },
-            aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                reviewCount: "13",
-            },
             hasMap: "https://maps.app.goo.gl/T7nCkvKXGKLFKU3Z9",
             image: "https://idealcredit.md/ideal-credit-logo.svg",
         },
