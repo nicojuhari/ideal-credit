@@ -121,7 +121,11 @@ export default function ContactePage() {
                 <Container>
                     <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
                         {OFFICES.map((office, i) => (
-                            <div key={office.id} className="dc-cell flex flex-col gap-6 p-10">
+                            <div
+                                key={office.id}
+                                id={office.city.includes("Chișinău") ? "chisinau" : "causeni"}
+                                className="dc-cell flex flex-col gap-6 p-10"
+                            >
                                 <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
                                     <span className="font-dc-mono">{String(i + 1).padStart(2, "0")}</span> · {office.title}
                                 </p>

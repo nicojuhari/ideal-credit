@@ -120,7 +120,7 @@ export const organizationSchema = {
             "@id": "https://idealcredit.md/#chisinau",
             name: "Ideal Credit Chișinău",
             parentOrganization: { "@id": ORGANIZATION_ID },
-            url: "https://idealcredit.md/",
+            url: "https://idealcredit.md/contacte#chisinau",
             priceRange: "10000-500000 MDL",
             address: {
                 "@type": "PostalAddress",
@@ -145,7 +145,7 @@ export const organizationSchema = {
                 ratingValue: "4.9",
                 reviewCount: "10",
             },
-            hasMap: "https://maps.app.goo.gl/EYxf2NnK3ScynGH79",
+            hasMap: "https://maps.app.goo.gl/RJjkrwDCnhbeY66q8",
             image: "https://idealcredit.md/ideal-credit-logo.svg",
         },
         {
@@ -153,7 +153,7 @@ export const organizationSchema = {
             "@id": "https://idealcredit.md/#causeni",
             name: "Ideal Credit Căușeni",
             parentOrganization: { "@id": ORGANIZATION_ID },
-            url: "https://idealcredit.md/",
+            url: "https://idealcredit.md/contacte#causeni",
             priceRange: "10000-500000 MDL",
             address: {
                 "@type": "PostalAddress",
@@ -417,4 +417,3 @@ export const investitionalSchema = {
         maxValue: 60,
     },
 };
-
