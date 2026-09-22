@@ -1,4 +1,5 @@
 import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleFooter from "@/components/blog/ArticleFooter";
 import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
@@ -30,7 +31,7 @@ export const post = getBlogPost("dobanzi-mari-nu-doar-moldova");
   url="https://idealcredit.md/blog/dobanzi-mari-nu-doar-moldova"
 />
 
-<ArticleHeader title={post.title} dek={post.dek} date={post.date} />
+<ArticleHeader title={post.title} dek={post.dek} />
 
 ## Cifrele
 
@@ -102,6 +103,8 @@ Fiecare dintre acestea reduce, pe rând, unul dintre cei patru factori. Împreun
 <ClosingNote href="/credite">
   La Ideal Credit lucrăm zilnic cu exact acest mecanism, pentru fiecare afacere în parte.
 </ClosingNote>
+
+<ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
   Notă: cifrele despre cei patru factori structurali vin din surse diferite și din perioade diferite - plafonul legal DAE și numărul băncilor licențiate sunt curente (2026), ratingul S&P e reconfirmat în aprilie 2026, iar cifra despre executarea garanțiilor vine din ultimul raport „Doing Business” al Băncii Mondiale (2020, ultimul publicat înainte ca raportul să fie întrerupt). Le folosim ca ilustrare a mecanismului, nu ca fotografie exactă a situației de azi.

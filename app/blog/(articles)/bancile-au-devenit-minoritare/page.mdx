@@ -1,4 +1,5 @@
 import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleFooter from "@/components/blog/ArticleFooter";
 import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
@@ -30,7 +31,7 @@ export const post = getBlogPost("bancile-au-devenit-minoritare");
   url="https://idealcredit.md/blog/bancile-au-devenit-minoritare"
 />
 
-<ArticleHeader title={post.title} dek={post.dek} date={post.date} />
+<ArticleHeader title={post.title} dek={post.dek} />
 
 ## Cifrele
 
@@ -106,6 +107,8 @@ Diferența nu e că un OCN "ține locul" unei bănci mai prost. E că lucrează 
 <ClosingNote href="/credite">
   La Ideal Credit lucrăm zilnic în exact acest spațiu lăsat liber de bănci, pentru afacerile din Moldova.
 </ClosingNote>
+
+<ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
   Notă: raportul FSB care acoperă anul 2024 a fost publicat abia în decembrie 2025 - denumirea "2025" din titlul raportului se referă la anul publicării, nu la anul datelor. Mărimea pieței de credit privat variază între 1,5 și 2 trilioane de dolari în funcție de sursă și dată de raportare - o folosim ca ordin de mărime, nu ca cifră exactă.

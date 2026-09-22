@@ -1,4 +1,5 @@
 import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleFooter from "@/components/blog/ArticleFooter";
 import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
@@ -30,7 +31,7 @@ export const post = getBlogPost("firme-mici-nu-iau-credit-de-la-banca");
   url="https://idealcredit.md/blog/firme-mici-nu-iau-credit-de-la-banca"
 />
 
-<ArticleHeader title={post.title} dek={post.dek} date={post.date} />
+<ArticleHeader title={post.title} dek={post.dek} />
 
 ## Cifrele
 
@@ -107,6 +108,8 @@ Nu e un tipar izolat: [la scară globală, capitalul nebancar a ajuns recent să
 <ClosingNote href="/credite">
   La Ideal Credit vedem zilnic exact acest tipar - firme mici, respinse sau ignorate de bancă, care au totuși nevoie reală de finanțare.
 </ClosingNote>
+
+<ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
   Notă: datele despre sursele de finanțare ale firmelor mici (secțiunea „Cifrele”) sunt verificate direct din raportul Enterprise Surveys al Băncii Mondiale, Moldova 2024. Comparația globală (secțiunea „Nu e un tipar doar moldovenesc”) vine dintr-o analiză a Băncii Mondiale pe date agregate din 48 de țări, nu dintr-o comparație țară-cu-țară - o tratăm ca reper general, nu ca echivalentul exact al cifrei Moldovei. Cifrele despre piața bancară și sectorul de creditare nebancară vin din presa economică, nu direct de la BNM sau CNPF, și e posibil să amestece creditele pentru companii cu cele pentru persoane fizice - le tratăm ca estimări, nu ca cifre exacte.

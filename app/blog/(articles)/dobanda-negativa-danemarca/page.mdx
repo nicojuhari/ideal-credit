@@ -1,4 +1,5 @@
 import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleFooter from "@/components/blog/ArticleFooter";
 import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
@@ -30,7 +31,7 @@ export const post = getBlogPost("dobanda-negativa-danemarca");
   url="https://idealcredit.md/blog/dobanda-negativa-danemarca"
 />
 
-<ArticleHeader title={post.title} dek={post.dek} date={post.date} />
+<ArticleHeader title={post.title} dek={post.dek} />
 
 ## Cifrele
 
@@ -114,6 +115,8 @@ Cu alte cuvinte: povestea asta se termină chiar acum, în timp ce o scriem.
 <ClosingNote href="/calculator-credit">
   La Ideal Credit, dobânda afișată e costul real - fără comisioane ascunse care schimbă rezultatul la final.
 </ClosingNote>
+
+<ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
   Notă: cifrele despre dobânda de bază și evoluția ei (2019-2025) vin din Nationalbanken, CNBC, Bloomberg și Reuters/RTE. Exemplul de calcul din secțiunea „Cum face banca profit din asta" e o ilustrare simplificată, pe cifre medii publicate de Nationalbanken și Expat Finance, nu o simulare a unui contract real.
