@@ -18,12 +18,14 @@ Backlog of pitched topics, checked against the Topic Gate in
   Bigger, more abstract wow-factor, skews toward a finance-literate reader
   more than the others.
 
-- **Shadow banking's hidden scale** — idea. Non-bank lending and credit
-  globally is a $200+ trillion system, larger than the traditional banking
-  sector, mostly unregulated. Closest to Ideal Credit's own space (non-bank
-  lending), told at global scale — good "insider" credibility piece.
-
 ## Published
 
 - **Denmark's negative-rate mortgages** — slug: `dobanda-negativa-danemarca`,
   published 2026-09-17.
+
+- **Shadow banking's hidden scale** — slug: `bancile-au-devenit-minoritare`,
+  published 2026-09-22. Angle sharpened during research: not just "$200T+
+  system" but the 2024 crossover (NBFI > 50% of global financial assets for
+  the first time since before 2008), plus the private-credit/bank-exposure
+  risk thread (FSB May 2026 vulnerabilities report) as the tension, closing
+  on the same non-bank-lending mechanism at Ideal Credit's scale.

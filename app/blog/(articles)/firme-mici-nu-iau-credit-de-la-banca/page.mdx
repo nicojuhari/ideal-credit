@@ -3,7 +3,6 @@ import ArticleSchema from "@/components/blog/ArticleSchema";
 import RateBarChart from "@/components/blog/RateBarChart";
 import ClosingNote from "@/components/blog/ClosingNote";
 import Caption from "@/components/blog/Caption";
-import Highlight from "@/components/blog/Highlight";
 import { getBlogPost } from "@/lib/blog-posts";
 
 export const metadata = {
@@ -32,8 +31,6 @@ export const post = getBlogPost("firme-mici-nu-iau-credit-de-la-banca");
 />
 
 <ArticleHeader title={post.title} dek={post.dek} date={post.date} />
-
-<Highlight>Firmele mijlocii se bazează pe fonduri proprii în proporție de doar 71,7% - mai puțin decât firmele mici (91%) sau cele mari (83%).</Highlight>
 
 ## Cifrele
 
@@ -104,6 +101,8 @@ Profitul cumulat al sectorului de creditare nebancară a crescut cu aproximativ 
 Ambele piețe cresc în paralel. Asta nu înseamnă că firma mică ajunge mai ușor la bancă - înseamnă doar că are, în continuare, o alternativă reală în afara ei.
 
 Pentru firma mică ce nu se califică la bancă, sectorul nebancar rămâne cea mai realistă alternativă - nu pentru că e ieftin, ci pentru că există.
+
+Nu e un tipar izolat: [la scară globală, capitalul nebancar a ajuns recent să depășească jumătate din toate activele financiare ale lumii](/blog/bancile-au-devenit-minoritare) - același mecanism, doar cu mult mai multe zerouri.
 
 <ClosingNote href="/credite">
   La Ideal Credit vedem zilnic exact acest tipar - firme mici, respinse sau ignorate de bancă, care au totuși nevoie reală de finanțare.

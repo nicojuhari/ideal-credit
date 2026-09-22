@@ -16,7 +16,7 @@ export default function ArticleLayout({ children }: { children: React.ReactNode 
             </div>
             <div className="pb-24">
                 <Container>
-                    <article className="dc-legal mx-auto max-w-[720px] pt-10">{children}</article>
+                    <article className="dc-legal dc-article mx-auto max-w-[720px] pt-10">{children}</article>
                 </Container>
             </div>
         </div>

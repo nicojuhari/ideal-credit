@@ -1,0 +1,136 @@
+import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleSchema from "@/components/blog/ArticleSchema";
+import RateBarChart from "@/components/blog/RateBarChart";
+import ClosingNote from "@/components/blog/ClosingNote";
+import Caption from "@/components/blog/Caption";
+import { getBlogPost } from "@/lib/blog-posts";
+
+export const metadata = {
+    title: "Băncile au devenit minoritare | Dincolo de Cifre",
+    description:
+        "În 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii stăteau în afara băncilor - iar legătura dintre ele crește.",
+    alternates: { canonical: "https://idealcredit.md/blog/bancile-au-devenit-minoritare" },
+    openGraph: {
+        type: "article",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        url: "https://idealcredit.md/blog/bancile-au-devenit-minoritare",
+        title: "Băncile au devenit minoritare | Dincolo de Cifre",
+        description:
+            "În 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii stăteau în afara băncilor - iar legătura dintre ele crește.",
+    },
+};
+
+export const post = getBlogPost("bancile-au-devenit-minoritare");
+
+<ArticleSchema
+  headline={post.title}
+  description={post.dek}
+  datePublished={post.date}
+  url="https://idealcredit.md/blog/bancile-au-devenit-minoritare"
+/>
+
+<ArticleHeader title={post.title} dek={post.dek} date={post.date} />
+
+## Cifrele
+
+Așa a evoluat, an de an, cota sectorului nebancar din toate activele financiare ale lumii.
+
+<RateBarChart
+  unit="%"
+  caption="Cota sectorului nebancar (NBFI) din activele financiare globale, pe an. Sursă: Financial Stability Board, Global Monitoring Report on Nonbank Financial Intermediation 2025 (publicat decembrie 2025)."
+  data={[
+    { label: "2008", value: 42 },
+    { label: "2022", value: 47.2 },
+    { label: "2023", value: 49.1 },
+    { label: "2024", value: 51, tone: "subject" },
+  ]}
+/>
+
+În 2024, sectorul nebancar a ajuns la 256,8 trilioane de dolari - 51% din tot ce înseamnă bani și active financiare pe planetă.
+
+A crescut cu 9,4% într-un singur an, dublu față de ritmul băncilor (4,7%).
+
+Pragul de 50% mai fusese atins o singură dată, chiar înainte de criza din 2008 - apoi un deceniu de reglementare mai dură l-a împins înapoi.
+
+Azi băncile, luate separat, sunt minoritare în propriul sistem.
+
+## Ce înseamnă, de fapt, "nebancar"
+
+Termenul sună abstract, dar acoperă lucruri concrete: fonduri de pe piața monetară, hedge funds, fonduri de investiții, vehicule de securitizare - tot ce Financial Stability Board grupează sub "alți intermediari financiari".
+
+Împreună, valorează 169,4 trilioane de dolari - bucata cea mai mare din tot sectorul nebancar, și cea care a crescut cel mai rapid, cu 11% într-un an.
+
+Restul stă în fonduri de pensii și companii de asigurări - bani care oricum n-au stat niciodată în conturi bancare clasice.
+
+Bucata care atrage azi cea mai multă atenție e mai îngustă: credit privat. Fonduri precum Blackstone, Apollo sau Ares împrumută bani direct companiilor, exact ce făcea odată o bancă - doar că banii vin din capitalul unor investitori instituționali, nu din depozite.
+
+Doar divizia de credit și asigurări a Blackstone administra, la finalul lui 2025, 443 de miliarde de dolari - mai mult decât produsul intern brut al unor țări europene întregi.
+
+FMI estima toată piața de credit privat la aproape 2 trilioane de dolari. Cifra variază după sursă și dată, undeva între 1,5 și 2 trilioane - un ordin de mărime, nu o cifră fixă.
+
+Chiar și în interiorul acestei piețe, mixul se schimbă rapid. Împrumuturile directe reprezentau 58% din tot capitalul de credit privat strâns global în 2024, dar doar 31% în primul trimestru din 2026 - investitorii se diversifică spre alte strategii.
+
+## De ce a crescut atât
+
+Explicația ține de două decizii separate, luate la un deceniu distanță una de alta.
+
+După criza din 2008, reglementatorii au impus băncilor cerințe de capital mult mai stricte pentru anumite tipuri de împrumuturi riscante. Riscul n-a dispărut - doar s-a mutat spre fonduri care nu au aceleași reguli.
+
+Apoi, un deceniu de dobânzi aproape zero a împins fondurile de pensii și asigurătorii să caute randament altundeva decât în obligațiuni de stat. Creditul privat a promis exact randamentul mai mare pe care îl căutau.
+
+## Riscul ascuns: legătura cu băncile
+
+Numele "shadow banking" sugerează un sistem separat, izolat de bănci. Cifrele arată altceva: legătura dintre cele două s-a întărit constant, nu s-a rupt.
+
+Expunerea directă a celor mai mari șase bănci americane către fonduri de credit privat a ajuns la 300-322 de miliarde de dolari - peste treizeci de ori mai mult decât acum un deceniu.
+
+O parte din aceste împrumuturi folosesc o structură numită PIK (payment-in-kind) - dobânda nu se plătește cash, ci se adaugă la datorie. Un împrumut poate arăta "sănătos" în rapoarte ani la rând, chiar dacă firma nu mai poate plăti nimic cash.
+
+În mai 2026, Financial Stability Board a publicat primul raport dedicat exclusiv vulnerabilităților din credit privat. În aceeași perioadă, reglementatorul bancar american OCC a inclus, pentru prima dată, credit privat ca zonă distinctă de risc în raportul său semestrial.
+
+La începutul lui 2026, câteva fonduri mari s-au confruntat cu valuri de cereri de răscumpărare de la investitori, iar ratele de default au crescut.
+
+FMI, într-un raport din aprilie 2026, e mai calm: ratele de default rămân în jur de 2-3% - "gestionabile", spune instituția, nu un semnal de criză.
+
+## Ce legătură are cu Moldova
+
+Mecanismul din spatele acestui sistem de 256,8 trilioane de dolari e, de fapt, simplu. Acolo unde băncile se retrag dintr-un tip de risc - din motive de reglementare, de model de afaceri sau de apetit pentru risc - apare loc pentru capital nebancar.
+
+E exact mecanismul din spatele oricărei organizații de creditare nebancară, inclusiv din Moldova - doar cu treisprezece ordine de mărime mai mic.
+
+Diferența nu e că un OCN "ține locul" unei bănci mai prost. E că lucrează cu alt tip de capital, alte reguli, alți clienți - la fel cum face, la scară globală, un fond de credit privat.
+
+[Băncile din Moldova finanțează doar 6% din investițiile firmelor mici ale țării](/blog/firme-mici-nu-iau-credit-de-la-banca). Golul rămas nu dispare - îl acoperă tot capital nebancar, la o scară mult mai mică decât cea globală, dar din exact același motiv.
+
+<ClosingNote href="/credite">
+  La Ideal Credit lucrăm zilnic în exact acest spațiu lăsat liber de bănci, pentru afacerile din Moldova.
+</ClosingNote>
+
+<Caption as="div" className="mt-6">
+  Notă: raportul FSB care acoperă anul 2024 a fost publicat abia în decembrie 2025 - denumirea "2025" din titlul raportului se referă la anul publicării, nu la anul datelor. Mărimea pieței de credit privat variază între 1,5 și 2 trilioane de dolari în funcție de sursă și dată de raportare - o folosim ca ordin de mărime, nu ca cifră exactă.
+</Caption>
+
+{/*
+  SOCIAL PROMO - LinkedIn + Facebook (one caption, both platforms)
+  status: ready to schedule
+  link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
+
+  În 2024, pentru prima dată de la criza din 2008, peste jumătate din activele financiare
+  ale lumii stăteau în afara sistemului bancar clasic - 256,8 trilioane de dolari, 51% din
+  tot ce înseamnă bani pe planetă.
+
+  Sună ca un sistem separat, izolat de bănci. Nu e.
+
+  Cele mai mari șase bănci americane aveau, în 2013, sub 10 miliarde de dolari expuși către
+  fonduri de credit privat. Azi au peste 300 de miliarde. Iar o parte din aceste împrumuturi
+  folosesc o structură (PIK) care poate ascunde probleme reale de plată ani la rând.
+
+  În articolul din seria Dincolo de Cifre explicăm ce e, de fapt, "shadow banking", de ce a
+  crescut atât de repede - și de ce mecanismul din spate e același, la orice scară, care a
+  creat și spațiul pentru creditarea nebancară din Moldova.
+
+  Citește articolul complet: idealcredit.md/blog/bancile-au-devenit-minoritare
+
+  #DincoloDeCifre #IdealCredit #FinantePublice
+*/}

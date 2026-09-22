@@ -701,3 +701,9 @@ input[type=number] {
 .dc-legal a:hover {
   color: var(--color-dc-text);
 }
+.dc-article a {
+  color: var(--color-dc-proof);
+}
+.dc-article a:hover {
+  color: var(--color-dc-text);
+}

@@ -107,9 +107,9 @@ Four techniques, checked at Structure (gate 3) and Audit (gate 5):
 
 - **Cold open on a scene, not a topic.** Never start with "acest articol
   discută..." or a definition. Open on a concrete moment, number, or fact that
-  the reader can picture — article 3's `<Highlight>` ("Pe hârtie, dobânda era
-  negativă. Aproape nimeni n-a primit, de fapt, bani gratis.") is the model:
-  the topic emerges from the scene instead of being announced before it.
+  the reader can picture. This now lives entirely in the dek (see "No
+  Highlight component" below) — the dek itself must open on the scene, not
+  announce the topic.
 - **Curiosity gap.** Withhold the payoff fact or number for a beat and let the
   piece earn it, rather than stating the conclusion in the first paragraph.
   This cannot override the Topic Gate's "Complete" check or the Audit's "Clear
@@ -133,7 +133,22 @@ rhetorical questions used as filler rather than at a genuine section pivot.
 Those work for a social storytelling voice; they'd read as unsourced padding
 against the blog's numerate, source-precise standard.
 
-## Design & typography (added 2026-09-16, after reviewing article 1 live)
+## No `<Highlight>` component (removed 2026-09-22)
+
+The pulled-quote component placed after the header, right before "Cifrele,"
+is gone from the template. Across all four published articles it ended up
+restating the dek's own fact - most literally in article 3, where the
+Highlight was a verbatim repeat of the dek's closing clause - because both
+elements were doing the same job (announce the article's hook) in the same
+spot on the page.
+
+**The dek is now the sole hook.** Title + dek together have to make someone
+want to read the whole article - the dek should open on the concrete scene
+(per the "Cold open" craft rule above), not just describe the topic. When
+rewriting a dek, fold in whatever made the old Highlight worth pulling out
+(a sharper number, a more concrete scene) rather than just deleting it - see
+`lib/blog-posts.ts` for the four reworked deks. `components/blog/Highlight.tsx`
+is deleted; don't reintroduce a second hook element after the header.
 
 - **No repeated branding chrome.** The blog doesn't restate "Dincolo de Cifre"
   as an eyebrow label on every page, and it doesn't explain itself ("this blog
@@ -191,6 +206,18 @@ The only link to the blog anywhere on the site is in the footer, under
 "Companie" ("Dincolo de Cifre"). No homepage module yet - owner decision:
 revisit adding a homepage section once there are 3+ articles published, not
 before. Don't add one preemptively for a single article.
+
+## Interlinking between articles (added 2026-09-22)
+
+When a new article's claim overlaps with something an already-published
+article covers in depth, link the specific phrase to that article instead
+of describing it in prose ("un articol anterior din această serie," "articolul
+trecut" - say nothing, link the actual claim). Applies retroactively too:
+adding an article can create a natural link opportunity in an older one (see
+article 1's OCN mention linking to article 2, and article 2's non-bank-sector
+growth linking forward to article 4 once it existed). Keep it to real,
+specific overlaps, not every tangential shared word - the Topic Gate's
+"real substance" bar for the piece itself applies to a link too.
 
 ## Comparison integrity (added 2026-09-16)
 
