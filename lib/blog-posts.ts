@@ -33,6 +33,12 @@ export const blogPosts: BlogPost[] = [
         dek: "În 2013, cele mai mari șase bănci americane aveau sub 10 miliarde de dolari expuși către fonduri de credit privat. Azi au peste 300 de miliarde - iar în 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii stăteau deja în afara sistemului bancar.",
         date: "2026-09-22",
     },
+    {
+        slug: "ce-este-inflatia",
+        title: "Ce este inflația, de ce apare și cum se oprește.",
+        dek: "Aceeași plasă de cumpărături, același magazin: dacă în 2015 plăteai 45 de lei, în 2025 dădeai, în medie, 100. Bancnotele n-au dispărut din portofel - doar cumpără tot mai puțin.",
+        date: "2026-09-23",
+    },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

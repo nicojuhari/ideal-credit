@@ -91,6 +91,47 @@ time: would a Moldovan business owner or analyst actually say this word in
 conversation, or only encounter it in a translated report? If the latter,
 find the word they'd actually use.
 
+## Format exception: "explicat simplu" (added 2026-09-23)
+
+Owner decision: the register rule above ("don't explain Finance 101") has one
+deliberate exception - occasional explainers of a core money concept, written
+so a 10-year-old can follow them and an adult still learns something.
+First one: `ce-este-inflatia` (inflation - what, why, how).
+
+What changes: the subject itself is allowed to be a Finance 101 concept, and
+the language drops to kid level - one everyday image per idea (an ice cream
+that costs 10 lei, an island that sells 10 apples), reused across sections
+instead of introducing new jargon.
+
+What doesn't change: every other rule in this doc. Real, current, sourced
+Moldovan data ("Cifrele" chart first), 1-2 sentence paragraphs, headings that
+name the reader's question, a human stake, the Audit gate, one closing
+sentence. The explainer earns its place in Dincolo de Cifre by being the
+best-sourced version of the basics, not a generic glossary entry - generic
+definitions still belong in `/dictionar-financiar`.
+
+Length and scope: **short and narrow - 600-800 words** (`npm run check:blog`
+enforces a 500 floor for articles that declare `export const format =
+"explicat-simplu";`). Owner decision 2026-09-23, after the first draft grew to
+~1,600 words: "too long and too wide." Answer only what / why / how, in the
+fewest and simplest words. Side topics (how the statistics office measures it,
+hyperinflation history, every secondary policy tool, lags, tariffs) get cut,
+not compressed - a correct extra section still makes the piece worse here.
+Short sentences, everyday words, one image per idea, a plain list is fine
+where it makes a sequence clearer.
+
+Context vs. width (owner, 2026-09-23, after the cut to 586 words felt too
+bare): a sentence or two of context *inside* an existing section is welcome
+when it answers the question a reader would ask right there - what a % means
+in lei, where the number comes from, why BNM and not someone else. A new
+section on a side topic is not. Test: does it help understand *this* point
+better, or does it open a new one?
+
+OG image gotcha found here: `renderOgImage` splits the title around `accent`,
+so punctuation right next to the accent word wraps onto its own line (", "
+or "." after it). Pick an OG title where the accent word is followed by a
+space.
+
 ## Narrative craft (added 2026-09-18)
 
 The register rules above (numerate peer, no Finance 101) say how *sophisticated*

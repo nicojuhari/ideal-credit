@@ -20,6 +20,15 @@ const WORDS_MIN = 700;
 const WORDS_TARGET_LOW = 800;
 const WORDS_TARGET_HIGH = 1000;
 
+// The "explicat simplu" format (a core money concept explained so a child can
+// follow it) is short by design - see brand/blog-editorial-strategy.md,
+// "Format exception". An article opts in with:
+//   export const format = "explicat-simplu";
+const FORMAT_WORD_LIMITS = {
+    "explicat-simplu": { min: 500, low: 600, high: 800 },
+};
+const DEFAULT_WORD_LIMITS = { min: WORDS_MIN, low: WORDS_TARGET_LOW, high: WORDS_TARGET_HIGH };
+
 const ARTICLES_DIR = join(process.cwd(), "app", "blog", "(articles)");
 
 function findArticleFiles() {
@@ -99,6 +108,7 @@ function extractReaderText(source) {
 
     // `export const post = ...;` line.
     text = text.replace(/^export const post.*$/gm, " ");
+    text = text.replace(/^export const format.*$/gm, " ");
 
     // JSX tags (both self-closing components with data props, and simple
     // open/close tags). Inner text of open/close tags (e.g. <Highlight>...
@@ -119,10 +129,15 @@ function countWords(text) {
     return text.split(/\s+/).filter(Boolean).length;
 }
 
-function checkWordCount(count) {
-    if (count < WORDS_MIN) return { status: "FAIL", detail: `${count} words, under the ${WORDS_MIN}-word floor` };
-    if (count < WORDS_TARGET_LOW) return { status: "WARN", detail: `${count} words, below the ${WORDS_TARGET_LOW}-${WORDS_TARGET_HIGH} target` };
-    if (count > WORDS_TARGET_HIGH) return { status: "WARN", detail: `${count} words, above the ${WORDS_TARGET_LOW}-${WORDS_TARGET_HIGH} target` };
+function extractFormat(source) {
+    const match = source.match(/^export const format\s*=\s*"([^"]+)"/m);
+    return match ? match[1] : null;
+}
+
+function checkWordCount(count, { min, low, high }) {
+    if (count < min) return { status: "FAIL", detail: `${count} words, under the ${min}-word floor` };
+    if (count < low) return { status: "WARN", detail: `${count} words, below the ${low}-${high} target` };
+    if (count > high) return { status: "WARN", detail: `${count} words, above the ${low}-${high} target` };
     return { status: "OK", detail: `${count} words` };
 }
 
@@ -156,8 +171,9 @@ for (const file of files) {
     }
 
     const wordCount = countWords(extractReaderText(source));
-    const wordCheck = checkWordCount(wordCount);
-    console.log(`  words (${wordCheck.status}): ${wordCheck.detail}`);
+    const format = extractFormat(source);
+    const wordCheck = checkWordCount(wordCount, FORMAT_WORD_LIMITS[format] ?? DEFAULT_WORD_LIMITS);
+    console.log(`  words (${wordCheck.status}): ${wordCheck.detail}${format ? ` [format: ${format}]` : ""}`);
     if (wordCheck.status === "FAIL") hasFailure = true;
 }
 

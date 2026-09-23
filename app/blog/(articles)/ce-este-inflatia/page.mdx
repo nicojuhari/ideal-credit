@@ -1,0 +1,165 @@
+import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleFooter from "@/components/blog/ArticleFooter";
+import ArticleSchema from "@/components/blog/ArticleSchema";
+import RateBarChart from "@/components/blog/RateBarChart";
+import ClosingNote from "@/components/blog/ClosingNote";
+import Caption from "@/components/blog/Caption";
+import { getBlogPost } from "@/lib/blog-posts";
+
+export const metadata = {
+    title: "Ce este inflația, explicat simplu | Dincolo de Cifre",
+    description:
+        "De ce 100 de lei cumpără azi cât 45 acum zece ani? Ce este inflația, de ce cresc prețurile și cum o oprește Banca Națională - explicat simplu.",
+    alternates: { canonical: "https://idealcredit.md/blog/ce-este-inflatia" },
+    openGraph: {
+        type: "article",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        url: "https://idealcredit.md/blog/ce-este-inflatia",
+        title: "Ce este inflația, explicat simplu | Dincolo de Cifre",
+        description:
+            "De ce 100 de lei cumpără azi cât 45 acum zece ani? Ce este inflația, de ce cresc prețurile și cum o oprește Banca Națională - explicat simplu.",
+    },
+};
+
+export const post = getBlogPost("ce-este-inflatia");
+export const format = "explicat-simplu";
+
+<ArticleSchema
+  headline={post.title}
+  description={post.dek}
+  datePublished={post.date}
+  url="https://idealcredit.md/blog/ce-este-inflatia"
+/>
+
+<ArticleHeader title={post.title} dek={post.dek} />
+
+## Cifrele
+
+Așa au crescut prețurile în Moldova în fiecare an, din 2016 până în 2025.
+
+<RateBarChart
+  unit="%"
+  caption="Inflația medie anuală în Republica Moldova, pe an. Sursă: Banca Mondială (FP.CPI.TOTL.ZG), pe baza datelor Biroului Național de Statistică."
+  data={[
+    { label: "2016", value: 6.4 },
+    { label: "2017", value: 6.6 },
+    { label: "2018", value: 3.0 },
+    { label: "2019", value: 4.8 },
+    { label: "2020", value: 3.8 },
+    { label: "2021", value: 5.1 },
+    { label: "2022", value: 28.7, tone: "subject" },
+    { label: "2023", value: 13.4 },
+    { label: "2024", value: 4.7 },
+    { label: "2025", value: 7.8 },
+  ]}
+/>
+
+Cum citești graficul: 7,8% în 2025 înseamnă că ce costa 100 de lei în 2024 costa, în medie, 107,8 lei un an mai târziu.
+
+Fiecare an se adaugă peste cel de dinainte. Așa că, puse la un loc, aceste creșteri au făcut prețurile de 2,2 ori mai mari: ce costa 45 de lei în 2015 costa 100 de lei în 2025.
+
+Cel mai greu an a fost 2022, când prețurile au crescut, în medie, cu aproape 29%. Și totuși, Moldova a trecut prin mai rău: în 1993, prețurile au crescut de peste 17 ori într-un singur an.
+
+## Ce este inflația?
+
+Inflația înseamnă că prețurile cresc.
+
+O înghețată costă azi 10 lei. Peste un an costă 11 lei - s-a scumpit cu 10%.
+
+Bancnota ta de 10 lei a rămas aceeași. Dar nu-ți mai ajunge de înghețată.
+
+Asta e inflația: banii rămân la fel, dar cumpără mai puțin.
+
+Nu e vorba de un singur produs. Inflația e atunci când se scumpesc multe lucruri deodată: mâncarea, transportul, facturile.
+
+Cine o măsoară?
+
+În fiecare lună, Biroul Național de Statistică notează prețurile din aproximativ 900 de magazine și locuri unde se plătesc servicii. Cât s-a scumpit tot acest "coș" față de anul trecut - asta e cifra pe care o auzi la știri.
+
+## De ce cresc prețurile?
+
+Din trei motive.
+
+**Oamenii au mai mulți bani, dar marfa e aceeași.** Pe o insulă se vând 10 mere pe zi. Dacă toți primesc deodată de două ori mai mulți bani, merele tot 10 rămân, așa că vânzătorul cere mai mult pe ele.
+
+În viața reală, asta se întâmplă când oamenii iau multe credite deodată sau când salariile cresc mai repede decât marfa din magazine.
+
+**Produsele costă mai mult să fie făcute.** Dacă brutarul plătește mai mult pe gaz și pe făină, pâinea se scumpește. Așa a fost în Moldova în 2022, când gazul și energia s-au scumpit brusc.
+
+**Toți se așteaptă la scumpiri.** Dacă un magazin crede că totul se va scumpi, ridică prețurile de pe acum. Iar oamenii se grăbesc să cumpere, și prețurile urcă și mai mult.
+
+## De ce ținta e 5%, nu zero?
+
+Banca Națională a Moldovei (BNM) vrea ca prețurile să crească cu aproximativ 5% pe an. Orice între 3,5% și 6,5% e în regulă.
+
+De ce nu zero? Pentru că și prețurile care scad sunt o problemă.
+
+Dacă știi că o bicicletă va fi mai ieftină luna viitoare, aștepți. Iar dacă toată lumea așteaptă, magazinele nu vând și fabricile produc mai puțin.
+
+În zona euro, ținta e 2%. În Moldova e mai mare, pentru că o economie care încă ajunge din urmă țările bogate are, de obicei, prețuri care cresc mai repede.
+
+## Cum oprește BNM inflația?
+
+De ce tocmai BNM? E singura instituție care pune lei în circulație, iar legea îi dă o misiune principală: să țină prețurile stabile.
+
+Pentru asta, are o unealtă principală: rata de bază.
+
+Rata de bază e prețul banilor. De la ea pornesc [dobânzile la credite și la depozite](/blog/dobanzi-mari-nu-doar-moldova) din toate băncile.
+
+Când prețurile cresc prea repede, BNM ridică rata. Așa a făcut pe 17 septembrie 2026: de la 7,5% la 9%.
+
+Apoi se întâmplă trei lucruri:
+
+- Creditele se scumpesc, așa că o familie amână televizorul luat în rate.
+- Depozitele aduc mai mult, așa că oamenii pun bani deoparte în loc să-i cheltuie.
+- Magazinele au mai puțini clienți, așa că nu mai pot ridica prețurile ușor.
+
+E insula cu mere, pe dos: aceleași mere, dar mai puțini bani care aleargă după ele. Prețurile se liniștesc.
+
+Când prețurile cresc prea încet, BNM face invers: coboară rata, ca oamenii să cheltuie mai mult.
+
+Efectul nu vine a doua zi, ci după câteva luni. Iar un lucru nu-l poate face nici BNM: să ieftinească gazul sau petrolul de pe piața mondială.
+
+## Ce înseamnă pentru banii tăi?
+
+**Banii ținuți acasă pierd.** O mie de lei puși în sertar în 2015 valorau, în 2025, cât 455 de lei de atunci.
+
+Un depozit te ajută doar dacă dobânda lui e mai mare decât inflația. Altfel, banii cresc doar pe hârtie.
+
+**Salariul trebuie să crească măcar cât prețurile.** O mărire de 5%, într-un an în care prețurile cresc cu 7%, înseamnă că poți cumpăra mai puțin.
+
+**Și 5% e mult, în timp.** Chiar la ținta BNM, prețurile cresc cu 63% în zece ani.
+
+<ClosingNote href="/credite">
+  La Ideal Credit analizăm scopul și situația financiară a fiecărei afaceri - inclusiv cum rezistă planul ei la prețurile de mâine.
+</ClosingNote>
+
+<ArticleFooter date={post.date} />
+
+<Caption as="div" className="mt-6">
+  Notă: "acum zece ani" compară media prețurilor din 2015 cu cea din 2025. Nu include 2026: până în august, prețurile au mai crescut cu 4,9% față de decembrie 2025.
+</Caption>
+
+{/*
+  SOCIAL PROMO - LinkedIn + Facebook (one caption, both platforms)
+  status: ready to schedule
+  link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
+
+  Ce costa 45 de lei în Moldova acum zece ani, azi costă 100.
+
+  Bancnota din buzunar arată la fel. Doar că cumpără tot mai puțin.
+
+  Și nu e nevoie de un an ca 2022 ca să se întâmple. Chiar și o inflație de 5% pe an -
+  exact ținta Băncii Naționale - face prețurile cu 63% mai mari în zece ani.
+
+  Pe 17 septembrie, BNM a ridicat rata de bază la 9%. Cum ajunge o singură cifră
+  să schimbe ce cumpără o familie și cât cer magazinele?
+
+  Am explicat, pe scurt și simplu, în seria Dincolo de Cifre: ce este inflația, de ce
+  apare și cum se oprește.
+
+  Citește articolul complet: idealcredit.md/blog/ce-este-inflatia
+
+  #DincoloDeCifre #IdealCredit #Inflatie
+*/}

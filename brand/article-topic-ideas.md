@@ -20,6 +20,11 @@ Backlog of pitched topics, checked against the Topic Gate in
 
 ## Published
 
+- **Inflation, explained for a 10-year-old** — slug: `ce-este-inflatia`,
+  published 2026-09-23. First "explicat simplu" format piece (see strategy
+  doc). Hook: 45 lei in 2015 = 100 lei in 2025 (World Bank CPI, factor 2.2);
+  timely peg: BNM base rate 7.5% -> 9% on 2026-09-17, inflation 6.96% (Aug).
+
 - **Denmark's negative-rate mortgages** — slug: `dobanda-negativa-danemarca`,
   published 2026-09-17.
 

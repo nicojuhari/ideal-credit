@@ -15,7 +15,7 @@ export default function ClosingNote({
     children: React.ReactNode;
 }) {
     return (
-        <div className="not-prose mt-14 border-t border-dc-line pt-8 [&_p]:text-[15px] [&_p]:leading-[1.7] [&_p]:text-dc-text-muted">
+        <div className="not-prose mt-14 border-t border-dc-line pt-8 [&_p]:text-[16px] [&_p]:leading-[1.7] [&_p]:text-dc-text-muted">
             {children}
             <Link
                 href={href}
