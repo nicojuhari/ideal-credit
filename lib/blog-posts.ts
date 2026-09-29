@@ -39,6 +39,12 @@ export const blogPosts: BlogPost[] = [
         dek: "Aceeași plasă de cumpărături, același magazin: dacă în 2015 plăteai 45 de lei, în 2025 dădeai, în medie, 100. Bancnotele n-au dispărut din portofel - doar cumpără tot mai puțin.",
         date: "2026-09-23",
     },
+    {
+        slug: "cumpara-imprumuta-mori",
+        title: "„Cumpără, împrumută, mori” - dar miliardarii aproape nu se împrumută.",
+        dek: "Între 2014 și 2018, cei mai bogați 25 de americani s-au îmbogățit cu 401 miliarde de dolari și au plătit 13,6 miliarde impozit pe venit - 3,4%. Explicația populară are trei cuvinte: cumpără, împrumută, mori. Datele din 2026 spun că tocmai cuvântul din mijloc contează cel mai puțin.",
+        date: "2026-09-29",
+    },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

@@ -7,7 +7,7 @@ Backlog of pitched topics, checked against the Topic Gate in
 
 ## Backlog
 
-- **Buy, Borrow, Die** — idea. How billionaires (Musk, Bezos, Ellison) pay
+- **Buy, Borrow, Die** — draft ready for review (slug `cumpara-imprumuta-mori`, 2026-09-29). Angle: the "borrow" step is mostly myth (Fox & Liscow 2026: "buy, save, die"); Moldova has the same step-up + untaxed inheritance. How billionaires (Musk, Bezos, Ellison) pay
   close to $0 tax for decades: never sell stock, borrow against it instead,
   die, heirs inherit at stepped-up basis, tax on the gain never happens.
   Global, mechanism-driven, "wait, that's legal?" effect. Source: ProPublica's
