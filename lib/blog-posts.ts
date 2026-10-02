@@ -23,13 +23,13 @@ export const blogPosts: BlogPost[] = [
     },
     {
         slug: "dobanda-negativa-danemarca",
-        title: "O bancă daneză a plătit oamenii să ia credit ipotecar.",
+        title: "O bancă daneză a dat credite ipotecare cu dobândă negativă.",
         dek: "În 2019, Jyske Bank oferea credite ipotecare pe 10 ani cu dobândă de minus 0,5%. Totuși, aproape nimeni n-a primit bani gratis. Iar azi încă există circa 40.000 de credite din acea perioadă cu dobândă sub zero.",
         date: "2026-09-17",
     },
     {
         slug: "bancile-au-devenit-minoritare",
-        title: "Băncile au devenit minoritare în finanțele lumii.",
+        title: "Sectorul nebancar are acum peste jumătate din activele financiare ale lumii.",
         dek: "În 2013, cele mai mari șase bănci americane împrumutaseră fondurilor de credit privat sub 10 miliarde de dolari. Azi suma trece de 300 de miliarde. Iar în 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii erau în afara băncilor.",
         date: "2026-09-22",
     },
@@ -44,6 +44,12 @@ export const blogPosts: BlogPost[] = [
         title: "„Cumpără, împrumută, mori” - dar miliardarii aproape nu se împrumută.",
         dek: "Între 2014 și 2018, cei mai bogați 25 de americani s-au îmbogățit cu 401 miliarde de dolari. Au plătit doar 13,6 miliarde impozit pe venit, adică 3,4%. Explicația populară are trei cuvinte: cumpără, împrumută, mori. Datele noi arată că „împrumută” contează cel mai puțin.",
         date: "2026-09-29",
+    },
+    {
+        slug: "sepa-transfer-euro-moldova",
+        title: "Cu SEPA, un transfer de 20 de euro costă acum 1 euro. Cine a câștigat?",
+        dek: "Din octombrie 2025, Moldova face parte din SEPA. Un transfer în euro costa cel puțin 20 de euro, acum costă în medie 1,09 euro. Dar SEPA duce 8 din 10 transferuri și mai puțin de jumătate din bani.",
+        date: "2026-10-02",
     },
 ];
 

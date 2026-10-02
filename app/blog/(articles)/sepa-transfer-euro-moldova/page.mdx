@@ -1,0 +1,154 @@
+import ArticleHeader from "@/components/blog/ArticleHeader";
+import ArticleFooter from "@/components/blog/ArticleFooter";
+import ArticleSchema from "@/components/blog/ArticleSchema";
+import RateBarChart from "@/components/blog/RateBarChart";
+import ClosingNote from "@/components/blog/ClosingNote";
+import Caption from "@/components/blog/Caption";
+import { getBlogPost } from "@/lib/blog-posts";
+
+export const metadata = {
+    title: "SEPA: transferul în euro costă 1 euro | Dincolo de Cifre",
+    description:
+        "Cu SEPA, un transfer în euro costă în medie 1,09 euro, nu 20. SEPA duce 8 din 10 transferuri, dar sub jumătate din bani. Cine câștigă cel mai mult?",
+    alternates: { canonical: "https://idealcredit.md/blog/sepa-transfer-euro-moldova" },
+    openGraph: {
+        type: "article",
+        locale: "ro_MD",
+        siteName: "Ideal Credit",
+        url: "https://idealcredit.md/blog/sepa-transfer-euro-moldova",
+        title: "SEPA: transferul în euro costă 1 euro | Dincolo de Cifre",
+        description:
+            "Cu SEPA, un transfer în euro costă în medie 1,09 euro, nu 20. SEPA duce 8 din 10 transferuri, dar sub jumătate din bani. Cine câștigă cel mai mult?",
+    },
+};
+
+export const post = getBlogPost("sepa-transfer-euro-moldova");
+
+<ArticleSchema
+  headline={post.title}
+  description={post.dek}
+  datePublished={post.date}
+  url="https://idealcredit.md/blog/sepa-transfer-euro-moldova"
+/>
+
+<ArticleHeader title={post.title} dek={post.dek} />
+
+## Cifrele
+
+În primele nouă luni, 79% din transferurile în euro ale Moldovei au trecut prin SEPA. Dar ele au dus doar 46% din bani.
+
+Graficul pune alături cele două cifre, pentru perioada octombrie 2025 - iunie 2026.
+
+<RateBarChart
+  unit="%"
+  caption="Partea SEPA din plățile în euro dintre Moldova și alte țări, octombrie 2025 - iunie 2026. Sursă: BNM, prin EU4Moldova, iulie 2026."
+  data={[
+    { label: "După număr", value: 79.2, tone: "subject" },
+    { label: "După valoare", value: 45.8, tone: "note" },
+  ]}
+/>
+
+Diferența vine din mărimea plăților. Un transfer prin SEPA are, în medie, circa 7.200 de euro. Unul prin SWIFT are peste 32.000.
+
+Altfel spus, SEPA a preluat mai ales plățile mici. Multe plăți mari merg tot pe drumul vechi.
+
+## Ce s-a schimbat pe 6 octombrie 2025?
+
+SEPA înseamnă Zona Unică de Plăți în Euro. În interiorul ei, un transfer în euro către altă țară merge la fel de simplu ca unul în aceeași țară.
+
+Din 6 octombrie 2025, Moldova face parte din această zonă. În aceeași săptămână au intrat Albania, Muntenegru și Macedonia de Nord.
+
+Serbia a urmat în mai 2026. Acum, SEPA are 41 de țări.
+
+Înainte, plățile în euro treceau prin SWIFT, rețeaua prin care băncile din toată lumea își trimit bani. Un transfer costa între 20 și 150 de euro, oricât de mică era suma.
+
+Prin SEPA, un transfer costă acum, în medie, 1,09 euro. În primele zece luni, oamenii și firmele din Moldova au făcut 960.000 de astfel de transferuri.
+
+Prin SWIFT, aceleași transferuri ar fi costat 14,2 milioane de euro. Prin SEPA au costat circa 1 milion, deci economia a fost de 13,2 milioane.
+
+## Cine economisește cel mai mult?
+
+13,2 milioane de euro sună mult. Dar în aceleași zece luni, Moldova a trimis și a primit plăți în euro de 14,6 miliarde.
+
+Economia e de circa 9 euro la fiecare 10.000 de euro trimiși. Pentru plățile mari, comisionul vechi conta foarte puțin.
+
+| | Prin SWIFT | Prin SEPA |
+|---|---|---|
+| Transfer de 200 de euro | minim 20 de euro (10% din sumă) | circa 1 euro (0,5%) |
+| Plată de 100.000 de euro | 20-150 de euro (0,02-0,15%) | circa 1 euro (0,001%) |
+
+La o plată de 100.000 de euro, firma economisește cel mult 150 de euro. La un transfer de 200 de euro, omul dădea înainte o zecime din sumă pe comision.
+
+Deci cel mai mult câștigă transferurile mici. Iar cele mai multe dintre ele sunt bani primiți de oameni, nu de firme.
+
+Din cele 829.000 de transferuri SEPA din primele nouă luni, 625.000 au fost bani primiți de persoane fizice. Adică trei din patru.
+
+Multe dintre ele sunt bani trimiși acasă de moldovenii care lucrează în UE. În primul trimestru din 2026, banii primiți de oameni din străinătate au crescut cu 10,4%, la circa 389 de milioane de euro.
+
+BNM spune că creșterea vine din țările UE, datorită SEPA. Banii trimiși din Rusia și restul CSI scad în continuare.
+
+## De ce plățile mari merg încă prin SWIFT?
+
+Nu din cauza sumei. Un transfer SEPA obișnuit poate ajunge aproape la un miliard de euro.
+
+Motivul e altul: SEPA funcționează doar dacă ambele bănci sunt în zona SEPA. Și doar pentru plăți în euro.
+
+O firmă care plătește în euro un furnizor din China, Turcia sau Ucraina trimite banii tot prin SWIFT. Niciuna dintre aceste trei țări nu e în SEPA.
+
+Iar aceste țări contează mult pentru Moldova. În 2025, de acolo au venit circa 31% din importuri.
+
+Concret, Moldova a importat din China mărfuri de 1,49 miliarde de dolari, din Ucraina de 1,10 miliarde și din Turcia de 0,77 miliarde.
+
+Nu toate aceste importuri se plătesc în euro. Dar cele plătite în euro rămân pe SWIFT, oricât de mare sau de mică e suma.
+
+## Au crescut plățile în euro cu 57%?
+
+BNM compară primele zece luni cu SEPA cu aceleași luni din anii dinainte. Valoarea plăților în euro a crescut cu 57%, de la 9,3 la 14,6 miliarde de euro.
+
+Comerțul n-a crescut nici pe departe atât. În 2025, importurile Moldovei au crescut cu 20,5%, iar exporturile cu 6,4%.
+
+Comparația nu e perfectă: perioadele diferă, iar comerțul se măsoară în dolari. Dar diferența e prea mare ca să vină doar din afaceri noi.
+
+O explicație probabilă: o parte din bani și-a schimbat drumul. Plăți care se făceau înainte altfel, de exemplu în dolari sau prin sisteme de transfer de bani, trec acum prin bănci, în euro.
+
+Iar drumul acesta are încă loc să crească. În iunie 2026, aproape jumătate din banii trimiși acasă au venit tot prin sisteme de transfer de bani: 89 din 181 de milioane de dolari.
+
+## Ce înseamnă asta pentru o firmă din Moldova?
+
+Pentru o firmă care cumpără sau vinde în UE, o plată în euro costă acum în jur de 1 euro. Iar banii ajung, de regulă, în aceeași zi sau a doua zi.
+
+Contează mai ales pentru firmele mici, care fac multe plăți mici. La 20 de plăți pe lună, comisionul vechi de 20 de euro însemna cel puțin 400 de euro.
+
+Media de 1,09 euro e doar o medie. Fiecare bancă își stabilește tariful ei pentru transferurile SEPA, deci merită comparat.
+
+Pentru furnizorii din afara SEPA, nu s-a schimbat nimic. Acolo, comisionul SWIFT rămâne un cost de pus în calcul la fiecare comandă.
+
+<ClosingNote href="/credite/credit-pentru-afaceri">
+  La Ideal Credit analizăm scopul și situația financiară a firmei înainte de orice credit, inclusiv atunci când banii merg la furnizori din străinătate.
+</ClosingNote>
+
+<ArticleFooter date={post.date} />
+
+<Caption as="div" className="mt-6">
+  Notă: datele pentru zece luni (960.000 de transferuri, comisionul mediu de 1,09 euro, economia de 13,2 milioane, creșterea de la 9,3 la 14,6 miliarde de euro) vin de la Banca Națională a Moldovei. Datele pentru nouă luni (79,2% din număr, 45,8% din valoare, 625.200 de transferuri primite de persoane fizice, plata SWIFT medie de 32.439 de euro) - din raportul BNM publicat de EU4Moldova, iulie 2026. Media unui transfer SEPA (circa 7.200 de euro) e calculată din aceste date: 6 miliarde de euro / 829.000 de transferuri. Datele de aderare: Consiliul European de Plăți (EPC), via European Western Balkans. Importurile pe țări: Biroul Național de Statistică, 2025. Banii primiți din străinătate: BNM, via Logos Press. Limita unui transfer SEPA obișnuit (SEPA Credit Transfer): 999.999.999,99 euro, conform regulilor EPC.
+</Caption>
+
+{/*
+  SOCIAL PROMO - LinkedIn + Facebook (one caption, both platforms)
+  status: ready to schedule
+  link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
+
+  De un an, Moldova face parte din SEPA. Un transfer în euro costa minim 20 de euro.
+  Acum costă, în medie, 1,09 euro.
+
+  Dar SEPA duce 8 din 10 transferuri în euro și mai puțin de jumătate din bani.
+  Plățile mari merg tot prin SWIFT, pentru că SEPA nu ajunge la furnizorii din
+  China, Turcia sau Ucraina - de unde vin circa 31% din importuri.
+
+  Cine câștigă cel mai mult? Transferurile mici. Trei din patru transferuri SEPA
+  sunt bani primiți de oameni, mulți trimiși acasă de cei care lucrează în UE.
+
+  Articolul complet, în Dincolo de Cifre: idealcredit.md/blog/sepa-transfer-euro-moldova
+
+  #DincoloDeCifre #IdealCredit #SEPA
+*/}
