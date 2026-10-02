@@ -7,18 +7,18 @@ import Caption from "@/components/blog/Caption";
 import { getBlogPost } from "@/lib/blog-posts";
 
 export const metadata = {
-    title: "Sectorul nebancar a depășit băncile | Dincolo de Cifre",
+    title: "Firmele nebancare au depășit băncile | Dincolo de Cifre",
     description:
-        "În 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii stăteau în afara băncilor - iar legătura dintre ele crește.",
+        "În 2024, pentru prima dată de la criza din 2008, firmele nebancare aveau peste jumătate din banii investiți în lume. Băncile le împrumută tot mai mult.",
     alternates: { canonical: "https://idealcredit.md/blog/bancile-au-devenit-minoritare" },
     openGraph: {
         type: "article",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/blog/bancile-au-devenit-minoritare",
-        title: "Sectorul nebancar a depășit băncile | Dincolo de Cifre",
+        title: "Firmele nebancare au depășit băncile | Dincolo de Cifre",
         description:
-            "În 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii stăteau în afara băncilor - iar legătura dintre ele crește.",
+            "În 2024, pentru prima dată de la criza din 2008, firmele nebancare aveau peste jumătate din banii investiți în lume. Băncile le împrumută tot mai mult.",
     },
 };
 
@@ -35,13 +35,15 @@ export const post = getBlogPost("bancile-au-devenit-minoritare");
 
 ## Cifrele
 
-Graficul pune alături două sume. Prima: toate activele financiare ale lumii. A doua: partea lor care stă în afara băncilor.
+Financial Stability Board (FSB) este organizația care urmărește riscurile din finanțele lumii. În fiecare an, FSB adună toți banii investiți de firmele financiare din lume: credite, acțiuni, obligațiuni și alte investiții.
 
-Fiecare bară arată ce parte din total stătea în afara băncilor în anul respectiv.
+Firmele financiare care nu sunt bănci se numesc firme nebancare. Sunt fonduri de investiții, fonduri de pensii, companii de asigurări și altele.
+
+Graficul arată ce parte din banii investiți în lume era la firmele nebancare, în fiecare an.
 
 <RateBarChart
   unit="%"
-  caption="Cota sectorului nebancar (NBFI) din activele financiare globale, pe an. Sursă: Financial Stability Board, Global Monitoring Report on Nonbank Financial Intermediation 2025 (publicat decembrie 2025)."
+  caption="Cât la sută din banii investiți de firmele financiare ale lumii erau la firme nebancare, pe an. Sursă: Financial Stability Board, Global Monitoring Report on Nonbank Financial Intermediation 2025 (publicat decembrie 2025)."
   data={[
     { label: "2008", value: 42 },
     { label: "2022", value: 47.2 },
@@ -50,96 +52,94 @@ Fiecare bară arată ce parte din total stătea în afara băncilor în anul res
   ]}
 />
 
-În 2024, banii și activele din afara băncilor au ajuns la 256,8 trilioane de dolari. Asta e 51% din toate activele financiare ale lumii.
+În 2024, firmele nebancare aveau 256,8 trilioane de dolari. Asta înseamnă 51% din banii investiți în lume.
 
-Într-un singur an, suma a crescut cu 9,4%. Activele băncilor au crescut de două ori mai încet, cu 4,7%.
+Într-un singur an, banii lor au crescut cu 9,4%. Banii băncilor au crescut de două ori mai încet, cu 4,7%.
 
-Pragul de 50% mai fusese atins o singură dată, chiar înainte de criza din 2008. După criză, regulile mai dure din următorii zece ani au coborât cota din nou.
+Firmele nebancare mai trecuseră de jumătate o singură dată, chiar înainte de criza din 2008. După criză, regulile au devenit mai dure, iar în următorii zece ani partea lor a scăzut din nou.
 
-Azi băncile dețin mai puțin de jumătate din activele financiare ale lumii.
+Deci azi băncile au mai puțin de jumătate din banii investiți în lume.
 
-## Ce înseamnă, de fapt, "nebancar"
+## Cine sunt firmele nebancare?
 
-Cuvântul sună abstract, dar acoperă lucruri concrete. Cea mai mare parte sunt fonduri: de investiții, de pe piața monetară, hedge funds. Tot aici intră firmele care cumpără credite de la bănci și le revând investitorilor.
+Cele mai multe sunt fonduri: fonduri de investiții, fonduri care țin banii pe termen scurt și fonduri speculative (hedge funds). Tot aici intră firmele care cumpără credite de la bănci și le revând investitorilor.
 
-Financial Stability Board, organismul care monitorizează sistemul financiar global, le numește pe toate "alți intermediari financiari".
-
-Împreună, ele valorează 169,4 trilioane de dolari. E cea mai mare parte din banii aflați în afara băncilor.
+FSB pune toate aceste firme într-un singur grup. Împreună, ele au 169,4 trilioane de dolari, adică cei mai mulți dintre banii firmelor nebancare.
 
 Tot ele au crescut cel mai repede: cu 11% într-un an.
 
-Restul stă în fonduri de pensii și companii de asigurări. Banii aceștia oricum n-au stat niciodată în conturi bancare obișnuite.
+Restul banilor nebancari sunt la fondurile de pensii și la companiile de asigurări. Banii aceștia n-au stat niciodată în conturi bancare obișnuite.
 
-Partea care atrage azi cea mai multă atenție e mai mică: creditul privat. Fonduri precum Blackstone, Apollo sau Ares împrumută bani direct companiilor.
+Cea mai multă atenție o primesc azi fondurile de credit privat. Fonduri precum Blackstone, Apollo sau Ares împrumută bani direct companiilor.
 
-Asta făcea odinioară doar banca. Diferența e de unde vin banii: la fond, de la investitori mari, cum sunt fondurile de pensii, nu din depozitele oamenilor.
+Înainte, asta făcea doar banca. Banca dă credite din depozitele oamenilor. Fondul de credit privat dă credite din banii investitorilor mari, cum sunt fondurile de pensii.
 
-La finalul lui 2025, doar divizia de credit și asigurări a Blackstone administra 443 de miliarde de dolari. E mai mult decât produsul intern brut al unor țări europene întregi.
+La finalul lui 2025, doar partea Blackstone care se ocupă de credite și asigurări administra 443 de miliarde de dolari. E mai mult decât produc într-un an unele țări europene întregi.
 
-FMI estima toată piața de credit privat la aproape 2 trilioane de dolari. Alte surse dau între 1,5 și 2 trilioane, în funcție de cum și când numără.
+FMI estima că toate fondurile de credit privat au aproape 2 trilioane de dolari. Alte surse dau între 1,5 și 2 trilioane, după cum și când numără.
 
-Și în interiorul acestei piețe lucrurile se schimbă repede. În 2024, 58% din banii strânși de fondurile de credit privat mergeau în credite date direct companiilor.
+Și investitorii își mută repede banii de la un tip de fond la altul. În 2024, 58% din banii strânși de fondurile de credit privat mergeau în credite date direct companiilor.
 
-În primul trimestru din 2026, partea aceasta a scăzut la 31%. Investitorii își împart banii între mai multe tipuri de fonduri.
+În primele trei luni din 2026, doar 31% din bani au mers în astfel de credite. Investitorii își pun acum banii în mai multe tipuri de fonduri.
 
-## De ce a crescut atât
+## De ce au crescut atât firmele nebancare?
 
-Explicația ține de două decizii separate, luate la un deceniu distanță una de alta.
+Sunt două motive.
 
-Prima: după criza din 2008, autoritățile au cerut băncilor să țină mult mai mulți bani proprii pentru fiecare credit riscant. Astfel de credite au devenit scumpe pentru bănci.
+Primul: după criza din 2008, autoritățile au cerut băncilor să țină mult mai mulți bani proprii pentru fiecare credit riscant. Așa, creditele riscante au devenit scumpe pentru bănci.
 
-Riscul nu a dispărut. S-a mutat spre fonduri care nu au aceleași reguli.
+Firmele au avut în continuare nevoie de astfel de credite. Le-au luat de la fonduri, care nu au aceleași reguli ca băncile.
 
-A doua: timp de un deceniu, dobânzile au stat aproape de zero. Obligațiunile de stat nu mai aduceau aproape nimic, așa că fondurile de pensii și asigurătorii au căutat câștiguri în altă parte.
+Al doilea: timp de zece ani, dobânzile au stat aproape de zero. Obligațiunile de stat nu mai aduceau aproape nimic.
 
-Creditul privat le-a promis exact câștigul mai mare pe care îl căutau.
+Așa că fondurile de pensii și asigurătorii au căutat câștiguri mai mari în altă parte. Fondurile de credit privat le-au promis exact aceste câștiguri.
 
-## Riscul ascuns: legătura cu băncile
+## Unde e riscul pentru bănci?
 
-În engleză, sectorul se numește "shadow banking", adică "bănci din umbră". Numele sugerează un sistem separat de bănci.
+În engleză, firmele nebancare se mai numesc "shadow banking", adică "bănci din umbră". Numele te face să crezi că sunt separate de bănci.
 
-Cifrele arată altceva. Legătura dintre bănci și fonduri s-a întărit an de an.
+Nu sunt. Băncile le împrumută tot mai mulți bani, an de an.
 
-Cele mai mari șase bănci americane au împrumutat direct fondurilor de credit privat 300-322 de miliarde de dolari. E de peste treizeci de ori mai mult decât acum zece ani.
+Cele mai mari șase bănci americane au împrumutat fondurilor de credit privat 300-322 de miliarde de dolari. E de peste 30 de ori mai mult decât în 2013.
 
-O parte din creditele date de aceste fonduri au o condiție numită PIK (payment-in-kind). Firma nu plătește dobânda în bani. Dobânda se adaugă la datorie.
+Unele credite date de aceste fonduri au o condiție numită PIK (payment-in-kind). Cu PIK, firma nu plătește dobânda în bani. Dobânda se adaugă la datorie.
 
-Așa, un credit poate apărea ca "sănătos" în rapoarte ani la rând. Asta chiar dacă firma nu mai are bani să plătească nimic.
+Așa, în rapoarte, un credit poate arăta ani la rând ca un credit plătit la timp. Chiar dacă firma nu mai are bani să plătească nimic.
 
-În mai 2026, Financial Stability Board a publicat primul raport dedicat doar riscurilor din creditul privat.
+În mai 2026, FSB a publicat primul său raport doar despre riscurile din creditul privat.
 
-În aceeași perioadă, OCC, autoritatea care supraveghează băncile americane, a trecut pentru prima dată creditul privat ca risc separat în raportul său de la șase luni.
+Cam tot atunci a reacționat și OCC, autoritatea care supraveghează băncile americane. În raportul pe care îl publică o dată la șase luni, OCC a trecut pentru prima dată creditul privat ca risc separat.
 
-La începutul lui 2026, investitorii au cerut în masă banii înapoi de la câteva fonduri mari. Tot atunci au crescut și creditele neplătite.
+La începutul lui 2026, mulți investitori au cerut deodată banii înapoi de la câteva fonduri mari. Tot atunci au crescut și creditele pe care firmele nu le mai plătesc.
 
-FMI e mai calm. Într-un raport din aprilie 2026, scrie că doar 2-3% din credite nu sunt plătite.
+FMI e mai calm. Într-un raport din aprilie 2026, FMI scrie că doar 2-3% din credite nu sunt plătite.
 
-Instituția numește acest nivel "gestionabil". Pentru FMI, nu e un semnal de criză.
+FMI spune că acest nivel e "gestionabil". Adică nu îl vede ca semn de criză.
 
-## Ce legătură are cu Moldova
+## Ce legătură are cu Moldova?
 
-Sistemul de 256,8 trilioane de dolari funcționează, de fapt, simplu. Când băncile nu mai dau un anumit tip de credit, banii nebancari ocupă locul liber.
+Ideea din spatele celor 256,8 trilioane de dolari e simplă. Când băncile nu mai dau un anumit tip de credit, firmele nebancare îl dau în locul lor.
 
-Băncile se pot retrage din mai multe motive. Uneori le obligă regulile. Alteori creditul nu li se potrivește sau li se pare prea riscant.
+Băncile pot refuza un credit din mai multe motive. Uneori nu le permit regulile. Alteori creditul nu li se potrivește sau li se pare prea riscant.
 
-La fel funcționează orice organizație de creditare nebancară, inclusiv din Moldova. Doar că la o scară incomparabil mai mică.
+La fel lucrează și organizațiile de creditare nebancară (OCN) din Moldova. Doar că sumele sunt mult, mult mai mici.
 
-Un OCN nu e o bancă mai slabă care îi ține locul. Are alți bani, alte reguli și alți clienți.
+Un OCN nu e o bancă mai slabă. Are bani din alte surse, alte reguli și alți clienți.
 
-Exact așa lucrează, la scară globală, și un fond de credit privat.
+La fel e și un fond de credit privat: nu e o bancă, are bani din alte surse și alte reguli.
 
-[Băncile din Moldova finanțează doar 6% din investițiile firmelor mici ale țării](/blog/firme-mici-nu-iau-credit-de-la-banca). Restul banilor de care au nevoie firmele vine tot din afara băncilor.
+[Firmele mici din Moldova investesc mai ales din bani proprii. Băncile le dau doar 6% din bani](/blog/firme-mici-nu-iau-credit-de-la-banca). Restul banilor vin tot din afara băncilor.
 
-Scara e mult mai mică decât cea globală. Motivul e exact același.
+Sumele din Moldova sunt mult mai mici decât în lume. Dar motivul e același: când băncile nu dau credit, firmele iau bani de altundeva.
 
 <ClosingNote href="/credite">
-  La Ideal Credit lucrăm zilnic în exact acest spațiu lăsat liber de bănci, pentru afacerile din Moldova.
+  La Ideal Credit dăm zilnic credite afacerilor din Moldova pentru care un credit de la bancă nu se potrivește.
 </ClosingNote>
 
 <ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
-  Notă: raportul FSB care acoperă anul 2024 a fost publicat abia în decembrie 2025 - denumirea "2025" din titlul raportului se referă la anul publicării, nu la anul datelor. Mărimea pieței de credit privat variază între 1,5 și 2 trilioane de dolari în funcție de sursă și dată de raportare - o folosim ca ordin de mărime, nu ca cifră exactă.
+  Notă: raportul FSB cu datele pentru 2024 a fost publicat abia în decembrie 2025. "2025" din titlul raportului e anul publicării, nu anul datelor. Cât au în total fondurile de credit privat diferă de la o sursă la alta: între 1,5 și 2 trilioane de dolari. Folosim cifra doar ca să arătăm cât de mare e piața, nu ca valoare exactă.
 </Caption>
 
 {/*
@@ -147,19 +147,19 @@ Scara e mult mai mică decât cea globală. Motivul e exact același.
   status: ready to schedule
   link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
 
-  În 2024, pentru prima dată de la criza din 2008, peste jumătate din activele financiare
-  ale lumii stăteau în afara sistemului bancar clasic - 256,8 trilioane de dolari, 51% din
-  tot ce înseamnă bani pe planetă.
+  În 2024, pentru prima dată de la criza din 2008, firmele nebancare administrau peste
+  jumătate din banii investiți în lume: 256,8 trilioane de dolari, adică 51%.
 
-  Sună ca un sistem separat, izolat de bănci. Nu e.
+  Firmele nebancare sunt fonduri de investiții, fonduri de pensii, asigurători.
+  Pare că sunt separate de bănci. Nu sunt.
 
-  Cele mai mari șase bănci americane aveau, în 2013, sub 10 miliarde de dolari expuși către
-  fonduri de credit privat. Azi au peste 300 de miliarde. Iar o parte din aceste împrumuturi
-  folosesc o structură (PIK) care poate ascunde probleme reale de plată ani la rând.
+  În 2013, cele mai mari șase bănci americane împrumutaseră fondurilor de credit privat
+  sub 10 miliarde de dolari. Azi le-au împrumutat peste 300 de miliarde. Iar unele credite
+  date de aceste fonduri pot ascunde ani la rând că firma nu mai poate plăti.
 
-  În articolul din seria Dincolo de Cifre explicăm ce e, de fapt, "shadow banking", de ce a
-  crescut atât de repede - și de ce mecanismul din spate e același, la orice scară, care a
-  creat și spațiul pentru creditarea nebancară din Moldova.
+  În Dincolo de Cifre explicăm ce sunt "băncile din umbră", de ce au crescut atât de repede
+  și ce legătură are asta cu creditele nebancare din Moldova. Pe scurt: când băncile nu
+  dau credit, firmele iau bani de altundeva.
 
   Citește articolul complet: idealcredit.md/blog/bancile-au-devenit-minoritare
 

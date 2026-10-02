@@ -9,7 +9,7 @@ import { getBlogPost } from "@/lib/blog-posts";
 export const metadata = {
     title: "Cumpără, împrumută, mori | Dincolo de Cifre",
     description:
-        "Cei mai bogați 25 de americani au plătit 3,4% impozit pe creșterea averii. Nu datorită creditelor, arată datele - iar Moldova are aceeași portiță.",
+        "Cei mai bogați 25 de americani au plătit impozit de 3,4% din cât s-au îmbogățit. Secretul lor nu e creditul. Iar Moldova are reguli aproape la fel.",
     alternates: { canonical: "https://idealcredit.md/blog/cumpara-imprumuta-mori" },
     openGraph: {
         type: "article",
@@ -18,7 +18,7 @@ export const metadata = {
         url: "https://idealcredit.md/blog/cumpara-imprumuta-mori",
         title: "Cumpără, împrumută, mori | Dincolo de Cifre",
         description:
-            "Cei mai bogați 25 de americani au plătit 3,4% impozit pe creșterea averii. Nu datorită creditelor, arată datele - iar Moldova are aceeași portiță.",
+            "Cei mai bogați 25 de americani au plătit impozit de 3,4% din cât s-au îmbogățit. Secretul lor nu e creditul. Iar Moldova are reguli aproape la fel.",
     },
 };
 
@@ -35,122 +35,134 @@ export const post = getBlogPost("cumpara-imprumuta-mori");
 
 ## Cifrele
 
-Investigația ProPublica a pus alături două cifre pentru fiecare miliardar. Prima: cât impozit pe venit a plătit între 2014 și 2018.
+ProPublica, o redacție de investigații din SUA, a calculat două cifre pentru fiecare miliardar. Prima: cât impozit pe venit a plătit între 2014 și 2018.
 
-A doua: cu cât i-a crescut averea în aceiași ani. Graficul arată ce parte din această creștere a ajuns la stat.
+A doua: cu cât s-a îmbogățit în aceiași ani. Graficul arată câți dolari de impozit a plătit fiecare la 100 de dolari cu care s-a îmbogățit.
 
 <RateBarChart
   unit="%"
-  caption="Impozit federal pe venit / creșterea averii, 2014-2018. Sursă: ProPublica, „The Secret IRS Files”, iunie 2021."
+  caption="Cât impozit federal pe venit au plătit miliardarii, din suma cu care s-au îmbogățit, 2014-2018. „Primii 25” sunt cei mai bogați 25 de americani, împreună. Sursă: ProPublica, „The Secret IRS Files”, iunie 2021."
   data={[
     { label: "Buffett", value: 0.1 },
     { label: "Bezos", value: 0.98 },
     { label: "Bloomberg", value: 1.3 },
     { label: "Musk", value: 3.27 },
-    { label: "Top 25", value: 3.4, tone: "subject" },
+    { label: "Primii 25", value: 3.4, tone: "subject" },
   ]}
 />
 
-Warren Buffett a plătit 10 cenți la fiecare 100 de dolari cu care s-a îmbogățit. Un american cu salariu mare plătește până la 37% din fiecare dolar câștigat în plus.
+Warren Buffett a plătit 10 cenți la fiecare 100 de dolari cu care s-a îmbogățit. Un american cu salariu mare dă statului până la 37 de cenți din fiecare dolar câștigat în plus.
 
-Nu e vorba de fraudă. Averea lor a crescut pentru că acțiunile lor s-au scumpit, iar pentru fisc asta nu e venit cât timp nu le vinzi.
+Miliardarii n-au încălcat legea. Averea lor a crescut pentru că acțiunile lor s-au scumpit.
+
+Cât timp nu vinzi acțiunile, statul nu socotește acest câștig drept venit. Deci nu ia impozit pe el.
 
 ## Cum funcționează „cumpără, împrumută, mori”?
 
 Strategia are trei pași.
 
-**Cumperi.** Iei acțiuni care cresc, de obicei în propria companie. Cât timp nu le vinzi, nu plătești impozit pe creștere.
+**Cumperi.** Cumperi acțiuni care se scumpesc, de obicei acțiuni ale propriei companii. Cât timp nu le vinzi, nu plătești impozit pe cât s-au scumpit.
 
-**Împrumuți.** Când ai nevoie de bani, nu vinzi acțiunile, ci iei un credit cu ele drept garanție. Un credit nu e venit, deci nici el nu se impozitează.
+**Împrumuți.** Când ai nevoie de bani, nu vinzi acțiunile. Iei un credit și pui acțiunile garanție, iar pe banii împrumutați nu plătești impozit.
 
-**Mori.** La deces, acțiunile trec la moștenitori. Pentru fisc, ele valorează cât valorau în ziua decesului, nu cât au costat la cumpărare.
+**Mori.** Când mori, acțiunile trec la moștenitori. Când moștenitorii le vând, plătesc impozit doar pe cât s-au scumpit după ziua decesului.
 
-Așa, câștigul adunat o viață întreagă nu mai e impozitat niciodată. Moștenitorii pot vinde o parte din acțiuni ca să închidă creditele, fără impozit pe câștig.
+Așa, nimeni nu plătește vreodată impozit pe cât s-au scumpit acțiunile cât a trăit proprietarul. Moștenitorii pot vinde o parte din acțiuni ca să întoarcă creditele, fără impozit pe câștig.
 
-În septembrie 2025, Larry Ellison, cofondatorul Oracle, avea 346 de milioane de acțiuni Oracle puse garanție pentru credite personale.
+În septembrie 2025, Larry Ellison, cofondatorul Oracle, pusese garanție pentru credite personale 346 de milioane de acțiuni Oracle. Asta e circa 30% din acțiunile lui.
 
-Asta înseamnă circa 30% din acțiunile lui. În 2018, conducerea Oracle a interzis această practică. O singură persoană a primit excepție: Ellison.
+În 2018, conducerea Oracle a interzis să pui acțiunile Oracle garanție pentru credite. Doar Ellison a primit voie în continuare.
 
-În 2022, Elon Musk a vrut să cumpere Twitter. A negociat un credit de 12,5 miliarde de dolari, cu acțiuni Tesla drept garanție.
+În 2022, Elon Musk a vrut să cumpere Twitter. Pentru asta, a negociat cu băncile un credit de 12,5 miliarde de dolari și a pus garanție acțiuni Tesla.
 
-Băncile au cerut ca acțiunile puse garanție să valoreze de cel puțin cinci ori mai mult decât creditul. Adică peste 62 de miliarde de dolari în acțiuni.
+Băncile au cerut ca acțiunile puse garanție să valoreze de cel puțin cinci ori mai mult decât creditul. Deci Musk trebuia să pună garanție acțiuni Tesla de peste 62 de miliarde de dolari.
 
 ## De ce e perfect legal?
 
-Pentru că fiecare pas, luat separat, urmează o regulă normală.
+Fiecare dintre cei trei pași respectă o regulă obișnuită.
 
-Câștigul se impozitează doar când vinzi. E logic: dacă acțiunea scade mâine, ai fi plătit impozit pe bani pe care nu i-ai avut niciodată.
+Prima regulă: plătești impozit pe câștig doar când vinzi.
 
-Creditul nu se impozitează, pentru că nu e al tău. Trebuie dat înapoi.
+E logic, pentru că acțiunea se poate ieftini mâine. Atunci ai fi plătit impozit pe bani pe care nu i-ai primit niciodată.
 
-Nici regula de la moștenire nu e absurdă. Fără ea, moștenitorii ar trebui să afle cu cât a cumpărat bunicul acțiunile acum 50 de ani.
+A doua regulă: nu plătești impozit pe un credit, pentru că banii nu sunt ai tăi. Trebuie să-i dai înapoi.
 
-SUA are și un impozit pe moștenire: 40% din ce trece de 15 milioane de dolari. Dar familiile foarte bogate îl reduc legal, prin trusturi.
+A treia regulă, cea de la moștenire, are și ea un motiv. Fără ea, moștenitorii ar trebui să afle cu cât a cumpărat bunicul acțiunile acum 50 de ani.
 
-Problema apare când pui toate regulile la un loc. Doar regula de la moștenire costă bugetul SUA circa 40 de miliarde de dolari pe an, estimează comisia fiscală a Congresului.
+SUA are și un impozit separat pe moștenire. Statul ia 40% din partea moștenirii care trece de 15 milioane de dolari, dar familiile foarte bogate plătesc legal mai puțin, prin trusturi.
 
-Iar suma în joc e uriașă. În SUA, câștigurile din bunuri care s-au scumpit, dar n-au fost vândute, ajung la circa 50.000 de miliarde de dolari.
+Problema apare când cineva folosește toate trei regulile împreună. Comisia fiscală a Congresului SUA estimează că doar din cauza regulii de la moștenire statul pierde circa 40 de miliarde de dolari pe an.
+
+Și suma care nu e impozitată e uriașă. Americanii au acțiuni și alte bunuri care s-au scumpit cu circa 50.000 de miliarde de dolari, dar pe care încă nu le-au vândut.
 
 ## Chiar trăiesc miliardarii din credite?
 
-Aici povestea populară nu se mai potrivește cu datele.
+Aici, ce se spune de obicei nu se potrivește cu datele.
 
-În iunie 2026, doi economiști, Edward Fox (University of Michigan) și Zachary Liscow (Yale), au analizat 20 de ani de date despre familiile americane.
+În iunie 2026, doi economiști au studiat datele despre familiile din SUA pe 20 de ani. Ei sunt Edward Fox (University of Michigan) și Zachary Liscow (Yale).
 
-Rezultatul: cei mai bogați 1% se împrumută foarte puțin. Într-un an, iau credite de doar 1-2% din cât câștigă, adunând salariul, dividendele și creșterea averii.
+Au aflat că cei mai bogați 1% dintre americani se împrumută foarte puțin. Într-un an, ei iau credite de doar 1-2 dolari la fiecare 100 de dolari câștigați.
 
-Câștigurile pe care nu le vând sunt de 20 până la 40 de ori mai mari decât creditele pe care le iau.
+Aici „câștigat” înseamnă tot: salariu, dividende și cu cât li s-a scumpit averea.
 
-Împrumutul pe un bun care s-a scumpit, de exemplu pe casă, e mai des întâlnit la clasa de mijloc.
+Iar acțiunile și alte bunuri pe care nu le vând se scumpesc de 20 până la 40 de ori mai mult decât sumele pe care le împrumută.
 
-Chiar și creditul lui Musk pentru Twitter s-a terminat altfel. În mai 2022 a renunțat la el, iar până la sfârșitul anului a vândut acțiuni Tesla de circa 23 de miliarde de dolari.
+Familiile din clasa de mijloc iau mai des credit cu garanție un bun care s-a scumpit, de exemplu casa.
 
-Concluzia lui Fox și Liscow: strategia reală e „cumpără, economisește, mori”. Când ai miliarde, dividendele sau o vânzare din când în când îți acoperă toate cheltuielile.
+Nici Musk n-a folosit până la urmă creditul cu acțiuni Tesla pentru Twitter. În mai 2022 a renunțat la el.
+
+Până la sfârșitul anului 2022, Musk a vândut acțiuni Tesla de circa 23 de miliarde de dolari.
+
+Fox și Liscow spun că strategia reală e „cumpără, economisește, mori”. Când ai miliarde, dividendele sau câteva acțiuni vândute din când în când îți ajung pentru toate cheltuielile.
 
 Deci cuvântul important nu e „împrumută”. E „nu vinde”.
 
-## Încearcă cineva să închidă portița?
+## Încearcă cineva să schimbe aceste reguli?
 
-La nivel federal, nu. Biden a propus un impozit minim de 25% pentru averile de peste 100 de milioane de dolari, inclusiv pe câștigurile nevândute.
+Pentru toată țara, nu s-a schimbat nimic. Președintele Biden a propus un impozit minim de 25% pentru cei cu averi de peste 100 de milioane de dolari, inclusiv pe câștigurile din acțiuni nevândute.
 
 Congresul n-a votat niciodată propunerea.
 
-Cel mai concret test vine din California. Pe 3 noiembrie 2026, alegătorii votează Propunerea 40.
+Cea mai concretă încercare e în California. Pe 3 noiembrie 2026, alegătorii de acolo votează Propunerea 40.
 
-Ea cere un impozit unic de 5% pe averea celor circa 200 de miliardari care locuiau în California la 1 ianuarie 2026.
+Dacă trece, cei circa 200 de miliardari care locuiau în California la 1 ianuarie 2026 vor plăti o singură dată 5% din avere.
 
-Sondajele o dau la circa 50%. Sergey Brin, cofondatorul Google, s-a mutat în Nevada și a dat 82 de milioane de dolari campaniei împotriva ei.
+În sondaje, circa jumătate dintre alegători o susțin. Sergey Brin, cofondatorul Google, s-a mutat în Nevada și a dat 82 de milioane de dolari campaniei împotriva ei.
 
 ## Ar funcționa așa ceva în Moldova?
 
-Surprinzător, regulile de bază sunt aproape aceleași.
+Regulile de bază sunt aproape aceleași ca în SUA.
 
-Și la noi, câștigul dintr-un bun se impozitează doar când îl vinzi. Se impozitează doar jumătate din câștig, cu 12%, deci în realitate 6% din câștig (Codul fiscal, art. 40).
+Și la noi, plătești impozit pe câștigul dintr-un bun doar când îl vinzi. Impozitul e de 12%, dar se ia doar din jumătate din câștig (Codul fiscal, art. 40).
 
-Moștenirea primită de un cetățean al Moldovei nu se impozitează (art. 20). Nu există nici un impozit separat pe moștenire, ca în SUA.
+Deci plătești 6% din tot câștigul. La un câștig de 100.000 de lei, impozitul e de 6.000 de lei.
 
-Iar pentru moștenitor, bunul valorează cât valora pe piață în ziua moștenirii (art. 42). E aceeași regulă ca în SUA.
+Un cetățean al Moldovei nu plătește impozit pe o moștenire primită (art. 20). Moldova nu are nici impozitul separat pe moștenire pe care îl are SUA.
 
-Diferența e la acțiuni. Piața de capital e [puțin dezvoltată](/blog/dobanzi-mari-nu-doar-moldova), iar pentru o bancă acțiunile unei firme locale nu sunt o garanție la fel de sigură ca acțiunile Tesla.
+Iar când moștenitorul vinde bunul, plătește impozit doar pe cât s-a scumpit după ziua moștenirii (art. 42). E aceeași regulă ca în SUA.
 
-Aici, averea antreprenorilor stă de obicei în clădiri, utilaje și teren. Dar întrebarea e aceeași ca la miliardari: vinzi sau te împrumuți?
+Diferența e la acțiuni. În Moldova se cumpără și se vând [foarte puține acțiuni](/blog/dobanzi-mari-nu-doar-moldova).
 
-Să zicem că un proprietar de firmă are nevoie de bani pentru o investiție. Poate vinde clădirea firmei sau poate lua un credit, cu clădirea drept garanție.
+De aceea, pentru o bancă, acțiunile unei firme locale sunt o garanție mai puțin sigură decât acțiunile Tesla.
+
+Antreprenorii din Moldova își țin averea de obicei în clădiri, utilaje și teren. Dar au aceeași alegere ca miliardarii: vând sau se împrumută?
+
+Să zicem că un proprietar de firmă are nevoie de bani pentru o investiție. Poate vinde clădirea firmei sau poate lua un credit și pune clădirea garanție.
 
 Dacă o vinde, plătește impozit pe câștig. Și pierde o clădire care s-ar fi putut scumpi.
 
 Dacă ia credit, păstrează clădirea. Dar plătește dobândă și trebuie să dea banii înapoi.
 
-Nu există un răspuns bun pentru toți, doar un calcul. Pe o parte pui costul creditului, pe cealaltă impozitul plus ce pierzi dacă vinzi.
+Nu există un răspuns bun pentru toți. Trebuie să compari cât te costă creditul cu cât te costă vânzarea: impozitul plus cât s-ar fi putut scumpi clădirea.
 
 <ClosingNote href="/credite/credit-pentru-afaceri">
-  La Ideal Credit analizăm scopul și situația financiară înainte de orice credit - inclusiv dacă, în cazul tău, vânzarea e varianta mai bună.
+  La Ideal Credit analizăm scopul și situația financiară înainte de orice credit. Verificăm și dacă, în cazul tău, e mai bine să vinzi decât să te împrumuți.
 </ClosingNote>
 
 <ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
-  Notă: ratele de impozitare vin din investigația ProPublica „The Secret IRS Files” (2021), pe baza datelor IRS pentru 2014-2018. Gajurile: documentele Oracle și Tesla la SEC și dosarul Twitter v. Musk (2022); regula de la moștenire e secțiunea 1014 din codul fiscal american; estimarea de 40 de miliarde - din Joint Committee on Taxation, via Congressional Research Service; datele despre împrumuturi - din Fox și Liscow (Tax Policy Center, iunie 2026); Propunerea 40 - din CalMatters. Regulile pentru Moldova: Codul fiscal, art. 20, 40 și 42, conform explicațiilor Serviciului Fiscal de Stat (Monitorul Fiscal FISC.md).
+  Notă: cât impozit au plătit miliardarii vine din investigația ProPublica „The Secret IRS Files” (2021), pe baza datelor IRS pentru 2014-2018. Acțiunile puse garanție: documentele Oracle și Tesla la SEC și dosarul Twitter v. Musk (2022). Regula de la moștenire e secțiunea 1014 din codul fiscal american. Estimarea de 40 de miliarde vine de la Joint Committee on Taxation, prin Congressional Research Service. Datele despre împrumuturi: Fox și Liscow (Tax Policy Center, iunie 2026). Propunerea 40: CalMatters. Regulile pentru Moldova: Codul fiscal, art. 20, 40 și 42, conform explicațiilor Serviciului Fiscal de Stat (Monitorul Fiscal FISC.md).
 </Caption>
 
 {/*
@@ -159,19 +171,19 @@ Nu există un răspuns bun pentru toți, doar un calcul. Pe o parte pui costul c
   link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
 
   Între 2014 și 2018, cei mai bogați 25 de americani s-au îmbogățit cu 401 miliarde
-  de dolari. Au plătit impozit pe venit de 13,6 miliarde - adică 3,4%.
+  de dolari. Au plătit impozit pe venit de 13,6 miliarde, adică 3,4%.
 
   Explicația populară are trei cuvinte: cumpără, împrumută, mori. Nu vinzi
-  acțiunile, te împrumuți cu ele drept garanție, iar la deces câștigul dispare
-  din calcul pentru moștenitori.
+  acțiunile. Iei credit și pui acțiunile garanție. Când mori, moștenitorii nu
+  plătesc impozit pe cât s-au scumpit acțiunile cât ai trăit.
 
-  Doar că datele din 2026 spun altceva. Cel mai bogat 1% se împrumută anual cu
-  doar 1-2% din venit. Averea lor nevândută e de 20-40 de ori mai mare decât
-  creditele. Secretul nu e „împrumută”. E „nu vinde”.
+  Doar că un studiu din 2026 arată altceva. Cei mai bogați 1% dintre americani
+  iau credite de doar 1-2 dolari la fiecare 100 de dolari câștigați într-un an.
+  Secretul lor nu e „împrumută”. E „nu vinde”.
 
-  Partea neașteptată: Codul fiscal al Moldovei are aproape aceleași reguli -
-  impozit doar la vânzare, moștenire neimpozitată și valoarea bunului resetată
-  pentru moștenitor.
+  Partea neașteptată: în Moldova, regulile sunt aproape aceleași. Plătești
+  impozit pe câștig doar când vinzi, nu plătești impozit pe moștenire, iar
+  moștenitorul plătește impozit doar pe cât s-a scumpit bunul după ziua moștenirii.
 
   Articolul complet, în Dincolo de Cifre: idealcredit.md/blog/cumpara-imprumuta-mori
 

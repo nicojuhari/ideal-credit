@@ -2,12 +2,12 @@ import { renderOgImage, ogSize, ogContentType } from "@/lib/og";
 
 export const size = ogSize;
 export const contentType = ogContentType;
-export const alt = "Sectorul nebancar are acum peste jumătate din activele financiare ale lumii - Dincolo de Cifre";
+export const alt = "Firmele nebancare administrează acum peste jumătate din banii investiți în lume - Dincolo de Cifre";
 
 export default async function Image() {
     return renderOgImage({
-        title: "Sectorul nebancar are acum peste jumătate din activele financiare ale lumii.",
-        accent: "nebancar",
-        subtitle: "În 2024, pentru prima dată din 2008, peste jumătate din activele financiare ale lumii stăteau în afara băncilor.",
+        title: "Firmele nebancare administrează acum peste jumătate din banii investiți în lume.",
+        accent: "nebancare",
+        subtitle: "Fonduri, asigurători, fonduri de pensii: în 2024 aveau 51% din bani, pentru prima dată de la criza din 2008.",
     });
 }

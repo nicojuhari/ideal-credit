@@ -9,7 +9,7 @@ import { getBlogPost } from "@/lib/blog-posts";
 export const metadata = {
     title: "Nu doar Moldova are dobânzi mari | Dincolo de Cifre",
     description:
-        "Turcia, Egiptul și chiar statele baltice din zona euro au dobânzi mai mari sau comparabile. Piața mică, nu bogăția țării, decide prețul creditului.",
+        "Firmele din Turcia și Egipt plătesc dobânzi mai mari ca în Moldova. Cele din Estonia și Letonia, cu euro, plătesc cele mai mari din zona euro. De ce?",
     alternates: { canonical: "https://idealcredit.md/blog/dobanzi-mari-nu-doar-moldova" },
     openGraph: {
         type: "article",
@@ -18,7 +18,7 @@ export const metadata = {
         url: "https://idealcredit.md/blog/dobanzi-mari-nu-doar-moldova",
         title: "Nu doar Moldova are dobânzi mari | Dincolo de Cifre",
         description:
-            "Turcia, Egiptul și chiar statele baltice din zona euro au dobânzi mai mari sau comparabile. Piața mică, nu bogăția țării, decide prețul creditului.",
+            "Firmele din Turcia și Egipt plătesc dobânzi mai mari ca în Moldova. Cele din Estonia și Letonia, cu euro, plătesc cele mai mari din zona euro. De ce?",
     },
 };
 
@@ -35,115 +35,113 @@ export const post = getBlogPost("dobanzi-mari-nu-doar-moldova");
 
 ## Cifrele
 
-Ratele de mai jos sunt dobânzi medii la credite pentru companii, pe cea mai recentă perioadă disponibilă.
+Graficul arată ce dobândă plătesc în medie firmele pe creditele de la bănci, în mai multe țări. Cifrele sunt cele mai noi publicate.
 
 <RateBarChart
   unit="%"
-  caption="Dobândă medie la credite pentru afaceri, pe țară. Sursă: bănci centrale naționale și BCE, ianuarie-august 2026 (Malta: iunie 2025)."
+  caption="Dobânda medie la creditele pentru firme, pe țări. Sursă: băncile centrale ale fiecărei țări și BCE, ianuarie-august 2026 (Malta: iunie 2025)."
   data={[
     { label: "Turcia", value: 40 },
     { label: "Egipt", value: 21.3 },
     { label: "Moldova", value: 9.5, tone: "subject" },
     { label: "România", value: 7.5 },
-    { label: "Baltice", value: 5.3, tone: "note" },
+    { label: "Țările baltice", value: 5.3, tone: "note" },
     { label: "Media zonei euro", value: 3.5 },
     { label: "Japonia", value: 2.9 },
     { label: "Malta", value: 1.9 },
   ]}
 />
 
-Cifra Moldovei de mai sus e media din sectorul **bancar**. Ideal Credit nu e o bancă, ci [o organizație de creditare nebancară (OCN)](/blog/firme-mici-nu-iau-credit-de-la-banca).
+Cifra Moldovei, 9,5%, e media de la **bănci**. Ideal Credit nu e o bancă, ci [o organizație de creditare nebancară (OCN)](/blog/firme-mici-nu-iau-credit-de-la-banca).
 
-În orice țară, creditele nebancare sunt mai scumpe decât media bancară. În Moldova, legea permite o dobândă anuală de până la 50% la un credit în lei.
+În orice țară, creditele de la OCN-uri sunt mai scumpe decât cele de la bănci. În Moldova, legea permite o dobândă anuală de până la 50% la un credit în lei.
 
-Asta e de peste cinci ori mai mult decât media bancară de 9,5%.
+Asta e de peste cinci ori mai mult decât media de la bănci.
 
-Motivul nu e lăcomia, ci felul în care lucrează un OCN. El nu are depozite ieftine, ci folosește bani proprii sau împrumutați.
+Un OCN nu cere mai mult din lăcomie. El nu are depozite ieftine, așa că dă credite din banii lui sau din bani pe care i-a împrumutat el însuși.
 
 Și lucrează des cu clienți pe care banca i-a refuzat deja.
 
-Dacă te uiți doar la capetele graficului, pare simplu. Turcia are 40%, Malta are 1,9%, deci țările sărace plătesc mult, iar cele bogate puțin.
+Dacă te uiți doar la primul și ultimul rând din grafic, pare simplu. Turcia are 40%, Malta are 1,9%. Deci țările sărace plătesc mult, iar cele bogate plătesc puțin.
 
-Dar un rând din mijlocul graficului nu se potrivește cu această explicație: statele baltice.
+Dar un rând din mijlocul graficului nu se potrivește: țările baltice.
 
-## Ce nu se potrivește: statele baltice
+## De ce au țările baltice credite scumpe?
 
-Estonia și Letonia sunt state UE, folosesc euro, au economii stabile. Și totuși, în 2025, aici au fost cele mai scumpe credite pentru companii din toată zona euro.
+Estonia și Letonia sunt în UE, folosesc euro și au economii stabile. Totuși, în 2025, firmele de acolo au plătit cele mai mari dobânzi din toată zona euro.
 
-Creditele lor au fost mai scumpe decât în Grecia sau Portugalia.
+Au plătit mai mult decât firmele din Grecia sau Portugalia.
 
-Dacă țările bogate ar avea mereu credit ieftin, Estonia și Letonia ar fi jos în grafic.
+Dacă țările bogate ar avea mereu credite ieftine, Estonia și Letonia ar fi jos în grafic.
 
-Deci dobânda nu depinde de cât de bogată e țara. Depinde de altceva.
+Deci dobânda nu depinde doar de cât de bogată e țara.
 
-## De ce depinde, de fapt
+## De ce depinde dobânda?
 
-Cea mai mare parte din diferență vine din patru factori. Niciunul nu ține de cât de „dezvoltată” e o economie.
+Cea mai mare parte din diferență vine din patru motive.
 
-**Mărimea pieței.** O piață mică, precum Moldova, Estonia sau Letonia, nu are atâtea depozite ieftine cât o economie de 80 de milioane de oameni. Nici nu se poate împrumuta la fel de ușor de la alte bănci și investitori mari.
+**1. Cât de mare e piața.** O țară mică, precum Moldova, Estonia sau Letonia, are mai puține depozite decât o țară cu 80 de milioane de oameni. Iar băncile ei se împrumută mai greu de la bănci și investitori mari din străinătate.
 
-Toți banii pe care oamenii și firmele din Moldova îi țin în numerar și în depozite fac doar 52,4% din PIB, potrivit Băncii Mondiale (2024). Adică puțin peste jumătate din ce produce țara într-un an.
+În Moldova, toți banii pe care oamenii și firmele îi țin în numerar și în depozite fac 52,4% din PIB, arată Banca Mondială (2024). PIB-ul e tot ce produce țara într-un an, deci e puțin peste jumătate.
 
-Când creditorul face rost de bani mai scump, îți dă și ție creditul mai scump.
+Când creditorul plătește mai mult pe banii pe care îi împrumută, îți cere și ție o dobândă mai mare.
 
-**Riscul de țară și de monedă.** Leul nu e euro. Cine dă credite în lei, într-o economie mică, riscă o devalorizare, iar acest risc intră în prețul creditului.
+**2. Cât de sigură pare țara.** Banii din Moldova sunt în lei, nu în euro. Cine dă credite în lei poate pierde dacă leul se ieftinește. De aceea cere o dobândă mai mare.
 
-S&P Global dă Moldovei ratingul BB-/B. E sub pragul de „investment grade”, adică sub nivelul pe care investitorii îl consideră sigur.
+S&P Global e o firmă care dă note țărilor, după cât de sigur e să le împrumuți bani. Moldova are nota BB-/B. E sub nivelul pe care investitorii îl consideră sigur.
 
-În aceeași zonă sunt Armenia, Albania și Macedonia de Nord. S&P a reconfirmat ratingul Moldovei în aprilie 2026, cu perspectivă stabilă.
+Armenia, Albania și Macedonia de Nord au note apropiate. În aprilie 2026, S&P a păstrat nota Moldovei și a spus că nu se așteaptă să se schimbe curând.
 
-Fiecare treaptă sub acest prag face mai scumpe împrumuturile pentru toată economia.
+Cu cât nota unei țări e mai mică, cu atât toți cei din țara aceea se împrumută mai scump.
 
-**Executarea garanțiilor.** Contează cât de repede își recuperează creditorul banii când un client nu plătește, prin instanță sau prin garanții. Cu cât durează mai mult, cu atât dobânda e mai mare.
+**3. Cât de repede își primește creditorul banii înapoi.** Uneori un client nu plătește. Atunci creditorul încearcă să-și ia banii prin instanță sau vânzând bunurile puse garanție. Cu cât durează mai mult, cu atât dobânda e mai mare.
 
-Ultimul raport „Doing Business” al Băncii Mondiale e din 2020. Atunci, în Moldova, recuperarea unei datorii prin instanță dura în medie 2,8 ani.
+Banca Mondială a măsurat asta ultima dată în 2020, în raportul „Doing Business”. Atunci, în Moldova, când o firmă dădea faliment, procedura dura în medie 2,8 ani.
 
-Iar creditorul primea înapoi doar 32 de cenți din fiecare dolar de datorie. Când instanțele merg greu, creditul e scump, oricât de bogată ar fi țara.
+Iar creditorii primeau înapoi doar 32 de cenți din fiecare dolar datorat. Când instanțele merg greu, creditul e scump, oricât de bogată ar fi țara.
 
-**Concurența.** Când pe piață sunt puțini jucători mari, ei pot cere marje mai mari. Moldova are doar 10 bănci licențiate, iar primele trei dețin majoritatea activelor din sistem.
+**4. Câți creditori sunt pe piață.** Când sunt doar câțiva creditori mari, ei pot adăuga mai mult peste costul lor. Moldova are doar 10 bănci, iar cele mai mari trei au majoritatea banilor din sistemul bancar.
 
-Pe o piață cu mulți creditori, marjele scad.
+Când mulți creditori vor același client, dobânzile scad.
 
-Acești patru factori explică de ce Moldova e sus în grafic. Tot ei explică și de ce statele baltice sunt sus.
+Aceste patru motive explică de ce Moldova e sus în grafic. Tot ele explică de ce Estonia și Letonia sunt sus.
 
-Doar că la ei cântăresc alți factori decât la noi.
+Pentru o firmă, diferența se vede în bani. Să luăm un credit de 500.000 de lei.
 
-Pentru o firmă, diferența se simte în bani. Să luăm un credit de 500.000 de lei.
+Cu dobânda medie din Moldova, 9,5%, firma plătește pe an cu circa 30.000 de lei mai mult decât cu media din zona euro, 3,5%. Cu acești bani ar fi putut cumpăra marfă sau utilaje, ori plăti salarii.
 
-La dobânda medie din Moldova (9,5%), firma plătește pe an circa 30.000 de lei mai mult decât la media zonei euro (3,5%). Sunt bani care altfel ar fi rămas în stoc, utilaje sau salarii.
+## Ce face banca centrală?
 
-## Ce rol are banca centrală
+Fiecare țară are o bancă centrală: BNM în Moldova, BNR în România, BCE în zona euro. Banca centrală stabilește rata de bază: dobânda la care se împrumută chiar băncile.
 
-Fiecare țară are o bancă centrală: BNM în Moldova, BNR în România, BCE în zona euro. Banca centrală fixează o rată de bază, la care se împrumută chiar băncile.
+Orice creditor cere de la clienți o dobândă mai mare decât rata de bază. Când banca centrală urcă rata de bază, de obicei în câteva luni urcă și dobânzile la credite.
 
-Orice creditor adaugă propria marjă peste rata de bază. Când banca centrală urcă rata de bază, de obicei în câteva luni urcă și dobânzile la credite.
+Așa s-a întâmplat în Moldova în 2026. BNM a urcat rata de bază de la 5% la 7%, iar dobânda medie la creditele pentru firme a ajuns la 9,5%.
 
-Așa s-a întâmplat în Moldova în 2026. BNM a urcat rata de bază de la 5% la 7%, iar dobânda medie la credite pentru afaceri a ajuns la 9,5%.
+Deci BNM nu-ți stabilește direct dobânda. Ea stabilește cât îi costă pe creditori banii, iar creditorii trec acest cost în dobânzile tale.
 
-Banca centrală nu-ți stabilește direct dobânda. Ea stabilește costul de bază al banilor, iar toți creditorii îl trec mai departe în dobânzi.
+De ce schimbă BNM rata de bază? Ca să țină sub control [inflația](/blog/ce-este-inflatia), adică cât de repede cresc prețurile.
 
-De ce schimbă banca centrală rata de bază? Este principalul ei instrument pentru a ține sub control [inflația](/blog/ce-este-inflatia).
+Când prețurile cresc prea repede, BNM urcă rata, iar oamenii și firmele împrumută mai puțin. Când economia merge prea încet, o coboară. Scopul nu e să decidă cât plătește fiecare client.
 
-O urcă sau o coboară ca să încetinească sau să stimuleze economia. Scopul nu e să decidă cine cât plătește.
+## Ce ar face dobânzile din Moldova mai mici?
 
-## Ce ar face-o mai mică
+Când BNM scade rata de bază, creditele se ieftinesc pentru o vreme. Dar cele patru motive rămân la fel.
 
-Când BNM scade rata de bază, creditul se ieftinește pentru o vreme. Dar mărimea pieței, riscul de țară, executarea garanțiilor și concurența rămân la fel.
+Ca dobânzile să scadă pentru mulți ani, piața trebuie să se schimbe. Creditorii ar trebui să se poată împrumuta mai ușor și mai ieftin. Iar firmele ar trebui să poată lua bani și direct de la investitori din Moldova, nu doar de la bănci.
 
-Ca dobânzile din Moldova să scadă pe termen lung, trebuie să se schimbe piața. Creditorii ar trebui să se poată împrumuta mai ușor și mai ieftin, iar piața de capital locală să fie mai dezvoltată.
+Instanțele ar trebui să lucreze mai repede când un client nu plătește. Și ar trebui să fie mai mulți creditori serioși care vor același client.
 
-Garanțiile ar trebui executate mai repede. Și ar trebui mai mulți creditori serioși care se bat pentru același client.
-
-Fiecare dintre aceste schimbări slăbește unul dintre cei patru factori. Toate împreună ar duce Moldova spre mijlocul graficului: nu la nivelul Maltei, dar nici aproape de Turcia.
+Fiecare schimbare ar slăbi unul dintre cele patru motive. Toate împreună ar aduce Moldova la mijlocul graficului: nu la nivelul Maltei, dar departe de Turcia.
 
 <ClosingNote href="/credite">
-  La Ideal Credit lucrăm zilnic cu exact acest mecanism, pentru fiecare afacere în parte.
+  La Ideal Credit vedem zilnic cum aceste patru motive schimbă prețul creditului, pentru fiecare afacere în parte.
 </ClosingNote>
 
 <ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
-  Notă: cifrele despre cei patru factori structurali vin din surse diferite și din perioade diferite - plafonul legal DAE și numărul băncilor licențiate sunt curente (2026), ratingul S&P e reconfirmat în aprilie 2026, iar cifra despre executarea garanțiilor vine din ultimul raport „Doing Business” al Băncii Mondiale (2020, ultimul publicat înainte ca raportul să fie întrerupt). Le folosim ca ilustrare a mecanismului, nu ca fotografie exactă a situației de azi.
+  Notă: cifrele despre cele patru motive vin din surse și ani diferiți. Plafonul legal DAE și numărul băncilor licențiate sunt din 2026. Nota S&P a fost reconfirmată în aprilie 2026. Cifra despre recuperarea datoriilor vine din ultimul raport „Doing Business” al Băncii Mondiale (2020), publicat înainte ca raportul să fie oprit. Le folosim ca să arătăm cum funcționează dobânda, nu ca imagine exactă a situației de azi.
 </Caption>
 
 {/*
@@ -151,25 +149,25 @@ Fiecare dintre aceste schimbări slăbește unul dintre cei patru factori. Toate
   status: ready to schedule
   link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
 
-  Dobânzile la credite din Moldova sunt considerate mari. Dar comparate cu ce, exact?
+  Dobânzile la credite din Moldova par mari. Dar mari față de cine?
 
-  Am pus alături ratele medii la credite pentru afaceri din opt piețe: Turcia (40%), Egipt
-  (21,3%), Moldova (9,5%), România (7,5%), statele baltice (5,3%), media zonei euro (3,5%),
-  Japonia (2,9%) și Malta (1,9%).
+  Am comparat dobânda medie pe care o plătesc firmele în opt locuri: Turcia (40%),
+  Egipt (21,3%), Moldova (9,5%), România (7,5%), țările baltice (5,3%), media
+  zonei euro (3,5%), Japonia (2,9%) și Malta (1,9%).
 
-  Surpriza: Estonia și Letonia - state UE, cu euro, cu economii stabile - au fost în 2025
-  cele mai scumpe țări din toată zona euro la creditarea companiilor. Mai scumpe decât
-  Grecia sau Portugalia.
+  Surpriza: Estonia și Letonia sunt în UE și folosesc euro. Totuși, în 2025, firmele
+  de acolo au plătit cele mai mari dobânzi din zona euro. Mai mari decât în Grecia
+  sau Portugalia.
 
-  Deci nu e vorba de cât de „bogată” e o țară. E vorba de cât de mică și de puțin dezvoltată
-  e piața ei de capital.
+  Deci dobânda nu depinde doar de cât de bogată e țara. Contează cât de mare e piața,
+  cât de sigură pare țara, cât de repede își primește creditorul banii înapoi și câți
+  creditori sunt.
 
-  Pentru o firmă concretă, diferența nu e abstractă: la un credit de 500.000 de lei, distanța
-  dintre 9,5% și media zonei euro (3,5%) înseamnă circa 30.000 de lei în plus pe an, doar din
-  dobândă.
+  Pentru o firmă, diferența se vede în bani. La un credit de 500.000 de lei, o dobândă
+  de 9,5% în loc de 3,5% înseamnă circa 30.000 de lei în plus pe an.
 
-  În primul articol din seria Dincolo de Cifre, explicăm ce anume decide, de fapt, prețul
-  unui credit - și ce ar trebui să se schimbe ca dobânzile din Moldova să scadă pe termen lung.
+  În articol explicăm ce decide dobânda și ce ar trebui să se schimbe ca dobânzile din
+  Moldova să scadă pentru mulți ani.
 
   Citește articolul complet: idealcredit.md/blog/dobanzi-mari-nu-doar-moldova
 

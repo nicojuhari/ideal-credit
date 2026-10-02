@@ -9,7 +9,7 @@ import { getBlogPost } from "@/lib/blog-posts";
 export const metadata = {
     title: "Dobândă negativă la credite ipotecare | Dincolo de Cifre",
     description:
-        "În 2019, o bancă daneză oferea credite cu dobândă de minus 0,5%. Aproape nimeni n-a primit, de fapt, bani gratis - iar povestea abia acum se termină.",
+        "În 2019, o bancă daneză dădea credite cu dobândă de minus 0,5%. Totuși, oamenii plăteau băncii un comision. Cum câștiga banca și ce credite au rămas?",
     alternates: { canonical: "https://idealcredit.md/blog/dobanda-negativa-danemarca" },
     openGraph: {
         type: "article",
@@ -18,7 +18,7 @@ export const metadata = {
         url: "https://idealcredit.md/blog/dobanda-negativa-danemarca",
         title: "Dobândă negativă la credite ipotecare | Dincolo de Cifre",
         description:
-            "În 2019, o bancă daneză oferea credite cu dobândă de minus 0,5%. Aproape nimeni n-a primit, de fapt, bani gratis - iar povestea abia acum se termină.",
+            "În 2019, o bancă daneză dădea credite cu dobândă de minus 0,5%. Totuși, oamenii plăteau băncii un comision. Cum câștiga banca și ce credite au rămas?",
     },
 };
 
@@ -35,101 +35,103 @@ export const post = getBlogPost("dobanda-negativa-danemarca");
 
 ## Cifrele
 
-Așa a arătat, în timp, dobânda la un credit ipotecar nou în Danemarca - de la recordul din 2019 până azi.
+Graficul arată ce dobândă aveau creditele ipotecare noi în Danemarca, din 2019 până azi.
 
 <RateBarChart
   unit="%"
-  caption="Dobânda de bază (cuponul obligațiunii ipotecare), nu costul total. Sursă: CNBC 2019, Reuters/RTE 2022, Nationalbanken octombrie 2025."
+  caption="Dobânda de bază la creditele ipotecare din Danemarca, fără comisionul anual al băncii. Sursă: CNBC 2019, Reuters/RTE 2022, Nationalbanken octombrie 2025."
   data={[
     { label: "2019", value: -0.5, tone: "subject" },
     { label: "2022", value: 5.0 },
-    { label: "2025 (nou)", value: 2.82 },
-    { label: "azi (vechi)", value: -0.12, tone: "note" },
+    { label: "2025, credite noi", value: 2.82 },
+    { label: "azi, credite vechi", value: -0.12, tone: "note" },
   ]}
 />
 
-În august 2019, Jyske Bank a lansat primul credit ipotecar cu dobândă negativă din lume. Dobânda era de -0,5%, pe 10 ani.
+În august 2019, banca daneză Jyske Bank a dat primul credit ipotecar din lume cu dobândă negativă. Dobânda era de minus 0,5% pe an, pe 10 ani.
 
-În septembrie 2022, Danemarca a oprit creditele noi cu dobândă negativă. Atunci banca centrală a urcat brusc dobânzile.
+În 2022, băncile din Danemarca au încetat să dea credite noi cu dobândă negativă. În același an, banca centrală a ridicat brusc dobânzile.
 
-Dar circa 40.000 de credite luate înainte de 2022 încă au, pe hârtie, dobândă sub zero. Pe ele sunt circa 60.000 de proprietari, pentru că multe credite au câte doi coproprietari.
+Dar circa 40.000 de credite luate înainte de 2022 au și azi, pe hârtie, dobândă sub zero. Le plătesc circa 60.000 de oameni, pentru că multe credite sunt luate de doi oameni împreună.
 
-Acești oameni au luat creditul cu dobânda fixată pe o perioadă. Dobânda lor nu s-a recalculat încă.
+La aceste credite, dobânda a fost fixată pentru câțiva ani. Băncile nu au schimbat-o încă.
 
-Graficul arată doar dobânda de bază, nu tot ce plătește proprietarul. Diferența dintre cele două e chiar subiectul acestui articol.
+Graficul arată doar dobânda de bază. Pe lângă ea, omul mai plătește băncii un comision în fiecare an. Despre acest comision e articolul.
 
-## Ce înseamnă, de fapt, o dobândă negativă
+## Ce înseamnă o dobândă negativă?
 
-Pe hârtie, un credit cu dobândă de -0,5% pare simplu. Împrumuți un milion, iar după un an datorezi doar 995.000. Bani gratis.
+Pe hârtie, pare simplu. Împrumuți un milion, iar după un an datorezi doar 995.000. Banca îți plătește ție.
 
-În practică, aproape nimeni n-a primit bani gratis.
+În realitate, aproape nimeni n-a primit bani de la bancă.
 
-Pe lângă dobândă, orice bancă ipotecară daneză ia un comision anual separat, numit „bidrag”. Din el, banca acoperă riscul că un client nu plătește și costul de a administra creditul.
+Orice bancă daneză care dă credite ipotecare ia, pe lângă dobândă, un comision anual. Danezii îl numesc „bidrag”. Din acest comision, banca plătește pentru clienții care nu-și achită creditul și pentru munca de a ține evidența creditului.
 
-În medie, comisionul „bidrag” e de circa 0,81% pe an.
+În medie, comisionul e de circa 0,81% pe an.
 
-Dacă aduni dobânda de -0,5% și comisionul de 0,81%, costul total iese de aproximativ +0,3% pe an. Deci proprietarul tot plătește ceva băncii, doar că mult mai puțin decât la un credit obișnuit.
+Dobânda de minus 0,5% plus comisionul de 0,81% dau un cost total de circa 0,3% pe an. Deci omul tot plătea băncii ceva, doar mult mai puțin decât la un credit obișnuit.
 
-Au existat și credite care au rămas sub zero chiar și după comision. Dar au fost excepția, nu regula.
+Au fost și câteva credite la care costul total a rămas sub zero, chiar și cu comision. Dar au fost puține.
 
-## Cum face banca profit din asta
+## Cum câștigă banca, dacă dobânda e negativă?
 
-Aici e partea pe care majoritatea articolelor din 2019 au sărit-o.
+Asta n-au explicat majoritatea articolelor din 2019.
 
-Banca daneză nu împrumută din banii ei proprii.
+Banca daneză nu dă credite din banii ei.
 
-Pentru fiecare credit acordat, banca emite o obligațiune identică cu el. Obligațiunea are aceeași sumă, același termen și aceeași dobândă ca și creditul.
+Pentru fiecare credit, banca vinde investitorilor o obligațiune. Obligațiunea e o hârtie prin care investitorul împrumută bani băncii, iar banca promite să-i dea înapoi cu dobândă.
 
-Banca vinde obligațiunea unor investitori, de exemplu fondurilor de pensii sau altor bănci. Banii primiți de la investitori sunt chiar banii pe care îi primește proprietarul casei.
+Fiecare obligațiune are aceeași sumă, același termen și aceeași dobândă ca creditul pentru care a fost vândută.
 
-Apoi ratele lunare ale proprietarului trec prin bancă direct la investitorii care au cumpărat obligațiunea.
+Investitorii sunt, de exemplu, fonduri de pensii sau alte bănci. Banii plătiți de ei pe obligațiune sunt chiar banii pe care îi primește omul care cumpără casa.
 
-Așa că din dobândă banca nu câștigă și nu pierde nimic. Ea ia bani de la investitori la -0,5% și îi dă proprietarului tot la -0,5%.
+Apoi ratele lunare ale omului trec prin bancă și ajung la investitori.
 
-Diferența dintre cele două dobânzi e zero, fie ele pozitive sau negative.
+Deci pe dobândă banca nu câștigă și nu pierde nimic. Ea ia bani de la investitori cu dobândă de minus 0,5% și îi dă omului tot cu minus 0,5%.
 
-Banca își face profitul din comisionul „bidrag”. Pe acesta îl stabilește banca singură, și el nu depinde de obligațiune.
+Banca câștigă doar din comision. Comisionul îl stabilește banca singură. El nu depinde de obligațiune.
 
-Să luăm un credit de un milion de coroane daneze. Într-un an, dobânda de -0,5% scade datoria cu 5.000 de coroane, iar comisionul de 0,81% o crește cu 8.100 de coroane.
+Să luăm un credit de un milion de coroane daneze. Într-un an, dobânda de minus 0,5% scade datoria cu 5.000 de coroane. Comisionul de 0,81% o crește cu 8.100 de coroane.
 
-La final, proprietarul plătește circa 3.100 de coroane pe an. Banca încasează toate cele 8.100 de coroane de comision.
+În total, omul plătește circa 3.100 de coroane pe an. Banca primește tot comisionul, adică 8.100 de coroane.
 
-Banca ar fi încasat același comision și dacă dobânda era pozitivă.
+Banca ar fi primit același comision și dacă dobânda era pozitivă.
 
-Pe scurt, banca nu împrumută din banii ei. Dă mai departe banii investitorilor, la aceeași dobândă, și își ia comisionul fie că dobânda e pozitivă, fie că e negativă.
+Pe scurt: banca dă omului banii investitorilor, cu aceeași dobândă pe care o primesc investitorii. Banca câștigă doar din comision, fie că dobânda e pozitivă, fie că e negativă.
 
-## De ce Danemarca, și nu altundeva
+## De ce s-a întâmplat asta în Danemarca?
 
-Coroana daneză e legată de euro printr-un curs fix. Ca să păstreze acest curs, banca centrală daneză trebuie să țină dobânda aproape la fel ca Banca Centrală Europeană.
+Danemarca are moneda ei, coroana. Dar a promis să țină prețul coroanei față de euro mereu aproape la fel.
 
-Problema Danemarcei n-a fost niciodată lipsa de bani. A fost exact opusul.
+Pentru asta, banca centrală a Danemarcei trebuie să țină dobânda aproape la fel ca Banca Centrală Europeană.
 
-În 2012, și din nou în 2015, zona euro trecea prin perioade de instabilitate. Mulți investitori străini au cumpărat atunci coroane daneze, ca să-și țină banii în siguranță.
+Problema Danemarcei nu era că avea prea puțini bani. Avea prea mulți.
 
-Atâta cerere putea scumpi coroana față de euro. Iar asta ar fi rupt cursul fix.
+În 2012 și din nou în 2015, țările cu euro treceau prin crize. Mulți investitori străini au cumpărat atunci coroane daneze, ca să-și țină banii în siguranță.
 
-Ca să oprească acest val de bani străini, banca centrală a coborât dobânda sub zero. Nu voia să stimuleze economia. Voia ca investitorilor să nu le mai convină să țină bani în coroane.
+Când mulți cumpără coroane, coroana se poate scumpi față de euro. Atunci Danemarca n-ar mai fi ținut prețul promis.
 
-E exact invers față de [povestea despre dobânzile mari din Moldova](/blog/dobanzi-mari-nu-doar-moldova). În Moldova, piața e mică și circulă puțini bani pe ea, iar asta împinge dobânda în sus.
+De aceea, banca centrală a coborât dobânda sub zero. Nu voia să ajute economia să crească. Voia ca investitorii străini să nu mai câștige nimic ținând bani în coroane.
 
-În Danemarca, prea mulți voiau coroane, iar asta a împins dobânda sub zero.
+În Moldova e invers, cum am scris în [articolul despre dobânzile mari din Moldova](/blog/dobanzi-mari-nu-doar-moldova). Piața e mică și sunt puțini bani de împrumutat, de aceea dobânzile sunt mari.
 
-## Ce a mai rămas din perioada asta
+În Danemarca, prea mulți oameni voiau coroane, de aceea dobânda a ajuns sub zero.
 
-Din septembrie 2022, nimeni nu mai poate lua un credit nou cu dobândă negativă în Danemarca. Dobânzile la creditele noi pe 30 de ani au urcat de la 1,5% la 5% într-un singur an.
+## Ce credite cu dobândă negativă au rămas?
 
-Dar contractele vechi, cu dobândă fixă, nu dispar peste noapte. Conform Nationalbanken, la majoritatea celor circa 40.000 de credite rămase cu dobândă negativă, dobânda se recalculează abia în cursul lui 2026.
+Din 2022, nimeni nu mai poate lua în Danemarca un credit nou cu dobândă negativă. Într-un singur an, dobânda la creditele noi pe 30 de ani a urcat de la 1,5% la 5%.
 
-Deci povestea dobânzilor negative se termină chiar acum, în timp ce scriem acest articol.
+Dar creditele vechi au dobânda fixată prin contract, așa că ea nu se schimbă imediat. Banca centrală a Danemarcei spune că la majoritatea celor circa 40.000 de credite rămase, băncile vor recalcula dobânda abia în 2026.
+
+Deci ultimele credite cu dobândă negativă din Danemarca dispar chiar în acest an.
 
 <ClosingNote href="/calculator-credit">
-  La Ideal Credit, dobânda afișată e costul real - fără comisioane ascunse care schimbă rezultatul la final.
+  La Ideal Credit, dobânda pe care o vezi e costul real. Nu există comisioane ascunse care să schimbe suma la final.
 </ClosingNote>
 
 <ArticleFooter date={post.date} />
 
 <Caption as="div" className="mt-6">
-  Notă: cifrele despre dobânda de bază și evoluția ei (2019-2025) vin din Nationalbanken, CNBC, Bloomberg și Reuters/RTE. Cursul fix al coroanei față de euro e cel din mecanismul ERM II. Exemplul de calcul din secțiunea „Cum face banca profit din asta” e o ilustrare simplificată, pe cifre medii publicate de Nationalbanken și Expat Finance, nu o simulare a unui contract real.
+  Notă: cifrele despre dobânda de bază din 2019-2025 vin din Nationalbanken, CNBC, Bloomberg și Reuters/RTE. Cursul fix al coroanei față de euro e cel din mecanismul ERM II. Exemplul de calcul din secțiunea „Cum câștigă banca, dacă dobânda e negativă?” e un exemplu simplificat, pe cifre medii publicate de Nationalbanken și Expat Finance, nu o simulare a unui contract real.
 </Caption>
 
 {/*
@@ -137,23 +139,23 @@ Deci povestea dobânzilor negative se termină chiar acum, în timp ce scriem ac
   status: ready to schedule
   link preview: uses this article's own opengraph-image.tsx automatically, no separate image needed
 
-  În 2019, o bancă din Danemarca oferea credite ipotecare cu dobândă de minus 0,5%.
-  Pe hârtie, împrumutai un milion și restituiai mai puțin. Bani gratis.
+  În 2019, o bancă din Danemarca dădea credite ipotecare cu dobândă de minus 0,5%.
+  Pe hârtie, împrumutai un milion și dădeai înapoi mai puțin.
 
-  Aproape nimeni n-a primit, de fapt, bani gratis. Un comision anual separat -
-  perceput indiferent de dobândă - a împins costul total înapoi peste zero pentru
-  majoritatea creditelor.
+  În realitate, aproape nimeni n-a primit bani de la bancă. Pe lângă dobândă,
+  oamenii plăteau un comision anual de circa 0,81%. Cu el, costul total ieșea
+  de circa 0,3% pe an.
 
-  Iar banca n-a pierdut niciodată din asta. Fiecare credit e finanțat printr-o
-  obligațiune identică, vândută unor investitori - dobânda trece direct prin bancă,
-  fără să-i afecteze marja. Profitul ei stă în comision, nu în semnul dobânzii.
+  Iar banca nu pierdea nimic. Ea nu dădea credite din banii ei, ci din banii
+  unor investitori, cu aceeași dobândă. Banca câștiga doar din comision, fie că
+  dobânda era pozitivă, fie că era negativă.
 
-  Creditele noi cu dobândă negativă s-au oprit în 2022. Dar circa
-  40.000 de credite vechi încă au dobândă sub zero - și urmează să se ajusteze
-  abia în 2026.
+  Din 2022, în Danemarca nu se mai dau credite noi cu dobândă negativă. Dar circa
+  40.000 de credite vechi au încă dobândă sub zero. La cele mai multe, băncile
+  vor recalcula dobânda abia în 2026.
 
-  Al treilea articol din seria Dincolo de Cifre: ce se ascunde, de fapt, în spatele
-  unei dobânzi care sună imposibil.
+  Din seria Dincolo de Cifre: cum funcționează un credit cu
+  dobândă negativă și cine câștigă din el.
 
   Citește articolul complet: idealcredit.md/blog/dobanda-negativa-danemarca
 

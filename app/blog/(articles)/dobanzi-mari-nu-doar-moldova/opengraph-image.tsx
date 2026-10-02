@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Nu doar Moldova are dobânzi mari.",
         accent: "Moldova",
-        subtitle: "Turcia, Egiptul și chiar statele baltice din zona euro au dobânzi mai mari sau comparabile. Piața mică decide prețul.",
+        subtitle: "Firmele din Estonia și Letonia, cu euro, plătesc cele mai mari dobânzi din zona euro. Ce decide, atunci, dobânda?",
     });
 }

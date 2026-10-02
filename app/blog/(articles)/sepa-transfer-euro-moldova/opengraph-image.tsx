@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Un transfer în euro prin SEPA costă acum 1 euro.",
         accent: "SEPA",
-        subtitle: "SEPA duce 8 din 10 transferuri în euro ale Moldovei, dar mai puțin de jumătate din bani. Cine câștigă cel mai mult?",
+        subtitle: "Un transfer în euro costa minim 20 de euro. Cine economisește cel mai mult și de ce plățile mari merg tot prin SWIFT?",
     });
 }

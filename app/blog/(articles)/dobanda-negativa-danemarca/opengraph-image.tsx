@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "O bancă daneză a dat credite ipotecare cu dobândă negativă.",
         accent: "dobândă",
-        subtitle: "În 2019, Jyske Bank oferea credite cu dobândă de minus 0,5%. Aproape nimeni n-a primit bani gratis.",
+        subtitle: "În 2019, Jyske Bank dădea credite cu dobândă de minus 0,5%. Totuși, oamenii tot plăteau băncii. Cum câștiga banca?",
     });
 }

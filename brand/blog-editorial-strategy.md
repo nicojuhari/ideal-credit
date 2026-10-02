@@ -120,6 +120,32 @@ stays numerate, but the *sentences* must read easily on the first pass. Rules:
   what refers to what, rewrite it. Simpler sentences cost some words; that is
   fine - cut a redundant sentence elsewhere rather than re-compress.
 
+**Name things simply and directly (added 2026-10-02, second pass).** The
+one-idea rule above was not enough: the owner still found "hard to process
+phrases in articles all the time" and misread "SEPA duce 8 din 10
+transferuri și mai puțin de jumătate din bani" as a statement about price.
+If the owner can misread a sentence, readers will. This rule applies to the
+whole article: body, dek, meta description, OG title/subtitle, chart
+captions and labels, table headers, social caption.
+
+- **A person or a company does the action.** Not "transferurile au dus 46%
+  din bani", "câștigă transferurile mici", "SEPA a preluat plățile mici".
+  Write "cel mai mult economisesc cei care trimit sume mici", "mai mult de
+  jumătate din bani a mers tot prin SWIFT".
+- **No metaphors.** Drum ("drumul vechi", "și-a schimbat drumul"), gol
+  ("umple golul"), prag, scară, tipar, motor, val: say the literal thing.
+- **Verbs, not abstract nouns.** "ponderea", "valoarea plăților",
+  "creșterea averii", "autofinanțare", "expunere" -> "cât din bani", "cât au
+  plătit", "cu cât a crescut averea", "bani proprii", "cât au împrumutat".
+- **Name the thing, then the number.** "După număr: 79%. După valoare: 46%"
+  -> "8 din 10 transferuri au trecut prin SEPA, dar mai puțin de jumătate din
+  bani."
+- **Plain words for the term itself.** Define a term once with what it does
+  ("SWIFT, sistemul de plăți folosit de băncile din toată lumea"), then use
+  the same word every time, never a synonym.
+- **Test:** could a 15-year-old repeat the sentence correctly after one
+  read? If it could be read two ways, it fails.
+
 **Titles name the subject (added 2026-10-02).** Owner, rejecting "Un
 transfer de 20 de euro costă acum 1 euro. Cine a câștigat, de fapt?" for the
 SEPA article: put the main subject word in the title - not for SEO, for the
