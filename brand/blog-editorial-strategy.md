@@ -91,6 +91,35 @@ time: would a Moldovan business owner or analyst actually say this word in
 conversation, or only encounter it in a translated report? If the latter,
 find the word they'd actually use.
 
+**One idea per sentence, plain words (added 2026-10-02).** Owner feedback on
+`cumpara-imprumuta-mori`: "very hard to read - in one sentence are few ideas,
+or they are not simply exposed, I need to think what is what." The register
+stays numerate, but the *sentences* must read easily on the first pass. Rules:
+
+- **One idea per sentence.** If a sentence carries a fact + its explanation +
+  a consequence, split it. Dashes and colons that chain a second idea onto
+  the first are the usual sign ("...30% din pachetul lui", "...adică acțiuni
+  de peste 62 de miliarde puse drept garanție").
+- **Say the thing, not a label for it.** "Câștigul adunat o viață întreagă
+  dispare din calcul" / "resetarea valorii" made the reader decode a
+  metaphor. Write what actually happens: "Pentru fisc, acțiunile valorează cât
+  valorau în ziua decesului, nu cât au costat la cumpărare."
+- **Everyday words over technical ones** when both are correct: "puse
+  garanție" not "gajate", "câștig nevândut" not "câștig nerealizat",
+  "comisia fiscală a Congresului" with the English name only in the sources
+  note, statute numbers (secțiunea 1014) in the sources note, not the body.
+- **Turn ratios into a plain comparison.** "Creditul să nu depășească 20% din
+  valoarea acțiunilor" -> "acțiunile să valoreze de cel puțin cinci ori mai
+  mult decât creditul." "Venit economic" -> list what it includes.
+- **No vague back-references.** "Aceeași alegere ca la Ellison", "cel mai
+  celebru credit de mai sus", "ultima regulă" force the reader to scroll back.
+  Name the thing again.
+- **Explain a number the moment it appears** - what was divided by what - in
+  short sentences, before the chart, not packed into one definition sentence.
+- **Self-test:** read each sentence alone. If you have to stop and work out
+  what refers to what, rewrite it. Simpler sentences cost some words; that is
+  fine - cut a redundant sentence elsewhere rather than re-compress.
+
 ## Format exception: "explicat simplu" (added 2026-09-23)
 
 Owner decision: the register rule above ("don't explain Finance 101") has one
@@ -332,6 +361,8 @@ Nothing skips ahead. Never batch multiple topics through the pipeline at once.
    - **Easy reading** — every paragraph is 1-2 sentences (see Design &
      typography above); no sentence so dense with clauses that a reader has
      to re-read it.
+     Check every sentence against "One idea per sentence, plain words"
+     (Register section) - added 2026-10-02.
    - **Clear message** — each section answers the question its heading asks;
      no claim left vague when a specific number or source is available.
    - **Valued, not padded** — every sentence earns its place; cut anything
