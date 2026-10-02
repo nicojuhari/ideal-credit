@@ -18,13 +18,6 @@ Backlog of pitched topics, checked against the Topic Gate in
   Bigger, more abstract wow-factor, skews toward a finance-literate reader
   more than the others.
 
-- **SEPA, one year on** — in progress: research done, structure pending approval (2026-10-02). Title approved: "Cu SEPA, un transfer de 20 de euro costă acum 1 euro. Cine a câștigat?" Angle: SEPA is 80% of euro transfers by count but only ~46% by value; €13.2m saved = 0.09% of flows, so the real winners are small transfers (diaspora, small firms), not big importers. Moldova joined SEPA on
-  2025-10-06: a euro transfer fell from a €20+ SWIFT minimum to ~€1.11 on
-  average; euro-transaction value up ~57% (€9.3bn -> €14.6bn, Oct-Jul vs prior
-  years); firms paid >€1.7bn of imports via SEPA. Questions: what changed, who
-  saves the most (importers, exporters, small firms), what's still missing.
-  Timely peg: anniversary 2026-10-06. Sources: BNM, EU4Moldova, Moldpres.
-
 - **Did Prima Casă raise apartment prices?** — idea (pitched 2026-10-02).
   State-guaranteed mortgages turned 30-40% of purchases into mortgage buys;
   Chișinău prices reached ~€1,720/m² in H1 2025 and stayed there even though
@@ -49,6 +42,14 @@ Backlog of pitched topics, checked against the Topic Gate in
   the headline.
 
 ## Published
+
+- **SEPA, one year on** — slug: `sepa-transfer-euro-moldova`, published
+  2026-10-02 with BNM's 10-month data (owner chose not to wait for the
+  one-year figures). Angle: SEPA is ~80% of euro transfers by count but ~46%
+  by value; €13.2m saved is ~0.09% of flows, so small transfers (diaspora,
+  small firms) gain most. Big payments stay on SWIFT because China, Ukraine,
+  Turkey (~31% of imports) aren't in SEPA. Refresh when BNM publishes the
+  full-year numbers.
 
 - **Inflation, explained for a 10-year-old** — slug: `ce-este-inflatia`,
   published 2026-09-23. First "explicat simplu" format piece (see strategy
