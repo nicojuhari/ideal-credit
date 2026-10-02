@@ -120,6 +120,15 @@ stays numerate, but the *sentences* must read easily on the first pass. Rules:
   what refers to what, rewrite it. Simpler sentences cost some words; that is
   fine - cut a redundant sentence elsewhere rather than re-compress.
 
+**Titles name the subject (added 2026-10-02).** Owner, rejecting "Un
+transfer de 20 de euro costă acum 1 euro. Cine a câștigat, de fapt?" for the
+SEPA article: put the main subject word in the title - not for SEO, for the
+reader. If the article is about SEPA, the title says SEPA. A clever title that
+hides what the piece is about is not a hook, it's noise. Speak directly: no
+filler like "de fapt" or teaser phrasing when the plain statement already
+works. Approved form: "Cu SEPA, un transfer de 20 de euro costă acum 1 euro.
+Cine a câștigat?"
+
 ## Format exception: "explicat simplu" (added 2026-09-23)
 
 Owner decision: the register rule above ("don't explain Finance 101") has one
