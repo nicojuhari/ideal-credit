@@ -1,0 +1,13 @@
+#FF9A00 accent
+#0b0b0b bg-dark
+#141414 surface-dark
+#212121 hairline-dark
+#f7f7f7 bg-light / ink-dark
+#ffffff surface-light
+#e3e3e3 hairline-light
+#585858 text-2-light
+#aaaaaa text-2-dark
+#818181 text-3
+#c46e00 brand-ink-light
+#86A873 proof
+#455d38 proof-ink-light

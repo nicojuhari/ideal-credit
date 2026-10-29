@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Showreel 15</title>
+<style>
+@font-face { font-family: Archivo; font-weight: 400; src: url(../../brand/fonts/archivo-latin-400.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Archivo; font-weight: 400; src: url(../../brand/fonts/archivo-latin-ext-400.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Archivo; font-weight: 600; src: url(../../brand/fonts/archivo-latin-600.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Archivo; font-weight: 600; src: url(../../brand/fonts/archivo-latin-ext-600.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Plex; font-weight: 400; src: url(../../brand/fonts/ibm-plex-mono-latin-400.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Plex; font-weight: 400; src: url(../../brand/fonts/ibm-plex-mono-latin-ext-400.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Plex; font-weight: 500; src: url(../../brand/fonts/ibm-plex-mono-latin-500.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Plex; font-weight: 500; src: url(../../brand/fonts/ibm-plex-mono-latin-ext-500.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Serif; font-style: italic; font-weight: 400; src: url(../../brand/fonts/instrument-serif-latin-400-italic.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Serif; font-style: italic; font-weight: 400; src: url(../../brand/fonts/instrument-serif-latin-ext-400-italic.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+
+:root { --bg: #0b0b0b; --text: #f7f7f7; --text-2: #aaaaaa; --text-3: #818181; --hair: #333333; --brand: #ff9a00; --proof: #86a873; --ink: #0b0b0b; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #000; }
+body { font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; color: var(--text); }
+#stage { position: relative; width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; z-index: 0; }
+#cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1350px; transform-origin: 0 0; z-index: 1; }
+.a { position: absolute; }
+.mask { position: absolute; overflow: hidden; white-space: nowrap; }
+.mask > .in { display: block; will-change: transform; }
+.sans { font-family: Archivo; font-weight: 600; letter-spacing: -.048em; }
+.serif { font-family: Serif; font-style: italic; font-weight: 400; letter-spacing: 0; }
+.mono { font-family: Plex; font-weight: 500; }
+.lab { font: 500 24px/1 Plex; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
+.hl { position: absolute; background: var(--hair); }
+.digit { display: inline-block; overflow: hidden; vertical-align: top; }
+.digit > div { display: flex; flex-direction: column; }
+.digit > div > span { display: block; }
+#hud { position: fixed; left: 12px; bottom: 12px; z-index: 99; font: 12px/1.4 monospace; color: #fff; background: rgba(0,0,0,.7); padding: 6px 10px; }
+.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="stage"><div id="cam"></div></div>
+<div id="hud"></div>
+<script>
+// =====================================================================================
+// Ideal Credit showreel, 15 s, 1080x1350, 120 BPM (beat 0.5 s), music drop at 4.0 s.
+// One shape carries the film: the orange square (the calculator's slider thumb).
+// Everything is a pure function of t inside window.seek(t). Facts: facts.md.
+// =====================================================================================
+const T = 15, W = 1080, H = 1350, M = 80, CW = 920;
+const params = new URLSearchParams(location.search);
+if (params.has('render')) document.documentElement.classList.add('render');
+
+// ---------- math ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, u) => a + (b - a) * u;
+const io = x => x <= 0 ? 0 : x >= 1 ? 1 : x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const out = x => x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(1 - x, 3);
+const o5 = x => x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(1 - x, 5);
+const inn = x => x <= 0 ? 0 : x >= 1 ? 1 : x * x * x;
+const expo = x => x <= 0 ? 0 : x >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+function bez(x1, y1, x2, y2) {
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  return x => { if (x <= 0) return 0; if (x >= 1) return 1; let lo = 0, hi = 1, s = x;
+    for (let i = 0; i < 40; i++) { s = (lo + hi) / 2; if (((ax * s + bx) * s + cx) * s < x) lo = s; else hi = s; }
+    return ((ay * s + by) * s + cy) * s; };
+}
+const drag = bez(.6, 0, .2, 1), slotE = bez(.42, 0, .12, 1);
+// closed-form spring step (damping >= .72): snappy 320/30 ~ f 2.85 z .84, default 170/26 ~ f 2.07 z 1.0 -> use z .8
+function spring(t, f = 2.2, z = .8) {
+  if (t <= 0) return 0;
+  const w = 2 * Math.PI * f, wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+// value driven by a list of [time, target] changes, one spring per change
+const springs = (t, v0, keys, f, z) => keys.reduce((v, [tk, tv], i) => v + ((tv - (i ? keys[i - 1][1] : v0)) * spring(t - tk, f, z)), v0);
+const rate = n => 100000 * .01 / (1 - Math.pow(1.01, -n));
+const interest = n => rate(n) * n - 100000;
+const fmt = v => Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+// ---------- DOM helpers ----------
+const cam = document.getElementById('cam');
+function el(cls, parent = cam, css = {}, html = '') {
+  const e = document.createElement('div'); e.className = cls; Object.assign(e.style, css); if (html) e.innerHTML = html; parent.appendChild(e); return e;
+}
+// masked line: text rises inside an overflow:hidden box. H = box height
+function mline(html, cls, x, y, fs, color, parent = cam, hMul = 1.3) {
+  const h = Math.round(fs * hMul);
+  const wrap = el('mask', parent, { left: x + 'px', top: y + 'px', height: h + 'px', padding: '0 .08em 0 0', fontSize: fs + 'px', lineHeight: h + 'px', color });
+  const inn = el('in ' + cls, wrap, {}, html);
+  return { wrap, inn, h };
+}
+// rise in on a spring at tIn, drop out geometric at tOut (dir +1 = down, -1 = up)
+function mset(m, t, tIn, tOut = 99, dir = 1, f = 2.0, rot = 4) {
+  const p = spring(t - tIn, f, .8);
+  const e = inn(prog(t, tOut, tOut + .28));
+  const y = (1 - p) * m.h * 1.05 + dir * e * m.h * 1.1;
+  m.inn.style.transform = `translateY(${y}px) rotate(${(1 - clamp(p)) * rot}deg)`;
+  m.wrap.style.visibility = (t < tIn - .01 || e >= 1) ? 'hidden' : 'inherit';
+}
+const ctx = document.createElement('canvas').getContext('2d');
+const measure = (font, s) => { ctx.font = font; return ctx.measureText(s).width; };
+// Archivo 600 at -0.048em tracking, sized so `s` spans `w` px
+const fitSans = (s, w) => Math.floor(w / (measure('600 100px Archivo', s) / 100 - .048 * s.length));
+
+// ---------- layers ----------
+let L = {};
+function build() {
+  // shared hairline box (S4 cells -> S5 grid -> S6 slot window)
+  L.box = el('a', cam, { border: '1px solid var(--hair)', zIndex: 2 });
+  L.vdiv = el('hl', cam, { width: '1px', zIndex: 2 });
+  L.hdiv = el('hl', cam, { height: '1px', zIndex: 2 });
+  // rule + fill (S1/S2) and track + fill (S4)
+  L.rule = el('hl', cam, { height: '2px', zIndex: 3 });
+  L.fill = el('a', cam, { height: '4px', background: 'var(--text)', zIndex: 3 });
+  // the square
+  L.sq = el('a', cam, { background: 'var(--brand)', zIndex: 6 });
+
+  // S2 headline, fitted to the column width
+  const fsH = fitSans('Credite', 900);
+  const yH = i => 150 + i * fsH * .9;
+  L.s2 = [
+    mline('Credite', 'sans', M - fsH * .04, yH(0), fsH, 'var(--text)'),
+    mline('pentru', 'sans', M - fsH * .04, yH(1), fsH, 'var(--text)'),
+    mline('succes.', 'serif', M - fsH * .02, yH(2) - fsH * .02, fsH * 1.08, 'var(--brand)'),
+  ];
+  RULE_Y = Math.round(yH(2) + fsH * 1.3 + 30);
+  L.s2.forEach(m => m.wrap.style.zIndex = 4);
+
+  // S3 on orange
+  const fs3 = fitSans('Îți spunem', 910);
+  const y3 = i => 330 + i * fs3 * .93;
+  L.s3k = mline('Analizăm situația ta și', 'mono', M, 262, 32, 'var(--ink)', cam, 1.4);
+  L.s3 = [
+    mline('Îți spunem', 'sans', M - fs3 * .04, y3(0), fs3, 'var(--ink)'),
+    mline('dacă are', 'sans', M - fs3 * .04, y3(1), fs3, 'var(--ink)'),
+    mline('sens.', 'serif', M - fs3 * .02, y3(2) - fs3 * .02, fs3 * 1.2, 'var(--ink)'),
+  ];
+  [L.s3k, ...L.s3].forEach(m => m.wrap.style.zIndex = 8);
+
+  // S4 calculator
+  L.s4lab = mline('Termen', 'lab', M, 236, 24, 'var(--text-3)', cam, 1.4);
+  L.term = mline('', 'mono', M - 6, 276, 160, 'var(--text)', cam, 1.15);
+  L.ticks = [12, 24, 36, 48, 60].map(m => {
+    const x = xOf(m);
+    const tk = el('hl', cam, { left: (x - 1) + 'px', top: '548px', width: '2px', height: '24px', zIndex: 3 });
+    const lb = el('a mono', cam, { left: x + 'px', top: '590px', font: '400 22px/1 Plex', color: 'var(--text-3)', whiteSpace: 'nowrap', zIndex: 3,
+      transform: m === 12 ? 'none' : m === 60 ? 'translateX(-100%)' : 'translateX(-50%)' }, m === 12 ? '1 an' : (m / 12) + ' ani');
+    return { m, tk, lb };
+  });
+  L.c1lab = mline('Rata lunară', 'lab', M + 36, 732, 22, 'var(--text-3)', cam, 1.4);
+  L.c2lab = mline('Dobândă totală', 'lab', 540 + 36, 732, 22, 'var(--text-3)', cam, 1.4);
+  L.c1 = mline('', 'mono', M + 30, 780, 84, 'var(--text)', cam, 1.2);
+  L.c2 = mline('', 'mono', 540 + 30, 780, 84, 'var(--brand)', cam, 1.2);
+  L.d1 = mline('−2.483 / lună', 'mono', M + 36, 892, 30, 'var(--text-2)', cam, 1.4);
+  L.d2 = mline('+20.490 total', 'mono', 540 + 36, 892, 30, 'var(--brand)', cam, 1.4);
+  L.foot = mline('Exemplu ilustrativ: 100.000 MDL, 12%/an, calcul propriu', 'mono', M, 1196, 22, 'var(--text-3)', cam, 1.4);
+  L.foot.inn.style.fontWeight = 400;
+
+  // S5 stats grid (clockwise: TL, TR, BR, BL so the marker only moves along one axis at a time)
+  const cells = [[M, 300], [540, 300], [540, 690], [M, 690]];
+  const stats = [
+    { d: ['1', '6'], label: 'ani pe piață', color: 'var(--text)' },
+    { d: ['0'], label: 'comisioane', color: 'var(--proof)' },
+    { d: ['4', ',', '9'], label: 'rating clienți', color: 'var(--text)' },
+    { d: ['6'], label: 'tipuri de credit', color: 'var(--text)' },
+  ];
+  L.s5k = mline('Ideal Credit · din 2010', 'lab', M, 236, 24, 'var(--text-3)', cam, 1.4);
+  L.stats = stats.map((s, i) => {
+    const [x, y] = cells[i];
+    const fs = 190;
+    const fig = el('mask mono', cam, { left: (x + 30) + 'px', top: (y + 120) + 'px', height: fs + 'px', fontSize: fs + 'px', lineHeight: fs + 'px', color: s.color, letterSpacing: '-.04em', zIndex: 4 });
+    const row = el('in', fig, { display: 'flex' });
+    const cols = s.d.map(c => {
+      if (!/\d/.test(c)) { el('', row, {}, c); return null; }
+      const d = el('digit', row, { height: fs + 'px' });
+      const strip = el('', d, {}, Array.from({ length: 30 }, (_, k) => `<span style="height:${fs}px;line-height:${fs}px">${k % 10}</span>`).join(''));
+      return { strip, target: +c + 10 };
+    }).filter(Boolean);
+    const lab = mline(s.label, 'lab', x + 36, y + 44, 24, 'var(--text-3)', cam, 1.4);
+    return { fig, row, cols, lab, x, y, fs };
+  });
+
+  // S6 slot machine
+  const fs6 = Math.min(fsH, 240);
+  L.s6 = [mline('Credite', 'sans', M - fs6 * .04, 690 - fs6 * 2.2, fs6, 'var(--text)'), mline('pentru', 'sans', M - fs6 * .04, 690 - fs6 * 1.3, fs6, 'var(--text)')];
+  L.slot = el('mask', cam, { left: (M + 1) + 'px', top: '751px', width: (CW - 2) + 'px', height: '238px', zIndex: 4 });
+  L.slotIn = el('in', L.slot, {});
+  const WORDS = ['afaceri', 'agricultură', 'automobil', 'reparație', 'investiții', 'nevoi personale', 'succes.'];
+  L.WORDS = WORDS;
+  WORDS.forEach(w => {
+    const fs = Math.min(200, Math.floor(820 / (measure('italic 400 100px Serif', w) / 100)));
+    el('serif', L.slotIn, { height: '238px', lineHeight: '238px', fontSize: fs + 'px', color: 'var(--brand)', paddingLeft: '36px', whiteSpace: 'nowrap' }, w);
+  });
+
+  // S7 end card
+  L.logo = el('a', cam, { left: (540 - 130) + 'px', top: (560 - 130) + 'px', width: '260px', height: '260px', zIndex: 5 },
+    '<svg viewBox="0 0 600 600" width="260" height="260"><circle cx="300" cy="300" r="300" fill="#222"/><circle cx="326.5" cy="96.5" r="43" fill="#fff" stroke="#000"/><path d="M391.5,93.5c3,181-375,158-204,440C102.5,313.5,421.5,356.5,391.5,93.5Z" fill="#ff9a00"/><path d="M450.5,274.5c26,250-239,101-253,259C178.5,310.5,427.5,449.5,450.5,274.5Z" fill="#ff9a00"/></svg>');
+  L.lline = el('a', cam, { background: 'var(--brand)', zIndex: 6 });
+  const url = 'idealcredit.md';
+  const uw = measure('500 56px Plex', url);
+  L.url = el('a mono', cam, { left: (540 - uw / 2) + 'px', top: '760px', fontSize: '56px', lineHeight: '70px', whiteSpace: 'pre', color: 'var(--text)', zIndex: 5 });
+  L.urlCh = [...url].map(c => el('', L.url, { display: 'inline-block', whiteSpace: 'pre' }, c));
+  const sub = 'Căușeni · Chișinău · din 2010';
+  const sw = measure('500 24px Plex', sub.toUpperCase()) + sub.length * 2.4;
+  L.s7sub = mline(sub, 'lab', 540 - sw / 2, 862, 24, 'var(--text-3)', cam, 1.4);
+}
+const xOf = n => M + (n - 12) / 48 * CW;
+
+// ---------- the square: one state for the whole film ----------
+let RULE_Y = 980; const TRACK_Y = 560, FLOOD = Math.ceil(2 * Math.max(540, 675) * 1.05) + 40;
+const S2_STEPS = [[0.5, 400], [1.0, 640], [1.5, 1000]];   // square x as each headline word lands
+function monthsAt(t) { return t < 6.45 ? 24 : 24 + 36 * drag(prog(t, 6.45, 7.45)); }
+const MARK = [[M, 300], [540, 300], [540, 690], [M, 690]];   // grid corners: the marker rides the hairlines
+const STAT_T = [8.5, 8.75, 9.0, 9.25];
+
+function square(t) {
+  let cx = M + 14, cy = RULE_Y, w = 28, h = 28, vis = true;
+  if (t < 0.5) {
+    // falls in already moving, lands on the rule, small squash
+    cy = lerp(-80, RULE_Y, spring(t + .06, 2.0, .9));
+    const land = Math.exp(-Math.max(0, t - .26) / .07) * (t > .26 ? 1 : 0);
+    w = 28 * (1 + .35 * land); h = 28 * (1 - .3 * land);
+    cy += 14 * .3 * land;
+  } else if (t < 3.0) {
+    cx = springs(t, M + 14, S2_STEPS.map(([tk, x]) => [tk, x]), 2.6, .82);
+  } else if (t < 3.45) {
+    const u = io(prog(t, 3.0, 3.45));
+    cx = lerp(1000, 540, u); cy = lerp(RULE_Y, 675, u);
+  } else if (t < 5.55) {
+    cx = 540; cy = 675;
+    const u = prog(t, 3.45, 4.0);
+    w = h = 28 * Math.pow(FLOOD / 28, Math.pow(u, 1.35));
+  } else if (t < 6.05) {
+    const u = o5(prog(t, 5.55, 6.05));
+    w = h = FLOOD * Math.pow(28 / FLOOD, u);
+    cx = lerp(540, xOf(24), u); cy = lerp(675, TRACK_Y, u);
+  } else if (t < 7.85) {
+    cx = xOf(monthsAt(t)); cy = TRACK_Y;
+  } else if (t < 10.05) {
+    // marker: leading edge on a snappy spring, trailing edge on a slower one -> it stretches between cells
+    const keys = [[7.9, 0], ...STAT_T.map((tk, i) => [tk - .08, i])];
+    const pos = (f, z) => {
+      let x = xOf(60) + 14, y = TRACK_Y;
+      keys.forEach(([tk, i], k) => {
+        const [px, py] = k ? MARK[keys[k - 1][1]] : [xOf(60) + 14, TRACK_Y];
+        const s = spring(t - tk, f, z);
+        x += (MARK[i][0] - px) * s; y += (MARK[i][1] - py) * s;
+      });
+      return [x, y];
+    };
+    const [lx, ly] = pos(3.2, .84), [tx, ty] = pos(2.0, .9);
+    const s = lerp(28, 20, clamp(spring(t - 7.9, 2, .9)));
+    const x0 = Math.min(lx, tx) - s / 2, x1 = Math.max(lx, tx) + s / 2, y0 = Math.min(ly, ty) - s / 2, y1 = Math.max(ly, ty) + s / 2;
+    return { x: x0, y: y0, w: x1 - x0, h: y1 - y0, vis: true };
+  } else if (t < 10.5) {
+    const u = io(prog(t, 10.05, 10.45));
+    cx = lerp(M, M + 1, u); cy = lerp(690, 751, u);
+    w = h = lerp(20, 0, u); vis = u < 1;
+  } else if (t < 12.4) {
+    vis = false;
+  } else if (t < 12.95) {
+    cx = 540; cy = 560;
+    const p = spring(t - 12.4, 2.6, .82);
+    w = h = 28 * p;
+    // squash into a horizontal line (the "eye" that opens into the logo)
+    const q = io(prog(t, 12.72, 12.95));
+    w = lerp(w, 260, q); h = lerp(h, 3, q);
+  } else vis = false;
+  return { x: cx - w / 2, y: cy - h / 2, w, h, vis };
+}
+
+// ---------- shared box ----------
+const BOX_S4 = [M, 700, CW, 260], BOX_S5 = [M, 300, CW, 780], BOX_S6 = [M, 750, CW, 240];
+function boxAt(t) {
+  if (t < 6.1 || t > 12.75) return null;
+  let r = BOX_S4.slice();
+  const a = spring(t - 8.0, 2.0, .82), b = spring(t - 10.3, 2.2, .82);
+  r = r.map((v, i) => v + (BOX_S5[i] - BOX_S4[i]) * a + (BOX_S6[i] - BOX_S5[i]) * b);
+  // draw-on in S4 (from the left), collapse to centre at the end
+  const on = expo(prog(t, 6.1, 6.45));
+  const off = inn(prog(t, 12.35, 12.7));
+  const w = r[2] * on * (1 - off);
+  const x = r[0] + (r[2] - w) * (off > 0 ? .5 : 0);
+  return [x, r[1], w, r[3] * (1 - off), r[1] + r[3] * off / 2];
+}
+
+// ---------- camera: [t, zoom, focusX, focusY], log-space zoom, eased segments ----------
+const CAM = [[0, 1.0, 540, 675], [3.0, 1.045, 540, 760], [3.45, 1.045, 540, 700], [4.0, 1.0, 540, 675], [5.5, 1.035, 540, 675],
+  [6.05, 1.0, 540, 675], [7.6, 1.03, 600, 640], [8.1, 1.0, 540, 675], [10.0, 1.025, 540, 690], [10.4, 1.0, 540, 675],
+  [12.2, 1.03, 540, 690], [12.5, 1.0, 540, 675], [15, 1.02, 540, 620]];
+function camAt(t) {
+  let i = 0; while (i < CAM.length - 2 && t >= CAM[i + 1][0]) i++;
+  const [t0, z0, x0, y0] = CAM[i], [t1, z1, x1, y1] = CAM[i + 1];
+  const u = io(prog(t, t0, t1));
+  let z = Math.exp(lerp(Math.log(z0), Math.log(z1), u));
+  // beat punches after the drop: +0.03 per bar, +0.008 per beat, exp decay
+  if (t >= 4.0 && t < 12.4) {
+    const sb = (t - 4.0) % .5, sbar = (t - 4.0) % 2;
+    const env = (x, d) => (1 - Math.exp(-x / .03)) * Math.exp(-x / d);   // 30 ms attack, no one-frame jump
+    z *= 1 + .008 * env(sb, .09) + .022 * env(sbar, .14);
+  }
+  return [z, lerp(x0, x1, u), lerp(y0, y1, u)];
+}
+
+// ---------- seek ----------
+function show(e, on) { e.style.visibility = on ? 'inherit' : 'hidden'; }
+window.seek = async (t) => {
+  t = clamp(t, 0, T - 1e-4);
+  const [z, fx, fy] = camAt(t);
+  cam.style.transform = `translate(540px, 675px) scale(${z}) translate(${-fx}px, ${-fy}px)`;
+
+  // square
+  const s = square(t);
+  Object.assign(L.sq.style, { left: s.x + 'px', top: s.y + 'px', width: Math.max(0, s.w) + 'px', height: Math.max(0, s.h) + 'px' });
+  show(L.sq, s.vis && s.w > .2);
+
+  // rule + fill: S1 draw, S2 ride, S2 retract; S4 track
+  let rule = null, fill = null;
+  if (t >= .26 && t < 3.45) {
+    const sx = s.x + s.w / 2;
+    const d = expo(prog(t, .28, .7));
+    let l = M, r = lerp(sx, 1000, d);
+    const k = io(prog(t, 3.0, 3.45));
+    l = lerp(l, sx, k); r = lerp(r, sx, k);
+    rule = [l, RULE_Y - 1, r - l, 2];
+    if (t >= 0.5) fill = [lerp(M, sx, k), RULE_Y - 2, Math.max(0, sx - lerp(M, sx, k)), 4];
+  }
+  if (t >= 5.85 && t < 8.1) {
+    const sx = s.x + s.w / 2;
+    const d = expo(prog(t, 5.85, 6.25)), k = io(prog(t, 7.85, 8.1));
+    const l = lerp(lerp(sx, M, d), xOf(60), k), r = lerp(sx, M + CW, d);
+    rule = [l, TRACK_Y - 1, r - l, 2];
+    fill = [l, TRACK_Y - 2, Math.max(0, sx - l), 4];
+  }
+  const setR = (e, r) => { show(e, !!r); if (r) Object.assign(e.style, { left: r[0] + 'px', top: r[1] + 'px', width: r[2] + 'px', height: r[3] + 'px' }); };
+  setR(L.rule, rule); setR(L.fill, fill);
+
+  // S2 headline
+  L.s2.forEach((m, i) => mset(m, t, 0.5 + i * .5 - .06, 3.0 + i * .05, 1, 2.0, i === 2 ? 6 : 4));
+
+  // S3 (on the orange flood)
+  mset(L.s3k, t, 4.0, 5.3, -1, 2.4, 0);
+  L.s3.forEach((m, i) => {
+    mset(m, t, 4.0 + i * .25 - .04, 5.3 + i * .04, -1, 2.3, 5);
+    if (t >= 4 && t < 5.6) m.inn.style.transform += ` scale(${1 + .06 * (1 - clamp(spring(t - 4.0 - i * .25, 2.3, .8)))})`;
+  });
+
+  // S4 calculator
+  const n = monthsAt(t), mo = Math.round(n);
+  mset(L.s4lab, t, 6.05, 7.85, 1, 2.4, 0);
+  L.term.inn.innerHTML = `${mo}<span style="font-size:.4em;margin-left:.2em;letter-spacing:0">luni</span>`;
+  mset(L.term, t, 6.1, 7.88, 1, 2.2, 3);
+  L.ticks.forEach((k, i) => {
+    const on = t >= 6.0 + i * .04 && t < 8.0 - i * .02;
+    show(k.tk, on); show(k.lb, on);
+    k.tk.style.background = n >= k.m - .01 ? 'var(--text)' : 'var(--hair)';
+    k.lb.style.color = Math.abs(n - k.m) < .5 ? 'var(--text)' : 'var(--text-3)';
+    const p = clamp(spring(t - 6.0 - i * .04, 3, .85));
+    k.lb.style.opacity = p; k.tk.style.transform = `scaleY(${p})`;
+  });
+  L.c1.inn.innerHTML = `${fmt(rate(mo))}<span style="font-size:.4em;margin-left:.25em">MDL</span>`;
+  L.c2.inn.innerHTML = `${fmt(interest(mo))}<span style="font-size:.4em;margin-left:.25em">MDL</span>`;
+  mset(L.c1lab, t, 6.2, 7.85, 1, 2.4, 0); mset(L.c2lab, t, 6.25, 7.85, 1, 2.4, 0);
+  mset(L.c1, t, 6.25, 7.88, 1, 2.2, 3); mset(L.c2, t, 6.3, 7.9, 1, 2.2, 3);
+  mset(L.d1, t, 7.5, 7.93, 1, 2.6, 0); mset(L.d2, t, 7.58, 7.95, 1, 2.6, 0);
+  mset(L.foot, t, 6.35, 7.95, 1, 2.4, 0);
+
+  // shared box + dividers
+  const b = boxAt(t);
+  show(L.box, !!b);
+  if (b) Object.assign(L.box.style, { left: b[0] + 'px', top: b[4] + 'px', width: b[2] + 'px', height: b[3] + 'px', visibility: b[2] > 1 ? 'inherit' : 'hidden' });
+  // vertical divider: S4 + S5, shrinks away when the box becomes the slot window
+  if (b && t < 10.6) {
+    const g = 1 - io(prog(t, 10.05, 10.35));
+    const vh = b[3] * expo(prog(t, 6.2, 6.5)) * g;
+    Object.assign(L.vdiv.style, { left: '540px', top: (b[1] + (b[3] - vh) / 2) + 'px', height: vh + 'px' }); show(L.vdiv, vh > 1);
+  } else show(L.vdiv, false);
+  // horizontal divider: S5 only
+  if (b && t >= 8.1 && t < 10.35) {
+    const hw = CW * expo(prog(t, 8.15, 8.5)) * (1 - io(prog(t, 10.0, 10.3)));
+    Object.assign(L.hdiv.style, { left: (540 - hw / 2) + 'px', top: (b[1] + b[3] / 2) + 'px', width: hw + 'px' }); show(L.hdiv, hw > 1);
+  } else show(L.hdiv, false);
+
+  // S5 stats: odometer digits roll one extra turn and settle on the real value
+  mset(L.s5k, t, 8.3, 10.0, 1, 2.4, 0);
+  L.stats.forEach((st, i) => {
+    const t0 = STAT_T[i];
+    const e = inn(prog(t, 10.0 + i * .03, 10.28 + i * .03));
+    st.fig.style.visibility = t >= t0 - .02 && e < 1 ? 'inherit' : 'hidden';
+    const rise = spring(t - t0, 2.6, .82);
+    st.row.style.transform = `translateY(${(1 - rise) * st.fs * .6 + e * st.fs * 1.1}px)`;
+    st.cols.forEach((c, k) => {
+      const p = spring(t - t0 - k * .06, 1.5, .86);
+      c.strip.style.transform = `translateY(${-p * c.target * st.fs}px)`;
+    });
+    mset(st.lab, t, t0 + .05, 10.0 + i * .03, 1, 2.6, 0);
+  });
+
+  // S6 slot machine: "Credite pentru" + rolling product words, landing on "succes."
+  L.s6.forEach((m, i) => mset(m, t, 10.45 + i * .2, 12.3 + i * .04, 1, 2.0, 4));
+  const slotOn = t >= 10.35 && t < 12.7;
+  show(L.slot, slotOn);
+  if (slotOn) {
+    const enter = spring(t - 10.35, 2.4, .85);
+    const p = (L.WORDS.length - 1) * slotE(prog(t, 10.7, 12.0));
+    const exitY = inn(prog(t, 12.32, 12.6)) * 260;
+    L.slotIn.style.transform = `translateY(${(1 - enter) * 238 - p * 238 + exitY}px)`;
+  }
+
+  // S7 end card: line opens into the logo ("eye opening"), then the URL types in
+  const lo = t >= 12.95 && t < T;
+  show(L.logo, lo);
+  if (lo) {
+    const p = spring(t - 12.95, 1.6, .82);
+    const sy = .014 + (1 - .014) * p;
+    const drift = 1 + .012 * prog(t, 13.4, 15);
+    L.logo.style.transform = `scale(${drift}) scaleY(${sy})`;
+  }
+  const ll = t >= 12.95 && t < 13.12;
+  show(L.lline, ll);
+  if (ll) Object.assign(L.lline.style, { left: (540 - 130) + 'px', top: (560 - 1.5) + 'px', width: '260px', height: '3px', opacity: 1 - prog(t, 12.95, 13.12) });
+  L.urlCh.forEach((c, i) => show(c, t >= 13.45 + i * .032));
+  show(L.url, t >= 13.45);
+  mset(L.s7sub, t, 14.0, 99, 1, 2.2, 0);
+  return true;
+};
+
+// ---------- preview controls (the only wall clock; renders never use it) ----------
+let cur = 0, playing = false, last = 0;
+const hud = document.getElementById('hud');
+function hudShow() { window.seek(cur); hud.textContent = `${cur.toFixed(3)} s / ${T} s · beat ${Math.floor(cur / .5) + 1}  ${playing ? '▶' : '❚❚'}  space · ←/→ (shift = 1 frame) · R`; }
+function loop(ts) { if (!playing) return; cur += (ts - last) / 1000; last = ts; if (cur >= T) { cur = T - 1e-3; playing = false; } hudShow(); requestAnimationFrame(loop); }
+addEventListener('keydown', e => {
+  const st = e.shiftKey ? 1 / 60 : .5;
+  if (e.code === 'Space') { playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); hudShow(); e.preventDefault(); }
+  if (e.code === 'ArrowRight') { playing = false; cur = Math.min(T - 1e-3, cur + st); hudShow(); }
+  if (e.code === 'ArrowLeft') { playing = false; cur = Math.max(0, cur - st); hudShow(); }
+  if (e.code === 'KeyR') { cur = 0; playing = true; last = performance.now(); requestAnimationFrame(loop); }
+});
+Promise.all(['600 100px Archivo', '400 100px Archivo', '500 100px Plex', '400 100px Plex', 'italic 400 100px Serif', '600 100px Archivo', 'italic 400 100px Serif']
+  .map(f => document.fonts.load(f, 'ăâîșțĂÎȘȚ abc 0123'))).then(() => document.fonts.ready).then(() => {
+  build(); cur = +(params.get('t') || 0); window.seek(cur);
+  requestAnimationFrame(() => { hudShow(); window.ready = true; });
+});
+</script>
+</body>
+</html>

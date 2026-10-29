@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# motion design renders
+motion-design/films/*/out/
+motion-design/films/*/sub*/
+motion-design/films/*/probe/
+motion-design/sfx/
+motion-design/audio/

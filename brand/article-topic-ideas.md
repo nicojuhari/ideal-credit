@@ -7,7 +7,7 @@ Backlog of pitched topics, checked against the Topic Gate in
 
 ## Backlog
 
-- **Buy, Borrow, Die** — draft ready for review (slug `cumpara-imprumuta-mori`, 2026-09-29). Angle: the "borrow" step is mostly myth (Fox & Liscow 2026: "buy, save, die"); Moldova has the same step-up + untaxed inheritance. How billionaires (Musk, Bezos, Ellison) pay
+- **Buy, Borrow, Die** — published (slug `cumpara-imprumuta-mori`, 2026-09-29; move to Published). Angle: the "borrow" step is mostly myth (Fox & Liscow 2026: "buy, save, die"); Moldova has the same step-up + untaxed inheritance. How billionaires (Musk, Bezos, Ellison) pay
   close to $0 tax for decades: never sell stock, borrow against it instead,
   die, heirs inherit at stepped-up basis, tax on the gain never happens.
   Global, mechanism-driven, "wait, that's legal?" effect. Source: ProPublica's
@@ -18,7 +18,7 @@ Backlog of pitched topics, checked against the Topic Gate in
   Bigger, more abstract wow-factor, skews toward a finance-literate reader
   more than the others.
 
-- **Did Prima Casă raise apartment prices?** — idea (pitched 2026-10-02).
+- **Did Prima Casă raise apartment prices?** — draft ready for review (slug `prima-casa-pretul-apartamentelor`, 2026-10-29; research in `campaigns/content/dincolo-de-cifre/research/prima-casa-preturi/findings.md`).
   State-guaranteed mortgages turned 30-40% of purchases into mortgage buys;
   Chișinău prices reached ~€1,720/m² in H1 2025 and stayed there even though
   sales fell ~54% (9M 2025 vs 2024). Mechanism: subsidised demand ends up in

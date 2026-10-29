@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Termen loop</title>
+<style>
+@font-face { font-family: Archivo; font-weight: 400; src: url(../../brand/fonts/archivo-latin-400.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Archivo; font-weight: 400; src: url(../../brand/fonts/archivo-latin-ext-400.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Archivo; font-weight: 600; src: url(../../brand/fonts/archivo-latin-600.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Archivo; font-weight: 600; src: url(../../brand/fonts/archivo-latin-ext-600.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Plex; font-weight: 400; src: url(../../brand/fonts/ibm-plex-mono-latin-400.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Plex; font-weight: 400; src: url(../../brand/fonts/ibm-plex-mono-latin-ext-400.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+@font-face { font-family: Plex; font-weight: 500; src: url(../../brand/fonts/ibm-plex-mono-latin-500.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F; }
+@font-face { font-family: Plex; font-weight: 500; src: url(../../brand/fonts/ibm-plex-mono-latin-ext-500.woff2) format("woff2"); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF; }
+
+/* Light theme of the "Panou de date" template (Thursday / Tips lane), see BRAND.md */
+:root {
+  --bg: #f7f7f7; --surface: #ffffff; --text: #0b0b0b; --text-2: #585858; --text-3: #818181;
+  --hair: #e3e3e3; --hair-2: #d1d1d1; --brand: #ff9a00; --brand-ink: #c46e00; --proof-ink: #455d38;
+  --sans: Archivo, sans-serif; --mono: Plex, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #000; }
+body { font-family: var(--sans); color: var(--text); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+#stage { position: relative; width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; z-index: 0; }
+#stage.f916 { height: 1920px; }
+.abs { position: absolute; }
+#panel { left: 72px; top: 72px; width: 936px; height: 1206px; background: var(--surface); border: 1px solid var(--hair); z-index: 1; }
+/* everything inside the panel is placed in content coordinates (panel padding 56) */
+#content { position: absolute; left: 55px; top: 55px; width: 824px; height: 1094px; z-index: 2; }
+
+.kicker { left: 0; top: 0; display: flex; align-items: center; gap: 16px; font: 500 26px/34px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); white-space: nowrap; }
+.kicker::before { content: ""; width: 12px; height: 12px; background: var(--proof-ink); }
+.site { right: 0; top: 0; font: 400 24px/34px var(--mono); color: var(--text-3); letter-spacing: .02em; }
+.hair { height: 1px; background: var(--hair); }
+
+.context { left: 0; top: 100px; width: 824px; font: 400 42px/54px var(--sans); letter-spacing: -.012em; color: var(--text-2); }
+.context b { font-weight: 400; color: var(--text); }
+
+.lab { font: 500 20px/26px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); white-space: nowrap; }
+.big { font: 500 96px/1 var(--mono); letter-spacing: -.03em; white-space: nowrap; }
+.unit { font-size: .45em; letter-spacing: 0; margin-left: .25em; }
+
+#track { left: 0; top: 480px; width: 824px; height: 2px; background: var(--hair-2); }
+#fill { left: 0; top: 479px; height: 4px; background: var(--text); z-index: 3; }
+#thumb { top: 467px; width: 28px; height: 28px; margin-left: -14px; background: var(--text); z-index: 4; }
+.tick { top: 472px; width: 2px; height: 18px; margin-left: -1px; background: var(--hair-2); }
+.tlab { top: 508px; font: 400 22px/28px var(--mono); color: var(--text-3); transform: translateX(-50%); white-space: nowrap; }
+
+#grid { left: 0; top: 596px; width: 824px; height: 176px; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--hair); border: 1px solid var(--hair); }
+.cell { background: var(--surface); padding: 26px 30px; position: relative; }
+.cell .v { position: absolute; left: 30px; bottom: 26px; font: 500 64px/1 var(--mono); letter-spacing: -.03em; white-space: nowrap; }
+
+.mask { overflow: hidden; }
+.mask > span { display: inline-block; will-change: transform; }
+
+#delta-lab { left: 0; top: 788px; height: 30px; }
+#delta { left: -6px; top: 822px; height: 112px; padding: 4px 6px 0; color: var(--brand); }
+#delta .ch { display: inline-block; }
+
+#src { left: 0; bottom: 0; width: 824px; border: 1px solid var(--hair); padding: 22px 30px; }
+#src .lab { font-size: 18px; }
+#src .s { margin-top: 10px; font: 400 21px/31px var(--mono); color: var(--text-2); }
+
+/* preview HUD, hidden in renders */
+#hud { position: fixed; left: 12px; bottom: 12px; z-index: 99; font: 12px/1.4 monospace; color: #fff; background: rgba(0,0,0,.7); padding: 6px 10px; }
+.render #hud { display: none; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="panel" class="abs">
+    <div id="content">
+      <div class="kicker abs">Sfat practic</div>
+      <div class="site abs">idealcredit.md</div>
+      <div class="hair abs" style="left:0;top:66px;width:824px"></div>
+
+      <p class="context abs">Același credit: <b>100.000 MDL, 12% pe an.</b><br>Schimbăm doar termenul.</p>
+
+      <div class="lab abs" style="left:0;top:256px">Termen</div>
+      <div class="big abs" id="term" style="left:-4px;top:292px"></div>
+
+      <div id="track" class="abs"></div>
+      <div id="ticks"></div>
+      <div id="fill" class="abs"></div>
+      <div id="thumb" class="abs"></div>
+
+      <div id="grid" class="abs">
+        <div class="cell"><div class="lab">Rata lunară</div><div class="v" id="rate"></div></div>
+        <div class="cell"><div class="lab">Dobândă totală</div><div class="v" id="interest" style="color:var(--brand)"></div></div>
+      </div>
+
+      <div id="delta-lab" class="abs mask lab"><span>Dobândă în plus, pentru aceeași sumă</span></div>
+      <div id="delta" class="abs mask big"></div>
+
+      <div id="src" class="abs">
+        <div class="lab">Sursă</div>
+        <div class="s">calcul propriu, formulă standard de amortizare (12%/an, exemplu ilustrativ)</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="hud"></div>
+<script>
+// ---------- constants (all declared before the first seek) ----------
+const T = 10;                       // loop length (s)
+const P = 100000, R = 0.01;         // facts.md: 100.000 MDL, 12%/an
+const N0 = 24, N1 = 60, NMIN = 12, NMAX = 60;
+const W = 824;
+const params = new URLSearchParams(location.search);
+const FMT = params.get('fmt') === '916' ? '916' : '45';
+if (params.has('render')) document.documentElement.classList.add('render');
+
+// timeline (s)
+const GO = 0.8, GO_END = 3.6;       // drag 24 -> 60
+const LAB_IN = 3.75, NUM_IN = 3.95; // delta label, then delta figure
+const OUT = 7.7, OUT_END = 8.05;    // delta leaves (down into its mask)
+const BACK = 8.15, BACK_END = 9.4;  // drag 60 -> 24, then rest until the seam
+
+// ---------- math ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const rate = n => P * R / (1 - Math.pow(1 + R, -n));
+const interest = n => rate(n) * n - P;
+const fmt = v => Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+// cubic-bezier solver (exact 0/1 at the ends)
+function bez(x1, y1, x2, y2) {
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx;
+  const cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  const X = s => ((ax * s + bx) * s + cx) * s, Y = s => ((ay * s + by) * s + cy) * s;
+  return x => {
+    if (x <= 0) return 0; if (x >= 1) return 1;
+    let lo = 0, hi = 1, s = x;
+    for (let i = 0; i < 40; i++) { s = (lo + hi) / 2; if (X(s) < x) lo = s; else hi = s; }
+    return Y(s);
+  };
+}
+const drag = bez(.6, 0, .2, 1);      // hand-drag feel: soft start, long settle
+const back = bez(.5, 0, .15, 1);
+const exitE = x => x * x * x;        // geometric exit
+// closed-form spring step response (damping >= .72, tiny overshoot)
+function spring(t, f = 2.2, z = 0.78) {
+  if (t <= 0) return 0;
+  const w = 2 * Math.PI * f, wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const xOf = n => (n - NMIN) / (NMAX - NMIN) * W;
+
+// ---------- build static bits ----------
+const ticksEl = document.getElementById('ticks');
+const TICKS = [12, 24, 36, 48, 60].map(m => {
+  const tk = document.createElement('div'); tk.className = 'tick abs'; tk.style.left = xOf(m) + 'px';
+  const lb = document.createElement('div'); lb.className = 'tlab abs'; lb.style.left = xOf(m) + 'px';
+  lb.textContent = m === 12 ? '1 an' : (m / 12) + ' ani';
+  if (m === 12) { lb.style.transform = 'none'; } if (m === 60) { lb.style.transform = 'translateX(-100%)'; }
+  ticksEl.append(tk, lb); return { m, tk, lb };
+});
+const deltaEl = document.getElementById('delta');
+const DELTA = '+' + fmt(interest(N1) - interest(N0));
+deltaEl.innerHTML = [...DELTA].map(c => `<span class="ch">${c}</span>`).join('') + '<span class="ch unit">MDL</span>';
+const CH = [...deltaEl.querySelectorAll('.ch')];
+const deltaLab = document.querySelector('#delta-lab > span');
+const $ = id => document.getElementById(id);
+const termEl = $('term'), rateEl = $('rate'), intEl = $('interest'), fillEl = $('fill'), thumbEl = $('thumb');
+
+// layout per format: 9:16 keeps the 4:5 canvas in the centre (inside the Reels safe zone)
+const stage = $('stage');
+if (FMT === '916') { stage.classList.add('f916'); $('panel').style.top = (72 + 285) + 'px'; }
+
+// ---------- seek ----------
+window.seek = async (t) => {
+  t = ((t % T) + T) % T;
+  // slider position (continuous) and the month shown (integer, so every figure on screen is a real case)
+  let n = N0;
+  if (t >= GO && t < BACK) n = N0 + (N1 - N0) * drag(prog(t, GO, GO_END));
+  else if (t >= BACK) n = N1 - (N1 - N0) * back(prog(t, BACK, BACK_END));
+  const m = Math.round(n);
+  const x = xOf(n);
+  thumbEl.style.left = x + 'px';
+  fillEl.style.width = x + 'px';
+  termEl.innerHTML = `${m}<span class="unit">luni</span>`;
+  rateEl.innerHTML = `${fmt(rate(m))}<span class="unit">MDL</span>`;
+  intEl.innerHTML = `${fmt(interest(m))}<span class="unit">MDL</span>`;
+  for (const k of TICKS) {
+    const on = n >= k.m - 0.01;
+    k.tk.style.background = on ? 'var(--text)' : 'var(--hair-2)';
+    k.lb.style.color = Math.abs(n - k.m) < 0.5 ? 'var(--text)' : 'var(--text-3)';
+  }
+  // delta: label rises, then each glyph rises on its own spring (55 ms stagger); exit drops the whole line
+  const ex = exitE(prog(t, OUT, OUT_END));
+  const outY = ex * 110;
+  const lp = spring(t - LAB_IN, 2.0, 0.8);
+  deltaLab.style.transform = `translateY(${(1 - lp) * 34 + outY * 0.34}px)`;
+  CH.forEach((c, i) => {
+    const p = spring(t - NUM_IN - i * 0.055, 1.9, 0.78);
+    c.style.transform = `translateY(${(1 - p) * 124 + outY * 1.24}px) rotate(${(1 - clamp(p)) * 6}deg)`;
+  });
+  return true;
+};
+
+// ---------- preview controls (the only wall clock; renders never use it) ----------
+let cur = 0, playing = false, last = 0;
+const hud = $('hud');
+function show() { window.seek(cur); hud.textContent = `${cur.toFixed(3)} s / ${T} s  ${playing ? '▶' : '❚❚'}  space play · ←/→ frame · R replay`; }
+function loop(ts) { if (playing) { cur = (cur + (ts - last) / 1000) % T; last = ts; show(); requestAnimationFrame(loop); } }
+addEventListener('keydown', e => {
+  if (e.code === 'Space') { playing = !playing; last = performance.now(); if (playing) requestAnimationFrame(loop); show(); e.preventDefault(); }
+  if (e.code === 'ArrowRight') { playing = false; cur = (cur + 1 / 60) % T; show(); }
+  if (e.code === 'ArrowLeft') { playing = false; cur = (cur - 1 / 60 + T) % T; show(); }
+  if (e.code === 'KeyR') { cur = 0; playing = true; last = performance.now(); requestAnimationFrame(loop); }
+});
+document.fonts.ready.then(() => { window.seek(0); requestAnimationFrame(() => { show(); window.ready = true; }); });
+</script>
+</body>
+</html>

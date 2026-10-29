@@ -51,6 +51,12 @@ export const blogPosts: BlogPost[] = [
         dek: "Din octombrie 2025, Moldova e în SEPA. Un transfer în euro costa cel puțin 20 de euro. Acum costă, în medie, 1,09 euro. Dar plățile mari merg încă prin SWIFT.",
         date: "2026-10-02",
     },
+    {
+        slug: "prima-casa-pretul-apartamentelor",
+        title: "Prima Casă n-a pornit scumpirea apartamentelor. Dar le ține prețul sus.",
+        dek: "În 2024, 93 din 100 de locuințe s-au cumpărat fără credit bancar. Apoi statul a început să garanteze credite fără avans, de până la 2,5 milioane de lei. Prețul a mai crescut cu 12% și de atunci stă aproape pe loc.",
+        date: "2026-10-29",
+    },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
