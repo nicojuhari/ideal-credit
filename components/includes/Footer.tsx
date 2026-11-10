@@ -6,108 +6,112 @@ import { useFacebookPixel } from "@/hooks/useFacebookPixel";
 import { OFFICES } from "@/lib/constants";
 import Container from "@/components/ds/Container";
 import Note from "@/components/ds/Note";
+import { ButtonPrimary } from "@/components/ds/Button";
 
-const productLinks = [
-    { href: "/credite", label: "Toate creditele" },
-    { href: "/credite/credit-pentru-afaceri", label: "Afaceri" },
-    { href: "/credite/credit-investitional", label: "Investițional" },
-    { href: "/credite/credit-pentru-agricultura", label: "Agricultură" },
-    { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
-    { href: "/credite/credit-pentru-automobil", label: "Automobil" },
-    { href: "/credite/credit-pentru-reparatie", label: "Reparație" },
-];
-
-const companyLinks = [
-    { href: "/despre-noi", label: "Despre noi" },
-    { href: "/calculator-credit", label: "Calculator" },
-    { href: "/dictionar-financiar", label: "Dicționar financiar" },
-    { href: "/blog", label: "Dincolo de Cifre" },
-    { href: "/contacte", label: "Contacte" },
-    { href: "/cerere-de-credit-online", label: "Cerere online" },
-    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de Supraveghere" },
+const groups = [
+    {
+        title: "Afaceri",
+        links: [
+            { href: "/credite/credit-pentru-afaceri", label: "Credit pentru afaceri" },
+            { href: "/credite/credit-investitional", label: "Credit investițional" },
+            { href: "/credite/credit-pentru-agricultura", label: "Credit pentru agricultură" },
+        ],
+    },
+    {
+        title: "Persoane fizice",
+        links: [
+            { href: "/credite/credit-pentru-nevoi-personale", label: "Nevoi personale" },
+            { href: "/credite/credit-pentru-reparatie", label: "Reparație" },
+            { href: "/credite/credit-pentru-automobil", label: "Automobil" },
+        ],
+    },
+    {
+        title: "Ideal Credit",
+        links: [
+            { href: "/despre-noi", label: "Despre noi" },
+            { href: "/calculator-credit", label: "Calculator" },
+            { href: "/dictionar-financiar", label: "Dicționar financiar" },
+            { href: "/cerere-de-credit-online", label: "Cerere online" },
+            { href: "/contacte", label: "Contacte" },
+        ],
+    },
 ];
 
 const legalLinks = [
+    { href: "/autoritatea-de-supraveghere", label: "Autoritatea de supraveghere" },
     { href: "/terms", label: "Termeni" },
     { href: "/privacy", label: "Confidențialitate" },
     { href: "/cookies", label: "Cookies" },
 ];
 
-const chisinau = OFFICES.find((o) => o.city.includes("Chișinău"))!;
-const causeni = OFFICES.find((o) => o.city.includes("Căușeni"))!;
+const offices = [
+    { city: "Chișinău", o: OFFICES.find((o) => o.city.includes("Chișinău"))! },
+    { city: "Căușeni", o: OFFICES.find((o) => o.city.includes("Căușeni"))! },
+];
 
-function FooterLinkGroup({ title, links }: { title: string; links: { href: string; label: string }[] }) {
-    return (
-        <div>
-            <p className="mb-3.5 text-xs uppercase tracking-[.1em] text-dc-text-muted">{title}</p>
-            <ul className="flex flex-col gap-[11px] text-[15px]">
-                {links.map((l) => (
-                    <li key={l.href}>
-                        <Link
-                            title={l.label}
-                            href={l.href}
-                            className="text-dc-text-muted transition-colors duration-[120ms] hover:text-white"
-                        >
-                            {l.label}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
+const groupTitle = "mb-4 text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted";
 
 export default function Footer() {
     const { trackEvent } = useFacebookPixel();
 
     return (
-        <footer className="dc dc-section dc-section--footer border-t border-dc-line">
-            <Container className="flex flex-col gap-14">
-                <div className="grid gap-10" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
-                    <div className="flex flex-col gap-4">
+        <footer className="dc overflow-hidden pt-14 sm:pt-20">
+            <Container>
+                <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.2fr)] lg:gap-20">
+                    <div className="max-w-[360px]">
                         <Link href="/" className="flex items-center gap-[11px]">
                             <Logo className="w-9" />
-                            <span className="text-[15px] font-medium text-dc-text">Ideal Credit</span>
+                            <span className="text-base font-semibold tracking-[-.01em] text-dc-text">Ideal Credit</span>
                         </Link>
-                        <p className="max-w-[280px] text-[15px] leading-[1.6] text-dc-text-muted">
-                            Credite pentru succes în afaceri și nevoi personale.
+                        <p className="mt-5 text-[15px] leading-[1.6] text-dc-text-muted">
+                            Companie de creditare nebancară din Moldova, din 2010. Credite pentru afaceri și nevoi personale.
                         </p>
+                        <ButtonPrimary href="/cerere-de-credit-online" className="mt-7">
+                            Cerere online
+                        </ButtonPrimary>
                     </div>
 
-                    <FooterLinkGroup title="Soluții" links={productLinks} />
-                    <FooterLinkGroup title="Companie" links={companyLinks} />
-
-                    <div>
-                        <p className="mb-3.5 text-xs uppercase tracking-[.1em] text-dc-text-muted">Oficii</p>
-                        <p className="text-[15px] leading-[1.6] text-dc-text-muted">
-                            {causeni.city.replace(/^(or\.|m\.)\s*/, "")} · {causeni.street} {causeni.addressNumbers}
-                            <br />
-                            <a
-                                href={`tel:${causeni.mobile}`}
-                                onClick={() => trackEvent("Contact")}
-                                className="font-dc-mono text-dc-text transition-colors duration-[120ms] hover:text-white"
-                            >
-                                {causeni.mobileDisplay}
-                            </a>
-                        </p>
-                        <p className="mt-6 text-[15px] leading-[1.6] text-dc-text-muted">
-                            {chisinau.city.replace(/^(or\.|m\.)\s*/, "")} · {chisinau.street} {chisinau.addressNumbers}
-                            <br />
-                            <a
-                                href={`tel:${chisinau.mobile}`}
-                                onClick={() => trackEvent("Contact")}
-                                className="font-dc-mono text-dc-text transition-colors duration-[120ms] hover:text-white"
-                            >
-                                {chisinau.mobileDisplay}
-                            </a>
-                        </p>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+                        {groups.map((g) => (
+                            <div key={g.title}>
+                                <p className={groupTitle}>{g.title}</p>
+                                <ul className="flex flex-col gap-1 text-[15px]">
+                                    {g.links.map((l) => (
+                                        <li key={l.href}>
+                                            <Link href={l.href} className="block py-1.5 text-[#c8c8c8] transition-colors hover:text-white">
+                                                {l.label}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                        <div className="col-span-2 md:col-span-1">
+                            <p className={groupTitle}>Oficii</p>
+                            <div className="flex flex-col gap-5 text-[15px] leading-[1.5]">
+                                {offices.map(({ city, o }) => (
+                                    <div key={city}>
+                                        <p className="text-dc-text">{city}</p>
+                                        <p className="text-dc-text-muted">
+                                            {o.street} {o.addressNumbers.replace(/,\s*MD-\d+$/, "")}
+                                        </p>
+                                        <a
+                                            href={`tel:${o.mobile}`}
+                                            onClick={() => trackEvent("Contact")}
+                                            className="inline-block py-1 font-dc-mono text-sm text-dc-accent"
+                                        >
+                                            {o.mobileDisplay}
+                                        </a>
+                                    </div>
+                                ))}
+                                <p className="font-dc-mono text-[13px] text-dc-text-muted">Luni–vineri, 8:30–16:30</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div className="border border-dc-line px-6 py-8">
-                    <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
-                        Noi respectăm ce spune legea, în special legea nr. 202/2013:
-                    </p>
+                <div className="mt-14 border border-dc-line px-6 py-7 sm:mt-16">
+                    <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">La creditele pentru persoane fizice respectăm legea nr. 202/2013:</p>
                     <Note className="mt-4 max-w-[900px]">
                         <ol className="space-y-1.5 !list-disc list-inside text-xs">
                             <li>rata maximală a dobânzii anuale specificate în contract nu poate depăși 50%</li>
@@ -120,21 +124,23 @@ export default function Footer() {
                     </Note>
                 </div>
 
-                <div className="flex flex-wrap justify-between gap-5 text-xs tracking-[.06em] text-dc-text-muted uppercase">
-                    <span>© {new Date().getFullYear()} Ideal Credit SRL</span>
-                    <span className="flex flex-wrap gap-6">
+                <div className="mt-10 flex flex-col gap-4 border-t border-dc-line py-6 text-[13px] text-dc-text-muted sm:flex-row sm:flex-wrap sm:justify-between">
+                    <span>© {new Date().getFullYear()} OCN „Ideal Credit” SRL · IDNO 1010608000541</span>
+                    <nav aria-label="Informații legale" className="flex flex-wrap gap-x-6 gap-y-2">
                         {legalLinks.map((l) => (
-                            <Link
-                                key={l.href}
-                                href={l.href}
-                                className="text-dc-text-muted transition-colors duration-[120ms] hover:text-white"
-                            >
+                            <Link key={l.href} href={l.href} className="py-1 transition-colors hover:text-white">
                                 {l.label}
                             </Link>
                         ))}
-                    </span>
+                    </nav>
                 </div>
             </Container>
+            <p
+                aria-hidden
+                className="px-6 pb-8 pt-4 text-[56px] font-semibold leading-[.86] tracking-[-.055em] text-[#161616] sm:text-center sm:text-[clamp(56px,8.4vw,132px)] lg:whitespace-nowrap"
+            >
+                Credite pentru succes
+            </p>
         </footer>
     );
 }

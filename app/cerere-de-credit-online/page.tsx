@@ -368,7 +368,7 @@ export default function CerereOnlinePage() {
                                     <div className="flex min-h-[240px] flex-col justify-center py-6">
                                         <FieldSet className="gap-0">
                                             <FieldLegend className={cn(legendClass, "mb-6 px-1 leading-snug")}>
-                                                Poți oferi un fidejusor (garant / поручитель)?
+                                                Poți oferi un fidejusor (o persoană care garantează cu venitul său)?
                                                 <span className="mt-2 block text-sm font-normal text-dc-text-muted">
                                                     Este o condiție obligatorie.
                                                 </span>
@@ -427,13 +427,13 @@ export default function CerereOnlinePage() {
                                                     type="number"
                                                     step={100}
                                                     min={10000}
-                                                    max={300000}
+                                                    max={500000}
                                                     aria-invalid={showErr("suma")}
                                                     className="font-dc-mono"
                                                     {...register("suma")}
                                                 />
                                                 <FieldDescription className="text-xs text-dc-text-muted">
-                                                    10 000 - 300 000 lei
+                                                    10.000–500.000 lei
                                                 </FieldDescription>
                                                 {errMsg("suma") && <FieldError className={errorClass}>{errMsg("suma")}</FieldError>}
                                             </Field>
@@ -557,7 +557,7 @@ export default function CerereOnlinePage() {
                                                     render={({ field }) => <YesNoChoice value={field.value} onChange={field.onChange} />}
                                                 />
                                                 <FieldDescription className="text-xs text-dc-text-muted">
-                                                    Bănci, OCN, leasing - orice credit activ
+                                                    Orice credit activ, inclusiv leasing
                                                 </FieldDescription>
                                                 {errMsg("are_alte_credite") && (
                                                     <FieldError className={errorClass}>{errMsg("are_alte_credite")}</FieldError>
@@ -606,10 +606,9 @@ export default function CerereOnlinePage() {
                                         </FieldGroup>
 
                                         <p className="mt-8 text-xs leading-[1.7] text-dc-text-muted">
-                                            Trimițând cererea, confirmi că: (1) este o cerere preliminară, fără caracter obligatoriu pentru
-                                            nicio parte; (2) îți spunem sincer rezultatul analizei - dacă suma sau situația ta nu se
-                                            potrivesc, afli asta înainte de dosarul complet, nu după; (3) vei oferi fidejusor și vei veni în
-                                            oficiu pentru semnare.
+                                            Cererea nu te obligă la nimic. Te sunăm și îți spunem sincer dacă suma și termenul ți se potrivesc.
+                                            Dacă nu se potrivesc, afli asta înainte să aduni actele. Trimițând cererea, confirmi că poți oferi
+                                            un fidejusor și că vii la oficiu pentru semnarea contractului.
                                         </p>
                                     </FieldSet>
                                 )}
@@ -649,14 +648,14 @@ export default function CerereOnlinePage() {
                                 <span className="block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
                                 Trimisă
                             </p>
-                            <DialogTitle className="mt-1">Cerere trimisă cu succes!</DialogTitle>
+                            <DialogTitle className="mt-1">Cererea a fost trimisă.</DialogTitle>
                         </DialogHeader>
                         <p className="text-[15px] leading-[1.55] text-dc-text-muted">
                             Revenim cu un apel în cel mult{" "}
                             <Figure size="ordinal" proof>
                                 3 ore
                             </Figure>{" "}
-                            (Luni - Vineri).
+                            (luni–vineri, 8:30–16:30).
                         </p>
                     </DialogContent>
                 </Dialog>

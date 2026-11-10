@@ -1,6 +1,18 @@
 ## Last Updated
 
-2026-09-22 by /unique-value-strategy - **Primary Positioning superseded.** The
+2026-11-10 by owner decision - **Home H1 is now "Credite nebancare în Moldova."** ("Plătești doar dobânda." moved back to the hero cost card, same day) Subhead: "Pentru afaceri și nevoi personale, de la 10.000 la 500.000 lei. Analizăm scopul creditului și îți propunem cea mai bună variantă pentru tine." Title: "Credite nebancare în Moldova, fără comisioane". Keeps the "credite nebancare" keyword first, adds Moldova, and puts the one-cost fact in the H1. Replaces the 2026-11-09 category line below.
+Previously: 2026-11-09 by owner decision - **Home page H1 is now "Credite nebancare pentru
+afaceri și nevoi personale."** It replaces "Credite pentru succes." (which stays as
+the brand sign-off: social posts, header link titles, TrustBadge). The owner turned
+down the angle options from /positioning-angles and chose this category line as
+the center of the site: say plainly what we are (non-bank lender) and who it is for
+(business first - ~80% of focus on micro/small/medium firms, loans mostly up to
+500.000 lei - and personal needs second). No blog; only service/solution pages.
+"Servicii financiare" was considered and dropped: Ideal Credit offers credit only.
+The 2026-09-22 mechanism (we analyze the goal and financial situation) stays as the
+hero subhead. Research behind the decision (competitors, AI consensus, VoC) is in
+the "2026-11-09 landscape" section below.
+Previously: 2026-09-22 by /unique-value-strategy - **Primary Positioning superseded.** The
 "Local Growth Partner" headline statement (Angle 1) is replaced by the strategy in
 `brand/strategy.md`: the honest pre-application verdict, backed by 16 years of
 pattern-recognition. Core Philosophy, the four-layer positioning map, the
@@ -71,7 +83,9 @@ Psychology: Entrepreneurs and households either fear an unexplained bank rejecti
 Headline direction: "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută."
 Best for: entrepreneurs and households who want a real answer, not just a fast one - all funnel stages, especially anyone who has been burned by an unexplained bank "no" or is wary of an unconditional OCN "yes."
 
-**Home page H1 (locked 2026-09-11, round 2): "Credite pentru succes."** Unchanged
+**Home page H1 (2026-11-09, owner decision): "Credite nebancare pentru afaceri și
+nevoi personale."** Replaces "Credite pentru succes." (now the sign-off only).
+The paragraph below is the 2026-09-22 reasoning, kept for history: unchanged
 by this update - the new strategy gives this existing tagline a literal meaning
 for the first time (success is checked before the signature, not assumed after)
 rather than replacing it. See `brand/strategy.md` for the subhead pairing that
@@ -161,6 +175,45 @@ Additional white space:
 - Nobody sells by _situation_ - every competitor site is a product menu
 - Nobody states who they are **not** for; the whole market signals unconditional yes
 - Nobody writes for a reader who can read a balance sheet
+
+### 2026-11-09 landscape (business focus)
+
+Data: LIVE pages for Microinvest, MK Kredit, Prima Finanțare, maib, Victoriabank,
+iute, Easy Credit (blocked). Ad libraries (Meta 403, Google JS-only) not retrieved -
+check by hand. VoC thin: news interviews + lender-curated stories, no forums.
+
+- Size/speed are lost ground: Microinvest up to 10M lei (6M fără gaj), decision 2h
+  (Business Rapid); MK Kredit up to 5M, Rapid up to 500k, approval 1-24h;
+  Victoriabank 8M "fără garanții materiale"; maib approval 2h. Ideal Credit's ~500k
+  and 1-2 days can't lead.
+- Near-identical category lines already in use: MK Kredit "finanțare rapidă pentru
+  afaceri și consum personal"; Prima Finanțare "Pentru afaceri, agricultură,
+  inclusiv și pentru nevoi personale". The H1 is a category statement, not a
+  differentiator - differentiation has to come from the subhead/mechanism and proof.
+- Banks attack OCN clients directly: maib "Ai contractat în grabă un credit scump
+  pentru afacerea ta?" (Refinanțare plus). maib also runs city landing pages
+  ("Credite pentru afaceri în Bălți/Orhei/Cahul...").
+- White space confirmed: nobody advises what/how much to finance (maib consulting
+  only "de la parteneri"; Microinvest boasts "Nu este nevoie de ... business plan").
+- AI/search consensus: banks + state programs (ODA IMM GARANT, Program 373, FACEM)
+  for cheap money, OCNs as costly fallback; Microinvest is the named OCN. Ideal
+  Credit absent from every AI-style summary; only third-party description is
+  jobber.md.
+- VoC: «не у всех предпринимателей есть необходимые навыки для получения
+  финансирования» (SME Alliance, newsmaker.md, 2026-03-26); "am avut o contabilitate
+  foarte clară și un plan de dezvoltare structurat, procesul a fost gestionabil"
+  (furniture maker, radiomoldova.md, 2026-03-15); "I was always skeptical about
+  loans... better to do everything with my own money" (farmer, microinvest.md).
+- Stats: 15% of small vs 50% of medium firms use bank credit; ~90% of small firms
+  self-fund; banks and OCNs reject ~22% (BNM SME study). Access to finance 3.88/10,
+  53% say it's hard (METRIX/AmCham, Oct 2026).
+- Search fit: "credite nebancare" had 1,641 impressions / 131 clicks at avg position
+  19.8 (GSC Aug-Nov 2026) - the new H1 targets it directly.
+
+Angles offered 2026-11-09 and declined by the owner: Credit pe măsura afacerii
+(mechanism), Prea mică pentru bancă (specificity), Cel mai scump credit e cel luat
+în grabă (enemy), Spune-ne ce vrei să faci (= Angle 7). Still usable as subheads,
+section copy or social hooks.
 
 ## All Angles Explored
 

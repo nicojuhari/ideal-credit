@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import ProductHero from "@/components/product/ProductHero";
-import SpecStrip from "@/components/product/SpecStrip";
-import LabelGrid from "@/components/product/LabelGrid";
-import EligibilityRows from "@/components/product/EligibilityRows";
-import ProductDescription from "@/components/product/ProductDescription";
-import DocumentRows from "@/components/product/DocumentRows";
-import ProductFaq from "@/components/product/ProductFaq";
-import type { FaqItem } from "@/components/product/ProductFaq";
+import SplitSection from "@/components/ds/SplitSection";
+import Analysis from "@/components/home/Analysis";
 import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
-import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
+import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
+import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
+import MobileCallBar from "@/components/includes/MobileCallBar";
 import { personalLoanSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -22,250 +17,170 @@ const breadcrumbItems = [
     { name: "Credit pentru nevoi personale", url: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
 ];
 
+const DESCRIPTION =
+    "Credit pentru nevoi personale în Moldova, fără comisioane. De la 10.000 la 300.000 lei, pe 12-48 de luni. Plătești doar dobânda fixă. Decizie în 2-3 ore.";
+
 export const metadata: Metadata = {
-    title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
-    description:
-        "Credit pentru nevoi personale în Moldova - analizăm situația ta și îți spunem dacă are sens. Dobândă fixă, fără comisioane ascunse.",
+    title: "Credit pentru nevoi personale în Moldova | Ideal Credit",
+    description: DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-nevoi-personale" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/credite/credit-pentru-nevoi-personale",
-        title: "Credit pentru Nevoi Personale în Moldova | Ideal Credit",
-        description:
-            "Credit pentru nevoi personale în Moldova - analizăm situația ta și îți spunem dacă are sens. Dobândă fixă, fără comisioane ascunse.",
+        title: "Credit pentru nevoi personale în Moldova | Ideal Credit",
+        description: DESCRIPTION,
     },
 };
 
 const personalFaqItems: FaqItem[] = [
     {
-        question: "Pot obține credit dacă am un istoric de credit negativ?",
-        answer: "Analizăm individual. Un incident din trecut nu înseamnă refuz automat. Contează cel mai mult comportamentul din ultimele 12 luni și capacitatea actuală de rambursare - un incident vechi urmat de plăți la timp cântărește mult mai puțin decât întârzieri recente. Un fidejusor cu profil solid poate echilibra un dosar mai slab.",
+        question: "Aveți comisioane?",
+        answer: "Nu. Nu plătești comision de analiză sau de acordare. Plătești doar dobânda fixă.",
     },
     {
-        question: "Ce se întâmplă dacă suma cerută nu mi se potrivește?",
-        answer: `Îți spunem sincer, la telefon, înainte de dosarul complet. Cu ${yearsSinceFoundation} ani de experiență, recunoaștem când o sumă e prea mare pentru capacitatea ta de rambursare - și recomandăm o sumă potrivită sau o altă structură, nu doar un refuz fără explicație.`,
+        question: "Ce se întâmplă dacă suma cerută e prea mare pentru venitul meu?",
+        answer: `Îți spunem la telefon, înainte să aduni actele. Avem ${yearsSinceFoundation} ani de experiență. Îți propunem o sumă potrivită pentru venitul tău.`,
     },
     {
-        question: "Cât pot împrumuta fără garanții?",
-        answer: "Depinde de venitul tău și situația financiară. Comunicăm limita clară înainte de cererea formală - nu îți pierzi timpul cu un dosar complet dacă suma nu e accesibilă fără garanții.",
+        question: "Cât pot lua fără gaj?",
+        answer: "Depinde de venitul tău. Îți spunem limita la prima discuție. Așa nu aduni acte degeaba.",
     },
     {
         question: "Trebuie neapărat adeverință de salariu?",
-        answer: "Nu neapărat. Acceptăm orice formă de confirmare a veniturilor - adeverință de salariu, extras de card, pensie, activitate independentă sau verificare BIC (Biroul Istoriilor de Credit). Discutăm ce ai disponibil înainte de a cere documente.",
+        answer: "Nu neapărat. Poți confirma venitul cu adeverință de salariu, extras de card sau pensie. Merge și venitul din activitate independentă. Putem face și verificarea la Biroul Istoriilor de Credit.",
     },
     {
-        question: "Pot lua un nou credit dacă am deja unul activ?",
-        answer: "Da, dacă capacitatea de rambursare o permite. Analizăm toate obligațiile existente și suma totală care poate fi gestionată confortabil.",
+        question: "Pot lua un credit nou dacă am deja unul activ?",
+        answer: "Da, dacă venitul îți permite. Ne uităm la toate ratele pe care le plătești deja.",
     },
     {
         question: "Cum primesc banii după aprobare?",
-        answer: "Transfer bancar sau numerar la birou - alegem împreună ce e mai convenabil pentru tine.",
+        answer: "Pe cont sau în numerar la oficiu. Alegi tu.",
     },
     {
-        question: "Pot rambursa creditul mai devreme?",
-        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată - nicio penalitate.",
+        question: "Pot achita creditul înainte de termen?",
+        answer: "Da, fără nicio taxă. Plătești dobânda doar pentru perioada în care ai folosit banii.",
     },
     {
-        question: "Am mai multe credite active - le pot consolida într-unul singur?",
-        answer: "Da. Dacă plătești rate la 2 sau mai multe credite, analizăm situația și, dacă are sens financiar, le aduni într-o singură rată lunară, de obicei mai mică. Calculăm împreună înainte de orice decizie - dacă nu are sens pentru tine, îți spunem direct.",
+        question: "Am nevoie de fidejusor?",
+        answer: "La primul credit, da. Dacă ai achitat la timp, la următorul credit poți primi o dobândă mai mică și poți lua credit fără fidejusor.",
     },
     {
-        question: "Există condiții speciale pentru bugetari (medici, militari, profesori)?",
-        answer: "Venitul stabil, garantat de stat, simplifică analiza dosarului. Documentele acceptate includ adeverința de salariu sau extrasul din sistemul de salarizare - condițiile exacte se stabilesc în funcție de venit și situația fiecărui solicitant.",
+        question: "Bugetarii au condiții speciale?",
+        answer: "Condițiile sunt aceleași ca pentru toți clienții. Venitul de la stat este stabil și se confirmă ușor, de aceea analiza e mai simplă. Ajunge adeverința de salariu sau extrasul de card.",
     },
 ];
 
-const useCases = [
-    { label: "Renovare acasă", href: "/credite/credit-pentru-reparatie" },
-    { label: "Electrocasnice, mobilă" },
-    { label: "Tratament medical" },
-    { label: "Nuntă, botez, eveniment" },
-    { label: "Vacanță planificată" },
-    { label: "Consolidare credite", href: "#consolidare" },
-];
-
-const bugetariCategories = [
-    {
-        title: "Medici și personal medical",
-        items: [
-            "Medici, asistenți medicali, farmaciști",
-            "Angajați ai spitalelor și policlinicilor de stat",
-            "Personal auxiliar din sistemul de sănătate",
-        ],
-    },
-    {
-        title: "Militari și polițiști",
-        items: [
-            "Ofițeri și subofițeri ai Armatei Naționale",
-            "Angajați ai Ministerului Afacerilor Interne",
-            "Personal al Serviciului de Protecție și Pază de Stat",
-        ],
-    },
-    {
-        title: "Alți angajați bugetari",
-        items: [
-            "Profesori, educatori, personal didactic",
-            "Funcționari publici și angajați ai administrației locale",
-            "Angajați ai instituțiilor de stat și autorităților publice",
-        ],
-    },
-];
-
-const worthConsolidatingItems = [
-    "Plătești rate la 2 sau mai multe credite și vrei să simplifici",
-    "Rata actuală consumă prea mult din venitul lunar",
-    "Dobânda actuală este mai mare decât ce poți obține acum",
-    "Vrei să eliberezi un garant de pe un contract mai vechi",
+const bugetari = [
+    { title: "Medici și personal medical", note: "medici, asistenți medicali, farmaciști, personal auxiliar" },
+    { title: "Militari", note: "ofițeri și subofițeri ai Armatei Naționale" },
+    { title: "Polițiști", note: "angajați ai MAI și ai Serviciului de Protecție și Pază de Stat" },
+    { title: "Profesori și educatori", note: "personal didactic" },
+    { title: "Funcționari publici", note: "administrația locală, instituții și autorități de stat" },
 ];
 
 export default function CreditNevoiPersonalePage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personalLoanSchema) }} />
-            <ProductHero
+
+            <ServiceHero
                 breadcrumb={breadcrumbItems}
-                category="Persoane fizice"
-                position={4}
                 title={
                     <>
-                        Credit pentru nevoi <Accent>personale.</Accent>
+                        Credit pentru nevoi personale, <Accent>fără comisioane.</Accent>
                     </>
                 }
-                subtitle="Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, costuri clare, decizie în 2-3 ore."
-                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
-                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
-            />
-            <SpecStrip
-                specs={[
-                    { value: "10 000", label: "MDL sumă minimă" },
-                    { value: "12-48", label: "luni termen" },
-                    { value: "2-3 ore", label: "până la decizie", proof: true },
-                    { value: "4 %", label: "dobândă fixă / lună" },
+                subtitle="De la 10.000 la 300.000 lei, pentru ce ai planificat. Analizăm scopul creditului și veniturile tale. Apoi îți spunem ce sumă și ce termen ți se potrivesc."
+                rows={[
+                    { label: "Suma", value: "10.000–300.000 lei" },
+                    { label: "Termen", value: "12–48 luni" },
+                    { label: "Decizia", value: "2–3 ore" },
                 ]}
             />
 
-            <LabelGrid
-                marker="Destinații"
+            <Situations
                 title={
                     <>
-                        Când folosești un credit <Accent>personal</Accent>
+                        Pentru ce iau oamenii <Accent>credit la noi.</Accent>
                     </>
                 }
-                items={useCases}
-            />
-
-            <EligibilityRows
-                marker="Eligibilitate"
-                title={
-                    <>
-                        Condiții de <Accent>bază</Accent>
-                    </>
-                }
+                intro="Alegem rata după venitul tău lunar. Așa o plătești ușor până la capăt."
                 items={[
-                    "Vârsta de la 23 de ani",
-                    "Sursă de venit stabilă (angajat, pensionar, antreprenor)",
-                    "Buletin de identitate valabil",
-                    "Capacitate de rambursare demonstrabilă",
+                    { label: "Renovare acasă", text: "Schimbi geamurile sau refaci baia. Plătești meșterii și materialele acum." },
+                    { label: "Mobilă și electrocasnice", text: "Cumperi o bucătărie nouă sau o mașină de spălat. Achiți în rate lunare." },
+                    { label: "Nuntă sau botez", text: "Ai stabilit data evenimentului. Banii pentru sală și restaurant trebuie dați din timp." },
+                    { label: "Studii sau tratament", text: "Plătești taxa de studii sau un tratament. Achiți suma în rate lunare." },
                 ]}
             />
 
-            <Calculator />
-
-            <Section
-                marker="Detalii"
+            <SplitSection
+                id="bugetari"
                 title={
                     <>
-                        Credit personal pentru orice nevoie, din <Accent>Moldova</Accent>
+                        Credit pentru <Accent>bugetari.</Accent>
                     </>
                 }
+                description="Venitul stabil de la stat face analiza mai simplă. Confirmi venitul cu adeverința de salariu sau extrasul din sistemul de salarizare."
             >
-                <ProductDescription
-                    items={[
-                        {
-                            title: "Fără destinație impusă",
-                            text: "Banii sunt ai tăi - renovare, tratament medical, eveniment de familie sau orice altă nevoie. Nu trebuie să justifici pentru ce îi folosești.",
-                        },
-                        {
-                            title: "Ce cerem",
-                            text: "Venit stabil și buletin de identitate valabil. Fără comisioane de analiză sau deschidere. Dobânda e fixă - știi de la început exact cât plătești lunar. La primul credit, fidejusorul (garant personal) e obligatoriu.",
-                        },
-                        {
-                            title: "Cât durează",
-                            text: "Aprobăm în 2-3 ore dacă situația ta e clară - și, dacă nu e, îți spunem înainte să completezi dosarul. Clienți cu istoric bun de plată pot obține dobândă mai mică și fără fidejusor la creditele următoare.",
-                        },
-                    ]}
-                />
-            </Section>
+                <ul className="border-b border-dc-line">
+                    {bugetari.map((b) => (
+                        <li
+                            key={b.title}
+                            className="flex flex-col gap-1 border-t border-dc-line py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+                        >
+                            <span className="text-lg font-semibold text-dc-text">{b.title}</span>
+                            <span className="text-[15px] text-dc-text-muted sm:text-right">{b.note}</span>
+                        </li>
+                    ))}
+                </ul>
+                <p className="mt-5 text-[15px] leading-[1.55] text-dc-text-muted">Condițiile exacte depind de venitul fiecăruia.</p>
+            </SplitSection>
 
-            <EligibilityRows
-                id="consolidare"
-                marker="Consolidare"
+            <CostExample sum={30000} term={24} />
+            <Calculator max={300000} />
+
+            <Analysis
                 title={
                     <>
-                        Ai mai multe credite <Accent>active?</Accent>
+                        Ce analizăm înainte <Accent>de aprobare.</Accent>
                     </>
                 }
-                description="Consolidarea nu este o soluție separată, ci o opțiune discutată în cadrul consultației - merită analizat-o dacă:"
-                items={worthConsolidatingItems}
+                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Avem ${yearsSinceFoundation} ani de experiență.`}
+                steps={[
+                    { title: "Planul", body: "Ne spui pentru ce ai nevoie de bani. Vedem dacă suma și termenul se potrivesc." },
+                    { title: "Veniturile", body: "Vedem din ce bani plătești rata: salariu, pensie sau venit din activitate independentă." },
+                    { title: "Garanțiile", body: "La primul credit cerem un fidejusor. Pentru sume mari cerem și gaj. Le discutăm la final." },
+                ]}
+                showOutcomes={false}
             />
 
-            <Section
-                id="bugetari"
-                marker="Bugetari"
-                title={
-                    <>
-                        Condiții speciale pentru <Accent>bugetari</Accent>
-                    </>
-                }
-            >
-                <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
-                    {bugetariCategories.map((cat, i) => (
-                        <div key={cat.title} className="dc-cell p-8">
-                            <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
-                            <h3 className="mt-6 text-xl tracking-[-.025em] text-dc-text">{cat.title}</h3>
-                            <ul className="mt-4 flex flex-col gap-2.5">
-                                {cat.items.map((item) => (
-                                    <li key={item} className="text-[15px] leading-[1.5] text-dc-text-muted">
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
-                </div>
-            </Section>
+            <Eligibility
+                can={[
+                    "ai cel puțin 23 de ani și buletin valabil;",
+                    "ai un venit stabil: salariu, pensie sau activitate independentă;",
+                    "ai un fidejusor (garant) la primul credit.",
+                ]}
+                cannot={["o sumă la care rata ar lua o parte prea mare din venitul lunar. În acest caz îți propunem o sumă mai mică."]}
+            />
+
+            <Documents
+                items={[
+                    { title: "Buletinul de identitate", note: "obligatoriu" },
+                    { title: "Confirmarea venitului", note: "adeverință de salariu, extras de card sau pensie" },
+                    { title: "Extrasele de cont", note: "pe ultimele 3 luni · recomandat" },
+                    { title: "Actele fidejusorului sau ale bunului pus gaj", note: "dacă e cazul" },
+                ]}
+                footnote="Gajul imobiliar îl putem cere pentru sume mari sau venituri care nu sunt stabile."
+            />
 
             <Process />
-
-            <DocumentRows
-                id="documente"
-                marker="Dosar"
-                title={
-                    <>
-                        Documente <Accent>necesare</Accent>
-                    </>
-                }
-                items={[
-                    { title: "Buletin de identitate", note: "Obligatoriu" },
-                    { title: "Confirmare a veniturilor", note: "Adeverință / extras / BIC" },
-                    { title: "Ultimele 3 extrase de cont bancar", note: "Recomandat" },
-                    { title: "Actele fidejusorului sau ale bunului gajat", note: "Dacă e cazul" },
-                ]}
-                footnote="La primul credit fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile. Clienții repetați, fără întârzieri la plăți pot obține creditul fără fidejusor."
-            />
-
-            <ProductFaq
-                title={
-                    <>
-                        Întrebări despre creditul <Accent>personal</Accent>
-                    </>
-                }
-                items={personalFaqItems}
-            />
-            <WhyUs />
+            <LatePayment consumer example="salariul întârzie sau ai o cheltuială neplanificată." />
+            <ProductFaq items={personalFaqItems} />
             <ClosingCta />
+            <MobileCallBar />
         </div>
     );
 }

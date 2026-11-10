@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
-    title: "Politica de Cookies - OCN Ideal Credit SRL",
+    title: "Politica de cookies | Ideal Credit",
     description:
         "Cum folosim cookie-urile pe idealcredit.md: tipuri de cookies, servicii terțe (Google, Meta) și cum le poți controla sau dezactiva din browser.",
     alternates: { canonical: "https://idealcredit.md/cookies" },
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/cookies",
-        title: "Politica de Cookies - OCN Ideal Credit SRL",
+        title: "Politica de cookies | Ideal Credit",
         description:
             "Cum folosim cookie-urile pe idealcredit.md: tipuri de cookies, servicii terțe (Google, Meta) și cum le poți controla sau dezactiva din browser.",
     },
@@ -19,14 +19,8 @@ export const metadata: Metadata = {
 
 export default function CookiesPage() {
     return (
-        <LegalLayout
-            title={
-                <>
-                    Politica de Cookies
-                    <br />
-                    OCN Ideal Credit SRL
-                </>
-            }
+        <LegalLayout path="/cookies"
+            title="Politica de cookies"
             updated="Această Politică de Cookies a fost actualizată ultima dată la 15.09.2026."
         >
             <p>

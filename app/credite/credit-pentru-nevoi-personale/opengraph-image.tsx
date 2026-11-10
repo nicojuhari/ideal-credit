@@ -11,6 +11,6 @@ export default async function Image() {
         eyebrowTotal: 6,
         title: "Credit pentru nevoi personale.",
         accent: "personale.",
-        subtitle: "Bani pentru orice nevoie, fără destinație impusă. Dobândă fixă, decizie în 2-3 ore.",
+        subtitle: "De la 10.000 la 300.000 lei, fără comisioane. Decizie în 2-3 ore.",
     });
 }

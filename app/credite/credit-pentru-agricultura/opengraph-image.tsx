@@ -9,8 +9,8 @@ export default async function Image() {
         eyebrowLabel: "Persoane juridice",
         eyebrowPosition: 3,
         eyebrowTotal: 6,
-        title: "Credit pentru agricultură.",
-        accent: "agricultură.",
-        subtitle: "Finanțare pentru fermieri, SRL-uri și gospodării individuale. Grafic adaptat sezonalității.",
+        title: "Credit pentru agricultură, după sezonul tău.",
+        accent: "după sezonul tău.",
+        subtitle: "Pentru fermieri, gospodării țărănești, SRL și ÎI. Rate potrivite cu sezonul. Decizie în 1-2 zile lucrătoare.",
     });
 }

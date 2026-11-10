@@ -2,7 +2,10 @@
 
 ## Last Updated
 
-2026-09-11 (round 2) by owner decision - closes the `/faq` question, locks the
+2026-11-09 by owner decision - home page H1 changed to "Credite nebancare pentru
+afaceri și nevoi personale." (see Home Page H1 below). Focus ~80% business; no
+blog, only service/solution pages.
+Previously: 2026-09-11 (round 2) by owner decision - closes the `/faq` question, locks the
 `/credite` hub structure, redirects blog-merge destinations that pointed at the
 now-cancelled `/faq` page, and sets the home page H1. Supersedes the round-1 spec
 below where the two conflict; round-1 reasoning (two-part model, no-hub decision,
@@ -133,7 +136,14 @@ the `/credite` hub FAQ, and the per-page `CreditFAQ` blocks instead.)
 
 ---
 
-## Home Page H1 (decided 2026-09-11, round 2)
+## Home Page H1 (changed 2026-11-09)
+
+Current H1: **"Credite nebancare pentru afaceri și nevoi personale."** - shipped in
+`components/home/HeroHome.tsx` (accent word: "afaceri"), plus the home `<title>`,
+OG image, `SITE_DESCRIPTION` and footer line. "Credite pentru succes!" stays as the
+brand sign-off. The 2026-09-11 entry below is history.
+
+### Home Page H1 (decided 2026-09-11, round 2) - superseded
 
 New H1: **"Credite pentru succes."**
 

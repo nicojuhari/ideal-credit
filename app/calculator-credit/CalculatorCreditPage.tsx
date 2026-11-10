@@ -2,16 +2,17 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Container from "@/components/ds/Container";
 import Figure from "@/components/ds/Figure";
 import Note from "@/components/ds/Note";
-import { ButtonPrimary } from "@/components/ds/Button";
 import { cn, formatDateRo } from "@/lib/utils";
 import { addMonths } from "ideal-credit";
+import { CALCULATOR_MONTHLY_RATE } from "@/lib/constants";
 
 const SUM_MIN = 10_000;
-const SUM_MAX = 300_000;
+const SUM_MAX = 500_000;
 const TERM_MIN = 12;
 const TERM_MAX = 60;
 
@@ -67,7 +68,7 @@ function buildSchedule(principal: number, months: number, rate: number, type: Re
 
 function AnimatedNumber({ value }: { value: number }) {
     const mv = useMotionValue(value);
-    const display = useTransform(mv, (v) => Math.round(v).toLocaleString("ro-RO").replace(/\./g, " "));
+    const display = useTransform(mv, (v) => Math.round(v).toLocaleString("ro-RO"));
 
     useEffect(() => {
         const c = animate(mv, value, { duration: 0.4, ease: "easeOut" });
@@ -109,9 +110,9 @@ export default function CalculatorCreditPage() {
 
     const [suma, setSuma] = useState(() => clamp(param("suma", 50_000), SUM_MIN, SUM_MAX));
     const [termen, setTermen] = useState(() => clamp(param("termen", 24), TERM_MIN, TERM_MAX));
-    const [type, setType] = useState<RepaymentType>(() => (searchParams.get("tip") === "principal-egal" ? "principal-egal" : "anuitate"));
+    const [type, setType] = useState<RepaymentType>(() => (searchParams.get("tip") === "anuitate" ? "anuitate" : "principal-egal"));
     const [grace, setGrace] = useState(() => clamp(param("gratie", 0), 0, 6));
-    const [rate, setRate] = useState(() => clamp(param("rata", 4), 0.5, 15));
+    const [rate, setRate] = useState(() => clamp(param("rata", CALCULATOR_MONTHLY_RATE), 0.5, 15));
     const [tableOpen, setTableOpen] = useState(false);
 
     // Sync state to URL without navigation
@@ -137,14 +138,14 @@ export default function CalculatorCreditPage() {
             <Container>
                 <div className="grid min-w-0 items-start gap-6 lg:grid-cols-[400px_1fr]">
                     {/* ── Inputs ── */}
-                    <div className="dc-cell flex min-w-0 flex-col gap-7 p-8">
+                    <div className="flex min-w-0 flex-col gap-7 border border-dc-line bg-dc-surface p-6 sm:p-8 lg:sticky lg:top-28">
                         {/* Suma */}
                         <div>
                             <div className="mb-3.5 flex items-baseline justify-between gap-4">
-                                <label htmlFor="suma-range" className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                <label htmlFor="suma-range" className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">
                                     Suma creditului
                                 </label>
-                                <Figure size="md">{suma.toLocaleString("ro-RO").replace(/\./g, " ")} MDL</Figure>
+                                <Figure size="md">{suma.toLocaleString("ro-RO")} MDL</Figure>
                             </div>
                             <input
                                 id="suma-range"
@@ -158,10 +159,10 @@ export default function CalculatorCreditPage() {
                             />
                             <div className="mt-2.5 flex justify-between">
                                 <Figure size="ordinal" className="text-dc-text-muted">
-                                    10 000
+                                    {SUM_MIN.toLocaleString("ro-RO")}
                                 </Figure>
                                 <Figure size="ordinal" className="text-dc-text-muted">
-                                    300 000
+                                    {SUM_MAX.toLocaleString("ro-RO")}
                                 </Figure>
                             </div>
                         </div>
@@ -169,10 +170,10 @@ export default function CalculatorCreditPage() {
                         {/* Termen */}
                         <div>
                             <div className="mb-3.5 flex items-baseline justify-between gap-4">
-                                <label htmlFor="termen-range" className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                <label htmlFor="termen-range" className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">
                                     Termen
                                 </label>
-                                <Figure size="md">{termen} LUNI</Figure>
+                                <Figure size="md">{termen} luni</Figure>
                             </div>
                             <input
                                 id="termen-range"
@@ -196,11 +197,13 @@ export default function CalculatorCreditPage() {
 
                         {/* Repayment type */}
                         <div>
-                            <p className="mb-3.5 text-xs uppercase tracking-[.1em] text-dc-text-muted">Tip rambursare</p>
+                            <p className="mb-3.5 text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">Cum plătești ratele</p>
                             <div className="grid grid-cols-2 gap-px bg-dc-line">
-                                {(["anuitate", "principal-egal"] as const).map((t) => (
+                                {(["principal-egal", "anuitate"] as const).map((t) => (
                                     <button
+                                        type="button"
                                         key={t}
+                                        aria-pressed={type === t}
                                         onClick={() => setType(t)}
                                         className={cn(
                                             "min-w-0 px-4 py-3 text-[15px] font-semibold transition-colors duration-[120ms]",
@@ -209,22 +212,24 @@ export default function CalculatorCreditPage() {
                                                 : "bg-dc-surface text-dc-text-muted hover:text-dc-text",
                                         )}
                                     >
-                                        {t === "anuitate" ? "Anuitate" : "Principal egal"}
+                                        {t === "anuitate" ? "Rate egale" : "Rate care scad"}
                                     </button>
                                 ))}
                             </div>
                             <p className="mt-3 text-xs leading-[1.7] text-dc-text-muted">
-                                {isFixed ? "Rate egale pe toată durata creditului" : "Ratele scad lunar - plătești mai puțin spre final"}
+                                {isFixed
+                                    ? "Plătești aceeași sumă în fiecare lună. Le facem la cerere, dacă așa îți e mai ușor să plătești."
+                                    : "Așa calculăm creditele la Ideal Credit. Dobânda se calculează din suma rămasă, de aceea rata scade în fiecare lună."}
                             </p>
                         </div>
 
                         {/* Grace period + Rate */}
                         <div className="grid grid-cols-2 gap-5">
                             <div className="min-w-0">
-                                <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                                <label htmlFor="gratie" className="mb-2.5 block text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">
                                     Perioadă de grație
                                 </label>
-                                <select value={grace} onChange={(e) => setGrace(Number(e.target.value))} className="w-full min-w-0">
+                                <select id="gratie" value={grace} onChange={(e) => setGrace(Number(e.target.value))} className="w-full min-w-0">
                                     {[0, 1, 2, 3, 4, 5, 6].map((v) => (
                                         <option key={v} value={v} className="bg-dc-surface">
                                             {v === 0 ? "Fără" : `${v} ${v === 1 ? "lună" : "luni"}`}
@@ -233,9 +238,12 @@ export default function CalculatorCreditPage() {
                                 </select>
                             </div>
                             <div className="min-w-0">
-                                <label className="mb-2.5 block text-xs uppercase tracking-[.1em] text-dc-text-muted">Dobândă lunară</label>
+                                <label htmlFor="rata" className="mb-2.5 block text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">
+                                    Dobândă lunară
+                                </label>
                                 <div className="flex min-w-0 items-center gap-2.5">
                                     <input
+                                        id="rata"
                                         type="number"
                                         className="input-calculator min-w-0 font-dc-mono"
                                         value={rate}
@@ -263,45 +271,45 @@ export default function CalculatorCreditPage() {
                     {/* ── Results ── */}
                     <div className="flex min-w-0 flex-col gap-6">
                         {/* 4 stat cells */}
-                        <div className="grid grid-cols-2">
-                            <div className="dc-cell min-w-0 p-7">
-                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">
+                        <div className="grid grid-cols-2 gap-px border border-dc-line bg-dc-line">
+                            <div className="min-w-0 bg-dc-bg p-5 sm:p-7">
+                                <p className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">
                                     {isFixed ? "Rată lunară" : "Prima rată"}
                                 </p>
                                 <Figure size="xl" proof className="mt-2.5 block">
                                     <AnimatedNumber value={firstPayment} />
                                 </Figure>
                                 <p className="mt-2 text-xs text-dc-text-muted">
-                                    MDL{!isFixed && ` · ultima ${Math.round(lastPayment).toLocaleString("ro-RO").replace(/\./g, " ")}`}
+                                    MDL{!isFixed && ` · ultima ${Math.round(lastPayment).toLocaleString("ro-RO")}`}
                                 </p>
                             </div>
-                            <div className="dc-cell min-w-0 p-7">
-                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Total plătit</p>
+                            <div className="min-w-0 bg-dc-bg p-5 sm:p-7">
+                                <p className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">Total plătit</p>
                                 <Figure size="xl" className="mt-2.5 block">
                                     <AnimatedNumber value={totalPaid} />
                                 </Figure>
                                 <p className="mt-2 text-xs text-dc-text-muted">MDL</p>
                             </div>
-                            <div className="dc-cell min-w-0 p-7">
-                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Dobândă totală</p>
+                            <div className="min-w-0 bg-dc-bg p-5 sm:p-7">
+                                <p className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">Dobândă totală</p>
                                 <Figure size="xl" className="mt-2.5 block">
                                     <AnimatedNumber value={totalInterest} />
                                 </Figure>
                                 <p className="mt-2 text-xs text-dc-text-muted">MDL</p>
                             </div>
-                            <div className="dc-cell min-w-0 p-7">
-                                <p className="text-xs uppercase tracking-[.1em] text-dc-text-muted">DAE</p>
+                            <div className="min-w-0 bg-dc-bg p-5 sm:p-7">
+                                <p className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">DAE</p>
                                 <Figure size="xl" className="mt-2.5 block">
-                                    {dae}
+                                    {dae.toLocaleString("ro-RO")}
                                 </Figure>
                                 <p className="mt-2 text-xs text-dc-text-muted">% ANUAL EFECTIV</p>
                             </div>
                         </div>
 
                         {/* Balance chart */}
-                        <div className="dc-cell px-6 pt-6 pb-5">
+                        <div className="border border-dc-line bg-dc-surface px-6 pb-5 pt-6">
                             <div className="mb-3 flex items-center justify-between">
-                                <span className="text-xs uppercase tracking-[.1em] text-dc-text-muted">Sold rămas în timp</span>
+                                <span className="text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted">Sold rămas în timp</span>
                                 <span className="font-dc-mono text-xs text-dc-text-muted">{termen} luni</span>
                             </div>
                             <BalanceChart schedule={schedule} principal={suma} />
@@ -313,7 +321,7 @@ export default function CalculatorCreditPage() {
                         </div>
 
                         {/* Amortization table */}
-                        <div className="dc-cell min-w-0 overflow-hidden">
+                        <div className="min-w-0 overflow-hidden border border-dc-line bg-dc-surface">
                             <div className="flex items-center justify-between border-b border-dc-line px-6 py-4">
                                 <span className="text-[15px] font-medium text-dc-text">Grafic de rambursare</span>
                                 <span className="font-dc-mono text-xs text-dc-text-muted">{schedule.length} rate</span>
@@ -342,18 +350,18 @@ export default function CalculatorCreditPage() {
                                                 <td className="px-6 py-3">{r.month}</td>
                                                 <td className="px-6 py-3">{r.date}</td>
                                                 <td className="px-6 py-3 text-right font-medium text-dc-text">
-                                                    {Math.round(r.payment).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                    {Math.round(r.payment).toLocaleString("ro-RO")}
                                                 </td>
                                                 <td className="px-6 py-3 text-right">
                                                     {r.principal
-                                                        ? Math.round(r.principal).toLocaleString("ro-RO").replace(/\./g, " ")
+                                                        ? Math.round(r.principal).toLocaleString("ro-RO")
                                                         : "-"}
                                                 </td>
                                                 <td className="px-6 py-3 text-right text-dc-accent">
-                                                    {Math.round(r.interest).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                    {Math.round(r.interest).toLocaleString("ro-RO")}
                                                 </td>
                                                 <td className="px-6 py-3 text-right">
-                                                    {Math.round(r.balance).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                    {Math.round(r.balance).toLocaleString("ro-RO")}
                                                 </td>
                                             </tr>
                                         ))}
@@ -365,11 +373,11 @@ export default function CalculatorCreditPage() {
                                                     Total
                                                 </td>
                                                 <td className="px-6 py-3 text-right text-dc-text">
-                                                    {Math.round(totalPaid).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                    {Math.round(totalPaid).toLocaleString("ro-RO")}
                                                 </td>
-                                                <td className="px-6 py-3 text-right">{suma.toLocaleString("ro-RO").replace(/\./g, " ")}</td>
+                                                <td className="px-6 py-3 text-right">{suma.toLocaleString("ro-RO")}</td>
                                                 <td className="px-6 py-3 text-right text-dc-accent">
-                                                    {Math.round(totalInterest).toLocaleString("ro-RO").replace(/\./g, " ")}
+                                                    {Math.round(totalInterest).toLocaleString("ro-RO")}
                                                 </td>
                                                 <td className="px-6 py-3 text-right">0</td>
                                             </tr>
@@ -380,7 +388,7 @@ export default function CalculatorCreditPage() {
                             {schedule.length > PREVIEW_ROWS && (
                                 <button
                                     onClick={() => setTableOpen(!tableOpen)}
-                                    className="flex w-full items-center justify-center gap-1.5 border-t border-dc-line px-6 py-4 text-xs uppercase tracking-[.1em] text-dc-text-muted transition-colors duration-[120ms] hover:text-dc-text"
+                                    className="flex w-full items-center justify-center gap-1.5 border-t border-dc-line px-6 py-4 text-xs font-medium uppercase tracking-[.12em] text-dc-text-muted transition-colors duration-[120ms] hover:text-dc-text"
                                 >
                                     {tableOpen ? "Restrânge graficul" : `Arată toate cele ${schedule.length} rate`}
                                 </button>
@@ -388,14 +396,14 @@ export default function CalculatorCreditPage() {
                         </div>
 
                         {/* CTA */}
-                        <div className="dc-cell flex flex-col items-start justify-between gap-5 px-8 py-7 sm:flex-row sm:items-center">
+                        <div className="flex flex-col items-start justify-between gap-5 bg-dc-accent px-6 py-7 text-dc-on-accent sm:flex-row sm:items-center sm:px-8">
                             <div>
-                                <p className="text-[17px] font-medium text-dc-text">Vrei acest credit?</p>
-                                <p className="mt-1 text-xs text-dc-text-muted">Completează cererea online în 5 minute.</p>
+                                <p className="text-xl font-semibold tracking-[-.02em]">Ți se potrivește această rată?</p>
+                                <p className="mt-1 text-[15px]">Completează cererea online. Te sunăm noi.</p>
                             </div>
-                            <ButtonPrimary href="/cerere-de-credit-online" className="whitespace-nowrap">
-                                Aplică acum →
-                            </ButtonPrimary>
+                            <Link href="/cerere-de-credit-online" className="inline-flex items-center justify-center whitespace-nowrap bg-dc-bg px-[26px] py-4 text-[15px] font-semibold text-dc-text transition-colors hover:bg-[#1a1a1a]">
+                                Solicită un credit
+                            </Link>
                         </div>
                     </div>
                 </div>

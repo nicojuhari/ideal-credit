@@ -6,24 +6,34 @@ import NumberedRow from "@/components/ds/NumberedRow";
 import { GLOSSARY_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-    title: "Dicționar financiar - termeni explicați simplu | Ideal Credit",
+    title: "Dicționar financiar: termeni explicați simplu | Ideal Credit",
     description:
-        "Dicționarul financiar cu 18 termeni: credit, dobândă, DAE, contract de credit, garanție și alți termeni explicați simplu pentru moldoveni.",
+        "Dicționarul financiar cu 18 termeni: credit, dobândă, DAE, gaj, fidejusor și alții, explicați în cuvinte simple.",
     alternates: { canonical: "https://idealcredit.md/dictionar-financiar" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/dictionar-financiar",
-        title: "Dicționar financiar - termeni explicați simplu | Ideal Credit",
+        title: "Dicționar financiar: termeni explicați simplu | Ideal Credit",
         description:
-            "Dicționarul financiar cu 18 termeni: credit, dobândă, DAE, contract de credit, garanție și alți termeni explicați simplu pentru moldoveni.",
+            "Dicționarul financiar cu 18 termeni: credit, dobândă, DAE, gaj, fidejusor și alții, explicați în cuvinte simple.",
     },
+};
+
+const glossarySchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "Dicționar financiar Ideal Credit",
+    url: "https://idealcredit.md/dictionar-financiar",
+    inLanguage: "ro-MD",
+    hasDefinedTerm: GLOSSARY_LINKS.map((t) => ({ "@type": "DefinedTerm", name: t.name, description: t.desc })),
 };
 
 export default function DictionarFinanciarPage() {
     return (
         <div className="dc bg-dc-bg">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(glossarySchema) }} />
             <div className="dc-section dc-section--hero">
                 <Container>
                     <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">

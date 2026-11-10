@@ -11,6 +11,6 @@ export default async function Image() {
         eyebrowTotal: 6,
         title: "Credit investițional.",
         accent: "investițional.",
-        subtitle: "Echipamente, extindere spațiu sau modernizare. Termen până la 60 luni, rată fixă.",
+        subtitle: "Pentru echipamente, vehicule și renovare. De la 50.000 la 400.000 lei, pe 12–60 luni.",
     });
 }

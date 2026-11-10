@@ -2,31 +2,25 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
-    title: "Termeni și Condiții - OCN Ideal Credit SRL",
+    title: "Termeni și condiții | Ideal Credit",
     description:
-        "Citește condițiile contractuale ale OCN Ideal Credit SRL: drepturi, obligații, dobânzi, rambursare și informații legale pentru clienții noștri.",
+        "Condițiile în care OCN Ideal Credit SRL acordă credite: cine poate aplica, cum aplici, dobânda, rambursarea și drepturile tale.",
     alternates: { canonical: "https://idealcredit.md/terms" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/terms",
-        title: "Termeni și Condiții - OCN Ideal Credit SRL",
+        title: "Termeni și condiții | Ideal Credit",
         description:
-            "Citește condițiile contractuale ale OCN Ideal Credit SRL: drepturi, obligații, dobânzi, rambursare și informații legale pentru clienții noștri.",
+            "Condițiile în care OCN Ideal Credit SRL acordă credite: cine poate aplica, cum aplici, dobânda, rambursarea și drepturile tale.",
     },
 };
 
 export default function TermsPage() {
     return (
-        <LegalLayout
-            title={
-                <>
-                    Termeni și Condiții
-                    <br />
-                    OCN Ideal Credit SRL
-                </>
-            }
+        <LegalLayout path="/terms"
+            title="Termeni și condiții"
             updated="Acești Termeni și Condiții au fost actualizați ultima dată la 26.09.2024."
         >
             <h2>1. Dispoziții generale</h2>
@@ -46,8 +40,8 @@ export default function TermsPage() {
                 Companiei.
             </p>
             <p>
-                2.2. Servicii - toate serviciile financiare oferite de Companie, inclusiv, dar fără a se limita la, credite de consum,
-                credite auto, credite ipotecare și credite pentru afaceri.
+                2.2. Servicii - toate serviciile financiare oferite de Companie, inclusiv, dar fără a se limita la, credite pentru nevoi personale,
+                credite auto, credite pentru reparație și credite pentru afaceri.
             </p>
             <p>2.3. Contract de credit - acordul încheiat între Companie și Client pentru furnizarea unui împrumut sau credit.</p>
 

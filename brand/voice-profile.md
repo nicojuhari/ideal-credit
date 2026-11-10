@@ -1,381 +1,203 @@
-## Last Updated
-
-2026-09-22 by /unique-value-strategy - added vocabulary and example phrases for
-the current strategy ("Succesul înainte de semnătură" - the honest pre-application
-verdict, backed by 16 years of pattern-recognition; see `brand/strategy.md`). Tone,
-sophistication level, and every other section below are unchanged - this strategy
-is delivered in the same voice, not a new one.
-Previously: 2026-05-18 by /brand-voice (original profile).
-
 # Ideal Credit Voice Profile
+Last updated: 2026-11-09 by /brand-voice · Mode: Extract (live site + social) + owner direction · Evidence: LIVE (site copy in repo, 2 social captions) + INTAKE
+Status: approved by owner 2026-11-09 (Voice Test Loop round 1: "looks good, save it").
+Previous version: `brand/.history/voice-profile-2026-09-22.md` (May 2026 profile; "rapid / growth / partner" register, blog row).
 
 ## Voice Summary
 
-Ideal Credit sounds like the knowledgeable local businessman you actually trust - the one who explains things plainly, doesn't waste your time, and genuinely wants your business to succeed. The voice is warm without being soft, confident without being slick. It speaks to Moldovan entrepreneurs as equals who understand the challenges of running a business here, not as loan applicants to be processed.
+A Moldovan lender who explains a credit the way a good accountant explains a tax
+form. Short sentences, one fact each, in the words people use in Moldova. It sounds
+professional because it is precise, not because it is formal. Its recognizable move:
+**it puts a number or a document name where other lenders put an adjective** ("3-6
+luni de extrase", "4-6 luni de activitate", "1-2 zile lucrătoare"), and it answers
+the uncomfortable question in the FAQ instead of hiding it (E7, E8).
+
+Audience split: ~80% owners of micro/small/medium firms (SRL, ÎI, GȚ), ~20% people
+financing a planned purchase. Business is the default reader. Personal copy uses the
+same voice with fewer terms.
 
 ## Core Personality Traits
 
-- **Locally rooted:** Knows the Moldovan business reality - the VAT pressure, the seasonal cash flows, the difference between a Căușeni entrepreneur and a Chișinău one. Never speaks in global-brand generalities. References real contexts, real situations.
-- **Straight-talking:** Says what it means. No banking euphemisms, no fine-print language dressed up as marketing copy. If something matters, it's said clearly. If a number is relevant, it's given.
-- **Growth-oriented, not debt-focused:** Frames credit as a lever for business development, not as "borrowing money." The story is always about what becomes possible - not about what the client owes.
-- **Reliably human:** There's a person behind the brand - someone you could meet at the office in Căușeni. Not a chatbot, not a call center. The voice reflects that relationship exists and is maintained offline.
+- **Names the document, not the feeling.** It lists exactly what to bring, by its
+  Moldovan name: "Buletin de identitate al administratorului", "Extrase bancare -
+  ultimele 3-6 luni", "Extrasul din Registrul de Stat nu trebuie să aibă mai mult de
+  30 de zile" (E3, E4, E5). It never writes "documentele necesare" without listing them.
+- **Answers the awkward question in plain sight.** The FAQ asks what a worried owner
+  would ask. "Poate primi credit o firmă cu pierderi pe ultimul an?" "Ce se întâmplă
+  dacă finanțarea nu are sens pentru afacerea mea?" (E6, E7). Then it answers with a
+  fact, not reassurance: "Am finanțat firme cu 4-6 luni de activitate cu flux
+  demonstrabil." (E8)
+- **Says "no" out loud.** "spunem sincer când răspunsul e nu" (E10). No competitor
+  writes that line. Keep it. Never turn it into gatekeeping language.
+- **Explains a term once, in brackets, then moves on.** "fidejusorul (garant personal
+  - de obicei administratorul firmei)" (E9). One explanation, at first use, never a
+  lecture.
 
 ## Tone Spectrum
 
-| Dimension              | Position                                 | Notes                                                                                                                                  |
-| ---------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Formal ↔ Casual        | Casual-professional (6/10 toward casual) | Uses "tu" register in Romanian for warmth, avoids stiff banking language. Not slang, not corporate.                                    |
-| Serious ↔ Playful      | Mostly serious (3/10 toward playful)     | Money and business are serious topics. Occasional warmth or lightness is fine. Never jokes about debt or risk.                         |
-| Reserved ↔ Bold        | Measured bold (6/10 toward bold)         | Makes clear claims about outcomes. Backs them with specifics. Doesn't over-promise, but doesn't hedge everything either.               |
-| Simple ↔ Sophisticated | Simple (2/10 toward sophisticated)       | Plain Romanian. Financial terms explained in business-owner language. "Rata dobânzii" always paired with a plain-language explanation. |
-| Warm ↔ Direct          | Both (5/10, center)                      | Direct message, warm delivery. Gets to the point but doesn't feel cold. The "trusted advisor" register.                                |
+| Dimension | Position | Mechanism + evidence |
+|---|---|---|
+| Formal ↔ Casual | Professional, "tu" form | Addresses the reader as "tu" ("Trimite extrasele pe canalul care îți convine", E12). No slang, no jokes, no exclamation marks in site copy. "Dumneavoastră" only in contracts and legal pages. |
+| Serious ↔ Playful | Serious | Money is never played with. Zero humor across the business page (E3-E9). |
+| Reserved ↔ Bold | Bold on facts, quiet on adjectives | Bold claims are always countable: "Dosarul complet primit dimineața - răspunsul îl ai înainte de prânz" (E11). Never "cel mai bun", "lider". |
+| Simple ↔ Sophisticated | Simple. Owner rule: "not complex, clear messages, short sentences" (intake) | Plain words. Business terms the owner already uses (extras, flux, capital de lucru) are fine without explanation. Legal terms (fidejusor, gaj, DAE) get one bracket explanation (E9). |
+| Warm ↔ Direct | Direct first | The answer comes in the first sentence of every FAQ (E8). Warmth comes from being useful ("fără drumuri", E13), not from friendly words. |
 
 ## Vocabulary
 
-**Words/phrases to USE (Romanian primary, Romanian/Russian bilingual awareness):**
+### Moldovan usage - write for Moldova, not Romania (owner rule, intake)
 
-- „credit pentru afacerea ta" - frames it as theirs, not a generic product
-- „să crești" / „să te dezvolți" - growth language, not borrowing language
-- „rapid" / „simplu" - speed and simplicity are real differentiators vs banks
-- „fără birocrație bancară" - key positioning differentiator
-- „venim împreună" / „mergem mai departe" - partnership framing
-- „antreprenor" - preferred over „client" when addressing business owners
-- „sumă" + specific MDL range - always anchored to real numbers
-- „biroul nostru din Căușeni / Chișinău" - local anchoring, humanizes the brand
-- „echipa Ideal Credit" - human team, not faceless institution
-- „în Moldova" - local pride, not global brand language
-- „are sens" / „nu are sens" - the core strategic frame: whether the credit fits the reader's actual goal, not just whether they qualify
-- „analizăm scopul și situația ta" - names the mechanism directly: what gets analyzed, not a before/after claim
-- „16 ani" - the pattern-recognition proof point; anchor claims about judgment to this, not to adjectives
+The language is the same. The institutions and everyday terms are not. A Moldovan
+reader stops reading at "ANAF" or "PFA". Always use the left column.
 
-**Words/phrases to AVOID:**
+| Write (Moldova) | Never (Romania) | Note |
+|---|---|---|
+| OCN, organizație de creditare nebancară | IFN | Already used on /despre-noi (E14) |
+| ÎI (întreprindere individuală), GȚ (gospodărie țărănească) | PFA, II (in RO sense), PFA agricol | E2 |
+| buletin (de identitate) | carte de identitate, CI | E3 |
+| IDNP (persoană), IDNO (firmă) | CNP, CUI, CIF | |
+| extras din Registrul de stat | certificat constatator, ONRC, Registrul Comerțului | E5 |
+| Serviciul Fiscal de Stat (SFS) | ANAF, Fisc (RO sense) | |
+| BIC (Biroul istoriilor de credit) | Biroul de Credit | E15 |
+| BNM, CNPF | BNR, ASF | |
+| raion, or., s. (Căușeni, raionul Căușeni) | județ, comună (RO sense) | |
+| lei / MDL | RON | Write amounts as "50.000 lei" or "50.000 MDL", one style per page |
+| testare tehnică (auto) | ITP | |
+| situații financiare, dare de seamă | bilanț (RO sense), declarație unică | |
+| gaj, gaj imobiliar | garanție imobiliară (as the main word) | "gaj" is the word people search ("credite cu gaj") |
 
-- „soluții financiare comprehensive" - corporate, vague, not how people talk
-- „optimizați-vă fluxul de numerar" - jargon nobody uses in conversation
-- „produse bancare" - they're not a bank, don't sound like one
-- „în conformitate cu reglementările în vigoare" - legal boilerplate, use sparingly and only where required
-- „clienți fideli" - sounds like a telecom loyalty program
-- „parteneriat strategic" - overused corporate phrase
-- „Noi suntem pasionați de..." - empty opener
-- Any variation of „soluție completă" / „one-stop-shop" - sounds generic
-- „împrumut" without context - has a slightly informal/negative connotation; prefer „credit"
-- „garantat" / „succes garantat" / „sigur 100%" - the strategy is honest judgment, not guaranteed outcomes; overpromising here directly undercuts the mechanism's credibility
+Everyday words Moldovans use and search for, and how to handle them:
+- **"procent" / "procente"** - people say "bani la procente" (GSC). Site copy uses
+  "dobândă". Social copy may use "procent" once, next to "dobândă".
+- **"rată"**, **"credit"** - preferred over "împrumut", which reads informal or pawn-like.
+- **No Russianisms in writing**, even common spoken ones. "Moldovan slang" here means
+  Moldovan terms and institutions. It does not mean street slang or Russian words.
+- Russian-language copy (if ever written) needs its own Moldovan-Russian term list.
+  Not covered yet.
 
-**Jargon level:** Light - use standard financial terms (DAE, dobândă, grafic de rambursare) but always with a plain-language anchor nearby. Never assume the reader knows what DAE means without context.
+### Use
 
-**Profanity:** Never.
+- Document names and counts: "extrase bancare - ultimele 3 luni", "4-6 luni de activitate" (E4, E8).
+- Time in working days: "1-2 zile lucrătoare" (E1). Never "rapid" alone.
+- "analizăm scopul și situația financiară" - the strategy mechanism (E10).
+- "are sens / nu are sens" - the decision frame (E7, E10).
+- "fără drumuri" / "la distanță" - the remote process, a real fact (E13).
+- "firmă", "afacere", "administrator", "flux de bani" - business words owners use.
+
+**Jargon:** business terms yes (capital de lucru, flux, extras). Legal and finance
+terms get one bracket explanation (DAE, fidejusor, gaj). **Profanity:** never.
+
+## AVOID
+
+**Brand-specific bans:**
+- **Never mention or compare with other companies** (owner rule, 2026-11-10): no "alte companii", "pe piață", competitor fees. Say how we work and why.
+- **Never mention banks or send clients to a bank** (owner rule, 2026-11-10). No "mergi la bancă", no bank-vs-OCN comparison blocks, no "De ce e dobânda mai mare decât la bancă?" FAQ. We want good clients and keep them: the answer to a strong client is a better rate and a second credit, not a referral.
+- **"compania" / "afacerea", not "firma"** as the main word (owner rule, 2026-11-10). Documents and formal lines: "compania". Conversational lines: "afacerea". "Firmă" only occasionally. Also "achitare înainte de termen" (not "rambursare anticipată" in headings), "oficiu" (not "birou"), "pe cont".
+- **No clever or cryptic lines** (owner rule, 2026-11-10). Every sentence must make sense on its own, without context. No hidden meanings, no wordplay, no "smart" phrasing like "Uneori răspunsul e mai puțin" or "Plătești dobânda. Atât." Plain explanation: what it is and what it means for the client, in one read.
+- **The " - " join.** The current site joins two ideas with a dash in most lines (16
+  times on the business page alone, E1, E11). Split into two sentences. "Dobânzi fixe.
+  Toate costurile le știi înainte de semnare." not "Dobânzi fixe, zero comisioane
+  ascunse - toate costurile înainte de semnare." (E11). A dash is fine inside a range
+  ("3-6 luni") and in a list item label.
+- Excluded topics in any heading or hook: fără refuz, istoric negativ, fără
+  verificare, fără venit, urgent, refinanțare as a product. (Home `Solutions.tsx`
+  still says "refinanțare" and "nevoie urgentă", E2, E16 - fix.)
+- "rapid" as the main claim. Microinvest says "2 ore", MK Kredit "1 oră". We lose that
+  fight. Give the real number instead.
+- Romania-only terms (table above).
+- "soluții financiare", "servicii financiare" - we only offer credit.
+- "garantat", "100%", "fără refuz" - the strategy is an honest answer, not a promise.
+- "Noi suntem pasionați", "partener de încredere", "lider" - claims nobody can check.
+- "împrumut" as the product name.
+
+**AI tells (most likely to creep into this brand's Romanian copy):**
+- "Nu e doar X - e Y" / "Nu este despre X. Este despre Y."
+- "În lumea de azi...", "Fie că ești antreprenor sau...", "Când vine vorba de..."
+- "soluție completă", "comprehensiv", "optimizează", "maximizează", "inovator",
+  "dinamic", "să deblochezi", "să-ți transformi afacerea", "călătorie"
+- "Mai mult decât un credit", "la final de zi", "cheia este"
+- rule-of-three runs ("simplu, rapid și sigur"); vary list lengths
+- dash chains (see the " - " ban above - this is the biggest one here)
+- every paragraph the same length; every section ending on a one-line zinger
+- question headers answered with "Pentru că..."
+- hedge stacks: "ar putea eventual", "în unele cazuri s-ar putea"
+- bolded-label bullets everywhere ("**Rapid:** ... **Simplu:** ...")
 
 ## Rhythm & Structure
 
-**Sentences:** Mix of medium (10-15 words) and short punchy statements (4-8 words). Short sentences carry key claims. Medium sentences do the explaining. Avoid long complex sentences with multiple clauses.
+**Sentences (owner rule: short):** most sentences 6-14 words. Hard cap ~20 words.
+One idea per sentence. If a sentence has "și", "dar" or a dash joining two claims,
+split it. Fragments are fine for labels and lists ("Rambursare anticipată gratuită", E17).
 
-**Paragraphs:** Short - 2-3 sentences maximum for body copy. Hero and social content: 1-2 sentences per thought block. Blog content can run slightly longer (3-4 sentences) but keeps breaks frequent.
+**Paragraphs:** 1-3 sentences on pages. A one-sentence paragraph is fine. Vary the length.
 
-**Openings:** Start with the reader's situation or a concrete result - not with "Bine ați venit la Ideal Credit." Open with the problem being solved or the outcome being achieved. Questions work well as openers only if they're specific ("Ai nevoie de capital să extinzi afacerea înainte de sezon?").
+**Openings:** the fact or the answer first. FAQ answers start with "Da.", "Nu." or the
+number (E8). Pages open with what the reader is trying to do.
 
-**Formatting:**
+**Closings:** one concrete next step. "Discutăm situația ta" (call / contacte), or
+the calculator. No inspirational send-off.
 
-- Bold for key claims or numbers
-- Short bulleted lists for benefits or steps
-- Avoid dense paragraphs - white space signals clarity
-- Minimal emoji on formal channels (none on landing pages, occasional on social)
-- Headers to orient, not to decorate
+**Formatting:** document lists as lists, with the document's Moldovan name. Numbers in
+digits with a dot for thousands (50.000 lei). Bold only for numbers or the one key fact.
+No emoji on the site. On social, at most one, and never as a bullet.
 
 ## POV & Address
 
-**First person:** We ("noi" - echipa Ideal Credit). Occasional "eu" in social content from a team member's perspective.
-
-**Reader address:** Direct "tu" form (not "dumneavoastră" except in formal legal/contract contexts). For business owners: "tu" feels like a peer, not like a bank looking down.
-
-**Relationship stance:** Trusted local advisor. We've been here, we know the terrain, we'll help you navigate it. Not a guru, not a salesperson - a reliable partner who knows Moldova's business reality.
+First person plural "noi" (echipa Ideal Credit). The reader is "tu". For
+business copy, the reader is the administrator or owner of the firm ("firma ta",
+"administratorul"). Stance: the person across the desk who has seen 16 years of these
+files and tells you what you need, what it costs and whether it makes sense (E10).
 
 ## Platform Adaptations
 
-| Platform     | Tone Shift                                                                 | Structure                                                                                             | Length                                    |
-| ------------ | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| Email        | Warmest - direct, specific, almost like a note from the office             | Short paragraphs, one clear CTA, personal sign-off                                                    | 120-250 words                             |
-| Facebook     | Relatable and local - real business situations, local context              | Hook line + 2-3 lines + CTA. Occasional photo context.                                                | 80-150 words                              |
-| LinkedIn     | More professional, expertise-forward, targets business owners and partners | Insight or tip leads, not promotion-first. Line breaks.                                               | 100-200 words                             |
-| Blog/SEO     | Same voice but more thorough - teacher mode, full explanations             | Headers, bullets, numbered steps, real examples. Still no jargon without explanation.                 | 1200-2500 words                           |
-| Landing Page | Most direct, benefit-first, calm urgency - not high-pressure               | Short sentences, clear benefit blocks, single CTA per section, trust signals (office addresses, team) | Hero: 20-40 words; sections: 50-100 words |
-| WhatsApp/SMS | Most stripped-down - human, brief, action-oriented                         | One or two sentences max. Clear next step.                                                            | Under 160 characters ideal                |
+| Platform | Tone shift | Structure & length notes |
+|---|---|---|
+| Website (service / solution pages) | The reference voice | Short sections. Answer first. Document lists. FAQ with real awkward questions. |
+| Facebook | Same voice, one notch warmer; main channel | One caption for all platforms (existing rule). Hook = a number or a real case. 60-150 words. Sign-off "Ideal Credit - credite pentru succes!" + hashtags (existing rule). |
+| LinkedIn | Most business-forward | Same caption as Facebook. Lead with the number (E18). |
+| Instagram | Same caption; the image carries the number | Keep the first line under ~12 words. |
+| Email | Plainest, 1:1 | 3-6 short sentences. One next step. Signed by a person from the team. |
+| WhatsApp / Viber | The working channel for documents | 1-2 sentences. Exact document name and what to send next. |
+| X | Not active | If used: one fact per post, no threads. |
+| TikTok | Not active | If used: spoken, same short sentences, a number in the first 3 seconds. |
+| YouTube | Not active | If used: explain one document or one decision per video. |
+| Threads | Not active | Not planned. |
+| Reddit | Not active | Moldovan audience isn't there. If ever: plain first person, zero promotion. |
 
 ## Example Phrases
 
-**On-brand (sounds like Ideal Credit):**
+**On-brand:**
+- "Ai firmă de 5 luni? Contează extrasele, nu vechimea. Am finanțat firme cu 4-6 luni de activitate."
+- "Ce aduci: buletinul administratorului, extrasul din Registrul de stat și extrasele bancare pe ultimele 3-6 luni."
+- "Primești decizia în 1-2 zile lucrătoare. Semnezi la birou, în Căușeni sau Chișinău."
+- "Uneori răspunsul e «nu». Îți spunem de ce."
 
-- „Afacerea ta are nevoie de capital acum. Noi suntem gata să te ajutăm - fără drumuri la bancă."
-- „Credit de la 10.000 până la 300.000 MDL. Simplu, rapid, cu o vizită la biroul nostru."
-- „Nu ești doar un dosar la ghișeu. Ești antreprenorul care vrea să meargă mai departe."
-- „Știm cum arată o afacere în Moldova. Tocmai de aceea vorbim direct."
-- „Calculează suma, vino la birou, primești răspuns."
-- „Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută."
-- „16 ani analizăm ce funcționează cu adevărat - și îți spunem sincer dacă are sens."
+**Off-brand:**
+- "Soluții financiare rapide și flexibile pentru afacerea ta!" - adjectives instead of facts, "soluții financiare", exclamation mark.
+- "Dobânzi fixe, zero comisioane ascunse - toate costurile înainte de semnare." - two ideas joined by a dash (E11).
+- "Prezintă certificatul constatator și CUI-ul firmei." - Romanian terms; a Moldovan owner doesn't have these documents under those names.
+- "Fie că ești antreprenor sau persoană fizică, avem soluția potrivită." - AI tell, says nothing.
 
-**Off-brand (doesn't sound like us):**
+## Evidence Appendix
 
-- „Ideal Credit oferă soluții financiare comprehensive adaptate nevoilor dumneavoastră individuale." - stiff, corporate, impersonal, no human behind it
-- „Suntem pasionați de succesul financiar al clienților noștri." - empty, sounds like every other financial ad
-- „Produsele noastre bancare includ o gamă largă de instrumente de optimizare a capitalului." - jargon overload, they're not a bank
-- „Împrumutați bani rapid!" - undersells the brand, sounds like a payday lender, wrong register
-
-## Do's and Don'ts
-
-**DO:**
-
-- Lead with the reader's situation or desired outcome - not with Ideal Credit's features
-- Use real numbers and real MDL amounts - specifics build trust
-- Acknowledge that Moldova's business environment has real challenges - don't pretend it doesn't
-- Anchor every piece of content to a concrete next step (visit an office, use the calculator, apply online)
-- Mention the physical offices - it humanizes the brand and reminds readers this is a real, local institution
-- Write in Romanian as the primary voice; adapt to Russian for Russian-speaking audience segments without changing the core message
-- Keep it short - Moldovan entrepreneurs are busy, they don't read walls of text
-- Let the outcome do the selling - "poți extinde depozitul" beats "oferim credite pentru extindere"
-
-**DON'T:**
-
-- Sound like a multinational bank - no corporate bureaucratic tone, no Latin phrases, no "conform legislației în vigoare" in marketing copy
-- Over-promise - no "creditul care îți schimbă viața," no "succes garantat"
-- Use passive voice when active is possible - "vei primi" beats "veți fi informat"
-- Make it about Ideal Credit's features when it should be about the client's goals
-- Use fear tactics or urgency manipulation - no fake countdowns, no "ofertă limitată" without a real limit
-- Write paragraphs longer than 4 sentences on any digital channel
-- Ignore the Russian-speaking segment - adapt key CTAs and landing content to Russian without losing the voice
-
----
-
-<details>
-<summary>Structured Data (JSON)</summary>
-
-```json
-{
-    "brand_name": "Ideal Credit",
-    "last_updated": "2026-09-22",
-    "updated_by": "/unique-value-strategy",
-    "tone": {
-        "summary": "A trusted local advisor who speaks plainly, respects the reader's intelligence, and frames credit as a tool for business growth - not just borrowing.",
-        "spectrum": [
-            {
-                "dimension": "Formality",
-                "left_pole": "Casual",
-                "right_pole": "Formal",
-                "position": 4,
-                "notes": "Casual-professional. Uses 'tu' form in Romanian. Approachable but not sloppy. Avoids stiff banking register."
-            },
-            {
-                "dimension": "Energy",
-                "left_pole": "Serious",
-                "right_pole": "Playful",
-                "position": 3,
-                "notes": "Mostly serious. Money and business decisions are treated with respect. Occasional human warmth is welcome, never jokes at the reader's expense or about financial risk."
-            },
-            {
-                "dimension": "Confidence",
-                "left_pole": "Reserved",
-                "right_pole": "Bold",
-                "position": 6,
-                "notes": "Measured bold. Makes clear claims backed by specifics (MDL amounts, timelines). Does not hedge everything, but does not over-promise."
-            },
-            {
-                "dimension": "Complexity",
-                "left_pole": "Simple",
-                "right_pole": "Sophisticated",
-                "position": 2,
-                "notes": "Strongly simple. Plain Romanian. Financial terms are always explained in plain language alongside. Assumes a smart audience, not a finance-literate one."
-            },
-            {
-                "dimension": "Warmth",
-                "left_pole": "Warm",
-                "right_pole": "Direct",
-                "position": 5,
-                "notes": "Center. Warm delivery with direct message. The 'trusted advisor' register - cares about the reader AND respects their time."
-            }
-        ]
-    },
-    "vocabulary": {
-        "preferred": [
-            {
-                "term": "credit pentru afacerea ta",
-                "context": "Frames product as belonging to the reader's business, not a generic offering"
-            },
-            { "term": "să crești / să te dezvolți", "context": "Growth framing - use when describing what credit enables" },
-            { "term": "rapid / simplu", "context": "Key differentiators vs banks - use in headlines and benefit lists" },
-            { "term": "fără birocrație bancară", "context": "Core positioning vs traditional banks - strong headline phrase" },
-            { "term": "antreprenor", "context": "Preferred form of address for business-owner audience - more respectful than 'client'" },
-            {
-                "term": "biroul nostru din Căușeni / Chișinău",
-                "context": "Use to humanize and localize - reminds readers this is a real, reachable institution"
-            },
-            { "term": "echipa Ideal Credit", "context": "Human team framing - not 'compania noastră' or 'instituția'" },
-            { "term": "în Moldova", "context": "Local grounding - use to signal we understand the local context" },
-            { "term": "sumă + specific MDL range", "context": "Always anchor credit talk to real numbers (10,000-300,000 MDL)" },
-            {
-                "term": "are sens / nu are sens",
-                "context": "Core strategic frame - whether the credit fits the reader's actual goal, not just eligibility"
-            },
-            { "term": "analizăm scopul și situația ta", "context": "Names the mechanism directly - what gets analyzed, not a before/after claim" },
-            { "term": "16 ani", "context": "Pattern-recognition proof point - anchor judgment claims here, not to adjectives" }
-        ],
-        "avoid": [
-            {
-                "term": "soluții financiare comprehensive",
-                "reason": "Corporate vague-speak",
-                "alternative": "credit pentru [specific need]"
-            },
-            {
-                "term": "optimizați fluxul de numerar",
-                "reason": "Jargon nobody uses in conversation",
-                "alternative": "să ai bani când ai nevoie de ei"
-            },
-            { "term": "produse bancare", "reason": "They are not a bank - wrong identity signal", "alternative": "credit / finanțare" },
-            { "term": "parteneriat strategic", "reason": "Overused corporate phrase", "alternative": "lucrăm împreună" },
-            {
-                "term": "clienți fideli",
-                "reason": "Sounds like a telecom loyalty program",
-                "alternative": "antreprenorii care aleg Ideal Credit"
-            },
-            {
-                "term": "suntem pasionați de",
-                "reason": "Empty opener, sounds fake",
-                "alternative": "Ne ocupăm de [specific thing] pentru că [specific reason]"
-            },
-            { "term": "împrumut", "reason": "Slightly informal/negative connotation in this context", "alternative": "credit" },
-            {
-                "term": "soluție completă / one-stop-shop",
-                "reason": "Generic, means nothing to reader",
-                "alternative": "tot ce ai nevoie pentru [specific goal]"
-            },
-            {
-                "term": "garantat / succes garantat / sigur 100%",
-                "reason": "The strategy is honest judgment, not a guaranteed outcome - overpromising undercuts the mechanism's credibility",
-                "alternative": "analizăm situația ta și îți spunem sincer dacă are sens"
-            }
-        ]
-    },
-    "personality_traits": [
-        "Locally rooted - knows and references Moldovan business reality",
-        "Straight-talking - plain language, no jargon fog, says what it means",
-        "Growth-oriented - frames credit as a business growth tool, not just debt",
-        "Reliably human - there's a real team, real offices, real relationships behind the brand"
-    ],
-    "examples": {
-        "on_brand": [
-            {
-                "text": "Afacerea ta are nevoie de capital acum. Noi suntem gata să te ajutăm - fără drumuri la bancă.",
-                "source": "Landing page headline concept",
-                "why": "Starts with reader's situation, specific differentiator (no bank trip), direct and warm"
-            },
-            {
-                "text": "Nu ești doar un dosar la ghișeu. Ești antreprenorul care vrea să meargă mai departe.",
-                "source": "Brand positioning statement",
-                "why": "Empathetic, anti-bank framing, growth language, respects the reader"
-            },
-            {
-                "text": "Calculează suma, vino la birou, primești răspuns.",
-                "source": "CTA / process description",
-                "why": "Three short steps, plain language, action-oriented, no fluff"
-            },
-            {
-                "text": "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută.",
-                "source": "Homepage subhead, brand/strategy.md",
-                "why": "States what gets analyzed (goal + financial situation) and why (a correct answer) instead of an adjective like 'trustworthy' or a shaky before/after claim"
-            }
-        ],
-        "off_brand": [
-            {
-                "text": "Ideal Credit oferă soluții financiare comprehensive adaptate nevoilor dumneavoastră individuale.",
-                "source": "Generic bank-style copy",
-                "why": "Corporate, impersonal, formal 'dumneavoastră' creates distance, vague"
-            },
-            {
-                "text": "Suntem pasionați de succesul financiar al clienților noștri.",
-                "source": "Generic bank-style copy",
-                "why": "Empty claim, no specificity, sounds like every other financial institution"
-            },
-            {
-                "text": "Împrumutați bani rapid!",
-                "source": "Payday lender style",
-                "why": "Wrong register, undersells the brand, sounds predatory not helpful"
-            }
-        ]
-    },
-    "platform_adaptations": {
-        "email": {
-            "tone_shift": "Warmest - direct, specific, almost like a note from someone at the office",
-            "format_preferences": "Short paragraphs (1-3 sentences), one clear CTA, personal sign-off from team member",
-            "length": "120-250 words",
-            "dos": [
-                "Use specific numbers and scenarios",
-                "Address the reader as tu",
-                "End with a single clear next step",
-                "Sign off with a name when possible"
-            ],
-            "donts": ["No generic 'drag & drop' newsletter templates", "No fake urgency", "No multi-CTA confusion"]
-        },
-        "facebook": {
-            "tone_shift": "Most relatable - local context, real business situations, community feel",
-            "format_preferences": "Hook line + 2-3 lines of context + CTA. Use visuals of real offices or team when possible.",
-            "length": "80-150 words",
-            "dos": [
-                "Reference local Moldovan context",
-                "Use specific MDL amounts",
-                "Ask a genuine question to drive comments",
-                "Tag relevant locations"
-            ],
-            "donts": ["No stock-photo generic imagery", "No pushy 'Apply now or miss out' urgency", "No walls of text"]
-        },
-        "linkedin": {
-            "tone_shift": "More professional and expertise-forward - targets business owners, accountants, partners",
-            "format_preferences": "Insight or business tip leads (not promotion-first). Line breaks between every thought. Hook in first two lines.",
-            "length": "100-200 words",
-            "dos": [
-                "Lead with a business insight, not an offer",
-                "Share practical tips about business finance in Moldova",
-                "Use data points when available"
-            ],
-            "donts": ["No hashtag spam", "No 'excited to announce' openers", "No promotional-first content without value"]
-        },
-        "blog": {
-            "tone_shift": "RETIRED 2026-09-16 - superseded by brand/blog-editorial-strategy.md (Dincolo de Cifre). Blog is now a standalone editorial identity, not a site content type: numerate-peer register (6-7/10 sophistication vs site's 2/10), no product mentions in body, no application-form links, no explaining standard financial vocabulary. See the strategy doc for the full register rule and workflow.",
-            "format_preferences": "See brand/blog-editorial-strategy.md",
-            "length": "See brand/blog-editorial-strategy.md",
-            "dos": ["See brand/blog-editorial-strategy.md"],
-            "donts": ["See brand/blog-editorial-strategy.md"]
-        },
-        "landing_page": {
-            "tone_shift": "Most direct and benefit-first - calm urgency, not high pressure. Still warm.",
-            "format_preferences": "Short sentences. Benefit-driven headlines. Trust signals (office addresses, team, MDL ranges). Single CTA per section.",
-            "length": "Hero: 20-40 words; feature sections: 50-100 words; full page: 600-1500 words",
-            "dos": [
-                "Lead with the outcome the reader wants",
-                "Include the calculator as interactive proof",
-                "Show office locations prominently",
-                "Use real MDL amounts, not vague 'sume mari'"
-            ],
-            "donts": ["No multi-CTA confusion in hero", "No fake social proof", "No 'guaranteed' language without legal basis"]
-        }
-    },
-    "audience_awareness": {
-        "sophistication_level": "mixed",
-        "jargon_tolerance": "light",
-        "reading_level": "Plain Romanian - grade 8-10 comprehension target. Assumes business literacy, not finance literacy.",
-        "notes": "Primary: Romanian-speaking Moldovan entrepreneurs and small business owners. Secondary: Russian-speaking segment in Chișinău and urban areas. Both audiences are practical, time-pressed, and skeptical of financial institution promises. They've dealt with Moldovan bureaucracy and respond to concrete, specific communication. Trust is built through local references, real numbers, and human accessibility."
-    },
-    "signature_phrases": [
-        {
-            "phrase": "Îți analizăm scopul și situația financiară, ca să-ți spunem dacă creditul chiar te ajută",
-            "usage": "Core message of the current strategy (brand/strategy.md) - lead with this over speed/simplicity claims wherever the strategy itself is being communicated"
-        },
-        { "phrase": "fără birocrație bancară", "usage": "Headlines and benefit lists when differentiating from banks" },
-        { "phrase": "vino la biroul nostru", "usage": "CTA that humanizes the process - an invitation, not a command" },
-        { "phrase": "credit pentru afacerea ta", "usage": "Product framing for business-owner audience - personalizes the offering" },
-        {
-            "phrase": "simplu, rapid, local",
-            "usage": "Supporting differentiator for social bios, meta descriptions - keep as secondary, not the lead, since 'rapid' is a category-wide claim (see brand/strategy.md)"
-        },
-        { "phrase": "calculează și vino", "usage": "Two-step CTA anchoring the calculator tool to an in-person visit" }
-    ]
-}
-```
-
-</details>
+| ID | Quote (verbatim) | Source |
+|---|---|---|
+| E1 | "Decizie în 1-2 zile lucrătoare, dobândă fixă." | app/credite/credit-pentru-afaceri/page.tsx (meta) |
+| E2 | "SRL, ÎI, GȚ - toate formele juridice acceptate" | components/home/Solutions.tsx |
+| E3 | "Buletin de identitate al administratorului" | credit-pentru-afaceri/page.tsx |
+| E4 | "Extrase bancare - ultimele 3-6 luni" | credit-pentru-afaceri/page.tsx |
+| E5 | "Extrasul din Registrul de Stat nu trebuie să aibă mai mult de 30 de zile." | credit-pentru-afaceri/page.tsx |
+| E6 | "Poate primi credit o firmă cu pierderi pe ultimul an?" | credit-pentru-afaceri/page.tsx |
+| E7 | "Ce se întâmplă dacă finanțarea nu are sens pentru afacerea mea?" | credit-pentru-afaceri/page.tsx |
+| E8 | "Analizăm individual. Contează mai mult extrasele bancare și activitatea lunară a contului decât vechimea exactă. Am finanțat firme cu 4-6 luni de activitate cu flux demonstrabil." | credit-pentru-afaceri/page.tsx |
+| E9 | "La primul credit, fidejusorul (garant personal - de obicei administratorul firmei) este obligatoriu." | credit-pentru-afaceri/page.tsx |
+| E10 | "Are sens pentru tine? Analizăm scopul, nu doar dosarul - și spunem sincer când răspunsul e nu." | components/home/WhyUs.tsx |
+| E11 | "Dosarul complet primit dimineața - răspunsul îl ai înainte de prânz." / "Dobânzi fixe, zero comisioane ascunse - toate costurile înainte de semnare." | components/home/WhyUs.tsx |
+| E12 | "Trimite extrasele pe canalul care îți convine" | app/contacte/page.tsx |
+| E13 | "Documentele se verifică prin e-mail, WhatsApp sau Viber - fără drumuri." | components/home/Process.tsx |
+| E14 | "Extras din Registrul OCN autorizate" | app/despre-noi/page.tsx |
+| E15 | "Adeverință / extras / BIC" | credit-pentru-nevoi-personale/page.tsx |
+| E16 | "Pentru orice nevoie urgentă sau planificată - cu condiții clare de la prima discuție." | components/home/Solutions.tsx |
+| E17 | "Rambursare anticipată gratuită" | components/home/WhyUs.tsx |
+| E18 | "Exemplu: un credit de 100.000 MDL, cu o dobândă anuală de 12% (nivel uzual pentru un credit de consum), calculată pe suma rămasă de plătit în fiecare lună." | campaigns/social/2026-09/week-2/02/content.md |
+| I1 | "our voice is simple and professional, not complex, clear messages, short sentences. clarity and quality first. use Moldova slang, not the Romaninan." | intake, 2026-11-09 |

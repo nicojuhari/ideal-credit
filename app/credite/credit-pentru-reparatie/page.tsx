@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import ProductHero from "@/components/product/ProductHero";
-import SpecStrip from "@/components/product/SpecStrip";
-import EligibilityRows from "@/components/product/EligibilityRows";
-import ProductDescription from "@/components/product/ProductDescription";
-import DocumentRows from "@/components/product/DocumentRows";
-import ProductFaq from "@/components/product/ProductFaq";
-import type { FaqItem } from "@/components/product/ProductFaq";
+import Analysis from "@/components/home/Analysis";
 import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
-import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
+import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
+import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
+import MobileCallBar from "@/components/includes/MobileCallBar";
 import { repairLoanSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
 const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
@@ -20,50 +16,52 @@ const breadcrumbItems = [
     { name: "Credit pentru reparație", url: "https://idealcredit.md/credite/credit-pentru-reparatie" },
 ];
 
+const TITLE = "Credit pentru reparație, casă sau apartament | Ideal Credit";
+const DESCRIPTION =
+    "Credit pentru reparația casei sau a apartamentului, de la 10.000 la 300.000 lei. Nu trebuie să fii proprietar. Fără comisioane.";
+
 export const metadata: Metadata = {
-    title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
-    description:
-        "Credit pentru reparație - casă sau apartament, cu dobândă fixă și sume flexibile. Analizăm scopul și situația ta, pentru o decizie corectă.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-reparatie" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/credite/credit-pentru-reparatie",
-        title: "Credit pentru reparație - casă sau apartament | Ideal Credit",
-        description:
-            "Credit pentru reparație - casă sau apartament, cu dobândă fixă și sume flexibile. Analizăm scopul și situația ta, pentru o decizie corectă.",
+        title: TITLE,
+        description: DESCRIPTION,
     },
 };
 
-const faqItems: FaqItem[] = [
+const repairFaqItems: FaqItem[] = [
     {
-        question: "Trebuie să prezint facturi de la constructor sau devize înainte de aprobare?",
-        answer: "Nu. Nu cerem devize sau facturi obligatorii pentru a aproba creditul. Dacă le ai, pot ajuta la stabilirea sumei, dar nu sunt o condiție. Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar.",
+        question: "Trebuie să aduc devize sau facturi de la constructor?",
+        answer: "Nu. Devizele nu sunt obligatorii. Dacă ai un deviz, ne ajută să stabilim suma.",
     },
     {
-        question: "Ce se întâmplă dacă suma cerută nu se potrivește bugetului meu?",
-        answer: "Îți spunem sincer, înainte de dosar. Dacă rata propusă ar fi prea mare pentru venitul tău, recomandăm o sumă mai mică sau un termen mai lung, ca renovarea să nu-ți pună presiune pe buget.",
+        question: "Pot folosi banii pentru orice lucrare?",
+        answer: "Da. Materiale, meșteri, instalații, ferestre, finisaje sau mobilier. Banii îi folosești cum ai nevoie.",
     },
     {
-        question: "Pot folosi banii pentru orice lucrare de renovare?",
-        answer: "Da. Materiale de construcție, plata meșterilor, mobilare, instalații, ferestre, finisaje - nu există restricții pe destinația banilor odată aprobat creditul.",
+        question: "Pot lua credit dacă stau în chirie?",
+        answer: "Da. Nu trebuie să fii proprietar. Ne uităm la venitul tău, nu la actele locuinței.",
     },
     {
-        question: "Este obligatorie garanția cu imobilul?",
-        answer: "Pentru primul credit, fidejusorul (garant personal) este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
+        question: "Cereți gaj pe locuință?",
+        answer: "La primul credit cerem un fidejusor. Gaj cerem doar la sume mari sau când venitul nu e stabil.",
     },
     {
-        question: "Pot obține credit pentru reparație dacă stau în chirie?",
-        answer: "Da. Nu este obligatorie proprietatea imobilului. Dacă ai venit stabil și capacitate de rambursare, discutăm despre finanțare indiferent de statutul locuinței.",
+        question: "Ce se întâmplă dacă suma cerută e prea mare pentru venitul meu?",
+        answer: "Îți spunem la telefon, înainte să aduni actele. Îți propunem o sumă mai mică sau un termen mai lung.",
     },
     {
-        question: "Cât timp durează aprobarea?",
-        answer: "În general 2-3 ore pentru dosarele complete. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi lucrătoare.",
+        question: "Cât durează decizia?",
+        answer: "De obicei 2-3 ore, dacă actele sunt complete. Banii îi primești în numerar la oficiu sau pe card.",
     },
     {
-        question: "Dobânda se modifică dacă renovarea durează mai mult?",
-        answer: "Nu. Dobânda este fixă pe toată durata contractului, indiferent de câte luni durează lucrările. Rata lunară pe care o semnezi rămâne aceeași până la ultima plată.",
+        question: "Se schimbă rata dacă renovarea durează mai mult?",
+        answer: "Nu. Dobânda e fixă pe tot contractul. Graficul de plăți rămâne cel semnat.",
     },
 ];
 
@@ -71,95 +69,83 @@ export default function CreditReparatiePage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(repairLoanSchema) }} />
-            <ProductHero
+
+            <ServiceHero
                 breadcrumb={breadcrumbItems}
-                category="Persoane fizice"
-                position={6}
                 title={
                     <>
-                        Credit pentru <Accent>reparație.</Accent>
+                        Credit pentru reparație, <Accent>casă sau apartament.</Accent>
                     </>
                 }
-                subtitle="Obține un credit pentru reparația casei sau apartamentului tău. Renovează-ți locuința acum cu rate fixe și costuri clare."
-                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
-                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
-            />
-            <SpecStrip
-                specs={[
-                    { value: "10 000", label: "MDL sumă minimă" },
-                    { value: "12-48", label: "luni termen" },
-                    { value: "2-3 ore", label: "până la decizie", proof: true },
-                    { value: "4 %", label: "dobândă fixă / lună" },
+                subtitle="Pentru orice lucrare de renovare, de la 10.000 la 300.000 lei. Analizăm scopul și situația ta financiară. Apoi îți spunem ce sumă și ce termen ți se potrivesc."
+                rows={[
+                    { label: "Suma", value: "10.000–300.000 lei" },
+                    { label: "Termen", value: "12–48 luni" },
+                    { label: "Decizia", value: "2–3 ore" },
                 ]}
             />
 
-            <EligibilityRows
-                marker="Eligibilitate"
+            <Situations
                 title={
                     <>
-                        Condiții de <Accent>creditare</Accent>
+                        Pentru ce iau oamenii <Accent>credit de reparație.</Accent>
                     </>
                 }
-                items={["Vârsta între 23 și 55 de ani", "Venit confirmat și stabil", "Buletin de identitate valabil"]}
+                intro="Banii îi folosești cum ai nevoie. Pentru materiale, pentru meșteri sau pentru ambele."
+                items={[
+                    { label: "Instalații", text: "Schimbi instalația electrică sau țevile din baie." },
+                    { label: "Ferestre și uși", text: "Pui ferestre noi înainte de iarnă." },
+                    { label: "Finisaje", text: "Zugrăvești pereții și pui parchet nou în camere." },
+                    { label: "Mobilier", text: "Ai terminat lucrările și cumperi mobila pentru bucătărie." },
+                ]}
             />
 
-            <Calculator />
+            <CostExample sum={50000} term={36} />
+            <Calculator max={300000} />
 
-            <Section
-                marker="Detalii"
+            <Analysis
                 title={
                     <>
-                        Credit pentru reparație casă sau <Accent>apartament</Accent>
+                        Ce analizăm înainte <Accent>de aprobare.</Accent>
                     </>
                 }
-            >
-                <ProductDescription
-                    items={[
-                        {
-                            title: "Orice lucrare de renovare",
-                            text: "Instalații electrice sau sanitare, zugrăveli și finisaje, ferestre și uși, parchet, mobilier sau dotări. Fără să aștepți ani să strângi banii.",
-                        },
-                        {
-                            title: "Fără devize obligatorii",
-                            text: "Banii vin numerar la birou sau în cont, îi folosești cum ai nevoie - materiale, meșteri sau ambele. Dobânda e fixă, rata nu se schimbă.",
-                        },
-                        {
-                            title: "Nu trebuie să fii proprietar",
-                            text: "La primul credit, fidejusorul e obligatoriu; gajul imobiliar doar pentru sume mari sau venituri nestabile. Analizăm situația ta reală, nu actele de proprietate - și, dacă suma nu are sens pentru veniturile tale, recomandăm o sumă potrivită, nu una care îți pune presiune pe buget.",
-                        },
-                    ]}
-                />
-            </Section>
+                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Lucrăm de ${yearsSinceFoundation} ani.`}
+                steps={[
+                    { title: "Planul", body: "Ne spui ce lucrări vrei să faci și cât estimezi că vor costa." },
+                    {
+                        title: "Veniturile",
+                        body: "Vedem din ce venit plătești rata în fiecare lună. Și cum o plătești dacă venitul scade.",
+                    },
+                    { title: "Garanțiile", body: "La final discutăm cine este fidejusor și, doar dacă e nevoie, ce bun pui gaj." },
+                ]}
+                showOutcomes={false}
+                after="Dacă renovarea costă mult, începe cu lucrările cele mai necesare. Restul le poți finanța mai târziu, cu un al doilea credit."
+            />
+
+            <Eligibility
+                can={[
+                    "ai cel puțin 23 de ani;",
+                    "ai un venit confirmat și stabil;",
+                    "ai buletin de identitate valabil. Nu trebuie să fii proprietarul locuinței.",
+                ]}
+                cannot={["o sumă la care rata ar lua o parte prea mare din venitul lunar. În acest caz îți propunem o sumă mai mică."]}
+            />
+
+            <Documents
+                items={[
+                    { title: "Buletinul de identitate", note: "obligatoriu" },
+                    { title: "Confirmarea veniturilor", note: "adeverință, extras de cont sau BIC" },
+                    { title: "Actele imobilului", note: "doar dacă se cere gaj" },
+                    { title: "Devizul de lucrări", note: "opțional" },
+                ]}
+                footnote="Banii îi primești numerar la oficiu sau pe card."
+            />
 
             <Process />
-
-            <DocumentRows
-                id="documente"
-                marker="Dosar"
-                title={
-                    <>
-                        Documente <Accent>necesare</Accent>
-                    </>
-                }
-                items={[
-                    { title: "Buletin de identitate", note: "Obligatoriu" },
-                    { title: "Confirmare a veniturilor", note: "Adeverință / extras / BIC" },
-                    { title: "Actele imobilului", note: "Dacă se solicită gaj" },
-                    { title: "Deviz estimativ de lucrări", note: "Opțional" },
-                ]}
-                footnote="Banii pot fi ridicați numerar la birou sau transferați la card/cont bancar. Îi folosești cum ai nevoie - materiale, meșteri, echipamente."
-            />
-
-            <ProductFaq
-                title={
-                    <>
-                        Întrebări despre creditul de <Accent>reparație</Accent>
-                    </>
-                }
-                items={faqItems}
-            />
-            <WhyUs />
+            <LatePayment consumer example="lucrările costă mai mult decât ai estimat sau venitul scade o lună." />
+            <ProductFaq items={repairFaqItems} />
             <ClosingCta />
+            <MobileCallBar />
         </div>
     );
 }

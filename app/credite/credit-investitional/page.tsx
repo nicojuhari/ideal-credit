@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
-import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import ProductHero from "@/components/product/ProductHero";
-import SpecStrip from "@/components/product/SpecStrip";
-import OrdinalRows from "@/components/product/OrdinalRows";
-import EligibilityRows from "@/components/product/EligibilityRows";
-import ProductDescription from "@/components/product/ProductDescription";
-import ComparisonRows from "@/components/product/ComparisonRows";
-import DocumentRows from "@/components/product/DocumentRows";
-import ProductFaq from "@/components/product/ProductFaq";
-import type { FaqItem } from "@/components/product/ProductFaq";
+import Analysis from "@/components/home/Analysis";
 import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
-import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
+import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
+import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
+import MobileCallBar from "@/components/includes/MobileCallBar";
 import { investitionalSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -23,188 +16,138 @@ const breadcrumbItems = [
     { name: "Credit investițional", url: "https://idealcredit.md/credite/credit-investitional" },
 ];
 
+const TITLE = "Credit investițional pentru afaceri | Ideal Credit";
+const DESCRIPTION =
+    "Credit pentru echipament, utilaje, transport și renovarea spațiului. De la 50.000 la 400.000 lei, pe 12-60 de luni. Fără comisioane.";
+
 export const metadata: Metadata = {
-    title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
-    description:
-        "Credit investițional pentru afaceri din Moldova - echipamente, extinderi și modernizări. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/credite/credit-investitional" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/credite/credit-investitional",
-        title: "Credit Investițional pentru Afaceri Moldova | Ideal Credit",
-        description:
-            "Credit investițional pentru afaceri din Moldova - echipamente, extinderi și modernizări. Termen până la 60 luni, dobândă fixă, decizie în 1-2 zile.",
+        title: TITLE,
+        description: DESCRIPTION,
     },
 };
 
 const investFaqItems: FaqItem[] = [
     {
-        question: "Pot finanța orice tip de echipament sau utilaj?",
-        answer: "Da, nu suntem limitați la categorii specifice. Finanțăm mașini industriale, tehnica agricolă, echipamente horeca, sisteme IT, vehicule comerciale și altele.",
+        question: "Ce echipamente sau utilaje pot finanța?",
+        answer: "Aproape orice bun de care are nevoie afacerea. De exemplu utilaje industriale, tehnică agricolă, echipamente horeca, sisteme IT sau vehicule comerciale.",
     },
     {
-        question: "Ce se întâmplă dacă investiția nu are sens financiar acum?",
-        answer: `Îți spunem direct, înainte de dosar. Cu ${yearsSinceFoundation} ani analizând ce funcționează pentru afaceri din Moldova, recunoaștem când o investiție e prematură - și recomandăm fie o sumă mai mică, fie să aștepți un sezon mai potrivit.`,
+        question: "Ce se întâmplă dacă investiția nu are sens acum?",
+        answer: `Îți spunem direct, înainte să aduni actele. Avem ${yearsSinceFoundation} ani de lucru cu afaceri din Moldova. Îți propunem o sumă mai mică sau să amâni investiția pentru un sezon mai potrivit.`,
     },
     {
-        question: "Care este termenul maxim pentru un credit investițional?",
-        answer: "Până la 60 luni (5 ani). Termenul mai lung reduce rata lunară și face investiția mai ușor de gestionat din perspectiva fluxului de numerar.",
+        question: "Care este termenul maxim?",
+        answer: "Până la 60 de luni, adică 5 ani. Cu un termen mai lung, rata lunară e mai mică.",
     },
     {
-        question: "Bunul achiziționat devine proprietatea mea imediat?",
-        answer: "Da. Spre deosebire de leasing, la credit investițional bunul este al tău din prima zi. Nicio restricție de utilizare, nicio clauză de răscumpărare.",
+        question: "Bunul cumpărat este al meu din prima zi?",
+        answer: "Da. Bunul este al companiei din prima zi. Nu are restricții de folosire.",
     },
     {
-        question: "Pot rambursa creditul anticipat dacă afacerea merge bine?",
-        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată.",
+        question: "Pot achita creditul înainte de termen?",
+        answer: "Da, fără comisioane. Plătești dobânda doar pentru perioada în care ai folosit banii.",
     },
     {
-        question: "Ce garanții sunt necesare pentru un credit investițional?",
-        answer: "La primul credit, fidejusorul (garant personal) este întotdeauna obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau fluxuri de venituri nestabile.",
+        question: "Ce garanții cereți?",
+        answer: "La primul credit cerem fidejusor, de obicei administratorul. Gaj imobiliar putem cere la sume mari sau când încasările nu sunt constante.",
     },
     {
-        question: "Pot combina creditul investițional cu capital de lucru?",
-        answer: "Da, de multe ori. Analizăm suma totală de care ai nevoie pentru echipament și pentru capital de lucru, și dacă are sens financiar, finanțăm ambele prin același dosar, cu o singură rată lunară.",
+        question: "Pot lua în același credit și bani pentru capital de lucru?",
+        answer: "Da, de multe ori. Analizăm suma pentru echipament și suma pentru capital de lucru. Dacă afacerea le poate plăti, le finanțăm în același dosar, cu o singură rată lunară.",
     },
-];
-
-const financingCategories = [
-    { title: "Echipamente și utilaje", desc: "Mașini industriale, linii de producție, tehnica agricolă, echipamente de prelucrare." },
-    { title: "Vehicule comerciale", desc: "Autoutilitare, camioane, vehicule de lucru, transport marfă." },
-    { title: "Renovare spațiu comercial", desc: "Birouri, depozite, magazine, restaurante, hoteluri - modernizare sau extindere." },
-    { title: "Tehnologie și IT", desc: "Sisteme informatice, software specializat, echipamente de comunicații." },
-    { title: "Mobilier și dotări", desc: "Dotarea completă a spațiilor: hoteluri, restaurante, birouri, saloane." },
-];
-
-const comparisonRows = [
-    { label: "Proprietatea bunului", ours: "Imediată, din prima zi", other: "La finalul contractului" },
-    { label: "Flexibilitate bunuri", ours: "Orice tip de bun", other: "Vehicule și echipamente specifice" },
-    { label: "Rambursare anticipată", ours: "Gratuită", other: "Cu penalizări" },
-    { label: "Restricții de utilizare", ours: "Nicio restricție", other: "Kilometraj, modificări interzise" },
 ];
 
 export default function CreditInvestitionalPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(investitionalSchema) }} />
-            <ProductHero
+
+            <ServiceHero
                 breadcrumb={breadcrumbItems}
-                category="Persoane juridice"
-                position={2}
                 title={
                     <>
-                        Credit <Accent>investițional.</Accent>
+                        Credit investițional pentru <Accent>echipamente și extindere.</Accent>
                     </>
                 }
-                subtitle="Cumperi echipamente, extinzi spațiul sau modernizezi linia de producție. Termen până la 60 luni, rată fixă, costuri clare."
-                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
-                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
-            />
-            <SpecStrip
-                specs={[
-                    { value: "50 000", label: "MDL sumă minimă" },
-                    { value: "12-60", label: "luni termen" },
-                    { value: "1-2 zile", label: "până la decizie", proof: true },
-                    { value: "4 %", label: "dobândă fixă / lună" },
+                subtitle="Pentru SRL, ÎI și gospodării țărănești, de la 50.000 la 400.000 lei. Analizăm scopul investiției și veniturile afacerii. Apoi îți spunem ce sumă și ce termen ți se potrivesc."
+                rows={[
+                    { label: "Suma", value: "50.000–400.000 lei" },
+                    { label: "Termen", value: "12–60 luni" },
+                    { label: "Decizia", value: "1–2 zile lucrătoare" },
                 ]}
             />
 
-            <OrdinalRows
-                marker="Destinații"
+            <Situations
                 title={
                     <>
-                        Ce poți <Accent>finanța</Accent>
+                        Pentru ce iau companiile <Accent>credit investițional.</Accent>
                     </>
                 }
-                items={financingCategories}
-            />
-
-            <EligibilityRows
-                marker="Eligibilitate"
-                title={
-                    <>
-                        Condiții de <Accent>eligibilitate</Accent>
-                    </>
-                }
+                intro="Alegem termenul după cât de repede aduce venit investiția. Un termen mai lung face rata mai mică."
                 items={[
-                    "Firmă înregistrată în Moldova (SRL, ÎI sau gospodărie țărănească)",
-                    "Activitate economică de cel puțin 6 luni",
-                    "Investiția are legătură directă cu activitatea firmei",
-                    "Extrase bancare cu mișcare de bani constantă",
+                    { label: "Utilaj nou", text: "Cumperi o linie de producție sau tehnică agricolă. Rata o plătești din venitul pe care îl aduce." },
+                    { label: "Vehicul comercial", text: "Ai nevoie de o autoutilitară sau un camion pentru livrări." },
+                    { label: "Renovare spațiu", text: "Modernizezi magazinul, depozitul sau restaurantul. Sau extinzi spațiul în care lucrezi." },
+                    { label: "Dotări și IT", text: "Dotezi un salon, un hotel sau un birou. Sau cumperi sisteme IT pentru companie." },
                 ]}
             />
 
+            <CostExample sum={200000} term={36} />
             <Calculator />
 
-            <Section
-                marker="Detalii"
+            <Analysis
                 title={
                     <>
-                        Credit investițional pentru <Accent>afaceri</Accent> din Moldova
+                        Ce analizăm înainte <Accent>de aprobare.</Accent>
                     </>
                 }
-            >
-                <ProductDescription
-                    items={[
-                        {
-                            title: "Bunul e al tău din prima zi",
-                            text: "Echipamente, utilaje, vehicule comerciale, modernizarea spațiului sau dotări IT. Spre deosebire de leasing, nu există restricții de utilizare sau clauze de răscumpărare.",
-                        },
-                        {
-                            title: "Termen până la 60 de luni",
-                            text: "Reduce rata lunară și e mai ușor de gestionat pentru bugetul firmei. Dobânda e fixă pe toată durata contractului - știi exact cât plătești de la prima până la ultima rată.",
-                        },
-                        {
-                            title: "Ce analizăm",
-                            text: "Extrasele bancare și activitatea curentă a firmei - nu un plan de afaceri detaliat sau o factură finalizată. Analizăm scopul investiției și situația firmei, ca să luăm decizia corectă - chiar dacă asta înseamnă o sumă mai mică sau un refuz.",
-                        },
-                    ]}
-                />
-            </Section>
+                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Avem ${yearsSinceFoundation} ani de lucru cu afaceri din Moldova.`}
+                steps={[
+                    { title: "Planul", body: "Ne spui ce bun cumperi și cum îți aduce venit. Nu cerem un plan de afaceri detaliat." },
+                    {
+                        title: "Veniturile",
+                        body: "Vedem din ce bani plătești rata, după extrasele bancare pe ultimele 3-6 luni. Și cum o plătești până investiția aduce venit.",
+                    },
+                    { title: "Garanțiile", body: "La final discutăm cine este fidejusor și, dacă e nevoie, ce bun pui gaj." },
+                ]}
+                showOutcomes={false}
+                after="Ai nevoie și de capital de lucru pe lângă echipament? Putem finanța ambele în același dosar, cu o singură rată."
+            />
 
-            <Section
-                align="center"
-                title={
-                    <>
-                        Credit investițional <Accent>vs. leasing</Accent>
-                    </>
-                }
-            >
-                <ComparisonRows oursLabel="Ideal Credit" otherLabel="Leasing" rows={comparisonRows} />
-            </Section>
+            <Eligibility
+                can={[
+                    "ai o companie înregistrată în Moldova: SRL, ÎI sau gospodărie țărănească;",
+                    "afacerea are cel puțin 6 luni de activitate și încasări constante pe cont;",
+                    "investiția are legătură directă cu activitatea companiei;",
+                    "administratorul poate fi fidejusor (garant) la primul credit.",
+                ]}
+                cannot={["o sumă la care rata ar lua aproape tot profitul lunar. În acest caz îți propunem o sumă mai mică."]}
+            />
+
+            <Documents
+                items={[
+                    { title: "Buletinul de identitate", note: "al administratorului" },
+                    { title: "Extrasul din Registrul de stat", note: "nu mai vechi de 30 de zile" },
+                    { title: "Extrasele bancare", note: "pe ultimele 3-6 luni" },
+                    { title: "Oferta sau factura pentru bun", note: "dacă o ai deja" },
+                    { title: "Actele de proprietate", note: "doar dacă e nevoie de gaj" },
+                ]}
+                footnote="Bunul cumpărat este al companiei din prima zi."
+            />
 
             <Process />
-
-            <DocumentRows
-                id="documente"
-                marker="Dosar"
-                title={
-                    <>
-                        Documente <Accent>necesare</Accent>
-                    </>
-                }
-                items={[
-                    { title: "Buletin de identitate al administratorului", note: "Obligatoriu" },
-                    { title: "Certificat de înregistrare (SRL/ÎI)", note: "Obligatoriu" },
-                    { title: "Extrase bancare - ultimele 3-6 luni", note: "Obligatoriu" },
-                    { title: "Ofertă sau factură preliminară pentru bun", note: "Dacă există" },
-                    { title: "Actele de proprietate", note: "Pentru gaj, dacă e cazul" },
-                ]}
-                footnote="Bunul achiziționat devine proprietatea ta din prima zi. Spre deosebire de leasing, nu există clauze de răscumpărare."
-            />
-
-            <ProductFaq
-                title={
-                    <>
-                        Întrebări despre creditul <Accent>investițional</Accent>
-                    </>
-                }
-                items={investFaqItems}
-            />
-            <WhyUs />
+            <LatePayment example="un utilaj nou pornește mai târziu sau un client plătește cu întârziere." />
+            <ProductFaq items={investFaqItems} />
             <ClosingCta />
+            <MobileCallBar />
         </div>
     );
 }

@@ -2,14 +2,7 @@
 export const CALCULATOR_MONTHLY_RATE = 4;
 
 export const SITE_DESCRIPTION =
-    "Credite pentru succes în Moldova: finanțare nebancară pentru afaceri și persoane fizice. Analizăm scopul și situația ta, ca să-ți spunem dacă creditul chiar te ajută - dobândă fixă, fără comisioane ascunse.";
-
-// Byline used on "Dincolo de Cifre" blog articles - single source for both the visible byline and the Article schema author.
-export const ARTICLE_AUTHOR = {
-    name: "Nicolae Cojuhari",
-    jobTitle: "Co-fondator, Ideal Credit",
-    description: "Licențiat în finanțe",
-};
+    "Credite nebancare pentru afaceri și persoane fizice, de la 10.000 la 500.000 lei. Plătești doar dobânda fixă. Fără comisioane.";
 
 export const OFFICES = [
     {
@@ -36,109 +29,68 @@ export const OFFICES = [
 ];
 
 export const FAQ_ITEMS = [
-    // ── top 6: shown on homepage (Faq.tsx uses FAQ_ITEMS.slice(0, 6)) - ordered by value ──
+    // shortcut: the 100.000 lei example assumes CALCULATOR_MONTHLY_RATE = 4; update it if the rate changes.
     {
-        question: "Ce tipuri de garanții acceptați?",
-        answer: "Există două tipuri: fidejusiunea (garanție personală - o persoană care garantează cu venitul său) și gajul imobiliar (locuință sau teren). La primul credit, fidejusorul este obligatoriu. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
+        question: "Cât costă un credit de 100.000 lei pe 24 de luni?",
+        answer: "Prima rată este 8.167 lei, ultima 4.325 lei. Rata scade în fiecare lună, pentru că dobânda se calculează din suma rămasă. Dobânda totală este 49.996 lei. Comisioane: 0 lei. DAE: 60,21%. Dacă achiți creditul mai devreme, plătești dobânda doar pentru lunile folosite.",
     },
     {
-        question: "Pot obține credit doar cu buletinul, fără gaj?",
-        answer: "Da. La primul credit solicităm întotdeauna un fidejusor (garant personal) - acesta nu este opțional. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau dacă venitul nu este stabil.",
+        question: "Ce sumă pot lua?",
+        answer: "Persoanele fizice pot lua de la 10.000 la 300.000 lei. Afacerile pot lua de la 50.000 la 500.000 lei. Suma exactă depinde de venit și de garanții.",
     },
     {
-        question: "Care este suma minimă și maximă pe care o pot obține?",
-        answer: "Suma minimă este de la 10.000 lei pentru persoane fizice și de la 50.000 lei pentru afaceri. Suma maximă depinde de venit, garanțiile disponibile și situația fiecărui client. Analizăm individual și comunicăm suma accesibilă după prima discuție.",
-    },
-    {
-        question: "Cât timp durează aprobarea?",
-        answer: "Pentru cererile complete depuse în programul de lucru: 2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri. Dacă documentele sunt în regulă, banii pot fi disponibili în aceeași zi.",
-    },
-    {
-        question: "Există comisioane ascunse?",
-        answer: "Nu. Toate costurile - dobânda, DAE (costul total anual) și penalitățile posibile - sunt prezentate înainte de semnare. Ce citești în contract, aia plătești.",
-    },
-    {
-        question: "Pot obține credit fără fidejusor (garant)?",
-        answer: "Da, dacă ești client existent cu un istoric bun de plăți, fără întârzieri, și cu venituri stabile dovedite. Clienții recurenți cu dosar solid pot beneficia de condiții mai avantajoase - inclusiv dobândă mai mică și fără fidejusor obligatoriu. La primul credit, fidejusorul rămâne obligatoriu.",
-    },
-    // ── restul: doar în JSON-LD (schema.ts foloseşte toată lista) ──
-    {
-        question: "Ce sumă pot obține pentru afacerea mea?",
-        answer: "Suma minimă este 50.000 lei. Suma maximă depinde de veniturile firmei, garanțiile disponibile și situația financiară a fiecărui client. Analizăm dosarul și comunicăm sincer suma aprobată.",
-    },
-    {
-        question: "Ce documente sunt necesare pentru un credit de afaceri?",
-        answer: "Actele de înregistrare ale firmei (SRL/ÎI), extrase bancare pentru ultimele 3 luni și evidența contabilă de bază. Nu cerem plan de afaceri detaliat.",
-    },
-    {
-        question: "Pot obține credit pentru afacere chiar dacă situația mea nu e perfectă?",
-        answer: "Da. Analizăm situația reală a afacerii tale - banii care intră și ies din cont, activitatea curentă, garanțiile disponibile. Nu ne limităm la un scor de credit sau la reguli fixe.",
-    },
-    {
-        question: "Dobânda este fixă sau se schimbă în timp?",
-        answer: "Dobânda este fixă pe toată durata contractului. Știi exact cât plătești lunar de la prima rată până la ultima - suma nu se schimbă.",
-    },
-    {
-        question: "Pot rambursa creditul anticipat?",
-        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată.",
+        question: "Cereți asigurare?",
+        answer: "Nu cerem asigurare de viață. Doar dacă creditul are gaj, se asigură bunul pus gaj.",
     },
     {
         question: "Ce se întâmplă dacă întârzii o rată?",
-        answer: "Se aplică o penalizare zilnică specificată clar în contract. Dacă anticipezi o problemă, contactează-ne din timp - găsim soluții împreună.",
+        answer: "Pentru persoane fizice, penalitatea este o sumă fixă în lei pe zi. Ea nu depășește 0,04% din suma creditului pe zi, cum cere legea. Pentru afaceri, penalitatea este 0,1% pe zi din suma întârziată. Dacă știi dinainte că vei întârzia, sună-ne. Căutăm o soluție împreună.",
     },
     {
-        question: "Pot refinanța un credit existent?",
-        answer: "Da. Preluăm credite de la alte instituții financiare. Analizăm dacă refinanțarea are sens financiar pentru tine și prezentăm calculul înainte de decizie.",
+        question: "Am nevoie de fidejusor?",
+        answer: "Da, la primul credit. Fidejusorul (garantul) este o persoană care garantează cu venitul său. Pentru o companie, de obicei este administratorul. La următorul credit, dacă ai achitat la timp, poți primi credit fără fidejusor.",
+    },
+    {
+        question: "Ce acte sunt necesare?",
+        answer: "Pentru afaceri: buletinul administratorului, extrasul din Registrul de stat (nu mai vechi de 30 de zile) și extrasele bancare pe ultimele 3-6 luni. Pentru persoane fizice: buletinul și un document care confirmă venitul.",
     },
 ];
 
 export const GLOSSARY_LINKS = [
-    {
-        name: "Credit",
-        desc: "Operațiune prin care o persoană fizică sau juridică primește o sumă de bani cu obligația de rambursare, de obicei cu dobândă, într-un termen stabilit.",
-    },
-    { name: "Dobândă", desc: "Costul utilizării banilor împrumutați, exprimat procentual din suma principală." },
+    { name: "Credit", desc: "Bani pe care îi primești acum și îi întorci în rate lunare. Pentru că folosești banii, plătești și dobândă." },
+    { name: "Dobândă", desc: "Prețul pe care îl plătești pentru că folosești banii. Se scrie în procente, de exemplu 4% pe lună." },
     {
         name: "DAE (Dobânda Anuală Efectivă)",
-        desc: "Indicator care reflectă costul total al creditului pentru consumator: dobânda anuală plus toate comisioanele și taxele aferente.",
+        desc: "Costul total al creditului pe un an, în procente. Include dobânda și toate comisioanele. Cu DAE poți compara două credite între ele.",
     },
     {
-        name: "Contract de Credit",
-        desc: "Acord legal între creditor și debitor prin care se stabilesc suma împrumutată, dobânda, comisioanele, graficul de rambursare și alte condiții.",
+        name: "Contract de credit",
+        desc: "Documentul pe care îl semnezi. În el sunt scrise suma, dobânda, graficul de plăți și toate condițiile.",
     },
-    { name: "Creditor", desc: "Entitate (instituție financiară sau persoană) care acordă împrumuturi în scop comercial sau profesional." },
-    { name: "Debitor", desc: "Persoană fizică sau juridică care are obligația de a rambursa creditul și costurile asociate." },
-    {
-        name: "Consumator",
-        desc: "Persoană fizică care utilizează produse sau servicii pentru necesități personale, nelegate de activitatea profesională.",
-    },
-    { name: "Bonitatea", desc: "Capacitatea consumatorului de a rambursa creditul la scadență, incluzând dobânda și costurile totale." },
-    { name: "Valoarea Totală a Creditului", desc: "Suma efectiv pusă la dispoziție de creditor conform contractului." },
-    { name: "Costul Total al Creditului", desc: "Suma pe care debitorul o plătește în total: principal + dobândă + comisioane + taxe." },
+    { name: "Creditor", desc: "Compania care îți dă banii. De exemplu, Ideal Credit." },
+    { name: "Debitor", desc: "Persoana sau compania care ia creditul și trebuie să îl întoarcă." },
+    { name: "Consumator", desc: "O persoană care ia credit pentru nevoi personale, nu pentru o afacere." },
+    { name: "Bonitate", desc: "Cât de sigur este că poți plăti ratele la timp. Se vede din venit și din cum ai plătit creditele de până acum." },
+    { name: "Valoarea totală a creditului", desc: "Suma pe care o primești în mână sau pe cont." },
+    { name: "Costul total al creditului", desc: "Tot ce plătești peste suma primită: dobânda și comisioanele, dacă există." },
     {
         name: "Garanție (gaj, ipotecă)",
-        desc: "Bunuri sau drepturi puse în securitate de către debitor pentru garantarea rambursării creditului.",
+        desc: "Un bun care asigură creditul, de exemplu o casă sau un teren. Dacă ratele nu se plătesc, creditorul poate recupera banii din acest bun.",
     },
-    { name: "Penalitate", desc: "Sumă suplimentară datorată pentru întârzierea plății ratelor sau nerespectarea clauzelor contractuale." },
+    { name: "Penalitate", desc: "Suma pe care o plătești în plus când întârzii o rată. Este scrisă în contract de la început." },
     {
         name: "Perioadă de grație",
-        desc: "Interval în care nu se achită una sau mai multe rate de credit și/sau dobândă. Se reflectă în graficul de rambursare al contractului de credit.",
+        desc: "Primele luni ale creditului în care plătești doar dobânda, fără să întorci din suma împrumutată. Se vede în graficul de plăți.",
     },
-    { name: "Cesiune", desc: "Transferul drepturilor și obligațiilor rezultate din contractul de credit către o terță parte (cesionar)." },
+    { name: "Cesiune", desc: "Când creditorul trece contractul tău la o altă companie. Condițiile din contract rămân aceleași." },
     {
         name: "BIC (Biroul Istoriilor de Credit)",
-        desc: "Instituție care colectează și stochează date despre istoricul de credit al persoanelor fizice sau juridice.",
+        desc: "Instituția care păstrează istoria creditelor tale: ce credite ai luat și dacă le-ai plătit la timp.",
     },
-    {
-        name: "Capital de lucru",
-        desc: "Resurse financiare utilizate pentru acoperirea cheltuielilor operaționale curente ale unei afaceri: salarii, stocuri, furnizori.",
-    },
-    {
-        name: "Refinanțare",
-        desc: "Operațiunea prin care un credit existent este achitat și înlocuit cu un nou credit, de obicei cu condiții mai avantajoase.",
-    },
+    { name: "Capital de lucru", desc: "Banii de care are nevoie o afacere în fiecare zi: pentru salarii, marfă, furnizori și chirie." },
+    { name: "Refinanțare", desc: "Când iei un credit nou ca să închizi un credit vechi." },
     {
         name: "Fidejusiune",
-        desc: "Garanție personală prin care o a treia persoană (fidejusor) se angajează să ramburseze creditul dacă debitorul principal nu o face.",
+        desc: "Când o persoană (fidejusorul) garantează creditul altcuiva. Dacă debitorul nu plătește, plătește fidejusorul.",
     },
 ];

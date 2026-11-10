@@ -31,9 +31,12 @@ const nextConfig: NextConfig = {
             { source: "/refinantare", destination: "/credite/credit-pentru-nevoi-personale#consolidare", permanent: true },
             { source: "/credite/refinantare", destination: "/credite/credit-pentru-nevoi-personale#consolidare", permanent: true },
 
-            // ── blog: old retired-era slugs → closest product/info page ──────
-            // NOTE: bare "/blog" redirect removed 2026-09-16 - /blog is a live
-            // route again (Dincolo de Cifre, brand/blog-editorial-strategy.md).
+            // ── blog: removed 2026-10-29, every old slug → closest product/info page ──
+            { source: "/blog", destination: "/credite", permanent: true },
+            { source: "/blog/firme-mici-nu-iau-credit-de-la-banca", destination: "/credite/credit-pentru-afaceri", permanent: true },
+            { source: "/blog/dobanzi-mari-nu-doar-moldova", destination: "/credite/credit-pentru-afaceri", permanent: true },
+            { source: "/blog/sepa-transfer-euro-moldova", destination: "/credite/credit-pentru-afaceri", permanent: true },
+            { source: "/blog/ce-este-inflatia", destination: "/dictionar-financiar", permanent: true },
             {
                 source: "/blog/cum-sa-alegi-cel-mai-bun-credit-nebancar-pentru-afaceri",
                 destination: "/credite/credit-pentru-afaceri",
@@ -88,14 +91,8 @@ const nextConfig: NextConfig = {
                 permanent: true,
             },
             { source: "/blog/ghid-credit-afaceri-ocn-moldova", destination: "/credite/credit-pentru-afaceri", permanent: true },
-            // ── blog: deleted posts (no direct successor) → credite hub ────
-            {
-                source: "/blog/istoria-aparitiei-banilor-si-rolul-lor-in-dezvoltarea-economica",
-                destination: "/credite",
-                permanent: true,
-            },
-            { source: "/blog/de-la-imprumuturi-in-antichitate-la-finantarea-moderna", destination: "/credite", permanent: true },
-            { source: "/blog/ce-se-intampla-daca-nu-poti-rambursa-un-credit", destination: "/credite", permanent: true },
+            // everything else under /blog (no direct successor) → credite hub; must stay last
+            { source: "/blog/:path*", destination: "/credite", permanent: true },
         ];
     },
 };

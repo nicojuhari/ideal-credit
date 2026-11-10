@@ -2,7 +2,13 @@
 
 ## Last Updated
 
-2026-09-22 (round 2), via /direct-response-copy. **Reframed the mechanism away
+2026-11-09, owner decision: home H1 is now **"Credite nebancare pentru afaceri și
+nevoi personale."** - every mention below of "Credite pentru succes" staying as the
+H1 is superseded ("Credite pentru succes!" remains the sign-off). The strategy
+itself is unchanged; its mechanism line stays as the hero subhead. Focus is now
+~80% business (micro/small/medium, loans mostly up to 500.000 lei); no blog.
+See `positioning.md` (2026-11-09 landscape).
+Previously: 2026-09-22 (round 2), via /direct-response-copy. **Reframed the mechanism away
 from a "before you apply" temporal claim.** The owner caught a real logic problem
 during copy work: analysis requires the client's information, so calling that
 "before you apply" is self-contradicting — providing your goal and financial

@@ -6,8 +6,8 @@ export const alt = "Soluții de credit pentru fiecare situație - Ideal Credit";
 
 export default async function Image() {
     return renderOgImage({
-        title: "Credite pentru fiecare situație.",
-        accent: "fiecare situație.",
-        subtitle: "Finanțare pentru afaceri și persoane fizice. Analizăm situația ta și îți spunem dacă are sens.",
+        title: "Credite pentru afaceri și nevoi personale.",
+        accent: "nevoi personale.",
+        subtitle: "Dobândă fixă și fără comisioane. Alege creditul după ce vrei să faci cu banii.",
     });
 }

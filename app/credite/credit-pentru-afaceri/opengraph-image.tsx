@@ -9,8 +9,8 @@ export default async function Image() {
         eyebrowLabel: "Persoane juridice",
         eyebrowPosition: 1,
         eyebrowTotal: 6,
-        title: "Credit pentru afaceri.",
-        accent: "afaceri.",
-        subtitle: "Finanțăm SRL-uri, ÎI și antreprenori din toată Moldova. Aprobare în 1-2 zile lucrătoare.",
+        title: "Credit pentru afaceri, fără comisioane.",
+        accent: "fără comisioane.",
+        subtitle: "Pentru SRL, ÎI și gospodării țărănești. Plătești doar dobânda. Decizie în 1-2 zile lucrătoare.",
     });
 }

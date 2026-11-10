@@ -2,31 +2,25 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
-    title: "Politica de Confidențialitate - OCN Ideal Credit SRL",
+    title: "Politica de confidențialitate | Ideal Credit",
     description:
-        "Află cum colectăm, stocăm și protejăm datele tale personale conform legislației GDPR și normelor moldovenești. Drepturile tale ca utilizator Ideal Credit.",
+        "Ce date personale colectăm, de ce le folosim și cum le protejăm. Drepturile tale și cum ne contactezi pentru datele tale.",
     alternates: { canonical: "https://idealcredit.md/privacy" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/privacy",
-        title: "Politica de Confidențialitate - OCN Ideal Credit SRL",
+        title: "Politica de confidențialitate | Ideal Credit",
         description:
-            "Află cum colectăm, stocăm și protejăm datele tale personale conform legislației GDPR și normelor moldovenești. Drepturile tale ca utilizator Ideal Credit.",
+            "Ce date personale colectăm, de ce le folosim și cum le protejăm. Drepturile tale și cum ne contactezi pentru datele tale.",
     },
 };
 
 export default function PrivacyPage() {
     return (
-        <LegalLayout
-            title={
-                <>
-                    Politica de Confidențialitate
-                    <br />
-                    OCN Ideal Credit SRL
-                </>
-            }
+        <LegalLayout path="/privacy"
+            title="Politica de confidențialitate"
             updated="Această Politică de Confidențialitate a fost actualizată ultima dată la 26.07.2024."
         >
             <h2>Introducere</h2>

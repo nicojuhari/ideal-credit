@@ -1,5 +1,12 @@
 # Blog Editorial Strategy — Dincolo de Cifre
 
+> **RETIRED 2026-10-29.** Owner decision: Ideal Credit is a financial service
+> provider, not an editorial. All articles deleted, `/blog/*` redirected
+> (`next.config.ts`). Content is now service, solution and tool pages that
+> solve real problems for people and businesses in Moldova. Kept for history
+> only - the writing rules (one idea per sentence, plain words, titles name
+> the subject) still apply to the new pages.
+
 ## Last Updated
 
 2026-09-16 — full reset. Replaces the old keyword-popularity blog model. Retires

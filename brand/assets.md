@@ -41,7 +41,19 @@ Last updated: 2026-09-22
 | ghid-credit-personal-proiecte-planificate-moldova | Content Brief | 2026-09-16 | Blog reset — never built, keyword-driven backlog item, brief deleted. |
 | credit-auto-moldova-cum-alegi | Content Brief | 2026-09-16 | Blog reset — never built, keyword-driven backlog item, brief deleted. |
 | blog-archive (5 old articles + BLOG-PLAN.md) | Strategy + Articles | 2026-09-16 | Old blog strategy (decision-intent, product-adjacent framing) fully retired. New direction: independent business/finance knowledge hub, topic-driven not keyword-driven. See new blog strategy doc once written. |
+| keyword-plan refresh + brief acte-necesare-credit-pe-firma | Keyword plan + Brief | 2026-11-09 | content-plan | planned | brand/keyword-plan.md (service/solution pages only, 80% business); brief at campaigns/content-plan/acte-necesare-credit-pe-firma.md; old plan archived campaigns/keywords/keyword-plan-2026-09-11.md |
+| voice-profile v2 (Moldovan usage, short sentences, 80/20 business) | Brand voice | 2026-11-09 | brand | approved | brand/voice-profile.md; previous in brand/.history/voice-profile-2026-09-22.md |
+
+| competitors.md (6-competitor teardown) | Competitive intel | 2026-11-10 | brand | draft | brand/competitors.md; ads UNVERIFIED (libraries blocked); Easy Credit + Fagura via snippets |
+| audience.md (3 segments, VoC-cited) | Audience research | 2026-11-10 | brand | draft | brand/audience.md; segment 2 (non-agro SME) provisional |
+| voc.md (49 verbatim quotes) | Voice of customer | 2026-11-10 | brand | draft | brand/voc.md; farmers best covered |
+| Home page copy (redesign) | Landing page copy | 2026-11-10 | site-redesign-2026-11 | draft | campaigns/site-redesign-2026-11/home.md; 56/70; [CONFIRMĂ] items open |
+| Credit pentru afaceri copy (redesign) | Landing page copy | 2026-11-10 | site-redesign-2026-11 | draft | campaigns/site-redesign-2026-11/credit-pentru-afaceri.md; 58/70; template for product pages |
 
 ---
 
 _Append new assets after each skill run. Format: | asset-name | type | date | campaign | status | notes |_
+- 2026-11-10 · site-copy-audit-2026-11/audit.md · full-site copy audit, 47→56/70, fixes applied in code
+- 2026-11-10 · site-copy-audit-2026-11/seo-meta-audit.md · titles/meta/schema/sitemap audit, 17/17 pages within limits
+- 2026-11-10 · ai-search/audit-2026-11-10.md · AI search audit: share of model 9% (Microinvest 53%), supervisor CNPF→BNM error found
+- 2026-11-10 · ai-search/optimize-2026-11-10.md · supervisors BNM+CNPF, answer blocks, entity schema (IDNO), IndexNow, 3 data-asset briefs

@@ -17,7 +17,7 @@ export const cerereSchema = z.object({
     // Credit
     suma: numericString("Suma")
         .refine((v) => Number(v) >= 10000, "Suma minimă este 10.000 MDL")
-        .refine((v) => Number(v) <= 300000, "Suma maximă este 300.000 MDL"),
+        .refine((v) => Number(v) <= 500000, "Suma maximă este 500.000 MDL"),
     termen: z.enum(TERMEN_OPTIONS, { error: "Selectați termenul" }),
     scopul_creditului: z.enum(SCOP_OPTIONS, { error: "Selectați scopul creditului" }),
 

@@ -1,31 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import Container from "@/components/ds/Container";
-import Stack from "@/components/ds/Stack";
+import Link from "next/link";
+import SplitSection from "@/components/ds/SplitSection";
 import Accent from "@/components/ds/Accent";
-import { ButtonText } from "@/components/ds/Button";
 
 export type FaqItem = { question: string; answer: string };
 
 export default function ProductFaq({
     items,
-    marker = "Întrebări",
     title = (
         <>
-            Întrebări <Accent>frecvente</Accent>
+            Întrebări <Accent>frecvente.</Accent>
         </>
     ),
     id = "faq",
+    schema = true,
 }: {
     items: FaqItem[];
+    /** Kept for older callers; the redesign shows no marker. */
     marker?: string;
     title?: React.ReactNode;
     id?: string;
+    /** Set false when the page already emits its own FAQPage schema. */
+    schema?: boolean;
 }) {
     const [open, setOpen] = useState(0);
 
-    const schema = {
+    const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         mainEntity: items.map((item) => ({
@@ -36,48 +38,40 @@ export default function ProductFaq({
     };
 
     return (
-        <div className="dc-section" id={id}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-            <Container>
-                <div className="flex flex-wrap items-end justify-between gap-10">
-                    <div>
-                        <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
-                            <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                            {marker}
-                        </p>
-                        <h2 className="mt-5 text-[clamp(34px,4vw,50px)] font-semibold leading-none tracking-[-.035em] text-dc-text">
-                            {title}
-                        </h2>
-                    </div>
-                    <ButtonText href="/contacte">Scrie-ne →</ButtonText>
-                </div>
-
-                <Stack className="mt-14">
-                    {items.map((item, i) => {
-                        const isOpen = open === i;
-                        return (
-                            <div key={item.question}>
-                                <button
-                                    type="button"
-                                    onClick={() => setOpen(isOpen ? -1 : i)}
-                                    aria-expanded={isOpen}
-                                    className="grid w-full items-center gap-5 px-8 py-[26px] text-left text-dc-text"
-                                    style={{ gridTemplateColumns: "44px 1fr 20px" }}
-                                >
-                                    <span className="font-dc-mono text-xs text-dc-text-muted">{String(i + 1).padStart(2, "0")}</span>
-                                    <span className="text-xl font-medium">{item.question}</span>
-                                    <span className="font-dc-mono text-right text-dc-text">{isOpen ? "−" : "+"}</span>
-                                </button>
-                                {isOpen && (
-                                    <p className="max-w-[820px] pb-7 pr-8 pl-24 text-[17px] leading-[1.7] text-dc-text-muted">
-                                        {item.answer}
-                                    </p>
-                                )}
-                            </div>
-                        );
-                    })}
-                </Stack>
-            </Container>
-        </div>
+        <SplitSection
+            id={id}
+            title={title}
+            aside={
+                <Link href="/contacte" className="mt-6 inline-block text-[15px] text-dc-accent underline underline-offset-4">
+                    Ai altă întrebare? Scrie-ne →
+                </Link>
+            }
+        >
+            {schema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+            <div className="border-b border-dc-line">
+                {items.map((item, i) => {
+                    const isOpen = open === i;
+                    return (
+                        <div key={item.question} className="border-t border-dc-line">
+                            <button
+                                type="button"
+                                onClick={() => setOpen(isOpen ? -1 : i)}
+                                aria-expanded={isOpen}
+                                className="flex w-full items-start justify-between gap-6 py-6 text-left text-dc-text"
+                            >
+                                <span className="text-lg font-semibold tracking-[-.01em] sm:text-xl">{item.question}</span>
+                                <span className={`font-dc-mono text-lg ${isOpen ? "text-dc-accent" : "text-dc-text-muted"}`} aria-hidden>
+                                    {isOpen ? "−" : "+"}
+                                </span>
+                            </button>
+                            {/* Always in the HTML so search engines and AI agents read every answer; hidden only visually. */}
+                            <p hidden={!isOpen} className="max-w-[62ch] pb-7 text-[17px] leading-[1.65] text-dc-text-muted">
+                                {item.answer}
+                            </p>
+                        </div>
+                    );
+                })}
+            </div>
+        </SplitSection>
     );
 }

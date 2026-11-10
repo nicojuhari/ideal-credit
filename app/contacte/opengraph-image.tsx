@@ -8,6 +8,6 @@ export default async function Image() {
     return renderOgImage({
         title: "Vorbim direct.",
         accent: "direct.",
-        subtitle: "Sună, scrie pe WhatsApp sau lasă un mesaj - răspundem în aceeași zi lucrătoare.",
+        subtitle: "Sună, scrie pe WhatsApp sau lasă un mesaj. Răspundem în cel mult o zi lucrătoare.",
     });
 }

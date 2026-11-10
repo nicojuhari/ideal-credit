@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import ProductHero from "@/components/product/ProductHero";
-import SpecStrip from "@/components/product/SpecStrip";
-import OrdinalRows from "@/components/product/OrdinalRows";
-import EligibilityRows from "@/components/product/EligibilityRows";
-import ProductDescription from "@/components/product/ProductDescription";
-import DocumentRows from "@/components/product/DocumentRows";
-import ProductFaq from "@/components/product/ProductFaq";
-import type { FaqItem } from "@/components/product/ProductFaq";
+import Analysis from "@/components/home/Analysis";
 import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
-import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
+import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
+import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
+import MobileCallBar from "@/components/includes/MobileCallBar";
 import { agriculturalLoanSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
 const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
@@ -21,228 +16,138 @@ const breadcrumbItems = [
     { name: "Credit pentru agricultură", url: "https://idealcredit.md/credite/credit-pentru-agricultura" },
 ];
 
+const DESCRIPTION =
+    "Credit pentru fermieri, gospodării țărănești, SRL și ÎI, de la 50.000 la 500.000 lei. Ratele se potrivesc cu sezonul. Fără comisioane.";
+
 export const metadata: Metadata = {
-    title: "Credit pentru Agricultură în Moldova | Ideal Credit",
-    description:
-        "Credit pentru agricultură în Moldova - finanțăm tehnică agricolă, semințe, irigații și capital sezonier pentru fermieri, SRL și ÎI.",
+    title: "Credit pentru agricultură în Moldova | Ideal Credit",
+    description: DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-agricultura" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/credite/credit-pentru-agricultura",
-        title: "Credit pentru Agricultură în Moldova | Ideal Credit",
-        description:
-            "Credit pentru agricultură în Moldova - finanțăm tehnică agricolă, semințe, irigații și capital sezonier pentru fermieri, SRL și ÎI.",
+        title: "Credit pentru agricultură în Moldova | Ideal Credit",
+        description: DESCRIPTION,
     },
 };
 
 const agricFaqItems: FaqItem[] = [
     {
-        question: "Pot obține credit agricol dacă activitatea mea este sezonieră?",
-        answer: "Da. Înțelegem că veniturile agricole sunt concentrate în anumite perioade ale anului. Structurăm graficul de rambursare în funcție de ciclul tău de producție și recoltare.",
-    },
-    {
-        question: "Ce se întâmplă dacă recolta sau sezonul nu justifică suma cerută?",
-        answer: "Îți spunem înainte de dosar, nu după recoltă. Analizăm suprafața, istoricul de producție și fluxul real - și, dacă suma nu se susține din activitatea agricolă, recomandăm o sumă mai mică sau un alt grafic, nu doar un refuz.",
-    },
-    {
         question: "Există perioadă de grație pentru creditul agricol?",
-        answer: "Analizăm posibilitatea unei perioade de grație în funcție de cultură și ciclul de producție. Dacă recolta e în toamnă, discutăm un grafic adaptat - nu o rată fixă lunară care nu ține cont de sezonalitate.",
+        answer: "Da, se poate. În perioada de grație plătești doar dobânda. O stabilim până la recoltă, după cultură și ciclul de producție.",
     },
     {
-        question: "Ce documente sunt necesare pentru un credit agricol?",
-        answer: "Actele de înregistrare (SRL/ÎI sau gospodărie țărănească), extrase bancare pentru ultimele 3 luni și documentele terenurilor agricole (titlu de proprietate sau contract de arendă). Nu cerem plan de afaceri detaliat.",
+        question: "Pot lua credit dacă venitul meu vine doar după recoltă?",
+        answer: "Da. Știm că banii din agricultură vin în anumite luni. Potrivim graficul de plată cu perioada în care vinzi recolta.",
     },
     {
-        question: "Pot obține credit pentru achiziția de tehnica agricolă?",
-        answer: "Da. Tractoare, combine, remorci, sisteme de irigații - finanțăm echipamentele direct prin creditul agricol sau prin creditul investițional, în funcție de suma și termenul dorit.",
+        question: "Ce se întâmplă dacă suma cerută e prea mare pentru gospodăria mea?",
+        answer: "Îți spunem la telefon, înainte să aduni actele. Ne uităm la suprafață, la producția de anul trecut și la vânzări. Apoi îți propunem o sumă mai mică sau alt grafic.",
     },
     {
-        question: "Pot accesa creditul dacă arendez terenul, nu îl dețin?",
-        answer: "Da, contractul de arendă este suficient ca dovadă a activității. Analizăm capacitatea de producție și istoricul agricol, nu doar proprietatea terenului.",
+        question: "Ce acte trebuie pentru un credit agricol?",
+        answer: "Buletinul, actul de înregistrare al gospodăriei sau companiei și actele pe teren. Plus extrasele bancare sau actele de vânzare a producției. Nu cerem plan de afaceri.",
     },
     {
-        question: "Pot refinanța un credit agricol existent la condiții mai bune?",
-        answer: "Da. Preluăm credite agricole de la alte instituții financiare. Analizăm dacă refinanțarea are sens financiar și prezentăm calculul înainte de decizie.",
+        question: "Pot cumpăra tehnică agricolă din credit?",
+        answer: "Da. Tractoare, combine, remorci sau sisteme de irigare. Alegem suma și termenul după prețul tehnicii.",
     },
-];
-
-const financingCategories = [
-    { title: "Tehnică și utilaje", desc: "Tractoare, combine, remorci, pluguri, semănători, echipamente de recoltare." },
-    { title: "Semințe și inputuri", desc: "Semințe certificate, îngrășăminte, pesticide, fungicide - tot ce ai nevoie pentru sezon." },
-    { title: "Irigații", desc: "Sisteme de irigații prin picurare, aspersoare, pompe, infrastructură de udare." },
-    { title: "Lucrări agricole", desc: "Arat, semănat, tratamente fitosanitare, recoltare - acoperi costurile înainte de încasări." },
-    { title: "Capital de lucru sezonier", desc: "Salarii muncitori sezonieri, transport, depozitare, combustibil, costuri operative." },
-];
-
-const scheduleItems = [
-    "Rate adaptate sezonului de încasări",
-    "Posibilitate de perioadă de grație până la recoltă",
-    "Termen de până la 60 luni pentru investiții mari",
-];
-
-const analysisItems = [
-    "Suprafața cultivată și culturile practicate",
-    "Istoricul de producție și vânzări din sezonul anterior",
-    "Contracte de arendă sau titluri de proprietate",
-    "Extrase bancare și fluxul de numerar anual",
+    {
+        question: "Terenul e în arendă. Pot lua credit?",
+        answer: "Da. Contractul de arendă este suficient ca dovadă a activității. Ne uităm la ce produci, nu doar la cine deține terenul.",
+    },
 ];
 
 export default function CreditAgriculturaPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(agriculturalLoanSchema) }} />
-            <ProductHero
+
+            <ServiceHero
                 breadcrumb={breadcrumbItems}
-                category="Persoane juridice"
-                position={3}
                 title={
                     <>
-                        Credit pentru <Accent>agricultură.</Accent>
+                        Credit pentru agricultură, <Accent>după sezonul tău.</Accent>
                     </>
                 }
-                subtitle="Finanțare pentru fermieri, SRL-uri și gospodării individuale din Moldova. Grafic adaptat sezonalității."
-                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
-                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
-            />
-            <SpecStrip
-                specs={[
-                    { value: "50 000", label: "MDL sumă minimă" },
-                    { value: "12-60", label: "luni termen" },
-                    { value: "1-2 zile", label: "până la decizie", proof: true },
-                    { value: "4 %", label: "dobândă fixă / lună" },
+                subtitle="Pentru fermieri, gospodării țărănești, SRL și ÎI, de la 50.000 la 500.000 lei. Analizăm scopul creditului și veniturile din recoltă. Apoi îți spunem ce sumă și ce termen ți se potrivesc."
+                rows={[
+                    { label: "Suma", value: "50.000–500.000 lei" },
+                    { label: "Termen", value: "12–60 luni" },
+                    { label: "Decizia", value: "1–2 zile lucrătoare" },
                 ]}
             />
 
-            <OrdinalRows
-                marker="Destinații"
+            <Situations
                 title={
                     <>
-                        Ce poți <Accent>finanța</Accent>
+                        Pentru ce iau fermierii <Accent>credit la noi.</Accent>
                     </>
                 }
-                items={financingCategories}
-            />
-
-            <Section
-                marker="Sezonalitate"
-                title={
-                    <>
-                        Adaptat la ritmul <Accent>agriculturii</Accent>
-                    </>
-                }
-            >
-                <div className="flex flex-col gap-px border border-dc-line bg-dc-line md:grid md:grid-cols-2">
-                    <div className="bg-dc-bg p-8">
-                        <h3 className="text-xl tracking-[-.025em] text-dc-text">Grafic de rambursare sezonier</h3>
-                        <p className="mt-3 text-[15px] leading-[1.55] text-dc-text-muted">
-                            Agricultura nu produce venituri uniform pe parcursul anului. Structurăm graficul de rambursare în funcție de
-                            ciclul tău de producție - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare și vânzare.
-                        </p>
-                        <ul className="mt-5 flex flex-col gap-3">
-                            {scheduleItems.map((item, i) => (
-                                <li key={item} className="flex items-baseline gap-3.5 text-[15px] leading-[1.5] text-dc-text-muted">
-                                    <span className="shrink-0 font-dc-mono text-xs text-dc-text-muted">
-                                        {String(i + 1).padStart(2, "0")}
-                                    </span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="bg-dc-bg p-8">
-                        <h3 className="text-xl tracking-[-.025em] text-dc-text">Cum analizăm activitatea agricolă</h3>
-                        <p className="mt-3 text-[15px] leading-[1.55] text-dc-text-muted">
-                            Nu ne limităm la un salariu lunar fix. Analizăm imaginea completă a activității tale agricole.
-                        </p>
-                        <ul className="mt-5 flex flex-col gap-3">
-                            {analysisItems.map((item, i) => (
-                                <li key={item} className="flex items-baseline gap-3.5 text-[15px] leading-[1.5] text-dc-text-muted">
-                                    <span className="shrink-0 font-dc-mono text-xs text-dc-text-muted">
-                                        {String(i + 1).padStart(2, "0")}
-                                    </span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </Section>
-
-            <EligibilityRows
-                marker="Eligibilitate"
-                title={
-                    <>
-                        Condiții de <Accent>eligibilitate</Accent>
-                    </>
-                }
+                intro="Banii din agricultură vin după recoltă. Ratele țin cont de lunile în care vinzi."
                 items={[
-                    "Activitate agricolă înregistrată (SRL, ÎI sau gospodărie țărănească)",
-                    "Activitate demonstrabilă în ultimul sezon",
-                    "Teren agricol în proprietate sau în arendă",
-                    "Extrase bancare sau dovezi de vânzări agricole",
+                    { label: "Semințe și îngrășăminte", text: "Semănatul începe primăvara. Semințele și îngrășămintele trebuie cumpărate înainte." },
+                    { label: "Tehnică agricolă", text: "Cumperi un tractor sau o combină. Rata o plătești din recolta pe care o aduce." },
+                    { label: "Irigare", text: "Pui un sistem de irigare prin picurare. Recolta nu mai depinde doar de ploaie." },
+                    { label: "Muncitori sezonieri", text: "La recoltare ai nevoie de oameni, transport și motorină. Banii din vânzare vin mai târziu." },
                 ]}
             />
 
+            <CostExample sum={150000} term={36} />
             <Calculator />
 
-            <Section
-                marker="Detalii"
+            <Analysis
                 title={
                     <>
-                        Credit agricol pentru <Accent>fermieri</Accent> din Moldova
+                        Ce analizăm înainte <Accent>de aprobare.</Accent>
                     </>
                 }
-            >
-                <ProductDescription
-                    items={[
-                        {
-                            title: "Pentru cine e",
-                            text: "Fermieri, gospodării țărănești, SRL-uri și ÎI cu activitate agricolă. Finanțăm tehnica agricolă, semințe, îngrășăminte, irigații, forța de muncă sezonieră și alte costuri de producție.",
-                        },
-                        {
-                            title: "Grafic adaptat sezonului",
-                            text: "Încasările agricole vin după recoltare, nu lunar. Structurăm ratele în funcție de ciclul tău de producție, cu posibilitate de perioadă de grație în lunile cu cheltuieli mari.",
-                        },
-                        {
-                            title: "Ce evaluăm",
-                            text: "Suprafața cultivată, contractele de arendă, istoricul de producție și extrasele bancare - nu un plan de afaceri formal sau profit deja demonstrat. Analizăm sezonul tău concret, ca să propunem un grafic care chiar se potrivește - nu unul standard.",
-                        },
-                    ]}
-                />
-            </Section>
-
-            <Process />
-
-            <DocumentRows
-                id="documente"
-                marker="Dosar"
-                title={
-                    <>
-                        Documente <Accent>necesare</Accent>
-                    </>
-                }
-                items={[
-                    { title: "Buletin de identitate", note: "Obligatoriu" },
-                    { title: "Certificat de înregistrare sau legitimație gospodărie", note: "SRL / ÎI" },
-                    { title: "Documente teren agricol", note: "Proprietate sau arendă" },
-                    { title: "Extrase bancare sau acte de vânzare a producției", note: "Obligatoriu" },
-                    { title: "Actele bunului gajat", note: "Dacă e cazul" },
+                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Avem ${yearsSinceFoundation} ani de lucru cu afaceri din Moldova.`}
+                steps={[
+                    { title: "Planul", body: "Ne uităm ce vrei să faci cu banii și dacă planul e realist pentru suma și termenul ales." },
+                    {
+                        title: "Veniturile",
+                        body: "Ne uităm la suprafață, la culturi și la producția din sezonul trecut. Extrasele bancare sau actele de vânzare arată cât încasezi după recoltă.",
+                    },
+                    { title: "Garanțiile", body: "La final discutăm cine este fidejusor și, dacă e nevoie, ce bun pui gaj." },
                 ]}
-                footnote="Graficul de rambursare este adaptat sezonului agricol - rate mai mici în perioadele de cheltuieli, rate mai mari după recoltare."
+                showOutcomes={false}
             />
 
+            <Eligibility
+                can={[
+                    "ai o activitate agricolă înregistrată: gospodărie țărănească, SRL sau ÎI;",
+                    "ai lucrat cel puțin un sezon și se vede din acte;",
+                    "terenul e al tău sau îl ai în arendă.",
+                ]}
+                cannot={["o sumă la care rata ar lua aproape tot venitul. În acest caz îți propunem o sumă mai mică."]}
+            />
+
+            <Documents
+                items={[
+                    { title: "Buletinul de identitate", note: "obligatoriu" },
+                    { title: "Actul de înregistrare", note: "al gospodăriei țărănești, SRL sau ÎI" },
+                    { title: "Actele pe teren", note: "titlu de proprietate sau contract de arendă" },
+                    { title: "Extrasele bancare", note: "sau actele de vânzare a producției" },
+                    { title: "Actele bunului pus gaj", note: "doar dacă e cazul" },
+                ]}
+                footnote="Nu cerem plan de afaceri."
+            />
+
+            <Process />
+            <LatePayment example="recolta se vinde mai târziu." />
             <ProductFaq
                 title={
                     <>
-                        Întrebări despre creditul <Accent>agricol</Accent>
+                        Întrebări despre creditul <Accent>agricol.</Accent>
                     </>
                 }
                 items={agricFaqItems}
             />
-            <WhyUs />
             <ClosingCta />
+            <MobileCallBar />
         </div>
     );
 }

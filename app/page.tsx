@@ -1,49 +1,49 @@
 import type { Metadata } from "next";
 
 import HeroHome from "@/components/home/HeroHome";
-import Solutions from "@/components/home/Solutions";
+import Analysis from "@/components/home/Analysis";
+import BusinessCredits from "@/components/home/BusinessCredits";
 import Calculator from "@/components/home/Calculator";
-import WhyUs from "@/components/home/WhyUs";
-import Products from "@/components/home/Products";
 import Process from "@/components/home/Process";
-import RecenziiClient from "@/components/RecenziiClient";
-import Faq from "@/components/home/Faq";
+import ReturningClients from "@/components/home/ReturningClients";
+import ProductFaq from "@/components/product/ProductFaq";
 import ClosingCta from "@/components/home/ClosingCta";
+import MobileCallBar from "@/components/includes/MobileCallBar";
+import { FAQ_ITEMS, SITE_DESCRIPTION } from "@/lib/constants";
 
-import { financialServiceSchema, howToSchema, faqSchema } from "@/lib/schema";
+import { faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-    title: "Credite pentru Succes în Moldova | Ideal Credit",
+    title: "Credite nebancare în Moldova, fără comisioane | Ideal Credit",
     description:
-        "Credite nebancare pentru afaceri și persoane fizice din Moldova. Analizăm scopul și situația ta, ca să-ți spunem dacă creditul chiar te ajută.",
+        SITE_DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/",
-        title: "Credite pentru Succes în Moldova | Ideal Credit",
+        title: "Credite nebancare în Moldova, fără comisioane | Ideal Credit",
         description:
-            "Credite nebancare pentru afaceri și persoane fizice din Moldova. Analizăm scopul și situația ta, ca să-ți spunem dacă creditul chiar te ajută.",
+            SITE_DESCRIPTION,
     },
 };
 
 export default function HomePage() {
     return (
         <div className="dc bg-dc-bg">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(financialServiceSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
             <HeroHome />
-            <Solutions />
+            <Analysis />
+            <BusinessCredits />
             <Calculator />
-            <WhyUs />
-            <Products />
             <Process />
-            <RecenziiClient />
-            <Faq />
+            <ReturningClients />
+            {/* faqSchema above covers these 6 items, so no second FAQPage here. */}
+            <ProductFaq items={FAQ_ITEMS.slice(0, 6)} schema={false} />
             <ClosingCta />
+            <MobileCallBar />
         </div>
     );
 }

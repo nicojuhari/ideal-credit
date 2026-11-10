@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import Section from "@/components/ds/Section";
 import Accent from "@/components/ds/Accent";
-import ProductHero from "@/components/product/ProductHero";
-import SpecStrip from "@/components/product/SpecStrip";
-import EligibilityRows from "@/components/product/EligibilityRows";
-import ProductDescription from "@/components/product/ProductDescription";
-import DocumentRows from "@/components/product/DocumentRows";
-import ProductFaq from "@/components/product/ProductFaq";
-import type { FaqItem } from "@/components/product/ProductFaq";
+import Analysis from "@/components/home/Analysis";
 import Calculator from "@/components/home/Calculator";
 import Process from "@/components/home/Process";
-import WhyUs from "@/components/home/WhyUs";
 import ClosingCta from "@/components/home/ClosingCta";
+import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
+import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
+import MobileCallBar from "@/components/includes/MobileCallBar";
 import { autoLoanSchema } from "@/lib/schema";
+import { yearsSinceFoundation } from "@/lib/utils";
 
 const breadcrumbItems = [
     { name: "Acasă", url: "https://idealcredit.md/" },
@@ -20,50 +16,51 @@ const breadcrumbItems = [
     { name: "Credit pentru automobil", url: "https://idealcredit.md/credite/credit-pentru-automobil" },
 ];
 
+const DESCRIPTION =
+    "Credit pentru o mașină nouă sau rulată ori pentru reparația ei. De la 10.000 la 300.000 lei, fără comisioane. Decizie în 2-3 ore.";
+
 export const metadata: Metadata = {
-    title: "Credit pentru Automobil în Moldova | Ideal Credit",
-    description:
-        "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, analizăm scopul și situația ta.",
+    title: "Credit pentru automobil în Moldova | Ideal Credit",
+    description: DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/credite/credit-pentru-automobil" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/credite/credit-pentru-automobil",
-        title: "Credit pentru Automobil în Moldova | Ideal Credit",
-        description:
-            "Credit pentru automobil în Moldova - cumpărare sau reparație, fără restricții pe tipul mașinii. Dobândă fixă, analizăm scopul și situația ta.",
+        title: "Credit pentru automobil în Moldova | Ideal Credit",
+        description: DESCRIPTION,
     },
 };
 
 const faqItems: FaqItem[] = [
     {
-        question: "Pot cumpăra o mașină second-hand cu acest credit?",
-        answer: "Da. Finanțăm atât mașini noi cât și second-hand, de la persoane fizice sau dealeri. Nu există restricții pe vârsta sau tipul vehiculului - analizăm capacitatea ta de rambursare, nu mașina.",
+        question: "Pot cumpăra o mașină rulată?",
+        answer: "Da. Finanțăm mașini noi și rulate. Poți cumpăra de la o persoană fizică sau de la un dealer. Nu avem restricții pe vârsta sau tipul mașinii.",
     },
     {
-        question: "Ce se întâmplă dacă suma cerută nu se potrivește veniturilor mele?",
-        answer: "Îți spunem la telefon, înainte de dosar. Dacă rata lunară ar fi prea mare pentru venitul tău, recomandăm o sumă mai mică sau un termen mai lung - nu aprobăm o rată pe care n-o poți susține.",
+        question: "Ce se întâmplă dacă suma cerută e prea mare pentru venitul meu?",
+        answer: "Îți spunem la telefon, înainte să aduni actele. Îți propunem o sumă mai mică sau un termen mai lung. Rata trebuie să fie ușor de plătit.",
     },
     {
-        question: "Mașina devine proprietatea mea din prima zi?",
-        answer: "Da. Spre deosebire de leasing, la credit auto mașina este a ta imediat. Nicio restricție de kilometraj, nicio clauză de răscumpărare la final.",
+        question: "Mașina e a mea din prima zi?",
+        answer: "Da. Mașina este pe numele tău de la cumpărare. Nu ai limită de kilometri. Nu ai nimic de răscumpărat la final.",
     },
     {
-        question: "Pot obține credit și pentru reparații majore la mașina existentă?",
-        answer: "Da. Finanțăm reparații tehnice majore - motor, cutie de viteze, suspensie, caroserie - nu doar achiziții. Nu cerem ofertă de la service înainte de aprobare.",
+        question: "Pot lua credit pentru reparația mașinii?",
+        answer: "Da. Finanțăm reparații mari: motor, cutie de viteze, suspensie, caroserie. Nu cerem ofertă de la service înainte de aprobare.",
     },
     {
-        question: "Este obligatorie garanția cu mașina sau un imobil?",
-        answer: "La primul credit, fidejusorul (garant personal) este obligatoriu, indiferent de sumă. Gajul imobiliar poate fi cerut suplimentar pentru sume mari sau venituri nestabile.",
+        question: "Am nevoie de fidejusor sau gaj?",
+        answer: "La primul credit cerem un fidejusor, indiferent de sumă. Gaj putem cere la sume mari sau dacă venitul nu este stabil.",
     },
     {
-        question: "Cât timp durează aprobarea?",
-        answer: "Decizia se ia în 2-3 ore pentru dosarele complete. Banii pot fi disponibili în aceeași zi lucrătoare după semnarea contractului.",
+        question: "Cât durează aprobarea?",
+        answer: "Decizia o luăm în 2-3 ore, dacă actele sunt complete. După ce semnezi contractul, banii îi primești în numerar la oficiu sau pe card.",
     },
     {
-        question: "Pot rambursa anticipat dacă vreau să închid creditul mai repede?",
-        answer: "Da, rambursarea anticipată este gratuită. Plătești dobânda doar pentru perioada efectiv utilizată, fără nicio penalitate.",
+        question: "Pot achita creditul înainte de termen?",
+        answer: "Da, fără comision. Plătești dobânda doar pentru perioada în care ai folosit banii.",
     },
 ];
 
@@ -71,100 +68,83 @@ export default function CreditAutomobilPage() {
     return (
         <div className="dc bg-dc-bg">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(autoLoanSchema) }} />
-            <ProductHero
+
+            <ServiceHero
                 breadcrumb={breadcrumbItems}
-                category="Persoane fizice"
-                position={5}
                 title={
                     <>
-                        Credit pentru <Accent>automobil.</Accent>
+                        Credit pentru automobil, <Accent>fără comisioane.</Accent>
                     </>
                 }
-                subtitle="Cumpără sau repară mașina fără complicații. Analizăm scopul și situația ta, pentru condiții clare și un răspuns onest."
-                primaryCta={{ label: "Depune cererea", href: "/cerere-de-credit-online" }}
-                secondaryCta={{ label: "Calculează rata", href: "#calculator" }}
-            />
-            <SpecStrip
-                specs={[
-                    { value: "10 000", label: "MDL sumă minimă" },
-                    { value: "12-48", label: "luni termen" },
-                    { value: "2-3 ore", label: "până la decizie", proof: true },
-                    { value: "4 %", label: "dobândă fixă / lună" },
+                subtitle="Pentru cumpărarea sau reparația mașinii, de la 10.000 la 300.000 lei. Analizăm scopul creditului și veniturile tale. Apoi îți spunem ce sumă și ce termen ți se potrivesc."
+                rows={[
+                    { label: "Suma", value: "10.000–300.000 lei" },
+                    { label: "Termen", value: "12–48 luni" },
+                    { label: "Decizia", value: "2–3 ore" },
                 ]}
             />
 
-            <EligibilityRows
-                marker="Eligibilitate"
+            <Situations
                 title={
                     <>
-                        Condiții de <Accent>creditare</Accent>
+                        Pentru ce iau oamenii <Accent>credit auto la noi.</Accent>
                     </>
                 }
+                intro="Nu avem restricții pe tipul mașinii. Ne uităm la venitul tău, nu la mașină."
                 items={[
-                    "Vârsta între 23 și 55 de ani",
-                    "Venit confirmat și stabil",
-                    "Buletin de identitate valabil",
-                    "Fără restanțe mari la credite active",
+                    { label: "Mașină rulată", text: "Ai găsit o mașină la o persoană fizică. Vânzătorul vrea banii acum." },
+                    { label: "Mașină nouă", text: "Cumperi o mașină nouă de la un dealer. Plătești în rate fixe." },
+                    { label: "Reparație mare", text: "S-a stricat motorul sau cutia de viteze. Ai nevoie de mașină în fiecare zi." },
+                    { label: "Caroserie", text: "Repari caroseria sau suspensia înainte ca problema să devină mai scumpă." },
                 ]}
             />
 
-            <Calculator />
+            <CostExample sum={80000} term={36} />
+            <Calculator max={300000} />
 
-            <Section
-                marker="Detalii"
+            <Analysis
                 title={
                     <>
-                        Credit auto în Moldova - cumpărare sau <Accent>reparație</Accent>
+                        Ce analizăm înainte <Accent>de aprobare.</Accent>
                     </>
                 }
-            >
-                <ProductDescription
-                    items={[
-                        {
-                            title: "Cumpărare sau reparație",
-                            text: "Mașină nouă, second-hand sau reparații majore la mașina ta. Fără restricții pe tipul vehiculului - de la persoane fizice sau dealeri.",
-                        },
-                        {
-                            title: "Mașina e a ta din prima zi",
-                            text: "Spre deosebire de leasing, fără clauze de răscumpărare, fără restricții de kilometraj sau modificări interzise. Iei banii, cumperi sau repari, plătești rate fixe.",
-                        },
-                        {
-                            title: "Cât durează",
-                            text: "Aprobăm în 2-3 ore, fără ofertă de la dealer sau deviz de la service în avans. Dacă rata nu se potrivește veniturilor tale, găsim împreună o sumă potrivită - nu aprobăm o rată pe care n-o poți susține.",
-                        },
-                    ]}
-                />
-            </Section>
+                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Avem ${yearsSinceFoundation} ani de lucru cu oameni din Moldova.`}
+                steps={[
+                    { title: "Planul", body: "Ne spui ce mașină cumperi sau ce reparație faci și de ce ai nevoie de ea." },
+                    {
+                        title: "Veniturile",
+                        body: "Vedem din ce venit plătești rata în fiecare lună. Și cum o plătești dacă venitul scade.",
+                    },
+                    { title: "Garanțiile", body: "La final discutăm cine este fidejusor și, doar dacă e nevoie, ce bun pui gaj." },
+                ]}
+                showOutcomes={false}
+            />
+
+            <Eligibility
+                can={[
+                    "ai cel puțin 23 de ani;",
+                    "ai un venit confirmat și stabil;",
+                    "ai buletin de identitate valabil;",
+                    "nu ai restanțe mari la creditele active.",
+                ]}
+                cannot={["o sumă la care rata ar lua o parte prea mare din venitul lunar. În acest caz îți propunem o sumă mai mică."]}
+            />
+
+            <Documents
+                items={[
+                    { title: "Buletinul de identitate", note: "valabil" },
+                    { title: "Confirmarea veniturilor", note: "adeverință de salariu sau extras de cont" },
+                    { title: "Certificatul de înmatriculare", note: "dacă mașina e deja cumpărată" },
+                    { title: "Actele vânzătorului", note: "doar pentru mașina rulată" },
+                ]}
+                footnote="Nu cerem ofertă de la dealer sau deviz de la service înainte de aprobare."
+            />
 
             <Process />
-
-            <DocumentRows
-                id="documente"
-                marker="Dosar"
-                title={
-                    <>
-                        Documente <Accent>necesare</Accent>
-                    </>
-                }
-                items={[
-                    { title: "Buletin de identitate", note: "Obligatoriu" },
-                    { title: "Confirmare a veniturilor", note: "Adeverință / extras / BIC" },
-                    { title: "Actul tehnic al autovehiculului", note: "Dacă există" },
-                    { title: "Actele proprietarului vânzător", note: "Pentru second-hand" },
-                ]}
-                footnote="Spre deosebire de leasing, mașina este a ta din prima zi. Nicio restricție de utilizare sau clauze de răscumpărare."
-            />
-
-            <ProductFaq
-                title={
-                    <>
-                        Întrebări despre creditul <Accent>auto</Accent>
-                    </>
-                }
-                items={faqItems}
-            />
-            <WhyUs />
+            <LatePayment consumer example="salariul vine mai târziu." />
+            <ProductFaq items={faqItems} />
             <ClosingCta />
+            <MobileCallBar />
         </div>
     );
 }

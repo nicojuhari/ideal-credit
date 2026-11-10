@@ -103,7 +103,7 @@ export async function renderOgImage({ eyebrowLabel, eyebrowPosition, eyebrowTota
                             display: "flex",
                             flexWrap: "wrap",
                             columnGap: 18,
-                            fontSize: 104,
+                            fontSize: title.length > 40 ? 76 : 104, // long titles wrap to 4+ lines at 104 and overflow 630px
                             fontWeight: 600,
                             letterSpacing: "-0.035em",
                             lineHeight: 1.02,

@@ -16,12 +16,12 @@ const businessProducts: CreditItem[] = [
     {
         href: "/credite/credit-pentru-afaceri",
         label: "Afaceri",
-        desc: "Capital pentru SRL, ÎI și antreprenori.",
+        desc: "Pentru SRL, ÎI și gospodării țărănești.",
     },
     {
         href: "/credite/credit-investitional",
         label: "Credit investițional",
-        desc: "Echipamente, extindere, modernizare.",
+        desc: "Echipament, utilaje și transport.",
     },
     {
         href: "/credite/credit-pentru-agricultura",
@@ -34,17 +34,17 @@ const personalProducts: CreditItem[] = [
     {
         href: "/credite/credit-pentru-nevoi-personale",
         label: "Nevoi personale",
-        desc: "Pentru orice scop, fără destinație fixă.",
+        desc: "Studii, sănătate sau o cumpărătură planificată.",
     },
     {
         href: "/credite/credit-pentru-reparatie",
         label: "Reparație",
-        desc: "Renovează locuința cu condiții clare.",
+        desc: "Pentru renovarea casei sau a apartamentului.",
     },
     {
         href: "/credite/credit-pentru-automobil",
         label: "Automobil",
-        desc: "Finanțare pentru vehicul nou sau rulat.",
+        desc: "Pentru o mașină nouă sau rulată.",
     },
 ];
 
@@ -88,7 +88,7 @@ export default function Header() {
     const isCreditActive = pathname.startsWith("/credite");
 
     return (
-        <header className="dc sticky top-0 z-10 min-h-[72px] border-b border-dc-line bg-dc-bg">
+        <header className="dc sticky top-0 z-20 min-h-[72px] border-b border-dc-line bg-dc-bg">
             <Container className="flex min-h-[72px] items-center justify-between gap-6">
                 <Link href="/" title="Ideal Credit - Credite pentru succes!" className="flex items-center gap-[11px]">
                     <Logo className="w-9" />
@@ -140,7 +140,7 @@ export default function Header() {
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-between border-t border-dc-line px-6 py-3">
-                                    <span className="text-xs text-dc-text-muted">Toate soluțiile de credit</span>
+                                    <span className="text-xs text-dc-text-muted">Toate creditele</span>
                                     <Link
                                         href="/credite"
                                         className="text-[15px] uppercase tracking-[.04em] text-dc-accent underline underline-offset-4"

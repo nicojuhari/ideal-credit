@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
- title:"Cerere de Credit Online | Aplică în 5 Minute | Ideal Credit",
+ title:"Cerere de credit online, în 5 minute | Ideal Credit",
  description:
-"Completează cererea de credit online în câteva minute. Analizăm situația ta și te contactăm în 2-3 ore. Fără vizite la birou, fără documente în avans.",
+"Completezi cererea de credit online în 5 minute. Te sunăm și îți spunem ce acte trebuie. La oficiu vii doar ca să semnezi contractul.",
  alternates: { canonical:"https://idealcredit.md/cerere-de-credit-online" },
  openGraph: {
   type: "website",
   locale: "ro_MD",
   siteName: "Ideal Credit",
   url: "https://idealcredit.md/cerere-de-credit-online",
-  title: "Cerere de Credit Online | Aplică în 5 Minute | Ideal Credit",
+  title: "Cerere de credit online, în 5 minute | Ideal Credit",
   description:
-"Completează cererea de credit online în câteva minute. Analizăm situația ta și te contactăm în 2-3 ore. Fără vizite la birou, fără documente în avans.",
+"Completezi cererea de credit online în 5 minute. Te sunăm și îți spunem ce acte trebuie. La oficiu vii doar ca să semnezi contractul.",
  },
 };
 

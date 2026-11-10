@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Container from "@/components/ds/Container";
 import Accent from "@/components/ds/Accent";
-import Breadcrumb from "@/components/ds/Breadcrumb";
+import ValueRow from "@/components/ds/ValueRow";
+import PageHero, { cardLabel } from "@/components/ds/PageHero";
+import { sectionTitle } from "@/components/ds/SplitSection";
 import { ButtonPrimary, ButtonSecondary } from "@/components/ds/Button";
-import Products from "@/components/home/Products";
-import ProductFaq from "@/components/product/ProductFaq";
-import type { FaqItem } from "@/components/product/ProductFaq";
-import WhyUs from "@/components/home/WhyUs";
+import Process from "@/components/home/Process";
 import ClosingCta from "@/components/home/ClosingCta";
+import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
+import { CALCULATOR_MONTHLY_RATE } from "@/lib/constants";
 import { yearsSinceFoundation } from "@/lib/utils";
 
 const breadcrumbItems = [
@@ -15,79 +17,184 @@ const breadcrumbItems = [
     { name: "Credite", url: "https://idealcredit.md/credite" },
 ];
 
+const DESCRIPTION =
+    "Credite pentru afaceri, investiții, agricultură, nevoi personale, reparație și automobil. Dobândă fixă, fără comisioane.";
+
 export const metadata: Metadata = {
-    title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
-    description:
-        "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Analizăm situația ta și îți spunem dacă are sens.",
+    title: "Credite pentru afaceri și persoane fizice | Ideal Credit",
+    description: DESCRIPTION,
     alternates: { canonical: "https://idealcredit.md/credite" },
     openGraph: {
         type: "website",
         locale: "ro_MD",
         siteName: "Ideal Credit",
         url: "https://idealcredit.md/credite",
-        title: "Soluții de Credit pentru Fiecare Situație | Ideal Credit",
-        description:
-            "6 soluții de credit pentru fiecare situație: afaceri, investiții, agricultură, auto, reparație și nevoi personale. Analizăm situația ta și îți spunem dacă are sens.",
+        title: "Credite pentru afaceri și persoane fizice | Ideal Credit",
+        description: DESCRIPTION,
     },
 };
+
+type Credit = { name: string; desc: string; sum: string; href: string };
+
+const groups: { title: string; who: string; decision: string; items: Credit[] }[] = [
+    {
+        title: "Pentru afaceri",
+        who: "SRL, ÎI și gospodării țărănești",
+        decision: "1–2 zile lucrătoare",
+        items: [
+            {
+                name: "Credit pentru afaceri",
+                desc: "Plătești marfa, furnizorii și salariile până încasezi banii de la clienți.",
+                sum: "50.000–500.000 lei",
+                href: "/credite/credit-pentru-afaceri",
+            },
+            {
+                name: "Credit investițional",
+                desc: "Cumperi echipament, utilaje sau transport care aduc venit afacerii.",
+                sum: "50.000–400.000 lei",
+                href: "/credite/credit-investitional",
+            },
+            {
+                name: "Credit pentru agricultură",
+                desc: "Cumperi semințe și tehnică. Ratele se potrivesc cu perioada recoltei.",
+                sum: "50.000–500.000 lei",
+                href: "/credite/credit-pentru-agricultura",
+            },
+        ],
+    },
+    {
+        title: "Pentru persoane fizice",
+        who: "Salariați, pensionari și persoane cu venit din activitate independentă",
+        decision: "2–3 ore",
+        items: [
+            {
+                name: "Credit pentru nevoi personale",
+                desc: "Pentru studii, sănătate sau o cumpărătură mare pe care ai planificat-o.",
+                sum: "10.000–300.000 lei",
+                href: "/credite/credit-pentru-nevoi-personale",
+            },
+            {
+                name: "Credit pentru reparație",
+                desc: "Repari sau renovezi casa ori apartamentul.",
+                sum: "10.000–300.000 lei",
+                href: "/credite/credit-pentru-reparatie",
+            },
+            {
+                name: "Credit pentru automobil",
+                desc: "Cumperi o mașină nouă sau rulată, ori o repari.",
+                sum: "10.000–300.000 lei",
+                href: "/credite/credit-pentru-automobil",
+            },
+        ],
+    },
+];
 
 const hubFaqItems: FaqItem[] = [
     {
         question: "Ce este o organizație de creditare nebancară (OCN)?",
-        answer: "O OCN este o instituție financiară autorizată și supravegheată de CNPF, care oferă credite fără a fi bancă. Procesul de aprobare este mai rapid (2-3 ore pentru persoane fizice, 1-2 zile lucrătoare pentru afaceri), documentația este mai simplă, iar analiza dosarului este adaptată situației reale a fiecărui client.",
+        answer: "Este o companie care dă credite, dar nu este bancă. Are licență și este supravegheată de stat. Ideal Credit este supravegheată de Banca Națională a Moldovei (BNM) și de Comisia Națională a Pieței Financiare (CNPF).",
     },
     {
-        question: "Cât timp durează aprobarea unui credit?",
-        answer: "Pentru persoane fizice, răspundem în 2-3 ore. Pentru credite de afaceri, analiza dosarului durează 1-2 zile lucrătoare. Dacă documentele sunt complete, fondurile pot fi disponibile în aceeași zi sau ziua lucrătoare următoare.",
+        question: "Cât durează până primesc decizia?",
+        answer: "Pentru persoane fizice, decizia vine în 2-3 ore. Pentru afaceri, în 1-2 zile lucrătoare. Timpul se socotește din momentul în care avem toate actele.",
     },
     {
-        question: "Există comisioane ascunse?",
-        answer: "Nu. Toate costurile - dobânda, DAE și orice penalități posibile - sunt prezentate clar înainte de semnarea contractului. Ce citești în contract, aia plătești.",
+        question: "Există comisioane?",
+        answer: "Nu. Plătești doar dobânda. Toate costurile le vezi în graficul de plăți, înainte să semnezi contractul.",
     },
     {
-        question: "Pot obține credit dacă am un profil mai puțin standard?",
-        answer: "Da. Analizăm situația reală, nu doar un scor de credit. Luăm în considerare istoricul de activitate, fluxul de numerar și capacitatea actuală de rambursare.",
+        question: "Dobânda este fixă?",
+        answer: "Da. Procentul nu se schimbă pe toată durata contractului. Rata lunară scade în timp, pentru că dobânda se calculează din suma rămasă de plătit. Toate ratele le vezi în graficul de plăți, înainte să semnezi.",
     },
     {
-        question: "Ce se întâmplă dacă nicio soluție nu mi se potrivește chiar?",
-        answer: `Îți spunem la prima discuție telefonică. Cu ${yearsSinceFoundation} ani de experiență, recunoaștem repede când o sumă, un termen sau chiar momentul nu sunt potrivite - și recomandăm sincer alternativa care chiar are sens, sau spunem direct că nu e cazul acum.`,
+        question: "Ce garanții cereți?",
+        answer: "La primul credit cerem un fidejusor: o persoană care garantează cu venitul său. Gaj imobiliar (o casă, un apartament sau un teren) cerem doar pentru sume mari sau când venitul nu este stabil.",
+    },
+    {
+        question: "Pot achita creditul înainte de termen?",
+        answer: "Da, fără comision. Plătești dobânda doar pentru lunile în care ai folosit banii.",
+    },
+    {
+        question: "Ce credit să aleg?",
+        answer: "Alege după ce vrei să faci cu banii. Dacă nu ești sigur, sună-ne. În 15 minute îți spunem ce credit, ce sumă și ce termen ți se potrivesc.",
+    },
+    {
+        question: "Ce se întâmplă dacă niciun credit nu mi se potrivește?",
+        answer: `Îți spunem direct, din prima discuție. În ${yearsSinceFoundation} ani am văzut multe situații. Îți propunem o sumă mai mică, un termen mai lung sau îți spunem că acum nu e momentul.`,
     },
 ];
 
 export default function CreditePage() {
     return (
         <div className="dc bg-dc-bg">
-            <div className="dc-section dc-section--hero">
-                <Container className="flex flex-col items-center gap-8 text-center">
-                    <Breadcrumb items={breadcrumbItems} />
-                    <p className="flex items-start gap-2.5 text-xs font-medium uppercase tracking-[.1em] text-dc-text-muted">
-                        <span className="mt-[3px] block h-[9px] w-[9px] shrink-0 bg-dc-proof" aria-hidden />
-                        Registrul de soluții · 6 credite
-                    </p>
-                    <h1 className="max-w-[900px] text-[clamp(52px,9vw,124px)] font-semibold leading-[.92] tracking-[-.048em] text-dc-text">
-                        Credite pentru <Accent>fiecare situație.</Accent>
-                    </h1>
-                    <p className="max-w-[620px] text-[19px] leading-[1.55] text-dc-text-muted">
-                        Finanțare pentru afaceri și persoane fizice. Analizăm situația ta și îți spunem dacă are sens.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-3.5">
-                        <ButtonPrimary href="/contacte">Discutăm situația ta</ButtonPrimary>
-                        <ButtonSecondary href="/cerere-de-credit-online">Cerere online</ButtonSecondary>
-                    </div>
-                </Container>
-            </div>
-
-            <Products />
-            <ProductFaq
-                marker="Întrebări"
+            <PageHero
+                breadcrumb={breadcrumbItems}
                 title={
                     <>
-                        Întrebări despre <Accent>credite</Accent>
+                        Credite pentru afaceri și <Accent>nevoi personale.</Accent>
                     </>
                 }
-                items={hubFaqItems}
+                subtitle="Toate creditele au aceleași condiții: dobândă fixă și fără comisioane. Alege creditul după ce vrei să faci cu banii."
+                actions={
+                    <>
+                        <ButtonPrimary href="/cerere-de-credit-online">Solicită un credit</ButtonPrimary>
+                        <ButtonSecondary href="/calculator-credit">Calculează rata</ButtonSecondary>
+                    </>
+                }
+                aside={
+                    <aside aria-label="Condițiile creditelor" className="border border-dc-line bg-dc-surface px-6 pb-3 pt-6 sm:px-9 sm:pt-8">
+                        <p className={cardLabel}>La toate creditele</p>
+                        <div className="mt-2">
+                            <ValueRow label="Dobânda fixă" value={`${CALCULATOR_MONTHLY_RATE}% pe lună`} proof />
+                            <ValueRow label="Comision de acordare" value="0 lei" />
+                            <ValueRow label="Comision lunar" value="0 lei" />
+                            <ValueRow label="Achitare înainte de termen" value="0 lei" />
+                        </div>
+                    </aside>
+                }
             />
-            <WhyUs />
+
+            <section className="dc-section" id="solutii-toate">
+                <Container>
+                    <h2 className={sectionTitle}>
+                        Alege <Accent>creditul.</Accent>
+                    </h2>
+                    <div className="mt-12 grid gap-px border border-dc-line bg-dc-line lg:mt-20 lg:grid-cols-2">
+                        {groups.map((g) => (
+                            <div key={g.title} className="flex flex-col bg-dc-bg">
+                                <div className="border-b border-dc-line p-6 sm:p-10 lg:min-h-[220px]">
+                                    <h3 className="text-[28px] font-semibold tracking-[-.03em] text-dc-text">{g.title}</h3>
+                                    <p className="mt-2 text-[17px] leading-[1.55] text-dc-text-muted">{g.who}.</p>
+                                    <p className="mt-5 flex flex-wrap items-baseline gap-x-3 text-[15px]">
+                                        <span className="text-dc-text-muted">Decizia în</span>
+                                        <span className="font-dc-mono text-dc-proof">{g.decision}</span>
+                                    </p>
+                                </div>
+                                <ul>
+                                    {g.items.map((c) => (
+                                        <li key={c.href} className="border-b border-dc-line last:border-b-0">
+                                            <Link
+                                                href={c.href}
+                                                className="group grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-6 gap-y-2 p-6 transition-colors hover:bg-dc-surface sm:px-10 sm:py-8"
+                                            >
+                                                <span className="text-xl font-semibold tracking-[-.02em] text-dc-text">{c.name}</span>
+                                                <span className="text-dc-text-muted transition-colors group-hover:text-dc-accent" aria-hidden>
+                                                    →
+                                                </span>
+                                                <span className="col-span-2 text-[17px] leading-[1.55] text-dc-text-muted">{c.desc}</span>
+                                                <span className="col-span-2 font-dc-mono text-[15px] text-dc-text">{c.sum}</span>
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </Container>
+            </section>
+
+            <Process />
+            <ProductFaq items={hubFaqItems} />
             <ClosingCta />
         </div>
     );

@@ -11,6 +11,6 @@ export default async function Image() {
         eyebrowTotal: 6,
         title: "Credit pentru automobil.",
         accent: "automobil.",
-        subtitle: "Cumpără sau repară mașina fără complicații. Analizăm scopul și situația ta, pentru un răspuns onest.",
+        subtitle: "Pentru cumpărarea sau reparația mașinii, de la 10.000 la 300.000 lei. Decizia în 2-3 ore.",
     });
 }

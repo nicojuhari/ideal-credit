@@ -554,11 +554,18 @@ input[type=number] {
 
 /* Rhythm - 96/96, hero and CTA deviate per spec */
 .dc-section {
-  border-top: 1px solid var(--color-dc-line);
-  padding-block: 96px;
+  padding-block: 128px;
+}
+/* Cancel the legacy base `section { margin }` inside the redesign: spacing lives in padding only. */
+.dc section {
+  margin-block: 0;
+}
+/* Sections alternate background instead of divider lines */
+.dc > .dc-section:nth-of-type(even) {
+  background: #131313;
 }
 .dc-section--hero {
-  padding-block: 120px 104px;
+  padding-block: 96px 136px;
   border-top: none;
 }
 .dc-section--cta {
@@ -569,10 +576,10 @@ input[type=number] {
 }
 @media (max-width: 899px) {
   .dc-section {
-    padding-block: 72px;
+    padding-block: 88px;
   }
   .dc-section--hero {
-    padding-block: 80px 72px;
+    padding-block: 56px 88px;
   }
   .dc-section--cta {
     padding-block: 80px;
@@ -663,7 +670,11 @@ input[type=number] {
 .dc-legal {
   color: var(--color-dc-text-muted);
   line-height: 1.7;
-  font-size: 16px;
+  font-size: 17px;
+}
+.dc-legal > h2:first-child,
+.dc-legal > p:first-child {
+  margin-top: 0;
 }
 .dc-legal h2 {
   margin: 2.5rem 0 0.75rem;

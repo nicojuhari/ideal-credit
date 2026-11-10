@@ -5,7 +5,7 @@ export const MOLDOVA_MOBILE_REGEX = /^0[67]\d{7}$/;
 
 export const TERMEN_OPTIONS = ["6", "12", "16", "24", "36", "48"] as const;
 
-export const SCOP_OPTIONS = ["Pentru nevoi personale", "Pentru afaceri", "Refinanțare", "Procurare bun imobil", "Altele"] as const;
+export const SCOP_OPTIONS = ["Pentru afaceri", "Pentru nevoi personale", "Reparație", "Automobil", "Altele"] as const;
 
 export type StepKind = "gate" | "form" | "submit";
 

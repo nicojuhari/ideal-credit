@@ -1,0 +1,32 @@
+# ./brand/brand.yaml - brand-memory manifest (schema: _system/schemas/brand-manifest.schema.json)
+# Any skill that writes a profile file updates its entry here in the same operation.
+brand:
+  name: Ideal Credit
+  slug: idealcredit
+  url: https://idealcredit.md
+  created: 2026-05-18
+  updated: 2026-11-10
+
+files:
+  strategy.md:                { updated: 2026-11-09, owner: unique-value-strategy, notes: "core strategy; home H1 = category line (owner decision 2026-11-09)" }
+  positioning.md:             { updated: 2026-11-09, owner: positioning-angles }
+  voice-profile.md:           { updated: 2026-11-09, owner: brand-voice, notes: "v2; previous in .history/" }
+  competitors.md:             { updated: 2026-11-10, owner: competitive-intel, notes: "ads UNVERIFIED; Easy Credit + Fagura from search snippets" }
+  audience.md:                { updated: 2026-11-10, owner: audience-research, notes: "business non-agro segment provisional" }
+  voc.md:                     { updated: 2026-11-10, owner: audience-research, notes: "49 quotes; Reddit/Facebook/Google Maps not mined" }
+  keyword-plan.md:            { updated: 2026-11-09, owner: keyword-research }
+  site-architecture.md:       { updated: 2026-11-09, notes: "owner decisions on page structure" }
+  creative-kit.md:            { updated: 2026-09-15, owner: creative }
+  social-design-system.md:    { updated: 2026-09-15 }
+  social-media-strategy.md:   { updated: 2026-09-06, owner: social-content, notes: "cadence now Tue/Thu (2026-08-25)" }
+  blog-editorial-strategy.md: { updated: 2026-10-29, notes: "superseded - editorial blog dropped 2026-10-29" }
+  stack.md:                   { updated: 2026-09-06, owner: start-here }
+  assets.md:                  { updated: 2026-11-10, notes: "append-only registry" }
+  learnings.md:               { updated: 2026-09-22, notes: "append-only priors" }
+
+campaigns:
+  - { name: site-redesign-2026-11, path: ./campaigns/site-redesign-2026-11/, status: active, started: 2026-11-10 }
+  - { name: social, path: ./campaigns/social/, status: active, started: 2026-07-11 }
+  - { name: content, path: ./campaigns/content/, status: complete, started: 2026-09-11 }
+  - { name: content-plan, path: ./campaigns/content-plan/, status: complete, started: 2026-05-18 }
+  - { name: keywords, path: ./campaigns/keywords/, status: complete, started: 2026-09-11 }
