@@ -8,7 +8,7 @@ import PageHero, { cardLabel } from "@/components/ds/PageHero";
 import SplitSection, { sectionTitle } from "@/components/ds/SplitSection";
 import { ButtonPrimary } from "@/components/ds/Button";
 import { useFacebookPixel } from "@/hooks/useFacebookPixel";
-import { OFFICES } from "@/lib/constants";
+import { OFFICES, fullAddress } from "@/lib/constants";
 
 const WEB3FORMS_KEY = "c8f3c3c1-46ab-46bf-a139-4c4bb6265d95";
 
@@ -154,10 +154,10 @@ export default function ContactePage() {
                             >
                                 <p className={cardLabel}>{office.title}</p>
                                 <h3 className="mt-4 text-[28px] font-semibold tracking-[-.03em] text-dc-text">
-                                    {office.city.replace(/^(or\.|m\.)\s*/, "")}
+                                    {office.city.replace(/^(or\.|mun\.)\s*/, "")}
                                 </h3>
                                 <p className="mt-3 text-[17px] leading-[1.6] text-dc-text-muted">
-                                    {office.street}, {office.addressNumbers}
+                                    {fullAddress(office)}
                                 </p>
                                 <a
                                     href={`tel:${office.mobile}`}

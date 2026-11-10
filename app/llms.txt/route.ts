@@ -1,5 +1,5 @@
 import { createGrafic, calcDAE } from "ideal-credit";
-import { CALCULATOR_MONTHLY_RATE, OFFICES } from "@/lib/constants";
+import { CALCULATOR_MONTHLY_RATE, OFFICES, fullAddress } from "@/lib/constants";
 
 // llms.txt for AI assistants: the facts they need to answer questions about Ideal Credit.
 // Built from the same constants as the pages, so the rate, offices and example never drift.
@@ -18,7 +18,7 @@ function costExample(sum: number, term: number) {
 
 export function GET() {
     const offices = OFFICES.map(
-        (o) => `- ${o.title}: ${o.city}, ${o.street}, ${o.addressNumbers}. Telefon: ${o.mobileDisplay} (${o.mobile}).`,
+        (o) => `- ${o.title}: ${fullAddress(o)}. Telefon: ${o.mobileDisplay} (${o.mobile}).`,
     ).join("\n");
 
     const body = `# Ideal Credit

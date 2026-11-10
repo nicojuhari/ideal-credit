@@ -56,7 +56,7 @@ export const organizationSchema = {
             identifier: { "@type": "PropertyValue", propertyID: "IDNO", value: "1010608000541" },
             address: {
                 "@type": "PostalAddress",
-                streetAddress: "str. Mihai Eminescu 17, of. 47",
+                streetAddress: "bd. Mihai Eminescu 17, of. 47",
                 addressLocality: "Căușeni",
                 postalCode: "MD-4304",
                 addressCountry: "MD",
@@ -98,7 +98,7 @@ export const organizationSchema = {
             priceRange: "10000-500000 MDL",
             address: {
                 "@type": "PostalAddress",
-                streetAddress: "Ginta Latină, nr. 18, of. 5",
+                streetAddress: "str. Ginta Latină 18, of. 5",
                 addressLocality: "Chișinău",
                 addressRegion: "Municipiul Chișinău",
                 postalCode: "MD-2044",
@@ -126,7 +126,7 @@ export const organizationSchema = {
             priceRange: "10000-500000 MDL",
             address: {
                 "@type": "PostalAddress",
-                streetAddress: "Mihai Eminescu, nr. 17, of. 47",
+                streetAddress: "bd. Mihai Eminescu 17, of. 47",
                 addressLocality: "Căușeni",
                 addressRegion: "Raionul Căușeni",
                 postalCode: "MD-4304",

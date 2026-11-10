@@ -25,7 +25,7 @@ export default function PrivacyPage() {
         >
             <h2>Introducere</h2>
             <p>
-                OCN Ideal Credit SRL, cu sediul principal în or.Căușeni, str. Mihai Eminescu nr. 17, of. 47, Republica Moldova, se
+                OCN Ideal Credit SRL, cu sediul principal în bd. Mihai Eminescu 17, of. 47, or. Căușeni, MD-4304, Republica Moldova, se
                 angajează să protejeze confidențialitatea datelor dumneavoastră personale.
             </p>
 
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
             <p>
                 OCN Ideal Credit SRL,
                 <br />
-                or.Căușeni, str. Mihai Eminescu, nr. 17, of. 47
+                bd. Mihai Eminescu 17, of. 47, or. Căușeni, MD-4304
                 <br />
                 email: info@idealcredit.md
                 <br />

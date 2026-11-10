@@ -93,7 +93,7 @@ export default function Footer() {
                                     <div key={city}>
                                         <p className="text-dc-text">{city}</p>
                                         <p className="text-dc-text-muted">
-                                            {o.street} {o.addressNumbers.replace(/,\s*MD-\d+$/, "")}
+                                            {o.address}
                                         </p>
                                         <a
                                             href={`tel:${o.mobile}`}

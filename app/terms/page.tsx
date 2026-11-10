@@ -27,7 +27,7 @@ export default function TermsPage() {
             <p>
                 1.1. Prezentul document stabilește termenii și condițiile generale (denumite în continuare &quot;T&amp;C&quot;) pentru
                 utilizarea serviciilor oferite de Organizația de Creditare Nebancară &quot;Ideal Credit&quot; SRL (denumită în continuare
-                &quot;Compania&quot;), cu sediul în or. Căușeni, str. M. Eminescu nr. 17, of. 47, Republica Moldova.
+                &quot;Compania&quot;), cu sediul în bd. Mihai Eminescu 17, of. 47, or. Căușeni, MD-4304, Republica Moldova.
             </p>
             <p>
                 1.2. Prin utilizarea serviciilor noastre, acceptați acești T&amp;C în întregime. Vă rugăm să citiți cu atenție acest
@@ -120,9 +120,9 @@ export default function TermsPage() {
             <p>
                 <strong>OCN Ideal Credit SRL</strong>
                 <br />
-                Sediul principal: or.Căușeni, str. M.Eminescu nr. 17, of. 47
+                Sediul principal: bd. Mihai Eminescu 17, of. 47, or. Căușeni, MD-4304
                 <br />
-                Sucursala Nr 1: m.Chișinău, str. Ginta Latină nr. 18, of. 5
+                Sucursala nr. 1: str. Ginta Latină 18, of. 5, mun. Chișinău, MD-2044
                 <br />
                 E-mail: info@idealcredit.md
                 <br />

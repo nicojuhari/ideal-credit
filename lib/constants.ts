@@ -4,13 +4,14 @@ export const CALCULATOR_MONTHLY_RATE = 4;
 export const SITE_DESCRIPTION =
     "Credite nebancare pentru afaceri și persoane fizice, de la 10.000 la 500.000 lei. Plătești doar dobânda fixă. Fără comisioane.";
 
+// Address format, used everywhere (site, schema, Google Business Profile): "bd. Mihai Eminescu 17, of. 47, or. Căușeni, MD-4304".
 export const OFFICES = [
     {
         id: 1,
         title: "Sediul principal",
         city: "or. Căușeni",
-        street: "str. Mihai Eminescu",
-        addressNumbers: "nr. 17, of. 47, MD-4304",
+        address: "bd. Mihai Eminescu 17, of. 47",
+        postalCode: "MD-4304",
         mobile: "+37368270101",
         mobileDisplay: "068 27 01 01",
         note: null as string | null,
@@ -19,14 +20,16 @@ export const OFFICES = [
     {
         id: 2,
         title: "Sucursala Nr. 1",
-        city: "m. Chișinău",
-        street: "str. Ginta Latină",
-        addressNumbers: "nr. 18, of. 5, MD-2044",
+        city: "mun. Chișinău",
+        address: "str. Ginta Latină 18, of. 5",
+        postalCode: "MD-2044",
         mobile: "+37361252777",
         mobileDisplay: "0612 52 777",
         map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.5126752925935!2d28.866588177004928!3d47.049792671144246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97cfa93379893%3A0x6b21737dc3080047!2sIdeal%20Credit%20Chi%C8%99in%C4%83u!5e0!3m2!1sen!2sat!4v1708098130151!5m2!1sen!2sat",
     },
 ];
+
+export const fullAddress = (o: (typeof OFFICES)[number]) => `${o.address}, ${o.city}, ${o.postalCode}`;
 
 export const FAQ_ITEMS = [
     // shortcut: the 100.000 lei example assumes CALCULATOR_MONTHLY_RATE = 4; update it if the rate changes.

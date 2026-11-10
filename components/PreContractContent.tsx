@@ -66,13 +66,13 @@ export default function PreContractContent({
                         label="Adresa"
                         value={
                             <>
-                                m.Chișinău, str. Ginta Latină, nr. 18, of. 5 (sucursala nr.1)
+                                str. Ginta Latină 18, of. 5, mun. Chișinău, MD-2044 (sucursala nr. 1)
                                 <br />
                                 <br />
                                 sau
                                 <br />
                                 <br />
-                                or.Căușeni, str. Mihai Eminescu nr. 17, of. 47 (sediul principal)
+                                bd. Mihai Eminescu 17, of. 47, or. Căușeni, MD-4304 (sediul principal)
                             </>
                         }
                     />
