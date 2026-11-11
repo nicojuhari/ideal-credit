@@ -1,6 +1,10 @@
 // Monthly interest rate (%) used by the credit calculator (createGrafic/calcDAE).
 export const CALCULATOR_MONTHLY_RATE = 4;
 
+// Annual parameters from next-icm RI-07 Anexa nr. 6 (HG 2026). Update every January.
+export const MIN_WAGE = 6_300;
+export const AVG_WAGE = 17_400;
+
 export const SITE_DESCRIPTION =
     "Credite nebancare pentru afaceri și persoane fizice, de la 10.000 la 500.000 lei. Plătești doar dobânda fixă. Fără comisioane.";
 

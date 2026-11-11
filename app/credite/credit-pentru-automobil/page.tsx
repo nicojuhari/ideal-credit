@@ -86,7 +86,7 @@ export default function CreditAutomobilPage() {
             <Situations
                 title={
                     <>
-                        Pentru ce iau oamenii <Accent>credit auto la noi.</Accent>
+                        Pentru ce iau persoanele fizice <Accent>credit auto la noi.</Accent>
                     </>
                 }
                 intro="Nu avem restricții pe tipul mașinii. Ne uităm la venitul tău, nu la mașină."
@@ -107,7 +107,7 @@ export default function CreditAutomobilPage() {
                         Ce analizăm înainte <Accent>de aprobare.</Accent>
                     </>
                 }
-                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Avem ${yearsSinceFoundation} ani de lucru cu oameni din Moldova.`}
+                intro={`Fiecare cerere o analizează un specialist cu experiență, care discută direct cu tine. Avem ${yearsSinceFoundation} ani de lucru cu persoane fizice din Moldova.`}
                 steps={[
                     { title: "Planul", body: "Ne spui ce mașină cumperi sau ce reparație faci și de ce ai nevoie de ea." },
                     {

@@ -104,7 +104,7 @@ export default function CreditNevoiPersonalePage() {
             <Situations
                 title={
                     <>
-                        Pentru ce iau oamenii <Accent>credit la noi.</Accent>
+                        Pentru ce iau persoanele fizice <Accent>credit la noi.</Accent>
                     </>
                 }
                 intro={

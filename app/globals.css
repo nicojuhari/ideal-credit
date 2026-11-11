@@ -638,6 +638,24 @@ input[type=number] {
 }
 
 /* Focus */
+/* Calculator: thicker track, bigger orange handle, so the slider reads as "drag me" */
+.dc input[type="range"].dc-slider.dc-slider--lg {
+  height: 4px;
+}
+.dc input[type="range"].dc-slider.dc-slider--lg::-webkit-slider-thumb {
+  width: 22px;
+  height: 22px;
+  background: var(--color-dc-accent);
+  border: 3px solid var(--color-dc-bg);
+  box-shadow: 0 0 0 1px var(--color-dc-accent);
+}
+.dc input[type="range"].dc-slider.dc-slider--lg::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--color-dc-accent);
+  border: 3px solid var(--color-dc-bg);
+  box-shadow: 0 0 0 1px var(--color-dc-accent);
+}
 .dc a:focus-visible,
 .dc button:focus-visible,
 .dc [tabindex]:focus-visible,
@@ -717,4 +735,28 @@ input[type=number] {
 }
 .dc-article a:hover {
   color: var(--color-dc-text);
+}
+/* ─── Print: pages that print (calculator) get a plain white sheet ─────────── */
+@media print {
+  html,
+  body,
+  .dc {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .dc :is(h1, h2, h3, p) {
+    color: inherit;
+  }
+  /* margin 0 leaves no room for the browser's date/URL header; the sheet pads every page itself */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  .print-sheet {
+    padding: 14mm 16mm;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
 }

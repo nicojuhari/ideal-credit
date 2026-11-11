@@ -110,7 +110,7 @@ export default function DespreNoiPage() {
                         Dăm credite în Moldova <Accent>din 2010.</Accent>
                     </>
                 }
-                subtitle="Suntem o companie de creditare nebancară. Sediul e în Căușeni, sucursala în Chișinău. Lucrăm cu afaceri și oameni din toată Moldova."
+                subtitle="Suntem o companie de creditare nebancară. Sediul e în Căușeni, sucursala în Chișinău. Lucrăm cu afaceri și persoane fizice din toată Moldova."
                 aside={
                     <figure className="border border-dc-line bg-dc-surface p-6 sm:p-9">
                         <p className={cardLabel}>Promisiunea noastră</p>
@@ -146,7 +146,7 @@ export default function DespreNoiPage() {
                         Pe cine <Accent>finanțăm.</Accent>
                     </>
                 }
-                description="Finanțăm mai ales afaceri mici și mijlocii. Finanțăm și oameni care au un plan clar pentru bani. Discuția despre credit este gratuită și nu te obligă la nimic."
+                description="Finanțăm mai ales afaceri mici și mijlocii. Finanțăm și persoane fizice care au un plan clar pentru bani. Discuția despre credit este gratuită și nu te obligă la nimic."
             >
                 <div className="border-t border-dc-line">
                     {servicii.map((s) => (

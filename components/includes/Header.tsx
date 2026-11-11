@@ -88,7 +88,7 @@ export default function Header() {
     const isCreditActive = pathname.startsWith("/credite");
 
     return (
-        <header className="dc sticky top-0 z-20 min-h-[72px] border-b border-dc-line bg-dc-bg">
+        <header className="dc print:hidden sticky top-0 z-20 min-h-[72px] border-b border-dc-line bg-dc-bg">
             <Container className="flex min-h-[72px] items-center justify-between gap-6">
                 <Link href="/" title="Ideal Credit - Credite pentru succes!" className="flex items-center gap-[11px]">
                     <Logo className="w-9" />

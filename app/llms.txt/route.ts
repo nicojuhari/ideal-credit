@@ -87,7 +87,7 @@ ${offices}
 ## Alte pagini
 
 - [Toate creditele](${SITE}/credite)
-- [Calculator de credit](${SITE}/calculator-credit): rata lunară, dobânda totală, DAE și graficul de plăți.
+- [Calculator de credit pentru persoane fizice](${SITE}/calculator-credit): cât poți împrumuta din venit, rata lunară, dobânda totală, DAE și graficul de plăți.
 - [Despre noi](${SITE}/despre-noi): regulamente, rapoarte de audit și actele companiei.
 - [Dicționar financiar](${SITE}/dictionar-financiar): 18 termeni explicați simplu (dobândă, DAE, gaj, fidejusor).
 - [Autoritatea de supraveghere](${SITE}/autoritatea-de-supraveghere): contactele BNM și CNPF și cum se depune o reclamație.

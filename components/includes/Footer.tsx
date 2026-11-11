@@ -55,7 +55,7 @@ export default function Footer() {
     const { trackEvent } = useFacebookPixel();
 
     return (
-        <footer className="dc overflow-hidden pt-14 sm:pt-20">
+        <footer className="dc print:hidden overflow-hidden pt-14 sm:pt-20">
             <Container>
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2.2fr)] lg:gap-20">
                     <div className="max-w-[360px]">

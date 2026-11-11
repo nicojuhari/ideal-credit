@@ -87,7 +87,7 @@ export default function CreditReparatiePage() {
             <Situations
                 title={
                     <>
-                        Pentru ce iau oamenii <Accent>credit de reparație.</Accent>
+                        Pentru ce iau persoanele fizice <Accent>credit de reparație.</Accent>
                     </>
                 }
                 intro="Banii îi folosești cum ai nevoie. Pentru materiale, pentru meșteri sau pentru ambele."
