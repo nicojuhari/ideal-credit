@@ -6,7 +6,6 @@ import Process from "@/components/home/Process";
 import ClosingCta from "@/components/home/ClosingCta";
 import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
 import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
-import MobileCallBar from "@/components/includes/MobileCallBar";
 import { repairLoanSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -145,7 +144,6 @@ export default function CreditReparatiePage() {
             <LatePayment consumer example="lucrările costă mai mult decât ai estimat sau venitul scade o lună." />
             <ProductFaq items={repairFaqItems} />
             <ClosingCta />
-            <MobileCallBar />
         </div>
     );
 }

@@ -8,7 +8,6 @@ import Process from "@/components/home/Process";
 import ReturningClients from "@/components/home/ReturningClients";
 import ProductFaq from "@/components/product/ProductFaq";
 import ClosingCta from "@/components/home/ClosingCta";
-import MobileCallBar from "@/components/includes/MobileCallBar";
 import { FAQ_ITEMS, SITE_DESCRIPTION } from "@/lib/constants";
 
 import { faqSchema } from "@/lib/schema";
@@ -43,7 +42,6 @@ export default function HomePage() {
             {/* faqSchema above covers these 6 items, so no second FAQPage here. */}
             <ProductFaq items={FAQ_ITEMS.slice(0, 6)} schema={false} />
             <ClosingCta />
-            <MobileCallBar />
         </div>
     );
 }

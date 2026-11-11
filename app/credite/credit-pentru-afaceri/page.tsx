@@ -6,7 +6,6 @@ import Process from "@/components/home/Process";
 import ClosingCta from "@/components/home/ClosingCta";
 import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
 import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
-import MobileCallBar from "@/components/includes/MobileCallBar";
 import { businessCreditSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -167,7 +166,6 @@ export default function CreditAfaceriPage() {
             <LatePayment example="o comandă se amână sau un client plătește mai târziu." />
             <ProductFaq items={businessFaqItems} />
             <ClosingCta />
-            <MobileCallBar />
         </div>
     );
 }

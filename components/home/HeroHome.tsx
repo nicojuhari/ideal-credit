@@ -26,7 +26,7 @@ export default function HeroHome() {
                             Credite nebancare <Accent>în Moldova.</Accent>
                         </h1>
                         <p className="mt-7 max-w-[42ch] text-lg leading-[1.55] text-[#c8c8c8] md:text-xl">
-                            Pentru afaceri și nevoi personale, de la 10.000 la 500.000 lei. Din prima discuție îți spunem cât poți lua și cât plătești pe lună.
+                            Pentru afaceri și nevoi personale, de la 10.000 la 500.000 lei. Fără comisioane, rapid și transparent.
                         </p>
                         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                             <ButtonPrimary href="/cerere-de-credit-online">Cerere online</ButtonPrimary>

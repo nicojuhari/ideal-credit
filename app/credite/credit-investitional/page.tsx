@@ -6,7 +6,6 @@ import Process from "@/components/home/Process";
 import ClosingCta from "@/components/home/ClosingCta";
 import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
 import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
-import MobileCallBar from "@/components/includes/MobileCallBar";
 import { investitionalSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -147,7 +146,6 @@ export default function CreditInvestitionalPage() {
             <LatePayment example="un utilaj nou pornește mai târziu sau un client plătește cu întârziere." />
             <ProductFaq items={investFaqItems} />
             <ClosingCta />
-            <MobileCallBar />
         </div>
     );
 }

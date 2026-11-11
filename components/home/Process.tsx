@@ -11,12 +11,12 @@ const steps: Step[] = [
     {
         meta: "După ce avem actele",
         title: "Primești decizia",
-        body: "Pentru afaceri, decizia vine în 1–2 zile lucrătoare. Pentru persoane fizice, în 2–3 ore.",
+        body: "Pentru afaceri, decizia vine în 1-2 zile lucrătoare. Pentru persoane fizice, în 2-3 ore.",
     },
     {
         meta: "O singură vizită",
         title: "Semnezi la oficiu",
-        body: "Contractul îl semnezi la oficiul din Căușeni sau din Chișinău. Companiile primesc banii pe cont. Persoanele fizice îi pot primi și în numerar.",
+        body: "Companiile primesc banii pe cont. Persoanele fizice îi pot primi și în numerar.",
     },
 ];
 
@@ -50,7 +50,9 @@ export default function Process() {
 
                 <p className="mt-12 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-t border-dc-line pt-6 text-[17px] lg:mt-20">
                     <span className="font-semibold text-dc-text">Ratele le plătești cum îți este comod:</span>
-                    <span className="text-[#c4c4c4]">prin transfer bancar, din aplicația de pe telefon, la poștă sau la oficiile noastre.</span>
+                    <span className="text-[#c4c4c4]">
+                        prin transfer bancar, din aplicația de pe telefon, la poștă sau la oficiile noastre.
+                    </span>
                 </p>
             </Container>
         </section>

@@ -6,7 +6,6 @@ import Process from "@/components/home/Process";
 import ClosingCta from "@/components/home/ClosingCta";
 import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
 import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
-import MobileCallBar from "@/components/includes/MobileCallBar";
 import { autoLoanSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -144,7 +143,6 @@ export default function CreditAutomobilPage() {
             <LatePayment consumer example="salariul vine mai târziu." />
             <ProductFaq items={faqItems} />
             <ClosingCta />
-            <MobileCallBar />
         </div>
     );
 }

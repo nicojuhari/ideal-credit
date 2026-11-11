@@ -69,7 +69,7 @@ export function Situations({
   items,
 }: {
   title: React.ReactNode;
-  intro?: string;
+  intro?: React.ReactNode;
   items: { label: string; text: string }[];
 }) {
   return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Accent from "@/components/ds/Accent";
 import SplitSection from "@/components/ds/SplitSection";
 import Analysis from "@/components/home/Analysis";
@@ -7,7 +8,6 @@ import Process from "@/components/home/Process";
 import ClosingCta from "@/components/home/ClosingCta";
 import ProductFaq, { type FaqItem } from "@/components/product/ProductFaq";
 import { ServiceHero, Situations, CostExample, Eligibility, Documents, LatePayment } from "@/components/product/ServiceSections";
-import MobileCallBar from "@/components/includes/MobileCallBar";
 import { personalLoanSchema } from "@/lib/schema";
 import { yearsSinceFoundation } from "@/lib/utils";
 
@@ -107,9 +107,17 @@ export default function CreditNevoiPersonalePage() {
                         Pentru ce iau oamenii <Accent>credit la noi.</Accent>
                     </>
                 }
-                intro="Alegem rata după venitul tău lunar. Așa o plătești ușor până la capăt."
+                intro={
+                    <>
+                        Alegem rata după venitul tău lunar. Așa o plătești ușor până la capăt. Pentru renovarea casei avem un credit separat:{" "}
+                        <Link href="/credite/credit-pentru-reparatie" className="text-dc-accent underline underline-offset-4">
+                            credit pentru reparație
+                        </Link>
+                        .
+                    </>
+                }
                 items={[
-                    { label: "Renovare acasă", text: "Schimbi geamurile sau refaci baia. Plătești meșterii și materialele acum." },
+                    { label: "Vacanță", text: "Rezervi vacanța familiei din timp. Plătești biletele și cazarea acum." },
                     { label: "Mobilă și electrocasnice", text: "Cumperi o bucătărie nouă sau o mașină de spălat. Achiți în rate lunare." },
                     { label: "Nuntă sau botez", text: "Ai stabilit data evenimentului. Banii pentru sală și restaurant trebuie dați din timp." },
                     { label: "Studii sau tratament", text: "Plătești taxa de studii sau un tratament. Achiți suma în rate lunare." },
@@ -180,7 +188,6 @@ export default function CreditNevoiPersonalePage() {
             <LatePayment consumer example="salariul întârzie sau ai o cheltuială neplanificată." />
             <ProductFaq items={personalFaqItems} />
             <ClosingCta />
-            <MobileCallBar />
         </div>
     );
 }
